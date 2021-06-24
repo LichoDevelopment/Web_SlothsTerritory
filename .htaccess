@@ -54,4 +54,4 @@ RewriteCond %{HTTP_REFERER} !^https://www.sloths-territory.com$      [NC]
 RewriteCond %{HTTP_REFERER} !^https://www.sloths-territory.sandovalf.com/.*$      [NC]
 RewriteCond %{HTTP_REFERER} !^https://www.sloths-territory.sandovalf.com$      [NC]
 RewriteRule .*\.(jpg|jpeg|gif|png|bmp)$ - [F,NC]
-
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
