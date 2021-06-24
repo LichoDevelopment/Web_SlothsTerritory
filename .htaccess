@@ -7,9 +7,12 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteRule ^(.*)$ public/$1 [L]
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\.sloths-territory\.com [NC]
+RewriteRule ^(.*)$ https://sloths-territory.com/$1 [L,R=301]
 </IfModule>
+
 
 
 
