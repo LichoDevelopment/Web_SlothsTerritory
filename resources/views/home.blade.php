@@ -59,7 +59,7 @@
                             </span>
                             <div class="card-body">
                                 <h4 class="card-title">En Sloth's Territory</h4>
-                                <p>Contamos con un gran hábitad natural y una increíble vista al Volcán Arenal.</p>
+                                <p>Contamos con un gran hábitad natural.</p>
                             </div>
                         </div>
                         <!-- end of card -->
@@ -116,21 +116,21 @@
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Tour diurno</h3>
-                                <p>Excelente lugar, mucha naturaleza etc...</p>
+                                <p>Pequeña introducción</p>
                                 <ul class="list-unstyled li-space-lg">
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body">Personal muy amables ...</div>
+                                        <div class="media-body">Característica 1</div>
                                     </li>
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body">Contamos con ...</div>
+                                        <div class="media-body">Característica 2</div>
                                     </li>
                                 </ul>
-                                <p class="price">Desde los  <span>$555</span></p>
+                                <!-- <p class="price">Desde los  <span>$555</span></p> -->
                             </div>
                             <div class="button-container">
-                                <a class="btn-solid-reg page-scroll" href="#callMe">DETAILS</a>
+                                <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1">MÁS DETALLES</a>
                             </div> <!-- end of button-container -->
                         </div>
                         <!-- end of card -->
@@ -142,21 +142,21 @@
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Tour nocturno</h3>
-                                <p>Contamos con ....</p>
+                                <p>Pequeña introducción</p>
                                 <ul class="list-unstyled li-space-lg">
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body">Tenemos ...</div>
+                                        <div class="media-body">Característica 1</div>
                                     </li>
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body">Tenemos ...</div>
+                                        <div class="media-body">Característica 2</div>
                                     </li>
                                 </ul>
-                                <p class="price">Desde los  <span>$555</span></p>
+                                <!-- <p class="price">Desde los  <span>$555</span></p> -->
                             </div>
                             <div class="button-container">
-                                <a class="btn-solid-reg page-scroll" href="#callMe">DETAILS</a>
+                                <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1">MÁS DETALLES</a>
                             </div> <!-- end of button-container -->
                         </div>
                         <!-- end of card -->
@@ -168,21 +168,21 @@
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Tour de aves</h3>
-                                <p>Contamos con...</p>
+                                <p>Pequeña introducción</p>
                                 <ul class="list-unstyled li-space-lg">
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body">Tenemos ....</div>
+                                        <div class="media-body">Caracteristica 1</div>
                                     </li>
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body">Tenemos ...</div>
+                                        <div class="media-body">Caracteristica 2</div>
                                     </li>
                                 </ul>
-                                <p class="price">Desde los  <span>$555</span></p>
+                                <!-- <p class="price">Desde los  <span>$555</span></p> -->
                             </div>
                             <div class="button-container">
-                                <a class="btn-solid-reg page-scroll" href="#callMe">DETAILS</a>
+                                <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1">MÁS DETALLES</a>
                             </div> <!-- end of button-container -->
                         </div>
                         <!-- end of card -->
