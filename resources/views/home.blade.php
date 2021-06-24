@@ -8,9 +8,9 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="text-container">
-                                <h1>Animacion <span id="js-rotating">Info1, infor2, info 3</span></h1>
-                                <p class="p-heading p-large"> Sloth Territory is a <div class=""></div></p>
-                                <a class="btn-solid-lg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1">RESERVAR</a>
+                                <h1>El mejor tour de Perezosos <span id="js-rotating">En la Fortuna de San Carlos, Quizá algo más ..</span></h1>
+                                <p class="p-heading p-large"> En Sloth´s Territory encontrarás gran variedad de animales y plantas.  <div class=""></div></p>
+                                <a class="btn-solid-lg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">RESERVAR</a>
                             </div>
                         </div> <!-- end of col -->
                     </div> <!-- end of row -->

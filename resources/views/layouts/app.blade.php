@@ -98,15 +98,21 @@
             </ul>
             <span class="nav-item social-icons">
                 <span class="fa-stack">
-                    <a href="#your-link">
+                    <a href="https://www.facebook.com/Sloths.Territory.2018" target="_blank">
                         <span class="hexagon"></span>
                         <i class="fab fa-facebook-f fa-stack-1x"></i>
                     </a>
                 </span>
                 <span class="fa-stack">
-                    <a href="#your-link">
+                    <a href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">
                         <span class="hexagon"></span>
-                        <i class="fab fa-twitter fa-stack-1x"></i>
+                        <i class="fab fa-whatsapp fa-stack-1x"></i>
+                    </a>
+                </span>
+                <span class="fa-stack">
+                    <a href="https://www.instagram.com/slothsterritory/" target="_blank">
+                        <span class="hexagon"></span>
+                        <i class="fab fa-instagram fa-stack-1x"></i>
                     </a>
                 </span>
             </span>
