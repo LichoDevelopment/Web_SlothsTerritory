@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Aria is a business focused HTML landing page template built with Bootstrap to help you create lead generation websites for companies and their services.">
+    <meta name="description" content="Lorem Ipsum is simply dummy text of the printing and typesetting industry.">
     <meta name="author" content="Inovatik">
 
     <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
@@ -49,7 +49,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
         <!-- Text Logo - Use this if you don't have a graphic logo -->
-        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Aria</a> -->
+
 
         <!-- Image Logo -->
         <a class="navbar-brand logo-image" href="https://wa.me/message/UAO3TORZITGBE1">

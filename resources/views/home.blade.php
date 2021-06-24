@@ -654,13 +654,13 @@
                     <img class="img-fluid" src="images/project-3.jpg" alt="alternative">
                 </div> <!-- end of col -->
                 <div class="col-lg-4">
-                    <h3>BoomBap Audio</h3>
+                    <h3>Bofw</h3>
                     <hr class="line-heading">
                     <h6>Strategy Development</h6>
-                    <p>Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current needs</p>
-                    <p>By offering the best professional services and quality products in the market. Don't hesitate and get in touch with us.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                     <div class="testimonial-container">
-                        <p class="testimonial-text">Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current requirements.</p>
+                        <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
                     <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a>
@@ -677,13 +677,13 @@
                     <img class="img-fluid" src="images/project-4.jpg" alt="alternative">
                 </div> <!-- end of col -->
                 <div class="col-lg-4">
-                    <h3>Van Moose</h3>
+                    <h3>Ipsum</h3>
                     <hr class="line-heading">
                     <h6>Strategy Development</h6>
-                    <p>Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current needs</p>
-                    <p>By offering the best professional services and quality products in the market. Don't hesitate and get in touch with us.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                     <div class="testimonial-container">
-                        <p class="testimonial-text">Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current requirements.</p>
+                        <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
                     <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a>
@@ -700,13 +700,13 @@
                     <img class="img-fluid" src="images/project-5.jpg" alt="alternative">
                 </div> <!-- end of col -->
                 <div class="col-lg-4">
-                    <h3>Joy Moments</h3>
+                    <h3>IMpsu</h3>
                     <hr class="line-heading">
                     <h6>Strategy Development</h6>
-                    <p>Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current needs</p>
-                    <p>By offering the best professional services and quality products in the market. Don't hesitate and get in touch with us.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                     <div class="testimonial-container">
-                        <p class="testimonial-text">Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current requirements.</p>
+                        <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
                     <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a>
@@ -723,13 +723,13 @@
                     <img class="img-fluid" src="images/project-6.jpg" alt="alternative">
                 </div> <!-- end of col -->
                 <div class="col-lg-4">
-                    <h3>Spark Events</h3>
+                    <h3>Ipsum</h3>
                     <hr class="line-heading">
                     <h6>Strategy Development</h6>
-                    <p>Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current needs</p>
-                    <p>By offering the best professional services and quality products in the market. Don't hesitate and get in touch with us.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                     <div class="testimonial-container">
-                        <p class="testimonial-text">Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current requirements.</p>
+                        <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
                     <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a>
@@ -746,13 +746,13 @@
                     <img class="img-fluid" src="images/project-7.jpg" alt="alternative">
                 </div> <!-- end of col -->
                 <div class="col-lg-4">
-                    <h3>Casual Wear</h3>
+                    <h3>CIPSU</h3>
                     <hr class="line-heading">
                     <h6>Strategy Development</h6>
-                    <p>Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current needs</p>
-                    <p>By offering the best professional services and quality products in the market. Don't hesitate and get in touch with us.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                     <div class="testimonial-container">
-                        <p class="testimonial-text">Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current requirements.</p>
+                        <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
                     <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a>
@@ -769,13 +769,13 @@
                     <img class="img-fluid" src="images/project-8.jpg" alt="alternative">
                 </div> <!-- end of col -->
                 <div class="col-lg-4">
-                    <h3>Zazoo Apps</h3>
+                    <h3>sub algo</h3>
                     <hr class="line-heading">
                     <h6>Strategy Development</h6>
-                    <p>Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current needs</p>
-                    <p>By offering the best professional services and quality products in the market. Don't hesitate and get in touch with us.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                     <div class="testimonial-container">
-                        <p class="testimonial-text">Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current requirements.</p>
+                        <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
                     <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a>
