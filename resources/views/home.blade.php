@@ -130,7 +130,7 @@
                                 <!-- <p class="price">Desde los  <span>$555</span></p> -->
                             </div>
                             <div class="button-container">
-                                <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1">MÁS DETALLES</a>
+                                <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">MÁS DETALLES</a>
                             </div> <!-- end of button-container -->
                         </div>
                         <!-- end of card -->
@@ -156,7 +156,7 @@
                                 <!-- <p class="price">Desde los  <span>$555</span></p> -->
                             </div>
                             <div class="button-container">
-                                <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1">MÁS DETALLES</a>
+                                <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">MÁS DETALLES</a>
                             </div> <!-- end of button-container -->
                         </div>
                         <!-- end of card -->
@@ -182,7 +182,7 @@
                                 <!-- <p class="price">Desde los  <span>$555</span></p> -->
                             </div>
                             <div class="button-container">
-                                <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1">MÁS DETALLES</a>
+                                <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">MÁS DETALLES</a>
                             </div> <!-- end of button-container -->
                         </div>
                         <!-- end of card -->
@@ -371,8 +371,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h2>Info sobre algunas especies o algo...</h2>
-                        <p class="p-heading">Esta es una pequeña información sobre algun@s</p>
+                        <h2>Algunas de nuestras especies de animales</h2>
+                        <p class="p-heading">En Sloths Territory en La Fortuna de San Carlos podrás encontrar gran variedad de animales.</p>
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
                 <div class="row">
@@ -388,8 +388,8 @@
                                         <div class="card">
                                             <img class="card-image" src="images/testimonial-1.jpg" alt="alternative">
                                             <div class="card-body">
-                                                <div class="testimonial-text">Esta especies es (no se jaja) ....</div>
-                                                <div class="testimonial-author">Nombre de la especia (puede ir también alguna referencia de wikipedia o algo)...</div>
+                                                <div class="testimonial-text">Esta especies es ....</div>
+                                                <div class="testimonial-author">Nombre científico</div>
                                             </div>
                                         </div>
                                     </div> <!-- end of swiper-slide -->
@@ -400,8 +400,8 @@
                                         <div class="card">
                                             <img class="card-image" src="images/testimonial-2.jpg" alt="alternative">
                                             <div class="card-body">
-                                                <div class="testimonial-text">Esta especies es (tampoco se jaja) ....</div>
-                                                <div class="testimonial-author">animal raro xD.</div>
+                                                <div class="testimonial-text">Esta especies es ...</div>
+                                                <div class="testimonial-author">Nombre científico</div>
                                             </div>
                                         </div>
                                     </div> <!-- end of swiper-slide -->
@@ -412,8 +412,8 @@
                                         <div class="card">
                                             <img class="card-image" src="images/testimonial-3.jpg" alt="alternative">
                                             <div class="card-body">
-                                                <div class="testimonial-text">Esta es una rana </div>
-                                                <div class="testimonial-author">rana ...</div>
+                                                <div class="testimonial-text">Esta especie es ... </div>
+                                                <div class="testimonial-author">Nombre científico.</div>
                                             </div>
                                         </div>
                                     </div> <!-- end of swiper-slide -->
@@ -424,8 +424,8 @@
                                         <div class="card">
                                             <img class="card-image" src="images/testimonial-4.jpg" alt="alternative">
                                             <div class="card-body">
-                                                <div class="testimonial-text">Perezoso</div>
-                                                <div class="testimonial-author">Sloth</div>
+                                                <div class="testimonial-text">Esta especie es ...</div>
+                                                <div class="testimonial-author">Nombre científico</div>
                                             </div>
                                         </div>
                                     </div> <!-- end of swiper-slide -->
@@ -436,8 +436,8 @@
                                         <div class="card">
                                             <img class="card-image" src="images/testimonial-5.jpg" alt="alternative">
                                             <div class="card-body">
-                                                <div class="testimonial-text">Perezoso 2</div>
-                                                <div class="testimonial-author">Sloth junior</div>
+                                                <div class="testimonial-text">Esta especie es ...</div>
+                                                <div class="testimonial-author">Nombre científico</div>
                                             </div>
                                         </div>
                                     </div> <!-- end of swiper-slide -->
@@ -448,8 +448,8 @@
                                         <div class="card">
                                             <img class="card-image" src="images/testimonial-6.jpg" alt="alternative">
                                             <div class="card-body">
-                                                <div class="testimonial-text">Mamá perezosa</div>
-                                                <div class="testimonial-author">Sloth mom </div>
+                                                <div class="testimonial-text">Esta especie es ...</div>
+                                                <div class="testimonial-author">Nombre científico</div>
                                             </div>
                                         </div>
                                     </div> <!-- end of swiper-slide -->
@@ -473,6 +473,7 @@
         <!-- end of testimonials -->
 
 
+        <!-- REVISAR: CREO QUE PODRÏAMOS QUITAR ESTA PARTE PORQUE YA ESTÄ LA SECCIÖN DE CONTACT. -->
         <!-- Call Me -->
         <div id="callMe" class="form-1">
             <div class="container">
@@ -551,8 +552,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="section-title">Animales o algo ...</div>
-                        <h2>Algunas especies son ...</h2>
+                        <div class="section-title"> Nuestra galería</div>
+                        <h2> En esta sección podrás conocer imágenes de las diferentes especies de Sloths Territory.</h2>
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
                 <div class="row">
@@ -563,7 +564,7 @@
                             <a class="button" data-filter=".design"><span>Sloths</span></a>
                             <a class="button" data-filter=".development"><span>Frog</span></a>
                             <a class="button" data-filter=".marketing"><span>Tortugas</span></a>
-                            <a class="button" data-filter=".seo"><span>no sé</span></a>
+                            <a class="button" data-filter=".seo"><span>etc (agregar o quitar)</span></a>
                         </div> <!-- end of button group -->
                         <div class="grid">
                             <div class="element-item development">
@@ -792,8 +793,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h2>Sobre empleados</h2>
-                        <p class="p-heading">Algo de info de los que conforma el lugar.</p>
+                        <h2>Fundadores (Se puede quitar o cambiar)</h2>
+                        <p class="p-heading">Pequeña historia sobre los fundadores (podría ser)</p>
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
                 <div class="row">
@@ -805,7 +806,7 @@
                                 <img class="img-fluid" src="images/team-1.png" alt="alternative">
                             </div> <!-- end of image-wrapper -->
                             <p class="p-large">Keilor</p>
-                            <p class="job-title">Dueño</p>
+                            <p class="job-title">Alguna característica</p>
                             <span class="social-icons">
                                 <span class="fa-stack">
                                     <a href="#your-link">
@@ -829,7 +830,7 @@
                                 <img class="img-fluid" src="images/team-2.png" alt="alternative">
                             </div> <!-- end of image wrapper -->
                             <p class="p-large">Oscar</p>
-                            <p class="job-title">Dueño</p>
+                            <p class="job-title">Alguna característica</p>
                             <span class="social-icons">
                                 <span class="fa-stack">
                                     <a href="#your-link">
@@ -853,7 +854,7 @@
                                 <img class="img-fluid" src="images/team-3.png" alt="alternative">
                             </div> <!-- end of image wrapper -->
                             <p class="p-large">juanito</p>
-                            <p class="job-title">No se</p>
+                            <p class="job-title">Alguna característica</p>
                             <span class="social-icons">
                                 <span class="fa-stack">
                                     <a href="#your-link">
@@ -877,7 +878,7 @@
                                 <img class="img-fluid" src="images/team-4.png" alt="alternative">
                             </div> <!-- end of image wrapper -->
                             <p class="p-large">Juanita</p>
-                            <p class="job-title">No se</p>
+                            <p class="job-title">Alguna característica</p>
                             <span class="social-icons">
                                 <span class="fa-stack">
                                     <a href="#your-link">
@@ -913,26 +914,30 @@
                     </div> <!-- end of col -->
                     <div class="col-lg-7 col-xl-6">
                         <div class="text-container">
-                            <div class="section-title">ABOUT</div>
-                            <h2>Increíble lugar ....</h2>
-                            <p>Algo acerca del lugar...</p>
+                            <div class="section-title">Acerda de </div>
+                            <h2> Sloths Territory</h2>
+                            <p> Algo de info...</p>
                             <ul class="list-unstyled li-space-lg">
                                 <li class="media">
                                     <i class="fas fa-square"></i>
-                                    <div class="media-body">Caracteristicas</div>
+                                    <div class="media-body">Maravillosa vista al Volcán Arenal.</div>
                                 </li>
                                 <li class="media">
                                     <i class="fas fa-square"></i>
-                                    <div class="media-body">Características</div>
+                                    <div class="media-body">Ubicado en El Tanque de La Fortuna de San Carlos.</div>
+                                </li>
+                                <li class="media">
+                                    <i class="fas fa-square"></i>
+                                    <div class="media-body">Más características si fuese posible y necesario...</div>
                                 </li>
                             </ul>
 
                             <!-- Counter -->
-                            <div id="counter">
+                            <!-- <div id="counter">
                                 <div class="cell">
                                     <div class="counter-value number-count" data-count="2315">1</div>
                                     <div class="counter-info">clientes <br>Felices</div>
-                                </div>
+                                </div> -->
                                 <!-- <div class="cell">
                                     <div class="counter-value number-count" data-count="121">1</div>
                                     <div class="counter-info">Clientes <br> </div>
@@ -941,7 +946,7 @@
                                     <div class="counter-value number-count" data-count="159">1</div>
                                     <div class="counter-info">Good<br>Reviews</div>
                                 </div> -->
-                            </div>
+                            <!-- </div> -->
                             <!-- end of counter -->
 
                         </div> <!-- end of text-container -->
@@ -959,7 +964,7 @@
                     <div class="col-lg-6">
                         <div class="text-container">
                             <div class="section-title">CONTACT</div>
-                            <h2>Información de sloth territy</h2>
+                            <h2>Información de Sloth's Territory</h2>
                             <p>Puede llamar o contactar con ...</p>
                             <ul class="list-unstyled li-space-lg">
                                 <li class="address"><i class="fas fa-map-marker-alt"></i>La fortuna, San CArlos, Costa Rica....</li>
