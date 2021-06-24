@@ -8,9 +8,10 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="text-container">
-                                <h1>El mejor tour de Perezosos <span id="js-rotating">En la Fortuna de San Carlos, Quizá algo más ..</span></h1>
-                                <p class="p-heading p-large"> En Sloth´s Territory encontrarás gran variedad de animales y plantas.  <div class=""></div></p>
-                                <a class="btn-solid-lg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">RESERVAR</a>
+                                <!-- <h1>El mejor tour de Perezosos <span id="js-rotating">en la Fortuna de San Carlos, Quizá algo más ..</span></h1> -->
+                                <h1>El mejor tour de Perezosos en la Fortuna de San Carlos, Quizá algo más ..</h1>
+                                <p class="p-heading p-large"> En Sloth´s Territory podrás observar perezosos de 2 y 3 dedos, además gran variedad de aves y anfibios.<div class=""></div></p>
+                                <a class="btn-solid-lg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">RESERVAR AHORA</a>
                             </div>
                         </div> <!-- end of col -->
                     </div> <!-- end of row -->
