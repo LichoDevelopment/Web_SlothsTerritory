@@ -9,8 +9,8 @@
                         <div class="col-lg-12">
                             <div class="text-container">
                                 <!-- <h1>El mejor tour de Perezosos <span id="js-rotating">en la Fortuna de San Carlos, Quizá algo más ..</span></h1> -->
-                                <h1>El mejor tour de Perezosos en la Fortuna de San Carlos, Quizá algo más ..</h1>
-                                <p class="p-heading p-large"> En Sloth´s Territory podrás observar perezosos de 2 y 3 dedos, además gran variedad de aves y anfibios.<div class=""></div></p>
+                                <h1>El mejor tour de perezosos en La Fortuna de San Carlos</h1>
+                                <p class="p-heading p-large"> En Sloth's Territory podrás observar perezosos de 2 y 3 dedos, además gran variedad de aves y anfibios.<div class=""></div></p>
                                 <a class="btn-solid-lg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">RESERVAR AHORA</a>
                             </div>
                         </div> <!-- end of col -->
@@ -27,11 +27,11 @@
                 <div class="row">
                     <div class="col-lg-5">
                         <div class="text-container">
-                            <div class="section-title">INTRO</div>
-                            <h2>Titulo sobre sloths o peresosos</h2>
-                            <p>Sloths are a group of arboreal Neotropical xenarthran mammals, constituting the suborder Folivora.</p>
-                            <p class="testimonial-text">"Sloths are a group of arboreal Neotropical xenarthran mammals, constituting the suborder Folivora."</p>
-                            <div class="testimonial-author">Lugar o algo (en este caso foto del animal para poner algo).</div>
+                            <div class="section-title">BIENVENIDOS</div>
+                            <h2>Sloth's Territory en La Fortuna de San Carlos.</h2>
+                            <p>Sloth's Territory es un sendero con un total de 1300 metros, que se extiende sobre la margen del Río Habana, en El Tanque de La Fortuna.</p>
+                            <!-- <p class="testimonial-text">"Sloths are a group of arboreal Neotropical xenarthran mammals, constituting the suborder Folivora."</p> -->
+                            <div class="testimonial-author">Visite este paraíso rodeado de naturaleza y habitado por osos perezosos.</div>
                         </div> <!-- end of text-container -->
                     </div> <!-- end of col -->
                     <div class="col-lg-7">
