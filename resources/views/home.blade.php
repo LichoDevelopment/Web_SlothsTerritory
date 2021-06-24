@@ -386,7 +386,7 @@
                                     <!-- Slide -->
                                     <div class="swiper-slide">
                                         <div class="card">
-                                            <img class="card-image" src="images/testimonial-1.jpg" alt="alternative">
+                                            <img class="card-image" src="images/testimonial-1.jpg" alt="alternative" width="200">
                                             <div class="card-body">
                                                 <div class="testimonial-text">Esta especies es ....</div>
                                                 <div class="testimonial-author">Nombre científico</div>
