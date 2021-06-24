@@ -59,7 +59,7 @@
                             </span>
                             <div class="card-body">
                                 <h4 class="card-title">En Sloth's Territory</h4>
-                                <p>Contamos con un gran hábitad y una increíble vista al Volcán Arenal.</p>
+                                <p>Contamos con un gran hábitad natural y una increíble vista al Volcán Arenal.</p>
                             </div>
                         </div>
                         <!-- end of card -->
@@ -84,8 +84,8 @@
                                 <i class="fas fa-binoculars fa-stack-1x"></i>
                             </span>
                             <div class="card-body">
-                                <h4 class="card-title">Información sobre algo más, grupo de trabajo etc.</h4>
-                                <p>Los trabajadores son ... algo así.</p>
+                                <h4 class="card-title"> Maravillosas vistas</h4>
+                                <p> Al Volcán Arenal y a la increíble natuleza que habita en nuestras instalaciones. </p>
                             </div>
                         </div>
                         <!-- end of card -->
@@ -102,8 +102,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="section-title">SERVICES</div>
-                        <h2>Algunos servicios que se pueden brindar<br> Son los siguientes...</h2>
+                        <div class="section-title">SERVICIOS</div>
+                        <h2>En Sloth's Territory contamos con 3 diferentes actividades<br> Te invitamos a conocerlas en La Fortuna de San Carlos</h2>
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
                 <div class="row">
@@ -115,7 +115,7 @@
                                 <img class="img-fluid" src="images/services-1.jpg" alt="alternative">
                             </div>
                             <div class="card-body">
-                                <h3 class="card-title">Caminata por los cenderos etc...</h3>
+                                <h3 class="card-title">Tour diurno</h3>
                                 <p>Excelente lugar, mucha naturaleza etc...</p>
                                 <ul class="list-unstyled li-space-lg">
                                     <li class="media">
@@ -141,7 +141,7 @@
                                 <img class="img-fluid" src="images/services-2.jpg" alt="alternative">
                             </div>
                             <div class="card-body">
-                                <h3 class="card-title">Otra actividad no sé</h3>
+                                <h3 class="card-title">Tour nocturno</h3>
                                 <p>Contamos con ....</p>
                                 <ul class="list-unstyled li-space-lg">
                                     <li class="media">
@@ -167,7 +167,7 @@
                                 <img class="img-fluid" src="images/services-3.jpg" alt="alternative">
                             </div>
                             <div class="card-body">
-                                <h3 class="card-title">Otra actividad ...</h3>
+                                <h3 class="card-title">Tour de aves</h3>
                                 <p>Contamos con...</p>
                                 <ul class="list-unstyled li-space-lg">
                                     <li class="media">
