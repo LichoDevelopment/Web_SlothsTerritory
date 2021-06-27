@@ -116,18 +116,17 @@
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Tour diurno</h3>
-                                <p>Pequeña introducción</p>
+                                <p>Ofrecemos varias caminatas diarias iniciando a las: 8 a.m. - 10 a.m. - 1 p.m. y 3 p.m.</p>
                                 <ul class="list-unstyled li-space-lg">
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body">Característica 1</div>
+                                        <div class="media-body">El sendero es accesible para todas las edades.</div>
                                     </li>
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body">Característica 2</div>
+                                        <div class="media-body">La duración de esta actividad puede ser de 1 hora y media a 2 horas.</div>
                                     </li>
                                 </ul>
-                                <!-- <p class="price">Desde los  <span>$555</span></p> -->
                             </div>
                             <div class="button-container">
                             <a class="popup-with-move-anim" href="#tour-diurno"><div class="btn-solid-reg page-scroll">MÁS DETALLES</div></a> 
@@ -147,17 +146,17 @@
                                 <ul class="list-unstyled li-space-lg">
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body">Característica 1</div>
+                                        <div class="media-body">Nuestra caminata nocturna inicia a las 6:00 pm.</div>
                                     </li>
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body">Característica 2</div>
+                                        <div class="media-body">La duración de esta actividad es de 1 hora y media a 2 horas.</div>
                                     </li>
                                 </ul>
-                                <!-- <p class="price">Desde los  <span>$555</span></p> -->
                             </div>
                             <div class="button-container">
-                                <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">MÁS DETALLES</a>
+                                <!-- <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">MÁS DETALLES</a> -->
+                                <a class="popup-with-move-anim" href="#tour-nocturno"><div class="btn-solid-reg page-scroll">MÁS DETALLES</div></a>
                             </div> <!-- end of button-container -->
                         </div>
                         <!-- end of card -->
@@ -169,21 +168,21 @@
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Tour de aves</h3>
-                                <p>Pequeña introducción</p>
+                                <p>Ofrecemos varias caminatas diarias iniciando a las: 8 a.m. - 10 a.m. - 1 p.m. y 3 p.m.</p>
                                 <ul class="list-unstyled li-space-lg">
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body">Caracteristica 1</div>
+                                        <div class="media-body">El recorrido comienza a las 5:00 am.</div>
                                     </li>
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body">Caracteristica 2</div>
+                                        <div class="media-body">La duración de esta actividad es de 2 horas.</div>
                                     </li>
                                 </ul>
-                                <!-- <p class="price">Desde los  <span>$555</span></p> -->
                             </div>
                             <div class="button-container">
-                                <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">MÁS DETALLES</a>
+                            <a class="popup-with-move-anim" href="#tour-aves"><div class="btn-solid-reg page-scroll">MÁS DETALLES</div></a>
+                                <!-- <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">MÁS DETALLES</a> -->
                             </div> <!-- end of button-container -->
                         </div>
                         <!-- end of card -->
@@ -812,6 +811,72 @@
                     
                     <div class="testimonial-container">
                         <p class="testimonial-text">Parrafo sobre comentario de algo.</p>
+                    </div>
+                    <a class="btn-solid-reg" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">RESERVAR AHORA</a> <a class="btn-outline-reg mfp-close as-button" href="#services">BACK</a>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of lightbox-basic -->
+        <!-- end of lightbox -->
+
+        <div id="tour-nocturno" class="lightbox-basic zoom-anim-dialog mfp-hide">
+            <div class="row">
+                <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+                <div class="col-lg-8">
+                    <img class="img-fluid" src="images/services-2.jpg" alt="alternative">
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <h3>TOUR NOCTURNO</h3>
+                    <hr class="line-heading">
+                    <h6>Informacion sobre el tour nocturno</h6>
+                    <p>Nuestra caminata nocturna inicia a las 6:00 pm, el mejor momento para buscar animales con comportamiento nocturno.</p>
+                    <p>Durante esta caminata, tendrá la oportunidad de ver diferentes tipos de ranas, kinkajous, serpientes, arañas, murciélagos y eventualmente: perezosos de dos y tres dedos (pero no es el enfoque de esta caminata específica).</p>
+                    <p>Mientras la noche da su iniciao y el cielo se cubre de estrellas, nuestro guía bien capacitado lo mantendrá seguro, mientras continúa la caminata a lo largo de nuestra propiedad.</p>
+                    <p>El sendero es accesible para todas las edades, por lo que esta es una actividad donde toda la familia puede disfrutarla.</p>
+                    <p>La duración de esta actividad es de 1 hora y media a 2 horas.  El precio es de US $45 por persona;  niños de 6 a 12 años US $35.</p>
+                    <p>El tour incluye un guía capacitado durante toda la caminata, linterna y frutas frescas de temporada al final.</p>
+                    <h6>Qué llevar:</h6>
+                    <p>Repelente de insectos</p>
+                    <p>Ropa ligera</p>
+                    <p>Impermeable</p>
+                    
+                    
+                    
+                    <div class="testimonial-container">
+                        <p class="testimonial-text">Parrafo sobre comentario de algo (opcional preguntar a Keilor.).</p>
+                    </div>
+                    <a class="btn-solid-reg" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">RESERVAR AHORA</a> <a class="btn-outline-reg mfp-close as-button" href="#services">BACK</a>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of lightbox-basic -->
+        <!-- end of lightbox -->
+
+        <div id="tour-aves" class="lightbox-basic zoom-anim-dialog mfp-hide">
+            <div class="row">
+                <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+                <div class="col-lg-8">
+                    <img class="img-fluid" src="images/services-3.jpg" alt="alternative">
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <h3>TOUR DE AVES</h3>
+                    <hr class="line-heading">
+                    <h6>Informacion sobre el tour de aves</h6>
+                    <p>Pensando en todos los amantes de la observación de aves, hemos creado esta actividad exclusiva y entretenida.</p>
+                    <p>El recorrido comienza a las 5:00 am y uno de nuestros guías profesionales lo llevará a través de hermosos senderos para observar una amplia variedad de especies de: colibríes, tangaras, loros, mieleros, pájaros carpinteros canela, Royal Flycatchers, entre otras especies de aves.</p>
+                    <p>Incluso cuando estamos enfocados en las aves, por la gran variedad de especies exóticas, en nuestros senderos, tendrá la oportunidad de observar algunos perezosos, ranas y otras especies.</p>
+                    <p>El tour incluye un guía capacitado durante toda la caminata con telescopio profesional, binoculares, bocadillo de frutas frescas de temporada y café, al final de recorrido.</p>
+                    <p>La duración de esta actividad es de 2 horas aproximadamente.</p>
+                    <p>El precio es de US $ 45 por persona.</p>
+                    <h6>Qué llevar:</h6>
+                    <p>Repelente de insectos</p>
+                    <p>Ropa ligera</p>
+                    <p>Impermeable</p>
+                    <p>Cámara</p>
+                    <p>Binoculares</p>
+                    
+                    
+                    
+                    <div class="testimonial-container">
+                        <p class="testimonial-text">Parrafo sobre comentario de algo (opcional preguntar a Keilor.).</p>
                     </div>
                     <a class="btn-solid-reg" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">RESERVAR AHORA</a> <a class="btn-outline-reg mfp-close as-button" href="#services">BACK</a>
                 </div> <!-- end of col -->
