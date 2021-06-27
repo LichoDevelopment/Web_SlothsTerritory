@@ -130,7 +130,7 @@
                                 <!-- <p class="price">Desde los  <span>$555</span></p> -->
                             </div>
                             <div class="button-container">
-                            <a class="popup-with-move-anim" href="#project-1"><div class="btn-solid-reg page-scroll">MÁS DETALLES</div></a> 
+                            <a class="popup-with-move-anim" href="#tour-diurno"><div class="btn-solid-reg page-scroll">MÁS DETALLES</div></a> 
                                 <!-- <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">MÁS DETALLES</a> -->
                             </div> <!-- end of button-container -->
                         </div>
