@@ -130,7 +130,8 @@
                                 <!-- <p class="price">Desde los  <span>$555</span></p> -->
                             </div>
                             <div class="button-container">
-                                <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">MÁS DETALLES</a>
+                            <a class="popup-with-move-anim" href="#project-1"><div class="btn-solid-reg page-scroll">MÁS DETALLES</div></a> 
+                                <!-- <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">MÁS DETALLES</a> -->
                             </div> <!-- end of button-container -->
                         </div>
                         <!-- end of card -->
@@ -785,6 +786,39 @@
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
         <!-- end of lightbox -->
+
+        <div id="tour-diurno" class="lightbox-basic zoom-anim-dialog mfp-hide">
+            <div class="row">
+                <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+                <div class="col-lg-8">
+                    <img class="img-fluid" src="images/services-1.jpg" alt="alternative">
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <h3>TOUR DIURNO</h3>
+                    <hr class="line-heading">
+                    <h6>Informacion sobre el tour diurno</h6>
+                    <p>Ofrecemos varias caminatas diarias iniciando a las: 8 a.m. - 10 a.m. - 1 p.m. y 3 p.m.</p>
+                    <p>Durante la caminata, el sendero le permitirá disfrutar de un bosque de galería con exuberante vegetación y árboles gigantes como Chilamate y Guácimo Colorado;  constituyendo el hábitat de muchas especies como: zarigüeyas, perezosos de dos y tres dedos y muchas aves como: Tucanes, Tangaras, Royal Flycatchers y otras. Pero el principal atractivo es la observación de los osos perezosos.</p>
+                    <p>La Familia Rodríguez, una familia tradicional costarricense serán sus guías, ya que tratar de encontrar perezosos requiere de altas habilidades porque suelen tener un excelente camuflaje que los hace imperceptibles, para ojos no entrenados.</p>
+                    <p>El sendero es accesible para todas las edades, por lo que esta es una actividad donde toda la familia puede disfrutarla.</p>
+                    <p>El recorrido incluye un guía capacitado durante toda la caminata con un telescopio profesional y un refrigerio de frutas frescas de temporada al final.</p>
+                    <p>La duración de esta actividad puede ser de 1 hora y media a 2 horas y el precio es de US $ 28 por persona;  Niños de 6 a 12 años US $ 17 y menores de 5 años entran gratis.</p>
+                    <h6>Qué llevar:</h6>
+                    <p>Repelente de insectos</p>
+                    <p>Ropa ligera</p>
+                    <p>Impermeable</p>
+                    
+                    
+                    
+                    <div class="testimonial-container">
+                        <p class="testimonial-text">Parrafo sobre comentario de algo.</p>
+                    </div>
+                    <a class="btn-solid-reg" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">RESERVAR AHORA</a> <a class="btn-outline-reg mfp-close as-button" href="#services">BACK</a>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of lightbox-basic -->
+        <!-- end of lightbox -->
+
         <!-- end of project lightboxes -->
 
 
