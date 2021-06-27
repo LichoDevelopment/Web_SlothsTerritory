@@ -59,7 +59,7 @@
                             </span>
                             <div class="card-body">
                                 <h4 class="card-title">En Sloth's Territory</h4>
-                                <p>Contamos con un gran hábitad natural.</p>
+                                <p>contamos con un gran hábitad natural.</p>
                             </div>
                         </div>
                         <!-- end of card -->
@@ -72,7 +72,7 @@
                             </span>
                             <div class="card-body">
                                 <h4 class="card-title">Podrás conocer </h4>
-                                <p> Diferentes tipos de plantas y animales, en especial osos perezozos.</p>
+                                <p> diferentes tipos de plantas y animales, en especial osos perezozos.</p>
                             </div>
                         </div>
                         <!-- end of card -->
@@ -85,7 +85,7 @@
                             </span>
                             <div class="card-body">
                                 <h4 class="card-title"> Maravillosas vistas</h4>
-                                <p> Al Volcán Arenal y a la increíble natuleza que habita en nuestras instalaciones. </p>
+                                <p> al Volcán Arenal y a la increíble natuleza que habita en nuestras instalaciones. </p>
                             </div>
                         </div>
                         <!-- end of card -->
