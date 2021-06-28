@@ -1018,7 +1018,7 @@
                             </span>
                             <h3>Calificanos en Tripadvisor</h3>
                             <span class="fa-stack">
-                                <a href="#your-link">
+                                <a href="https://www.tripadvisor.com/UserReviewEdit-g309226-d15636276-Sloth_s_Territory-La_Fortuna_de_San_Carlos_Arenal_Volcano_National_Park_Province_of_Alajuela.html" target="_blank">
                                     <span class="hexagon"></span>
                                     <i class="fab fa-tripadvisor fa-stack-1x"></i>
                                 </a>
