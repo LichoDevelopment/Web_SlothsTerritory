@@ -765,12 +765,12 @@
 
         <!-- Lightbox -->
         <div id="project-8" class="lightbox-basic zoom-anim-dialog mfp-hide">
-            <div class="row">
+            <div class="row justify-content-center">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-                <div class="col-lg-8">
+                <div class="col-lg-10">
                     <img class="img-fluid" src="images/project-8.jpg" alt="alternative">
                 </div> <!-- end of col -->
-                <div class="col-lg-4">
+                <div class="col-lg-10">
                     <h3>sub algo</h3>
                     <hr class="line-heading">
                     <h6>Strategy Development</h6>
@@ -787,12 +787,12 @@
         <!-- end of lightbox -->
 
         <div id="tour-diurno" class="lightbox-basic zoom-anim-dialog mfp-hide">
-            <div class="row">
+            <div class="row justify-content-center">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-                <div class="col-lg-8">
+                <div class="col-lg-10">
                     <img class="img-fluid" src="images/services-1.jpg" alt="alternative">
                 </div> <!-- end of col -->
-                <div class="col-lg-4">
+                <div class="col-lg-10">
                     <h3>TOUR DIURNO</h3>
                     <hr class="line-heading">
                     <h6>Informacion sobre el tour diurno</h6>
@@ -819,12 +819,12 @@
         <!-- end of lightbox -->
 
         <div id="tour-nocturno" class="lightbox-basic zoom-anim-dialog mfp-hide">
-            <div class="row">
+            <div class="row justify-content-center">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-                <div class="col-lg-8">
+                <div class="col-lg-10">
                     <img class="img-fluid" src="images/services-2.jpg" alt="alternative">
                 </div> <!-- end of col -->
-                <div class="col-lg-4">
+                <div class="col-lg-10">
                     <h3>TOUR NOCTURNO</h3>
                     <hr class="line-heading">
                     <h6>Informacion sobre el tour nocturno</h6>
@@ -851,12 +851,12 @@
         <!-- end of lightbox -->
 
         <div id="tour-aves" class="lightbox-basic zoom-anim-dialog mfp-hide">
-            <div class="row">
+            <div class="row justify-content-center">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-                <div class="col-lg-8">
+                <div class="col-lg-10">
                     <img class="img-fluid" src="images/services-3.jpg" alt="alternative">
                 </div> <!-- end of col -->
-                <div class="col-lg-4">
+                <div class="col-lg-10">
                     <h3>TOUR DE AVES</h3>
                     <hr class="line-heading">
                     <h6>Informacion sobre el tour de aves</h6>
