@@ -996,7 +996,7 @@
                                 <li><i class="fas fa-phone"></i><a href="https://wa.me/message/UAO3TORZITGBE1">+506 8561 0404</a></li>
                                 <li><i class="fas fa-envelope"></i><a href="mailto:sloths.territory@gmail.com">sloths.territory@gmail.com</a></li>
                             </ul>
-                            <h3>Follow Sloth Territory</h3>
+                            <h3>Follow Sloth's Territory</h3>
 
                             <span class="fa-stack">
                                 <a href="#your-link">
@@ -1015,25 +1015,14 @@
                                     <span class="hexagon"></span>
                                     <i class="fab fa-youtube fa-stack-1x"></i>
                                 </a>
-                            <!-- </span>
+                            </span>
+                            <h3>Calificanos en Tripadvisor</h3>
                             <span class="fa-stack">
                                 <a href="#your-link">
                                     <span class="hexagon"></span>
-                                    <i class="fab fa-instagram fa-stack-1x"></i>
+                                    <i class="fab fa-tripadvisor fa-stack-1x"></i>
                                 </a>
                             </span>
-                            <span class="fa-stack">
-                                <a href="#your-link">
-                                    <span class="hexagon"></span>
-                                    <i class="fab fa-linkedin-in fa-stack-1x"></i>
-                                </a>
-                            </span>
-                            <span class="fa-stack">
-                                <a href="#your-link">
-                                    <span class="hexagon"></span>
-                                    <i class="fab fa-behance fa-stack-1x"></i>
-                                </a>
-                            </span> -->
                         </div> <!-- end of text-container -->
                     </div> <!-- end of col -->
                     <div class="col-lg-6">
