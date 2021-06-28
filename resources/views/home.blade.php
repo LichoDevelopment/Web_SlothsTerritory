@@ -999,19 +999,19 @@
                             <h3>Follow Sloth's Territory</h3>
 
                             <span class="fa-stack">
-                                <a href="#your-link">
+                            <a href="https://www.facebook.com/Sloths.Territory.2018" target="_blank">
                                     <span class="hexagon"></span>
                                     <i class="fab fa-facebook-f fa-stack-1x"></i>
                                 </a>
                             </span>
                             <span class="fa-stack">
-                                <a href="#your-link">
+                            <a href="https://www.instagram.com/slothsterritory/" target="_blank">
                                     <span class="hexagon"></span>
                                     <i class="fab fa-instagram fa-stack-1x"></i>
                                 </a>
                             </span>
                             <span class="fa-stack">
-                                <a href="#your-link">
+                                <a href="https://www.youtube.com/channel/UCKqtM7YiCFUtcYs5j8B5hgw" target="_blank">
                                     <span class="hexagon"></span>
                                     <i class="fab fa-youtube fa-stack-1x"></i>
                                 </a>
