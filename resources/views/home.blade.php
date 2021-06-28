@@ -993,8 +993,8 @@
                             <p>Información de contacto</p>
                             <ul class="list-unstyled li-space-lg">
                                 <li class="address"><i class="fas fa-map-marker-alt"></i>4 km de La Fortuna hacia el Este, 400 mts entrada de lastre a la derecha, 200 mts Este Fortuna, Alajuela Provinces, Costa Rica</li>
-                                <li><i class="fas fa-phone"></i><a href="https://wa.me/message/UAO3TORZITGBE1">+506 8561 0404</a></li>
-                                <li><i class="fas fa-envelope"></i><a href="mailto:sloths.territory@gmail.com">sloths.territory@gmail.com</a></li>
+                                <li><i class="fas fa-phone"></i><a href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">+506 8561 0404</a></li>
+                                <li><i class="fas fa-envelope"></i><a href="mailto:sloths.territory@gmail.com" target="_blank">sloths.territory@gmail.com</a></li>
                             </ul>
                             <h3>Follow Sloth's Territory</h3>
 
