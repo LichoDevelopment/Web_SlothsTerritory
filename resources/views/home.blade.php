@@ -473,82 +473,8 @@
         <!-- end of testimonials -->
 
 
-        <!-- REVISAR: CREO QUE PODRÏAMOS QUITAR ESTA PARTE PORQUE YA ESTÄ LA SECCIÖN DE CONTACT. -->
-        <!-- Call Me -->
-        <div id="callMe" class="form-1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="text-container">
-                            <div class="section-title">Contactame</div>
-                            <h2 class="white">Pueden contactarnos en ...</h2>
-                            <p class="white"></p>
-                            <ul class="list-unstyled li-space-lg white">
-                                <li class="media">
-                                    <i class="fas fa-square"></i>
-                                    <div class="media-body">Infor del lugar</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-square"></i>
-                                    <div class="media-body">Info del lugar</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-square"></i>
-                                    <div class="media-body">Info del lugar</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div> <!-- end of col -->
-                    <div class="col-lg-6">
-
-                        <!-- Call Me Form -->
-                        <form id="callMeForm" data-toggle="validator" data-focus="false">
-                            <div class="form-group">
-                                <input type="text" class="form-control-input" id="lname" name="lname" required>
-                                <label class="label-control" for="lname">Name</label>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control-input" id="lphone" name="lphone" required>
-                                <label class="label-control" for="lphone">Phone</label>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control-input" id="lemail" name="lemail" required>
-                                <label class="label-control" for="lemail">Email</label>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group">
-                                <select class="form-control-select" id="lselect" required>
-                                    <option class="select-option" value="" disabled selected>Interesados en ...</option>
-                                    <option class="select-option" value="Off The Ground">tour 1</option>
-                                    <option class="select-option" value="Accelerated Growth">tour 2</option>
-                                    <option class="select-option" value="Market Domination">tour 3</option>
-                                </select>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group checkbox white">
-                                <input type="checkbox" id="lterms" value="Agreed-to-Terms" name="lterms" required>I agree sloth territy  <a class="white" href="privacy-policy.html">Privacy Policy</a> and <a class="white" href="terms-conditions.html">Terms & Conditions</a>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="form-control-submit-button">Contactar</button>
-                            </div>
-                            <div class="form-message">
-                                <div id="lmsgSubmit" class="h3 text-center hidden"></div>
-                            </div>
-                        </form>
-                        <!-- end of call me form -->
-
-                    </div> <!-- end of col -->
-                </div> <!-- end of row -->
-            </div> <!-- end of container -->
-        </div> <!-- end of form-1 -->
-        <!-- end of call me -->
-
-
-        <!-- Projects -->
-        <div id="projects" class="filter">
+        <!-- Tours -->
+        <div id="tours" class="filter">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -568,28 +494,28 @@
                         </div> <!-- end of button group -->
                         <div class="grid">
                             <div class="element-item development">
-                                <a class="popup-with-move-anim" href="#project-1"><div class="element-item-overlay"><span>El Pepe</span></div><img src="images/project-1.jpg" alt="alternative"></a>
+                                <a class="popup-with-move-anim" href="#tour-1"><div class="element-item-overlay"><span>El Pepe</span></div><img src="images/project-1.jpg" alt="alternative"></a>
                             </div>
                             <div class="element-item development">
-                                <a class="popup-with-move-anim" href="#project-2"><div class="element-item-overlay"><span>Juanito</span></div><img src="images/project-2.jpg" alt="alternative"></a>
+                                <a class="popup-with-move-anim" href="#tour-2"><div class="element-item-overlay"><span>Juanito</span></div><img src="images/project-2.jpg" alt="alternative"></a>
                             </div>
                             <div class="element-item design development marketing">
-                                <a class="popup-with-move-anim" href="#project-3"><div class="element-item-overlay"><span>Juanita</span></div><img src="images/project-3.jpg" alt="alternative"></a>
+                                <a class="popup-with-move-anim" href="#tour-3"><div class="element-item-overlay"><span>Juanita</span></div><img src="images/project-3.jpg" alt="alternative"></a>
                             </div>
                             <div class="element-item design development marketing">
-                                <a class="popup-with-move-anim" href="#project-4"><div class="element-item-overlay"><span>No se</span></div><img src="images/project-4.jpg" alt="alternative"></a>
+                                <a class="popup-with-move-anim" href="#tour-4"><div class="element-item-overlay"><span>No se</span></div><img src="images/project-4.jpg" alt="alternative"></a>
                             </div>
                             <div class="element-item design development marketing seo">
-                                <a class="popup-with-move-anim" href="#project-5"><div class="element-item-overlay"><span>Joy el perezoso </span></div><img src="images/project-5.jpg" alt="alternative"></a>
+                                <a class="popup-with-move-anim" href="#tour-5"><div class="element-item-overlay"><span>Joy el perezoso </span></div><img src="images/project-5.jpg" alt="alternative"></a>
                             </div>
                             <div class="element-item design marketing seo">
-                                <a class="popup-with-move-anim" href="#project-6"><div class="element-item-overlay"><span>Juancho</span></div><img src="images/project-6.jpg" alt="alternative"></a>
+                                <a class="popup-with-move-anim" href="#tour-6"><div class="element-item-overlay"><span>Juancho</span></div><img src="images/project-6.jpg" alt="alternative"></a>
                             </div>
                             <div class="element-item design marketing">
-                                <a class="popup-with-move-anim" href="#project-7"><div class="element-item-overlay"><span>Oscar jaja</span></div><img src="images/project-7.jpg" alt="alternative"></a>
+                                <a class="popup-with-move-anim" href="#tour-7"><div class="element-item-overlay"><span>Oscar jaja</span></div><img src="images/project-7.jpg" alt="alternative"></a>
                             </div>
                             <div class="element-item design marketing">
-                                <a class="popup-with-move-anim" href="#project-8"><div class="element-item-overlay"><span>Armadillo creo</span></div><img src="images/project-8.jpg" alt="alternative"></a>
+                                <a class="popup-with-move-anim" href="#tour-8"><div class="element-item-overlay"><span>Armadillo creo</span></div><img src="images/project-8.jpg" alt="alternative"></a>
                             </div>
                         </div> <!-- end of grid -->
                         <!-- end of filter -->
@@ -598,12 +524,12 @@
                 </div> <!-- end of row -->
             </div> <!-- end of container -->
         </div> <!-- end of filter -->
-        <!-- end of projects -->
+        <!-- end of tours -->
 
 
-        <!-- Project Lightboxes -->
+        <!-- tour Lightboxes -->
         <!-- Lightbox -->
-        <div id="project-1" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div id="tour-1" class="lightbox-basic zoom-anim-dialog mfp-hide">
             <div class="row">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="col-lg-8">
@@ -619,14 +545,14 @@
                         <p class="testimonial-text">Parrafo sobre comentario de algo.</p>
                         <p class="testimonial-author">Tipo de animal o no se...</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS (redirecciona a otra página)</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS (redirecciona a otra página)</a> <a class="btn-outline-reg mfp-close as-button" href="#tours">BACK</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
         <!-- end of lightbox -->
 
         <!-- Lightbox -->
-        <div id="project-2" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div id="tour-2" class="lightbox-basic zoom-anim-dialog mfp-hide">
             <div class="row">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="col-lg-8">
@@ -642,14 +568,14 @@
                         <p class="testimonial-text">Parrafo </p>
                         <p class="testimonial-author">Tipo</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#tours">BACK</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
         <!-- end of lightbox -->
 
         <!-- Lightbox -->
-        <div id="project-3" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div id="tour-3" class="lightbox-basic zoom-anim-dialog mfp-hide">
             <div class="row">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="col-lg-8">
@@ -665,14 +591,14 @@
                         <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#tours">BACK</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
         <!-- end of lightbox -->
 
         <!-- Lightbox -->
-        <div id="project-4" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div id="tour-4" class="lightbox-basic zoom-anim-dialog mfp-hide">
             <div class="row">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="col-lg-8">
@@ -688,14 +614,14 @@
                         <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#tours">BACK</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
         <!-- end of lightbox -->
 
         <!-- Lightbox -->
-        <div id="project-5" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div id="tour-5" class="lightbox-basic zoom-anim-dialog mfp-hide">
             <div class="row">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="col-lg-8">
@@ -711,14 +637,14 @@
                         <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#tours">BACK</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
         <!-- end of lightbox -->
 
         <!-- Lightbox -->
-        <div id="project-6" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div id="tour-6" class="lightbox-basic zoom-anim-dialog mfp-hide">
             <div class="row">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="col-lg-8">
@@ -734,14 +660,14 @@
                         <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#tours">BACK</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
         <!-- end of lightbox -->
 
         <!-- Lightbox -->
-        <div id="project-7" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div id="tour-7" class="lightbox-basic zoom-anim-dialog mfp-hide">
             <div class="row">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="col-lg-8">
@@ -757,14 +683,14 @@
                         <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#tours">BACK</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
         <!-- end of lightbox -->
 
         <!-- Lightbox -->
-        <div id="project-8" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div id="tour-8" class="lightbox-basic zoom-anim-dialog mfp-hide">
             <div class="row justify-content-center">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="col-lg-10">
@@ -780,7 +706,7 @@
                         <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#tours">BACK</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -884,7 +810,7 @@
         </div> <!-- end of lightbox-basic -->
         <!-- end of lightbox -->
 
-        <!-- end of project lightboxes -->
+        <!-- end of tour lightboxes -->
 
 
         <!-- Team -->
@@ -1063,13 +989,12 @@
                     <div class="col-lg-6">
                         <div class="text-container">
                             <div class="section-title">CONTACT</div>
-                            <h2>Información de Sloth's Territory</h2>
-                            <p>Puede llamar o contactar con ...</p>
+                            <h2>Sloth's Territory La Fortuna de San Carlos</h2>
+                            <p>Información de contacto</p>
                             <ul class="list-unstyled li-space-lg">
-                                <li class="address"><i class="fas fa-map-marker-alt"></i>La fortuna, San CArlos, Costa Rica....</li>
-                                <li><i class="fas fa-phone"></i><a href="tel:003024630820">+506 8888 8888</a></li>
-                                <li><i class="fas fa-phone"></i><a href="tel:003024630820">+506 88 88 88 88 </a></li>
-                                <li><i class="fas fa-envelope"></i><a href="mailto:office@aria.com">correo@gmail.com</a></li>
+                                <li class="address"><i class="fas fa-map-marker-alt"></i>4 km de La Fortuna hacia el Este, 400 mts entrada de lastre a la derecha, 200 mts Este Fortuna, Alajuela Provinces, Costa Rica</li>
+                                <li><i class="fas fa-phone"></i><a href="https://wa.me/message/UAO3TORZITGBE1">+506 8561 0404</a></li>
+                                <li><i class="fas fa-envelope"></i><a href="mailto:sloths.territory@gmail.com">sloths.territory@gmail.com</a></li>
                             </ul>
                             <h3>Follow Sloth Territory</h3>
 
