@@ -67,13 +67,16 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#header">HOME</a>
+                    <a class="nav-link page-scroll" href="{{ route('home') }}">HOME <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#intro">INTRO</a>
+                    <a class="nav-link page-scroll" href="#header">INTRO</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#services">SERVICES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#callMe">CONTACTAME</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#projects">ESPECIES</a>
