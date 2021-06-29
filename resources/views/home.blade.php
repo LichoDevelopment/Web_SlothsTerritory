@@ -2,7 +2,7 @@
 
 @section('content')
         <!-- Header -->
-        <!-- <header id="header" class="header"> --> -->
+        <!-- <header id="header" class="header"> --> 
             <!-- <div class="header-content"> -->
                 <!-- <div class="container"> -->
                     <!-- <div class="row"> -->
