@@ -2478,7 +2478,7 @@ a:hover.back-to-top {
 	margin-bottom: 1.25rem;
 }
 
-.slider-Slider .info {
+.slider-content .info {
 	text-align: right;
 	position: absolute;
 	z-index: 10;
@@ -2492,7 +2492,7 @@ a:hover.back-to-top {
 	display: inline-block;
   }
   
-  .slider-Slider .info h1 {
+  .slider-content .info h1 {
 	margin-top: 0px;
 	margin-bottom: 15px;
 	font-size: 48px;
@@ -2500,16 +2500,16 @@ a:hover.back-to-top {
 	font-weight: 700;
   }
   
-  .slider-Slider .info p {
+  .slider-content .info p {
 	font-size: 15px;
 	color: #fff;
   }
   
-  .slider-Slider .info .white-button {
+  .slider-content .info .white-button {
 	margin-top: 30px;
   }
   
-  .slider-Slider .info .white-button a:focus {
+  .slider-content .info .white-button a:focus {
 	outline: none;
   }
 
