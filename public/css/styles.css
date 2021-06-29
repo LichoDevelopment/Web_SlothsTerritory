@@ -747,6 +747,7 @@ input[type='checkbox'] {
 	background-size: auto; */
 	height:100%;
 	width: 100%;
+	transform: inherit !important;
 
     /* overflow: hidden; */
 }
