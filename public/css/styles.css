@@ -2492,7 +2492,9 @@ a:hover.back-to-top {
 .sliderContenedor{
     position: relative;
     display: inline-block;
-    text-align: center;
+    text-justify: center;
+	background-color: #13aa87;
+	
 }
 
 .sliderCentrado{
