@@ -799,9 +799,9 @@ input[type='checkbox'] {
     list-style: none;
 }
 
-.header img {
+/* .header img {
     width: 100%;
-}
+} */
 
 @keyframes cambio {
     0% { margin-left: 0;}
