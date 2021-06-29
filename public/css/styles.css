@@ -2463,17 +2463,17 @@ a:hover.back-to-top {
 	margin-bottom: 3rem;
 }
 
-.slider2 h1 {
+.sliderCentrado h1 {
 	margin-bottom: 0.5rem;
 	color: #fff;
 }
 
-.slider2 .p-large {
+.sliderCentrado .p-large {
 	margin-bottom: 2rem;
 	color: #dfe5ec;
 }
 
-.slider2 .btn-solid-lg {
+.sliderCentrado .btn-solid-lg {
 	margin-right: 0.5rem;
 	margin-bottom: 1.25rem;
 }
@@ -2482,17 +2482,13 @@ a:hover.back-to-top {
     display: inline-block;
     text-align: center;
 }
-.sliderTexto-encima{
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
+
 .sliderCentrado{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-	background-color: white;
+	
 }
 
 @keyframes cambio {
