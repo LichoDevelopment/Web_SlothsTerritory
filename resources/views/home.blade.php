@@ -4,7 +4,7 @@
         <!-- Header -->
         <header id="header" class="slider">
             <div class="slider-content">
-                <div class="container">
+                <!-- <div class="container"> -->
                     <div class="slider">
                         <ul>
                             <li>
@@ -31,7 +31,7 @@
                             </div>
                         </div> <!-- end of col -->
                     </div> <!-- end of row -->
-                </div> <!-- end of container -->
+                <!-- </div> end of container -->
             </div> <!-- end of header-content -->
         </header> <!-- end of header -->
         <!-- end of header -->

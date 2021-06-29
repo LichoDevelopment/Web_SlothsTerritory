@@ -2453,6 +2453,66 @@ a:hover.back-to-top {
     width: 100%;
 }
 
+.slider .slider-content {
+	padding-top: 8rem;
+	padding-bottom: 2.125rem;
+	text-align: center;
+}
+
+.slider .text-container {
+	margin-bottom: 3rem;
+}
+
+.slider h1 {
+	margin-bottom: 0.5rem;
+	color: #fff;
+}
+
+.slider .p-large {
+	margin-bottom: 2rem;
+	color: #dfe5ec;
+}
+
+.slider .btn-solid-lg {
+	margin-right: 0.5rem;
+	margin-bottom: 1.25rem;
+}
+
+.slider-Slider .info {
+	text-align: right;
+	position: absolute;
+	z-index: 10;
+	top: 50%;
+	right: 60px;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	display: inline-block;
+  }
+  
+  .slider-Slider .info h1 {
+	margin-top: 0px;
+	margin-bottom: 15px;
+	font-size: 48px;
+	color: #fff;
+	font-weight: 700;
+  }
+  
+  .slider-Slider .info p {
+	font-size: 15px;
+	color: #fff;
+  }
+  
+  .slider-Slider .info .white-button {
+	margin-top: 30px;
+  }
+  
+  .slider-Slider .info .white-button a:focus {
+	outline: none;
+  }
+
 @keyframes cambio {
     0% { margin-left: 0;}
     20% { margin-left: 0;}
@@ -2466,3 +2526,4 @@ a:hover.back-to-top {
     75% { margin-left: -300%;}
     100% { margin-left: -300%;}
 }
+
