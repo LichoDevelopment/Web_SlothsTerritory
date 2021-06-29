@@ -7,10 +7,10 @@
                 <div class="container">
                     <div class="slider">
                         <ul>
-                            <li><img src="img/1.jpg" alt=""></li>
-                            <li><img src="img/2.jpg" alt=""></li>
-                            <li><img src="img/3.jpg" alt=""></li>
-                            <li><img src="img/4.jpg" alt=""></li>
+                            <li><img src="images/about.jpg" alt=""></li>
+                            <li><img src="images/header-background.jpg" alt=""></li>
+                            <li><img src="images/project-3.jpg" alt=""></li>
+                            <li><img src="images/services-2.jpg" alt=""></li>
                         </ul>
                     </div>
                     <div class="row">
