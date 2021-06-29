@@ -760,7 +760,7 @@ input[type='checkbox'] {
 }
 
 .header .text-container {
-	margin-bottom: 3rem;
+	/* margin-bottom: 3rem; */
 	width: auto;
 	height: auto;
 }
