@@ -4,23 +4,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <meta name="keywords" content="sloth tour arenal, arenal sloth tour, sloth territory la fortuna, sloth watching arenal, sloth watching costa rica, sloth costa rica, sloth trail arenal, sloth tour arenal, sloth tour la fortuna, sloth sanctuary la fortuna , sloth costa rica, sloth walking, Sloth Walking High, sloth watching trail, sloth walk, sloth walk arenal, sloth walking arenal, sloth park arenal, sloth park la fortuna, sloth watching near arenal">
+    <meta name="keywords" content="sloth tour arenal, arenal sloth tour, sloths territory la fortuna, sloth watching arenal, sloth watching costa rica, sloth costa rica, sloth trail arenal, sloth tour arenal, sloth tour la fortuna, sloth sanctuary la fortuna , sloth costa rica, sloth walking, Sloth Walking High, sloth watching trail, sloth walk, sloth walk arenal, sloth walking arenal, sloth park arenal, sloth park la fortuna, sloth watching near arenal">
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="The best sloths tours in la fortuna de San Carlos">
     <meta name="author" content="LichoDevelopment">
 
     <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
-	<meta property="og:site_name" content="Sloth's territory" /> <!-- website name -->
+	<meta property="og:site_name" content="Sloths territory" /> <!-- website name -->
 	<meta property="og:site" content="" /> <!-- website link -->
-	<meta property="og:title" content="Sloth's territory | the best place to see sloths in la fortuna"/> <!-- title shown in the actual shared post -->
-	<meta property="og:description" content="Sloth territory is a wonderful place to enjoy and see sloths in their habitad" /> <!-- description shown in the actual shared post -->
+	<meta property="og:title" content="Sloths territory | the best place to see sloths in la fortuna"/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="Sloths territory is a wonderful place to enjoy and see sloths in their habitad" /> <!-- description shown in the actual shared post -->
 	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
 	<meta property="og:url" content="https://www.sloths-territory.com" /> <!-- where do you want your post to link to -->
 	<meta property="og:type" content="website" />
 
     <!-- Website Title -->
-    <title>Sloth Territory</title>
+    <title>Sloths Territory</title>
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
