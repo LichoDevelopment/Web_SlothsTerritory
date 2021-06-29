@@ -2430,7 +2430,7 @@ a:hover.back-to-top {
 /****************************/
 
 .slider2 {
-    width: 100%;
+    width: 95%;
     margin: auto;
     overflow: hidden;
 }
@@ -2438,7 +2438,7 @@ a:hover.back-to-top {
 .slider2 ul {
     display: flex;
     padding: 0;
-    width: 450%;
+    width: 40%;
 
     animation: cambio 23s infinite alternate linear; 
     
