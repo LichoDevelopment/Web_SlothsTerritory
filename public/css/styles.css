@@ -2440,7 +2440,7 @@ a:hover.back-to-top {
     padding: 0;
     width: 400%;
 
-    animation: cambio 20s infinite alternate linear; 
+    animation: cambio 13s infinite alternate linear; 
     
 }
 
@@ -2466,16 +2466,28 @@ a:hover.back-to-top {
 .sliderCentrado h1 {
 	margin-bottom: 0.5rem;
 	color: #fff;
+	font-size: calc(1em + 1vw);
+	line-height: 1em;
+	padding: 1em;
+	margin: 1em;
 }
 
 .sliderCentrado .p-large {
 	margin-bottom: 2rem;
 	color: #dfe5ec;
+	font-size: calc(1em + 1vw);
+	line-height: 1em;
+	padding: 1em;
+	margin: 1em;
 }
 
 .sliderCentrado .btn-solid-lg {
 	margin-right: 0.5rem;
 	margin-bottom: 1.25rem;
+	font-size: calc(1em + 1vw);
+	line-height: 1em;
+	padding: 1em;
+	margin: 1em;
 }
 .sliderContenedor{
     position: relative;
