@@ -764,8 +764,10 @@ input[type='checkbox'] {
 }
 
 .header h1 {
-	margin-bottom: 0.5rem;
+	/* margin-bottom: 0.5rem; */
 	color: #fff;
+	width: auto;
+	height: auto;
 }
 
 .header .p-large {
