@@ -2,79 +2,23 @@
 
 @section('content')
         <!-- Header -->
-        <!-- <header id="header" class="header"> --> 
-            <!-- <div class="header-content"> -->
-                <!-- <div class="container"> -->
-                    <!-- <div class="row"> -->
-                        <!-- <div class="col-lg-12"> -->
-                            <!-- <div class="text-container"> -->
+        <header id="header" class="header">
+            <div class="header-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="text-container">
                                 <!-- <h1>El mejor tour de Perezosos <span id="js-rotating">en la Fortuna de San Carlos, Quizá algo más ..</span></h1> -->
-                                <!-- <h1>El mejor tour de perezosos en La Fortuna de San Carlos (tratar de mencionar Volcán Arenal)</h1> -->
-                                <!-- <p class="p-heading p-large"> En Sloth's Territory podrás observar perezosos de 2 y 3 dedos, además gran variedad de aves y anfibios.<div class=""></div></p> -->
-                                <!-- <a class="btn-solid-lg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">RESERVAR AHORA</a> -->
-                            <!-- </div> -->
-                        <!-- </div> end of col -->
-                    <!-- </div> end of row -->
-                <!-- </div> end of container -->
-            <!-- </div> end of header-content -->
-        <!-- </header> end of header -->
-        <!-- end of header -->
-
-        <!-- <header id="header" class="slider"> -->
-      
-            <div class="slider">
-                <div class="Modern-Slider content-section" id="top">
-                    <!-- Item -->
-                    <div class="item item-1">
-                        <div class="img-fill">
-                            <div class="image"></div>
-                            <div class="info">
-                                <div>
-                                <h1>El El mejor tour de perezosos en La Fortuna de San Carlos (tratar de mencionar Volcán Arenal)</h1>
+                                <h1>El mejor tour de perezosos en La Fortuna de San Carlos (tratar de mencionar Volcán Arenal)</h1>
                                 <p class="p-heading p-large"> En Sloth's Territory podrás observar perezosos de 2 y 3 dedos, además gran variedad de aves y anfibios.<div class=""></div></p>
-                                    <a class="btn-solid-lg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">RESERVAR AHORA</a>
-                                </div>
+                                <a class="btn-solid-lg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">RESERVAR AHORA</a>
                             </div>
-                        </div>
-                    </div>
-                    <!-- // Item -->
-                    <!-- Item -->
-                    <div class="item item-2">
-                        <div class="img-fill">
-                            <div class="image"></div>
-                        </div>
-                    </div>
-                    <!-- // Item -->
-                    <!-- Item -->
-                    <div class="item item-3">
-                        <div class="img-fill">
-                            <div class="image"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- // Item -->
-                </div>
-            </div>
- 
+                        </div> <!-- end of col -->
+                    </div> <!-- end of row -->
+                </div> <!-- end of container -->
+            </div> <!-- end of header-content -->
+        </header> <!-- end of header -->
         <!-- end of header -->
-
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         <!-- Intro -->
