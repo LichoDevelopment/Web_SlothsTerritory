@@ -6,7 +6,7 @@
             <ul>
                 <li>
                     <img src="images/project-3.jpg" alt="">
-                    <div class="header-content">
+                    <div class="slider2-content">
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-12">
@@ -19,7 +19,7 @@
                                 </div> <!-- end of col -->
                             </div> <!-- end of row -->
                         </div> <!-- end of container -->
-            </div> <!-- end of header-content -->
+                    </div> <!-- end of header-content -->
                 </li>
                 <li><img src="img/project-2.jpg" alt=""></li>
                 <li><img src="img/header-background.jpg" alt=""></li>
