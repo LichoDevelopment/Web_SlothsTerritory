@@ -2477,6 +2477,22 @@ a:hover.back-to-top {
 	margin-right: 0.5rem;
 	margin-bottom: 1.25rem;
 }
+.sliderContenedor{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+.sliderTexto-encima{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.sliderCentrado{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 @keyframes cambio {
     0% { margin-left: 0;}

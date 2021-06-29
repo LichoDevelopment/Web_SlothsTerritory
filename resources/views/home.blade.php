@@ -4,10 +4,21 @@
 
 <div class="slider2">
             <ul>
-                <li><img src="images/project-1.jpg" alt=""></li>
-                <li><img src="img/project-2.jpg" alt=""></li>
-                <li><img src="img/project-3.jpg" alt=""></li>
-                <li><img src="img/project-4.jpg" alt=""></li>
+                <li>
+                <div class="sliderContenedor">
+                    <img src="images/project-1.jpg" alt="">
+                        <div class="sliderTexto-encima">
+                            Texto
+                        </div>
+                    <div class="sliderCentrado">
+                        Centrado
+                    </div>
+                </div>
+                   
+                </li>
+                <li><img src="images/project-2.jpg" alt=""></li>
+                <li><img src="images/project-3.jpg" alt=""></li>
+                <li><img src="images/project-4.jpg" alt=""></li>
             </ul>
         </div>
 
