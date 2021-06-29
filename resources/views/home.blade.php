@@ -6,7 +6,7 @@
         <header id="header" class="header">
         <ul>
                 <li>
-                    <img src="img/project-3.jpg" alt="">
+                    <img src="images/project-3.jpg" alt="">
                     <div class="header-content">
                         <div class="container">
                             <div class="row">
