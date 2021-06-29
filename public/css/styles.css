@@ -2440,12 +2440,13 @@ a:hover.back-to-top {
     padding: 0;
     width: 400%;
 
-    animation: cambio 113s infinite alternate linear; 
+    animation: cambio 23s infinite alternate linear; 
     
 }
 
 .slider2 li {
     width: 100%;
+	height: 90%;
     list-style: none;
 }
 
