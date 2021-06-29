@@ -659,7 +659,7 @@ input[type='checkbox'] {
 .navbar-custom .dropdown:hover > .dropdown-menu {
 	display: block; /* this makes the dropdown menu stay open while hovering it */
 	min-width: auto;
-	animation:none; /* required for the fade animation */
+	animation: fadeDropdown 0.2s; /* required for the fade animation */
 }
 
 @keyframes fadeDropdown {
