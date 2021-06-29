@@ -2429,171 +2429,54 @@ a:hover.back-to-top {
 /*     SLIDER.      */
 /****************************/
 
-.slider {
-    width: 100%;
+.slider2 {
+    width: 95%;
     margin: auto;
     overflow: hidden;
 }
 
-.slider ul {
+.slider2 ul {
     display: flex;
     padding: 0;
     width: 400%;
 
-    animation: cambio 15s infinite alternate linear; 
+    animation: cambio 20s infinite alternate linear; 
     
 }
 
-.slider li {
+.slider2 li {
     width: 100%;
     list-style: none;
 }
 
-.slider img {
+.slider2 img {
     width: 100%;
 }
 
-
-
-.slider .content-section {
-	padding-top: 0px;
-	min-width: 100%;
-	min-height: 100vh;
-	width: 100%;
-	height: 100vh;
+.slider2 .slider2-content {
+	padding-top: 8rem;
+	padding-bottom: 2.125rem;
 	text-align: center;
-  }
-  
-  .slider p a {
-	  color: #FFF;
-  }
-  .slider p a:hover {
-	  color: #FF0;
-	  text-decoration: none;
-  }
-  
-  .Modern-Slider .info {
-	text-align: right;
-	position: absolute;
-	z-index: 10;
-	top: 50%;
-	right: 60px;
-	-webkit-transform: translateY(-50%);
-	-moz-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	-o-transform: translateY(-50%);
-	transform: translateY(-50%);
-	display: inline-block;
-  }
-  
-  .Modern-Slider .info h1 {
-	margin-top: 0px;
-	margin-bottom: 15px;
-	font-size: 48px;
+}
+
+.slider2 .text-container {
+	margin-bottom: 3rem;
+}
+
+.slider2 h1 {
+	margin-bottom: 0.5rem;
 	color: #fff;
-	font-weight: 700;
-  }
-  
-  .Modern-Slider .info p {
-	font-size: 15px;
-	color: #fff;
-  }
-  
-  .Modern-Slider .info .white-button {
-	margin-top: 30px;
-  }
-  
-  .Modern-Slider .info .white-button a:focus {
-	outline: none;
-  }
-  
-  .Modern-Slider .slick-dots {
-	opacity: 0;
-  }
-  
-  .Modern-Slider .NextArrow{
-	outline: none;
-	display: none;
-	position:absolute;
-	top:60px;
-	right:60px;
-	width:50px;
-	height:50px;
-	background:rgba(0,0,0,.50);
-	border:0 none;
-	margin-top:-22.5px;
-	text-align:center;
-	font:32px/50px FontAwesome;
-	color:#FFF;
-	z-index:5;
-  }
-  
-  .Modern-Slider .NextArrow:before{content:'\f105';}
-  
-  .Modern-Slider .PrevArrow{
-	outline: none;
-	position:absolute;
-	top:60px;
-	right: 120px;
-	width:50px;
-	height:50px;
-	background:rgba(0,0,0,.50);
-	border:0 none;
-	margin-top:-22.5px;
-	text-align:center;
-	font:32px/50px FontAwesome;
-	color:#FFF;
-	z-index:5;
-  }
-  
-  .Modern-Slider .item .image {
-	width: 100%;
-	height: 100vh;
-	background-position: center center;
-	background-size: cover;
-	display: block;
-  }
-  
-  .Modern-Slider .item-1 .image {
-	background-image: url(../img/slide_1.jpg);
-  }
-  
-  .Modern-Slider .item-2 .image {
-	background-image: url(../img/slide_2.jpg);
-  }
-  
-  .Modern-Slider .item-3 .image {
-	background-image: url(../img/slide_3.jpg);
-  }
-  
-  .Modern-Slider .PrevArrow:before{content:'\f104';}
-  
-  .Modern-Slider .item .image {
-	animation: zoomin 12s ease-in-out infinite alternate;
-	-webkit-animation: zoomin 12s ease-in-out infinite alternate;
-  }
-  
-  @keyframes zoomin {
-	  0% {-webkit-transform: scale(1);}
-	  100% {-webkit-transform: scale(1.2);}
-  }
-  
-  .Modern-Slider {background:transparent;}
-  
-  /* ==== Slick Slider Css Ruls === */
-  .slick-slider{position:relative;display:block;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-touch-callout:none;-khtml-user-select:none;-ms-touch-action:pan-y;touch-action:pan-y;-webkit-tap-highlight-color:transparent}
-  .slick-list{position:relative;display:block;overflow:hidden;margin:0;padding:0}
-  .slick-list:focus{outline:none}.slick-list.dragging{cursor:hand}
-  .slick-slider .slick-track,.slick-slider .slick-list{-webkit-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
-  .slick-track{position:relative;top:0;left:0;display:block}
-  .slick-track:before,.slick-track:after{display:table;content:''}.slick-track:after{clear:both}
-  .slick-loading .slick-track{visibility:hidden}
-  .slick-slide{display:none;float:left /* If RTL Make This Right */ ;height:100%;min-height:1px}
-  .slick-slide.dragging img{pointer-events:none}
-  .slick-initialized .slick-slide{display:block}
-  .slick-loading .slick-slide{visibility:hidden}
-  .slick-vertical .slick-slide{display:block;height:auto;border:1px solid transparent}
-  
+}
+
+.slider2 .p-large {
+	margin-bottom: 2rem;
+	color: #dfe5ec;
+}
+
+.slider2 .btn-solid-lg {
+	margin-right: 0.5rem;
+	margin-bottom: 1.25rem;
+}
 
 @keyframes cambio {
     0% { margin-left: 0;}
