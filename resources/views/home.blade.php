@@ -1,33 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-        <!-- Header -->
-        <header id="header" class="slider2">
+
+<div class="slider">
             <ul>
-                <li>
-                    <img src="images/project-3.jpg" alt="">
-                    <div class="slider2-content">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="text-container">
-                                        <!-- <h1>El mejor tour de Perezosos <span id="js-rotating">en la Fortuna de San Carlos, Quizá algo más ..</span></h1> -->
-                                        <h1>El mejor tour de perezosos en La Fortuna de San Carlos (tratar de mencionar Volcán Arenal)</h1>
-                                        <p class="p-heading p-large"> En Sloth's Territory podrás observar perezosos de 2 y 3 dedos, además gran variedad de aves y anfibios.<div class=""></div></p>
-                                        <a class="btn-solid-lg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">RESERVAR AHORA</a>
-                                    </div>
-                                </div> <!-- end of col -->
-                            </div> <!-- end of row -->
-                        </div> <!-- end of container -->
-                    </div> <!-- end of header-content -->
-                </li>
+                <li><img src="images/project-1.jpg" alt=""></li>
                 <li><img src="img/project-2.jpg" alt=""></li>
-                <li><img src="img/header-background.jpg" alt=""></li>
-                <li><img src="img/header-background.jpg" alt=""></li>
+                <li><img src="img/project-3.jpg" alt=""></li>
+                <li><img src="img/project-4.jpg" alt=""></li>
             </ul>
-            
-        </header> <!-- end of header -->
-        <!-- end of header -->
+        </div>
+
+
 
 
         <!-- Intro -->
