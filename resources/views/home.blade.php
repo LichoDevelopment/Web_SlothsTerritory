@@ -4,12 +4,13 @@
 
         <!-- Header -->
         <header id="header" class="header">
-        <ul>
-                <li>
-                    <img src="images/project-3.jpg" alt="">
-                    <div class="header-content">
-                        <div class="container">
-                            <div class="row">
+
+            <div class="header-content">
+                <ul>
+                    <li>
+                        <img src="images/project-3.jpg" alt="">
+                           <div class="container">
+                              <div class="row">
                                 <div class="col-lg-12">
                                     <div class="text-container">
                                         <!-- <h1>El mejor tour de Perezosos <span id="js-rotating">en la Fortuna de San Carlos, Quizá algo más ..</span></h1> -->
@@ -20,13 +21,13 @@
                                 </div> <!-- end of col -->
                             </div> <!-- end of row -->
                         </div> <!-- end of container -->
-                    </div> <!-- end of header-content -->
+                    
                 </li>
                 <li><img src="img/project-2.jpg" alt=""></li>
                 <li><img src="img/project-3.jpg" alt=""></li>
                 <li><img src="img/project-4.jpg" alt=""></li>
         </ul>
-            
+        </div> <!-- end of header-content -->
         </header> <!-- end of header -->
         <!-- end of header -->
 
