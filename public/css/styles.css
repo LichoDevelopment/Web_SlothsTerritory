@@ -777,6 +777,20 @@ input[type='checkbox'] {
 /***********************/
 
 /* Slider Style */
+.content-section {
+	padding-top: 80px;
+	position: relative;
+	width: 100%;
+	display: inline-block;
+	height: auto;
+	left: 50%;
+	text-align: center;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
+  }
 
 .slider .content-section {
 	padding-top: 0px;
@@ -878,15 +892,15 @@ input[type='checkbox'] {
   }
   
   .Modern-Slider .item-1 .image {
-	background-image: url(../images/header-background.jpg);
+	background-image: url('../images/header-background.jpg');
   }
   
   .Modern-Slider .item-2 .image {
-	background-image: url(../images/lugar.jpg);
+	background-image: url('../images/lugar.jpg');
   }
   
   .Modern-Slider .item-3 .image {
-	background-image: url(../images/project-3.jpg);
+	background-image: url('../images/project-3.jpg');
   }
   
   .Modern-Slider .PrevArrow:before{content:'\f104';}
