@@ -795,6 +795,7 @@ input[type='checkbox'] {
     display: flex;
     padding: 0;
     width: 400%;
+	height: 100%;
 
     animation: cambio 23s infinite alternate linear; 
     
