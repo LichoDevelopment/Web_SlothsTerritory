@@ -2430,7 +2430,7 @@ a:hover.back-to-top {
 /****************************/
 
 .slider2 {
-    width: 95%;
+    width: 100%;
     margin: auto;
     overflow: hidden;
 }
@@ -2438,9 +2438,9 @@ a:hover.back-to-top {
 .slider2 ul {
     display: flex;
     padding: 0;
-    width: 400%;
+    width: 450%;
 
-    animation: cambio 113s infinite alternate linear; 
+    animation: cambio 23s infinite alternate linear; 
     
 }
 
@@ -2497,8 +2497,8 @@ a:hover.back-to-top {
 
 .sliderCentrado{
     position: absolute;
-    /* top: 50%;
-    left: 50%; */
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
 	
 }
