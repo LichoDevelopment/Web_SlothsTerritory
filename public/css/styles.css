@@ -761,7 +761,7 @@ input[type='checkbox'] {
 
 .header .text-container {
 	/* margin-bottom: 3rem; */
-	width: auto;
+	width: 100%;
 	height: auto;
 }
 
