@@ -5,6 +5,14 @@
         <header id="header" class="slider">
             <div class="slider-content">
                 <div class="container">
+                    <div class="slider">
+                        <ul>
+                            <li><img src="img/1.jpg" alt=""></li>
+                            <li><img src="img/2.jpg" alt=""></li>
+                            <li><img src="img/3.jpg" alt=""></li>
+                            <li><img src="img/4.jpg" alt=""></li>
+                        </ul>
+                    </div>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="text-container">
