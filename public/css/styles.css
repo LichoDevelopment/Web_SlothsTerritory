@@ -2438,9 +2438,9 @@ a:hover.back-to-top {
 .slider2 ul {
     display: flex;
     padding: 0;
-    width: 40%;
+    width: 400%;
 
-    animation: cambio 23s infinite alternate linear; 
+    animation: cambio 113s infinite alternate linear; 
     
 }
 
