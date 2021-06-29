@@ -771,15 +771,15 @@ input[type='checkbox'] {
 .header h1 {
 	margin-bottom: 0.5rem;
 	color: #fff;
-	font-size: 4.9vw;
+	font-size: 5.9vw;
 	text-justify:auto;
 }
 
 .header .p-large {
 	margin-bottom: 2rem;
 	color: #dfe5ec;
-	font-size: 2vmin;
-	text-justify:distribute;
+	font-size: 4vmin;
+	text-justify:auto;
 }
 
 .header .btn-solid-lg {
