@@ -2,23 +2,24 @@
 
 @section('content')
 
-<div class="slider2">
-            <ul>
-                <li>
-                    <div class="sliderContenedor">
-                        <img src="images/services-3.jpg" alt="">
-                        <div class="sliderCentrado">
-                            <h1>El mejor tour de perezosos en La Fortuna de San Carlos (tratar de mencionar Volcán Arenal)</h1>
-                            <p class="p-sliderCentrado p-large"> En Sloth's Territory podrás observar perezosos de 2 y 3 dedos, además gran variedad de aves y anfibios.<div class=""></div></p>
-                            <a class="btn-solid-lg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">RESERVAR AHORA</a>
-                        </div>
-                    </div>
-                </li>
-                <li><img src="images/header-background.jpg" alt=""></li>
-                <li><img src="images/project-3.jpg" alt=""></li>
-                <li><img src="images/project-8.jpg" alt=""></li>
-            </ul>
-        </div>
+        <!-- Header -->
+        <header id="header" class="header">
+            <div class="header-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="text-container">
+                                <!-- <h1>El mejor tour de Perezosos <span id="js-rotating">en la Fortuna de San Carlos, Quizá algo más ..</span></h1> -->
+                                <h1>El mejor tour de perezosos en La Fortuna de San Carlos (tratar de mencionar Volcán Arenal)</h1>
+                                <p class="p-heading p-large"> En Sloth's Territory podrás observar perezosos de 2 y 3 dedos, además gran variedad de aves y anfibios.<div class=""></div></p>
+                                <a class="btn-solid-lg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">RESERVAR AHORA</a>
+                            </div>
+                        </div> <!-- end of col -->
+                    </div> <!-- end of row -->
+                </div> <!-- end of container -->
+            </div> <!-- end of header-content -->
+        </header> <!-- end of header -->
+        <!-- end of header -->
 
 
 
