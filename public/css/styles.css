@@ -780,6 +780,11 @@ input[type='checkbox'] {
 	margin-bottom: 1.25rem;
 	font-size: 2vmin;
 	size: 3.0vh;
+	font-size:0.875em;
+      display:block;
+      left:-60px;
+      margin-top:35px;
+      width:100%;
 }
 
 /* .slider2 {
