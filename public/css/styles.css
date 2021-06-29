@@ -804,7 +804,7 @@ input[type='checkbox'] {
 
 .header img {
     width: 100%;
-	height: auto;
+	height: 100%;
 }
 
 @keyframes cambio {
