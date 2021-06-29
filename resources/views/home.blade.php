@@ -3,6 +3,12 @@
 @section('content')
         <!-- Header -->
         <header id="header" class="slider2">
+            <ul>
+                <li><img src="images/project-3.jpg" alt=""></li>
+                <li><img src="img/project-2.jpg" alt=""></li>
+                <li><img src="img/header-background.jpg" alt=""></li>
+                <!-- <li><img src="img/4.jpg" alt=""></li> -->
+            </ul>
             <div class="header-content">
                 <div class="container">
                     <div class="row">
