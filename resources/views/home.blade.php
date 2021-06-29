@@ -2,8 +2,8 @@
 
 @section('content')
         <!-- Header -->
-        <header id="header" class="header">
-            <div class="header-content">
+        <header id="header" class="slider">
+            <div class="slider-content">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
