@@ -20,9 +20,9 @@
         <!-- </header> end of header -->
         <!-- end of header -->
 
-        <header id="header" class="slider">
+        <!-- <header id="header" class="slider"> -->
       
-                 <!-- <div class="slider"> -->
+            <div class="slider">
                 <div class="Modern-Slider content-section" id="top">
                     <!-- Item -->
                     <div class="item item-1">
@@ -54,7 +54,7 @@
                     </div>
                     <!-- // Item -->
                 </div>
-            </header>
+            </div>
  
         <!-- end of header -->
 
