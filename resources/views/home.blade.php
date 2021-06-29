@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="slider">
+<div class="slider2">
             <ul>
                 <li><img src="images/project-1.jpg" alt=""></li>
                 <li><img src="img/project-2.jpg" alt=""></li>
