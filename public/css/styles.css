@@ -745,6 +745,9 @@ input[type='checkbox'] {
 	/* background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)); */
     overflow: hidden;
 	background-size: cover;
+	width: 95%;
+    margin: auto;
+    /* overflow: hidden; */
 }
 
 .header .header-content {
@@ -776,7 +779,13 @@ input[type='checkbox'] {
 	margin-bottom: 1.25rem;
 }
 
-.header .slider2 ul {
+/* .slider2 {
+    width: 95%;
+    margin: auto;
+    overflow: hidden;
+} */
+
+.header ul {
     display: flex;
     padding: 0;
     width: 400%;
@@ -785,12 +794,29 @@ input[type='checkbox'] {
     
 }
 
-.header .slider2 li {
+.header li {
     width: 100%;
 	height: 85%;
     list-style: none;
 }
 
+.header img {
+    width: 100%;
+}
+
+@keyframes cambio {
+    0% { margin-left: 0;}
+    20% { margin-left: 0;}
+
+    25% { margin-left: -100%;}
+    45% { margin-left: -100%;}
+
+    50% { margin-left: -200%;}
+    70% { margin-left: -200%;}
+
+    75% { margin-left: -300%;}
+    100% { margin-left: -300%;}
+}
 
 /*********************/
 /*     05. Intro     */
