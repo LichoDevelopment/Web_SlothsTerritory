@@ -745,8 +745,7 @@ input[type='checkbox'] {
 	/* background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)); */
     overflow: hidden;
 	background-size: cover;
-	width: 95%;
-    margin: auto;
+
     /* overflow: hidden; */
 }
 
