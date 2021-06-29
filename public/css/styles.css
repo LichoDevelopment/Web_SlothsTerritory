@@ -778,7 +778,7 @@ input[type='checkbox'] {
 .header .btn-solid-lg {
 	margin-right: 0.5rem;
 	margin-bottom: 1.25rem;
-	font-size:small;
+	font-size: 2vmin;
 }
 
 /* .slider2 {
