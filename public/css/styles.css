@@ -800,7 +800,7 @@ input[type='checkbox'] {
     width: 400%;
 	height: 100%;
 	
-    animation: cambio 3s infinite alternate linear;
+    animation: cambio 9s infinite alternate linear;
     
 }
 
