@@ -23,44 +23,11 @@
                     </div> <!-- end of header-content -->
                 </li>
                 <li><img src="images/project-2.jpg" alt=""></li>
-                <div class="header-content">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="text-container">
-                                        <p class="p-heading p-large"> En Sloth's Territory podrás observar perezosos de 2 y 3 dedos, además gran variedad de aves y anfibios.<div class=""></div></p>
-                                        <a class="btn-solid-lg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">RESERVAR AHORA</a>
-                                    </div>
-                                </div> <!-- end of col -->
-                            </div> <!-- end of row -->
-                        </div> <!-- end of container -->
-                    </div> <!-- end of header-content -->
+                
                 <li><img src="images/project-3.jpg" alt=""></li>
-                <div class="header-content">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="text-container">
-                                        <p class="p-heading p-large"> En Sloth's Territory podrás observar perezosos de 2 y 3 dedos, además gran variedad de aves y anfibios.<div class=""></div></p>
-                                        <a class="btn-solid-lg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">RESERVAR AHORA</a>
-                                    </div>
-                                </div> <!-- end of col -->
-                            </div> <!-- end of row -->
-                        </div> <!-- end of container -->
-                    </div> <!-- end of header-content -->
+                
                 <li><img src="images/project-4.jpg" alt=""></li>
-                <div class="header-content">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="text-container">
-                                        <p class="p-heading p-large"> En Sloth's Territory podrás observar perezosos de 2 y 3 dedos, además gran variedad de aves y anfibios.<div class=""></div></p>
-                                        <a class="btn-solid-lg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">RESERVAR AHORA</a>
-                                    </div>
-                                </div> <!-- end of col -->
-                            </div> <!-- end of row -->
-                        </div> <!-- end of container -->
-                    </div> <!-- end of header-content -->
+               
             </ul>
 
         </header> <!-- end of header -->
