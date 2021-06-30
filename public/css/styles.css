@@ -747,7 +747,7 @@ input[type='checkbox'] {
 	background-size: auto; */
 	height:100%;
 	width: 100%;
-	
+	overflow: hidden;
 	
 
     /* overflow: hidden; */
@@ -768,6 +768,7 @@ input[type='checkbox'] {
 
 .header .text-container {
 	margin-bottom: 3rem;
+	overflow: hidden;
 }
 
 .header h1 {
