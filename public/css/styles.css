@@ -2704,10 +2704,10 @@ input[id="3"]:checked ~ .pagination .pagination-item[for="3"]{
     }
 
     66%{
-        transform: translate3d(calc(-100 * 1), 0, 0);
+        transform: translate3d(calc(-100% * 1), 0, 0);
     }
 
     100%{
-        transform: translate3d(calc(-100 * 2), 0, 0);
+        transform: translate3d(calc(-100% * 2), 0, 0);
     }
 }
