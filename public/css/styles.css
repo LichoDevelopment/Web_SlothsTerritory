@@ -804,8 +804,7 @@ input[type='checkbox'] {
     width: 400%;
 	height: 100%;
 	
-    animation: cambio 5s infinite  linear;
-	animation-direction: normal;
+    animation: cambio 3s infinite alternate linear;
     
 }
 
