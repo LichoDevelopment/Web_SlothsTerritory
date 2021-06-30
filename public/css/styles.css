@@ -801,7 +801,8 @@ input[type='checkbox'] {
 .header ul {
     display: flex;
     padding: 0;
-    width: 400%;
+	overflow-x: hidden;
+    /* width: 400%; */
 	height: 100%;
 	
     animation: cambio 5s infinite alternate linear; 
