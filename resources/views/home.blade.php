@@ -9,24 +9,24 @@
 
             <div class="slide">
                 <div class="item-slide">
-                    <imgs src="images/header-background.jpg" alt="">
+                    <img class="imgs" src="images/header-background.jpg" alt="">
                 </div>
                 <div class="item-slide" >
-                    <imgs src="images/header-background.jpg" alt="">
+                    <img class="imgs" src="images/header-background.jpg" alt="">
                 </div>
                 <div class="item-slide">
-                    <imgs src="images/header-background.jpg" alt="">
+                    <img class="imgs" src="images/header-background.jpg" alt="">
                 </div>
             </div>
             <div class="pagination">
                 <label class="pagination-item" for="1">
-                    <imgs src="images/header-background.jpg" alt="">
+                    <img src="images/header-background.jpg" alt="">
                 </label>
                 <label class="pagination-item" for="2">
-                    <imgs src="images/header-background.jpg" alt="">
+                    <img src="images/header-background.jpg" alt="">
                 </label>
                 <label class="pagination-item" for="3">
-                    <imgs src="images/header-background.jpg" alt="">
+                    <img src="images/header-background.jpg" alt="">
                 </label>
 
             </div>
