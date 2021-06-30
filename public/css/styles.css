@@ -802,7 +802,7 @@ input[type='checkbox'] {
     padding: 0;
     width: 400%;
 	height: 100%;
-	
+	overflow-x: hidden;
     animation: cambio 23s infinite alternate linear; 
     
 }
