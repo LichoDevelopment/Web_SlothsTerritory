@@ -2589,10 +2589,7 @@ a:hover.back-to-top {
     padding: 30px;
 } */
 
-img {
-    width: 100vw;
-    height: auto;
-}
+
 
 .container-all{
     position: relative;
@@ -2620,6 +2617,11 @@ img {
     flex-shrink: 0;
     flex-grow: 0;
     max-width: 100%;
+}
+
+.item-slide .imgs {
+    width: 100vw;
+    height: 100vh;
 }
 
 .pagination{
