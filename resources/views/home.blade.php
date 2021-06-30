@@ -12,7 +12,7 @@
                     <img src="images/header-background.jpg" alt="">
                 </div>
                 <div class="item-slide" >
-                    <img src="images/2.jpg" alt="">
+                    <img src="images/header-background.jpg" alt="">
                 </div>
                 <div class="item-slide">
                     <img src="images/header-background.jpg" alt="">
