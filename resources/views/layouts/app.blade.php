@@ -53,8 +53,8 @@
 
 
         <!-- Image Logo -->
-        <a class="navbar-brand logo-image" href="https://wa.me/message/UAO3TORZITGBE1">
-            <img src="images/logo2.svg"  class="logo-img" alt="alternative">
+        <a class="navbar-brand logo-image" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">
+            <img src="images/favicon.png"  class="logo-img" alt="alternative">
         </a>
 
         <!-- Mobile Menu Toggle Button -->
