@@ -20,6 +20,7 @@ body,
 html {
     width: 100%;
 	height: 100%;
+	overflow-x: hidden;
 }
 
 body, p {
@@ -747,7 +748,7 @@ input[type='checkbox'] {
 	background-size: auto; */
 	height:100%;
 	width: 100%;
-	overflow-x: hidden;
+	/* overflow-x: hidden; */
 	
 
     /* overflow: hidden; */
