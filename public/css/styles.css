@@ -747,7 +747,7 @@ input[type='checkbox'] {
 	background-size: auto; */
 	height:100%;
 	width: 100%;
-	overflow: hidden;
+
 	
 
     /* overflow: hidden; */
@@ -763,12 +763,12 @@ input[type='checkbox'] {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-	overflow: hidden;
+	
 }
 
 .header .text-container {
 	margin-bottom: 3rem;
-	overflow: hidden;
+	
 }
 
 .header h1 {
@@ -802,7 +802,7 @@ input[type='checkbox'] {
     padding: 0;
     width: 400%;
 	height: 100%;
-	overflow: hidden;
+	
     animation: cambio 23s infinite alternate linear; 
     
 }
