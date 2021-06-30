@@ -798,12 +798,12 @@ input[type='checkbox'] {
 } */
 
 .header ul {
-    /* display: flex; */
+    display: flex;
     padding: 0;
     width: 400%;
 	height: 100%;
 	
-    animation: cambio 23s infinite alternate linear; 
+    animation: cambio 10s infinite alternate linear; 
     
 }
 
