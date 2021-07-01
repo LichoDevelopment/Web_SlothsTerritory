@@ -1884,9 +1884,9 @@ a:hover.back-to-top {
 
 	/* Navigation */
 	.navbar-custom {
-		padding: 1.125rem 1.5rem 2.125rem 2rem;
+		padding: 0rem 1.5rem 0rem 2rem;
 		box-shadow: none;
-        background: transparent;
+        background: rgba(0, 0, 0, 0.3);
 	}
 
 	.navbar-custom .navbar-brand.logo-text {
@@ -2475,8 +2475,8 @@ a:hover.back-to-top {
 /* end of min-width width 1200px */
 
 .logo-img{
- width: 4rem !important;
-    height: 4rem !important;
+ 	width: 5rem !important;
+    height: 5rem !important;
     padding: 0 !important;
     color: #FFF;
     background-color: #FFF;
