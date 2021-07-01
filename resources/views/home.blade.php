@@ -215,16 +215,16 @@
 
                 <!-- Accordion -->
                 <div class="accordion-container" id="accordionOne">
-                    <h2>Pequeña info para ....</h2>
+                    <h2>Oso perezoso, símbolo nacional de Costa Rica</h2>
                     <div class="item">
                         <div id="headingOne">
                             <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">
-                                <span class="circle-numbering">1</span><span class="accordion-title">Información Sloths</span>
+                                <span class="circle-numbering">1</span><span class="accordion-title">El 16 símbolo nacional de Costa Rica</span>
                             </span>
                         </div>
                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionOne">
                             <div class="accordion-body">
-                                Sloths are a group of arboreal Neotropical xenarthran mammals, constituting the suborder Folivora.
+                                El día miercoles 30 de junio del 2021 fue declarado el oso perezoso como símbolo nacional de Costa Rica.
                             </div>
                         </div>
                     </div> <!-- end of item -->
@@ -232,25 +232,13 @@
                     <div class="item">
                         <div id="headingTwo">
                             <span class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" role="button">
-                                <span class="circle-numbering">2</span><span class="accordion-title">Más informacion</span>
+                                <span class="circle-numbering">2</span><span class="accordion-title">¿Por qué se declaró símbolo nacional? </span>
                             </span>
                         </div>
                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionOne">
                             <div class="accordion-body">
-                                Sloths are a group of arboreal Neotropical xenarthran mammals, constituting the suborder Folivora.
-                            </div>
-                        </div>
-                    </div> <!-- end of item -->
-
-                    <div class="item">
-                        <div id="headingThree">
-                            <span class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" role="button">
-                                <span class="circle-numbering">3</span><span class="accordion-title">Más información</span>
-                            </span>
-                        </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionOne">
-                            <div class="accordion-body">
-                                Sloths are a group of arboreal Neotropical xenarthran mammals, constituting the suborder Folivora.
+                                Las especies Bradypus variegatus (perezoso de 3 dedos) y Choloepus hoffomanni (perezoso de 2 dedos) fueron declarados símbolo nacional de Costa Rica 
+                                con el fin de destacar la importancia de esta especie en la fauna silvestre de Costa Rica.
                             </div>
                         </div>
                     </div> <!-- end of item -->
@@ -284,28 +272,32 @@
                     <!-- Tabs Content -->
                     <div class="tab-content" id="ariaTabsContent">
 
-                        <!-- Tab -->
-                        <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
-                            <h4>Alguna info sobre lugar o algo</h4>
-                            <p>Sloths are a group of arboreal Neotropical xenarthran mammals, constituting the suborder Folivora.</p>
-
-                            <!-- Progress Bars -->
-                            <div class="progress-container">
-                                <div class="title">Ambiente o algo 100%</div>
-                                <div class="progress">
-                                    <div class="progress-bar first" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="title">reseñas 76%</div>
-                                <div class="progress">
-                                    <div class="progress-bar second" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="title">calidad 90%</div>
-                                <div class="progress">
-                                    <div class="progress-bar third" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div> <!-- end of progress-container -->
-                            <!-- end of progress bars -->
-
+                         <!-- Tab -->
+                         <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
+                            <p><strong>Información sobre algun punto ...</strong> 100% : <a class="green" href="https://en.wikipedia.org/wiki/Sloth">Sloths</a></p>
+                            <p><strong>info...</strong> Informacion sobre algo <a class="green" href="#your-link">Link de referencia a algo más</a></p>
+                            <ul class="list-unstyled li-space-lg">
+                                <li class="media">
+                                    <i class="fas fa-square"></i>
+                                    <div class="media-body">alguna info ...</div>
+                                </li>
+                                <li class="media">
+                                    <i class="fas fa-square"></i>
+                                    <div class="media-body">alguna info ...</div>
+                                </li>
+                                <li class="media">
+                                    <i class="fas fa-square"></i>
+                                    <div class="media-body">alguna info ...</div>
+                                </li>
+                                <li class="media">
+                                    <i class="fas fa-square"></i>
+                                    <div class="media-body">alguna info ...</div>
+                                </li>
+                                <li class="media">
+                                    <i class="fas fa-square"></i>
+                                    <div class="media-body">alguna info ...</div>
+                                </li>
+                            </ul>
                         </div> <!-- end of tab-pane -->
                         <!-- end of tab -->
 
