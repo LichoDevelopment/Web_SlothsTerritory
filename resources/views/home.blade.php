@@ -484,7 +484,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="section-title"> Nuestra galería</div>
+                        <div class="section-title"> Nuestra sección de galería</div>
                         <h2> En esta sección podrás conocer imágenes de las diferentes especies de Sloths Territory.</h2>
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
@@ -529,6 +529,20 @@
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
             </div> <!-- end of container -->
+            <section id="video" class="content-section">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box-video">
+                            <div class="bg-video"> <!-- style="background-image: url(https://link imagen);"> -->
+                                <div class="bt-play">Play</div>
+                            </div>
+                            <div class="video-container">
+                                <iframe width="100%" height="864" src="https://www.youtube.com/embed/BrAsPlE2gS8?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div> <!-- end of filter -->
         <!-- end of tours -->
 
@@ -717,6 +731,7 @@
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
         <!-- end of lightbox -->
+
 
         <div id="tour-diurno" class="lightbox-basic zoom-anim-dialog mfp-hide">
             <div class="row justify-content-center">

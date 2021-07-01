@@ -76,7 +76,7 @@
                     <a class="nav-link page-scroll" href="#services">SERVICES</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#projects">ESPECIES</a>
+                    <a class="nav-link page-scroll" href="#tours">GALERÍA</a>
                 </li>
 
                 <!-- Dropdown Menu -->
