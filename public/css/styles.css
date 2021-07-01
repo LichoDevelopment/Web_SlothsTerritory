@@ -2740,31 +2740,3 @@ input[id="3"]:checked ~ .pagination .pagination-item[for="3"]{
 
 /**************
 /*    VIDEO       */
-
-
-#video {
-  text-align: center;
-  background-color: #f4f4f4;
-  padding: 100px 60px;
-}
-
-#video .section-heading {
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-#video .section-heading h1 {
-  display: block;
-  margin: 0px;
-}
-
-#video .section-heading p {
-  position: relative;
-  margin: 0px;
-}
-
-.box-video.open .video-container{
-  opacity: 1;
-  -webkit-transition: all .6s .8s;
-  transition: all .6s .8s;
-}
