@@ -529,7 +529,7 @@
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
             </div> <!-- end of container -->
-            <section id="video" class="conteiner">
+            <section id="video" class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="box-video">
