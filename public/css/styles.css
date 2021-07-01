@@ -2726,3 +2726,13 @@ input[id="3"]:checked ~ .pagination .pagination-item[for="3"]{
 		width: 3.5rem !important;
 	}
 }
+
+@media (max-width: 800px){
+	.item-slide .imgs{
+		height: 65vh;
+	}
+	.logo-img{
+		height: 4rem !important;
+		width: 4rem !important;
+	}
+}
