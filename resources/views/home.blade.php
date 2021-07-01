@@ -529,12 +529,20 @@
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
             </div> <!-- end of container -->
-
-        <div id="video" class="container">
-            <div class="video-container">
-                <iframe width="100%" height="864" src="https://www.youtube.com/embed/BrAsPlE2gS8?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-            </div>
-        </div>
+            <section id="video" class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box-video">
+                            <div class="bg-video"> <!-- style="background-image: url(https://link imagen);"> -->
+                                <div class="bt-play">Play</div>
+                            </div>
+                            <div class="video-container">
+                                <iframe width="100%" height="864" src="https://www.youtube.com/embed/BrAsPlE2gS8?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div> <!-- end of filter -->
         <!-- end of tours -->
 
