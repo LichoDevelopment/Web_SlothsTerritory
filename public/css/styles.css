@@ -2743,7 +2743,7 @@ input[id="3"]:checked ~ .pagination .pagination-item[for="3"]{
 
 @media (max-width: 610px){
 	.item-slide .imgs{
-		height: 60vh;
+		height: 50vh;
 		margin-top: 2rem;
 	}
 
@@ -2761,7 +2761,7 @@ input[id="3"]:checked ~ .pagination .pagination-item[for="3"]{
 
 @media (max-width: 800px){
 	.item-slide .imgs{
-		height: 60vh;
+		height: 50vh;
 	}
 	.logo-img{
 		height: 4rem !important;
