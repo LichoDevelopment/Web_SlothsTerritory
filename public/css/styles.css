@@ -2727,6 +2727,12 @@ input[id="3"]:checked ~ .pagination .pagination-item[for="3"]{
 		height: 3.5rem !important;
 		width: 3.5rem !important;
 	}
+
+	.accordion .area-1, .tabs .area-2 {
+		background-size: contain;
+		max-width: 95vw;
+		height: 14rem;
+	}
 }
 
 @media (max-width: 800px){
