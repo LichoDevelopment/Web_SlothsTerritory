@@ -1402,7 +1402,9 @@ input[type='checkbox'] {
 .filter .element-item img {
 	max-width: 100%;
 	margin: 0;
-	transition: all 0.3s;
+	transition: all 0.5s;
+	height: 175px;
+    width: 175px;
 }
 
 .filter .element-item:hover img {
