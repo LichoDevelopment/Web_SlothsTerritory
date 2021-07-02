@@ -147,19 +147,21 @@
                         <ul class="list-unstyled li-space-lg white">
                             <li>
                                 <i class="fab fa-facebook-f"></i>
-                                <a class="white footer-link" href="terms-conditions" >Facebook</a>
+                                <a class="white footer-link" href="https://www.facebook.com/Sloths.Territory.2018" >Facebook</a>
                             </li>
                             <li >
                                 <i class="fab fa-tripadvisor"></i>
-                                <a class="white footer-link" href="privacy-policy">Tripadvisor</a>
+                                <a class="white footer-link" 
+                                href="https://www.tripadvisor.es/Attraction_Review-g309226-d15636276-Reviews-Sloth_s_Territory-La_Fortuna_de_San_Carlos_Arenal_Volcano_National_Park_Province.html">
+                                Tripadvisor</a>
                             </li>
                             <li >
                                 <i class="fab fa-instagram"></i>
-                                <a class="white footer-link" href="privacy-policy">Instagram</a>
+                                <a class="white footer-link" href="https://www.instagram.com/slothsterritory/">Instagram</a>
                             </li>
                             <li >
                                 <i class="fab fa-youtube"></i>
-                                <a class="white footer-link" href="privacy-policy">Youtube</a>
+                                <a class="white footer-link" href="https://www.instagram.com/slothsterritory/">Youtube</a>
                             </li>
                         </ul>
                     </div>
@@ -170,11 +172,11 @@
                         <ul class="list-unstyled li-space-lg white">
                             <li>
                                 <i class="fas fa-phone"></i>
-                                <a class="white footer-link" href="terms-conditions" >+506 8561 0404</a>
+                                <a class="white footer-link" href="tel:+50685610404" >+506 8561 0404</a>
                             </li>
                             <li >
                                 <i class="fas fa-envelope"></i>
-                                <a class="white footer-link" href="privacy-policy">sloths.territory@gmail.com</a>
+                                <a class="white footer-link" href="mailto:sloths.territory@gmail.com">sloths.territory@gmail.com</a>
                             </li>
                         </ul>
                     </div>
