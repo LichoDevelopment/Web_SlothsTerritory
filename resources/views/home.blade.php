@@ -528,11 +528,12 @@
 
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
-            </div> <!-- end of container -->
+
+        </div> <!-- end of filter -->
+        </div> <!-- end of container -->
             <div id="video" class="container">
                 <iframe src="https://www.youtube.com/embed/BrAsPlE2gS8?rel=0&amp;showinfo=0" width="100%" height="430px" frameborder="0" style="border:0" allowfullscreen></iframe>             
-            </div>
-        </div> <!-- end of filter -->
+        </div>
         <!-- end of tours -->
 
 
