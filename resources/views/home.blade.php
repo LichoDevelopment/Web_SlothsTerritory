@@ -31,7 +31,11 @@
 
             </div>
         </div>
-
+        <div class="container">
+            <h1>El mejor tour de perezosos en La Fortuna de San Carlos (tratar de mencionar Volcán Arenal)</h1>
+            <p class="p-heading p-large"> En Sloth's Territory podrás observar perezosos de 2 y 3 dedos, además gran variedad de aves y anfibios.<div class=""></div></p>
+            <a class="btn-solid-lg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">RESERVAR AHORA</a>
+        </div>
 
 
 
