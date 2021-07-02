@@ -1771,15 +1771,15 @@ input[type='checkbox'] {
 
 .footer-grid{
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
 	grid-auto-flow: dense;
 }
 
-/* @media (max-width: 758px){
+@media (max-width: 758px){
 	.footer-grid-article.contact{
 		grid-column: span 2;
 	}
-} */
+}
 
 /*************************/
 /*     18. Copyright     */
