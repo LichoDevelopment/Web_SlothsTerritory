@@ -485,7 +485,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title"> Nuestra sección de galería</div>
-                        <h2> En esta sección podrás conocer imágenes de las diferentes especies de Sloths Territory.</h2>
+                        <h2> En esta sección podrás conocer imágenes de las diferentes especies en Sloths Territory.</h2>
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
                 <div class="row">
