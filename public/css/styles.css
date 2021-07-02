@@ -2731,7 +2731,7 @@ input[id="3"]:checked ~ .pagination .pagination-item[for="3"]{
 
 @media (max-width: 800px){
 	.item-slide .imgs{
-		height: 65vh;
+		height: 60vh;
 	}
 	.logo-img{
 		height: 4rem !important;

@@ -214,7 +214,7 @@
 
         <!-- Details 1 -->
         <div id="details" class="accordion">
-            <div class="area-1">
+            <div class="area-1 container">
             </div><!-- end of area-1 on same line and no space between comments to eliminate margin white space --><div class="area-2">
 
                 <!-- Accordion -->
@@ -371,7 +371,7 @@
                     <!-- end of tabs content -->
 
                 </div> <!-- end of tabs-container -->
-            </div><!-- end of area-1 on same line and no space between comments to eliminate margin white space --><div class="area-2"></div> <!-- end of area-2 -->
+            </div><!-- end of area-1 on same line and no space between comments to eliminate margin white space --><div class="area-2 container"></div> <!-- end of area-2 -->
         </div> <!-- end of tabs -->
         <!-- end of details 2 -->
 
