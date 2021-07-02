@@ -1745,7 +1745,7 @@ input[type='checkbox'] {
 /*     17. Footer     */
 /**********************/
 .footer {
-	padding-top: 5rem;
+	padding-top: 2rem;
 	background-color: #113448;
 }
 
@@ -1764,13 +1764,29 @@ input[type='checkbox'] {
 	line-height: 1.375rem;
 }
 
+.footer .footer-link{
+	font-size: 1rem;
+	text-decoration: none;
+}
+
+.footer-grid{
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+	grid-auto-flow: dense;
+}
+
+/* @media (max-width: 758px){
+	.footer-grid-article.contact{
+		grid-column: span 2;
+	}
+} */
 
 /*************************/
 /*     18. Copyright     */
 /*************************/
 .copyright {
-	padding-top: 1rem;
-	padding-bottom: 0.5rem;
+	/* padding-top: 1rem;
+	padding-bottom: 0.5rem; */
 	background-color: #113448;
 	text-align: center;
 }
