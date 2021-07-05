@@ -1,6 +1,7 @@
 :root{
     --main-title-size: 2.2rem;
-    --main-title-md-size: 1.8rem;
+    --main-title-md-size: 1.85rem;
+    --title-size: 1.75rem;
     --text-size: 1.1rem;
     --text-md-size: 1rem
 }

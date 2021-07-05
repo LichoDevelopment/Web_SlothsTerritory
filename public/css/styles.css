@@ -2119,3 +2119,7 @@ input[id="3"]:checked ~ .pagination .pagination-item[for="3"]{
    background-color: #FFF;
    border-radius: 50%;
 }
+
+.main-title{
+	font-size: var(--main-title-size)
+}
