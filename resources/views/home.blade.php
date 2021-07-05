@@ -650,7 +650,8 @@
                 <div class="row">
                     <div class="col-lg-5 col-xl-6">
                         <div class="image-container">
-                            <img class="img-fluid" src="images/about.jpg" alt="alternative">
+                        <!-- PENDIENTE poner el alt y title y cambiar la imagen -->
+                            <img class="img-fluid" src="images/about.jpg" alt="alternative">    
                         </div> <!-- end of image-container -->
                     </div> <!-- end of col -->
                     <div class="col-lg-7 col-xl-6">
