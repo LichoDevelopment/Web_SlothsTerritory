@@ -658,6 +658,7 @@
 	}
     .main-title{
         font-size: var(--main-title-md-size);
+		text-align: center;
     }
 }
 
