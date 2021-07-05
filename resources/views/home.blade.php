@@ -268,8 +268,8 @@
                     <div class="col-lg-12">
                         <!-- Filter -->
                         <div class="button-group filters-button-group">
-                            <a class="button is-checked" data-filter="*"><span>SHOW ALL</span></a>
-                            <a class="button" data-filter=".sloths"><span>Sloths</span></a>
+                            <a class="button" data-filter="*"><span>SHOW ALL</span></a>
+                            <a class="button is-checked" data-filter=".sloths"><span>Sloths</span></a>
                             <a class="button" data-filter=".ranas"><span>Frogs</span></a>
                             <a class="button" data-filter=".monos"><span>Monkeys</span></a>
                             <a class="button" data-filter=".aves"><span>Birds</span></a>
