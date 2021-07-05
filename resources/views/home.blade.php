@@ -26,7 +26,7 @@
                     <img src="images/sliderPrincipal/bebe-perezoso-con-su-madre-bradypus-variegatus.jpeg" alt="Perezosos en la Fortuna" title="Perezosos durmiendo">
                 </label>
                 <label class="pagination-item" for="3">
-                    <img src="images/sliderPrincipal/tierno-oso-perezoso-en-la-fortuna-sloths-territory.jpeg" alt="Perezosos en la Fortuna Costa Rica">
+                    <img src="images/sliderPrincipal/tierno-oso-perezoso-en-la-fortuna-sloths-territory.jpeg" alt="Perezosos en la Fortuna Costa Rica" title="Perezoso">
                 </label>
 
             </div>
@@ -54,7 +54,7 @@
                     </div> <!-- end of col -->
                     <div class="col-lg-7">
                         <div class="image-container">
-                            <img class="img-fluid" src="images/otras-especies/tours-en-sloths-territory.JPEG" alt="alternative">
+                            <img class="img-fluid" src="images/otras-especies/tours-en-sloths-territory.JPEG" alt="Senderos La Fortuna de San Carlos" title="Senderos Sloths Territory">
                         </div> <!-- end of image-container -->
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
@@ -130,7 +130,7 @@
                         <!-- Card -->
                         <div class="card">
                             <div class="card-image">
-                                <img class="img-fluid" src="images/services-1.jpg" alt="alternative">
+                                <img class="img-fluid" src="images/otras-especies/senderos-sloths-territory-.jpeg" alt="alternative">
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Tour diurno</h3>
