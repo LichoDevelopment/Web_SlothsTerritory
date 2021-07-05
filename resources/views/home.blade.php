@@ -9,31 +9,39 @@
 
             <div class="slide">
                 <div class="item-slide">
-                    <img class="imgs" src="images/header-background.jpg" alt="">
+                    <img class="imgs" src="images/sliderPrincipal/bebe-perezoso-en-costa-rica.jpeg" 
+                    alt="Hermoso bebé perezoso"
+                    title="Bebe perezoso">
                 </div>
                 <div class="item-slide" >
-                    <img class="imgs" src="images/header-background.jpg" alt="">
+                    <img class="imgs" src="images/sliderPrincipal/bebe-perezoso-y-madre-perezosa-durmiendo-en-un-arbol.jpeg" 
+                    alt="Mamá perezosa y su bebé durmiendo en un arbol"
+                    title="Bebé perezoso y su madre">
+
                 </div>
                 <div class="item-slide">
-                    <img class="imgs" src="images/header-background.jpg" alt="">
+                    <img class="imgs" src="images/sliderPrincipal/tierno-oso-perezoso-en-la-fortuna-sloths-territory.jpeg" 
+                    alt="Oso perezoso en La Fortuna de San Carlos"
+                    title="Oso perezoso">
                 </div>
             </div>
             <div class="pagination">
                 <label class="pagination-item" for="1">
-                    <img src="images/header-background.jpg" alt="">
+                    <img src="images/bebe-perezoso-en-costa-rica" alt="Hermoso bebé perezoso en la Fortuna" title="Tierno bebé perezoso">
                 </label>
                 <label class="pagination-item" for="2">
-                    <img src="images/header-background.jpg" alt="">
+                    <img src="images/bebe-perezoso-y-madre-perezosa-durmiendo-en-un-arbol.jpeg" alt="Bebé perezoso duerme junto a su madre en la Fortuna de San Carlos"
+                    title="Perezosos durmiendo">
                 </label>
                 <label class="pagination-item" for="3">
-                    <img src="images/header-background.jpg" alt="">
+                    <img src="images/tierno-oso-perezoso-en-la-fortuna-sloths-territory.jpeg" alt="Perezosos en la Fortuna Costa Rica">
                 </label>
 
             </div>
         </div>
         <div class="container">
-            <h1>El mejor tour de perezosos en La Fortuna de San Carlos (tratar de mencionar Volcán Arenal)</h1>
-            <p class="p-heading p-large"> En Sloth's Territory podrás observar perezosos de 2 y 3 dedos, además gran variedad de aves y anfibios.<div class=""></div></p>
+            <h1>El mejor tour en La Fortuna de San Carlos e increíble vista del Volcán Arenal</h1>
+            <p class="p-heading p-large"> En Sloths Territory podrás observar perezosos de 2 y 3 dedos, además gran variedad de aves y anfibios.<div class=""></div></p>
             <a class="btn-solid-lg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">RESERVAR AHORA</a>
         </div>
 
@@ -46,15 +54,15 @@
                     <div class="col-lg-5">
                         <div class="text-container">
                             <div class="section-title">BIENVENIDOS</div>
-                            <h2>Sloth's Territory en La Fortuna de San Carlos.</h2>
-                            <p>Sloth's Territory es un sendero con un total de 1300 metros, que se extiende sobre la margen del Río Habana, en El Tanque de La Fortuna.</p>
+                            <h2>Sloths Territory en La Fortuna de San Carlos.</h2>
+                            <p>Sloths Territory es un sendero con un total de 1300 metros, que se extiende sobre la margen del Río Habana, en El Tanque de La Fortuna.</p>
                             <!-- <p class="testimonial-text">"Sloths are a group of arboreal Neotropical xenarthran mammals, constituting the suborder Folivora."</p> -->
                             <div class="testimonial-author">Visite este paraíso rodeado de naturaleza y habitado por osos perezosos.</div>
                         </div> <!-- end of text-container -->
                     </div> <!-- end of col -->
                     <div class="col-lg-7">
                         <div class="image-container">
-                            <img class="img-fluid" src="images/intro-office.jpg" alt="alternative">
+                            <img class="img-fluid" src="images/otras-especies/tours-en-sloths-territory.JPEG" alt="alternative">
                         </div> <!-- end of image-container -->
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
@@ -76,7 +84,7 @@
                                 <i class="fas fa-home fa-stack-1x"></i>
                             </span>
                             <div class="card-body">
-                                <h4 class="card-title">En Sloth's Territory</h4>
+                                <h4 class="card-title">En Sloths Territory</h4>
                                 <p>contamos con un gran hábitad natural.</p>
                             </div>
                         </div>
@@ -121,7 +129,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title">SERVICIOS</div>
-                        <h2>En Sloth's Territory contamos con 3 diferentes actividades<br> Te invitamos a conocerlas en La Fortuna de San Carlos</h2>
+                        <h2>En Sloths Territory contamos con 3 diferentes actividades<br> Te invitamos a conocerlas en La Fortuna de San Carlos</h2>
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
                 <div class="row">
@@ -1004,14 +1012,14 @@
                     <div class="col-lg-6">
                         <div class="text-container">
                             <div class="section-title">CONTACT</div>
-                            <h2>Sloth's Territory La Fortuna de San Carlos</h2>
+                            <h2>Sloths Territory La Fortuna de San Carlos</h2>
                             <p>Información de contacto</p>
                             <ul class="list-unstyled li-space-lg">
                                 <li class="address"><i class="fas fa-map-marker-alt"></i>4 km de La Fortuna hacia el Este, 400 mts entrada de lastre a la derecha, 200 mts Este Fortuna, Alajuela Provinces, Costa Rica</li>
                                 <li><i class="fas fa-phone"></i><a href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">+506 8561 0404</a></li>
                                 <li><i class="fas fa-envelope"></i><a href="mailto:sloths.territory@gmail.com" target="_blank">sloths.territory@gmail.com</a></li>
                             </ul>
-                            <h3>Follow Sloth's Territory</h3>
+                            <h3>Follow Sloths Territory</h3>
 
                             <span class="fa-stack">
                             <a href="https://www.facebook.com/Sloths.Territory.2018" target="_blank">
