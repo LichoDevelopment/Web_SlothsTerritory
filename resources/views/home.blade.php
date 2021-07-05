@@ -56,7 +56,7 @@
                     </div> <!-- end of col -->
                     <div class="col-lg-7">
                         <div class="image-container">
-                            <img class="img-fluid" src="images/otras-especies/tours-en-sloths-territory.JPEG" alt="Senderos La Fortuna de San Carlos" title="Senderos Sloths Territory">
+                            <img class="img-fluid" src="images/otras-especies/tours-en-sloths-territory.jpeg" alt="Senderos La Fortuna de San Carlos" title="Senderos Sloths Territory">
                         </div> <!-- end of image-container -->
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
