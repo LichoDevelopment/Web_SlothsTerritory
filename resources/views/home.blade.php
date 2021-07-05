@@ -130,7 +130,7 @@
                         <!-- Card -->
                         <div class="card">
                             <div class="card-image">
-                                <img class="img-fluid" src="images/otras-especies/senderos-sloths-territory-.jpeg" alt="alternative">
+                                <img class="img-fluid" src="images/otras-especies/senderos-sloths-territory.jpeg" alt="Sendero para ver perezosos en la Fortuna de San Carlos" title="Sendero Sloths Territory">
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Tour diurno</h3>
@@ -156,7 +156,7 @@
                         <!-- Card -->
                         <div class="card">
                             <div class="card-image">
-                                <img class="img-fluid" src="images/services-2.jpg" alt="alternative">
+                                <img class="img-fluid" src="images/ranas/rana-ojos-rojos-.jpeg" alt="tour nocturno Sloths Territory La Fortuna">
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Tour nocturno</h3>
@@ -182,7 +182,7 @@
                         <!-- Card -->
                         <div class="card">
                             <div class="card-image">
-                                <img class="img-fluid" src="images/services-3.jpg" alt="alternative">
+                                <img class="img-fluid" src="images/otras-especies/lechuzon-fortuna-costa-rica-.jpeg" alt="magníficas ves en la Fortuna" title="lechuzón en Sloths Territory">
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Tour de aves</h3>
