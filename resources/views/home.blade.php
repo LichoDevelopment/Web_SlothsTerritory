@@ -56,7 +56,7 @@
                     </div> <!-- end of col -->
                     <div class="col-lg-7">
                         <div class="image-container">
-                            <img class="img-fluid" src="images/otras-especies/tours-en-sloths-territory.jpeg" alt="Senderos La Fortuna de San Carlos" title="Senderos Sloths Territory">
+                            <img class="img-fluid" src="images/otras-especies/tours-en-sloths-territory.jpeg" alt="Senderos La Fortuna de San Carlos" title="Senderos Sloths Territory" height="400px" width="450px">
                         </div> <!-- end of image-container -->
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
@@ -215,44 +215,46 @@
 
 
         <!-- Details 1 -->
-        <div id="details" class="accordion">
-            <div class="area-1 container">
-            </div><!-- end of area-1 on same line and no space between comments to eliminate margin white space --><div class="area-2">
+        <div class="container">
+            <div id="details" class="accordion">
+                <div class="area-1 container">
+                </div><!-- end of area-1 on same line and no space between comments to eliminate margin white space --><div class="area-2">
 
-                <!-- Accordion -->
-                <div class="accordion-container" id="accordionOne">
-                    <h2>Oso perezoso, símbolo nacional de Costa Rica</h2>
-                    <div class="item">
-                        <div id="headingOne">
-                            <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">
-                                <span class="circle-numbering">1</span><span class="accordion-title">El 16 símbolo nacional de Costa Rica</span>
-                            </span>
-                        </div>
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionOne">
-                            <div class="accordion-body">
-                                El día miercoles 30 de junio del 2021 fue declarado el oso perezoso como símbolo nacional de Costa Rica.
+                    <!-- Accordion -->
+                    <div class="accordion-container" id="accordionOne">
+                        <h2>Oso perezoso, símbolo nacional de Costa Rica</h2>
+                        <div class="item">
+                            <div id="headingOne">
+                                <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">
+                                    <span class="circle-numbering">1</span><span class="accordion-title">El 16 símbolo nacional de Costa Rica</span>
+                                </span>
                             </div>
-                        </div>
-                    </div> <!-- end of item -->
-
-                    <div class="item">
-                        <div id="headingTwo">
-                            <span class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" role="button">
-                                <span class="circle-numbering">2</span><span class="accordion-title">¿Por qué se declaró símbolo nacional? </span>
-                            </span>
-                        </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionOne">
-                            <div class="accordion-body">
-                                Las especies Bradypus variegatus (perezoso de 3 dedos) y Choloepus hoffomanni (perezoso de 2 dedos) fueron declarados símbolo nacional de Costa Rica 
-                                con el fin de destacar la importancia de esta especie en la fauna silvestre de Costa Rica.
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionOne">
+                                <div class="accordion-body">
+                                    El día miercoles 30 de junio del 2021 fue declarado el oso perezoso como símbolo nacional de Costa Rica.
+                                </div>
                             </div>
-                        </div>
-                    </div> <!-- end of item -->
-                </div> <!-- end of accordion-container -->
-                <!-- end of accordion -->
+                        </div> <!-- end of item -->
 
-            </div> <!-- end of area-2 -->
-        </div> <!-- end of accordion -->
+                        <div class="item">
+                            <div id="headingTwo">
+                                <span class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" role="button">
+                                    <span class="circle-numbering">2</span><span class="accordion-title">¿Por qué se declaró símbolo nacional? </span>
+                                </span>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionOne">
+                                <div class="accordion-body">
+                                    Las especies Bradypus variegatus (perezoso de 3 dedos) y Choloepus hoffomanni (perezoso de 2 dedos) fueron declarados símbolo nacional de Costa Rica 
+                                    con el fin de destacar la importancia de esta especie en la fauna silvestre de Costa Rica.
+                                </div>
+                            </div>
+                        </div> <!-- end of item -->
+                    </div> <!-- end of accordion-container -->
+                    <!-- end of accordion -->
+
+                </div> <!-- end of area-2 -->
+            </div> <!-- end of accordion -->
+        </div>
         <!-- end of details 1 -->
 
         <!-- Tours -->
