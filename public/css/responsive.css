@@ -234,7 +234,7 @@
 	}
 
 	.navbar-custom .fa-stack:hover .fa-stack-1x {
-		color: #14bf98;
+		color: #10b610;
 	}
 	/* end of navigation */
 
@@ -494,7 +494,7 @@
 
 	.navbar-custom .nav-item .nav-link:hover,
 	.navbar-custom .nav-item .nav-link.active {
-		color: #14bf98;
+		color: #10b610;
 	}
 
 	.navbar-custom.top-nav-collapse {
@@ -513,7 +513,7 @@
 
 	.navbar-custom.top-nav-collapse .nav-item .nav-link:hover,
 	.navbar-custom.top-nav-collapse .nav-item .nav-link.active {
-		color: #14bf98;
+		color: #10b610;
 	}
 
 	.navbar-custom .dropdown-menu {
