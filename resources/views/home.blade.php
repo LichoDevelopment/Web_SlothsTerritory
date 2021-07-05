@@ -9,15 +9,10 @@
 
             <div class="slide">
                 <div class="item-slide">
-                    <img class="imgs" src="images/sliderPrincipal/bebe-perezoso-en-costa-rica.jpeg" 
-                    alt="Hermoso bebé perezoso"
-                    title="Bebe perezoso">
+                <img class="imgs" src="images/sliderPrincipal/bebe-perezoso-y-madre-perezosa-durmiendo-en-un-arbol.jpeg" alt="Mamá perezosa y su bebé durmiendo en un arbol" title="Bebé perezoso y su madre">
                 </div>
                 <div class="item-slide" >
-                    <img class="imgs" src="images/sliderPrincipal/bebe-perezoso-y-madre-perezosa-durmiendo-en-un-arbol.jpeg" 
-                    alt="Mamá perezosa y su bebé durmiendo en un arbol"
-                    title="Bebé perezoso y su madre">
-
+                <img class="imgs" src="images/sliderPrincipal/bebe-perezoso-con-su-madre-bradypus-variegatus.jpeg" alt="Hermoso bebé perezoso" title="Bebe perezoso">
                 </div>
                 <div class="item-slide">
                     <img class="imgs" src="images/sliderPrincipal/tierno-oso-perezoso-en-la-fortuna-sloths-territory.jpeg" 
@@ -27,14 +22,14 @@
             </div>
             <div class="pagination">
                 <label class="pagination-item" for="1">
-                    <img src="images/bebe-perezoso-en-costa-rica" alt="Hermoso bebé perezoso en la Fortuna" title="Tierno bebé perezoso">
+                    <<img src="images/sliderPrincipal/bebe-perezoso-y-madre-perezosa-durmiendo-en-un-arbol.jpeg" alt="Bebé perezoso duerme junto a su madre en la Fortuna de San Carlos" title="Perezosos durmiendo">
                 </label>
                 <label class="pagination-item" for="2">
-                    <img src="images/bebe-perezoso-y-madre-perezosa-durmiendo-en-un-arbol.jpeg" alt="Bebé perezoso duerme junto a su madre en la Fortuna de San Carlos"
-                    title="Perezosos durmiendo">
+                <img src="images/sliderPrincipal/bebe-perezoso-con-su-madre-bradypus-variegatus.jpeg" alt="Hermoso bebé perezoso en la Fortuna" title="Tierno bebé perezoso">
+                    
                 </label>
                 <label class="pagination-item" for="3">
-                    <img src="images/tierno-oso-perezoso-en-la-fortuna-sloths-territory.jpeg" alt="Perezosos en la Fortuna Costa Rica">
+                    <img src="images/sliderPrincipal/tierno-oso-perezoso-en-la-fortuna-sloths-territory.jpeg" alt="Perezosos en la Fortuna Costa Rica">
                 </label>
 
             </div>
@@ -755,11 +750,12 @@
                     <p>Repelente de insectos</p>
                     <p>Ropa ligera</p>
                     <p>Impermeable</p>
+                    <p>Zapato cerrado</p>
                     
                     
                     
                     <div class="testimonial-container">
-                        <p class="testimonial-text">Parrafo sobre comentario de algo.</p>
+                        <p class="testimonial-text">No dejes pasar esta aventura.</p>
                     </div>
                     <a class="btn-solid-reg" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">RESERVAR AHORA</a> <a class="btn-outline-reg mfp-close as-button" href="#services">BACK</a>
                 </div> <!-- end of col -->
@@ -787,11 +783,12 @@
                     <p>Repelente de insectos</p>
                     <p>Ropa ligera</p>
                     <p>Impermeable</p>
+                    <p>Zapato cerrado</p>
                     
                     
                     
                     <div class="testimonial-container">
-                        <p class="testimonial-text">Parrafo sobre comentario de algo (opcional preguntar a Keilor.).</p>
+                        <p class="testimonial-text">No dejes pasar esta aventura.</p>
                     </div>
                     <a class="btn-solid-reg" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">RESERVAR AHORA</a> <a class="btn-outline-reg mfp-close as-button" href="#services">BACK</a>
                 </div> <!-- end of col -->
@@ -821,11 +818,12 @@
                     <p>Impermeable</p>
                     <p>Cámara</p>
                     <p>Binoculares</p>
+                    <p>Zapatos cerrados</p>
                     
                     
                     
                     <div class="testimonial-container">
-                        <p class="testimonial-text">Parrafo sobre comentario de algo (opcional preguntar a Keilor.).</p>
+                        <p class="testimonial-text">No dejes pasar esta aventura.</p>
                     </div>
                     <a class="btn-solid-reg" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">RESERVAR AHORA</a> <a class="btn-outline-reg mfp-close as-button" href="#services">BACK</a>
                 </div> <!-- end of col -->
