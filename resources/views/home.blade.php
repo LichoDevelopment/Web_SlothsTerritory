@@ -156,7 +156,7 @@
                         <!-- Card -->
                         <div class="card">
                             <div class="card-image">
-                                <img class="img-fluid" src="images/ranas/rana-ojos-rojos-.jpeg" alt="tour nocturno Sloths Territory La Fortuna">
+                                <img class="img-fluid" src="images/ranas/rana-ojos-rojos-.jpeg" alt="tour nocturno Sloths Territory La Fortuna" title="rana de ojos rojos en tour nocturno La Fortuna">
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Tour nocturno</h3>
@@ -254,128 +254,7 @@
         <!-- end of details 1 -->
 
 
-        <!-- Details 2 -->
-        <div class="tabs">
-            <div class="area-1">
-                <div class="tabs-container">
-
-                    <!-- Tabs Links -->
-                    <ul class="nav nav-tabs" id="ariaTabs" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true"><i class="fas fa-th"></i> Info</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="nav-tab-2" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false"><i class="fas fa-th"></i> Info 2</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="nav-tab-3" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false"><i class="fas fa-th"></i> Info 3</a>
-                        </li>
-                    </ul>
-                    <!-- end of tabs links -->
-
-                    <!-- Tabs Content -->
-                    <div class="tab-content" id="ariaTabsContent">
-
-                         <!-- Tab -->
-                         <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
-                            <p><strong>Información sobre algun punto ...</strong> 100% : <a class="green" href="https://en.wikipedia.org/wiki/Sloth">Sloths</a></p>
-                            <p><strong>info...</strong> Informacion sobre algo <a class="green" href="#your-link">Link de referencia a algo más</a></p>
-                            <ul class="list-unstyled li-space-lg">
-                                <li class="media">
-                                    <i class="fas fa-square"></i>
-                                    <div class="media-body">alguna info ...</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-square"></i>
-                                    <div class="media-body">alguna info ...</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-square"></i>
-                                    <div class="media-body">alguna info ...</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-square"></i>
-                                    <div class="media-body">alguna info ...</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-square"></i>
-                                    <div class="media-body">alguna info ...</div>
-                                </li>
-                            </ul>
-                        </div> <!-- end of tab-pane -->
-                        <!-- end of tab -->
-
-                        <!-- Tab -->
-                        <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="tab-2">
-                            <ul class="list-unstyled li-space-lg first">
-                                <li class="media">
-                                    <div class="media-bullet">1</div>
-                                    <div class="media-body"><strong>Sobre</strong> alguna caracteristica ...</div>
-                                </li>
-                                <li class="media">
-                                    <div class="media-bullet">2</div>
-                                    <div class="media-body"><strong>Sobre</strong> alguna caracteristica ...</div>
-                                </li>
-                                <li class="media">
-                                    <div class="media-bullet">3</div>
-                                    <div class="media-body"><strong>Sobre</strong> alguna caracteristica ...</div>
-                                </li>
-                            </ul>
-                            <ul class="list-unstyled li-space-lg last">
-                                <li class="media">
-                                    <div class="media-bullet">4</div>
-                                    <div class="media-body"><strong>Sobre</strong> alguna caracteristica ...</div>
-                                </li>
-                                <li class="media">
-                                    <div class="media-bullet">5</div>
-                                    <div class="media-body"><strong>Sobre</strong> alguna caracteristica ...</div>
-                                </li>
-                                <li class="media">
-                                    <div class="media-bullet">6</div>
-                                    <div class="media-body"><strong>Sobre</strong> alguna caracteristica ...</div>
-                                </li>
-                            </ul>
-                        </div> <!-- end of tab-pane -->
-                        <!-- end of tab -->
-
-                        <!-- Tab -->
-                        <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
-                            <p><strong>Información sobre algun punto ...</strong> 100% : <a class="green" href="https://en.wikipedia.org/wiki/Sloth">Sloths</a></p>
-                            <p><strong>info...</strong> Informacion sobre algo <a class="green" href="#your-link">Link de referencia a algo más</a></p>
-                            <ul class="list-unstyled li-space-lg">
-                                <li class="media">
-                                    <i class="fas fa-square"></i>
-                                    <div class="media-body">alguna info ...</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-square"></i>
-                                    <div class="media-body">alguna info ...</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-square"></i>
-                                    <div class="media-body">alguna info ...</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-square"></i>
-                                    <div class="media-body">alguna info ...</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-square"></i>
-                                    <div class="media-body">alguna info ...</div>
-                                </li>
-                            </ul>
-                        </div> <!-- end of tab-pane -->
-                        <!-- end of tab -->
-
-                    </div> <!-- end of tab-content -->
-                    <!-- end of tabs content -->
-
-                </div> <!-- end of tabs-container -->
-            </div><!-- end of area-1 on same line and no space between comments to eliminate margin white space --><div class="area-2 container"></div> <!-- end of area-2 -->
-        </div> <!-- end of tabs -->
-        <!-- end of details 2 -->
-
-
+      
         <!-- Testimonials -->
         <div class="slider">
             <div class="container">
