@@ -850,10 +850,12 @@ input[type='checkbox'] {
 
 .basic-1 .section-title {
 	margin-bottom: 0.5rem;
+	text-align: center;
 }
 
 .basic-1 h2 {
 	margin-bottom: 1.375rem;
+	text-align: center;
 }
 
 .basic-1 .testimonial-author {
@@ -1023,6 +1025,7 @@ input[type='checkbox'] {
 
 .accordion h2 {
 	margin-bottom: 1.625rem;
+	text-align: center;
 }
 
 .accordion .item {
@@ -1294,6 +1297,7 @@ input[type='checkbox'] {
 .form-1 h2 {
 	margin-bottom: 1.375rem;
 	color: #fff;
+	text-align: center;
 }
 
 .form-1 .list-unstyled .fas {
@@ -1534,6 +1538,7 @@ input[type='checkbox'] {
 
 .basic-2 h2 {
 	margin-bottom: 0.75rem;
+	text-align: center;
 }
 
 .basic-2 .team-member {
@@ -1628,6 +1633,7 @@ input[type='checkbox'] {
 
 .counter h2 {
 	margin-bottom: 1.375rem;
+	text-align: center;
 }
 
 .counter .list-unstyled {
@@ -1690,6 +1696,7 @@ input[type='checkbox'] {
 
 .form-2 h2 {
 	margin-bottom: 1.375rem;
+	text-align: center;
 }
 
 .form-2 .list-unstyled {
