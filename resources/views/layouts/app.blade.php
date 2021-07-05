@@ -29,7 +29,9 @@
     <link href="css/fontawesome-all.css" rel="stylesheet">
     <link href="css/swiper.css" rel="stylesheet">
 	<link href="css/magnific-popup.css" rel="stylesheet">
+	<link href="css/variables.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
 
 	<!-- Favicon  -->
     <link rel="icon" href="images/favicon.png">

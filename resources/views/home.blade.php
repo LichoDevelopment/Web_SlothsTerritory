@@ -32,9 +32,11 @@
             </div>
         </div>
         <div class="container">
-            <h1>El mejor tour en La Fortuna de San Carlos e increíble vista del Volcán Arenal</h1>
+            <h1 class="main-title mt-3">El mejor tour en La Fortuna de San Carlos e increíble vista del Volcán Arenal</h1>
             <p class="p-heading p-large"> En Sloths Territory podrás observar perezosos de 2 y 3 dedos, además gran variedad de aves y anfibios.<div class=""></div></p>
-            <a class="btn-solid-lg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">RESERVAR AHORA</a>
+            <div class="d-flex justify-content-center align-items-center">
+                <a class="btn-solid-lg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">RESERVAR AHORA</a>
+            </div>
         </div>
 
 
@@ -706,7 +708,7 @@
             <div class="row justify-content-center">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="col-lg-10">
-                    <img class="img-fluid" src="images/services-1.jpg" alt="alternative">
+                    <img class="img-fluid" src="images/services-1.jpg" alt="sloth's territory sendero principal">
                 </div> <!-- end of col -->
                 <div class="col-lg-10">
                     <h3>TOUR DIURNO</h3>
@@ -736,7 +738,7 @@
             <div class="row justify-content-center">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="col-lg-10">
-                    <img class="img-fluid" src="images/services-2.jpg" alt="alternative">
+                    <img class="img-fluid" src="images/services-2.jpg" alt="rana ojos rojos">
                 </div> <!-- end of col -->
                 <div class="col-lg-10">
                     <h3>TOUR NOCTURNO</h3>
@@ -766,7 +768,7 @@
             <div class="row justify-content-center">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="col-lg-10">
-                    <img class="img-fluid" src="images/services-3.jpg" alt="alternative">
+                    <img class="img-fluid" src="images/services-3.jpg" alt="buho">
                 </div> <!-- end of col -->
                 <div class="col-lg-10">
                     <h3>TOUR DE AVES</h3>
@@ -809,7 +811,7 @@
                         <!-- Team Member -->
                         <div class="team-member">
                             <div class="image-wrapper">
-                                <img class="img-fluid" src="images/team-1.png" alt="alternative">
+                                <img class="img-fluid" src="images/team-1.png" alt="trabajador (Keilor)">
                             </div> <!-- end of image-wrapper -->
                             <p class="p-large">Keilor</p>
                             <!-- <p class="job-title">Alguna característica</p> -->
@@ -827,7 +829,7 @@
                         <!-- Team Member -->
                         <div class="team-member">
                             <div class="image-wrapper">
-                                <img class="img-fluid" src="images/team-2.png" alt="alternative">
+                                <img class="img-fluid" src="images/team-2.png" alt="trabajador (Oscar)">
                             </div> <!-- end of image wrapper -->
                             <p class="p-large">Oscar</p>
                             <!-- <p class="job-title">Alguna característica</p> -->
@@ -856,7 +858,7 @@
                     <div class="col-lg-5 col-xl-6">
                         <div class="image-container">
                         <!-- PENDIENTE poner el alt y title y cambiar la imagen -->
-                            <img class="img-fluid" src="images/about.jpg" alt="alternative">    
+                            <img class="img-fluid" src="images/about.jpg" alt="sloth's territory sendero">    
                         </div> <!-- end of image-container -->
                     </div> <!-- end of col -->
                     <div class="col-lg-7 col-xl-6">
