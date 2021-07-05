@@ -263,7 +263,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title"> Nuestra sección de galería</div>
-                        <h2> En esta sección podrás conocer imágenes de las diferentes especies en Sloths Territory.</h2>
+                        <h2> En esta sección podrás conocer imágenes de las diferentes especies en Sloths Territory</h2>
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
                 <div class="row">
@@ -330,7 +330,7 @@
                             <div class="element-item design monos">
                                 <a class="popup-with-move-anim" href="#tour-8">
                                     <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="images/monos/mono-aullador-alouatta-palliata-america-central.jpeg" 
+                                    <img loading="lazy" src="images/monos/mono-aullador-alouatta-palliata-america-central.jp2" 
                                     alt="mono aullador alouatta palliata america central">
                                 </a>
                             </div>
@@ -565,7 +565,7 @@
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="">
                     <img class="img-fluid" loading="lazy" 
-                    src="images/monos/mono-aullador-alouatta-palliata-america-central.jpeg" 
+                    src="images/monos/mono-aullador-alouatta-palliata-america-central.jp2" 
                     alt="mono aullador alouatta palliata america central">
                 </div> <!-- end of col -->
                 {{-- <div class="col-lg-10">
