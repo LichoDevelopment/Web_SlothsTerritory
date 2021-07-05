@@ -158,11 +158,11 @@
                         <!-- Card -->
                         <div class="card">
                             <div class="card-image">
-                                <img class="img-fluid" src="images/ranas/rana-ojos-rojos.jpeg" alt="tour nocturno Sloths Territory La Fortuna" title="rana de ojos rojos en tour nocturno La Fortuna" width="350px" height="258px">
+                                <img class="img-fluid" src="images/ranas/tour-nocturno.jpeg" alt="tour nocturno Sloths Territory La Fortuna" title="rana de ojos rojos en tour nocturno La Fortuna" width="350px" height="258px">
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Tour nocturno</h3>
-                                <p>Pequeña introducción</p>
+                                <p>Una experiencia única</p>
                                 <ul class="list-unstyled li-space-lg">
                                     <li class="media">
                                         <i class="fas fa-square"></i>
@@ -184,7 +184,7 @@
                         <!-- Card -->
                         <div class="card">
                             <div class="card-image">
-                                <img class="img-fluid" src="images/aves/lechuzon-fortuna-costa-rica-.jpeg" alt="magníficas aves en la Fortuna" title="lechuzón en Sloths Territory" width="350px" height="258px">
+                                <img class="img-fluid" src="images/aves/halcon-blanco-gavilan.jpeg" alt="magníficas aves en la Fortuna" title="lechuzón en Sloths Territory" width="350px" height="258px">
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Tour de aves</h3>
