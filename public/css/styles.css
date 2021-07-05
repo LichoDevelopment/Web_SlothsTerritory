@@ -2775,3 +2775,10 @@ input[id="3"]:checked ~ .pagination .pagination-item[for="3"]{
 
 /**************
 /*    VIDEO       */
+
+@media (max-width: 950px){
+	.filter .element-item img{
+		object-fit: cover;
+	}
+
+}

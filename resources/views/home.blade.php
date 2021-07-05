@@ -277,91 +277,91 @@
                             <div class="element-item sloths">
                                 <a class="popup-with-move-anim" href="#tour-1">
                                     <div class="element-item-overlay"></div>
-                                    <img src="images/perezosos/bebe-perezoso-y-madre-perezosa-durmiendo-en-un-arbol-.jpeg" 
+                                    <img class="grid-img" src="images/perezosos/bebe-perezoso-y-madre-perezosa-durmiendo-en-un-arbol-.jpeg" 
                                     alt="bebe perezoso y madre perezosa durmiendo en un arbol">
                                 </a>
                             </div>
                             <div class="element-item sloths">
                                 <a class="popup-with-move-anim" href="#tour-2">
                                     <div class="element-item-overlay"></div>
-                                    <img src="images/perezosos/oso-perezoso-de-tres-dedos.jpeg" 
+                                    <img class="grid-img" src="images/perezosos/oso-perezoso-de-tres-dedos.jpeg" 
                                     alt="oso perezoso de tres dedo">
                                 </a>
                             </div>
                             <div class="element-item sloths">
-                                <a class="popup-with-move-anim" href="#tour-2">
+                                <a class="popup-with-move-anim" href="#tour-3">
                                     <div class="element-item-overlay"></div>
-                                    <img src="images/perezosos/perezoso-en-la-fortuna-de-san-carlos.jpeg" 
+                                    <img class="grid-img" src="images/perezosos/perezoso-en-la-fortuna-de-san-carlos.jpeg" 
                                     alt="perezoso en la fortuna de san carlos">
                                 </a>
                             </div>
                             <div class="element-item sloths">
-                                <a class="popup-with-move-anim" href="#tour-2">
-                                    <div class="element-item-overlay"></div>
-                                    <img src="images/perezosos/bebe-perezoso-durmiendo-en-costa-rica.jpeg" 
-                                    alt="bebe perezoso durmiendo en costa rica">
-                                </a>
-                            </div>
-                            <div class="element-item design ranas marketing">
-                                <a class="popup-with-move-anim" href="#tour-3">
-                                    <div class="element-item-overlay"></div>
-                                    <img src="images/ranas/rana-flecha-roja-azul-costa-rica.jpeg" 
-                                    alt="rana flecha roja azul costa rica">
-                                </a>
-                            </div>
-                            <div class="element-item design ranas marketing">
                                 <a class="popup-with-move-anim" href="#tour-4">
                                     <div class="element-item-overlay"></div>
-                                    <img src="images/ranas/rana-verde-ojos-rojos.jpeg" 
-                                    alt="rana verde ojos rojos">
+                                    <img class="grid-img" src="images/perezosos/bebe-perezoso-durmiendo-en-costa-rica.jpeg" 
+                                    alt="bebe perezoso durmiendo en costa rica">
                                 </a>
                             </div>
                             <div class="element-item design ranas marketing">
                                 <a class="popup-with-move-anim" href="#tour-5">
                                     <div class="element-item-overlay"></div>
-                                    <img src="images/ranas/rana-.jpeg" 
+                                    <img class="grid-img" src="images/ranas/rana-flecha-roja-azul-costa-rica.jpeg" 
+                                    alt="rana flecha roja azul costa rica">
+                                </a>
+                            </div>
+                            <div class="element-item design ranas marketing">
+                                <a class="popup-with-move-anim" href="#tour-6">
+                                    <div class="element-item-overlay"></div>
+                                    <img class="grid-img" src="images/ranas/rana-verde-ojos-rojos.jpeg" 
+                                    alt="rana verde ojos rojos">
+                                </a>
+                            </div>
+                            <div class="element-item design ranas marketing">
+                                <a class="popup-with-move-anim" href="#tour-7">
+                                    <div class="element-item-overlay"></div>
+                                    <img class="grid-img" src="images/ranas/rana-.jpeg" 
                                     alt="rana">
                                 </a>
                             </div>
                             <div class="element-item design monos">
-                                <a class="popup-with-move-anim" href="#tour-6">
+                                <a class="popup-with-move-anim" href="#tour-8">
                                     <div class="element-item-overlay"></div>
-                                    <img src="images/monos/mono-aullador-alouatta-palliata-america-central.jpeg" 
+                                    <img class="grid-img" src="images/monos/mono-aullador-alouatta-palliata-america-central.jpeg" 
                                     alt="mono aullador alouatta palliata america central">
                                 </a>
                             </div>
                             <div class="element-item design aves">
-                                <a class="popup-with-move-anim" href="#tour-7">
+                                <a class="popup-with-move-anim" href="#tour-9">
                                     <div class="element-item-overlay"></div>
-                                    <img src="images/aves/lechuzon-fortuna-costa-rica-.jpeg" 
+                                    <img class="grid-img" src="images/aves/lechuzon-fortuna-costa-rica-.jpeg" 
                                     alt="lechuzon fortuna costa rica">
                                 </a>
                             </div>
                             <div class="element-item design aves">
-                                <a class="popup-with-move-anim" href="#tour-8">
+                                <a class="popup-with-move-anim" href="#tour-10">
                                     <div class="element-item-overlay"></div>
-                                    <img src="images/aves/ave-martin-pescador-collar-coraciforme.jpeg" 
+                                    <img class="grid-img" src="images/aves/ave-martin-pescador-collar-coraciforme.jpeg" 
                                     alt="ave martin pescador collar coraciforme">
                                 </a>
                             </div>
                             <div class="element-item design otras">
-                                <a class="popup-with-move-anim" href="#tour-8">
+                                <a class="popup-with-move-anim" href="#tour-11">
                                     <div class="element-item-overlay"></div>
-                                    <img src="images/otras-especies/serpiente-negra-y-amarillo.jpeg" 
+                                    <img class="grid-img" src="images/otras-especies/serpiente-negra-y-amarillo.jpeg" 
                                     alt="serpiente negra y amarrillo">
                                 </a>
                             </div>
                             <div class="element-item design otras">
-                                <a class="popup-with-move-anim" href="#tour-8">
+                                <a class="popup-with-move-anim" href="#tour-12">
                                     <div class="element-item-overlay"></div>
-                                    <img src="images/otras-especies/leopardo-ocelote-manigordo-bebe-en-la-fortuna-de-san-carlos-costa-rica.jpeg" 
+                                    <img class="grid-img" src="images/otras-especies/leopardo-ocelote-manigordo-bebe-en-la-fortuna-de-san-carlos-costa-rica.jpeg" 
                                     alt="leopardo ocelote manigordo bebe en la fortuna de san carlos costa rica">
                                 </a>
                             </div>
                             <div class="element-item design otras">
-                                <a class="popup-with-move-anim" href="#tour-8">
+                                <a class="popup-with-move-anim" href="#tour-13">
                                     <div class="element-item-overlay"></div>
-                                    <img src="images/otras-especies/serpiente.jpeg" 
+                                    <img class="grid-img" src="images/otras-especies/serpiente.jpeg" 
                                     alt="serpiente">
                                 </a>
                             </div>
@@ -384,11 +384,13 @@
         <div id="tour-1" class="lightbox-basic zoom-anim-dialog mfp-hide">
             <div class="row">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-                <div class="col-lg-8">
-                    <img class="img-fluid" src="images/project-1.jpg" alt="alternative">
+                <div class="">
+                    <img class="img-fluid" 
+                    src="images/perezosos/bebe-perezoso-y-madre-perezosa-durmiendo-en-un-arbol-.jpeg" 
+                    alt="bebe perezoso y madre perezosa durmiendo en un arbol">
                 </div> <!-- end of col -->
-                <div class="col-lg-4">
-                    <h3>El Pepe</h3>
+                {{-- <div class="col-lg-4">
+                    <h3>perezoso</h3>
                     <hr class="line-heading">
                     <h6>Algo de info sub titulo</h6>
                     <p>Info sobre...</p>
@@ -398,7 +400,7 @@
                         <p class="testimonial-author">Tipo de animal o no se...</p>
                     </div>
                     <a class="btn-solid-reg" href="#your-link">DETAILS (redirecciona a otra página)</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
-                </div> <!-- end of col -->
+                </div> <!-- end of col --> --}}
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
         <!-- end of lightbox -->
@@ -407,10 +409,12 @@
         <div id="tour-2" class="lightbox-basic zoom-anim-dialog mfp-hide">
             <div class="row">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-                <div class="col-lg-8">
-                    <img class="img-fluid" src="images/project-2.jpg" alt="alternative">
+                <div class="">
+                    <img class="img-fluid" 
+                    src="images/perezosos/oso-perezoso-de-tres-dedos.jpeg" 
+                    alt="oso perezoso de tres dedo">
                 </div> <!-- end of col -->
-                <div class="col-lg-4">
+                {{-- <div class="col-lg-4">
                     <h3>Juanito</h3>
                     <hr class="line-heading">
                     <h6>Info</h6>
@@ -421,7 +425,7 @@
                         <p class="testimonial-author">Tipo</p>
                     </div>
                     <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
-                </div> <!-- end of col -->
+                </div> <!-- end of col --> --}}
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
         <!-- end of lightbox -->
@@ -430,10 +434,12 @@
         <div id="tour-3" class="lightbox-basic zoom-anim-dialog mfp-hide">
             <div class="row">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-                <div class="col-lg-8">
-                    <img class="img-fluid" src="images/project-3.jpg" alt="alternative">
+                <div class="">
+                    <img class="img-fluid" 
+                    src="images/perezosos/perezoso-en-la-fortuna-de-san-carlos.jpeg" 
+                    alt="perezoso en la fortuna de san carlos">
                 </div> <!-- end of col -->
-                <div class="col-lg-4">
+                {{-- <div class="col-lg-4">
                     <h3>Bofw</h3>
                     <hr class="line-heading">
                     <h6>Strategy Development</h6>
@@ -444,7 +450,7 @@
                         <p class="testimonial-author">General Manager</p>
                     </div>
                     <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
-                </div> <!-- end of col -->
+                </div> <!-- end of col --> --}}
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
         <!-- end of lightbox -->
@@ -453,10 +459,12 @@
         <div id="tour-4" class="lightbox-basic zoom-anim-dialog mfp-hide">
             <div class="row">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-                <div class="col-lg-8">
-                    <img class="img-fluid" src="images/project-4.jpg" alt="alternative">
+                <div class="">
+                    <img class="img-fluid" 
+                    src="images/perezosos/bebe-perezoso-durmiendo-en-costa-rica.jpeg" 
+                    alt="bebe perezoso durmiendo en costa rica">
                 </div> <!-- end of col -->
-                <div class="col-lg-4">
+                {{-- <div class="col-lg-4">
                     <h3>Ipsum</h3>
                     <hr class="line-heading">
                     <h6>Strategy Development</h6>
@@ -467,7 +475,7 @@
                         <p class="testimonial-author">General Manager</p>
                     </div>
                     <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
-                </div> <!-- end of col -->
+                </div> <!-- end of col --> --}}
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
         <!-- end of lightbox -->
@@ -476,10 +484,12 @@
         <div id="tour-5" class="lightbox-basic zoom-anim-dialog mfp-hide">
             <div class="row">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-                <div class="col-lg-8">
-                    <img class="img-fluid" src="images/project-5.jpg" alt="alternative">
+                <div class="">
+                    <img class="img-fluid" 
+                    src="images/ranas/rana-flecha-roja-azul-costa-rica.jpeg" 
+                    alt="rana flecha roja azul costa rica">
                 </div> <!-- end of col -->
-                <div class="col-lg-4">
+                {{-- <div class="col-lg-4">
                     <h3>IMpsu</h3>
                     <hr class="line-heading">
                     <h6>Strategy Development</h6>
@@ -490,7 +500,7 @@
                         <p class="testimonial-author">General Manager</p>
                     </div>
                     <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
-                </div> <!-- end of col -->
+                </div> <!-- end of col --> --}}
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
         <!-- end of lightbox -->
@@ -499,10 +509,12 @@
         <div id="tour-6" class="lightbox-basic zoom-anim-dialog mfp-hide">
             <div class="row">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-                <div class="col-lg-8">
-                    <img class="img-fluid" src="images/project-6.jpg" alt="alternative">
+                <div class="">
+                    <img class="img-fluid" 
+                    src="images/ranas/rana-verde-ojos-rojos.jpeg" 
+                    alt="rana verde ojos rojos">
                 </div> <!-- end of col -->
-                <div class="col-lg-4">
+                {{-- <div class="col-lg-4">
                     <h3>Ipsum</h3>
                     <hr class="line-heading">
                     <h6>Strategy Development</h6>
@@ -513,7 +525,7 @@
                         <p class="testimonial-author">General Manager</p>
                     </div>
                     <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
-                </div> <!-- end of col -->
+                </div> <!-- end of col --> --}}
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
         <!-- end of lightbox -->
@@ -522,10 +534,12 @@
         <div id="tour-7" class="lightbox-basic zoom-anim-dialog mfp-hide">
             <div class="row">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-                <div class="col-lg-8">
-                    <img class="img-fluid" src="images/project-7.jpg" alt="alternative">
+                <div class="">
+                    <img class="img-fluid" 
+                    src="images/ranas/rana-.jpeg" 
+                    alt="rana">
                 </div> <!-- end of col -->
-                <div class="col-lg-4">
+                {{-- <div class="col-lg-4">
                     <h3>CIPSU</h3>
                     <hr class="line-heading">
                     <h6>Strategy Development</h6>
@@ -536,7 +550,7 @@
                         <p class="testimonial-author">General Manager</p>
                     </div>
                     <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
-                </div> <!-- end of col -->
+                </div> <!-- end of col --> --}}
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
         <!-- end of lightbox -->
@@ -545,10 +559,12 @@
         <div id="tour-8" class="lightbox-basic zoom-anim-dialog mfp-hide">
             <div class="row justify-content-center">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-                <div class="col-lg-10">
-                    <img class="img-fluid" src="images/project-8.jpg" alt="alternative">
+                <div class="">
+                    <img class="img-fluid" 
+                    src="images/monos/mono-aullador-alouatta-palliata-america-central.jpeg" 
+                    alt="mono aullador alouatta palliata america central">
                 </div> <!-- end of col -->
-                <div class="col-lg-10">
+                {{-- <div class="col-lg-10">
                     <h3>sub algo</h3>
                     <hr class="line-heading">
                     <h6>Strategy Development</h6>
@@ -559,7 +575,127 @@
                         <p class="testimonial-author">General Manager</p>
                     </div>
                     <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
+                </div> <!-- end of col --> --}}
+            </div> <!-- end of row -->
+        </div> <!-- end of lightbox-basic -->
+        <!-- end of lightbox -->
+        <!-- Lightbox -->
+        <div id="tour-9" class="lightbox-basic zoom-anim-dialog mfp-hide">
+            <div class="row justify-content-center">
+                <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+                <div class="">
+                    <img class="img-fluid" 
+                    src="images/aves/lechuzon-fortuna-costa-rica-.jpeg" 
+                    alt="lechuzon fortuna costa rica">
                 </div> <!-- end of col -->
+                {{-- <div class="col-lg-10">
+                    <h3>sub algo</h3>
+                    <hr class="line-heading">
+                    <h6>Strategy Development</h6>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <div class="testimonial-container">
+                        <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <p class="testimonial-author">General Manager</p>
+                    </div>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
+                </div> <!-- end of col --> --}}
+            </div> <!-- end of row -->
+        </div> <!-- end of lightbox-basic -->
+        <!-- end of lightbox -->
+        <!-- Lightbox -->
+        <div id="tour-10" class="lightbox-basic zoom-anim-dialog mfp-hide">
+            <div class="row justify-content-center">
+                <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+                <div class="">
+                    <img class="img-fluid" 
+                    src="images/aves/ave-martin-pescador-collar-coraciforme.jpeg" 
+                    alt="ave martin pescador collar coraciforme">
+                </div> <!-- end of col -->
+                {{-- <div class="col-lg-10">
+                    <h3>sub algo</h3>
+                    <hr class="line-heading">
+                    <h6>Strategy Development</h6>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <div class="testimonial-container">
+                        <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <p class="testimonial-author">General Manager</p>
+                    </div>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
+                </div> <!-- end of col --> --}}
+            </div> <!-- end of row -->
+        </div> <!-- end of lightbox-basic -->
+        <!-- end of lightbox -->
+        <!-- Lightbox -->
+        <div id="tour-11" class="lightbox-basic zoom-anim-dialog mfp-hide">
+            <div class="row justify-content-center">
+                <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+                <div class="">
+                    <img class="img-fluid" 
+                    src="images/otras-especies/serpiente-negra-y-amarillo.jpeg" 
+                    alt="serpiente negra y amarrillo">
+                </div> <!-- end of col -->
+                {{-- <div class="col-lg-10">
+                    <h3>sub algo</h3>
+                    <hr class="line-heading">
+                    <h6>Strategy Development</h6>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <div class="testimonial-container">
+                        <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <p class="testimonial-author">General Manager</p>
+                    </div>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
+                </div> <!-- end of col --> --}}
+            </div> <!-- end of row -->
+        </div> <!-- end of lightbox-basic -->
+        <!-- end of lightbox -->
+        <!-- Lightbox -->
+        <div id="tour-12" class="lightbox-basic zoom-anim-dialog mfp-hide">
+            <div class="row justify-content-center">
+                <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+                <div class="">
+                    <img class="img-fluid" 
+                    src="images/otras-especies/leopardo-ocelote-manigordo-bebe-en-la-fortuna-de-san-carlos-costa-rica.jpeg" 
+                    alt="leopardo ocelote manigordo bebe en la fortuna de san carlos costa rica">
+                </div> <!-- end of col -->
+                {{-- <div class="col-lg-10">
+                    <h3>sub algo</h3>
+                    <hr class="line-heading">
+                    <h6>Strategy Development</h6>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <div class="testimonial-container">
+                        <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <p class="testimonial-author">General Manager</p>
+                    </div>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
+                </div> <!-- end of col --> --}}
+            </div> <!-- end of row -->
+        </div> <!-- end of lightbox-basic -->
+        <!-- end of lightbox -->
+        <!-- Lightbox -->
+        <div id="tour-13" class="lightbox-basic zoom-anim-dialog mfp-hide">
+            <div class="row justify-content-center">
+                <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+                <div class="">
+                    <img class="img-fluid" 
+                    src="images/otras-especies/serpiente.jpeg" 
+                    alt="serpiente">
+                </div> <!-- end of col -->
+                {{-- <div class="col-lg-10">
+                    <h3>sub algo</h3>
+                    <hr class="line-heading">
+                    <h6>Strategy Development</h6>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <div class="testimonial-container">
+                        <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <p class="testimonial-author">General Manager</p>
+                    </div>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
+                </div> <!-- end of col --> --}}
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
         <!-- end of lightbox -->
