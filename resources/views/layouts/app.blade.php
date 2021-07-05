@@ -70,10 +70,10 @@
                     <a class="nav-link page-scroll" href="{{ route('home') }}">HOME <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#header">INTRO</a>
+                    <a class="nav-link page-scroll" href="#header">INICIO</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#services">SERVICES</a>
+                    <a class="nav-link page-scroll" href="#services">SERVICIOS</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#tours">GALERÍA</a>
@@ -81,17 +81,18 @@
 
                 <!-- Dropdown Menu -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">ABOUT</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">ACERCA DE</a>
+                    <!-- PENDIENTE -->
+                    <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ route('terms-conditions') }}"><span class="item-text">TERMS CONDITIONS</span></a>
                         <div class="dropdown-items-divide-hr"></div>
                         <a class="dropdown-item" href="{{ route('privacy-policy') }}"><span class="item-text">PRIVACY POLICY</span></a>
-                    </div>
+                    </div> -->
                 </li>
                 <!-- end of dropdown menu -->
 
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#contact">CONTACT</a>
+                    <a class="nav-link page-scroll" href="#contact">CANTACTARNOS</a>
                 </li>
             </ul>
             <span class="nav-item social-icons">
@@ -147,21 +148,21 @@
                         <ul class="list-unstyled li-space-lg white">
                             <li>
                                 <i class="fab fa-facebook-f"></i>
-                                <a class="white footer-link" href="https://www.facebook.com/Sloths.Territory.2018" >Facebook</a>
+                                <a class="white footer-link" href="https://www.facebook.com/Sloths.Territory.2018" target="_blank">Facebook</a>
                             </li>
                             <li >
                                 <i class="fab fa-tripadvisor"></i>
                                 <a class="white footer-link" 
-                                href="https://www.tripadvisor.es/Attraction_Review-g309226-d15636276-Reviews-Sloth_s_Territory-La_Fortuna_de_San_Carlos_Arenal_Volcano_National_Park_Province.html">
+                                    href="https://www.tripadvisor.es/Attraction_Review-g309226-d15636276-Reviews-Sloth_s_Territory-La_Fortuna_de_San_Carlos_Arenal_Volcano_National_Park_Province.html" target="_blank">
                                 Tripadvisor</a>
                             </li>
                             <li >
                                 <i class="fab fa-instagram"></i>
-                                <a class="white footer-link" href="https://www.instagram.com/slothsterritory/">Instagram</a>
+                                <a class="white footer-link" href="https://www.instagram.com/slothsterritory/" target="_blank">Instagram</a>
                             </li>
                             <li >
                                 <i class="fab fa-youtube"></i>
-                                <a class="white footer-link" href="https://www.instagram.com/slothsterritory/">Youtube</a>
+                                <a class="white footer-link" href="https://www.youtube.com/channel/UCKqtM7YiCFUtcYs5j8B5hgw" target="_blank">Youtube</a>
                             </li>
                         </ul>
                     </div>

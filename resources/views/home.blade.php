@@ -253,117 +253,8 @@
         </div> <!-- end of accordion -->
         <!-- end of details 1 -->
 
-
-      
-        <!-- Testimonials -->
-        <div class="slider">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h2>Algunas de nuestras especies de animales</h2>
-                        <p class="p-heading">En Sloths Territory en La Fortuna de San Carlos podrás encontrar gran variedad de animales.</p>
-                    </div> <!-- end of col -->
-                </div> <!-- end of row -->
-                <div class="row">
-                    <div class="col-lg-12">
-
-                        <!-- Card Slider -->
-                        <div class="slider-container">
-                            <div class="swiper-container card-slider">
-                                <div class="swiper-wrapper">
-
-                                    <!-- Slide -->
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img class="card-image" src="images/testimonial-1.jpg" alt="alternative">
-                                            <div class="card-body">
-                                                <div class="testimonial-text">Esta especies es ....</div>
-                                                <div class="testimonial-author">Nombre científico</div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end of swiper-slide -->
-                                    <!-- end of slide -->
-
-                                    <!-- Slide -->
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img class="card-image" src="images/testimonial-2.jpg" alt="alternative">
-                                            <div class="card-body">
-                                                <div class="testimonial-text">Esta especies es ...</div>
-                                                <div class="testimonial-author">Nombre científico</div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end of swiper-slide -->
-                                    <!-- end of slide -->
-
-                                    <!-- Slide -->
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img class="card-image" src="images/testimonial-3.jpg" alt="alternative">
-                                            <div class="card-body">
-                                                <div class="testimonial-text">Esta especie es ... </div>
-                                                <div class="testimonial-author">Nombre científico.</div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end of swiper-slide -->
-                                    <!-- end of slide -->
-
-                                    <!-- Slide -->
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img class="card-image" src="images/testimonial-4.jpg" alt="alternative">
-                                            <div class="card-body">
-                                                <div class="testimonial-text">Esta especie es ...</div>
-                                                <div class="testimonial-author">Nombre científico</div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end of swiper-slide -->
-                                    <!-- end of slide -->
-
-                                    <!-- Slide -->
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img class="card-image" src="images/testimonial-5.jpg" alt="alternative">
-                                            <div class="card-body">
-                                                <div class="testimonial-text">Esta especie es ...</div>
-                                                <div class="testimonial-author">Nombre científico</div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end of swiper-slide -->
-                                    <!-- end of slide -->
-
-                                    <!-- Slide -->
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img class="card-image" src="images/testimonial-6.jpg" alt="alternative">
-                                            <div class="card-body">
-                                                <div class="testimonial-text">Esta especie es ...</div>
-                                                <div class="testimonial-author">Nombre científico</div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end of swiper-slide -->
-                                    <!-- end of slide -->
-
-                                </div> <!-- end of swiper-wrapper -->
-
-                                <!-- Add Arrows -->
-                                <div class="swiper-button-next"></div>
-                                <div class="swiper-button-prev"></div>
-                                <!-- end of add arrows -->
-
-                            </div> <!-- end of swiper-container -->
-                        </div> <!-- end of sliedr-container -->
-                        <!-- end of card slider -->
-
-                    </div> <!-- end of col -->
-                </div> <!-- end of row -->
-            </div> <!-- end of container -->
-        </div> <!-- end of slider -->
-        <!-- end of testimonials -->
-
-
         <!-- Tours -->
-        <div id="tours" class="filter">
+        <div id="galeria" class="filter">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -379,32 +270,32 @@
                             <a class="button" data-filter=".design"><span>Sloths</span></a>
                             <a class="button" data-filter=".development"><span>Frog</span></a>
                             <a class="button" data-filter=".marketing"><span>Tortugas</span></a>
-                            <a class="button" data-filter=".seo"><span>etc (agregar o quitar)</span></a>
+                            <a class="button" data-filter=".seo"><span>Otras especies</span></a>
                         </div> <!-- end of button group -->
                         <div class="grid">
                             <div class="element-item development">
-                                <a class="popup-with-move-anim" href="#tour-1"><div class="element-item-overlay"><span>El Pepe</span></div><img src="images/project-1.jpg" alt="alternative"></a>
+                                <a class="popup-with-move-anim" href="#tour-1"><div class="element-item-overlay"></div><img src="images/project-1.jpg" alt="alternative"></a>
                             </div>
                             <div class="element-item development">
-                                <a class="popup-with-move-anim" href="#tour-2"><div class="element-item-overlay"><span>Juanito</span></div><img src="images/project-2.jpg" alt="alternative"></a>
+                                <a class="popup-with-move-anim" href="#tour-2"><div class="element-item-overlay"></div><img src="images/project-2.jpg" alt="alternative"></a>
                             </div>
                             <div class="element-item design development marketing">
-                                <a class="popup-with-move-anim" href="#tour-3"><div class="element-item-overlay"><span>Juanita</span></div><img src="images/project-3.jpg" alt="alternative"></a>
+                                <a class="popup-with-move-anim" href="#tour-3"><div class="element-item-overlay"></div><img src="images/project-3.jpg" alt="alternative"></a>
                             </div>
                             <div class="element-item design development marketing">
-                                <a class="popup-with-move-anim" href="#tour-4"><div class="element-item-overlay"><span>No se</span></div><img src="images/project-4.jpg" alt="alternative"></a>
+                                <a class="popup-with-move-anim" href="#tour-4"><div class="element-item-overlay"></div><img src="images/project-4.jpg" alt="alternative"></a>
                             </div>
                             <div class="element-item design development marketing seo">
-                                <a class="popup-with-move-anim" href="#tour-5"><div class="element-item-overlay"><span>Joy el perezoso </span></div><img src="images/project-5.jpg" alt="alternative"></a>
+                                <a class="popup-with-move-anim" href="#tour-5"><div class="element-item-overlay"></div><img src="images/project-5.jpg" alt="alternative"></a>
                             </div>
                             <div class="element-item design marketing seo">
-                                <a class="popup-with-move-anim" href="#tour-6"><div class="element-item-overlay"><span>Juancho</span></div><img src="images/project-6.jpg" alt="alternative"></a>
+                                <a class="popup-with-move-anim" href="#tour-6"><div class="element-item-overlay"></div><img src="images/project-6.jpg" alt="alternative"></a>
                             </div>
                             <div class="element-item design marketing">
-                                <a class="popup-with-move-anim" href="#tour-7"><div class="element-item-overlay"><span>Oscar jaja</span></div><img src="images/project-7.jpg" alt="alternative"></a>
+                                <a class="popup-with-move-anim" href="#tour-7"><div class="element-item-overlay"></div><img src="images/project-7.jpg" alt="alternative"></a>
                             </div>
                             <div class="element-item design marketing">
-                                <a class="popup-with-move-anim" href="#tour-8"><div class="element-item-overlay"><span>Armadillo creo</span></div><img src="images/project-8.jpg" alt="alternative"></a>
+                                <a class="popup-with-move-anim" href="#tour-8"><div class="element-item-overlay"></div><img src="images/project-8.jpg" alt="alternative"></a>
                             </div>
                         </div> <!-- end of grid -->
                         <!-- end of filter -->
@@ -415,7 +306,7 @@
         </div> <!-- end of filter -->
         </div> <!-- end of container -->
             <div id="video" class="container">
-                <iframe src="https://www.youtube.com/embed/BrAsPlE2gS8?rel=0&amp;showinfo=0" width="100%" height="430px" frameborder="0" style="border:0" allowfullscreen></iframe>             
+                <iframe src="https://www.youtube.com/embed/BrAsPlE2gS8?rel=0&amp;showinfo=0" width="100%" height="430px" frameborder="0" style="border:0" allowfullscreen alt="Video de perezosos en Sloths Territory La Fortuna" title="video de perezosos La Fortuna"></iframe>             
         </div>
         <!-- end of tours -->
 
@@ -438,7 +329,7 @@
                         <p class="testimonial-text">Parrafo sobre comentario de algo.</p>
                         <p class="testimonial-author">Tipo de animal o no se...</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS (redirecciona a otra página)</a> <a class="btn-outline-reg mfp-close as-button" href="#tours">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS (redirecciona a otra página)</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -461,7 +352,7 @@
                         <p class="testimonial-text">Parrafo </p>
                         <p class="testimonial-author">Tipo</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#tours">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -484,7 +375,7 @@
                         <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#tours">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -507,7 +398,7 @@
                         <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#tours">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -530,7 +421,7 @@
                         <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#tours">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -553,7 +444,7 @@
                         <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#tours">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -576,7 +467,7 @@
                         <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#tours">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -599,7 +490,7 @@
                         <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#tours">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -627,9 +518,6 @@
                     <p>Ropa ligera</p>
                     <p>Impermeable</p>
                     <p>Zapato cerrado</p>
-                    
-                    
-                    
                     <div class="testimonial-container">
                         <p class="testimonial-text">No dejes pasar esta aventura.</p>
                     </div>
@@ -660,9 +548,6 @@
                     <p>Ropa ligera</p>
                     <p>Impermeable</p>
                     <p>Zapato cerrado</p>
-                    
-                    
-                    
                     <div class="testimonial-container">
                         <p class="testimonial-text">No dejes pasar esta aventura.</p>
                     </div>
@@ -695,9 +580,6 @@
                     <p>Cámara</p>
                     <p>Binoculares</p>
                     <p>Zapatos cerrados</p>
-                    
-                    
-                    
                     <div class="testimonial-container">
                         <p class="testimonial-text">No dejes pasar esta aventura.</p>
                     </div>
@@ -706,40 +588,31 @@
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
         <!-- end of lightbox -->
-
         <!-- end of tour lightboxes -->
-
 
         <!-- Team -->
         <div class="basic-2">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h2>Fundadores (Se puede quitar o cambiar)</h2>
-                        <p class="p-heading">Pequeña historia sobre los fundadores (podría ser)</p>
+                        <h2>Fundadores de Sloths Territory en La Fortuna</h2>
+                        <!-- <p class="p-heading"> PENDIENTE</p> -->
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
                 <div class="row">
                     <div class="col-lg-12">
-
                         <!-- Team Member -->
                         <div class="team-member">
                             <div class="image-wrapper">
                                 <img class="img-fluid" src="images/team-1.png" alt="alternative">
                             </div> <!-- end of image-wrapper -->
                             <p class="p-large">Keilor</p>
-                            <p class="job-title">Alguna característica</p>
+                            <!-- <p class="job-title">Alguna característica</p> -->
                             <span class="social-icons">
                                 <span class="fa-stack">
-                                    <a href="#your-link">
+                                    <a href="https://www.facebook.com/Sloths.Territory.2018" target="_blank">
                                         <span class="hexagon"></span>
                                         <i class="fab fa-facebook-f fa-stack-1x"></i>
-                                    </a>
-                                </span>
-                                <span class="fa-stack">
-                                    <a href="#your-link">
-                                        <span class="hexagon"></span>
-                                        <i class="fab fa-whatsapp fa-stack-1x"></i>
                                     </a>
                                 </span>
                             </span>
@@ -752,66 +625,12 @@
                                 <img class="img-fluid" src="images/team-2.png" alt="alternative">
                             </div> <!-- end of image wrapper -->
                             <p class="p-large">Oscar</p>
-                            <p class="job-title">Alguna característica</p>
+                            <!-- <p class="job-title">Alguna característica</p> -->
                             <span class="social-icons">
                                 <span class="fa-stack">
-                                    <a href="#your-link">
+                                    <a href="https://www.facebook.com/Sloths.Territory.2018" target="_blank">
                                         <span class="hexagon"></span>
                                         <i class="fab fa-facebook-f fa-stack-1x"></i>
-                                    </a>
-                                </span>
-                                <span class="fa-stack">
-                                    <a href="#your-link">
-                                        <span class="hexagon"></span>
-                                        <i class="fab fa-whatsapp fa-stack-1x"></i>
-                                    </a>
-                                </span>
-                            </span>
-                        </div> <!-- end of team-member -->
-                        <!-- end of team member -->
-
-                        <!-- Team Member -->
-                        <div class="team-member">
-                            <div class="image-wrapper">
-                                <img class="img-fluid" src="images/team-3.png" alt="alternative">
-                            </div> <!-- end of image wrapper -->
-                            <p class="p-large">juanito</p>
-                            <p class="job-title">Alguna característica</p>
-                            <span class="social-icons">
-                                <span class="fa-stack">
-                                    <a href="#your-link">
-                                        <span class="hexagon"></span>
-                                        <i class="fab fa-facebook-f fa-stack-1x"></i>
-                                    </a>
-                                </span>
-                                <span class="fa-stack">
-                                    <a href="#your-link">
-                                        <span class="hexagon"></span>
-                                        <i class="fab fa-whatsapp fa-stack-1x"></i>
-                                    </a>
-                                </span>
-                            </span>
-                        </div> <!-- end of team-member -->
-                        <!-- end of team member -->
-
-                        <!-- Team Member -->
-                        <div class="team-member">
-                            <div class="image-wrapper">
-                                <img class="img-fluid" src="images/team-4.png" alt="alternative">
-                            </div> <!-- end of image wrapper -->
-                            <p class="p-large">Juanita</p>
-                            <p class="job-title">Alguna característica</p>
-                            <span class="social-icons">
-                                <span class="fa-stack">
-                                    <a href="#your-link">
-                                        <span class="hexagon"></span>
-                                        <i class="fab fa-facebook-f fa-stack-1x"></i>
-                                    </a>
-                                </span>
-                                <span class="fa-stack">
-                                    <a href="#your-link">
-                                        <span class="hexagon"></span>
-                                        <i class="fab fa-whatsapp fa-stack-1x"></i>
                                     </a>
                                 </span>
                             </span>
@@ -838,7 +657,7 @@
                         <div class="text-container">
                             <div class="section-title">Acerda de </div>
                             <h2> Sloths Territory</h2>
-                            <p> Algo de info...</p>
+                            <p> Te esperamos, no te pierdas el mejor tour de perezosos de La Fortuna</p>
                             <ul class="list-unstyled li-space-lg">
                                 <li class="media">
                                     <i class="fas fa-square"></i>
@@ -850,27 +669,9 @@
                                 </li>
                                 <li class="media">
                                     <i class="fas fa-square"></i>
-                                    <div class="media-body">Más características si fuese posible y necesario...</div>
+                                    <div class="media-body">Contamos con gran variedad de especies.</div>
                                 </li>
                             </ul>
-
-                            <!-- Counter -->
-                            <!-- <div id="counter">
-                                <div class="cell">
-                                    <div class="counter-value number-count" data-count="2315">1</div>
-                                    <div class="counter-info">clientes <br>Felices</div>
-                                </div> -->
-                                <!-- <div class="cell">
-                                    <div class="counter-value number-count" data-count="121">1</div>
-                                    <div class="counter-info">Clientes <br> </div>
-                                </div>
-                                <div class="cell">
-                                    <div class="counter-value number-count" data-count="159">1</div>
-                                    <div class="counter-info">Good<br>Reviews</div>
-                                </div> -->
-                            <!-- </div> -->
-                            <!-- end of counter -->
-
                         </div> <!-- end of text-container -->
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
@@ -893,7 +694,7 @@
                                 <li><i class="fas fa-phone"></i><a href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">+506 8561 0404</a></li>
                                 <li><i class="fas fa-envelope"></i><a href="mailto:sloths.territory@gmail.com" target="_blank">sloths.territory@gmail.com</a></li>
                             </ul>
-                            <h3>Follow Sloths Territory</h3>
+                            <h3>Síguenos Sloths Territory</h3>
 
                             <span class="fa-stack">
                             <a href="https://www.facebook.com/Sloths.Territory.2018" target="_blank">
@@ -913,7 +714,6 @@
                                     <i class="fab fa-youtube fa-stack-1x"></i>
                                 </a>
                             </span>
-                            <h3>Calificanos en Tripadvisor</h3>
                             <span class="fa-stack">
                                 <a href="https://www.tripadvisor.com/UserReviewEdit-g309226-d15636276-Sloth_s_Territory-La_Fortuna_de_San_Carlos_Arenal_Volcano_National_Park_Province_of_Alajuela.html" target="_blank">
                                     <span class="hexagon"></span>
@@ -928,17 +728,17 @@
                         <form id="contactForm" data-toggle="validator" data-focus="false">
                             <div class="form-group">
                                 <input type="text" class="form-control-input" id="cname" required>
-                                <label class="label-control" for="cname">Name</label>
+                                <label class="label-control" for="cname">Nombre</label>
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
                                 <input type="email" class="form-control-input" id="cemail" required>
-                                <label class="label-control" for="cemail">Email</label>
+                                <label class="label-control" for="cemail">Correo</label>
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
                                 <textarea class="form-control-textarea" id="cmessage" required></textarea>
-                                <label class="label-control" for="cmessage">Your message</label>
+                                <label class="label-control" for="cmessage">Su mensaje</label>
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group checkbox">
@@ -946,7 +746,7 @@
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="form-control-submit-button">SUBMIT MESSAGE</button>
+                                <button type="submit" class="form-control-submit-button">ENVIAR MENSAJE</button>
                             </div>
                             <div class="form-message">
                                 <div id="cmsgSubmit" class="h3 text-center hidden"></div>
