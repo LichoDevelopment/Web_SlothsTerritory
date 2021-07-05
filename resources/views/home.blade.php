@@ -267,35 +267,103 @@
                         <!-- Filter -->
                         <div class="button-group filters-button-group">
                             <a class="button is-checked" data-filter="*"><span>SHOW ALL</span></a>
-                            <a class="button" data-filter=".design"><span>Sloths</span></a>
-                            <a class="button" data-filter=".development"><span>Frog</span></a>
-                            <a class="button" data-filter=".marketing"><span>Tortugas</span></a>
-                            <a class="button" data-filter=".seo"><span>Otras especies</span></a>
+                            <a class="button" data-filter=".sloths"><span>Sloths</span></a>
+                            <a class="button" data-filter=".ranas"><span>Frogs</span></a>
+                            <a class="button" data-filter=".monos"><span>Monkeys</span></a>
+                            <a class="button" data-filter=".aves"><span>Birds</span></a>
+                            <a class="button" data-filter=".otras"><span>Otras especies</span></a>
                         </div> <!-- end of button group -->
                         <div class="grid">
-                            <div class="element-item development">
-                                <a class="popup-with-move-anim" href="#tour-1"><div class="element-item-overlay"></div><img src="images/project-1.jpg" alt="alternative"></a>
+                            <div class="element-item sloths">
+                                <a class="popup-with-move-anim" href="#tour-1">
+                                    <div class="element-item-overlay"></div>
+                                    <img src="images/perezosos/bebe-perezoso-y-madre-perezosa-durmiendo-en-un-arbol-.jpeg" 
+                                    alt="bebe perezoso y madre perezosa durmiendo en un arbol">
+                                </a>
                             </div>
-                            <div class="element-item development">
-                                <a class="popup-with-move-anim" href="#tour-2"><div class="element-item-overlay"></div><img src="images/project-2.jpg" alt="alternative"></a>
+                            <div class="element-item sloths">
+                                <a class="popup-with-move-anim" href="#tour-2">
+                                    <div class="element-item-overlay"></div>
+                                    <img src="images/perezosos/oso-perezoso-de-tres-dedos.jpeg" 
+                                    alt="oso perezoso de tres dedo">
+                                </a>
                             </div>
-                            <div class="element-item design development marketing">
-                                <a class="popup-with-move-anim" href="#tour-3"><div class="element-item-overlay"></div><img src="images/project-3.jpg" alt="alternative"></a>
+                            <div class="element-item sloths">
+                                <a class="popup-with-move-anim" href="#tour-2">
+                                    <div class="element-item-overlay"></div>
+                                    <img src="images/perezosos/perezoso-en-la-fortuna-de-san-carlos.jpeg" 
+                                    alt="perezoso en la fortuna de san carlos">
+                                </a>
                             </div>
-                            <div class="element-item design development marketing">
-                                <a class="popup-with-move-anim" href="#tour-4"><div class="element-item-overlay"></div><img src="images/project-4.jpg" alt="alternative"></a>
+                            <div class="element-item sloths">
+                                <a class="popup-with-move-anim" href="#tour-2">
+                                    <div class="element-item-overlay"></div>
+                                    <img src="images/perezosos/bebe-perezoso-durmiendo-en-costa-rica.jpeg" 
+                                    alt="bebe perezoso durmiendo en costa rica">
+                                </a>
                             </div>
-                            <div class="element-item design development marketing seo">
-                                <a class="popup-with-move-anim" href="#tour-5"><div class="element-item-overlay"></div><img src="images/project-5.jpg" alt="alternative"></a>
+                            <div class="element-item design ranas marketing">
+                                <a class="popup-with-move-anim" href="#tour-3">
+                                    <div class="element-item-overlay"></div>
+                                    <img src="images/ranas/rana-flecha-roja-azul-costa-rica.jpeg" 
+                                    alt="rana flecha roja azul costa rica">
+                                </a>
                             </div>
-                            <div class="element-item design marketing seo">
-                                <a class="popup-with-move-anim" href="#tour-6"><div class="element-item-overlay"></div><img src="images/project-6.jpg" alt="alternative"></a>
+                            <div class="element-item design ranas marketing">
+                                <a class="popup-with-move-anim" href="#tour-4">
+                                    <div class="element-item-overlay"></div>
+                                    <img src="images/ranas/rana-verde-ojos-rojos.jpeg" 
+                                    alt="rana verde ojos rojos">
+                                </a>
                             </div>
-                            <div class="element-item design marketing">
-                                <a class="popup-with-move-anim" href="#tour-7"><div class="element-item-overlay"></div><img src="images/project-7.jpg" alt="alternative"></a>
+                            <div class="element-item design ranas marketing">
+                                <a class="popup-with-move-anim" href="#tour-5">
+                                    <div class="element-item-overlay"></div>
+                                    <img src="images/ranas/rana-.jpeg" 
+                                    alt="rana">
+                                </a>
                             </div>
-                            <div class="element-item design marketing">
-                                <a class="popup-with-move-anim" href="#tour-8"><div class="element-item-overlay"></div><img src="images/project-8.jpg" alt="alternative"></a>
+                            <div class="element-item design monos">
+                                <a class="popup-with-move-anim" href="#tour-6">
+                                    <div class="element-item-overlay"></div>
+                                    <img src="images/monos/mono-aullador-alouatta-palliata-america-central.jpeg" 
+                                    alt="mono aullador alouatta palliata america central">
+                                </a>
+                            </div>
+                            <div class="element-item design aves">
+                                <a class="popup-with-move-anim" href="#tour-7">
+                                    <div class="element-item-overlay"></div>
+                                    <img src="images/aves/lechuzon-fortuna-costa-rica-.jpeg" 
+                                    alt="lechuzon fortuna costa rica">
+                                </a>
+                            </div>
+                            <div class="element-item design aves">
+                                <a class="popup-with-move-anim" href="#tour-8">
+                                    <div class="element-item-overlay"></div>
+                                    <img src="images/aves/ave-martin-pescador-collar-coraciforme.jpeg" 
+                                    alt="ave martin pescador collar coraciforme">
+                                </a>
+                            </div>
+                            <div class="element-item design otras">
+                                <a class="popup-with-move-anim" href="#tour-8">
+                                    <div class="element-item-overlay"></div>
+                                    <img src="images/otras-especies/serpiente-negra-y-amarillo.jpeg" 
+                                    alt="serpiente negra y amarrillo">
+                                </a>
+                            </div>
+                            <div class="element-item design otras">
+                                <a class="popup-with-move-anim" href="#tour-8">
+                                    <div class="element-item-overlay"></div>
+                                    <img src="images/otras-especies/leopardo-ocelote-manigordo-bebe-en-la-fortuna-de-san-carlos-costa-rica.jpeg" 
+                                    alt="leopardo ocelote manigordo bebe en la fortuna de san carlos costa rica">
+                                </a>
+                            </div>
+                            <div class="element-item design otras">
+                                <a class="popup-with-move-anim" href="#tour-8">
+                                    <div class="element-item-overlay"></div>
+                                    <img src="images/otras-especies/serpiente.jpeg" 
+                                    alt="serpiente">
+                                </a>
                             </div>
                         </div> <!-- end of grid -->
                         <!-- end of filter -->
