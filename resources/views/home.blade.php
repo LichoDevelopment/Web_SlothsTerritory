@@ -182,7 +182,7 @@
                         <!-- Card -->
                         <div class="card">
                             <div class="card-image">
-                                <img class="img-fluid" src="images/otras-especies/lechuzon-fortuna-costa-rica-.jpeg" alt="magníficas ves en la Fortuna" title="lechuzón en Sloths Territory">
+                                <img class="img-fluid" src="images/aves/lechuzon-fortuna-costa-rica-.jpeg" alt="magníficas aves en la Fortuna" title="lechuzón en Sloths Territory">
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Tour de aves</h3>
