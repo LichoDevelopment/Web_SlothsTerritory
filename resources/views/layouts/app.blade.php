@@ -76,7 +76,7 @@
                     <a class="nav-link page-scroll" href="#services">SERVICIOS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#tours">GALERÍA</a>
+                    <a class="nav-link page-scroll" href="#galeria">GALERÍA</a>
                 </li>
 
                 <!-- Dropdown Menu -->
