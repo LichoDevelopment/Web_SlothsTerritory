@@ -277,91 +277,91 @@
                             <div class="element-item sloths">
                                 <a class="popup-with-move-anim" href="#tour-1">
                                     <div class="element-item-overlay"></div>
-                                    <img class="grid-img" src="images/perezosos/bebe-perezoso-y-madre-perezosa-durmiendo-en-un-arbol-.jpeg" 
+                                    <img loading="lazy" src="images/perezosos/bebe-perezoso-y-madre-perezosa-durmiendo-en-un-arbol-.jpeg" 
                                     alt="bebe perezoso y madre perezosa durmiendo en un arbol">
                                 </a>
                             </div>
                             <div class="element-item sloths">
                                 <a class="popup-with-move-anim" href="#tour-2">
                                     <div class="element-item-overlay"></div>
-                                    <img class="grid-img" src="images/perezosos/oso-perezoso-de-tres-dedos.jpeg" 
+                                    <img loading="lazy" src="images/perezosos/oso-perezoso-de-tres-dedos.jpeg" 
                                     alt="oso perezoso de tres dedo">
                                 </a>
                             </div>
                             <div class="element-item sloths">
                                 <a class="popup-with-move-anim" href="#tour-3">
                                     <div class="element-item-overlay"></div>
-                                    <img class="grid-img" src="images/perezosos/perezoso-en-la-fortuna-de-san-carlos.jpeg" 
+                                    <img loading="lazy" src="images/perezosos/perezoso-en-la-fortuna-de-san-carlos.jpeg" 
                                     alt="perezoso en la fortuna de san carlos">
                                 </a>
                             </div>
                             <div class="element-item sloths">
                                 <a class="popup-with-move-anim" href="#tour-4">
                                     <div class="element-item-overlay"></div>
-                                    <img class="grid-img" src="images/perezosos/bebe-perezoso-durmiendo-en-costa-rica.jpeg" 
+                                    <img loading="lazy" src="images/perezosos/bebe-perezoso-durmiendo-en-costa-rica.jpeg" 
                                     alt="bebe perezoso durmiendo en costa rica">
                                 </a>
                             </div>
                             <div class="element-item design ranas marketing">
                                 <a class="popup-with-move-anim" href="#tour-5">
                                     <div class="element-item-overlay"></div>
-                                    <img class="grid-img" src="images/ranas/rana-flecha-roja-azul-costa-rica.jpeg" 
+                                    <img loading="lazy" src="images/ranas/rana-flecha-roja-azul-costa-rica.jpeg" 
                                     alt="rana flecha roja azul costa rica">
                                 </a>
                             </div>
                             <div class="element-item design ranas marketing">
                                 <a class="popup-with-move-anim" href="#tour-6">
                                     <div class="element-item-overlay"></div>
-                                    <img class="grid-img" src="images/ranas/rana-verde-ojos-rojos.jpeg" 
+                                    <img loading="lazy" src="images/ranas/rana-verde-ojos-rojos.jpeg" 
                                     alt="rana verde ojos rojos">
                                 </a>
                             </div>
                             <div class="element-item design ranas marketing">
                                 <a class="popup-with-move-anim" href="#tour-7">
                                     <div class="element-item-overlay"></div>
-                                    <img class="grid-img" src="images/ranas/rana-.jpeg" 
+                                    <img loading="lazy" src="images/ranas/rana-.jpeg" 
                                     alt="rana">
                                 </a>
                             </div>
                             <div class="element-item design monos">
                                 <a class="popup-with-move-anim" href="#tour-8">
                                     <div class="element-item-overlay"></div>
-                                    <img class="grid-img" src="images/monos/mono-aullador-alouatta-palliata-america-central.jpeg" 
+                                    <img loading="lazy" src="images/monos/mono-aullador-alouatta-palliata-america-central.jpeg" 
                                     alt="mono aullador alouatta palliata america central">
                                 </a>
                             </div>
                             <div class="element-item design aves">
                                 <a class="popup-with-move-anim" href="#tour-9">
                                     <div class="element-item-overlay"></div>
-                                    <img class="grid-img" src="images/aves/lechuzon-fortuna-costa-rica-.jpeg" 
+                                    <img loading="lazy" src="images/aves/lechuzon-fortuna-costa-rica-.jpeg" 
                                     alt="lechuzon fortuna costa rica">
                                 </a>
                             </div>
                             <div class="element-item design aves">
                                 <a class="popup-with-move-anim" href="#tour-10">
                                     <div class="element-item-overlay"></div>
-                                    <img class="grid-img" src="images/aves/ave-martin-pescador-collar-coraciforme.jpeg" 
+                                    <img loading="lazy" src="images/aves/ave-martin-pescador-collar-coraciforme.jpeg" 
                                     alt="ave martin pescador collar coraciforme">
                                 </a>
                             </div>
                             <div class="element-item design otras">
                                 <a class="popup-with-move-anim" href="#tour-11">
                                     <div class="element-item-overlay"></div>
-                                    <img class="grid-img" src="images/otras-especies/serpiente-negra-y-amarillo.jpeg" 
+                                    <img loading="lazy" src="images/otras-especies/serpiente-negra-y-amarillo.jpeg" 
                                     alt="serpiente negra y amarrillo">
                                 </a>
                             </div>
                             <div class="element-item design otras">
                                 <a class="popup-with-move-anim" href="#tour-12">
                                     <div class="element-item-overlay"></div>
-                                    <img class="grid-img" src="images/otras-especies/leopardo-ocelote-manigordo-bebe-en-la-fortuna-de-san-carlos-costa-rica.jpeg" 
+                                    <img loading="lazy" src="images/otras-especies/leopardo-ocelote-manigordo-bebe-en-la-fortuna-de-san-carlos-costa-rica.jpeg" 
                                     alt="leopardo ocelote manigordo bebe en la fortuna de san carlos costa rica">
                                 </a>
                             </div>
                             <div class="element-item design otras">
                                 <a class="popup-with-move-anim" href="#tour-13">
                                     <div class="element-item-overlay"></div>
-                                    <img class="grid-img" src="images/otras-especies/serpiente.jpeg" 
+                                    <img loading="lazy" src="images/otras-especies/serpiente.jpeg" 
                                     alt="serpiente">
                                 </a>
                             </div>
@@ -385,7 +385,7 @@
             <div class="row">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="">
-                    <img class="img-fluid" 
+                    <img class="img-fluid" loading="lazy" 
                     src="images/perezosos/bebe-perezoso-y-madre-perezosa-durmiendo-en-un-arbol-.jpeg" 
                     alt="bebe perezoso y madre perezosa durmiendo en un arbol">
                 </div> <!-- end of col -->
@@ -410,7 +410,7 @@
             <div class="row">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="">
-                    <img class="img-fluid" 
+                    <img class="img-fluid" loading="lazy" 
                     src="images/perezosos/oso-perezoso-de-tres-dedos.jpeg" 
                     alt="oso perezoso de tres dedo">
                 </div> <!-- end of col -->
@@ -435,7 +435,7 @@
             <div class="row">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="">
-                    <img class="img-fluid" 
+                    <img class="img-fluid" loading="lazy" 
                     src="images/perezosos/perezoso-en-la-fortuna-de-san-carlos.jpeg" 
                     alt="perezoso en la fortuna de san carlos">
                 </div> <!-- end of col -->
@@ -460,7 +460,7 @@
             <div class="row">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="">
-                    <img class="img-fluid" 
+                    <img class="img-fluid" loading="lazy" 
                     src="images/perezosos/bebe-perezoso-durmiendo-en-costa-rica.jpeg" 
                     alt="bebe perezoso durmiendo en costa rica">
                 </div> <!-- end of col -->
@@ -485,7 +485,7 @@
             <div class="row">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="">
-                    <img class="img-fluid" 
+                    <img class="img-fluid" loading="lazy" 
                     src="images/ranas/rana-flecha-roja-azul-costa-rica.jpeg" 
                     alt="rana flecha roja azul costa rica">
                 </div> <!-- end of col -->
@@ -510,7 +510,7 @@
             <div class="row">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="">
-                    <img class="img-fluid" 
+                    <img class="img-fluid" loading="lazy" 
                     src="images/ranas/rana-verde-ojos-rojos.jpeg" 
                     alt="rana verde ojos rojos">
                 </div> <!-- end of col -->
@@ -535,7 +535,7 @@
             <div class="row">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="">
-                    <img class="img-fluid" 
+                    <img class="img-fluid" loading="lazy" 
                     src="images/ranas/rana-.jpeg" 
                     alt="rana">
                 </div> <!-- end of col -->
@@ -560,7 +560,7 @@
             <div class="row justify-content-center">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="">
-                    <img class="img-fluid" 
+                    <img class="img-fluid" loading="lazy" 
                     src="images/monos/mono-aullador-alouatta-palliata-america-central.jpeg" 
                     alt="mono aullador alouatta palliata america central">
                 </div> <!-- end of col -->
@@ -584,7 +584,7 @@
             <div class="row justify-content-center">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="">
-                    <img class="img-fluid" 
+                    <img class="img-fluid" loading="lazy" 
                     src="images/aves/lechuzon-fortuna-costa-rica-.jpeg" 
                     alt="lechuzon fortuna costa rica">
                 </div> <!-- end of col -->
@@ -608,7 +608,7 @@
             <div class="row justify-content-center">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="">
-                    <img class="img-fluid" 
+                    <img class="img-fluid" loading="lazy" 
                     src="images/aves/ave-martin-pescador-collar-coraciforme.jpeg" 
                     alt="ave martin pescador collar coraciforme">
                 </div> <!-- end of col -->
@@ -632,7 +632,7 @@
             <div class="row justify-content-center">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="">
-                    <img class="img-fluid" 
+                    <img class="img-fluid" loading="lazy" 
                     src="images/otras-especies/serpiente-negra-y-amarillo.jpeg" 
                     alt="serpiente negra y amarrillo">
                 </div> <!-- end of col -->
@@ -656,7 +656,7 @@
             <div class="row justify-content-center">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="">
-                    <img class="img-fluid" 
+                    <img class="img-fluid" loading="lazy"
                     src="images/otras-especies/leopardo-ocelote-manigordo-bebe-en-la-fortuna-de-san-carlos-costa-rica.jpeg" 
                     alt="leopardo ocelote manigordo bebe en la fortuna de san carlos costa rica">
                 </div> <!-- end of col -->
@@ -681,6 +681,7 @@
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="">
                     <img class="img-fluid" 
+                    loading="lazy"
                     src="images/otras-especies/serpiente.jpeg" 
                     alt="serpiente">
                 </div> <!-- end of col -->
