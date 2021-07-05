@@ -158,7 +158,7 @@
                         <!-- Card -->
                         <div class="card">
                             <div class="card-image">
-                                <img class="img-fluid" src="images/ranas/tour-nocturno.jpeg" alt="tour nocturno Sloths Territory La Fortuna" title="rana de ojos rojos en tour nocturno La Fortuna" width="350px" height="258px">
+                                <img class="img-fluid" src="images/tour-nocturno.jpeg" alt="tour nocturno Sloths Territory La Fortuna" title="rana de ojos rojos en tour nocturno La Fortuna" width="350px" height="258px">
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Tour nocturno</h3>
