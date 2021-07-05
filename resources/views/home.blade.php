@@ -9,24 +9,21 @@
 
             <div class="slide">
                 <div class="item-slide">
-                <img class="imgs" src="images/sliderPrincipal/bebe-perezoso-y-madre-perezosa-durmiendo-en-un-arbol.jpeg" alt="Mamá perezosa y su bebé durmiendo en un arbol" title="Bebé perezoso y su madre">
+                    <img class="imgs" src="images/sliderPrincipal/bebe-perezoso-y-madre-perezosa-durmiendo-en-un-arbol.jpeg" alt="Mamá perezosa y su bebé durmiendo en un arbol" title="Bebé perezoso y su madre">
                 </div>
                 <div class="item-slide" >
-                <img class="imgs" src="images/sliderPrincipal/bebe-perezoso-con-su-madre-bradypus-variegatus.jpeg" alt="Hermoso bebé perezoso" title="Bebe perezoso">
+                    <img class="imgs" src="images/sliderPrincipal/bebe-perezoso-con-su-madre-bradypus-variegatus.jpeg" alt="Mamá perezosa y su bebé" title="Mamá perezosa y su bebé">
                 </div>
                 <div class="item-slide">
-                    <img class="imgs" src="images/sliderPrincipal/tierno-oso-perezoso-en-la-fortuna-sloths-territory.jpeg" 
-                    alt="Oso perezoso en La Fortuna de San Carlos"
-                    title="Oso perezoso">
+                    <img class="imgs" src="images/sliderPrincipal/tierno-oso-perezoso-en-la-fortuna-sloths-territory.jpeg"  alt="Oso perezoso en La Fortuna de San Carlos" title="Oso perezoso">
                 </div>
             </div>
             <div class="pagination">
                 <label class="pagination-item" for="1">
-                    <<img src="images/sliderPrincipal/bebe-perezoso-y-madre-perezosa-durmiendo-en-un-arbol.jpeg" alt="Bebé perezoso duerme junto a su madre en la Fortuna de San Carlos" title="Perezosos durmiendo">
+                    <img src="images/sliderPrincipal/bebe-perezoso-y-madre-perezosa-durmiendo-en-un-arbol.jpeg" alt="Bebé perezoso duerme junto a su madre en la Fortuna de San Carlos" title="Perezosos durmiendo">
                 </label>
                 <label class="pagination-item" for="2">
-                <img src="images/sliderPrincipal/bebe-perezoso-con-su-madre-bradypus-variegatus.jpeg" alt="Hermoso bebé perezoso en la Fortuna" title="Tierno bebé perezoso">
-                    
+                    <img src="images/sliderPrincipal/bebe-perezoso-con-su-madre-bradypus-variegatus.jpeg" alt="Perezosos en la Fortuna" title="Perezosos durmiendo">
                 </label>
                 <label class="pagination-item" for="3">
                     <img src="images/sliderPrincipal/tierno-oso-perezoso-en-la-fortuna-sloths-territory.jpeg" alt="Perezosos en la Fortuna Costa Rica">
