@@ -860,7 +860,7 @@
                     <div class="col-lg-5 col-xl-6">
                         <div class="image-container">
                         <!-- PENDIENTE poner el alt y title y cambiar la imagen -->
-                            <img class="img-fluid" src="images/about.jpg" alt="sloth's territory sendero">    
+                            <img class="img-fluid" src="images/observando-perezosos-Fortuna.jpeg" alt="sloth's territory sendero">    
                         </div> <!-- end of image-container -->
                     </div> <!-- end of col -->
                     <div class="col-lg-7 col-xl-6">
