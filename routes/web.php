@@ -13,9 +13,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/**Public routes */
 Route::get('/', 'HomeController@home')->name('home');
+Route::get('/privacy-policy', 'HomeController@privacy')->name('privacy-policy');
+Route::get('/terms-conditions', 'HomeController@terms')->name('terms-conditions');
+
+
+/**Admin routes */
 Route::get('/admin', 'HomeController@admin')->name('admin.index');
 Route::get('/reservations', 'HomeController@reservations')->name('admin.reservations');
 Route::get('/sales', 'HomeController@sales')->name('admin.sales');
-Route::get('/privacy-policy', 'HomeController@privacy')->name('privacy-policy');
-Route::get('/terms-conditions', 'HomeController@terms')->name('terms-conditions');
+
+Route::post('/reservation', 'ReservationController@store');
+Route::put('/reservation', 'ReservationController@update');
+
+Route::post('/tour', 'TourController@store');
+Route::put('/tour', 'TourController@update');
+
+Route::post('/agency', 'AgencyController@store');
+Route::put('/agency', 'AgencyController@update');
+
+Route::get('/schedule', 'ScheduleController@index');
+Route::post('/schedule', 'ScheduleController@store');
+Route::put('/schedule', 'ScheduleController@update');
+
+Route::get('/token', function () {
+    return csrf_token(); 
+});

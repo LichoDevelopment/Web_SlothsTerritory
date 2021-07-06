@@ -8,4 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Schedule extends Model
 {
     use HasFactory;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'time'
+    ];
+
+    public function tour()
+    {
+        return $this->hasMany('\App\Models\Tour');
+    }
 }
