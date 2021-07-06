@@ -14,5 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@home')->name('home');
+Route::get('/admin', 'HomeController@admin')->name('admin.index');
+Route::get('/reservations', 'HomeController@reservations')->name('admin.reservations');
+Route::get('/sales', 'HomeController@sales')->name('admin.sales');
 Route::get('/privacy-policy', 'HomeController@privacy')->name('privacy-policy');
 Route::get('/terms-conditions', 'HomeController@terms')->name('terms-conditions');

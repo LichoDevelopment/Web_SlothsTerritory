@@ -10,6 +10,18 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    public function admin()
+    {
+        return view('admin.index');
+    }
+    public function sales()
+    {
+        return view('admin.sales');
+    }
+    public function reservations()
+    {
+        return view('admin.reservations');
+    }
 
     public function privacy()
     {
