@@ -20,23 +20,23 @@ Route::get('/terms-conditions', 'HomeController@terms')->name('terms-conditions'
 
 
 /**Admin routes */
-Route::get('/admin', 'HomeController@admin')->name('admin.index');
-Route::get('/reservations', 'HomeController@reservations')->name('admin.reservations');
-Route::get('/sales', 'HomeController@sales')->name('admin.sales');
 
-Route::post('/reservation', 'ReservationController@store');
-Route::put('/reservation', 'ReservationController@update');
-
-Route::post('/tour', 'TourController@store');
-Route::put('/tour', 'TourController@update');
-
-Route::post('/agency', 'AgencyController@store');
-Route::put('/agency', 'AgencyController@update');
-
-Route::get('/schedule', 'ScheduleController@index');
-Route::post('/schedule', 'ScheduleController@store');
-Route::put('/schedule', 'ScheduleController@update');
-
-Route::get('/token', function () {
-    return csrf_token(); 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin', 'HomeController@admin')->name('admin.index');
+    Route::get('/reservations', 'HomeController@reservations')->name('admin.reservations');
+    Route::get('/sales', 'HomeController@sales')->name('admin.sales');
+    
+    Route::post('/reservation', 'ReservationController@store');
+    Route::put('/reservation', 'ReservationController@update');
+    
+    Route::post('/tour', 'TourController@store');
+    Route::put('/tour', 'TourController@update');
+    
+    Route::post('/agency', 'AgencyController@store');
+    Route::put('/agency', 'AgencyController@update');
+    
+    Route::get('/schedule', 'ScheduleController@index');
+    Route::post('/schedule', 'ScheduleController@store');
+    Route::put('/schedule', 'ScheduleController@update');
+    
 });
