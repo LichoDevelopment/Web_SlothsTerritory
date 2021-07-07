@@ -2,7 +2,11 @@ APP_NAME="Sloths territory"
 APP_ENV=development
 APP_KEY=base64:7XCSO4SbHT3YEQbLQLxNkUNSeGxUIKozzR+ewZNHTK8=
 APP_DEBUG=false
+<<<<<<< HEAD
 APP_URL=https://sloths-territory.com
+=======
+APP_URL=http://sloths-territory.com
+>>>>>>> 5f756d357ad95a40af90e5003fe75f06b4b2917d
 
 LOG_CHANNEL=stack
 LOG_LEVEL=debug
