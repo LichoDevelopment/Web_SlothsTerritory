@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AgenciasController;
+// use App\Http\Controllers\AgenciasController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,5 +39,5 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/schedule', 'ScheduleController@store');
     Route::put('/schedule', 'ScheduleController@update');
 
-    Route::resource('agencias', AgenciasController::class);
+    // Route::resource('agencias', AgenciasController::class);
 });
