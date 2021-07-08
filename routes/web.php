@@ -39,5 +39,5 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/schedule', 'ScheduleController@store');
     Route::put('/schedule', 'ScheduleController@update');
 
-    // Route::resource('agencias', AgenciasController::class);
+    Route::resource('agencias', AgenciasController::class);
 });
