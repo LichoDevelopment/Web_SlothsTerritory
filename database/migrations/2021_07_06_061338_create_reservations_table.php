@@ -13,21 +13,26 @@ class CreateReservationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('reservations', function (Blueprint $table) {
+        Schema::create('reservaciones', function (Blueprint $table) {
             $table->id();
-            $table->string('client_name');
-            $table->integer('adults');
-            $table->integer('kids');
-            $table->integer('kids_free');
-            $table->integer('price');
-            $table->integer('price_with_discount');
-            $table->date('start_date');
+            $table->string('nombre_cliente');
+            $table->integer('adultos');
+            $table->integer('niños')->default(0);
+            $table->integer('niños_gratis')->default(0);
+            $table->integer('precio');
+            $table->integer('precio_con_descuento');
+            $table->date('fecha_inicio');
+            $table->string('factura')->nullable();
 
-            $table->unsignedBigInteger('agency_id');
-            $table->foreign('agency_id')->references('id')->on('agencies');
+            $table->unsignedBigInteger('agencia_id');
+            $table->foreign('agencia_id')->references('id')->on('agencias');
 
             $table->unsignedBigInteger('tour_id');
             $table->foreign('tour_id')->references('id')->on('tours');
+            
+            $table->unsignedBigInteger('horario_id');
+            $table->foreign('horario_id')->references('id')->on('horarios');
+
             $table->timestamps();
         });
     }

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Agency extends Model
+class Horario extends Model
 {
     use HasFactory;
 
@@ -15,13 +15,12 @@ class Agency extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
-        'commission',
-        'invoice'
+        'hora',
+        'tour_id'
     ];
 
-    public function schedule()
+    public function tour()
     {
-        return $this->hasMany('\App\Models\Reservation');
+        return $this->belongsTo('\App\Models\Tour');
     }
 }

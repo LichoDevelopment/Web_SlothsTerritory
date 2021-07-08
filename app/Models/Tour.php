@@ -15,12 +15,7 @@ class Tour extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
-        'schedule_id'
+        'nombre'
     ];
 
-    public function schedule()
-    {
-        return $this->belongsTo(Schedule::class);
-    }
 }

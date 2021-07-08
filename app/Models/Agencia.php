@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Schedule extends Model
+class Agencia extends Model
 {
     use HasFactory;
 
@@ -15,11 +15,12 @@ class Schedule extends Model
      * @var array
      */
     protected $fillable = [
-        'time'
+        'nombre',
+        'comision'
     ];
 
-    public function tour()
+    public function schedule()
     {
-        return $this->hasMany('\App\Models\Tour');
+        return $this->hasMany('\App\Models\Reservation');
     }
 }
