@@ -292,7 +292,7 @@
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         @yield('content')
-                        {{-- <div class="row">
+                            {{-- <div class="row">
                             <div class="col-lg-6">
                                 <div class="au-card au-card--no-shadow au-card--no-pad m-b-40">
                                     <div class="au-card-title" style="background-image:url('images/bg-title-01.jpg');">
