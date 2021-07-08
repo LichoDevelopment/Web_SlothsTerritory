@@ -15,7 +15,7 @@ class AgenciasController extends Controller
     public function index()
     {
         $datos['agencias']=Agencias::paginate(5);
-        return view('agencias.index',$datos);
+        return view('admin.agencias.index',$datos);
     }
 
     /**
@@ -25,7 +25,7 @@ class AgenciasController extends Controller
      */
     public function create()
     {
-        return view("agencias.create");
+        return view("admin.agencias.create");
     }
 
     /**
@@ -51,7 +51,7 @@ class AgenciasController extends Controller
         Agencias::insert($datosAgencia);
 
         // return response()->json($datosAgencia);
-        return redirect('agencias')->with("Mensaje","Agencia agregada con éxito.");
+        return redirect('/agencias')->with("Mensaje","Agencia agregada con éxito.");
     }
 
     /**
@@ -75,7 +75,7 @@ class AgenciasController extends Controller
     {
         $agencia = Agencias::findOrFail($id);
         
-        return view('agencias.edit',compact('agencia'));
+        return view('admin.agencias.edit',compact('agencia'));
     }
 
     /**
@@ -92,7 +92,7 @@ class AgenciasController extends Controller
 
         // $agencia = Agencias::findOrFail($id);
         // return view('agencias.edit',compact('agencia'));
-        return redirect('agencias')->with("Mensaje","Agencia modificada con éxito.");
+        return redirect('/agencias')->with("Mensaje","Agencia modificada con éxito.");
 
     }
 
@@ -106,6 +106,6 @@ class AgenciasController extends Controller
     {
         Agencias::destroy($id);
 
-        return redirect('agencias')->with("Mensaje","Agencia eliminada.");
+        return redirect('/agencias')->with("Mensaje","Agencia eliminada.");
     }
 }

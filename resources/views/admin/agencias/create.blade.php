@@ -15,9 +15,9 @@
             </div>
         @endif --}}
         Sección para crear agencias
-        <form action="{{url('/agencias')}}" class="form-horizontal" method="post" enctype="multipart/form-data">
+        <form action="{{ route('agencias.store') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
-            @include('agencias.form',["Modo"=>"crear"])
+            @include('admin.agencias.form',["Modo"=>"crear"])
         </form>
     </div>
 @endsection
