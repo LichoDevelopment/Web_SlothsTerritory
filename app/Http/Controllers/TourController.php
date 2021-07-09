@@ -12,6 +12,14 @@ class TourController extends Controller
      */
     private $request;
 
+    private $reglasValidacion = [
+        'nombre' => 'required',
+    ];
+
+    private $mensajesValidacion = [
+        'required' => 'El campo :attribute es requerido',
+    ];
+
     public function __construct(Request $request) {
         $this->request = $request;
     }
@@ -20,10 +28,7 @@ class TourController extends Controller
     {
         $response = response("",201);
 
-        $validator = Validator::make($this->request->all(), [
-            'name'          => 'required',
-            'schedule_id'   => 'required|exists:App\Models\Schedule,id',
-        ]);
+        $validator = Validator::make($this->request->all(), $this->reglasValidacion, $this->mensajesValidacion);
 
         if($validator->fails()){
             $response = response([
@@ -33,8 +38,7 @@ class TourController extends Controller
             ], 422);
         }else{
             Tour::create([
-                'name'          => $this->request->name,
-                'schedule_id'   => $this->request->schedule_id,
+                'nombre' => $this->request->nombre
             ]);
         }
 
@@ -45,10 +49,7 @@ class TourController extends Controller
     {
         $response = response("",202);
 
-        $validator = Validator::make($this->request->all(), [
-            'name'          => 'required',
-            'schedule_id'   => 'required|exists:App\Models\Schedule,id',
-        ]);
+        $validator = Validator::make($this->request->all(), $this->reglasValidacion, $this->mensajesValidacion);
 
         if($validator->fails()){
             $response = response([
@@ -58,8 +59,7 @@ class TourController extends Controller
             ], 422);
         }else{
             Tour::fin($id)->update([
-                'name'          => $this->request->name,
-                'schedule_id'   => $this->request->schedule_id,
+                'nombre' => $this->request->nombre
             ]);
         }
 

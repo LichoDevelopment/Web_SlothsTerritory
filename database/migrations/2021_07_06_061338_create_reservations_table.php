@@ -19,8 +19,8 @@ class CreateReservationsTable extends Migration
             $table->integer('adultos');
             $table->integer('niños')->default(0);
             $table->integer('niños_gratis')->default(0);
-            $table->integer('precio');
-            $table->integer('precio_con_descuento');
+            $table->decimal('amount', 10, 2);
+            $table->integer('descuento');
             $table->date('fecha_inicio');
             $table->string('factura')->nullable();
 

@@ -26,18 +26,18 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/reservations', 'HomeController@reservations')->name('admin.reservations');
     Route::get('/sales', 'HomeController@sales')->name('admin.sales');
     
-    Route::post('/reservation', 'ReservationController@store');
-    Route::put('/reservation', 'ReservationController@update');
+    Route::post('/reservacion', 'ReservacionController@store');
+    Route::put('/reservacion', 'ReservacionController@update');
     
     Route::post('/tour', 'TourController@store');
     Route::put('/tour', 'TourController@update');
     
-    Route::post('/agency', 'AgencyController@store');
-    Route::put('/agency', 'AgencyController@update');
+    Route::post('/agencia', 'AgenciaController@store');
+    Route::put('/agencia', 'AgenciaController@update');
     
-    Route::get('/schedule', 'ScheduleController@index');
-    Route::post('/schedule', 'ScheduleController@store');
-    Route::put('/schedule', 'ScheduleController@update');
+    Route::get('/horario', 'HorarioController@index');
+    Route::post('/horario', 'HorarioController@store');
+    Route::put('/horario', 'HorarioController@update');
 
     Route::resource('agencias', 'AgenciasController');
 });

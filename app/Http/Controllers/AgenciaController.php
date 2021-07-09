@@ -2,31 +2,35 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Agency;
+use App\Models\Agencia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class AgencyController extends Controller
+class AgenciaController extends Controller
 {
     /**  
      * @var Request
      */
     private $request;
 
+    private $reglasValidacion = [
+        'nombre'    => 'required',
+        'comision'  => 'required'
+    ];
+
+    private $mensajesValidacion = [
+        'required' => 'El campo :attribute es requerido'
+    ];
+
     public function __construct(Request $request) {
         $this->request = $request;
     }
-
 
     public function store()
     {
         $response = response("",201);
 
-        $validator = Validator::make($this->request->all(), [
-            'name'          => 'required',
-            'commission'    => 'required',
-            'invoice'       => 'required'
-        ]);
+        $validator = Validator::make($this->request->all(), $this->reglasValidacion, $this->mensajesValidacion);
 
         if($validator->fails()){
             $response = response([
@@ -35,10 +39,9 @@ class AgencyController extends Controller
                 "errors"    => $validator->errors()
             ], 422);
         }else{
-            Agency::create([
-                'name'          => $this->request->name,
-                'commission'    => $this->request->commission,
-                'invoice'       => $this->request->invoice
+            Agencia::create([
+                'nombre'    => $this->request->nombre,
+                'comision'  => $this->request->comision,
             ]);
         }
 
@@ -49,11 +52,7 @@ class AgencyController extends Controller
     {
         $response = response("",202);
 
-        $validator = Validator::make($this->request->all(), [
-            'name'          => 'required',
-            'commission'    => 'required',
-            'invoices'      => 'required'
-        ]);
+        $validator = Validator::make($this->request->all(), $this->reglasValidacion, $this->mensajesValidacion);
 
         if($validator->fails()){
             $response = response([
@@ -62,10 +61,9 @@ class AgencyController extends Controller
                 "errors"    => $validator->errors()
             ], 422);
         }else{
-            Agency::fin($id)->update([
-                'name'          => $this->request->name,
-                'commission'    => $this->request->commission,
-                'invoice'       => $this->request->invoice
+            Agencia::fin($id)->update([
+                'nombre'    => $this->request->nombre,
+                'comision'  => $this->request->comision,
             ]);
         }
 
@@ -74,7 +72,7 @@ class AgencyController extends Controller
 
     public function destroy($id)
     {
-        Agency::destroy($id);
+        Agencia::destroy($id);
         return response("", 204);
     }
 }
