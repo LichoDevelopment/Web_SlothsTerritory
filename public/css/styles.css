@@ -867,6 +867,7 @@ input[type='checkbox'] {
 .basic-1 .image-container {
 	overflow: hidden;
 	border-radius: 0.25rem;
+	text-align:center;
 }
 
 .basic-1 .image-container img {
@@ -1622,6 +1623,7 @@ input[type='checkbox'] {
 
 .counter .image-container {
 	margin-bottom: 3rem;
+	text-align:center;
 }
 
 .counter .image-container img {
