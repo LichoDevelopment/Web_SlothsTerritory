@@ -158,7 +158,7 @@
                         <!-- Card -->
                         <div class="card">
                             <div class="card-image">
-                                <img class="img-fluid" src="images/tour-nocturno.jpeg" alt="tour nocturno Sloths Territory La Fortuna" title="rana de ojos rojos en tour nocturno La Fortuna" width="350px" height="258px">
+                                <img class="img-fluid" src="images/tour-nocturno.jpeg" alt="tour nocturno Sloths Territory La Fortuna" title="Tour nocturno La Fortuna" width="350px" height="258px">
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Tour nocturno</h3>
@@ -710,7 +710,7 @@
             <div class="row justify-content-center">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="col-lg-10">
-                    <img class="img-fluid" src="images/services-1.jpg" alt="sloth's territory sendero principal">
+                    <img class="img-fluid" src="images/otras-especies/senderos-sloths-territory.jpeg" alt="sloth's territory sendero principal">
                 </div> <!-- end of col -->
                 <div class="col-lg-10">
                     <h3>TOUR DIURNO</h3>
@@ -740,7 +740,7 @@
             <div class="row justify-content-center">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="col-lg-10">
-                    <img class="img-fluid" src="images/services-2.jpg" alt="rana ojos rojos">
+                    <img class="img-fluid" src="images/tour-nocturno.jpeg" alt="tour-nocturno-Fortuna" title="Tour-nocturno-en-Fortuna">
                 </div> <!-- end of col -->
                 <div class="col-lg-10">
                     <h3>TOUR NOCTURNO</h3>
@@ -770,7 +770,7 @@
             <div class="row justify-content-center">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="col-lg-10">
-                    <img class="img-fluid" src="images/services-3.jpg" alt="buho">
+                    <img class="img-fluid" src="images/aves/halcon-blanco-gavilan.jpeg" alt="magníficas aves en la Fortuna" title="lechuzón en Sloths Territory" >
                 </div> <!-- end of col -->
                 <div class="col-lg-10">
                     <h3>TOUR DE AVES</h3>
