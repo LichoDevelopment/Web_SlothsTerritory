@@ -130,7 +130,7 @@
         <div class="container">
             <div class="footer-grid">
                 <article class="footer-grid-article">
-                    <div>
+                    <div class="d-flex flex-column align-items-start">
                         <h4>Legal</h4>
                         <ul class="list-unstyled li-space-lg white">
                             <li>
@@ -145,7 +145,7 @@
                     </div>
                 </article>
                 <article class="footer-grid-article">
-                    <div>
+                    <div class="d-flex flex-column align-items-start">
                         <h4>Social</h4>
                         <ul class="list-unstyled li-space-lg white">
                             <li>
@@ -170,7 +170,7 @@
                     </div>
                 </article>
                 <article class="footer-grid-article contact">
-                    <div>
+                    <div class="d-flex flex-column align-items-start">
                         <h4>Contact</h4>
                         <ul class="list-unstyled li-space-lg white">
                             <li>
