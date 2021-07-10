@@ -13,7 +13,8 @@
     <title>Inbox</title>
 
     <!-- Fontfaces CSS-->
-    <link href="css/font-face.css" rel="stylesheet" media="all">
+    {{--<link href="css/font-face.css" rel="stylesheet" media="all">
+
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -31,7 +32,25 @@
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
-    <link href="css/admin.css" rel="stylesheet" media="all">
+    <link href="css/admin.css" rel="stylesheet" media="all"> --}}
+
+    {{-- PRUEBA INTERFAZ --}}
+    <link href="{{ url('css/font-face.css')}}" rel="stylesheet" media="all">
+    <link href="{{ url('vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{ url('vendor/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" media="all">
+
+    <link href="{{ url('vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{ url('vendor/bootstrap-4.1/bootstrap.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{ url('vendor/animsition/animsition.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{ url('vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{ url('vendor/wow/animate.css')}}" rel="stylesheet" media="all">
+    <link href="{{ url('vendor/css-hamburgers/hamburgers.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{ url('vendor/slick/slick.css')}}" rel="stylesheet" media="all">
+    <link href="{{ url('vendor/select2/select2.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{ url('vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{ url('vendor/perfect-scrollbar/perfect-scrollbar.css')}}" rel="stylesheet" media="all">
+    <link href="{{ url('css/admin.css')}}" rel="stylesheet" media="all">
+
 
 </head>
 
@@ -233,7 +252,9 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                            {{-- <img src="images/icon/avatar-01.jpg" alt="John Doe" /> --}}
+                                            <img src="{{ url('images/icon/avatar-01.jpg')}}" alt="John Doe" />
+                                            
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#">{{Auth::user()->name}}</a>
@@ -242,7 +263,8 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                                        {{-- <img src="images/icon/avatar-01.jpg" alt="John Doe" /> --}}
+                                                        <img src="{{ url('images/icon/avatar-01.jpg')}}" alt="John Doe" />
                                                     </a>
                                                 </div>
                                                 <div class="content">
@@ -611,28 +633,42 @@
     </div>
 
     <!-- Jquery JS-->
-    <script src="vendor/jquery-3.2.1.min.js"></script>
+    {{-- <script src="vendor/jquery-3.2.1.min.js"></script> --}}
+    <script src="{{ url('vendor/jquery-3.2.1.min.js')}}" ></script>
     <!-- Bootstrap JS-->
-    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
-    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    {{-- <script src="vendor/bootstrap-4.1/popper.min.js"></script> --}}
+    {{-- <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script> --}}
+    <script src="{{ url('vendor/bootstrap-4.1/popper.min.js')}}" ></script>
+        <script src="{{ url('vendor/bootstrap-4.1/bootstrap.min.js')}}" ></script>
     <!-- Vendor JS       -->
-    <script src="vendor/slick/slick.min.js">
-    </script>
-    <script src="vendor/wow/wow.min.js"></script>
-    <script src="vendor/animsition/animsition.min.js"></script>
-    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
-    </script>
-    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
-    <script src="vendor/counter-up/jquery.counterup.min.js">
-    </script>
-    <script src="vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="vendor/select2/select2.min.js">
-    </script>
+    {{-- <script src="vendor/slick/slick.min.js"></script> --}}
+    <script src="{{ url('vendor/slick/slick.min.js')}}" ></script>
+    
+    {{-- <script src="vendor/wow/wow.min.js"></script> --}}
+    {{-- <script src="vendor/animsition/animsition.min.js"></script> --}}
+    {{-- <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js"></script> --}}
+    <script src="{{ url('vendor/wow/wow.min.js')}}"></script>
+        <script src="{{ url('vendor/animsition/animsition.min.js')}}" ></script>
+            <script src="{{ url('vendor/bootstrap-progressbar/bootstrap-progressbar.min.js')}}"></script>
+    
+    {{-- <script src="vendor/counter-up/jquery.waypoints.min.js"></script> --}}
+    {{-- <script src="vendor/counter-up/jquery.counterup.min.js"></script> --}}
+    <script src="{{ url('vendor/counter-up/jquery.waypoints.min.js')}}" ></script>
+        <script src="{{ url('vendor/counter-up/jquery.counterup.min.js')}}" ></script>
+    
+    {{-- <script src="vendor/circle-progress/circle-progress.min.js"></script> --}}
+    {{-- <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script> --}}
+    {{-- <script src="vendor/chartjs/Chart.bundle.min.js"></script> --}}
+    {{-- <script src="vendor/select2/select2.min.js"></script> --}}
+        <script src="{{ url('vendor/circle-progress/circle-progress.min.js')}}" ></script>
+        <script src="{{ url('vendor/perfect-scrollbar/perfect-scrollbar.js')}}" ></script>
+        <script src="{{ url('vendor/chartjs/Chart.bundle.min.js')}}" ></script>
+        <script src="{{ url('vendor/select2/select2.min.js')}}" ></script>
+    
 
     <!-- Main JS-->
-    <script src="js/main.js"></script>
+    {{-- <script src="js/main.js"></script> --}}
+    <script src="{{ url('js/main.js')}}"></script>
 </body>
 
 </html>
