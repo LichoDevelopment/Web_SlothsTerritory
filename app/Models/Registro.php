@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tour extends Model
+class Registro extends Model
 {
     use HasFactory;
 
@@ -14,25 +14,20 @@ class Tour extends Model
      *
      * @var array
      */
-    protected $table="tours";
+    protected $table="registro";
     protected $primaryKey="id";
     protected $fillable = [
-        'id_horario',
-        'id_precio',
-        'nombre'
+        'id_horario', 
+        'id_fecha', 
+        'cantidad_reservas'
     ];
 
-    // Relaciones
-    public function reservas(){
-        return $this->hasMany('App\Models\Reserva');
-    }
-    //
-    public function precio()
-    {
-        return $this->belongsTo('\App\Models\Precio','id_precio');
-    }
     public function horario()
     {
         return $this->belongsTo('\App\Models\Horario','id_horario');
+    }
+    public function fecha_tour()
+    {
+        return $this->belongsTo('\App\Models\Fecha_tour','id_fecha_tour');
     }
 }

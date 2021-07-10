@@ -14,13 +14,25 @@ class Horario extends Model
      *
      * @var array
      */
+    protected $table="horarios";
+    protected $primaryKey="id";
     protected $fillable = [
         'hora',
-        'tour_id'
+        'capacidad_maxima',
+        'hora_minima_reservar'
     ];
 
-    public function tour()
-    {
-        return $this->belongsTo('\App\Models\Tour');
+
+    //Relaciones
+    public function tours(){
+        return $this->hasMany('App\Models\Tour');
     }
+    public function resgistros(){
+        return $this->hasMany('App\Models\Registro');
+    }
+
+//     public function tour()
+//     {
+//         return $this->belongsTo('\App\Models\Tour');
+//     }
 }
