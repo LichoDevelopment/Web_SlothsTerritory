@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\AgenciasController;
 /*
@@ -14,9 +15,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 /**Public routes */
-Route::get('/', 'HomeController@home')->name('home');
-Route::get('/privacy-policy', 'HomeController@privacy')->name('privacy-policy');
-Route::get('/terms-conditions', 'HomeController@terms')->name('terms-conditions');
+
+Route::redirect('/', '/en');
+
+// Route::middleware('languageSwitcher')->group(['prefix' => '{language}'],function () {
+
+//     App::setlocale($locale);
+
+// Route::middleware(['languageSwitcher'])->group(function () {
+
+    Route::get('/{locale}', 'HomeController@home')->name('home');
+    Route::get('/{locale}/privacy-policy', 'HomeController@privacy')->name('privacy-policy');
+    Route::get('/{locale}/terms-conditions', 'HomeController@terms')->name('terms-conditions');
+
+// });
+    
+// });
 
 
 /**Admin routes */

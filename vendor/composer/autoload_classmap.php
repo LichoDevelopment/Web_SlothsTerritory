@@ -3371,12 +3371,9 @@ return array(
     'PHPUnit\\Util\\Xml\\SuccessfulSchemaDetectionResult' => $vendorDir . '/phpunit/phpunit/src/Util/Xml/SuccessfulSchemaDetectionResult.php',
     'PHPUnit\\Util\\Xml\\ValidationResult' => $vendorDir . '/phpunit/phpunit/src/Util/Xml/ValidationResult.php',
     'PHPUnit\\Util\\Xml\\Validator' => $vendorDir . '/phpunit/phpunit/src/Util/Xml/Validator.php',
-<<<<<<< HEAD
-=======
     'PackageVersions\\FallbackVersions' => $vendorDir . '/composer/package-versions-deprecated/src/PackageVersions/FallbackVersions.php',
     'PackageVersions\\Installer' => $vendorDir . '/composer/package-versions-deprecated/src/PackageVersions/Installer.php',
     'PackageVersions\\Versions' => $vendorDir . '/composer/package-versions-deprecated/src/PackageVersions/Versions.php',
->>>>>>> d1cece4c805db9ab9ee81da655476a1a29eb49d3
     'ParagonIE\\ConstantTime\\Base32' => $vendorDir . '/paragonie/constant_time_encoding/src/Base32.php',
     'ParagonIE\\ConstantTime\\Base32Hex' => $vendorDir . '/paragonie/constant_time_encoding/src/Base32Hex.php',
     'ParagonIE\\ConstantTime\\Base64' => $vendorDir . '/paragonie/constant_time_encoding/src/Base64.php',

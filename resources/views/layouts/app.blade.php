@@ -69,7 +69,7 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="{{ route('home') }}">HOME <span class="sr-only">(current)</span></a>
+                    <a class="nav-link page-scroll" href="{{ route('home',['locale','en']) }}">HOME <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#header">INICIO</a>
@@ -86,9 +86,9 @@
                     <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">ACERCA DE</a>
                     <!-- PENDIENTE -->
                     <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('terms-conditions') }}"><span class="item-text">TERMS CONDITIONS</span></a>
+                        <a class="dropdown-item" href="{{ route('terms-conditions',['locale','en']) }}"><span class="item-text">TERMS CONDITIONS</span></a>
                         <div class="dropdown-items-divide-hr"></div>
-                        <a class="dropdown-item" href="{{ route('privacy-policy') }}"><span class="item-text">PRIVACY POLICY</span></a>
+                        <a class="dropdown-item" href="{{ route('privacy-policy',['locale','en']) }}"><span class="item-text">PRIVACY POLICY</span></a>
                     </div> -->
                 </li>
                 <!-- end of dropdown menu -->
@@ -135,11 +135,11 @@
                         <ul class="list-unstyled li-space-lg white">
                             <li>
                                 <i class="fas fa-file-alt"></i>
-                                <a class="white footer-link" href="terms-conditions" >Terms</a>
+                                <a class="white footer-link" href={{ route('terms-conditions',['locale','en']) }}" >Terms</a>
                             </li>
                             <li >
                                 <i class="fas fa-user-shield"></i>
-                                <a class="white footer-link" href="privacy-policy">Privacy</a>
+                                <a class="white footer-link" href="{{ route('privacy-policy',['locale','en']) }}">Privacy</a>
                             </li>
                         </ul>
                     </div>
