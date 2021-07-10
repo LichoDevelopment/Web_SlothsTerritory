@@ -442,6 +442,9 @@
     .form-2{
         padding-bottom: 1rem;
     }
+	.footer-grid{
+		grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
+	}
 
 }
 
