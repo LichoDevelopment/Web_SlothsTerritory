@@ -20,7 +20,6 @@
                     <th>#</th>
                     <th>Nombre</th>
                     <th>Comision</th>
-                    <th>Factura</th>
                     <th>Acciones</th>
             
                 </tr>
@@ -29,9 +28,8 @@
                 @foreach ($agencias as $agencia)
                     <tr>
                         <td>{{$loop->iteration}}</td>
-                        <td>{{$agencia->name}}</td>
-                        <td>{{$agencia->commission}}</td>
-                        <td>{{$agencia->invoice}}</td>
+                        <td>{{$agencia->nombre}}</td>
+                        <td>{{$agencia->comision}}</td>
                         <td>
                             <a class="btn btn-warning" href="{{ url('/agencias/'.$agencia->id.'/edit')}}">
                                 Editar

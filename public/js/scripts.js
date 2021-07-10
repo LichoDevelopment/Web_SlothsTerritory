@@ -348,6 +348,16 @@
         }
     });
 
+    $('body').prepend('<a href="https://wa.me/message/UAO3TORZITGBE1" target="_blank" class="reservar-btn page-scroll">Reservar</a>');
+    var amountScrolled = 700;
+    $(window).scroll(function() {
+        if ($(window).scrollTop() > amountScrolled) {
+            $('a.reservar-btn').fadeIn('500');
+        } else {
+            $('a.reservar-btn').fadeOut('500');
+        }
+    });
+
 
 	/* Removes Long Focus On Buttons */
 	$(".button, a, button").mouseup(function() {
