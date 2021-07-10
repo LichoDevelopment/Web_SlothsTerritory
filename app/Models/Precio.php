@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Agencia extends Model
+class Precio extends Model
 {
     use HasFactory;
 
@@ -14,16 +14,15 @@ class Agencia extends Model
      *
      * @var array
      */
-    protected $table="agencias";
+    protected $table="precios";
     protected $primaryKey="id";
     protected $fillable = [
-        'nombre',
-        'comision'
+        'precio_adulto',
+        'precio_ninio'
     ];
 
     //Relaciones
-    public function reservas(){
-        return $this->hasMany('App\Models\Reserva');
+    public function tours(){
+        return $this->hasMany('App\Models\Tour');
     }
-
 }

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Agencia extends Model
+class Fecha_tour extends Model
 {
     use HasFactory;
 
@@ -14,16 +14,17 @@ class Agencia extends Model
      *
      * @var array
      */
-    protected $table="agencias";
+    protected $table="fecha_tour";
     protected $primaryKey="id";
     protected $fillable = [
-        'nombre',
-        'comision'
+        'fecha'
     ];
 
     //Relaciones
     public function reservas(){
         return $this->hasMany('App\Models\Reserva');
     }
-
+    public function resgistros(){
+        return $this->hasMany('App\Models\Registro');
+    }
 }
