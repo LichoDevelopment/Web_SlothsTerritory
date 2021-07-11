@@ -211,7 +211,7 @@
     <!-- end of copyright -->
     <a 
         href="https://wa.me/message/UAO3TORZITGBE1" id="bookNowBtn"
-        target="_blank" class="reservar-btn btn btn-danger ">
+        target="_blank" class="reservar-btn btn btn-danger">
         <span>{{__("btn.reservar_ahora")}}</span>
         <i class="fas fa-angle-double-right"></i>
     </a>

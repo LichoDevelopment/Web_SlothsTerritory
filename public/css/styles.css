@@ -1865,6 +1865,7 @@ a.back-to-top {
     background: #10b610 url(../images/up-arrow.png) no-repeat center 47%;
     background-size: 1.125rem 1.125rem;
     text-indent: -9999px;
+	box-shadow: 0 0 .5rem #494949;
 }
 
 a:hover.back-to-top {
@@ -1882,6 +1883,8 @@ a.reservar-btn {
 	justify-content:center;
 	align-items: center;
 	gap: 5px;
+	padding: .7rem 1rem;
+	box-shadow: 0 0 .5rem #494949;
 }
 
 /* a:hover.reservar-btn {
