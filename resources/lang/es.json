@@ -1,317 +1,162 @@
-// Botones
 {
-    "btn.reservar_ahora": "RESERVAR AHORA"
-}
-{
-    "btn.mas_detalles": "MÁS DETALLES"
-}
-{
-    "btn.enviar_mensaje": "ENVIAR MENSAJE"
-}
-{
-    "btn.volver": "VOLVER"
-}
+    "btn.reservar_ahora": "RESERVAR AHORA",
+    "btn.mas_detalles": "MÁS DETALLES",
+    "btn.enviar_mensaje": "ENVIAR MENSAJE",
+    "btn.volver": "VOLVER",
 
-// Header.
-{
-    "header.home": "HOME"
-}
-{
-    "header.inicio": "INICIO"
-}
-{
-    "header.galeria": "GALERÍA"
-}
-{
-    "header.acerca_de": "ACERCA DE"
-}
-{
-    "header.contactarnos": "CONTACTARNOS"
-}
 
-// Inicio de la página.
-{
-    "inicio.titulo_principal": "El mejor tour en La Fortuna de San Carlos e increíble vista del Volcán Arenal"
-}
-{
-    "inicio.parrafo_descriptivo": "En Sloths Territory podrás observar perezosos de 2 y 3 dedos, además gran variedad de aves y anfibios"
-}
 
-// Intro
-{
-    "intro.titulo:principal": "BIENVENIDOS"
-}
-{
-    "intro.titulo_secundario": "Sloths Territory en La Fortuna de San Carlos"
-}
-{
-    "intro.parrafo_descriptivo": "Sloths Territory es un sendero con un total de 1300 metros, que se extiende sobre la margen del Río Habana, en El Tanque de La Fortuna"
-}
-{
-    "intro.testimonial": "Visite este paraíso rodeado de naturaleza y habitado por osos perezosos"
-}
+    "header.home": "HOME",
+    "header.inicio": "INICIO",
+    "header.service": "SERVICIOS",
+    "header.galeria": "GALERÍA",
+    "header.acerca_de": "ACERCA DE",
+    "header.contactarnos": "CONTACTARNOS",
 
-// Cards-1
-{
-    "cards.card_1.titulo": "En Sloths Territory"
-}
-{
-    "cards.card_2.titulo": "Podrás conocer"
-}
-{
-    "cards.card_2.titulo": "Maravillosas vistas"
-}
-{
-    "cards.card_1.parrafo": "contamos con un gran hábitad natural"
-}
-{
-    "cards.card_2.parrafo": "diferentes tipos de plantas y animales, en especial osos perezozos"
-}
-{
-    "cards.card_2.parrafo": "al Volcán Arenal y a la increíble natuleza que habita en nuestras instalaciones"
-}
 
-// Services
-{
-    "service.titulo_principal": "SERVICIOS"
-}
-{
-    "services.titulo_secundario": "En Sloths Territory contamos con 3 diferentes actividades<br>Te invitamos a conocerlas en La Fortuna de San Carlos"
-}
-// Tour diurno sección de vista previa
-{
-    "service.vista_previa.tour_diurno.titulo": "Tour diurno"
-}
-{
-    "service.vista_previa.tour_diurno.parrafo": "Ofrecemos varias caminatas diarias iniciando a las: 8 a.m. - 10 a.m. - 1 p.m. y 3 p.m."
-}
-{
-    "service.vista_previa.tour_diurno.item_1": "El sendero es accesible para todas las edades"
-}
-{
-    "service.vista_previa.tour_diurno.item_2": "La duración de esta actividad puede ser de 1 hora y media a 2 horas."
-}
-// Tour nocturno sección de vista previa
-{
-    "service.vista_previa.tour_nocturno.titulo": "Tour nocturno"
-}
-{
-    "service.vista_previa.tour_nocturno.parrafo": "Una experiencia única"
-}
-{
-    "service.vista_previa.tour_nocturno.item_1": "Nuestra caminata nocturna inicia a las 6:00 p.m."
-}
-{
-    "service.vista_previa.tour_nocturno.item_2": "La duración de esta actividad es de 1 hora y media a 2 horas"
-}
-// Tour diurno sección de vista previa
-{
-    "service.vista_previa.tour_aves.titulo": "Tour de aves"
-}
-{
-    "service.vista_previa.tour_aves.parrafo": "Podrás observar una amplia variedad de especies de: colibríes, tangaras, loros, mieleros, pájaros carpinteros canela, Royal Flycatchers, etc."
-}
-{
-    "service.vista_previa.tour_aves.item_1": "El recorrido comienza a las 5:00 a.m."
-}
-{
-    "service.vista_previa.tour_aves.item_2": "La duración de esta actividad es de 2 horas"
-}
-// Tour diurno sección con toda la información.
-{
-    "service.tour_diurno.info.titulo_principal": "TOUR DIURNO"
-}
-{
-    "service.tour_diurno.info.titulo_secundario_1": "Informacion sobre el tour diurno"
-}
-{
-    "service.tour_diurno.info.parrafo_1": "Ofrecemos varias caminatas diarias iniciando a las: 8 a.m. - 10 a.m. - 1 p.m. y 3 p.m."
-}
-{
-    "service.tour_diurno.info.parrafo_2": "Durante la caminata, el sendero le permitirá disfrutar de un bosque de galería con exuberante vegetación y árboles gigantes como Chilamate y Guácimo Colorado; constituyendo el hábitat de muchas especies como: zarigüeyas, perezosos de dos y tres dedos y muchas aves como: Tucanes, Tangaras, Royal Flycatchers y otras. Pero el principal atractivo es la observación de los osos perezosos."
-}
-{
-    "service.tour_diurno.info.parrafo_3": "La Familia Rodríguez, una familia tradicional costarricense serán sus guías, ya que tratar de encontrar perezosos requiere de altas habilidades porque suelen tener un excelente camuflaje que los hace imperceptibles, para ojos no entrenados."
-}
-{
-    "service.tour_diurno.info.parrafo_4": "El sendero es accesible para todas las edades, por lo que esta es una actividad donde toda la familia puede disfrutarla."
-}
-{
-    "service.tour_diurno.info.parrafo_5": "El recorrido incluye un guía capacitado durante toda la caminata con un telescopio profesional y un refrigerio de frutas frescas de temporada al final."
-}
-{
-    "service.tour_diurno.info.parrafo_6": "La duración de esta actividad puede ser de 1 hora y media a 2 horas y el precio es de US $ 28 por persona; Niños de 6 a 12 años US $ 17 y menores de 5 años entran gratis."
-}
-// Tour nocturno sección con toda la información.
-{
-    "service.tour_nocturno.info.titulo_principal": "TOUR NOCTURNO"
-}
-{
-    "service.tour_nocturno.info.titulo_secundario_1": "Informacion sobre el tour nocturno"
-}
-{
-    "service.tour_nocturno.info.parrafo_1": "Nuestra caminata nocturna inicia a las 6:00 pm, el mejor momento para buscar animales con comportamiento nocturno."
-}
-{
-    "service.tour_nocturno.info.parrafo_2": "Durante esta caminata, tendrá la oportunidad de ver diferentes tipos de ranas, kinkajous, serpientes, arañas, murciélagos y eventualmente: perezosos de dos y tres dedos (pero no es el enfoque de esta caminata específica)."
-}
-{
-    "service.tour_nocturno.info.parrafo_3": "Mientras la noche da su iniciao y el cielo se cubre de estrellas, nuestro guía bien capacitado lo mantendrá seguro, mientras continúa la caminata a lo largo de nuestra propiedad."
-}
-{
-    "service.tour_nocturno.info.parrafo_4": "El sendero es accesible para todas las edades, por lo que esta es una actividad donde toda la familia puede disfrutarla."
-}
-{
-    "service.tour_nocturno.info.parrafo_5": "La duración de esta actividad es de 1 hora y media a 2 horas. El precio es de US $45 por persona; niños de 6 a 12 años US $35."
-}
-{
-    "service.tour_nocturno.info.parrafo_6": "El tour incluye un guía capacitado durante toda la caminata, linterna y frutas frescas de temporada al final."
-}
-// Tour nocturno sección con toda la información.
-{
-    "service.tour_nocturno.info.titulo_principal": "TOUR DE AVES"
-}
-{
-    "service.tour_nocturno.info.titulo_secundario_1": "Informacion sobre el tour de aves"
-}
-{
-    "service.tour_nocturno.info.parrafo_1": "Pensando en todos los amantes de la observación de aves, hemos creado esta actividad exclusiva y entretenida."
-}
-{
-    "service.tour_nocturno.info.parrafo_2": "El recorrido comienza a las 5:00 am y uno de nuestros guías profesionales lo llevará a través de hermosos senderos para observar una amplia variedad de especies de: colibríes, tangaras, loros, mieleros, pájaros carpinteros canela, Royal Flycatchers, entre otras especies de aves."
-}
-{
-    "service.tour_nocturno.info.parrafo_3": "Incluso cuando estamos enfocados en las aves, por la gran variedad de especies exóticas, en nuestros senderos, tendrá la oportunidad de observar algunos perezosos, ranas y otras especies."
-}
-{
-    "service.tour_nocturno.info.parrafo_4": "El tour incluye un guía capacitado durante toda la caminata con telescopio profesional, binoculares, bocadillo de frutas frescas de temporada y café, al final de recorrido."
-}
-{
-    "service.tour_nocturno.info.parrafo_5": "La duración de esta actividad es de 2 horas aproximadamente."
-}
-{
-    "service.tour_nocturno.info.parrafo_6": "El precio es de US $ 45 por persona."
-}
-// Todos los servicios comparten esta info.
-{
-    "service.tour_nocturno.info.titulo_secundario_2": "Qué llevar:"
-}
-{
-    "service.tour_nocturno.info.que_llevar_1": "Repelente de insectos"
-}
-{
-    "service.tour_nocturno.info.que_llevar_1": "Ropa ligera"
-}
-{
-    "service.tour_nocturno.info.que_llevar_1": "Impermeable"
-}
-{
-    "service.tour_nocturno.info.que_llevar_1": "Zapato cerrado"
-}
-{
-    "service.tour_nocturno.info.parrafo_testimonial": "¡No dejes pasar esta aventura!"
-}
 
-// Sección details
-{
-    "details.titulo_principal": "Oso perezoso, símbolo nacional de Costa Rica"
-}
-// Item 1
-{
-    "details.item_1.titulo": "El 16 símbolo nacional de Costa Rica"
-}
-{
-    "details.item_1.parrafo": "El día miercoles 30 de junio del 2021 fue declarado el oso perezoso como símbolo nacional de Costa Rica"
-}
-// Item 2
-{
-    "details.item_2.titulo": "¿Por qué se declaró símbolo nacional?"
-}
-{
-    "details.item_2.parrafo": "Las especies Bradypus variegatus (perezoso de 3 dedos) y Choloepus hoffomanni (perezoso de 2 dedos) fueron declarados símbolo nacional de Costa Rica con el fin de destacar la importancia de esta especie en la fauna silvestre de Costa Rica"
-}
 
-// Sección de galería
-{
-    "galeria.titulo_principal": "Nuestra sección de galería"
-}
-{
-    "galeria.titulo_secundario": "En esta sección podrás conocer imágenes de las diferentes especies en Sloths Territory"
-}
-{
-    "galeria.filtro.ver_todo": "Ver todo"
-}
-{
-    "galeria.filtro.sloths": "PEREZOSOS"
-}
-{
-    "galeria.filtro.ranas": "Ranas"
-}
-{
-    "galeria.filtro.monos": "Monos"
-}
-{
-    "galeria.filtro.aves": "Aves"
-}
-{
-    "galeria.filtro.otras": "Otras especies"
-}
+    "inicio.titulo_principal": "El mejor tour en La Fortuna de San Carlos e increíble vista del Volcán Arenal",
+    "inicio.parrafo_descriptivo": "En Sloths Territory podrás observar perezosos de 2 y 3 dedos, además gran variedad de aves y anfibios",
 
-// Sección de fundadores
-{
-    "fundadores.titulo_principal": "Fundadores de Sloths Territory en La Fortuna"
-}
 
-// Sección acerca de
-{
-    "acerca_de.titulo_principal": "Acerda de"
-}
-{
-    "acerca_de.titulo_secundario": "Sloths Territory"
-}
-{
-    "acerca_de.parrafo_descriptivo": "Te esperamos, no te pierdas el mejor tour de perezosos de La Fortuna"
-}
-{
-    "acerca_de.item_1": "Maravillosa vista al Volcán Arenal."
-}
-{
-    "acerca_de.item_2": "Ubicado en El Tanque de La Fortuna de San Carlos."
-}
-{
-    "acerca_de.item_3": "Contamos con gran variedad de especies."
-}
 
-// Sección contact
-{
-    "contact.titulo_principal": "CONTACTARNOS"
-}
-{
-    "contact.titulo_secundario": "Sloths Territory La Fortuna de San Carlos"
-}
-{
-    "contact.parrafo_descriptivo": "Información de contacto"
-}
-{
-    "contact.direccion": "4 km de La Fortuna hacia el Este, 400 mts entrada de lastre a la derecha, 200 mts Este Fortuna, Alajuela Provinces, Costa Rica"
-}
-{
-    "contact.titulo_redes_sociaes": "Síguenos Sloth's Territory"
-}
-// formulario
-{
-    "formulario.nombre": "Nombre"
-}
-{
-    "formulario.correo": "Correo"
-}
-{
-    "formulario.mensaje": "Su mensaje"
-}
-{
-    "formulario.acepta_politicas": "Acepto la Política de privacidad y los Términos Condiciones de Sloth´s Territory"
-}
 
+    "intro.titulo:principal": "BIENVENIDOS",
+    "intro.titulo_secundario": "Sloths Territory en La Fortuna de San Carlos",
+    "intro.parrafo_descriptivo": "Sloths Territory es un sendero con un total de 1300 metros, que se extiende sobre la margen del Río Habana, en El Tanque de La Fortuna",
+    "intro.testimonial": "Visite este paraíso rodeado de naturaleza y habitado por osos perezosos",
+
+
+
+
+    "cards.card_1.titulo": "En Sloths Territory",
+    "cards.card_2.titulo": "Podrás conocer",
+    "cards.card_3.titulo": "Maravillosas vistas",
+    "cards.card_1.parrafo": "contamos con un gran hábitad natural",
+    "cards.card_2.parrafo": "diferentes tipos de plantas y animales, en especial osos perezozos",
+    "cards.card_3.parrafo": "al Volcán Arenal y a la increíble natuleza que habita en nuestras instalaciones",
+
+
+
+
+    "service.titulo_principal": "SERVICIOS",
+    "services.titulo_secundario_parte_1": "En Sloths Territory contamos con 3 diferentes actividades",
+    "services.titulo_secundario_parte_2": "Te invitamos a conocerlas en La Fortuna de San Carlos",
+
+
+    "service.vista_previa.tour_diurno.titulo": "Tour diurno",
+    "service.vista_previa.tour_diurno.parrafo": "Ofrecemos varias caminatas diarias iniciando a las: 8 a.m. - 10 a.m. - 1 p.m. y 3 p.m.",
+    "service.vista_previa.tour_diurno.item_1": "El sendero es accesible para todas las edades",
+    "service.vista_previa.tour_diurno.item_2": "La duración de esta actividad puede ser de 1 hora y media a 2 horas.",
+
+
+    "service.vista_previa.tour_nocturno.titulo": "Tour nocturno",
+    "service.vista_previa.tour_nocturno.parrafo": "Una experiencia única",
+    "service.vista_previa.tour_nocturno.item_1": "Nuestra caminata nocturna inicia a las 6:00 p.m.",
+    "service.vista_previa.tour_nocturno.item_2": "La duración de esta actividad es de 1 hora y media a 2 horas",
+
+
+    "service.vista_previa.tour_aves.titulo": "Tour de aves",
+    "service.vista_previa.tour_aves.parrafo": "Podrás observar una amplia variedad de especies de: colibríes, tangaras, loros, mieleros, pájaros carpinteros canela, Royal Flycatchers, etc.",
+    "service.vista_previa.tour_aves.item_1": "El recorrido comienza a las 5:00 a.m.",
+    "service.vista_previa.tour_aves.item_2": "La duración de esta actividad es de 2 horas",
+
+
+    "service.tour_diurno.info.titulo_principal": "TOUR DIURNO",
+    "service.tour_diurno.info.titulo_secundario_1": "Informacion sobre el tour diurno",
+    "service.tour_diurno.info.parrafo_1": "Ofrecemos varias caminatas diarias iniciando a las: 8 a.m. - 10 a.m. - 1 p.m. y 3 p.m.",
+    "service.tour_diurno.info.parrafo_2": "Durante la caminata, el sendero le permitirá disfrutar de un bosque de galería con exuberante vegetación y árboles gigantes como Chilamate y Guácimo Colorado; constituyendo el hábitat de muchas especies como: zarigüeyas, perezosos de dos y tres dedos y muchas aves como: Tucanes, Tangaras, Royal Flycatchers y otras. Pero el principal atractivo es la observación de los osos perezosos.",
+    "service.tour_diurno.info.parrafo_3": "La Familia Rodríguez, una familia tradicional costarricense serán sus guías, ya que tratar de encontrar perezosos requiere de altas habilidades porque suelen tener un excelente camuflaje que los hace imperceptibles, para ojos no entrenados.",
+    "service.tour_diurno.info.parrafo_4": "El sendero es accesible para todas las edades, por lo que esta es una actividad donde toda la familia puede disfrutarla.",
+    "service.tour_diurno.info.parrafo_5": "El recorrido incluye un guía capacitado durante toda la caminata con un telescopio profesional y un refrigerio de frutas frescas de temporada al final.",
+    "service.tour_diurno.info.parrafo_6": "La duración de esta actividad puede ser de 1 hora y media a 2 horas y el precio es de US $ 28 por persona; Niños de 6 a 12 años US $ 17 y menores de 5 años entran gratis.",
+
+
+    "service.tour_nocturno.info.titulo_principal": "TOUR NOCTURNO",
+    "service.tour_nocturno.info.titulo_secundario_1": "Informacion sobre el tour nocturno",
+    "service.tour_nocturno.info.parrafo_1": "Nuestra caminata nocturna inicia a las 6:00 pm, el mejor momento para buscar animales con comportamiento nocturno.",
+    "service.tour_nocturno.info.parrafo_2": "Durante esta caminata, tendrá la oportunidad de ver diferentes tipos de ranas, kinkajous, serpientes, arañas, murciélagos y eventualmente: perezosos de dos y tres dedos (pero no es el enfoque de esta caminata específica).",
+    "service.tour_nocturno.info.parrafo_3": "Mientras la noche da su iniciao y el cielo se cubre de estrellas, nuestro guía bien capacitado lo mantendrá seguro, mientras continúa la caminata a lo largo de nuestra propiedad.",
+    "service.tour_nocturno.info.parrafo_4": "El sendero es accesible para todas las edades, por lo que esta es una actividad donde toda la familia puede disfrutarla.",
+    "service.tour_nocturno.info.parrafo_5": "La duración de esta actividad es de 1 hora y media a 2 horas. El precio es de US $45 por persona; niños de 6 a 12 años US $35.",
+    "service.tour_nocturno.info.parrafo_6": "El tour incluye un guía capacitado durante toda la caminata, linterna y frutas frescas de temporada al final.",
+
+
+    "service.tour_aves.info.titulo_principal": "TOUR DE AVES",
+    "service.tour_aves.info.titulo_secundario_1": "Informacion sobre el tour de aves",
+    "service.tour_aves.info.parrafo_1": "Pensando en todos los amantes de la observación de aves, hemos creado esta actividad exclusiva y entretenida.",
+    "service.tour_aves.info.parrafo_2": "El recorrido comienza a las 5:00 am y uno de nuestros guías profesionales lo llevará a través de hermosos senderos para observar una amplia variedad de especies de: colibríes, tangaras, loros, mieleros, pájaros carpinteros canela, Royal Flycatchers, entre otras especies de aves.",
+    "service.tour_aves.info.parrafo_3": "Incluso cuando estamos enfocados en las aves, por la gran variedad de especies exóticas, en nuestros senderos, tendrá la oportunidad de observar algunos perezosos, ranas y otras especies.",
+    "service.tour_aves.info.parrafo_4": "El tour incluye un guía capacitado durante toda la caminata con telescopio profesional, binoculares, bocadillo de frutas frescas de temporada y café, al final de recorrido.",
+    "service.tour_aves.info.parrafo_5": "La duración de esta actividad es de 2 horas aproximadamente.",
+    "service.tour_aves.info.parrafo_6": "El precio es de US $ 45 por persona.",
+    "service.tour_aves.info.que_llevar_5": "Cámara",
+    "service.tour_aves.info.que_llevar_6": "Binoculares",
+    "service.tour_aves.info.que_llevar_7": "Zapatos cerrados",
+
+
+    "service.todos.info.titulo_secundario_2": "Qué llevar:",
+    "service.todos.info.que_llevar_1": "Repelente de insectos",
+    "service.todos.info.que_llevar_2": "Ropa ligera",
+    "service.todos.info.que_llevar_3": "Impermeable",
+    "service.todos.info.que_llevar_4": "Zapato cerrado",
+    "service.todos.info.parrafo_testimonial": "¡No dejes pasar esta aventura!",
+
+
+
+
+    "details.titulo_principal": "Oso perezoso, símbolo nacional de Costa Rica",
+    "details.item_1.titulo": "El 16 símbolo nacional de Costa Rica",
+    "details.item_1.parrafo": "El día miercoles 30 de junio del 2021 fue declarado el oso perezoso como símbolo nacional de Costa Rica",
+    "details.item_2.titulo": "¿Por qué se declaró símbolo nacional?",
+    "details.item_2.parrafo": "Las especies Bradypus variegatus (perezoso de 3 dedos) y Choloepus hoffomanni (perezoso de 2 dedos) fueron declarados símbolo nacional de Costa Rica con el fin de destacar la importancia de esta especie en la fauna silvestre de Costa Rica",
+
+
+
+
+    "galeria.titulo_principal": "Nuestra sección de galería",
+    "galeria.titulo_secundario": "En esta sección podrás conocer imágenes de las diferentes especies en Sloths Territory",
+    "galeria.filtro.ver_todo": "Ver todo",
+    "galeria.filtro.sloths": "PEREZOSOS",
+    "galeria.filtro.ranas": "Ranas",
+    "galeria.filtro.monos": "Monos",
+    "galeria.filtro.aves": "Aves",
+    "galeria.filtro.otras": "Otras especies",
+
+
+
+
+    "fundadores.titulo_principal": "Fundadores de Sloths Territory en La Fortuna",
+
+
+
+
+    "acerca_de.titulo_principal": "ACERCA DE",
+    "acerca_de.titulo_secundario": "Sloths Territory",
+    "acerca_de.parrafo_descriptivo": "Te esperamos, no te pierdas el mejor tour de perezosos de La Fortuna",
+    "acerca_de.item_1": "Maravillosa vista al Volcán Arenal.",
+    "acerca_de.item_2": "Ubicado en El Tanque de La Fortuna de San Carlos.",
+    "acerca_de.item_3": "Contamos con gran variedad de especies.",
+
+
+
+
+    "contact.titulo_principal": "CONTACTARNOS",
+    "contact.titulo_secundario": "Sloths Territory La Fortuna de San Carlos",
+    "contact.parrafo_descriptivo": "Información de contacto",
+    "contact.direccion": "4 km de La Fortuna hacia el Este, 400 mts entrada de lastre a la derecha, 200 mts Este Fortuna, Alajuela Provinces, Costa Rica",
+    "contact.titulo_redes_sociaes": "Síguenos Sloth's Territory",
+
+
+
+    "formulario.nombre": "Nombre",
+    "formulario.correo": "Correo",
+    "formulario.mensaje": "Su mensaje",
+    "formulario.acepta_politicas_parte_1": "Acepto las ",
+    "politicas_privacidad": "Políticas de privacidad de Sloth's Territory y los",
+    "terminos_condiciones": "Términos y Condiciones"
+}
 
 
 

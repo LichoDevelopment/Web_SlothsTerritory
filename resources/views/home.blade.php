@@ -32,13 +32,13 @@
             </div>
         </div>
         <div class="container">
-            <h1 class="main-title mt-3"> {{__('titulo_principal')}} </h1>
-            <p class="p-heading p-large"> En Sloths Territory podrás observar perezosos de 2 y 3 dedos, además gran variedad de aves y anfibios.<div class=""></div></p>
+            <h1 class="main-title mt-3"> {{__('inicio.titulo_principal')}} </h1>
+            <p class="p-heading p-large"> {{__('inicio.parrafo_descriptivo')}}<div class=""></div></p>
             <div class="d-flex justify-content-center align-items-center">
-                <a class="btn-solid-lg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">RESERVAR AHORA</a>
+                <a class="btn-solid-lg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">{{__('btn.reservar_ahora')}}</a>
             </div>
         </div>
-
+Z
 
 
         <!-- Intro -->
@@ -47,11 +47,10 @@
                 <div class="row">
                     <div class="col-lg-5">
                         <div class="text-container">
-                            <div class="section-title">BIENVENIDOS</div>
-                            <h2>Sloths Territory en La Fortuna de San Carlos.</h2>
-                            <p>Sloths Territory es un sendero con un total de 1300 metros, que se extiende sobre la margen del Río Habana, en El Tanque de La Fortuna.</p>
-                            <!-- <p class="testimonial-text">"Sloths are a group of arboreal Neotropical xenarthran mammals, constituting the suborder Folivora."</p> -->
-                            <div class="testimonial-author">Visite este paraíso rodeado de naturaleza y habitado por osos perezosos.</div>
+                            <div class="section-title">{{__('intro.titulo:principal')}}</div>
+                            <h2>{{__('intro.titulo_secundario')}}</h2>
+                            <p {{__('intro.parrafo_descriptivo')}}></p>
+                            <div class="testimonial-author">{{__('intro.testimonial')}}</div>
                         </div> <!-- end of text-container -->
                     </div> <!-- end of col -->
                     <div class="col-lg-7">
@@ -78,8 +77,8 @@
                                 <i class="fas fa-home fa-stack-1x"></i>
                             </span>
                             <div class="card-body">
-                                <h4 class="card-title">En Sloths Territory</h4>
-                                <p>contamos con un gran hábitad natural.</p>
+                                <h4 class="card-title">{{__('cards.card_1.titulo')}}</h4>
+                                <p>{{__('cards.card_1.parrafo')}}</p>
                             </div>
                         </div>
                         <!-- end of card -->
@@ -91,8 +90,8 @@
                                 <i class="fas fa-paw fa-stack-1x"></i>
                             </span>
                             <div class="card-body">
-                                <h4 class="card-title">Podrás conocer </h4>
-                                <p> diferentes tipos de plantas y animales, en especial osos perezozos.</p>
+                                <h4 class="card-title">{{__('cards.card_2.titulo')}}</h4>
+                                <p>{{__('cards.card_2.parrafo')}}</p>
                             </div>
                         </div>
                         <!-- end of card -->
@@ -104,8 +103,8 @@
                                 <i class="fas fa-binoculars fa-stack-1x"></i>
                             </span>
                             <div class="card-body">
-                                <h4 class="card-title"> Maravillosas vistas</h4>
-                                <p> al Volcán Arenal y a la increíble natuleza que habita en nuestras instalaciones. </p>
+                                <h4 class="card-title">{{__('cards.card_3.titulo')}}</h4>
+                                <p>{{__('cards.card_3.parrafo')}}</p>
                             </div>
                         </div>
                         <!-- end of card -->
@@ -122,8 +121,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="section-title">SERVICIOS</div>
-                        <h2>En Sloths Territory contamos con 3 diferentes actividades<br> Te invitamos a conocerlas en La Fortuna de San Carlos</h2>
+                        <div class="section-title">{{__('service.titulo_principal')}}</div>
+                        <h2>{{__('services.titulo_secundario_parte_1')}} <br>{{__('services.titulo_secundario_parte_2')}} </h2>
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
                 <div class="row">
@@ -135,22 +134,22 @@
                                 <img class="img-fluid" src="images/otras-especies/senderos-sloths-territory.jpeg" alt="Sendero para ver perezosos en la Fortuna de San Carlos" title="Sendero Sloths Territory" width="350px" height="258px">
                             </div>
                             <div class="card-body">
-                                <h3 class="card-title">Tour diurno</h3>
-                                <p>Ofrecemos varias caminatas diarias iniciando a las: 8 a.m. - 10 a.m. - 1 p.m. y 3 p.m.</p>
+                                <h3 class="card-title">{{__('service.vista_previa.tour_diurno.titulo')}}</h3>
+                                <p>{{__('service.vista_previa.tour_diurno.parrafo')}}</p>
                                 <ul class="list-unstyled li-space-lg">
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body">El sendero es accesible para todas las edades.</div>
+                                        <div class="media-body">{{__('service.vista_previa.tour_diurno.item_1')}}</div>
                                     </li>
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body">La duración de esta actividad puede ser de 1 hora y media a 2 horas.</div>
+                                        <div class="media-body">{{__('service.vista_previa.tour_diurno.item_2')}}</div>
                                     </li>
                                 </ul>
                             </div>
                             <div class="button-container">
-                            <a class="popup-with-move-anim" href="#tour-diurno"><div class="btn-solid-reg page-scroll">MÁS DETALLES</div></a> 
-                                <!-- <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">MÁS DETALLES</a> -->
+                            <a class="popup-with-move-anim" href="#tour-diurno"><div class="btn-solid-reg page-scroll">{{__('btn.mas_detalles')}}</div></a> 
+                                <!-- <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">{{__('btn.mas_detalles')}}</a> -->
                             </div> <!-- end of button-container -->
                         </div>
                         <!-- end of card -->
@@ -161,22 +160,22 @@
                                 <img class="img-fluid" src="images/tour-nocturno.jpeg" alt="tour nocturno Sloths Territory La Fortuna" title="Tour nocturno La Fortuna" width="350px" height="258px">
                             </div>
                             <div class="card-body">
-                                <h3 class="card-title">Tour nocturno</h3>
-                                <p>Una experiencia única</p>
+                                <h3 class="card-title">{{__('service.vista_previa.tour_nocturno.titulo')}}</h3>
+                                <p>{{__('service.vista_previa.tour_nocturno.parrafo')}}</p>
                                 <ul class="list-unstyled li-space-lg">
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body">Nuestra caminata nocturna inicia a las 6:00 pm.</div>
+                                        <div class="media-body">{{__('service.vista_previa.tour_nocturno.item_1')}}</div>
                                     </li>
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body">La duración de esta actividad es de 1 hora y media a 2 horas.</div>
+                                        <div class="media-body">{{__('service.vista_previa.tour_nocturno.item_2')}}</div>
                                     </li>
                                 </ul>
                             </div>
                             <div class="button-container">
-                                <!-- <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">MÁS DETALLES</a> -->
-                                <a class="popup-with-move-anim" href="#tour-nocturno"><div class="btn-solid-reg page-scroll">MÁS DETALLES</div></a>
+                                <!-- <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">{{__('btn.mas_detalles')}}</a> -->
+                                <a class="popup-with-move-anim" href="#tour-nocturno"><div class="btn-solid-reg page-scroll">{{__('btn.mas_detalles')}}</div></a>
                             </div> <!-- end of button-container -->
                         </div>
                         <!-- end of card -->
@@ -187,22 +186,22 @@
                                 <img class="img-fluid" src="images/aves/halcon-blanco-gavilan.jpeg" alt="magníficas aves en la Fortuna" title="lechuzón en Sloths Territory" width="350px" height="258px">
                             </div>
                             <div class="card-body">
-                                <h3 class="card-title">Tour de aves</h3>
-                                <p>Ofrecemos varias caminatas diarias iniciando a las: 8 a.m. - 10 a.m. - 1 p.m. y 3 p.m.</p>
+                                <h3 class="card-title">{{__('service.vista_previa.tour_aves.titulo')}}</h3>
+                                <p>{{__('service.vista_previa.tour_aves.parrafo')}}</p>
                                 <ul class="list-unstyled li-space-lg">
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body">El recorrido comienza a las 5:00 am.</div>
+                                        <div class="media-body">{{__('service.vista_previa.tour_aves.item_1')}}</div>
                                     </li>
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body">La duración de esta actividad es de 2 horas.</div>
+                                        <div class="media-body">{{__('service.vista_previa.tour_aves.item_2')}}</div>
                                     </li>
                                 </ul>
                             </div>
                             <div class="button-container">
-                            <a class="popup-with-move-anim" href="#tour-aves"><div class="btn-solid-reg page-scroll">MÁS DETALLES</div></a>
-                                <!-- <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">MÁS DETALLES</a> -->
+                            <a class="popup-with-move-anim" href="#tour-aves"><div class="btn-solid-reg page-scroll">{{__('btn.mas_detalles')}}</div></a>
+                                <!-- <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">{{__('btn.mas_detalles')}}</a> -->
                             </div> <!-- end of button-container -->
                         </div>
                         <!-- end of card -->
@@ -222,16 +221,16 @@
 
                     <!-- Accordion -->
                     <div class="accordion-container" id="accordionOne">
-                        <h2>Oso perezoso, símbolo nacional de Costa Rica</h2>
+                        <h2>{{__('details.titulo_principal')}}</h2>
                         <div class="item">
                             <div id="headingOne">
                                 <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">
-                                    <span class="circle-numbering">1</span><span class="accordion-title">El 16 símbolo nacional de Costa Rica</span>
+                                    <span class="circle-numbering">1</span><span class="accordion-title">{{__('details.item_1.titulo')}}</span>
                                 </span>
                             </div>
                             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionOne">
                                 <div class="accordion-body">
-                                    El día miercoles 30 de junio del 2021 fue declarado el oso perezoso como símbolo nacional de Costa Rica.
+                                    {{__('details.item_1.parrafo')}}
                                 </div>
                             </div>
                         </div> <!-- end of item -->
@@ -239,13 +238,12 @@
                         <div class="item">
                             <div id="headingTwo">
                                 <span class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" role="button">
-                                    <span class="circle-numbering">2</span><span class="accordion-title">¿Por qué se declaró símbolo nacional? </span>
+                                    <span class="circle-numbering">2</span><span class="accordion-title">{{__('details.item_2.titulo')}} </span>
                                 </span>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionOne">
                                 <div class="accordion-body">
-                                    Las especies Bradypus variegatus (perezoso de 3 dedos) y Choloepus hoffomanni (perezoso de 2 dedos) fueron declarados símbolo nacional de Costa Rica 
-                                    con el fin de destacar la importancia de esta especie en la fauna silvestre de Costa Rica.
+                                    {{__('details.item_2.parrafo')}}
                                 </div>
                             </div>
                         </div> <!-- end of item -->
@@ -262,20 +260,20 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="section-title"> Nuestra sección de galería</div>
-                        <h2> En esta sección podrás conocer imágenes de las diferentes especies en Sloths Territory</h2>
+                        <div class="section-title"> {{__('galeria.titulo_principal')}}</div>
+                        <h2> {{__('galeria.titulo_secundario')}}</h2>
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
                 <div class="row">
                     <div class="col-lg-12">
                         <!-- Filter -->
                         <div class="button-group filters-button-group">
-                            <a class="button is-checked" data-filter="*"><span>SHOW ALL</span></a>
-                            <a class="button" data-filter=".sloths"><span>Sloths</span></a>
-                            <a class="button" data-filter=".ranas"><span>Frogs</span></a>
-                            <a class="button" data-filter=".monos"><span>Monkeys</span></a>
-                            <a class="button" data-filter=".aves"><span>Birds</span></a>
-                            <a class="button" data-filter=".otras"><span>Otras especies</span></a>
+                            <a class="button is-checked" data-filter="*"><span>{{__('galeria.filtro.ver_todo')}}</span></a>
+                            <a class="button" data-filter=".sloths"><span>{{__('galeria.filtro.sloths')}}</span></a>
+                            <a class="button" data-filter=".ranas"><span>{{__('galeria.filtro.ranas')}}</span></a>
+                            <a class="button" data-filter=".monos"><span>{{__('galeria.filtro.monos')}}</span></a>
+                            <a class="button" data-filter=".aves"><span>{{__('galeria.filtro.aves')}}</span></a>
+                            <a class="button" data-filter=".otras"><span>{{__('galeria.filtro.otras')}}</span></a>
                         </div> <!-- end of button group -->
                         <div class="grid">
                             <div class="element-item sloths">
@@ -403,7 +401,7 @@
                         <p class="testimonial-text">Parrafo sobre comentario de algo.</p>
                         <p class="testimonial-author">Tipo de animal o no se...</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS (redirecciona a otra página)</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS (redirecciona a otra página)</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">{{__('btn.volver')}}</a>
                 </div> <!-- end of col --> --}}
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -428,7 +426,7 @@
                         <p class="testimonial-text">Parrafo </p>
                         <p class="testimonial-author">Tipo</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">{{__('btn.volver')}}</a>
                 </div> <!-- end of col --> --}}
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -453,7 +451,7 @@
                         <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">{{__('btn.volver')}}</a>
                 </div> <!-- end of col --> --}}
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -478,7 +476,7 @@
                         <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">{{__('btn.volver')}}</a>
                 </div> <!-- end of col --> --}}
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -503,7 +501,7 @@
                         <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">{{__('btn.volver')}}</a>
                 </div> <!-- end of col --> --}}
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -528,7 +526,7 @@
                         <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">{{__('btn.volver')}}</a>
                 </div> <!-- end of col --> --}}
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -553,7 +551,7 @@
                         <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">{{__('btn.volver')}}</a>
                 </div> <!-- end of col --> --}}
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -578,7 +576,7 @@
                         <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">{{__('btn.volver')}}</a>
                 </div> <!-- end of col --> --}}
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -602,7 +600,7 @@
                         <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">{{__('btn.volver')}}</a>
                 </div> <!-- end of col --> --}}
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -626,7 +624,7 @@
                         <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">{{__('btn.volver')}}</a>
                 </div> <!-- end of col --> --}}
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -650,7 +648,7 @@
                         <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">{{__('btn.volver')}}</a>
                 </div> <!-- end of col --> --}}
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -674,7 +672,7 @@
                         <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">{{__('btn.volver')}}</a>
                 </div> <!-- end of col --> --}}
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -699,7 +697,7 @@
                         <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <p class="testimonial-author">General Manager</p>
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">BACK</a>
+                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">{{__('btn.volver')}}</a>
                 </div> <!-- end of col --> --}}
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -713,24 +711,24 @@
                     <img class="img-fluid" src="images/otras-especies/senderos-sloths-territory.jpeg" alt="sloth's territory sendero principal">
                 </div> <!-- end of col -->
                 <div class="col-lg-10">
-                    <h3>TOUR DIURNO</h3>
+                    <h3>{{__('service.tour_diurno.info.titulo_principal')}}</h3>
                     <hr class="line-heading">
-                    <h6>Informacion sobre el tour diurno</h6>
-                    <p>Ofrecemos varias caminatas diarias iniciando a las: 8 a.m. - 10 a.m. - 1 p.m. y 3 p.m.</p>
-                    <p>Durante la caminata, el sendero le permitirá disfrutar de un bosque de galería con exuberante vegetación y árboles gigantes como Chilamate y Guácimo Colorado;  constituyendo el hábitat de muchas especies como: zarigüeyas, perezosos de dos y tres dedos y muchas aves como: Tucanes, Tangaras, Royal Flycatchers y otras. Pero el principal atractivo es la observación de los osos perezosos.</p>
-                    <p>La Familia Rodríguez, una familia tradicional costarricense serán sus guías, ya que tratar de encontrar perezosos requiere de altas habilidades porque suelen tener un excelente camuflaje que los hace imperceptibles, para ojos no entrenados.</p>
-                    <p>El sendero es accesible para todas las edades, por lo que esta es una actividad donde toda la familia puede disfrutarla.</p>
-                    <p>El recorrido incluye un guía capacitado durante toda la caminata con un telescopio profesional y un refrigerio de frutas frescas de temporada al final.</p>
-                    <p>La duración de esta actividad puede ser de 1 hora y media a 2 horas y el precio es de US $ 28 por persona;  Niños de 6 a 12 años US $ 17 y menores de 5 años entran gratis.</p>
-                    <h6>Qué llevar:</h6>
-                    <p>Repelente de insectos</p>
-                    <p>Ropa ligera</p>
-                    <p>Impermeable</p>
-                    <p>Zapato cerrado</p>
+                    <h6>{{__('service.tour_diurno.info.titulo_secundario_1')}}</h6>
+                    <p>{{__('service.tour_diurno.info.parrafo_1')}}</p>
+                    <p>{{__('service.tour_diurno.info.parrafo_2')}}</p>
+                    <p>{{__('service.tour_diurno.info.parrafo_3')}}.</p>
+                    <p>{{__('service.tour_diurno.info.parrafo_4')}}</p>
+                    <p>{{__('service.tour_diurno.info.parrafo_5')}}</p>
+                    <p>{{__('service.tour_diurno.info.parrafo_6')}}</p>
+                    <h6>{{__('service.todos.info.titulo_secundario_2')}}</h6>
+                    <p>{{__('service.todos.info.que_llevar_1')}}</p>
+                    <p>{{__('service.todos.info.que_llevar_2')}}</p>
+                    <p>{{__('service.todos.info.que_llevar_3')}}</p>
+                    <p>{{__('service.todos.info.que_llevar_4')}}</p>
                     <div class="testimonial-container">
-                        <p class="testimonial-text">No dejes pasar esta aventura.</p>
+                        <p class="testimonial-text">{{__('service.todos.info.parrafo_testimonial')}}</p>
                     </div>
-                    <a class="btn-solid-reg" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">RESERVAR AHORA</a> <a class="btn-outline-reg mfp-close as-button" href="#services">BACK</a>
+                    <a class="btn-solid-reg" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">{{__('btn.reservar_ahora')}}</a> <a class="btn-outline-reg mfp-close as-button" href="#services">{{__('btn.volver')}}</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -743,24 +741,24 @@
                     <img class="img-fluid" src="images/tour-nocturno.jpeg" alt="tour-nocturno-Fortuna" title="Tour-nocturno-en-Fortuna">
                 </div> <!-- end of col -->
                 <div class="col-lg-10">
-                    <h3>TOUR NOCTURNO</h3>
+                    <h3>{{__('service.tour_nocturno.info.titulo_principal')}}</h3>
                     <hr class="line-heading">
-                    <h6>Informacion sobre el tour nocturno</h6>
-                    <p>Nuestra caminata nocturna inicia a las 6:00 pm, el mejor momento para buscar animales con comportamiento nocturno.</p>
-                    <p>Durante esta caminata, tendrá la oportunidad de ver diferentes tipos de ranas, kinkajous, serpientes, arañas, murciélagos y eventualmente: perezosos de dos y tres dedos (pero no es el enfoque de esta caminata específica).</p>
-                    <p>Mientras la noche da su iniciao y el cielo se cubre de estrellas, nuestro guía bien capacitado lo mantendrá seguro, mientras continúa la caminata a lo largo de nuestra propiedad.</p>
-                    <p>El sendero es accesible para todas las edades, por lo que esta es una actividad donde toda la familia puede disfrutarla.</p>
-                    <p>La duración de esta actividad es de 1 hora y media a 2 horas.  El precio es de US $45 por persona;  niños de 6 a 12 años US $35.</p>
-                    <p>El tour incluye un guía capacitado durante toda la caminata, linterna y frutas frescas de temporada al final.</p>
-                    <h6>Qué llevar:</h6>
-                    <p>Repelente de insectos</p>
-                    <p>Ropa ligera</p>
-                    <p>Impermeable</p>
-                    <p>Zapato cerrado</p>
+                    <h6>{{__('service.tour_nocturno.info.titulo_secundario_1')}}</h6>
+                    <p>{{__('service.tour_nocturno.info.parrafo_1')}}</p>
+                    <p>{{__('service.tour_nocturno.info.parrafo_2')}}</p>
+                    <p>{{__('service.tour_nocturno.info.parrafo_3')}}</p>
+                    <p>{{__('service.tour_nocturno.info.parrafo_4')}}</p>
+                    <p>{{__('service.tour_nocturno.info.parrafo_5')}}</p>
+                    <p>{{__('service.tour_nocturno.info.parrafo_6')}}</p>
+                    <h6>{{__('service.todos.info.titulo_secundario_2')}}</h6>
+                    <p>{{__('service.todos.info.que_llevar_1')}}</p>
+                    <p>{{__('service.todos.info.que_llevar_2')}}</p>
+                    <p>{{__('service.todos.info.que_llevar_3')}}</p>
+                    <p>{{__('service.todos.info.que_llevar_4')}}</p>
                     <div class="testimonial-container">
-                        <p class="testimonial-text">No dejes pasar esta aventura.</p>
+                        <p class="testimonial-text">{{__('service.todos.info.parrafo_testimonial')}}</p>
                     </div>
-                    <a class="btn-solid-reg" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">RESERVAR AHORA</a> <a class="btn-outline-reg mfp-close as-button" href="#services">BACK</a>
+                    <a class="btn-solid-reg" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">{{__('btn.reservar_ahora')}}</a> <a class="btn-outline-reg mfp-close as-button" href="#services">{{__('btn.volver')}}</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -773,26 +771,26 @@
                     <img class="img-fluid" src="images/aves/halcon-blanco-gavilan.jpeg" alt="magníficas aves en la Fortuna" title="lechuzón en Sloths Territory" >
                 </div> <!-- end of col -->
                 <div class="col-lg-10">
-                    <h3>TOUR DE AVES</h3>
+                    <h3>{{__('service.tour_aves.info.titulo_principal')}}</h3>
                     <hr class="line-heading">
-                    <h6>Informacion sobre el tour de aves</h6>
-                    <p>Pensando en todos los amantes de la observación de aves, hemos creado esta actividad exclusiva y entretenida.</p>
-                    <p>El recorrido comienza a las 5:00 am y uno de nuestros guías profesionales lo llevará a través de hermosos senderos para observar una amplia variedad de especies de: colibríes, tangaras, loros, mieleros, pájaros carpinteros canela, Royal Flycatchers, entre otras especies de aves.</p>
-                    <p>Incluso cuando estamos enfocados en las aves, por la gran variedad de especies exóticas, en nuestros senderos, tendrá la oportunidad de observar algunos perezosos, ranas y otras especies.</p>
-                    <p>El tour incluye un guía capacitado durante toda la caminata con telescopio profesional, binoculares, bocadillo de frutas frescas de temporada y café, al final de recorrido.</p>
-                    <p>La duración de esta actividad es de 2 horas aproximadamente.</p>
-                    <p>El precio es de US $ 45 por persona.</p>
-                    <h6>Qué llevar:</h6>
-                    <p>Repelente de insectos</p>
-                    <p>Ropa ligera</p>
-                    <p>Impermeable</p>
-                    <p>Cámara</p>
-                    <p>Binoculares</p>
-                    <p>Zapatos cerrados</p>
+                    <h6>{{__('service.tour_aves.info.titulo_secundario_1')}}</h6>
+                    <p>{{__('service.tour_aves.info.parrafo_1')}}</p>
+                    <p>{{__('service.tour_aves.info.parrafo_2')}}</p>
+                    <p>{{__('service.tour_aves.info.parrafo_3')}}</p>
+                    <p>{{__('service.tour_aves.info.parrafo_4')}}</p>
+                    <p>{{__('service.tour_aves.info.parrafo_5')}}</p>
+                    <p>{{__('service.tour_aves.info.parrafo_6')}}</p>
+                    <h6>{{__('service.todos.info.titulo_secundario_2')}}</h6>
+                    <p>{{__('service.todos.info.que_llevar_1')}}</p>
+                    <p>{{__('service.todos.info.que_llevar_2')}}</p>
+                    <p>{{__('service.todos.info.que_llevar_3')}}</p>
+                    <p>{{__('service.tour_aves.info.que_llevar_5')}}</p>
+                    <p>{{__('service.tour_aves.info.que_llevar_6')}}</p>
+                    <p>{{__('service.tour_aves.info.que_llevar_7')}}</p>
                     <div class="testimonial-container">
-                        <p class="testimonial-text">No dejes pasar esta aventura.</p>
+                        <p class="testimonial-text">{{__('service.todos.info.parrafo_testimonial')}}</p>
                     </div>
-                    <a class="btn-solid-reg" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">RESERVAR AHORA</a> <a class="btn-outline-reg mfp-close as-button" href="#services">BACK</a>
+                    <a class="btn-solid-reg" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">{{__('btn.reservar_ahora')}}</a> <a class="btn-outline-reg mfp-close as-button" href="#services">{{__('btn.volver')}}</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -804,7 +802,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h2>Fundadores de Sloths Territory en La Fortuna</h2>
+                        <h2>{{__('fundadores.titulo_principal')}}</h2>
                         <!-- <p class="p-heading"> PENDIENTE</p> -->
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
@@ -865,21 +863,21 @@
                     </div> <!-- end of col -->
                     <div class="col-lg-7 col-xl-6">
                         <div class="text-container">
-                            <div class="section-title">Acerda de </div>
-                            <h2> Sloths Territory</h2>
-                            <p> Te esperamos, no te pierdas el mejor tour de perezosos de La Fortuna</p>
+                            <div class="section-title">{{__('acerca_de.titulo_principal')}}</div>
+                            <h2> {{__('acerca_de.titulo_secundario')}}</h2>
+                            <p> {{__('acerca_de.parrafo_descriptivo')}}</p>
                             <ul class="list-unstyled li-space-lg">
                                 <li class="media">
                                     <i class="fas fa-square"></i>
-                                    <div class="media-body">Maravillosa vista al Volcán Arenal.</div>
+                                    <div class="media-body">{{__('acerca_de.item_1')}}</div>
                                 </li>
                                 <li class="media">
                                     <i class="fas fa-square"></i>
-                                    <div class="media-body">Ubicado en El Tanque de La Fortuna de San Carlos.</div>
+                                    <div class="media-body">{{__('acerca_de.item_2')}}</div>
                                 </li>
                                 <li class="media">
                                     <i class="fas fa-square"></i>
-                                    <div class="media-body">Contamos con gran variedad de especies.</div>
+                                    <div class="media-body">{{__('acerca_de.item_3')}}</div>
                                 </li>
                             </ul>
                         </div> <!-- end of text-container -->
@@ -896,15 +894,15 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="text-container">
-                            <div class="section-title">CONTACT</div>
-                            <h2>Sloths Territory La Fortuna de San Carlos</h2>
-                            <p>Información de contacto</p>
+                            <div class="section-title">{{__('contact.titulo_principal')}}</div>
+                            <h2>{{__('contact.titulo_secundario')}}</h2>
+                            <p>{{__('contact.parrafo_descriptivo')}}</p>
                             <ul class="list-unstyled li-space-lg">
-                                <li class="address"><i class="fas fa-map-marker-alt"></i>4 km de La Fortuna hacia el Este, 400 mts entrada de lastre a la derecha, 200 mts Este Fortuna, Alajuela Provinces, Costa Rica</li>
+                                <li class="address"><i class="fas fa-map-marker-alt"></i>{{__('contact.direccion')}}</li>
                                 <li><i class="fas fa-phone"></i><a href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">+506 8561 0404</a></li>
                                 <li><i class="fas fa-envelope"></i><a href="mailto:sloths.territory@gmail.com" target="_blank">sloths.territory@gmail.com</a></li>
                             </ul>
-                            <h3>Síguenos Sloths Territory</h3>
+                            <h3>{{__('contact.titulo_redes_sociaes')}}</h3>
 
                             <span class="fa-stack">
                             <a href="https://www.facebook.com/Sloths.Territory.2018" target="_blank">
@@ -938,25 +936,25 @@
                         <form id="contactForm" data-toggle="validator" data-focus="false">
                             <div class="form-group">
                                 <input type="text" class="form-control-input" id="cname" required>
-                                <label class="label-control" for="cname">Nombre</label>
+                                <label class="label-control" for="cname">{{__('formulario.nombre')}}</label>
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
                                 <input type="email" class="form-control-input" id="cemail" required>
-                                <label class="label-control" for="cemail">Correo</label>
+                                <label class="label-control" for="cemail">{{__('formulario.correo')}}</label>
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
                                 <textarea class="form-control-textarea" id="cmessage" required></textarea>
-                                <label class="label-control" for="cmessage">Su mensaje</label>
+                                <label class="label-control" for="cmessage">{{__('formulario.mensaje')}}</label>
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group checkbox">
-                                <input type="checkbox" id="cterms" value="Agreed-to-Terms" required>I agree Sloth Territory <a href="privacy-policy.html">Privacy Policy</a> and <a href="terms-conditions.html">Terms Conditions</a>
+                                <input type="checkbox" id="cterms" value="Agreed-to-Terms" required>{{__('formulario.acepta_politicas_parte_1')}}<a href="privacy-policy.html">{{__('politicas_privacidad')}}</a>  <a href="terms-conditions.html">{{__('terminos_condiciones')}}</a>
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="form-control-submit-button">ENVIAR MENSAJE</button>
+                                <button type="submit" class="form-control-submit-button">{{__('btn.enviar_mensaje')}}</button>
                             </div>
                             <div class="form-message">
                                 <div id="cmsgSubmit" class="h3 text-center hidden"></div>

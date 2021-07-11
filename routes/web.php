@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 /**Public routes */
 
-Route::redirect('/', '/en');
+Route::redirect('/', '/es');
 
 // Route::middleware('languageSwitcher')->group(['prefix' => '{language}'],function () {
 

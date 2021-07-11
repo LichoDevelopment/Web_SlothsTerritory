@@ -69,21 +69,21 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="{{ route('home',['locale','en']) }}">HOME <span class="sr-only">(current)</span></a>
+                    <a class="nav-link page-scroll" href="{{ route('home',['locale','en']) }}">{{__('header.home')}} <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#header">INICIO</a>
+                    <a class="nav-link page-scroll" href="#header">{{__('header.inicio')}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#services">SERVICIOS</a>
+                    <a class="nav-link page-scroll" href="#services">{{__('header.service')}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#galeria">GALERÍA</a>
+                    <a class="nav-link page-scroll" href="#galeria">{{__('header.galeria')}}</a>
                 </li>
 
                 <!-- Dropdown Menu -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">ACERCA DE</a>
+                    <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">{{__('header.acerca_de')}}</a>
                     <!-- PENDIENTE -->
                     <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ route('terms-conditions',['locale','en']) }}"><span class="item-text">TERMS CONDITIONS</span></a>
@@ -94,7 +94,7 @@
                 <!-- end of dropdown menu -->
 
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#contact">CANTACTARNOS</a>
+                    <a class="nav-link page-scroll" href="#contact">{{__('header.contactarnos')}}</a>
                 </li>
             </ul>
             <span class="nav-item social-icons">
@@ -184,62 +184,6 @@
                         </ul>
                     </div>
                 </article>
-                {{-- <div class="col-md-6">
-                    <div class="text-container about">
-                        <h4>Sección extra</h4>
-                        <p class="white">Acerda de parrafo o algo...</p>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col --> --}}
-                {{-- <div class="col-md-2">
-                    <div class="text-container">
-                        <h4>Links</h4>
-                        <ul class="list-unstyled li-space-lg white">
-                            <li>
-                                <a class="white" href="#your-link">guiaInicio.com</a>
-                            </li>
-                            <li>
-                                <a class="white" href="terms-conditions.html">Terms & Conditions</a>
-                            </li>
-                            <li>
-                                <a class="white" href="privacy-policy.html">Privacy Policy</a>
-                            </li>
-                        </ul>
-                    </div> 
-                    <!-- end of text-container -->
-                </div>  --}}
-                <!-- end of col -->
-                {{-- <div class="col-md-2">
-                    <div class="text-container">
-                        <h4>Tools</h4>
-                        <ul class="list-unstyled li-space-lg">
-                            <li>
-                                <a class="white" href="#your-link">animales.com</a>
-                            </li>
-                            <li>
-                               <a class="white" href="#your-link">miembros.com</a>
-                            </li>
-                            <!-- <li class="media">
-                                <a class="white" href="#your-link">optimizer.net</a>
-                            </li> -->
-                        </ul>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col --> --}}
-                {{-- <div class="col-md-2">
-                    <div class="text-container">
-                        <h4>Socios</h4>
-                        <ul class="list-unstyled li-space-lg">
-                            <li>
-                                <a class="white" href="#your-link">xsocio.com</a>
-                            </li>
-                            <li>
-                                <a class="white" href="#your-link">spagina creator.com</a>
-                            </li>
-                            <li>
-                                <a class="white" href="#your-link">xcosa.com</a>
-                            </li>
-                        </ul>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col --> --}}
             </div> <!-- end of row -->
         </div> <!-- end of container -->
     </div> 
