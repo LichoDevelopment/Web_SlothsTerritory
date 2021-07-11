@@ -2098,6 +2098,7 @@ a.reservar-btn {
 .item-slide .imgs {
     width: 100vw;
     height: 100vh;
+	object-fit: cover;
 }
 
 .pagination{
