@@ -10,7 +10,7 @@ class HomeController extends Controller
     public function home($locale)
     {
         App::setLocale($locale);
-        return view('home');
+        return view('home', compact('locale'));
     }
     public function admin()
     {
@@ -28,12 +28,12 @@ class HomeController extends Controller
     public function privacy($locale)
     {
         App::setLocale($locale);
-        return view('privacy-policy');
+        return view('privacy-policy', compact('locale'));
     }
 
     public function terms($locale)
     {
         App::setLocale($locale);
-        return view('terms-conditions');
+        return view('terms-conditions', compact('locale'));
     }
 }

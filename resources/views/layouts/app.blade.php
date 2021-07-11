@@ -69,11 +69,17 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="{{ route('home',['locale','en']) }}">{{__('header.home')}} <span class="sr-only">(current)</span></a>
+                   <a href="{{ route(Route::currentRouteName(),'en') }}" class="nav-link ">EN</a> 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#header">{{__('header.inicio')}}</a>
+                    <a href="{{ route(Route::currentRouteName(),'es') }}" class="nav-link ">ES</a> 
+                 </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="{{ route('home',[$locale]) }}">{{__('header.home')}} <span class="sr-only">(current)</span></a>
                 </li>
+                {{-- <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#header">{{__('header.inicio')}}</a>
+                </li> --}}
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#services">{{__('header.service')}}</a>
                 </li>
@@ -86,9 +92,9 @@
                     <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">{{__('header.acerca_de')}}</a>
                     <!-- PENDIENTE -->
                     <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('terms-conditions',['locale','en']) }}"><span class="item-text">TERMS CONDITIONS</span></a>
+                        <a class="dropdown-item" href=" route('terms-conditions',,[$locale])]) }}"><span class="item-text">TERMS CONDITIONS</span></a>
                         <div class="dropdown-items-divide-hr"></div>
-                        <a class="dropdown-item" href="{{ route('privacy-policy',['locale','en']) }}"><span class="item-text">PRIVACY POLICY</span></a>
+                        <a class="dropdown-item" href="route('privacy-policy',['locale','en']) }}"><span class="item-text">PRIVACY POLICY</span></a>
                     </div> -->
                 </li>
                 <!-- end of dropdown menu -->
@@ -100,19 +106,19 @@
             <span class="nav-item social-icons">
                 <span class="fa-stack">
                     <a href="https://www.facebook.com/Sloths.Territory.2018" target="_blank">
-                        <span class="hexagon"></span>
+                        {{-- <span class="hexagon"></span> --}}
                         <i class="fab fa-facebook-f fa-stack-1x"></i>
                     </a>
                 </span>
                 <span class="fa-stack">
                     <a href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">
-                        <span class="hexagon"></span>
+                        {{-- <span class="hexagon"></span> --}}
                         <i class="fab fa-whatsapp fa-stack-1x"></i>
                     </a>
                 </span>
                 <span class="fa-stack">
                     <a href="https://www.instagram.com/slothsterritory/" target="_blank">
-                        <span class="hexagon"></span>
+                        {{-- <span class="hexagon"></span> --}}
                         <i class="fab fa-instagram fa-stack-1x"></i>
                     </a>
                 </span>
@@ -135,11 +141,11 @@
                         <ul class="list-unstyled li-space-lg white">
                             <li>
                                 <i class="fas fa-file-alt"></i>
-                                <a class="white footer-link" href={{ route('terms-conditions',['locale','en']) }}" >Terms</a>
+                                <a class="white footer-link" href={{ route('terms-conditions',[$locale]) }}" >Terms</a>
                             </li>
                             <li >
                                 <i class="fas fa-user-shield"></i>
-                                <a class="white footer-link" href="{{ route('privacy-policy',['locale','en']) }}">Privacy</a>
+                                <a class="white footer-link" href="{{ route('privacy-policy',[$locale]) }}">Privacy</a>
                             </li>
                         </ul>
                     </div>

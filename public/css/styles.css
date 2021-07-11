@@ -935,7 +935,7 @@ input[type='checkbox'] {
 /*     07. Services     */
 /************************/
 .cards-2 {
-	padding-top: 6.625rem;
+	padding-top: 2.625rem;
 	padding-bottom: 1.25rem;
 	background-color: #fbfbfb;
 }
@@ -1284,7 +1284,7 @@ input[type='checkbox'] {
 /*     11. Call Me    */
 /**********************/
 .form-1 {
-	padding-top: 6.625rem;
+	padding-top: 2.625rem;
 	padding-bottom: 5.625rem;
 	background-color: #153e52;
 }
@@ -1603,14 +1603,14 @@ input[type='checkbox'] {
 }
 
 .basic-2 .fa-stack-1x {
-	font-size: 0.6875rem;
+	font-size: 2rem;
 	line-height: 1.75rem;
-	color: #fff;
+	color: #516eab;
 	transition: all 0.2s ease;
 }
 
 .basic-2 .fa-stack:hover .fa-stack-1x {
-	color: #10b610;
+	color: #181ed8;
 }
 
 
@@ -1685,7 +1685,7 @@ input[type='checkbox'] {
 /*     16. Contact     */
 /***********************/
 .form-2 {
-	padding-top: 6.625rem;
+	padding-top: 2.625rem;
 	padding-bottom: 5.625rem;
 	background-color: #fbfbfb;
 }
@@ -1726,10 +1726,11 @@ input[type='checkbox'] {
 
 .form-2 .fa-stack {
 	margin-right: 0.25rem;
-	margin-bottom: 0.75rem;
-	margin-left: 0.125rem;
-	width: 3.25rem;
-	height: 3.25rem;
+    margin-bottom: 0.75rem;
+    margin-left: 0.125rem;
+    width: 20%;
+    height: 3.25rem;
+    text-align: center;
 }
 
 .form-2 .fa-stack .hexagon {
@@ -1745,16 +1746,49 @@ input[type='checkbox'] {
 	background: url('../images/hexagon-white.svg') center center no-repeat;
 	background-size: 3.25rem 3.25rem;
 }
-
-.form-2 .fa-stack-1x {
-	font-size: 1.5rem;
+/* Logo Facebook */
+.form-2 .fa-stack-1x-face {
+	font-size: 2rem;
 	line-height: 3.25rem;
-	color: #fff;
+	color: #516eab;
 	transition: all 0.2s ease;
 }
 
-.form-2 .fa-stack:hover .fa-stack-1x {
-	color: #10b610;
+.form-2 .fa-stack:hover .fa-stack-1x-face {
+	color: #181ed8;
+}
+/* Logo Instagram */
+.form-2 .fa-stack-1x-insta {
+	font-size: 2rem;
+	line-height: 3.25rem;
+	color: #2c2e32;
+	transition: all 0.2s ease;
+}
+
+.form-2 .fa-stack:hover .fa-stack-1x-insta {
+	color: #000000;
+}
+/* Logo Youtube */
+.form-2 .fa-stack-1x-youtu {
+	font-size: 2rem;
+	line-height: 3.25rem;
+	color: #e30000;
+	transition: all 0.2s ease;
+}
+
+.form-2 .fa-stack:hover .fa-stack-1x-youtu {
+	color: #f00a0a;
+}
+/* Logo TripAdvisor */
+.form-2 .fa-stack-1x-trip {
+	font-size: 2rem;
+	line-height: 3.25rem;
+	color: #2c2e32;
+	transition: all 0.2s ease;
+}
+
+.form-2 .fa-stack:hover .fa-stack-1x-trip {
+	color: #000000;
 }
 
 

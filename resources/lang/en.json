@@ -1,4 +1,6 @@
 {
+
+
     "btn.reservar_ahora": "BOOK NOW",
     "btn.mas_detalles": "MORE DETAILS",
     "btn.enviar_mensaje": "SEND MESSAGE",
@@ -16,8 +18,8 @@
 
 
 
-    "inicio.titulo_principal": "El mejor tour en La Fortuna de San Carlos e increíble vista del Volcán Arenal",
-    "inicio.parrafo_descriptivo": "En Sloths Territory podrás observar perezosos de 2 y 3 dedos, además gran variedad de aves y anfibios",
+    "inicio.titulo_principal": "The best tour in La Fortuna de San Carlos and incredible view of the Arenal Volcano",
+    "inicio.parrafo_descriptivo": "In Sloths Territory you can observe 2-toed sloths and 3-toed sloths, as well as a great variety of birds and amphibians",
 
 
 
@@ -25,46 +27,46 @@
     "intro.titulo:principal": "WELCOME",
     "intro.titulo_secundario": "Sloths Territory in La Fortuna de San Carlos",
     "intro.parrafo_descriptivo": "Sloth's Territory is a total trail of 1300 meters, which extends along the natural forest surrounded La Havana River. The trail is accessible for all ages, so this is an activity where the whole family can enjoy it.",
-    "intro.testimonial": "Visite este paraíso rodeado de naturaleza y habitado por osos perezosos",
+    "intro.testimonial": "Visit this paradise surrounded by nature and inhabited by sloth bears",
 
 
 
 
     "cards.card_1.titulo": "In Sloths Territory",
-    "cards.card_2.titulo": "Podrás conocer",
-    "cards.card_3.titulo": "Maravillosas vistas",
-    "cards.card_1.parrafo": "contamos con un gran hábitad natural",
-    "cards.card_2.parrafo": "diferentes tipos de plantas y animales, en especial osos perezozos",
-    "cards.card_3.parrafo": "al Volcán Arenal y a la increíble natuleza que habita en nuestras instalaciones",
+    "cards.card_2.titulo": "You will know",
+    "cards.card_3.titulo": "Wonderful views",
+    "cards.card_1.parrafo": "we have a great natural habitat",
+    "cards.card_2.parrafo": "different types of plants and animals, especially sloths",
+    "cards.card_3.parrafo": "to the Arenal Volcano and the incredible nature that inhabits our facilities",
 
 
 
 
     "service.titulo_principal": "SERVICES",
-    "services.titulo_secundario_parte_1": "En Sloths Territory contamos con 3 diferentes actividades",
-    "services.titulo_secundario_parte_2": "Te invitamos a conocerlas en La Fortuna de San Carlos",
+    "services.titulo_secundario_parte_1": "In Sloths Territory we have 3 different activities",
+    "services.titulo_secundario_parte_2": "We invite you to meet them in La Fortuna de San Carlos",
 
 
     "service.vista_previa.tour_diurno.titulo": "DIURNAL OBSERVATION TOUR",
-    "service.vista_previa.tour_diurno.parrafo": "Ofrecemos varias caminatas diarias iniciando a las: 8 a.m. - 10 a.m. - 1 p.m. y 3 p.m.",
-    "service.vista_previa.tour_diurno.item_1": "El sendero es accesible para todas las edades",
-    "service.vista_previa.tour_diurno.item_2": "La duración de esta actividad puede ser de 1 hora y media a 2 horas.",
+    "service.vista_previa.tour_diurno.parrafo": "We offer several daily hikes starting at: 8 am - 10 am - 1 pm and 3 pm.",
+    "service.vista_previa.tour_diurno.item_1": "The trail is accessible for all ages",
+    "service.vista_previa.tour_diurno.item_2": "The duration of this activity can be from 1 and a half to 2 hours",
 
 
     "service.vista_previa.tour_nocturno.titulo": "NIGHT HIKE EXPERIENCE",
-    "service.vista_previa.tour_nocturno.parrafo": "Una experiencia única",
-    "service.vista_previa.tour_nocturno.item_1": "Nuestra caminata nocturna inicia a las 6:00 p.m.",
-    "service.vista_previa.tour_nocturno.item_2": "La duración de esta actividad es de 1 hora y media a 2 horas",
+    "service.vista_previa.tour_nocturno.parrafo": "A great experience",
+    "service.vista_previa.tour_nocturno.item_1": "Our night hike starts at 6:00 pm.",
+    "service.vista_previa.tour_nocturno.item_2": "The duration of this activity can be from 1 and a half to 2 hours",
 
 
     "service.vista_previa.tour_aves.titulo": "BIRDWATCHING EXPERIENCE",
-    "service.vista_previa.tour_aves.parrafo": "Podrás observar una amplia variedad de especies de: colibríes, tangaras, loros, mieleros, pájaros carpinteros canela, Royal Flycatchers, etc.",
-    "service.vista_previa.tour_aves.item_1": "El recorrido comienza a las 5:00 a.m.",
-    "service.vista_previa.tour_aves.item_2": "La duración de esta actividad es de 2 horas",
+    "service.vista_previa.tour_aves.parrafo": "You will be able to observe a wide variety of species from: Hummingbirds, Tanagers, Parrots, Honeycreepers, Cinnamon Woodpeckers, Royal Flycatchers, Nunbirds, ...",
+    "service.vista_previa.tour_aves.item_1": "The tour starts at 5:00 am",
+    "service.vista_previa.tour_aves.item_2": "The duration of this activity is 2 hours",
 
 
     "service.tour_diurno.info.titulo_principal": "DIURNAL OBSERVATION TOUR",
-    "service.tour_diurno.info.titulo_secundario_1": "Informacion sobre el tour diurno",
+    "service.tour_diurno.info.titulo_secundario_1": "Information about the diurnal observation tour",
     "service.tour_diurno.info.parrafo_1": "We offer several daily hikes starting at: 8am - 10am - 1pm and 3pm",
     "service.tour_diurno.info.parrafo_2": "During the hike, the trail allows you to enjoy a gallery forest with lush vegetation and giant trees as Chilamate and Guácimo Colorado; constituting the habitat of many species like: opossums, two and three toed-sloths and many birds such as toucans, tanagers, Royal Flycatchers and others. But the main attraction is the sloth's observation.",
     "service.tour_diurno.info.parrafo_3": "The Rodriguez Family, a traditional Costa Rican family will be your guides, since trying to find sloths require high skills because they use to have an  excellent camouflage that make them imperceptible, for not trained eyes. The trail is accessible for all ages, so this is an activity where the whole family can enjoy it.",
@@ -74,7 +76,7 @@
 
 
     "service.tour_nocturno.info.titulo_principal": "NIGHT HIKE EXPERIENCE",
-    "service.tour_nocturno.info.titulo_secundario_1": "Informacion sobre el tour nocturno",
+    "service.tour_nocturno.info.titulo_secundario_1": "Information about the night hike",
     "service.tour_nocturno.info.parrafo_1": "Our night hike starts at 6:00pm, the best time to look for animals with nocturnal behavior.",
     "service.tour_nocturno.info.parrafo_2": "During this hike, you will have the chance to see different kind of frogs, kinkajous, snakes, spiders, bats and eventually: two and three-toed sloths (but it is not the focus of this specific hike).",
     "service.tour_nocturno.info.parrafo_3": "While the night starts and the sky gets full of stars, our well-trained guide will keep you safe while you continue the hike through our property.",
@@ -84,7 +86,7 @@
 
 
     "service.tour_aves.info.titulo_principal": "BIRDWATCHING EXPERIENCE",
-    "service.tour_aves.info.titulo_secundario_1": "Informacion sobre el tour de aves",
+    "service.tour_aves.info.titulo_secundario_1": "Information about the birdwatching",
     "service.tour_aves.info.parrafo_1": "Thinking about all birdwatching lovers, we have created this exclusive and entertaining activity.",
     "service.tour_aves.info.parrafo_2": "The tour starts at 5:00am and one of our professional guides will take you through out beautiful trails to observe a wide variety of species from: Hummingbirds, Tanagers, Parrots, Honeycreepers, Cinnamon Woodpeckers, Royal Flycatchers, Nunbirds.",
     "service.tour_aves.info.parrafo_3": "Even when we are focused on the birds, the wide-array of exotic species, in our trails, you will have the opportunity to observe some sloths, frogs and other species.",
@@ -106,17 +108,17 @@
 
 
 
-    "details.titulo_principal": "Oso perezoso, símbolo nacional de Costa Rica",
-    "details.item_1.titulo": "El 16 símbolo nacional de Costa Rica",
-    "details.item_1.parrafo": "El día miercoles 30 de junio del 2021 fue declarado el oso perezoso como símbolo nacional de Costa Rica",
-    "details.item_2.titulo": "¿Por qué se declaró símbolo nacional?",
-    "details.item_2.parrafo": "Las especies Bradypus variegatus (perezoso de 3 dedos) y Choloepus hoffomanni (perezoso de 2 dedos) fueron declarados símbolo nacional de Costa Rica con el fin de destacar la importancia de esta especie en la fauna silvestre de Costa Rica",
+    "details.titulo_principal": "Sloth bear, national symbol of Costa Rica",
+    "details.item_1.titulo": "The 16th national symbol of Costa Rica",
+    "details.item_1.parrafo": "On Wednesday June 30, 2021, the sloth bear was declared a national symbol of Costa Rica.",
+    "details.item_2.titulo": "Why is it declared a national symbol?",
+    "details.item_2.parrafo": "The species Bradypus variegatus (3-toed sloth) and Choloepus hoffomanni (2-toed sloth) were declared the national symbol of Costa Rica in order to highlight the importance of this species in the wildlife of Costa Rica.",
 
 
 
 
-    "galeria.titulo_principal": "Nuestra sección de galería",
-    "galeria.titulo_secundario": "En esta sección podrás conocer imágenes de las diferentes especies en Sloths Territory",
+    "galeria.titulo_principal": "Our gallery section",
+    "galeria.titulo_secundario": "In this section you can see images of the different species in Sloths Territory",
     "galeria.filtro.ver_todo": "Show all",
     "galeria.filtro.sloths": "SLOTHS",
     "galeria.filtro.ranas": "Frogs",
@@ -127,23 +129,23 @@
 
 
 
-    "fundadores.titulo_principal": "Fundadores de Sloths Territory",
+    "fundadores.titulo_principal": "Founders of Sloth's Territory",
 
 
 
 
-    "acerca_de.titulo_principal": "ACERCA DE",
-    "acerca_de.titulo_secundario": "Sloths Territory",
-    "acerca_de.parrafo_descriptivo": "Te esperamos, no te pierdas el mejor tour de perezosos de La Fortuna",
-    "acerca_de.item_1": "Maravillosa vista al Volcán Arenal.",
-    "acerca_de.item_2": "Ubicado en El Tanque de La Fortuna de San Carlos.",
-    "acerca_de.item_3": "Contamos con gran variedad de especies.",
+    "acerca_de.titulo_principal": "ABOUT",
+    "acerca_de.titulo_secundario": "Sloth's Territory",
+    "acerca_de.parrafo_descriptivo": "We are waiting for you, do not miss the best sloth tour in La Fortuna",
+    "acerca_de.item_1": "Wonderful view of the Arenal Volcano",
+    "acerca_de.item_2": "Located in El Tanque de La Fortuna de San Carlos",
+    "acerca_de.item_3": "We have a great variety of species",
 
 
 
 
     "contact.titulo_principal": "CONTACT",
-    "contact.titulo_secundario": "Sloths Territory La Fortuna de San Carlos",
+    "contact.titulo_secundario": "Sloth's Territory La Fortuna de San Carlos",
     "contact.parrafo_descriptivo": "Contact information",
     "contact.direccion": "4 km de La Fortuna hacia el Este, 400 mts entrada de lastre a la derecha, 200 mts Este Fortuna, Alajuela Provinces, Costa Rica",
     "contact.titulo_redes_sociaes": "Follow Sloth's Territory",

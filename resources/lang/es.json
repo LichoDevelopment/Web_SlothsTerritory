@@ -1,4 +1,5 @@
 {
+
     "btn.reservar_ahora": "RESERVAR AHORA",
     "btn.mas_detalles": "MÁS DETALLES",
     "btn.enviar_mensaje": "ENVIAR MENSAJE",
@@ -6,7 +7,7 @@
 
 
 
-    "header.home": "HOME",
+    "header.home": "INICIO",
     "header.inicio": "INICIO",
     "header.service": "SERVICIOS",
     "header.galeria": "GALERÍA",
@@ -33,9 +34,9 @@
     "cards.card_1.titulo": "En Sloths Territory",
     "cards.card_2.titulo": "Podrás conocer",
     "cards.card_3.titulo": "Maravillosas vistas",
-    "cards.card_1.parrafo": "contamos con un gran hábitad natural",
-    "cards.card_2.parrafo": "diferentes tipos de plantas y animales, en especial osos perezozos",
-    "cards.card_3.parrafo": "al Volcán Arenal y a la increíble natuleza que habita en nuestras instalaciones",
+    "cards.card_1.parrafo": "contamos con un gran hábitat natural",
+    "cards.card_2.parrafo": "diferentes tipos de plantas y animales, en especial osos perezosos",
+    "cards.card_3.parrafo": "al Volcán Arenal y a la increíble naturaleza que habita en nuestras instalaciones",
 
 
 
@@ -64,7 +65,7 @@
 
 
     "service.tour_diurno.info.titulo_principal": "TOUR DIURNO",
-    "service.tour_diurno.info.titulo_secundario_1": "Informacion sobre el tour diurno",
+    "service.tour_diurno.info.titulo_secundario_1": "Información sobre el tour diurno",
     "service.tour_diurno.info.parrafo_1": "Ofrecemos varias caminatas diarias iniciando a las: 8 a.m. - 10 a.m. - 1 p.m. y 3 p.m.",
     "service.tour_diurno.info.parrafo_2": "Durante la caminata, el sendero le permitirá disfrutar de un bosque de galería con exuberante vegetación y árboles gigantes como Chilamate y Guácimo Colorado; constituyendo el hábitat de muchas especies como: zarigüeyas, perezosos de dos y tres dedos y muchas aves como: Tucanes, Tangaras, Royal Flycatchers y otras. Pero el principal atractivo es la observación de los osos perezosos.",
     "service.tour_diurno.info.parrafo_3": "La Familia Rodríguez, una familia tradicional costarricense serán sus guías, ya que tratar de encontrar perezosos requiere de altas habilidades porque suelen tener un excelente camuflaje que los hace imperceptibles, para ojos no entrenados.",
@@ -74,7 +75,7 @@
 
 
     "service.tour_nocturno.info.titulo_principal": "TOUR NOCTURNO",
-    "service.tour_nocturno.info.titulo_secundario_1": "Informacion sobre el tour nocturno",
+    "service.tour_nocturno.info.titulo_secundario_1": "Información sobre el tour nocturno",
     "service.tour_nocturno.info.parrafo_1": "Nuestra caminata nocturna inicia a las 6:00 pm, el mejor momento para buscar animales con comportamiento nocturno.",
     "service.tour_nocturno.info.parrafo_2": "Durante esta caminata, tendrá la oportunidad de ver diferentes tipos de ranas, kinkajous, serpientes, arañas, murciélagos y eventualmente: perezosos de dos y tres dedos (pero no es el enfoque de esta caminata específica).",
     "service.tour_nocturno.info.parrafo_3": "Mientras la noche da su iniciao y el cielo se cubre de estrellas, nuestro guía bien capacitado lo mantendrá seguro, mientras continúa la caminata a lo largo de nuestra propiedad.",
@@ -84,7 +85,7 @@
 
 
     "service.tour_aves.info.titulo_principal": "TOUR DE AVES",
-    "service.tour_aves.info.titulo_secundario_1": "Informacion sobre el tour de aves",
+    "service.tour_aves.info.titulo_secundario_1": "Información sobre el tour de aves",
     "service.tour_aves.info.parrafo_1": "Pensando en todos los amantes de la observación de aves, hemos creado esta actividad exclusiva y entretenida.",
     "service.tour_aves.info.parrafo_2": "El recorrido comienza a las 5:00 am y uno de nuestros guías profesionales lo llevará a través de hermosos senderos para observar una amplia variedad de especies de: colibríes, tangaras, loros, mieleros, pájaros carpinteros canela, Royal Flycatchers, entre otras especies de aves.",
     "service.tour_aves.info.parrafo_3": "Incluso cuando estamos enfocados en las aves, por la gran variedad de especies exóticas, en nuestros senderos, tendrá la oportunidad de observar algunos perezosos, ranas y otras especies.",

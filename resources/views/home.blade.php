@@ -73,7 +73,7 @@ Z
                         <!-- Card -->
                         <div class="card">
                             <span class="fa-stack">
-                                <span class="hexagon"></span>
+                                {{-- <span class="hexagon"></span> --}}
                                 <i class="fas fa-home fa-stack-1x"></i>
                             </span>
                             <div class="card-body">
@@ -86,7 +86,7 @@ Z
                         <!-- Card -->
                         <div class="card">
                             <span class="fa-stack">
-                                <span class="hexagon"></span>
+                                {{-- <span class="hexagon"></span> --}}
                                 <i class="fas fa-paw fa-stack-1x"></i>
                             </span>
                             <div class="card-body">
@@ -99,7 +99,7 @@ Z
                         <!-- Card -->
                         <div class="card">
                             <span class="fa-stack">
-                                <span class="hexagon"></span>
+                                {{-- <span class="hexagon"></span> --}}
                                 <i class="fas fa-binoculars fa-stack-1x"></i>
                             </span>
                             <div class="card-body">
@@ -818,7 +818,7 @@ Z
                             <span class="social-icons">
                                 <span class="fa-stack">
                                     <a href="https://www.facebook.com/Sloths.Territory.2018" target="_blank">
-                                        <span class="hexagon"></span>
+                                        {{-- <span class="hexagon"></span> --}}
                                         <i class="fab fa-facebook-f fa-stack-1x"></i>
                                     </a>
                                 </span>
@@ -836,7 +836,7 @@ Z
                             <span class="social-icons">
                                 <span class="fa-stack">
                                     <a href="https://www.facebook.com/Sloths.Territory.2018" target="_blank">
-                                        <span class="hexagon"></span>
+                                        {{-- <span class="hexagon"></span> --}}
                                         <i class="fab fa-facebook-f fa-stack-1x"></i>
                                     </a>
                                 </span>
@@ -906,26 +906,26 @@ Z
 
                             <span class="fa-stack">
                             <a href="https://www.facebook.com/Sloths.Territory.2018" target="_blank">
-                                    <span class="hexagon"></span>
-                                    <i class="fab fa-facebook-f fa-stack-1x"></i>
+                                    {{-- <span class="hexagon"></span> --}}
+                                    <i class="fab fa-facebook-f fa-stack-1x-face"></i>
                                 </a>
                             </span>
                             <span class="fa-stack">
                             <a href="https://www.instagram.com/slothsterritory/" target="_blank">
-                                    <span class="hexagon"></span>
-                                    <i class="fab fa-instagram fa-stack-1x"></i>
+                                    {{-- <span class="hexagon"></span> --}}
+                                    <i class="fab fa-instagram fa-stack-1x-insta"></i>
                                 </a>
                             </span>
                             <span class="fa-stack">
                                 <a href="https://www.youtube.com/channel/UCKqtM7YiCFUtcYs5j8B5hgw" target="_blank">
-                                    <span class="hexagon"></span>
-                                    <i class="fab fa-youtube fa-stack-1x"></i>
+                                    {{-- <span class="hexagon"></span> --}}
+                                    <i class="fab fa-youtube fa-stack-1x-youtu"></i>
                                 </a>
                             </span>
                             <span class="fa-stack">
                                 <a href="https://www.tripadvisor.com/UserReviewEdit-g309226-d15636276-Sloth_s_Territory-La_Fortuna_de_San_Carlos_Arenal_Volcano_National_Park_Province_of_Alajuela.html" target="_blank">
-                                    <span class="hexagon"></span>
-                                    <i class="fab fa-tripadvisor fa-stack-1x"></i>
+                                    {{-- <span class="hexagon"></span> --}}
+                                    <i class="fab fa-tripadvisor fa-stack-1x-trip"></i>
                                 </a>
                             </span>
                         </div> <!-- end of text-container -->
@@ -950,7 +950,7 @@ Z
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group checkbox">
-                                <input type="checkbox" id="cterms" value="Agreed-to-Terms" required>{{__('formulario.acepta_politicas_parte_1')}}<a href="privacy-policy.html">{{__('politicas_privacidad')}}</a>  <a href="terms-conditions.html">{{__('terminos_condiciones')}}</a>
+                                <input type="checkbox" id="cterms" value="Agreed-to-Terms" required>{{__('formulario.acepta_politicas_parte_1')}}<a href="privacy-policy">{{__('politicas_privacidad')}}</a>  <a href="terms-conditions">{{__('terminos_condiciones')}}</a>
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
