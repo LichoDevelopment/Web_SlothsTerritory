@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Agencias;
+use App\Models\Agencia;
 use Illuminate\Http\Request;
 
 class AgenciasController extends Controller
@@ -14,7 +14,7 @@ class AgenciasController extends Controller
      */
     public function index()
     {
-        $datos['agencias']=Agencias::paginate(5);
+        $datos['agencias']=Agencia::paginate(5);
         return view('admin.agencias.index',$datos);
     }
 
@@ -48,7 +48,7 @@ class AgenciasController extends Controller
 
         // $datosAgencia=request()->all();
         $datosAgencia=request()->except('_token');
-        Agencias::insert($datosAgencia);
+        Agencia::insert($datosAgencia);
 
         // return response()->json($datosAgencia);
         return redirect('/agencias')->with("Mensaje","Agencia agregada con éxito.");
@@ -57,10 +57,10 @@ class AgenciasController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Agencias  $agencias
+     * @param  \App\Models\Agencia  $agencias
      * @return \Illuminate\Http\Response
      */
-    public function show(Agencias $agencias)
+    public function show(Agencia $agencias)
     {
         //
     }
@@ -68,12 +68,12 @@ class AgenciasController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Agencias  $agencias
+     * @param  \App\Models\Agencia  $agencias
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $agencia = Agencias::findOrFail($id);
+        $agencia = Agencia::findOrFail($id);
         
         return view('admin.agencias.edit',compact('agencia'));
     }
@@ -82,15 +82,15 @@ class AgenciasController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Agencias  $agencias
+     * @param  \App\Models\Agencia  $agencias
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         $datosAgencia=request()->except(['_token','_method']);
-        Agencias::where('id','=',$id)->update($datosAgencia);
+        Agencia::where('id','=',$id)->update($datosAgencia);
 
-        // $agencia = Agencias::findOrFail($id);
+        // $agencia = Agencia::findOrFail($id);
         // return view('agencias.edit',compact('agencia'));
         return redirect('/agencias')->with("Mensaje","Agencia modificada con éxito.");
 
@@ -99,12 +99,12 @@ class AgenciasController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Agencias  $agencias
+     * @param  \App\Models\Agencia  $agencias
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        Agencias::destroy($id);
+        Agencia::destroy($id);
 
         return redirect('/agencias')->with("Mensaje","Agencia eliminada.");
     }

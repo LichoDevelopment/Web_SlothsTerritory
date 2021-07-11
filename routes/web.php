@@ -14,17 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/**Public routes */
-
-Route::redirect('/', '/es');
-Route::prefix('/{locale}')->group(function () {
-
-    Route::get('/', 'HomeController@home')->name('home');
-    Route::get('/privacy-policy', 'HomeController@privacy')->name('privacy-policy');
-    Route::get('/terms-conditions', 'HomeController@terms')->name('terms-conditions');
-});
-
-
 
 /**Admin routes */
 
@@ -48,3 +37,15 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('agencias', 'AgenciasController');
 });
+
+/**Public routes */
+
+Route::redirect('/', '/es');
+Route::prefix('/{locale}')->group(function () {
+
+    Route::get('/', 'HomeController@home')->name('home');
+    Route::get('/privacy-policy', 'HomeController@privacy')->name('privacy-policy');
+    Route::get('/terms-conditions', 'HomeController@terms')->name('terms-conditions');
+});
+
+

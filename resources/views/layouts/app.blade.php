@@ -25,6 +25,7 @@
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/fontawesome-all.css" rel="stylesheet">
     <link href="css/swiper.css" rel="stylesheet">
@@ -68,14 +69,30 @@
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                   <a href="{{ route(Route::currentRouteName(),'en') }}" 
-                   class="nav-link {{$locale === 'en' ? 'current':''}} ">EN</a> 
+                <li class="nav-item dropdown">
+                    <a 
+                        class="nav-link dropdown-toggle" href="#" 
+                        id="dropdown09" data-toggle="dropdown" aria-haspopup="true" 
+                        aria-expanded="false">
+                        <span class="flag-icon flag-icon-{{$locale === 'en' ? 'us' : 'es'}}"> </span>
+                         {{ $locale === 'en' ? 'English' : 'Español'}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown09">
+                        @if ($locale === 'en')
+                            <a class="dropdown-item" href="{{ route(Route::currentRouteName(),'es') }}">
+                                <span class="flag-icon flag-icon-es mr-2"> </span> {{__('español')}} </a>
+                        @else
+                        <a class="dropdown-item" href="{{ route(Route::currentRouteName(),'en') }}">
+                            <span class="flag-icon flag-icon-us mr-2"> </span> {{__('ingles')}} </a>
+                        @endif
+                    </div>
+                   {{-- <a href="{{ route(Route::currentRouteName(),'en') }}" 
+                   class="nav-link {{$locale === 'en' ? 'current':''}} ">EN</a>  --}}
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="{{ route(Route::currentRouteName(),'es') }}" 
                     class="nav-link {{$locale === 'es' ? 'current':''}}">ES</a> 
-                 </li>
+                 </li> --}}
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="{{ route('home',[$locale]) }}">{{__('header.home')}} <span class="sr-only">(current)</span></a>
                 </li>
@@ -91,7 +108,8 @@
 
                 <!-- Dropdown Menu -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">{{__('header.acerca_de')}}</a>
+                    <a class="nav-link page-scroll" href="#about">{{__('header.acerca_de')}}</a>
+                    {{-- <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">{{__('header.acerca_de')}}</a> --}}
                     <!-- PENDIENTE -->
                     <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href=" route('terms-conditions',,[$locale])]) }}"><span class="item-text">TERMS CONDITIONS</span></a>
