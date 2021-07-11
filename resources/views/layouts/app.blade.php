@@ -69,26 +69,6 @@
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown">
-                    <a 
-                        class="nav-link dropdown-toggle" href="#" 
-                        id="dropdown09" data-toggle="dropdown" aria-haspopup="true" 
-                        aria-expanded="false">
-                        <span class="flag-icon flag-icon-{{$locale === 'en' ? 'us' : 'es'}}"> </span>
-                         {{ $locale === 'en' ? 'English' : 'Español'}}
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown09">
-                        @if ($locale === 'en')
-                            <a class="dropdown-item" href="{{ route(Route::currentRouteName(),'es') }}">
-                                <span class="flag-icon flag-icon-es mr-2"> </span> {{__('español')}} </a>
-                        @else
-                        <a class="dropdown-item" href="{{ route(Route::currentRouteName(),'en') }}">
-                            <span class="flag-icon flag-icon-us mr-2"> </span> {{__('ingles')}} </a>
-                        @endif
-                    </div>
-                   {{-- <a href="{{ route(Route::currentRouteName(),'en') }}" 
-                   class="nav-link {{$locale === 'en' ? 'current':''}} ">EN</a>  --}}
-                </li>
                 {{-- <li class="nav-item">
                     <a href="{{ route(Route::currentRouteName(),'es') }}" 
                     class="nav-link {{$locale === 'es' ? 'current':''}}">ES</a> 
@@ -121,6 +101,26 @@
 
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#contact">{{__('header.contactarnos')}}</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a 
+                        class="nav-link dropdown-toggle" href="#" 
+                        id="dropdown09" data-toggle="dropdown" aria-haspopup="true" 
+                        aria-expanded="false">
+                        <span class="flag-icon flag-icon-{{$locale === 'en' ? 'us' : 'es'}}"> </span>
+                         {{-- {{ $locale === 'en' ? 'English' : 'Español'}} --}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown09">
+                        @if ($locale === 'en')
+                            <a class="dropdown-item" href="{{ route(Route::currentRouteName(),'es') }}">
+                                <span class="flag-icon flag-icon-es mr-2"> </span>  </a>
+                        @else
+                        <a class="dropdown-item" href="{{ route(Route::currentRouteName(),'en') }}">
+                            <span class="flag-icon flag-icon-us mr-2"> </span>  </a>
+                        @endif
+                    </div>
+                   {{-- <a href="{{ route(Route::currentRouteName(),'en') }}" 
+                   class="nav-link {{$locale === 'en' ? 'current':''}} ">EN</a>  --}}
                 </li>
             </ul>
             <span class="nav-item social-icons">
