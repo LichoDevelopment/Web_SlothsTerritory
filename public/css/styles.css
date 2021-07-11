@@ -1874,19 +1874,19 @@ a:hover.back-to-top {
 a.reservar-btn {
 	position: fixed;
     z-index: 999;
-    right: -2.4475rem;
-    bottom: 1.25rem;
+    right: 0.80rem;
+    bottom: 2.7rem;
     display: none;
-    width: 10.925rem;
-    height: 7.925rem;
-    /* border-radius: 1.875rem; */
+    width: 4.825rem;
+    height: 4.825rem;
+    border-radius: 100%;
     background: #e3131300 url(../images/reservar.png) no-repeat center 50%;
     background-size: 5.125rem 5.125rem;
     text-indent: -9999px;
 }
 
 a:hover.reservar-btn {
-	background-color: #13aa87;
+	background-color: #13aa8700;
 }
 
 
