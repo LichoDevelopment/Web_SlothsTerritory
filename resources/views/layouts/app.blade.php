@@ -69,10 +69,12 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                   <a href="{{ route(Route::currentRouteName(),'en') }}" class="nav-link ">EN</a> 
+                   <a href="{{ route(Route::currentRouteName(),'en') }}" 
+                   class="nav-link {{$locale === 'en' ? 'current':''}} ">EN</a> 
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route(Route::currentRouteName(),'es') }}" class="nav-link ">ES</a> 
+                    <a href="{{ route(Route::currentRouteName(),'es') }}" 
+                    class="nav-link {{$locale === 'es' ? 'current':''}}">ES</a> 
                  </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="{{ route('home',[$locale]) }}">{{__('header.home')}} <span class="sr-only">(current)</span></a>
@@ -207,7 +209,12 @@
         </div> <!-- end of container -->
     </div> <!-- end of copyright -->
     <!-- end of copyright -->
-
+    <a 
+        href="https://wa.me/message/UAO3TORZITGBE1" id="bookNowBtn"
+        target="_blank" class="reservar-btn btn btn-danger ">
+        <span>{{__("btn.reservar_ahora")}}</span>
+        <i class="fas fa-angle-double-right"></i>
+    </a>
 
     <!-- Scripts -->
     <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->

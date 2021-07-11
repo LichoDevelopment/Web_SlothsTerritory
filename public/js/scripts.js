@@ -338,25 +338,29 @@
 
     /* Back To Top Button */
     // create the back to top button
-    $('body').prepend('<a href="body" class="back-to-top page-scroll">Back to Top</a>');
+    $('body').prepend('<a href="body" id="scrollTopBtn" class="back-to-top page-scroll">Back to Top</a>');
+    let bookNowBtn = document.getElementById('bookNowBtn');
     var amountScrolled = 700;
     $(window).scroll(function() {
         if ($(window).scrollTop() > amountScrolled) {
             $('a.back-to-top').fadeIn('500');
+            bookNowBtn.style.right = '5rem'
         } else {
             $('a.back-to-top').fadeOut('500');
+            bookNowBtn.style.right = '1.1rem'
         }
     });
 
-    $('body').prepend('<a href="https://wa.me/message/UAO3TORZITGBE1" target="_blank" class="reservar-btn page-scroll">Reservar</a>');
-    var amountScrolled = 700;
-    $(window).scroll(function() {
-        if ($(window).scrollTop() > amountScrolled) {
-            $('a.reservar-btn').fadeIn('500');
-        } else {
-            $('a.reservar-btn').fadeOut('500');
-        }
-    });
+
+    // $('body').prepend('<a href="https://wa.me/message/UAO3TORZITGBE1" target="_blank" class="reservar-btn page-scroll">{{__("btn.reservar_ahora")}}</a>');
+    // var amountScrolled = 700;
+    // $(window).scroll(function() {
+    //     if ($(window).scrollTop() > amountScrolled) {
+    //         $('a.reservar-btn').fadeIn('500');
+    //     } else {
+    //         $('a.reservar-btn').fadeOut('500');
+    //     }
+    // });
 
 
 	/* Removes Long Focus On Buttons */

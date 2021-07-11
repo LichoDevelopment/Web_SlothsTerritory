@@ -1859,8 +1859,8 @@ a.back-to-top {
     right: 1.1rem;
     bottom: 0.475rem;
     display: none;
-    width: 3.625rem;
-    height: 1.625rem;
+    width: 2.625rem;
+    height: 2.625rem;
     border-radius: 1.875rem;
     background: #10b610 url(../images/up-arrow.png) no-repeat center 47%;
     background-size: 1.125rem 1.125rem;
@@ -1873,21 +1873,20 @@ a:hover.back-to-top {
 
 a.reservar-btn {
 	position: fixed;
-    z-index: 999;
-    right: -2.4475rem;
-    bottom: 1.25rem;
-    display: none;
-    width: 10.925rem;
-    height: 7.925rem;
-    /* border-radius: 1.875rem; */
-    background: #e3131300 url(../images/reservar.png) no-repeat center 50%;
-    background-size: 5.125rem 5.125rem;
-    text-indent: -9999px;
+    z-index: 100;
+    right: 1.1rem;
+    bottom: .5rem;
+	text-decoration: none;
+	transition: all .2s ease;
+	display: flex;
+	justify-content:center;
+	align-items: center;
+	gap: 5px;
 }
 
-a:hover.reservar-btn {
+/* a:hover.reservar-btn {
 	background-color: #13aa87;
-}
+} */
 
 
 /***************************/
@@ -2198,4 +2197,8 @@ input[id="3"]:checked ~ .pagination .pagination-item[for="3"]{
 .main-title{
 	font-size: var(--main-title-size);
 	text-align: center;
+}
+
+.navbar-custom .nav-item .current{
+	color: tomato !important;
 }
