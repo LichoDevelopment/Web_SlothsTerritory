@@ -49,7 +49,7 @@ Z
                         <div class="text-container">
                             <div class="section-title">{{__('intro.titulo:principal')}}</div>
                             <h2>{{__('intro.titulo_secundario')}}</h2>
-                            <p {{__('intro.parrafo_descriptivo')}}></p>
+                            <p> {{__('intro.parrafo_descriptivo')}}</p>
                             <div class="testimonial-author">{{__('intro.testimonial')}}</div>
                         </div> <!-- end of text-container -->
                     </div> <!-- end of col -->
