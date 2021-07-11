@@ -38,8 +38,6 @@
                 <a class="btn-solid-lg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">{{__('btn.reservar_ahora')}}</a>
             </div>
         </div>
-Z
-
 
         <!-- Intro -->
         <div id="intro" class="basic-1">
