@@ -15,12 +15,13 @@ class PrecioController extends Controller
     private $request;
 
     private $reglasValidacion = [
-        'precio_adulto' => 'required',
-        'precio_niño' => 'required',
+        'precio_adulto' => 'required|gt:0',
+        'precio_niño' => 'required|gt:0',
     ];
 
     private $mensajesValidacion = [
         'required' => 'El campo :attribute es requerido',
+        'gt'       => 'El campo :attribute debe ser mayor que 0'
     ];
 
     public function __construct(Request $request) {

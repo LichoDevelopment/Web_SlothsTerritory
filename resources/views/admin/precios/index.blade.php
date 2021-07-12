@@ -158,16 +158,17 @@
                 <form id="formularioPrecios" class="col-10 m-auto" >
                     <section class="row mb-3">
                         <label for="precio_adulto">Precio adultos</label>
-                        <input type="number" value="${adulto}" class="form-control" name="precio_adulto" />
+                        <input type="number" min="0" value="${adulto}" class="form-control" name="precio_adulto" />
                     </section>
                     <section class="row mb-3">
                         <label for="precio_niño">Precio niños</label>
-                        <input type="number" value="${nino}" class="form-control" name="precio_niño" />
+                        <input type="number" min="0" value="${nino}" class="form-control" name="precio_niño" />
                     </section>
                 </form>`
     }
 
     function mostrarRespuesta(respuesta){
+        console.log(respuesta)
         if(respuesta.errors){
             let errores = '';
             Object.entries(respuesta.errors).forEach(error =>{
