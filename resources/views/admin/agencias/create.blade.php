@@ -14,8 +14,11 @@
                 </ul>
             </div>
         @endif --}}
-        <form action="{{ route('agencias.store') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
-            {{csrf_field()}}
+        <form 
+            action="{{ route('agencias.store') }}" 
+            class="form-horizontal" 
+            method="post" enctype="multipart/form-data">
+            @csrf
             @include('admin.agencias.form',["Modo"=>"crear"])
         </form>
     </div>

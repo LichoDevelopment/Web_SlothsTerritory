@@ -85,9 +85,9 @@
                             <a href="{{ route('admin.sales') }}">
                                 <i class="fas fa-chart-bar"></i>Ventas</a>
                         </li>
-                        <li class="nav-link {{ Route::is('admin.reservations') ? 'active' : '' }} ">
-                            <a href="{{ route('admin.reservations') }}">
-                                <i class="fas fa-tachometer-alt"></i>Reservas</a>
+                        <li class="nav-link {{ Route::is('admin.agencias') ? 'active' : '' }} ">
+                            <a href="/agencias">
+                                <i class="fas fa-tachometer-alt"></i>Agencias</a>
                         </li>
                     </ul>
                 </div>
@@ -105,18 +105,22 @@
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-                        <li class="">
+                        <li class="nav-link {{ Route::is('admin.index') ? 'active' : '' }} ">
                             <a class="js-arrow" href="{{ route('admin.index') }}">
-                                <i class="fas fa-tachometer-alt"></i>Inicio
+                                <i class="fas fa-calendar-alt"></i>Inicio
                             </a>
                         </li>
-                        <li>
+                        <li class="nav-link {{ Route::is('admin.sales') ? 'active' : '' }} ">
                             <a href="{{ route('admin.sales') }}">
                                 <i class="fas fa-chart-bar"></i>Ventas</a>
                         </li>
-                        <li>
-                            <a href="{{ route('admin.reservations') }}">
-                                <i class="fas fa-calendar-alt"></i>Reservas</a>
+                        <li class="nav-link {{ Route::is('admin.agencias') ? 'active' : '' }} ">
+                            <a href="/agencias">
+                                <i class="fas fa-calendar-alt"></i>Agencias</a>
+                        </li>
+                        <li class="nav-link {{ Route::is('admin.tours') ? 'active' : '' }} ">
+                            <a href="{{ route('admin.tours') }}">
+                                <i class="fas fa-calendar-alt"></i>Tours</a>
                         </li>
                     </ul>
                 </nav>

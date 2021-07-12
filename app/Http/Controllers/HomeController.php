@@ -23,10 +23,6 @@ class HomeController extends Controller
     {
         return view('admin.sales');
     }
-    public function reservations()
-    {
-        return view('admin.reservations');
-    }
 
     public function privacy($locale)
     {

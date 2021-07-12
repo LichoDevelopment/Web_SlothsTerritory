@@ -19,10 +19,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', 'HomeController@admin')->name('admin.index');
-    Route::get('/reservations', 'HomeController@reservations')->name('admin.reservations');
     Route::get('/sales', 'HomeController@sales')->name('admin.sales');
-
+    
     Route::get('/agregar_reserva', 'AdminController@agregarReserva')->name('reservas.agregar');
+    Route::get('/agencias', 'AdminController@agencias')->name('admin.agencias');
+    Route::get('/tours', 'AdminController@tours')->name('admin.tours');
     
     Route::post('/reservacion', 'ReservacionController@store');
     Route::put('/reservacion', 'ReservacionController@update');
