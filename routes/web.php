@@ -28,6 +28,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/reservacion', 'ReservacionController@store');
     Route::put('/reservacion', 'ReservacionController@update');
     
+    Route::get('/agregar_tour', 'TourController@agregar')->name('tour.agregar');
     Route::post('/tour', 'TourController@store');
     Route::put('/tour', 'TourController@update');
     

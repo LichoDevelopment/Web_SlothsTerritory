@@ -19,8 +19,9 @@ class HomeController extends Controller
         $reservaciones = Reserva::all();
         return view('admin.index', compact('reservaciones'));
     }
-    public function sales()
+    public function sales($locale)
     {
+        App::setLocale($locale);
         return view('admin.sales');
     }
 

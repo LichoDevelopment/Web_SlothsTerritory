@@ -6,21 +6,31 @@
     <section class="card">
         <section class="card-header d-flex justify-content-between align-items-center">
             <h2>Tours</h2>
-            <button id="addTourBtn" class="btn btn-info">Agregar</button>
+            <a href="{{ route('tour.agregar') }}" class="btn btn-info">Agregar</a>
         </section>
         <section class="card-body">
             <table class="table" id="tablaTours">
                 <thead>
                     <th>#</th>
                     <th>nombre</th>
-                    <th>horarios</th>
+                    <th>horario</th>
+                    <th>precios</th>
+                    <th>acciones</th>
                 </thead>
                 <tbody>
                     @foreach ($tours as $tour)
                     <tr>
                         <td> {{$loop->index + 1}} </td>
                         <td> {{$tour->nombre }} </td>
-                        <td> <button class="btn btn-sm"> ver </button> </td>
+                        <td> {{$tour->horario->hora }} </td>
+                        <td> 
+                            <span>Adultos - {{$tour->precio->precio_adulto }}</span> |
+                            <span>Niños - {{$tour->precio->precio_niño }}</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning btn-sm">Editar</button>
+                            <button class="btn btn-danger btn-sm">Eliminar</button>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
