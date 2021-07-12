@@ -34,6 +34,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/precio', 'PrecioController@index')->name('admin.precio');
     Route::post('/precio', 'PrecioController@store');
     Route::put('/precio/{id}', 'PrecioController@update');
+    Route::delete('/precio/{id}', 'PrecioController@destroy');
     
     Route::post('/agencia', 'AgenciaController@store');
     Route::put('/agencia', 'AgenciaController@update');

@@ -93,14 +93,23 @@
     botonesEliminarPrecio.forEach(btn =>{
         btn.addEventListener('click', event =>{
             event.preventDefault();
+            const id = event.target.dataset.precioId;
             Swal.fire({
-                icon: 'danger',
+                icon: 'warning',
                 title: 'Estas seguro de elimiar este precio?',
                 showCancelButton: true,
                 confirmButtonText: 'Eliminar',
                 confirmButtonColor: 'tomato',
                 cancelButtonColor: 'teal',
                 cancelButtonText: 'Cancelar',
+                preConfirm: (respuesta) => {
+                    if(respuesta){
+                        fetch(`/precio/${id}`,{
+                            method: 'DELETE',
+                            headers: {"Content-Type": "application/json"}
+                        }).then(()=> location.reload())
+                    }
+                }
             })
         })
     })
@@ -145,7 +154,6 @@
     })
 
     function formularioPrecios(adulto = '', nino = ''){
-        console.log({adulto, nino})
         return `
                 <form id="formularioPrecios" class="col-10 m-auto" >
                     <section class="row mb-3">
