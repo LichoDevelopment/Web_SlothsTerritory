@@ -31,10 +31,12 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/tour', 'TourController@store');
     Route::put('/tour', 'TourController@update');
     
+    Route::post('/precio', 'PrecioController@store');
+    Route::put('/precio', 'PrecioController@update');
+    
     Route::post('/agencia', 'AgenciaController@store');
     Route::put('/agencia', 'AgenciaController@update');
     
-    Route::get('/horario', 'HorarioController@index');
     Route::post('/horario', 'HorarioController@store');
     Route::put('/horario', 'HorarioController@update');
 

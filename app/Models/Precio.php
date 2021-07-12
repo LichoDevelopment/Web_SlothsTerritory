@@ -18,7 +18,7 @@ class Precio extends Model
     protected $primaryKey="id";
     protected $fillable = [
         'precio_adulto',
-        'precio_ninio'
+        'precio_niño'
     ];
 
     //Relaciones

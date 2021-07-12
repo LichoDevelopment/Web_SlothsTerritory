@@ -6,7 +6,7 @@
     <section class="card">
         <section class="card-header d-flex justify-content-between align-items-center">
             <h2>Tours</h2>
-            <a href="#" class="btn btn-success">Agregar</a>
+            <a id="addTourBtn" class="btn btn-success">Agregar</a>
         </section>
         <section class="card-body">
             <table class="table" id="tablaTours">
@@ -33,5 +33,24 @@
         $(document).ready( function () {
         $('#tablaTours').DataTable();
     } );
+
+    const addTourBtn = document.getElementById('addTourBtn');
+
+    addTourBtn.addEventListener('click', event =>{
+        event.preventDefault();
+        Swal.fire({
+            html: 
+            `
+                <form id="addTourFom" >
+                    <section class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input class="form-control" name="nombre" />
+                    </section>
+                </form>
+            `,
+            showCancelButton: true,
+            confirmButtonText: 'Agregar'
+        })
+    })
     </script>
 @endsection

@@ -21,8 +21,8 @@ class CreateReservasTable extends Migration
 
             $table->string('nombre_cliente');
             $table->integer('cantidad_adultos')->default(0);
-            $table->integer('cantidad_ninios')->default(0);
-            $table->integer('cantidad_ninios_gratis')->default(0);
+            $table->integer('cantidad_niños')->default(0);
+            $table->integer('cantidad_niños_gratis')->default(0);
             $table->decimal('monto_total');
             $table->decimal('descuento')->default(0);
             $table->decimal('monto_con_descuento');

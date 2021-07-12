@@ -16,7 +16,7 @@ class CreatePreciosTable extends Migration
         Schema::create('precios', function (Blueprint $table) {
             $table->id();
             $table->decimal('precio_adulto');
-            $table->decimal('precio_ninio');
+            $table->decimal('precio_niño');
             $table->timestamps();
         });
     }

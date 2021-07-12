@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tour;
+use App\Http\Controllers\Controller;
+use App\Models\Precio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-class TourController extends Controller
+
+class PrecioController extends Controller
 {
     /**
      * @var Request
@@ -13,7 +15,8 @@ class TourController extends Controller
     private $request;
 
     private $reglasValidacion = [
-        'nombre' => 'required',
+        'precio_adulto' => 'required',
+        'precio_niño' => 'required',
     ];
 
     private $mensajesValidacion = [
@@ -24,6 +27,7 @@ class TourController extends Controller
         $this->request = $request;
     }
 
+    
     public function store()
     {
         $response = response("",201);
@@ -37,8 +41,9 @@ class TourController extends Controller
                 "errors"    => $validator->errors()
             ], 422);
         }else{
-            Tour::create([
-                'nombre' => $this->request->nombre
+            Precio::create([
+                'precio_adulto' => $this->request->precio_adulto,
+                'precio_niño'   => $this->request->precio_niño,
             ]);
         }
 
@@ -58,8 +63,9 @@ class TourController extends Controller
                 "errors"    => $validator->errors()
             ], 422);
         }else{
-            Tour::find($id)->update([
-                'nombre' => $this->request->nombre
+            Precio::find($id)->update([
+                'precio_adulto' => $this->request->precio_adulto,
+                'precio_niño'   => $this->request->precio_niño,
             ]);
         }
 
@@ -68,9 +74,8 @@ class TourController extends Controller
 
     public function destroy($id)
     {
-        Tour::destroy($id);
+        Precio::destroy($id);
         return response("", 204);
     }
     
-
 }
