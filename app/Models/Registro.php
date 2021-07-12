@@ -14,7 +14,7 @@ class Registro extends Model
      *
      * @var array
      */
-    protected $table="registro";
+    protected $table="registros";
     protected $primaryKey="id";
     protected $fillable = [
         'id_horario', 

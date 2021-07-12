@@ -24,9 +24,15 @@ class Horario extends Model
 
 
     //Relaciones
-    public function tours(){
-        return $this->hasMany('App\Models\Tour');
+    public function reservas(){
+        return $this->hasMany('App\Models\Reserva');
     }
+
+    public function tours()
+    {
+        return $this->belongsTo('\App\Models\Tour','id_tour');
+    }
+
     public function resgistros(){
         return $this->hasMany('App\Models\Registro');
     }

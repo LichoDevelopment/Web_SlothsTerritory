@@ -15,15 +15,7 @@ class CreateToursTable extends Migration
     {
         Schema::create('tours', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_horario');
-            $table->unsignedBigInteger('id_precio');
             $table->string('nombre');
-
-            //Fk
-            $table->foreign('id_horario')->references('id')->on('horarios');
-
-            $table->foreign('id_precio')->references('id')->on('precios');
-
             $table->timestamps();
         });
     }

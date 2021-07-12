@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHorariosTable extends Migration
+class CreatePreciosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateHorariosTable extends Migration
      */
     public function up()
     {
-        Schema::create('horarios', function (Blueprint $table) {
+        Schema::create('precios', function (Blueprint $table) {
             $table->id();
-            $table->time('hora');
-            $table->integer('capacidad_maxima');
-            $table->time('hora_minima_reservar');
+            $table->unsignedBigInteger('id_tour');
+            $table->decimal('precio_adulto');
+            $table->decimal('precio_niño');
+
+            $table->foreign('id_tour')->references('id')->on('tours');
+
             $table->timestamps();
         });
     }
@@ -29,6 +32,6 @@ class CreateHorariosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('horarios');
+        Schema::dropIfExists('precios');
     }
 }

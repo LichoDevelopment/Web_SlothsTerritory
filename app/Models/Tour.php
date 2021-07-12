@@ -27,12 +27,13 @@ class Tour extends Model
         return $this->hasMany('App\Models\Reserva');
     }
     //
-    public function precio()
-    {
-        return $this->belongsTo('\App\Models\Precio','id_precio');
+
+
+    public function horarios(){
+        return $this->hasMany('App\Models\Horario');
     }
-    public function horario()
-    {
-        return $this->belongsTo('\App\Models\Horario','id_horario');
+
+    public function tours(){
+        return $this->hasMany('App\Models\Tour');
     }
 }

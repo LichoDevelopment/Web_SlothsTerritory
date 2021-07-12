@@ -45,5 +45,13 @@ class Reserva extends Model
     {
         return $this->belongsTo('\App\Models\Fecha_tour','id_fecha_tour');
     }
+    public function horario()
+    {
+        return $this->belongsTo('\App\Models\Horario','id_horario');
+    }
+    public function precio()
+    {
+        return $this->belongsTo('\App\Models\Precio','id_precio');
+    }
 }
 
