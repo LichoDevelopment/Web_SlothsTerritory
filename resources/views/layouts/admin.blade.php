@@ -122,6 +122,10 @@
                             <a href="{{ route('admin.tours') }}">
                                 <i class="fas fa-calendar-alt"></i>Tours</a>
                         </li>
+                        <li class="nav-link {{ Route::is('admin.precio') ? 'active' : '' }} ">
+                            <a href="{{ route('admin.precio') }}">
+                                <i class="fas fa-calendar-alt"></i>Precios</a>
+                        </li>
                     </ul>
                 </nav>
             </div>

@@ -27,20 +27,22 @@
                 </thead>
                 <tbody>
                     @foreach ($reservaciones as $reservacion)
-                        <td> {{$loop->index + 1}} </td>
-                        <td> {{$reservacion->tour->nombre}} </td>
-                        <td> {{$reservacion->agencia->nombre}} </td>
-                        <td> {{$reservacion->nombre_cliente}} </td>
-                        <td> {{$reservacion->cantidad_adultos}} </td>
-                        <td> {{$reservacion->cantidad_niños}} </td>
-                        <td> {{$reservacion->cantidad_niños_gratis}} </td>
-                        <td> {{$reservacion->monto_total}} </td>
-                        <td> {{$reservacion->descuento}} </td>
-                        <td> {{$reservacion->monto_con_descuento}} </td>
-                        <td> {{$reservacion->comision_agencia}} </td>
-                        <td> {{$reservacion->monto_neto}} </td>
-                        <td> {{$reservacion->factura}} </td>
-                        <td> {{$reservacion->created_at}} </td>
+                        <tr>
+                            <td> {{$loop->index + 1}} </td>
+                            <td> {{$reservacion->tour->nombre}} </td>
+                            <td> {{$reservacion->agencia->nombre}} </td>
+                            <td> {{$reservacion->nombre_cliente}} </td>
+                            <td> {{$reservacion->cantidad_adultos}} </td>
+                            <td> {{$reservacion->cantidad_niños}} </td>
+                            <td> {{$reservacion->cantidad_niños_gratis}} </td>
+                            <td> {{$reservacion->monto_total}} </td>
+                            <td> {{$reservacion->descuento}} </td>
+                            <td> {{$reservacion->monto_con_descuento}} </td>
+                            <td> {{$reservacion->comision_agencia}} </td>
+                            <td> {{$reservacion->monto_neto}} </td>
+                            <td> {{$reservacion->factura}} </td>
+                            <td> {{$reservacion->created_at}} </td>
+                        </tr>
                     @endforeach
                 </tbody>
             </table>

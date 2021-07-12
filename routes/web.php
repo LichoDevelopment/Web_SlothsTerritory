@@ -31,8 +31,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/tour', 'TourController@store');
     Route::put('/tour', 'TourController@update');
     
+    Route::get('/precio', 'PrecioController@index')->name('admin.precio');
     Route::post('/precio', 'PrecioController@store');
-    Route::put('/precio', 'PrecioController@update');
+    Route::put('/precio/{id}', 'PrecioController@update');
     
     Route::post('/agencia', 'AgenciaController@store');
     Route::put('/agencia', 'AgenciaController@update');

@@ -27,10 +27,15 @@ class PrecioController extends Controller
         $this->request = $request;
     }
 
+    public function index()
+    {
+        $precios = Precio::all();
+        return view('admin.precios.index', compact('precios'));
+    }
     
     public function store()
     {
-        $response = response("",201);
+        $response = response(["message"=> "precio creado"],201);
 
         $validator = Validator::make($this->request->all(), $this->reglasValidacion, $this->mensajesValidacion);
 
@@ -52,7 +57,7 @@ class PrecioController extends Controller
 
     public function update($id)
     {
-        $response = response("",202);
+        $response = response(["message"=> "precio actualizado"],202);
 
         $validator = Validator::make($this->request->all(), $this->reglasValidacion, $this->mensajesValidacion);
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Agencia;
+use App\Models\Precio;
 use App\Models\Tour;
 use Illuminate\Http\Request;
 
