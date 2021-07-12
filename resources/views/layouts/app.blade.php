@@ -108,7 +108,7 @@
                         id="dropdown09" data-toggle="dropdown" aria-haspopup="true" 
                         aria-expanded="false">
                         <span class="flag-icon mr-1 flag-icon-{{$locale === 'en' ? 'us' : 'cr'}}"> </span>
-                        {{ $locale === 'en' ? 'English' : 'Español'}}
+                        {{ $locale === 'en' ? 'ENGLISH' : 'ESPAÑOL'}}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdown09">
                         @if ($locale === 'en')
