@@ -107,16 +107,20 @@
                         class="nav-link dropdown-toggle" href="#" 
                         id="dropdown09" data-toggle="dropdown" aria-haspopup="true" 
                         aria-expanded="false">
-                        <span class="flag-icon flag-icon-{{$locale === 'en' ? 'us' : 'es'}}"> </span>
-                         {{-- {{ $locale === 'en' ? 'English' : 'Español'}} --}}
+                        <span class="flag-icon mr-1 flag-icon-{{$locale === 'en' ? 'us' : 'cr'}}"> </span>
+                        {{ $locale === 'en' ? 'English' : 'Español'}}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdown09">
                         @if ($locale === 'en')
                             <a class="dropdown-item" href="{{ route(Route::currentRouteName(),'es') }}">
-                                <span class="flag-icon flag-icon-es mr-2"> </span>  </a>
+                                <span class="flag-icon flag-icon-cr mr-1"> </span>  
+                                {{__('español')}}
+                            </a>
                         @else
                         <a class="dropdown-item" href="{{ route(Route::currentRouteName(),'en') }}">
-                            <span class="flag-icon flag-icon-us mr-2"> </span>  </a>
+                            <span class="flag-icon flag-icon-us mr-1"> </span> 
+                            {{__('ingles')}}
+                        </a>
                         @endif
                     </div>
                    {{-- <a href="{{ route(Route::currentRouteName(),'en') }}" 
