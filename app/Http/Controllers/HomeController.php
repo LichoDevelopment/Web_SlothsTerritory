@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reserva;
+use App\Models\Reservacion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
@@ -14,7 +16,8 @@ class HomeController extends Controller
     }
     public function admin()
     {
-        return view('admin.index');
+        $reservaciones = Reserva::all();
+        return view('admin.index', compact('reservaciones'));
     }
     public function sales()
     {

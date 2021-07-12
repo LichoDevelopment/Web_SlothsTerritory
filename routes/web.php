@@ -21,6 +21,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin', 'HomeController@admin')->name('admin.index');
     Route::get('/reservations', 'HomeController@reservations')->name('admin.reservations');
     Route::get('/sales', 'HomeController@sales')->name('admin.sales');
+
+    Route::get('/agregar_reserva', 'AdminController@agregarReserva')->name('reservas.agregar');
     
     Route::post('/reservacion', 'ReservacionController@store');
     Route::put('/reservacion', 'ReservacionController@update');

@@ -446,6 +446,10 @@
 		grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
 	}
 
+	.item-slide .imgs {
+		object-fit: fill;
+	}
+
 }
 
 @media (max-width: 800px){
