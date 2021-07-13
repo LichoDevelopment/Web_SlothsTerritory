@@ -17,6 +17,7 @@ class Precio extends Model
     protected $table="precios";
     protected $primaryKey="id";
     protected $fillable = [
+        'id_tour',
         'precio_adulto',
         'precio_niño'
     ];
