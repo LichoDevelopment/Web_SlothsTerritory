@@ -17,9 +17,6 @@ class Reserva extends Model
     protected $table="reservas";
     protected $primaryKey="id";
     protected $fillable = [
-        'id_agencia', 
-        'id_tour', 
-        'id_fecha_tour', 
         'nombre_cliente',
         'cantidad_adultos',
         'cantidad_niños',
@@ -29,7 +26,12 @@ class Reserva extends Model
         'monto_con_descuento',
         'comision_agencia',
         'monto_neto',
-        'factura'
+        'id_agencia',
+        'id_tour',
+        'id_horario',
+        'id_precio',
+        'id_fecha_tour',
+        'factura',
     ];
 
 

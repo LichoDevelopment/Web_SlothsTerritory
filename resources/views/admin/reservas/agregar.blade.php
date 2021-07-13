@@ -49,6 +49,7 @@
                    </article>
                </section>
                <section class="row mb-3">
+                   <input type="hidden" name="id_precio" id="id_precio">
                    <article class="col-6">
                        <label for="precio_adulto">Precio adultos</label>
                        <input type="text" class="form-control" id="precio_adulto" disabled>
@@ -60,8 +61,8 @@
                </section>
                <section class="row mb-3">
                    <article class="col-6">
-                        <label for="fecha">Fecha</label>
-                        <input type="date" class="form-control">
+                        <label for="fecha_tour">Fecha</label>
+                        <input type="date" class="form-control" name="fecha_tour">
                    </article>
                    <article class="col-6">
                         <label for="id_agencia">Agencia</label>
@@ -75,8 +76,8 @@
                </section>
                <section class="row mb-3">
                     <article class="col-6">
-                        <label for="comision">Comision</label>
-                        <input type="number" min="0" name="comision" id="comision" class="form-control">
+                        <label for="comision_agencia">Comision</label>
+                        <input type="number" min="0" name="comision_agencia" id="comision" class="form-control">
                     </article>
                     <article class="col-6">
                         <label for="descuento">Descuento</label>
@@ -100,7 +101,7 @@
                     </article>
                     <article class="col-6">
                         <label for="factura">Factura</label>
-                        <input type="number" min="0" name="factura" class="form-control">
+                        <input type="text" min="0" name="factura" class="form-control">
                     </article>
                </section>
                <button class="btn btn-lg btn-success btn-block">Agregar</button>
@@ -124,6 +125,7 @@
         const descuento             = document.getElementById('descuento');
         const monto_con_descuento   = document.getElementById('monto_con_descuento');
         const monto_neto            = document.getElementById('monto_neto');
+        const id_precio             = document.getElementById('id_precio');
 
         const horariosArr   = JSON.parse(horarios.dataset.horarios)
 
@@ -167,6 +169,7 @@
 
             precio_adulto.value = precios_tour.precio_adulto
             precio_nino.value = precios_tour.precio_niño
+            id_precio.value = precios_tour.id
 
             actualizarPrecio({
                 "precio_adulto": precios_tour.precio_adulto, "precio_nino": precios_tour.precio_niño, 
