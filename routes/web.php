@@ -28,9 +28,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/reservacion', 'ReservacionController@store');
     Route::put('/reservacion', 'ReservacionController@update');
     
-    Route::get('/agregar_tour', 'TourController@agregar')->name('tour.agregar');
+    Route::get('/tour', 'TourController@index')->name('admin.tour');
     Route::post('/tour', 'TourController@store');
-    Route::put('/tour', 'TourController@update');
+    Route::put('/tour/{id}', 'TourController@update');
+    Route::delete('/tour/{id}', 'TourController@destroy');
     
     Route::get('/precio', 'PrecioController@index')->name('admin.precio');
     Route::post('/precio', 'PrecioController@store');

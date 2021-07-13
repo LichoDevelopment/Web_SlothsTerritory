@@ -14,6 +14,7 @@
                     <th>#</th>
                     <th>precio adulto</th>
                     <th>precio niños</th>
+                    <th>tipo tour</th>
                     <th>Acciones</th>
                 </thead>
                 <tbody>
@@ -22,6 +23,12 @@
                         <td> {{$loop->index + 1}} </td>
                         <td> {{$precio->precio_adulto }} </td>
                         <td> {{$precio->precio_niño }} </td>
+                        <td> {{$precio->tour->nombre }} </td>
+                        {{-- <td> 
+                            <span>Adultos - {{$precio->precio_adulto }}</span> |
+                            <span>Niños - {{$precio->precio_niño }}</span>
+                        </td> --}}
+                        
                         <td> 
                             <button 
                                 data-precio-id="{{$precio->id}}"
@@ -31,6 +38,7 @@
                             <button 
                                 data-precio-adulto="{{$precio->precio_adulto}}"
                                 data-precio-nino="{{$precio->precio_niño}}"
+                                data-tipo-tour="{{$precio->tour->id}}"
                                 data-precio-id="{{$precio->id}}"
                                 class="btn btn-sm btn-warning btn-actualizar-precio">
                                 actualizar
@@ -73,13 +81,15 @@
                     const form = document.getElementById('formularioPrecios')
                     const precio_adulto = form['precio_adulto'].value
                     const precio_nino = form['precio_niño'].value
+                    const id_tour = form['tour'].value
 
                     fetch('/precio',{
                         method: 'POST',
                         headers: {"Content-Type": "application/json"},
                         body: JSON.stringify({
                             "precio_adulto": precio_adulto,
-                            "precio_niño": precio_nino
+                            "precio_niño": precio_nino,
+                            "id_tour": id_tour
                         })
                     })
                     .then(response => response.json())
@@ -107,7 +117,10 @@
                         fetch(`/precio/${id}`,{
                             method: 'DELETE',
                             headers: {"Content-Type": "application/json"}
-                        }).then(()=> location.reload())
+                        })
+                        // .then(()=> location.reload())
+                        .then(response => mostrarRespuesta(response))
+                        .catch(response => console.log(response))
                     }
                 }
             })
@@ -120,11 +133,13 @@
             const id = event.target.dataset.precioId;
             const precio_previo_adulto = event.target.dataset.precioAdulto;
             const precio_previo_nino = event.target.dataset.precioNino;
+            const tipo_tour_previo = event.target.dataset.tipoTour;
+
             Swal.fire({
                 html: 
                 `
                     <h2 class="mx-auto mb-3 ">Editar precio</h2>
-                ${formularioPrecios(precio_previo_adulto, precio_previo_nino)}
+                ${formularioPrecios(precio_previo_adulto, precio_previo_nino, tipo_tour_previo)}
                 `,
                 showCancelButton: true,
                 confirmButtonText: 'Editar',
@@ -136,12 +151,14 @@
                         const form = document.getElementById('formularioPrecios')
                         const precio_adulto = form['precio_adulto'].value
                         const precio_nino = form['precio_niño'].value
+                        const tipo_tour = form['tour'].value
                         fetch(`/precio/${id}`,{
                             method: 'PUT',
                             headers: {"Content-Type": "application/json"},
                             body: JSON.stringify({
                                 "precio_adulto": precio_adulto,
-                                "precio_niño": precio_nino
+                                "precio_niño": precio_nino,
+                                "id_tour": tipo_tour
                             })
                         })
                         .then(response => response.json())
@@ -153,7 +170,7 @@
         })
     })
 
-    function formularioPrecios(adulto = '', nino = ''){
+    function formularioPrecios(adulto = '', nino = '' ){
         return `
                 <form id="formularioPrecios" class="col-10 m-auto" >
                     <section class="row mb-3">
@@ -163,6 +180,18 @@
                     <section class="row mb-3">
                         <label for="precio_niño">Precio niños</label>
                         <input type="number" min="0" value="${nino}" class="form-control" name="precio_niño" />
+                    </section>
+                    <section class="form-group">
+                        <label for="tour">Tour</label>
+                        <select class="custom-select" name="tour" required>
+                            <option selected value="">Elija un tour</option>
+                            @foreach ($tours as $tour)
+                                <option value="{{ $tour->id}}"> {{ $tour->nombre}} </option>
+                            @endforeach
+                        </select>
+                            @if (session('precio'))
+                                <p class="text-danger font-weight-bold error">{{session('precio')[0]}}</p>
+                            @endif
                     </section>
                 </form>`
     }

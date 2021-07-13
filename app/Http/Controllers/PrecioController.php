@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Precio;
+use App\Models\Horario;
+use App\Models\Tour;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -16,7 +18,8 @@ class PrecioController extends Controller
 
     private $reglasValidacion = [
         'precio_adulto' => 'required|gt:0',
-        'precio_niño' => 'required|gt:0',
+        'precio_niño' => 'required|gt:0'
+  
     ];
 
     private $mensajesValidacion = [
@@ -28,10 +31,21 @@ class PrecioController extends Controller
         $this->request = $request;
     }
 
+    public function agregar()
+    {
+        $tours = Tour::all();
+        $horarios = Horario::all();
+        $precios = Precio::all();
+        return view('admin.precios.agregar', compact('tours','precios'));
+    }
+
     public function index()
     {
+        $tours = Tour::all();
+        $horarios = Horario::all();
         $precios = Precio::all();
-        return view('admin.precios.index', compact('precios'));
+        return view('admin.precios.index', compact('tours','precios'));
+        // return view('admin.precios.index', compact('precios'));
     }
     
     public function store()
@@ -48,8 +62,10 @@ class PrecioController extends Controller
             ], 422);
         }else{
             Precio::create([
+                'id_tour' => $this->request->id_tour,
                 'precio_adulto' => $this->request->precio_adulto,
                 'precio_niño'   => $this->request->precio_niño,
+                
             ]);
         }
 
@@ -70,6 +86,7 @@ class PrecioController extends Controller
             ], 422);
         }else{
             Precio::find($id)->update([
+                'id_tour' => $this->request->id_tour,
                 'precio_adulto' => $this->request->precio_adulto,
                 'precio_niño'   => $this->request->precio_niño,
             ]);

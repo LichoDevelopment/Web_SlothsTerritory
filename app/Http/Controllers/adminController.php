@@ -9,7 +9,7 @@ use App\Models\Precio;
 use App\Models\Tour;
 use Illuminate\Http\Request;
 
-class adminController extends Controller
+class AdminController extends Controller
 {
     public function agregarReserva()
     {

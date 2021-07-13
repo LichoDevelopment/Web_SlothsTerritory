@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Horario;
-use App\Models\Precio;
 use App\Models\Tour;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -16,8 +14,6 @@ class TourController extends Controller
 
     private $reglasValidacion = [
         'nombre'     => 'required',
-        'precio'     => 'required',
-        'horario'    => 'required',
     ];
 
     private $mensajesValidacion = [
@@ -28,41 +24,36 @@ class TourController extends Controller
         $this->request = $request;
     }
 
-    public function agregar()
+    public function index()
     {
         $tours = Tour::all();
-        $horarios = Horario::all();
-        $precios = Precio::all();
-        return view('admin.tours.agregar', compact('tours','horarios','precios'));
+        return view('admin.tours.index', compact('tours'));
     }
 
     public function store()
     {
-        $response = ["mensaje"=>"tour creado"];
+        $response = response(["message"=> "tour creado"],201);
 
         $validator = Validator::make($this->request->all(), $this->reglasValidacion, $this->mensajesValidacion);
 
         if($validator->fails()){
-            $response = [
-                "mensaje"   => "Error al crear el tour"
-            ];
-
-            $response = array_merge($response, $validator->errors()->toArray());
+            $response = response([
+                "status"    => 422,
+                "message"   => "Error",
+                "errors"    => $validator->errors()
+            ], 422);
         }else{
             Tour::create([
-                'nombre'        => $this->request->nombre,
-                'id_horario'    => $this->request->horario,
-                'id_precio'     => $this->request->precio,
+                'nombre' => $this->request->nombre,
             ]);
         }
 
-        // dd($response);
-        return redirect('/agregar_tour')->with($response);
+        return $response;
     }
 
     public function update($id)
     {
-        $response = response("",202);
+        $response = response(["message"=> "tour actualizado"],202);
 
         $validator = Validator::make($this->request->all(), $this->reglasValidacion, $this->mensajesValidacion);
 
@@ -74,9 +65,7 @@ class TourController extends Controller
             ], 422);
         }else{
             Tour::find($id)->update([
-                'nombre'        => $this->request->nombre,
-                'id_horario'    => $this->request->horario,
-                'id_precio'     => $this->request->precio,
+                'nombre' => $this->request->nombre,
             ]);
         }
 
@@ -85,8 +74,10 @@ class TourController extends Controller
 
     public function destroy($id)
     {
+        $response = response(["message"=> "Tour eliminado"],204);
         Tour::destroy($id);
-        return response("", 204);
+        return $response;
+        // return response("Tour eliminado", 204);
     }
     
 

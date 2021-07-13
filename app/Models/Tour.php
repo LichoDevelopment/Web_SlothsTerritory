@@ -17,8 +17,8 @@ class Tour extends Model
     protected $table="tours";
     protected $primaryKey="id";
     protected $fillable = [
-        'id_horario',
-        'id_precio',
+        // 'id_horario',
+        // 'id_precio',
         'nombre'
     ];
 
@@ -33,7 +33,7 @@ class Tour extends Model
         return $this->hasMany('App\Models\Horario');
     }
 
-    public function tours(){
-        return $this->hasMany('App\Models\Tour');
+    public function precios(){
+        return $this->hasMany('App\Models\Precio');
     }
 }
