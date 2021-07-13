@@ -74,13 +74,16 @@ class ReservacionController extends Controller
            ]);
        }
 
-       return redirect('/admin')->with("Mensaje","creado");
+       return redirect('/admin')->with("Mensaje","resserva creada");
    }
 
    public function update($id)
    {
        $response = response("",202);
-
+       $fecha_tour = Fecha_tour::where('fecha',$this->request->fecha_tour)->first();
+       if(!$fecha_tour){
+           $fecha_tour = Fecha_tour::create(['fecha' => $this->request->fecha_tour]);
+       }
        $validator = Validator::make($this->request->all(), $this->reglasValidacion, $this->mensajesValidacion);
 
        if($validator->fails()){
@@ -90,21 +93,26 @@ class ReservacionController extends Controller
                "errors"    => $validator->errors()
            ], 422);
        }else{
-           Reservacion::fin($id)->update([
-               'nombre_cliente'         => $this->request->nombre_cliente,
-               'adultos'                => $this->request->adultos,
-               'niños'                  => $this->request->niños,
-               'niños_gratis'           => $this->request->niños_gratis,
-               'precio'                 => $this->request->precio,
-               'precio_con_descuento'   => $this->request->precio_con_descuento,
-               'fecha_inicio'           => $this->request->fecha_inicio,
-               'agencia_id'             => $this->request->agencia_id,
-               'tour_id'                => $this->request->tour_id,
-               'horario_id'             => $this->request->horario_id,
+            Reserva::create([
+                'nombre_cliente'         => $this->request->nombre_cliente,
+                'cantidad_adultos'       => $this->request->cantidad_adultos,
+                'cantidad_niños'         => $this->request->cantidad_niños,
+                'cantidad_niños_gratis'  => $this->request->cantidad_niños_gratis || 0,
+                'monto_total'            => $this->request->monto_total,
+                'descuento'              => $this->request->descuento,
+                'monto_con_descuento'    => $this->request->monto_con_descuento,
+                'comision_agencia'       => $this->request->comision_agencia,
+                'monto_neto'             => $this->request->monto_neto,
+                'id_agencia'             => $this->request->id_agencia,
+                'id_tour'                => $this->request->id_tour,
+                'id_horario'             => $this->request->id_horario,
+                'id_precio'              => $this->request->id_precio,
+                'id_fecha_tour'          => $fecha_tour->id,
+                'factura'                => $this->request->factura || null,
             ]);
        }
 
-       return $response;
+       return redirect('/admin')->with("Mensaje","reserva actualizada");
    }
 
    public function destroy($id)
