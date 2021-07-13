@@ -41,8 +41,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/agencia', 'AgenciaController@store');
     Route::put('/agencia', 'AgenciaController@update');
     
+    Route::get('/horario', 'HorarioController@index')->name('admin.horario');
     Route::post('/horario', 'HorarioController@store');
-    Route::put('/horario', 'HorarioController@update');
+    Route::put('/horario/{id}', 'HorarioController@update');
+    Route::delete('/horario/{id}', 'HorarioController@destroy');
 
     Route::resource('agencias', 'AgenciasController');
 });

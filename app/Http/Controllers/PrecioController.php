@@ -31,13 +31,6 @@ class PrecioController extends Controller
         $this->request = $request;
     }
 
-    public function agregar()
-    {
-        $tours = Tour::all();
-        $horarios = Horario::all();
-        $precios = Precio::all();
-        return view('admin.precios.agregar', compact('tours','precios'));
-    }
 
     public function index()
     {

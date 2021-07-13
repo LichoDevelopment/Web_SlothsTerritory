@@ -24,10 +24,6 @@
                         <td> {{$precio->precio_adulto }} </td>
                         <td> {{$precio->precio_niño }} </td>
                         <td> {{$precio->tour->nombre }} </td>
-                        {{-- <td> 
-                            <span>Adultos - {{$precio->precio_adulto }}</span> |
-                            <span>Niños - {{$precio->precio_niño }}</span>
-                        </td> --}}
                         
                         <td> 
                             <button 

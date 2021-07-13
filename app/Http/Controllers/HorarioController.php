@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Horario;
+use App\Models\Tour;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -15,12 +16,15 @@ class HorarioController extends Controller
 
     
     private $reglasValidacion = [
-        'hora'      => 'required',
-        'tour_id'   => 'required|exists:App\Models\Tour,id'
+        'hora' => 'required',
+        'capacidad_maxima' => 'required|gt:0',
+        'hora_minima_reservar' => 'required',
+  
     ];
 
     private $mensajesValidacion = [
-        'required' => 'El campo :attribute es requerido'
+        'required' => 'El campo :attribute es requerido',
+        'gt'       => 'El campo :attribute debe ser mayor que 0'
     ];
 
     public function __construct(Request $request) {
@@ -29,11 +33,14 @@ class HorarioController extends Controller
 
     public function index()
     {
-        return Horario::all();
+        $tours = Tour::all();
+        $horarios = Horario::all();
+        return view('admin.horarios.index', compact('tours','horarios'));
     }
+
     public function store()
     {
-        $response = response("",201);
+        $response = response(["message"=> "Horario creado"],201);
 
         $validator = Validator::make($this->request->all(), $this->reglasValidacion, $this->mensajesValidacion);
 
@@ -45,8 +52,10 @@ class HorarioController extends Controller
             ], 422);
         }else{
             Horario::create([
+                'id_tour' => $this->request->id_tour,
                 'hora' => $this->request->hora,
-                'tour_id' => $this->request->tour_id,
+                'capacidad_maxima'   => $this->request->capacidad_maxima,
+                'hora_minima_reservar'   => $this->request->hora_minima_reservar,
             ]);
         }
 
@@ -55,7 +64,7 @@ class HorarioController extends Controller
 
     public function update($id)
     {
-        $response = response("",202);
+        $response = response(["message"=> "Horario actualizado"],202);
 
         $validator = Validator::make($this->request->all(), $this->reglasValidacion, $this->mensajesValidacion);
 
@@ -67,8 +76,10 @@ class HorarioController extends Controller
             ], 422);
         }else{
             Horario::find($id)->update([
+                'id_tour' => $this->request->id_tour,
                 'hora' => $this->request->hora,
-                'tour_id' => $this->request->tour_id,
+                'capacidad_maxima'   => $this->request->capacidad_maxima,
+                'hora_minima_reservar'   => $this->request->hora_minima_reservar,
             ]);
         }
 

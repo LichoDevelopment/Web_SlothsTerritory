@@ -97,6 +97,10 @@
                             <a href="{{ route('admin.precio') }}">
                                 <i class="fas fa-calendar-alt"></i>Precios</a>
                         </li>
+                        <li class="{{ Route::is('admin.horario') ? 'active' : '' }} ">
+                            <a href="{{ route('admin.horario') }}">
+                                <i class="fas fa-calendar-alt"></i>Horarios</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -133,6 +137,10 @@
                         <li class="{{ Route::is('admin.precio') ? 'active' : '' }} ">
                             <a href="{{ route('admin.precio') }}">
                                 <i class="fas fa-calendar-alt"></i>Precios</a>
+                        </li>
+                        <li class="{{ Route::is('admin.horario') ? 'active' : '' }} ">
+                            <a href="{{ route('admin.horario') }}">
+                                <i class="fas fa-calendar-alt"></i>Horarios</a>
                         </li>
                     </ul>
                 </nav>
