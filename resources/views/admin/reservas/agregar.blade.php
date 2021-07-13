@@ -85,7 +85,7 @@
                <section class="row mb-3">
                     <article class="col-6">
                         <label for="monto_total">Precio</label>
-                        <input type="number" min="0" name="monto_total" class="form-control">
+                        <input type="number" min="0" name="monto_total" id="monto_total" class="form-control">
                     </article>
                     <article class="col-6">
                         <label for="monto_con_descuento">Precio con descuento</label>
@@ -119,33 +119,29 @@
         const cantidad_adulto = document.getElementById('cantidad_adultos');
         const cantidad_ninos   = document.getElementById('cantidad_niños');
         const tour          = document.getElementById('tour');
+        const monto_total          = document.getElementById('monto_total');
 
         const horariosArr   = JSON.parse(horarios.dataset.horarios)
 
-        tour.addEventListener('change', event =>{
-            actualizarPrecio({
-                "precio_adulto": precio_adulto.value, "precio_niño": precio_nino.value, 
-                "cantidad_adultos": cantidad_adultos.value, "cantidad_niños": cantidad_ninos.value})
-        })
         precio_adulto.addEventListener('change', event =>{
             actualizarPrecio({
-                "precio_adulto": precio_adulto.value, "precio_niño": precio_nino.value, 
-                "cantidad_adultos": cantidad_adultos.value, "cantidad_niños": cantidad_ninos.value})
+                "precio_adulto": precio_adulto.value, "precio_nino": precio_nino.value, 
+                "cantidad_adultos": cantidad_adultos.value, "cantidad_ninos": cantidad_ninos.value})
         })
         precio_nino.addEventListener('change', event =>{
             actualizarPrecio({
-                "precio_adulto": precio_adulto.value, "precio_niño": precio_nino.value, 
-                "cantidad_adultos": cantidad_adultos.value, "cantidad_niños": cantidad_ninos.value})
+                "precio_adulto": precio_adulto.value, "precio_nino": precio_nino.value, 
+                "cantidad_adultos": cantidad_adultos.value, "cantidad_ninos": cantidad_ninos.value})
         })
         cantidad_adulto.addEventListener('change', event =>{
             actualizarPrecio({
-                "precio_adulto": precio_adulto.value, "precio_niño": precio_nino.value, 
-                "cantidad_adultos": cantidad_adultos.value, "cantidad_niños": cantidad_ninos.value})
+                "precio_adulto": precio_adulto.value, "precio_nino": precio_nino.value, 
+                "cantidad_adultos": cantidad_adultos.value, "cantidad_ninos": cantidad_ninos.value})
         })
         cantidad_ninos.addEventListener('change', event =>{
             actualizarPrecio({
-                "precio_adulto": precio_adulto.value, "precio_niño": precio_nino.value, 
-                "cantidad_adulto": cantidad_adultos.value, "cantidad_niño": cantidad_ninos.value})
+                "precio_adulto": precio_adulto.value, "precio_nino": precio_nino.value, 
+                "cantidad_adultos": cantidad_adultos.value, "cantidad_ninos": cantidad_ninos.value})
         })
 
         tour.addEventListener('change', event => {
@@ -158,6 +154,10 @@
 
             precio_adulto.value = precios_tour.precio_adulto
             precio_nino.value = precios_tour.precio_niño
+
+            actualizarPrecio({
+                "precio_adulto": precios_tour.precio_adulto, "precio_nino": precios_tour.precio_niño, 
+                "cantidad_adultos": cantidad_adultos.value, "cantidad_ninos": cantidad_ninos.value})
 
             horarios.innerHTML = ''
             tourHorarios.map(horario => {
@@ -173,12 +173,13 @@
            comision.value = comision_agencia.comision
         })
 
-        function actualizarPrecio({cantidad_adultos, cantidad_niños, precio_adulto, precio_niño}){
-            console.log({cantidad_adultos, cantidad_niños, precio_adulto, precio_niño})
-            
+        function actualizarPrecio({cantidad_adultos, cantidad_ninos, precio_adulto, precio_nino}){
+
             const monto_adultos = Number(cantidad_adultos) * Number(precio_adulto)
-            const monto_niños = Number(cantidad_niños) * Number(precio_niño)
-            console.log({monto_adultos, monto_niños})
+            const monto_ninos = Number(cantidad_ninos) * Number(precio_nino)
+
+            monto_total.value = monto_adultos + monto_ninos
+            console.log(monto_adultos + monto_ninos)
         }
     </script>
 @endsection
