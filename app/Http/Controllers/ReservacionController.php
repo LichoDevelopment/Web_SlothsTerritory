@@ -14,15 +14,18 @@ class ReservacionController extends Controller
    private $request;
 
    private $reglasValidacion = [
-       'nombre_cliente' => 'required',
-       'adultos'        => 'required',
-       'niños'          => 'required',
-       'niños_gratis'   => 'required',
-       'precio'         => 'required',
-       'fecha_inicio'   => 'required',
-       'agencia_id'     => 'required',
-       'tour_id'        => 'required',
-       'horario_id'     => 'required',
+       'nombre_cliente'     => 'required',
+       'cantidad_adultos'   => 'required',
+       'cantidad_niños'     => 'required',
+       'monto_total'        => 'required',
+       'descuento'          => 'required',
+       'monto_con_descuento'=> 'required',
+       'comision_agencia'   => 'required',
+       'monto_neto'         => 'required',
+       'id_agencia'         => 'required',
+       'id_tour'            => 'required',
+       'id_horario'         => 'required',
+       'id_precio'          => 'required',
     ];
 
     private $mensajesValidacion = [
@@ -50,7 +53,7 @@ class ReservacionController extends Controller
                'nombre_cliente'         => $this->request->nombre_cliente,
                'adultos'                => $this->request->adultos,
                'niños'                  => $this->request->niños,
-               'niños_gratis'           => $this->request->niños_gratis,
+               'niños_gratis'           => $this->request->niños_gratis || 0,
                'precio'                 => $this->request->precio,
                'precio_con_descuento'   => $this->request->precio_con_descuento,
                'fecha_inicio'           => $this->request->fecha_inicio,

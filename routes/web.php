@@ -25,7 +25,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/agencias', 'AdminController@agencias')->name('admin.agencias');
     Route::get('/tours', 'AdminController@tours')->name('admin.tours');
     
-    Route::post('/reservacion', 'ReservacionController@store');
+    Route::post('/reservacion', 'ReservacionController@store')->name('reserva.agregar');
     Route::put('/reservacion', 'ReservacionController@update');
     
     Route::get('/tour', 'TourController@index')->name('admin.tour');

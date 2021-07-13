@@ -8,7 +8,8 @@
             <h1>agregar reserva</h1>
         </section>
         <section class="card-body">
-            <form action="">
+            <form action="{{ route('reserva.agregar') }}" method="post">
+                @csrf
                <section class="row mb-3">
                     <article class="col-6">
                         <label for="nombre_cliente">Nombre de cliente</label>
@@ -79,7 +80,7 @@
                     </article>
                     <article class="col-6">
                         <label for="descuento">Descuento</label>
-                        <input type="number" min="0" name="descuento" class="form-control">
+                        <input type="number" min="0" name="descuento" id="descuento" class="form-control">
                     </article>
                </section>
                <section class="row mb-3">
@@ -89,13 +90,13 @@
                     </article>
                     <article class="col-6">
                         <label for="monto_con_descuento">Precio con descuento</label>
-                        <input type="number" min="0" name="monto_con_descuento" class="form-control">
+                        <input type="number" min="0" name="monto_con_descuento" id="monto_con_descuento" class="form-control">
                     </article>
                </section>
                <section class="row mb-3">
                     <article class="col-6">
                         <label for="monto_neto">Precio neto</label>
-                        <input type="number" min="0" name="monto_neto" class="form-control">
+                        <input type="number" min="0" name="monto_neto" id="monto_neto" class="form-control">
                     </article>
                     <article class="col-6">
                         <label for="factura">Factura</label>
@@ -111,17 +112,29 @@
 
 @section('scripts')
     <script>
-        const horarios      = document.getElementById('horarios');
-        const comision      = document.getElementById('comision');
-        const agencia       = document.getElementById('agencia');
-        const precio_adulto = document.getElementById('precio_adulto');
-        const precio_nino   = document.getElementById('precio_nino');
-        const cantidad_adulto = document.getElementById('cantidad_adultos');
-        const cantidad_ninos   = document.getElementById('cantidad_niños');
-        const tour          = document.getElementById('tour');
-        const monto_total          = document.getElementById('monto_total');
+        const horarios              = document.getElementById('horarios');
+        const comision              = document.getElementById('comision');
+        const agencia               = document.getElementById('agencia');
+        const precio_adulto         = document.getElementById('precio_adulto');
+        const precio_nino           = document.getElementById('precio_nino');
+        const cantidad_adulto       = document.getElementById('cantidad_adultos');
+        const cantidad_ninos        = document.getElementById('cantidad_niños');
+        const tour                  = document.getElementById('tour');
+        const monto_total           = document.getElementById('monto_total');
+        const descuento             = document.getElementById('descuento');
+        const monto_con_descuento   = document.getElementById('monto_con_descuento');
+        const monto_neto            = document.getElementById('monto_neto');
 
         const horariosArr   = JSON.parse(horarios.dataset.horarios)
+
+        comision.addEventListener('change', ()=> actualizarPrecioNeto())
+        comision.addEventListener('keyup', ()=> actualizarPrecioNeto())
+
+        monto_total.addEventListener('change', ()=> actualizarPrecioConDescuento())
+        monto_total.addEventListener('keyup', ()=> actualizarPrecioConDescuento())
+
+        descuento.addEventListener('change', ()=> actualizarPrecioConDescuento())
+        descuento.addEventListener('keyup', ()=> actualizarPrecioConDescuento())
 
         precio_adulto.addEventListener('change', event =>{
             actualizarPrecio({
@@ -171,6 +184,7 @@
             const selectedOption = event.target.options[selectedIndex]
             const comision_agencia = agencias.filter(agencia => agencia.id == selectedOption.value)[0]
            comision.value = comision_agencia.comision
+           actualizarPrecioNeto()
         })
 
         function actualizarPrecio({cantidad_adultos, cantidad_ninos, precio_adulto, precio_nino}){
@@ -179,7 +193,24 @@
             const monto_ninos = Number(cantidad_ninos) * Number(precio_nino)
 
             monto_total.value = monto_adultos + monto_ninos
-            console.log(monto_adultos + monto_ninos)
+            actualizarPrecioConDescuento()
+        }
+
+        function actualizarPrecioConDescuento(){
+            if(descuento.value == 0 && !descuento.value){
+                monto_con_descuento.value = monto_total.value
+            }else{
+                monto_con_descuento.value = Number(monto_total.value) - Number(descuento.value)
+            }
+            actualizarPrecioNeto()
+        }
+
+        function actualizarPrecioNeto(){
+            if(comision.value){
+                monto_neto.value = Number(monto_con_descuento.value) - Number(comision.value)
+            }else{
+                monto_neto.value = monto_con_descuento.value
+            }
         }
     </script>
 @endsection
