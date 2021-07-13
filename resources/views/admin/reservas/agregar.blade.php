@@ -13,27 +13,27 @@
                <section class="row mb-3">
                     <article class="col-6">
                         <label for="nombre_cliente">Nombre de cliente</label>
-                        <input class="form-control" name="nombre_cliente">
+                        <input class="form-control" name="nombre_cliente" required>
                     </article>
                     <article class="col-6">
                         <label for="cantidad_adultos">Adultos</label>
-                        <input type="number" min="0" class="form-control" id="cantidad_adultos" name="cantidad_adultos">
+                        <input type="number" min="0" class="form-control" id="cantidad_adultos" name="cantidad_adultos" required>
                     </article>
                </section>
                <section class="row mb-3">
                     <article class="col-6">
                         <label for="cantidad_niños">Niños</label>
-                        <input type="number" min="0" class="form-control" id="cantidad_niños" name="cantidad_niños">
+                        <input type="number" min="0" class="form-control" id="cantidad_niños" name="cantidad_niños" required>
                     </article>
                     <article class="col-6">
                         <label for="cantidad_niños_gratis">Niños gratis</label>
-                        <input type="number" min="0" class="form-control" name="cantidad_niños_gratis">
+                        <input type="number" min="0" class="form-control" name="cantidad_niños_gratis" required>
                     </article>
                </section>
                <section class="row mb-3">
                    <article class="col-6">
                        <label for="id_tour">Tour</label>
-                       <select class="custom-select" id="tour" name="id_tour" data-precios="{{$precios}}">
+                       <select class="custom-select" id="tour" name="id_tour" data-precios="{{$precios}}" required>
                             <option selected>Elige un tour</option>
                             @foreach ($tours as $tour)
                                 <option value="{{ $tour->id}}"> {{ $tour->nombre}} </option>
@@ -43,7 +43,7 @@
                    <article class="col-6">
                        <label for="id_horario">Hora</label>
                        <select class="custom-select" 
-                       name="id_horario" id="horarios" data-horarios="{{$horarios}}">
+                       name="id_horario" id="horarios" data-horarios="{{$horarios}}" required>
                             <option selected>Primero debes elegir un tour</option>
                        </select>
                    </article>
@@ -62,11 +62,11 @@
                <section class="row mb-3">
                    <article class="col-6">
                         <label for="fecha_tour">Fecha</label>
-                        <input type="date" class="form-control" name="fecha_tour">
+                        <input type="date" class="form-control" name="fecha_tour" required>
                    </article>
                    <article class="col-6">
                         <label for="id_agencia">Agencia</label>
-                        <select class="custom-select" name="id_agencia" id="agencia" data-agencias="{{$agencias}}">
+                        <select class="custom-select" name="id_agencia" id="agencia" data-agencias="{{$agencias}}" required>
                             <option selected>Elige una agencia</option>
                             @foreach ($agencias as $agencia)
                                 <option value="{{$agencia->id}}"> {{ $agencia->nombre}} </option>
@@ -77,31 +77,31 @@
                <section class="row mb-3">
                     <article class="col-6">
                         <label for="comision_agencia">Comision</label>
-                        <input type="number" min="0" name="comision_agencia" id="comision" class="form-control">
+                        <input type="number" min="0" name="comision_agencia" id="comision" class="form-control" required>
                     </article>
                     <article class="col-6">
                         <label for="descuento">Descuento</label>
-                        <input type="number" min="0" name="descuento" id="descuento" class="form-control">
+                        <input type="number" min="0" name="descuento" id="descuento" class="form-control" required>
                     </article>
                </section>
                <section class="row mb-3">
                     <article class="col-6">
                         <label for="monto_total">Precio</label>
-                        <input type="number" min="0" name="monto_total" id="monto_total" class="form-control">
+                        <input type="number" min="0" name="monto_total" id="monto_total" class="form-control" required>
                     </article>
                     <article class="col-6">
                         <label for="monto_con_descuento">Precio con descuento</label>
-                        <input type="number" min="0" name="monto_con_descuento" id="monto_con_descuento" class="form-control">
+                        <input type="number" min="0" name="monto_con_descuento" id="monto_con_descuento" class="form-control" required>
                     </article>
                </section>
                <section class="row mb-3">
                     <article class="col-6">
                         <label for="monto_neto">Precio neto</label>
-                        <input type="number" min="0" name="monto_neto" id="monto_neto" class="form-control">
+                        <input type="number" min="0" name="monto_neto" id="monto_neto" class="form-control" required>
                     </article>
                     <article class="col-6">
                         <label for="factura">Factura</label>
-                        <input type="text" min="0" name="factura" class="form-control">
+                        <input type="text" min="0" name="factura" class="form-control" required>
                     </article>
                </section>
                <button class="btn btn-lg btn-success btn-block">Agregar</button>
