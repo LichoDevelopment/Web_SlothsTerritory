@@ -19,7 +19,8 @@ class Horario extends Model
     protected $fillable = [
         'hora',
         'capacidad_maxima',
-        'hora_minima_reservar'
+        'hora_minima_reservar',
+        'id_tour'
     ];
 
 
