@@ -13,7 +13,17 @@ class AdminController extends Controller
 {
     public function agregarReserva()
     {
-        return view('admin.reservas.agregar');
+        $tours      = Tour::all();
+        $horarios   = Horario::all();
+        $agencias   = Agencia::all();
+        $precios    = Precio::all();
+
+        $view_data['tours']     = $tours;
+        $view_data['horarios']  = $horarios;
+        $view_data['agencias']  = $agencias;
+        $view_data['precios']   = $precios;
+
+        return view('admin.reservas.agregar', $view_data);
     }
     public function agencias()
     {
