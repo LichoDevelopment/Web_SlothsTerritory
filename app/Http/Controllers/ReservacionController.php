@@ -117,7 +117,7 @@ class ReservacionController extends Controller
 
    public function destroy($id)
    {
-       Reservacion::destroy($id);
+       Reserva::destroy($id);
        return response("", 204);
    }
 }
