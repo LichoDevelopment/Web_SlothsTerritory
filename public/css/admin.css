@@ -288,7 +288,7 @@ section {
 }
 .page-container {
     background: #e5e5e5;
-    padding-left: 300px;
+    padding-left: 250px;
 }
 
 @media (max-width: 991px) {
@@ -316,7 +316,7 @@ section {
 }
 
 .main-content {
-    padding-top: 116px;
+    padding-top: 100px;
     min-height: calc(100vh - 3.2rem);
 }
 

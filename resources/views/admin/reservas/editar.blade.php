@@ -5,38 +5,58 @@
 
     <section class="card">
         <section class="card-header">
-            <h1>agregar reserva</h1>
+            <h1>Editar reserva</h1>
         </section>
         <section class="card-body">
-            <form action="{{ route('reserva.guardar') }}" method="post">
+            <form action="{{ route('reserva.actualizar',['id'=>$reserva->id]) }}" method="post">
                 @csrf
+                @method('PUT')
                <section class="row mb-3">
                     <article class="col-6">
                         <label for="nombre_cliente">Nombre de cliente</label>
-                        <input class="form-control" name="nombre_cliente" required>
+                        <input 
+                            class="form-control" name="nombre_cliente" 
+                            value="{{$reserva->nombre_cliente}}" required>
                     </article>
                     <article class="col-6">
                         <label for="cantidad_adultos">Adultos</label>
-                        <input type="number" min="0" class="form-control" id="cantidad_adultos" name="cantidad_adultos" required>
+                        <input 
+                            type="number" min="0" class="form-control" 
+                            id="cantidad_adultos" name="cantidad_adultos"
+                            value="{{$reserva->cantidad_adultos}}" required>
                     </article>
                </section>
                <section class="row mb-3">
                     <article class="col-6">
                         <label for="cantidad_niños">Niños</label>
-                        <input type="number" min="0" class="form-control" id="cantidad_niños" name="cantidad_niños" required>
+                        <input 
+                            type="number" min="0" class="form-control" 
+                            id="cantidad_niños" name="cantidad_niños"
+                            value="{{$reserva->cantidad_niños}}" required>
                     </article>
                     <article class="col-6">
                         <label for="cantidad_niños_gratis">Niños gratis</label>
-                        <input type="number" min="0" class="form-control" name="cantidad_niños_gratis" required>
+                        <input 
+                            type="number" min="0" class="form-control" 
+                            name="cantidad_niños_gratis" required
+                            value="{{$reserva->cantidad_niños_gratis}}">
                     </article>
                </section>
                <section class="row mb-3">
                    <article class="col-6">
                        <label for="id_tour">Tour</label>
-                       <select class="custom-select" id="tour" name="id_tour" data-precios="{{$precios}}" required>
-                            <option selected>Elige un tour</option>
+                       <select 
+                            class="custom-select" id="tour" name="id_tour" 
+                            data-precios="{{$precios}}" required>
+                            <option 
+                                selected value="{{$reserva->id_tour}}">
+                                {{$reserva->tour->nombre}}
+                            </option>
+
                             @foreach ($tours as $tour)
-                                <option value="{{ $tour->id}}"> {{ $tour->nombre}} </option>
+                                @if ($tour->id !== $reserva->id_tour)
+                                    <option value="{{ $tour->id}}"> {{ $tour->nombre}} </option>
+                                @endif
                             @endforeach
                        </select>
                    </article>
@@ -44,7 +64,10 @@
                        <label for="id_horario">Hora</label>
                        <select class="custom-select" 
                        name="id_horario" id="horarios" data-horarios="{{$horarios}}" required>
-                            <option selected>Primero debes elegir un tour</option>
+                            <option selected value="{{$reserva->id_horario}}">
+                                {{$reserva->horario->hora}}
+                            </option>
+                            
                        </select>
                    </article>
                </section>
@@ -52,24 +75,34 @@
                    <input type="hidden" name="id_precio" id="id_precio">
                    <article class="col-6">
                        <label for="precio_adulto">Precio adultos</label>
-                       <input type="text" class="form-control" id="precio_adulto" disabled>
+                       <input 
+                            type="text" class="form-control" id="precio_adulto" 
+                            value="{{$reserva->precio->precio_adulto}}" disabled>
                    </article>
                    <article class="col-6">
                        <label for="precio_nino">Precio niños</label>
-                       <input type="text" class="form-control" id="precio_nino" disabled>
+                       <input 
+                            type="text" class="form-control" id="precio_nino" 
+                            value="{{$reserva->precio->precio_niño}}" disabled>
                    </article>
                </section>
                <section class="row mb-3">
                    <article class="col-6">
                         <label for="fecha_tour">Fecha</label>
-                        <input type="date" class="form-control" name="fecha_tour" required>
+                        <input 
+                            type="date" class="form-control" name="fecha_tour" 
+                            value="{{$reserva->fecha_tour->fecha}}" required>
                    </article>
                    <article class="col-6">
                         <label for="id_agencia">Agencia</label>
                         <select class="custom-select" name="id_agencia" id="agencia" data-agencias="{{$agencias}}" required>
-                            <option selected>Elige una agencia</option>
+                            <option selected value="{{$reserva->id_agencia}}">
+                                {{$reserva->agencia->nombre}}
+                            </option>
                             @foreach ($agencias as $agencia)
-                                <option value="{{$agencia->id}}"> {{ $agencia->nombre}} </option>
+                                @if ($agencia->id !== $reserva->id_agencia)
+                                    <option value="{{$agencia->id}}"> {{ $agencia->nombre}} </option>
+                                @endif
                             @endforeach
                         </select>
                     </article>
@@ -77,34 +110,51 @@
                <section class="row mb-3">
                     <article class="col-6">
                         <label for="comision_agencia">Comision</label>
-                        <input type="number" step=".01" min="0" name="comision_agencia" id="comision" class="form-control" required>
+                        <input 
+                            type="number" step=".01" min="0" name="comision_agencia" 
+                            id="comision" class="form-control" required
+                            value="{{$reserva->comision_agencia}}">
                     </article>
                     <article class="col-6">
                         <label for="descuento">Descuento</label>
-                        <input type="number" step=".01" min="0" value="0" name="descuento" id="descuento" class="form-control" required>
+                        <input 
+                            type="number" step=".01" min="0" value="0" name="descuento" 
+                            id="descuento" class="form-control" required
+                            value="{{$reserva->descuento}}">
                     </article>
                </section>
                <section class="row mb-3">
                     <article class="col-6">
                         <label for="monto_total">Precio</label>
-                        <input type="number" min="0" step=".01" name="monto_total" id="monto_total" class="form-control" required>
+                        <input 
+                            type="number" min="0" step=".01" name="monto_total" 
+                            id="monto_total" class="form-control" required
+                            value="{{$reserva->monto_total}}">
                     </article>
                     <article class="col-6">
                         <label for="monto_con_descuento">Precio con descuento</label>
-                        <input type="number" min="0" step=".01" name="monto_con_descuento" id="monto_con_descuento" class="form-control" required>
+                        <input 
+                            type="number" min="0" step=".01" name="monto_con_descuento" 
+                            id="monto_con_descuento" class="form-control" required
+                            value="{{$reserva->monto_con_descuento}}">
                     </article>
                </section>
                <section class="row mb-3">
                     <article class="col-6">
                         <label for="monto_neto">Precio neto</label>
-                        <input type="number" min="0" step=".01" name="monto_neto" id="monto_neto" class="form-control" required>
+                        <input 
+                            type="number" min="0" step=".01" name="monto_neto" 
+                            id="monto_neto" class="form-control" required
+                            value="{{$reserva->monto_neto}}">
                     </article>
                     <article class="col-6">
                         <label for="factura">Factura</label>
-                        <input type="text" min="0" name="factura" class="form-control">
+                        <input 
+                            type="text" min="0" name="factura" class="form-control"
+                            value="{{$reserva->factura}}">
                     </article>
                </section>
-               <button class="btn btn-lg btn-success btn-block">Agregar</button>
+               <button class="btn btn-lg btn-warning btn-block">Editar</button>
             </form>
         </section>
     </section>

@@ -27,6 +27,7 @@
                     <th>Factura</th>
                     <th>Creado el</th>
                     <th>Estado</th>
+                    <th>Acciones</th>
                 </thead>
                 <tbody>
                     @foreach ($reservaciones as $reservacion)
@@ -48,6 +49,12 @@
                             <td> {{$reservacion->factura}} </td>
                             <td> {{$reservacion->created_at}} </td>
                             <td> {{$reservacion->estado->nombre}} </td>
+                            <td class="btn-group">
+                                <a href="{{ route('reservas.editar', ['id'=>1]) }}" class="btn btn-sm btn-warning">Editar</a>
+                                <button
+                                    data-id="{{$reservacion->id}}" 
+                                    class="btn btn-sm btn-danger borrar-reserva-btn">Eliminar</button>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -63,5 +70,30 @@
         $(document).ready( function () {
         $('#reservationTable').DataTable();
     } );
+
+    const borrarReservasBtn = document.querySelectorAll('.borrar-reserva-btn')
+
+    borrarReservasBtn.forEach(btn =>{
+        btn.addEventListener('click', event =>{
+            event.preventDefault();
+            const id = event.target.dataset.id
+
+            Swal.fire({
+                icon: 'warning',
+                title: '¿Estas seguro de eliminar esta reserva?',
+                confirmButtonText: 'Eliminar',
+                confirmButtonColor: '#DC3545',
+                showCancelButton: true,
+                cancelButtonColor: 'teal',
+                preConfirm: (respuesta)=>{
+                    if(respuesta){
+                        fetch(`/reservacion/${id}`,{
+                            method: 'DELETE'
+                        })
+                    }
+                }
+            })
+        })
+    })
     </script>
 @endsection

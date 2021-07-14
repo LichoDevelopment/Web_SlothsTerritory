@@ -20,7 +20,7 @@ class CreateReservasTable extends Migration
             $table->unsignedBigInteger('id_fecha_tour');
             $table->unsignedBigInteger('id_horario');
             $table->unsignedBigInteger('id_precio');
-            $table->unsignedBigInteger('id_estado');
+            $table->unsignedBigInteger('id_estado')->default(1);
             $table->string('nombre_cliente');
             $table->integer('cantidad_adultos')->default(0);
             $table->integer('cantidad_niños')->default(0);
@@ -32,7 +32,8 @@ class CreateReservasTable extends Migration
             $table->decimal('monto_neto');
             $table->string('factura')->nullable();
             $table->timestamps();
-
+            $table->softDeletes();
+            
             // FK
             $table->foreign('id_agencia')->references('id')->on('agencias');
 

@@ -22,11 +22,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/sales', 'HomeController@sales')->name('admin.sales');
     
     Route::get('/agregar_reserva', 'AdminController@agregarReserva')->name('reservas.agregar');
+    Route::get('/editar_reserva/{id}', 'AdminController@editarReserva')->name('reservas.editar');
     Route::get('/agencias', 'AdminController@agencias')->name('admin.agencias');
     Route::get('/tours', 'AdminController@tours')->name('admin.tours');
     
-    Route::post('/reservacion', 'ReservacionController@store')->name('reserva.agregar');
-    Route::put('/reservacion', 'ReservacionController@update');
+    Route::post('/reservacion', 'ReservacionController@store')->name('reserva.guardar');
+    Route::put('/reservacion/{id}', 'ReservacionController@update')->name('reserva.actualizar');
+    Route::delete('/reservacion/{id}', 'ReservacionController@destroy');
     
     Route::get('/tour', 'TourController@index')->name('admin.tour');
     Route::post('/tour', 'TourController@store');

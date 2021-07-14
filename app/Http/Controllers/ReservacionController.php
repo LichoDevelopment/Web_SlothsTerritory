@@ -93,7 +93,7 @@ class ReservacionController extends Controller
                "errors"    => $validator->errors()
            ], 422);
        }else{
-            Reserva::create([
+            Reserva::find($id)->update([
                 'nombre_cliente'         => $this->request->nombre_cliente,
                 'cantidad_adultos'       => $this->request->cantidad_adultos,
                 'cantidad_niños'         => $this->request->cantidad_niños,
