@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Agencia;
+use App\Models\Estado;
 use App\Models\Fecha_tour;
 use App\Models\Horario;
 use App\Models\Precio;
@@ -153,8 +154,18 @@ class DatabaseSeeder extends Seeder
         $fecha2->fecha = "2021-07-14";
         $fecha2->save();
 
+        // Estados
+        $estado = new Estado();
+        $estado->nombre ="Pendiente";
+        $estado->save();
 
+        $estado2 = new Estado();
+        $estado2->nombre ="No llegó";
+        $estado2->save();
 
+        $estado3 = new Estado();
+        $estado3->nombre ="Finalizado";
+        $estado3->save();
 
         // RESERVA
         $reserva = new Reserva();
@@ -163,6 +174,7 @@ class DatabaseSeeder extends Seeder
         $reserva->id_fecha_tour = "1"; // Fecha 14 - 7 - 2021
         $reserva->id_horario = "1"; // horarios 8 a.m
         $reserva->id_precio = "1";  // precio 20 y 15
+        $reserva->id_estado = "1";
         $reserva->nombre_cliente = "Ulises";
         $reserva->cantidad_adultos = "2";
         $reserva->cantidad_niños = "2";
@@ -183,6 +195,7 @@ class DatabaseSeeder extends Seeder
         $reserva2->id_fecha_tour = "1"; // Fecha 14 - 7 - 2021
         $reserva2->id_horario = "2"; // horarios 10 a.m
         $reserva2->id_precio = "1"; // precio 20 y 15
+        $reserva2->id_estado = "1";
         $reserva2->nombre_cliente = "Licho";
         $reserva2->cantidad_adultos = "2";
         $reserva2->cantidad_niños = "1";

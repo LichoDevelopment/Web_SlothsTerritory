@@ -55,5 +55,9 @@ class Reserva extends Model
     {
         return $this->belongsTo('\App\Models\Precio','id_precio');
     }
+    public function estado()
+    {
+        return $this->belongsTo('\App\Models\Estado','id_estado');
+    }
 }
 

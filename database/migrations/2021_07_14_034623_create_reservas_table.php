@@ -20,6 +20,7 @@ class CreateReservasTable extends Migration
             $table->unsignedBigInteger('id_fecha_tour');
             $table->unsignedBigInteger('id_horario');
             $table->unsignedBigInteger('id_precio');
+            $table->unsignedBigInteger('id_estado');
             $table->string('nombre_cliente');
             $table->integer('cantidad_adultos')->default(0);
             $table->integer('cantidad_niños')->default(0);
@@ -42,6 +43,8 @@ class CreateReservasTable extends Migration
             $table->foreign('id_tour')->references('id')->on('tours');
             
             $table->foreign('id_fecha_tour')->references('id')->on('fecha_tour');
+
+            $table->foreign('id_estado')->references('id')->on('estados');
         });
     }
 

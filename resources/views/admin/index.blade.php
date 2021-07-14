@@ -25,7 +25,8 @@
                     <th>Comision de agencia</th>
                     <th>Total</th>
                     <th>Factura</th>
-                    <th>Creado en</th>
+                    <th>Creado el</th>
+                    <th>Estado</th>
                 </thead>
                 <tbody>
                     @foreach ($reservaciones as $reservacion)
@@ -46,6 +47,7 @@
                             <td> {{$reservacion->monto_neto}} </td>
                             <td> {{$reservacion->factura}} </td>
                             <td> {{$reservacion->created_at}} </td>
+                            <td> {{$reservacion->estado->nombre}} </td>
                         </tr>
                     @endforeach
                 </tbody>
