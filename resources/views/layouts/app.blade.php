@@ -4,23 +4,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <meta name="keywords" content="sloth tour arenal, arenal sloth tour, sloths territory la fortuna, sloth watching arenal, sloth watching costa rica, sloth costa rica, sloth trail arenal, sloth tour arenal, sloth tour la fortuna, sloth sanctuary la fortuna , sloth costa rica, sloth walking, Sloth Walking High, sloth watching trail, sloth walk, sloth walk arenal, sloth walking arenal, sloth park arenal, sloth park la fortuna, sloth watching near arenal">
-
+    {{-- <meta name="keywords" content="sloths arenal costa rica, sloths habitat, sloths territory la fortuna, sloths and frogs, sloths baby, 
+    sloth costa rica, sloths in costa rica, sloths la fortuna, sloth tour la fortuna, sloths la fortuna costa rica , sloth costa rica, sloths pictures, sloths 3 toed, sloths 3 toe, 3 toed sloths, osos perezosos, clima en la fortuna"> --}}
+    <meta name="keywords" content="la fortuna de san carlos,tours san carlos,fortuna tours,costa rica sloths,
+                                    sloth tour la fortuna,sloth tour costa rica,sloth tour,la fortuna sloth tour,tours la fortuna,sloth la fortuna,sloth territory la fortuna,
+                                    tour en la fortuna de san carlos,perezosos en la fortuna de san carlos, el mejor tour en la fortuna,el mejor tour en la fortuna de san carlos"
     <!-- SEO Meta Tags -->
-    <meta name="description" content="En Sloths Territory encontrarás el mejor tour de perezosos de la Fortuna de San Carlos">
+    <meta name="description" content="El mejor tour de perezosos en La Fortuna de San Carlos">
     <meta name="author" content="LichoDevelopment">
 
     <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
 	<meta property="og:site_name" content="Sloths territory" /> <!-- website name -->
 	<meta property="og:site" content="https://www.sloths-territory.com" /> <!-- website link -->
 	<meta property="og:title" content="Sloths territory | tour de perezosos"/> <!-- title shown in the actual shared post -->
-	<meta property="og:description" content="En Sloths Territory encontrarás el mejor tour de perezosos de la Fortuna de San Carlos" /> <!-- description shown in the actual shared post -->
+	<meta property="og:description" content="Los mejores tours de La Fortuna de San Carlos los encontrarás en Sloths Territory" /> <!-- description shown in the actual shared post -->
 	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
 	<meta property="og:url" content="https://www.sloths-territory.com" /> <!-- where do you want your post to link to -->
 	<meta property="og:type" content="website" />
 
     <!-- Website Title -->
-    <title>Tour de perezosos en Fortuna Sloths Territory</title>
+    <title>Perezosos en La Fortuna de San Carlos y El mejor tour en La Fortuna</title>
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
@@ -57,7 +60,7 @@
 
         <!-- Image Logo -->
         <a class="navbar-brand logo-image" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">
-            <img src="images/favicon.png"  class="logo-img" alt="alternative">
+            <img src="images/favicon.png"  class="logo-img" alt="Sloth's Territory" title="Sloths Territory">
         </a>
 
         <!-- Mobile Menu Toggle Button -->

@@ -9,24 +9,24 @@
 
             <div class="slide">
                 <div class="item-slide">
-                    <img class="imgs" src="images/sliderPrincipal/bebe-perezoso-y-madre-perezosa-durmiendo-en-un-arbol.jpeg" alt="Mamá perezosa y su bebé durmiendo en un arbol" title="Bebé perezoso y su madre">
+                    <img class="imgs" src="images/sliderPrincipal/perezosos_La_Fortuna_de_San_Carlos_Arenal_Volcano.jpeg" alt="Perezosos en Sloth´s Territory La Fortuna" title="Sloths Territory Fortuna">
                 </div>
                 <div class="item-slide" >
-                    <img class="imgs" src="images/sliderPrincipal/bebe-perezoso-con-su-madre-bradypus-variegatus.jpeg" alt="Mamá perezosa y su bebé" title="Mamá perezosa y su bebé">
+                    <img class="imgs" src="images/sliderPrincipal/Sloth_s_Territory-La_Fortuna_de_San_Carlos.jpeg" alt="Perezosos en la Fortuna de San Carlos" title="Perezosos en Fortuna Sloths Territory">
                 </div>
                 <div class="item-slide">
-                    <img class="imgs" src="images/sliderPrincipal/tierno-oso-perezoso-en-la-fortuna-sloths-territory.jpeg"  alt="Oso perezoso en La Fortuna de San Carlos" title="Oso perezoso">
+                    <img class="imgs" src="images/sliderPrincipal/oso_perezoso-Sloth_s_Territory_La_Fortuna.jpeg"  alt="Oso perezoso en La Fortuna de San Carlos" title="Oso perezoso en Sloths Territory La Fortuna">
                 </div>
             </div>
             <div class="pagination">
                 <label class="pagination-item" for="1">
-                    <img src="images/sliderPrincipal/bebe-perezoso-y-madre-perezosa-durmiendo-en-un-arbol.jpeg" alt="Bebé perezoso duerme junto a su madre en la Fortuna de San Carlos" title="Perezosos durmiendo" width="16px" height="12px">
+                    <img src="images/sliderPrincipal/perezosos_La_Fortuna_de_San_Carlos_Arenal_Volcano.jpeg" alt="Sloths Territory La Fortuna" title="Perezosos en Fortuna" width="16px" height="12px">
                 </label>
                 <label class="pagination-item" for="2">
-                    <img src="images/sliderPrincipal/bebe-perezoso-con-su-madre-bradypus-variegatus.jpeg" alt="Perezosos en la Fortuna" title="Perezosos durmiendo" width="16px" height="12px">
+                    <img src="images/sliderPrincipal/Sloth_s_Territory-La_Fortuna_de_San_Carlos.jpeg" alt="Perezosos en la Fortuna" title="Perezoso durmiendo Fortuna San Carlos" width="16px" height="12px">
                 </label>
                 <label class="pagination-item" for="3">
-                    <img src="images/sliderPrincipal/tierno-oso-perezoso-en-la-fortuna-sloths-territory.jpeg" alt="Perezosos en la Fortuna Costa Rica" title="Perezoso" width="16px" height="12px">
+                    <img src="images/sliderPrincipal/oso_perezoso-Sloth_s_Territory_La_Fortuna.jpeg" alt="Perezosos en la Fortuna Costa Rica" title="Perezoso en La Fortuna San Carlos" width="16px" height="12px">
                 </label>
 
             </div>
@@ -53,7 +53,7 @@
                     </div> <!-- end of col -->
                     <div class="col-lg-7">
                         <div class="image-container">
-                            <img class="img-fluid" src="images/otras-especies/tours-en-sloths-territory.jpeg" alt="Senderos La Fortuna de San Carlos" title="Senderos Sloths Territory" height="400px" width="450px">
+                            <img class="img-fluid" src="images/otras-especies/tours-en-sloths-territory.jpeg" alt="Perezosos La Fortuna de San Carlos" title="Perezosos Sloth's Territory" height="400px" width="450px">
                         </div> <!-- end of image-container -->
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
@@ -129,7 +129,7 @@
                         <!-- Card -->
                         <div class="card">
                             <div class="card-image">
-                                <img class="img-fluid" src="images/otras-especies/senderos-sloths-territory.jpeg" alt="Sendero para ver perezosos en la Fortuna de San Carlos" title="Sendero Sloths Territory" width="350px" height="258px">
+                                <img class="img-fluid" src="images/otras-especies/perezosos-sloth_s_territory_Fortuna_de_San_Carlos.jpeg" alt="Sendero para ver perezosos en la Fortuna de San Carlos Volcán Arenal" title="Sendero Sloth's Territory" width="350px" height="258px">
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">{{__('service.vista_previa.tour_diurno.titulo')}}</h3>
@@ -155,7 +155,7 @@
                         <!-- Card -->
                         <div class="card">
                             <div class="card-image">
-                                <img class="img-fluid" src="images/tour-nocturno.jpeg" alt="tour nocturno Sloths Territory La Fortuna" title="Tour nocturno La Fortuna" width="350px" height="258px">
+                                <img class="img-fluid" src="images/tour_nocturno-Sloth_s_Territory_La_Fortuna.jpeg" alt="tour nocturno de perezosos en Sloths Territory en La Fortuna" title="Tour nocturno La Fortuna Sloth's Territory" width="350px" height="258px">
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">{{__('service.vista_previa.tour_nocturno.titulo')}}</h3>
@@ -181,7 +181,7 @@
                         <!-- Card -->
                         <div class="card">
                             <div class="card-image">
-                                <img class="img-fluid" src="images/aves/halcon-blanco-gavilan.jpeg" alt="magníficas aves en la Fortuna" title="lechuzón en Sloths Territory" width="350px" height="258px">
+                                <img class="img-fluid" src="images/aves/halcon-blanco-gavilan.jpeg" alt="Aves en La Fortuna Sloth's Territory" title="lechuzón en Sloth's Territory Fortuna" width="350px" height="258px">
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">{{__('service.vista_previa.tour_aves.titulo')}}</h3>
@@ -277,92 +277,105 @@
                             <div class="element-item sloths">
                                 <a class="popup-with-move-anim" href="#tour-1">
                                     <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="images/perezosos/bebe-perezoso-y-madre-perezosa-durmiendo-en-un-arbol-.jpeg" 
-                                    alt="bebe perezoso y madre perezosa durmiendo en un arbol">
+                                    <img loading="lazy" src="images/perezosos/perezosos-Sloth_s_Territory_Fortuna.jpeg" 
+                                    alt="bebe perezoso en La Fortuna de San Carlos Sloth Territory"
+                                    title="bebe perezoso en Fortuna">
                                 </a>
                             </div>
                             <div class="element-item sloths">
                                 <a class="popup-with-move-anim" href="#tour-2">
                                     <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="images/perezosos/oso-perezoso-de-tres-dedos.jpeg" 
-                                    alt="oso perezoso de tres dedo">
+                                    <img loading="lazy" src="images/perezosos/oso_perezoso_de_tres_dedos-Sloth_Terirtory_Fortuna.jpeg" 
+                                    alt="oso perezoso de tres dedo en Sloths Territory Fortuna"
+                                    title="Oso perezoso en La Fortuna de San Carlos">
                                 </a>
                             </div>
                             <div class="element-item sloths">
                                 <a class="popup-with-move-anim" href="#tour-3">
                                     <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="images/perezosos/perezoso-en-la-fortuna-de-san-carlos.jpeg" 
-                                    alt="perezoso en la fortuna de san carlos">
+                                    <img loading="lazy" src="images/perezosos/perezoso_en_La_Fortuna_de_San_Carlos.jpeg" 
+                                    alt="Perezoso en La Fortuna de San Carlos Volcán Arenal"
+                                    title="Perezosos en la Fortuna de San Carlos">
                                 </a>
                             </div>
                             <div class="element-item sloths">
                                 <a class="popup-with-move-anim" href="#tour-4">
                                     <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="images/perezosos/bebe-perezoso-durmiendo-en-costa-rica.jpeg" 
-                                    alt="bebe perezoso durmiendo en costa rica">
+                                    <img loading="lazy" src="images/perezosos/perezoso_en_Costa_Rica-Sloth_s_Territory_La_Fortuna.jpeg" 
+                                    alt="bebe perezoso en Sloth's Territory Fortuna San Carlos"
+                                    title="La Fortuna perezosos">
                                 </a>
                             </div>
                             <div class="element-item design ranas marketing">
                                 <a class="popup-with-move-anim" href="#tour-5">
                                     <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="images/ranas/rana-flecha-roja-azul-costa-rica.jpeg" 
-                                    alt="rana flecha roja azul costa rica">
+                                    <img loading="lazy" src="images/ranas/rana_flecha_roja_en_Fortuna_San_Carlos.jpeg" 
+                                    alt="Rana flecha roja en La Fortuna de San Carlos en SLoth's Territory"
+                                    title="Rana felcha roja Sloth´s Territory Fortuna">
                                 </a>
                             </div>
                             <div class="element-item design ranas marketing">
                                 <a class="popup-with-move-anim" href="#tour-6">
                                     <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="images/ranas/rana-verde-ojos-rojos.jpeg" 
-                                    alt="rana verde ojos rojos">
+                                    <img loading="lazy" src="images/ranas/rana_verde_ojos_rojos-Fortuna_San_Carlos.jpeg" 
+                                    alt="rana verde ojos rojos Fortuna San Carlos Sloth´s Territory"
+                                    title="ranas en Sloth´s Territory">
                                 </a>
                             </div>
                             <div class="element-item design ranas marketing">
                                 <a class="popup-with-move-anim" href="#tour-7">
                                     <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="images/ranas/rana-.jpeg" 
-                                    alt="rana">
+                                    <img loading="lazy" src="images/ranas/ranas_en_La_Fortuna.jpeg" 
+                                    alt="ranas en La Fortuna de San Carlos"
+                                    title="Ranas en La Fortuna">
                                 </a>
                             </div>
                             <div class="element-item design monos">
                                 <a class="popup-with-move-anim" href="#tour-8">
                                     <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="images/monos/mono-aullador-alouatta-palliata-america-central.jpeg" 
-                                    alt="mono aullador alouatta palliata america central">
+                                    <img loading="lazy" src="images/monos/mono_aullador-alouatta-La_Fortuna.jpeg" 
+                                    alt="Mono aullador en La Fortuna"
+                                    title="Mono aullador en Fortuna">
                                 </a>
                             </div>
                             <div class="element-item design aves">
                                 <a class="popup-with-move-anim" href="#tour-9">
                                     <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="images/aves/lechuzon-fortuna-costa-rica-.jpeg" 
-                                    alt="lechuzon fortuna costa rica">
+                                    <img loading="lazy" src="images/aves/lechuzon-La_Fortuna_San_Carlos.jpeg" 
+                                    alt="Lechuzon en La Fortuna de San Carlos"
+                                    title="Lechuzon en La Fortuna">
                                 </a>
                             </div>
                             <div class="element-item design aves">
                                 <a class="popup-with-move-anim" href="#tour-10">
                                     <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="images/aves/ave-martin-pescador-collar-coraciforme.jpeg" 
-                                    alt="ave martin pescador collar coraciforme">
+                                    <img loading="lazy" src="images/aves/ave_martin_pescador_La_Fortuna.jpeg" 
+                                    alt="ave martin pescador en La Fortuna de San Carlos"
+                                    title="Ave martín pescador en Costa Rica">
                                 </a>
                             </div>
                             <div class="element-item design otras">
                                 <a class="popup-with-move-anim" href="#tour-11">
                                     <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="images/otras-especies/serpiente-negra-y-amarillo.jpeg" 
-                                    alt="serpiente negra y amarrillo">
+                                    <img loading="lazy" src="images/otras-especies/serpientes-La_Fortuna_de_San_Carlos.jpeg" 
+                                    alt="Serpientes en La Fortuna de San Carlos"
+                                    title="Serpientes en La Fortuna">
                                 </a>
                             </div>
                             <div class="element-item design otras">
                                 <a class="popup-with-move-anim" href="#tour-12">
                                     <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="images/otras-especies/leopardo-ocelote-manigordo-bebe-en-la-fortuna-de-san-carlos-costa-rica.jpeg" 
-                                    alt="leopardo ocelote manigordo bebe en la fortuna de san carlos costa rica">
+                                    <img loading="lazy" src="images/otras-especies/leopardo_en_La_Fortuna-manigordo_en_La_Fortuna.jpeg" 
+                                    alt="leopardo en la Fortuna de San Carlos"
+                                    title="Leopardo en La Fortuna">
                                 </a>
                             </div>
                             <div class="element-item design otras">
                                 <a class="popup-with-move-anim" href="#tour-13">
                                     <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="images/otras-especies/serpiente.jpeg" 
-                                    alt="serpiente">
+                                    <img loading="lazy" src="images/otras-especies/serpiente_boa_en_La_Fortuna_de_San_Carlos.jpeg" 
+                                    alt="Serpiente Boa en La Fortuna en Sloth's Territory"
+                                    title="Serpiente en La Fortuna">
                                 </a>
                             </div>
                         </div> <!-- end of grid -->
@@ -374,7 +387,7 @@
         </div> <!-- end of filter -->
         </div> <!-- end of container -->
             <div id="video" class="container">
-                <iframe src="https://www.youtube.com/embed/BrAsPlE2gS8?rel=0&amp;showinfo=0" width="100%" height="430px" frameborder="0" style="border:0" allowfullscreen alt="Video de perezosos en Sloths Territory La Fortuna" title="video de perezosos La Fortuna"></iframe>             
+                <iframe src="https://www.youtube.com/embed/BrAsPlE2gS8?rel=0&amp;showinfo=0" width="100%" height="430px" frameborder="0" style="border:0" allowfullscreen alt="Video de perezosos en La Fortuna" title="video de perezosos en La Fortuna"></iframe>             
         </div>
         <!-- end of tours -->
 
@@ -386,8 +399,9 @@
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="">
                     <img class="img-fluid" loading="lazy" 
-                    src="images/perezosos/bebe-perezoso-y-madre-perezosa-durmiendo-en-un-arbol-.jpeg" 
-                    alt="bebe perezoso y madre perezosa durmiendo en un arbol">
+                    src="images/perezosos/perezosos-Sloth_s_Territory_Fortuna.jpeg" 
+                    alt="Perezoso en La Fortuna"
+                    title="Perezosos en La Fortuna de San Carlos Volcán Arenal">
                 </div> <!-- end of col -->
                 {{-- <div class="col-lg-4">
                     <h3>perezoso</h3>
@@ -411,8 +425,9 @@
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="">
                     <img class="img-fluid" loading="lazy" 
-                    src="images/perezosos/oso-perezoso-de-tres-dedos.jpeg" 
-                    alt="oso perezoso de tres dedo">
+                    src="images/perezosos/oso_perezoso_de_tres_dedos-Sloth_Terirtory_Fortuna.jpeg" 
+                    alt="Perezoso de tres dedo en La Fortuna"
+                    title="Perezoso de 3 dedos en La Fortuna">
                 </div> <!-- end of col -->
                 {{-- <div class="col-lg-4">
                     <h3>Juanito</h3>
@@ -436,8 +451,9 @@
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="">
                     <img class="img-fluid" loading="lazy" 
-                    src="images/perezosos/perezoso-en-la-fortuna-de-san-carlos.jpeg" 
-                    alt="perezoso en la fortuna de san carlos">
+                    src="images/perezosos/perezoso_en_La_Fortuna_de_San_Carlos.jpeg" 
+                    alt="Perezoso en La Fortuna de San Carlos"
+                    title="Perezosos en La Fortuna en Sloth's Territory">
                 </div> <!-- end of col -->
                 {{-- <div class="col-lg-4">
                     <h3>Bofw</h3>
@@ -461,8 +477,9 @@
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="">
                     <img class="img-fluid" loading="lazy" 
-                    src="images/perezosos/bebe-perezoso-durmiendo-en-costa-rica.jpeg" 
-                    alt="bebe perezoso durmiendo en costa rica">
+                    src="images/perezosos/perezoso_en_Costa_Rica-Sloth_s_Territory_La_Fortuna.jpeg" 
+                    alt="bebé perezosos en La Fortuna de San Carlos"
+                    title="Bebé perezoso en La Fortuna">
                 </div> <!-- end of col -->
                 {{-- <div class="col-lg-4">
                     <h3>Ipsum</h3>
@@ -486,8 +503,9 @@
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="">
                     <img class="img-fluid" loading="lazy" 
-                    src="images/ranas/rana-flecha-roja-azul-costa-rica.jpeg" 
-                    alt="rana flecha roja azul costa rica">
+                    src="images/ranas/rana_flecha_roja_en_Fortuna_San_Carlos.jpeg" 
+                    alt="rana flecha roja en La Fortuna"
+                    title="rana flecha roja La Fortuna de San Carlos">
                 </div> <!-- end of col -->
                 {{-- <div class="col-lg-4">
                     <h3>IMpsu</h3>
@@ -511,8 +529,9 @@
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="">
                     <img class="img-fluid" loading="lazy" 
-                    src="images/ranas/rana-verde-ojos-rojos.jpeg" 
-                    alt="rana verde ojos rojos">
+                    src="images/ranas/rana_verde_ojos_rojos-Fortuna_San_Carlos.jpeg" 
+                    alt="rana de ojos rojos en La Fortuna"
+                    title="rana de ojos rojos">
                 </div> <!-- end of col -->
                 {{-- <div class="col-lg-4">
                     <h3>Ipsum</h3>
@@ -536,8 +555,9 @@
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="">
                     <img class="img-fluid" loading="lazy" 
-                    src="images/ranas/rana-.jpeg" 
-                    alt="rana">
+                    src="images/ranas/ranas_en_La_Fortuna.jpeg" 
+                    alt="ranas en La Fortuna de San carlos"
+                    title="Ranas en La Fortuna">
                 </div> <!-- end of col -->
                 {{-- <div class="col-lg-4">
                     <h3>CIPSU</h3>
@@ -561,8 +581,9 @@
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="">
                     <img class="img-fluid" loading="lazy" 
-                    src="images/monos/mono-aullador-alouatta-palliata-america-central.jpeg" 
-                    alt="mono aullador alouatta palliata america central">
+                    src="images/monos/mono_aullador-alouatta-La_Fortuna.jpeg" 
+                    alt="mono aullador en Sloth Territory La Fortuna"
+                    title="mono aullador en La Fortuna">
                 </div> <!-- end of col -->
                 {{-- <div class="col-lg-10">
                     <h3>sub algo</h3>
@@ -585,8 +606,9 @@
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="">
                     <img class="img-fluid" loading="lazy" 
-                    src="images/aves/lechuzon-fortuna-costa-rica-.jpeg" 
-                    alt="lechuzon fortuna costa rica">
+                    src="images/aves/lechuzon-La_Fortuna_San_Carlos.jpeg" 
+                    alt="lechuzon en Fortuna Costa Rica"
+                    title="Lechuzón en La Fortuna de San carlos">
                 </div> <!-- end of col -->
                 {{-- <div class="col-lg-10">
                     <h3>sub algo</h3>
@@ -609,8 +631,9 @@
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="">
                     <img class="img-fluid" loading="lazy" 
-                    src="images/aves/ave-martin-pescador-collar-coraciforme.jpeg" 
-                    alt="ave martin pescador collar coraciforme">
+                    src="images/aves/ave_martin_pescador_La_Fortuna.jpeg" 
+                    alt="ave martin pescador en La Fortuna"
+                    title="Ave martin pescador en La Fortuna">
                 </div> <!-- end of col -->
                 {{-- <div class="col-lg-10">
                     <h3>sub algo</h3>
@@ -633,8 +656,9 @@
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="">
                     <img class="img-fluid" loading="lazy" 
-                    src="images/otras-especies/serpiente-negra-y-amarillo.jpeg" 
-                    alt="serpiente negra y amarrillo">
+                    src="images/otras-especies/serpientes-La_Fortuna_de_San_Carlos.jpeg" 
+                    alt="serpiente en La Fortuna de San Carlos"
+                    title="Serpientes en La Fortuna">
                 </div> <!-- end of col -->
                 {{-- <div class="col-lg-10">
                     <h3>sub algo</h3>
@@ -657,8 +681,9 @@
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="">
                     <img class="img-fluid" loading="lazy"
-                    src="images/otras-especies/leopardo-ocelote-manigordo-bebe-en-la-fortuna-de-san-carlos-costa-rica.jpeg" 
-                    alt="leopardo ocelote manigordo bebe en la fortuna de san carlos costa rica">
+                    src="images/otras-especies/leopardo_en_La_Fortuna-manigordo_en_La_Fortuna.jpeg" 
+                    alt="Leopardo en La Fortuna, Ocelote en La Fortuna"
+                    title="Leoparto, Ocelote en La Fortuna">
                 </div> <!-- end of col -->
                 {{-- <div class="col-lg-10">
                     <h3>sub algo</h3>
@@ -682,8 +707,9 @@
                 <div class="">
                     <img class="img-fluid" 
                     loading="lazy"
-                    src="images/otras-especies/serpiente.jpeg" 
-                    alt="serpiente">
+                    src="images/otras-especies/serpiente_boa_en_La_Fortuna_de_San_Carlos.jpeg" 
+                    alt="Serpiente en La Fortuna de  San Carlos"
+                    title="Serpiente en La Fortuna">
                 </div> <!-- end of col -->
                 {{-- <div class="col-lg-10">
                     <h3>sub algo</h3>
@@ -706,7 +732,7 @@
             <div class="row justify-content-center">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="col-lg-10">
-                    <img class="img-fluid" src="images/otras-especies/senderos-sloths-territory.jpeg" alt="sloth's territory sendero principal">
+                    <img class="img-fluid" src="images/otras-especies/perezosos-sloth_s_territory_Fortuna_de_San_Carlos.jpeg" alt="tour de perezosos en La Fortuna" title="Tour de perezosos">
                 </div> <!-- end of col -->
                 <div class="col-lg-10">
                     <h3>{{__('service.tour_diurno.info.titulo_principal')}}</h3>
@@ -736,7 +762,7 @@
             <div class="row justify-content-center">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="col-lg-10">
-                    <img class="img-fluid" src="images/tour-nocturno.jpeg" alt="tour-nocturno-Fortuna" title="Tour-nocturno-en-Fortuna">
+                    <img class="img-fluid" src="tour_nocturno-Sloth_s_Territory_La_Fortuna.jpeg" alt="tour nocturno en La Fortuna" title="Tour nocturno en La Fortuna">
                 </div> <!-- end of col -->
                 <div class="col-lg-10">
                     <h3>{{__('service.tour_nocturno.info.titulo_principal')}}</h3>
@@ -766,7 +792,7 @@
             <div class="row justify-content-center">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="col-lg-10">
-                    <img class="img-fluid" src="images/aves/halcon-blanco-gavilan.jpeg" alt="magníficas aves en la Fortuna" title="lechuzón en Sloths Territory" >
+                    <img class="img-fluid" src="images/aves/halcon-blanco-gavilan.jpeg" alt="Tour de aves en La Fortuna" title="Tour de aves en La Fortuna">
                 </div> <!-- end of col -->
                 <div class="col-lg-10">
                     <h3>{{__('service.tour_aves.info.titulo_principal')}}</h3>
@@ -809,7 +835,7 @@
                         <!-- Team Member -->
                         <div class="team-member">
                             <div class="image-wrapper">
-                                <img class="img-fluid" src="images/team-1.png" alt="trabajador (Keilor)">
+                                <img class="img-fluid" src="images/team-1.png" alt="trabajadores de turiísmo en La Fortuna" title="Turismo La Fortuna">
                             </div> <!-- end of image-wrapper -->
                             <p class="p-large">Keilor</p>
                             <!-- <p class="job-title">Alguna característica</p> -->
@@ -827,7 +853,7 @@
                         <!-- Team Member -->
                         <div class="team-member">
                             <div class="image-wrapper">
-                                <img class="img-fluid" src="images/team-2.png" alt="trabajador (Oscar)">
+                                <img class="img-fluid" src="images/team-2.png" alt="Perezosos La Fortuna" title="Perezosos en La Fortuna">
                             </div> <!-- end of image wrapper -->
                             <p class="p-large">Oscar</p>
                             <!-- <p class="job-title">Alguna característica</p> -->
@@ -856,7 +882,7 @@
                     <div class="col-lg-5 col-xl-6">
                         <div class="image-container">
                         <!-- PENDIENTE poner el alt y title y cambiar la imagen -->
-                            <img class="img-fluid" src="images/observando-perezosos-Fortuna.jpeg" alt="sloth's territory sendero">    
+                            <img class="img-fluid" src="images/tour_de_perezosos_en_La_Fortuna.jpeg" alt="Tour de Perezosos En La Fortuna" title="Tour de perezosos en La Fortuna">    
                         </div> <!-- end of image-container -->
                     </div> <!-- end of col -->
                     <div class="col-lg-7 col-xl-6">
