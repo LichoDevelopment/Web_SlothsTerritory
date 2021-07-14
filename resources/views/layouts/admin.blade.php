@@ -86,7 +86,7 @@
                                 <i class="fas fa-chart-bar"></i>Ventas</a>
                         </li>
                         <li class="{{ Route::is('admin.agencias') ? 'active' : '' }} ">
-                            <a href="/agencias">
+                            <a href="{{ route('admin.agencia') }}">
                                 <i class="fas fa-calendar-alt"></i>Agencias</a>
                         </li>
                         <li class="{{ Route::is('admin.tours') ? 'active' : '' }} ">
@@ -127,7 +127,7 @@
                                 <i class="fas fa-chart-bar"></i>Ventas</a>
                         </li>
                         <li class="{{ Route::is('admin.agencias') ? 'active' : '' }} ">
-                            <a href="/agencias">
+                            <a href="{{ route('admin.agencia') }}">
                                 <i class="fas fa-calendar-alt"></i>Agencias</a>
                         </li>
                         <li class="{{ Route::is('admin.tours') ? 'active' : '' }} ">

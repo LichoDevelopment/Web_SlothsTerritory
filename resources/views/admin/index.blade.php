@@ -13,6 +13,8 @@
                     <th>#</th>
                     <th>Tour</th>
                     <th>Agencia</th>
+                    <th>Hora</th>
+                    <th>Fecha</th>
                     <th>Cliente</th>
                     <th>Adultos</th>
                     <th>Niños</th>
@@ -31,6 +33,8 @@
                             <td> {{$loop->index + 1}} </td>
                             <td> {{$reservacion->tour->nombre}} </td>
                             <td> {{$reservacion->agencia->nombre}} </td>
+                            <td> {{$reservacion->horario->hora}} </td>
+                            <td> {{$reservacion->fecha_tour->fecha}} </td>
                             <td> {{$reservacion->nombre_cliente}} </td>
                             <td> {{$reservacion->cantidad_adultos}} </td>
                             <td> {{$reservacion->cantidad_niños}} </td>

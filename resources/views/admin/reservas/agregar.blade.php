@@ -77,27 +77,27 @@
                <section class="row mb-3">
                     <article class="col-6">
                         <label for="comision_agencia">Comision</label>
-                        <input type="number" min="0" name="comision_agencia" id="comision" class="form-control" required>
+                        <input type="number" step=".01" min="0" name="comision_agencia" id="comision" class="form-control" required>
                     </article>
                     <article class="col-6">
                         <label for="descuento">Descuento</label>
-                        <input type="number" min="0" name="descuento" id="descuento" class="form-control" required>
+                        <input type="number" step=".01" min="0" value="0" name="descuento" id="descuento" class="form-control" required>
                     </article>
                </section>
                <section class="row mb-3">
                     <article class="col-6">
                         <label for="monto_total">Precio</label>
-                        <input type="number" min="0" name="monto_total" id="monto_total" class="form-control" required>
+                        <input type="number" min="0" step=".01" name="monto_total" id="monto_total" class="form-control" required>
                     </article>
                     <article class="col-6">
                         <label for="monto_con_descuento">Precio con descuento</label>
-                        <input type="number" min="0" name="monto_con_descuento" id="monto_con_descuento" class="form-control" required>
+                        <input type="number" min="0" step=".01" name="monto_con_descuento" id="monto_con_descuento" class="form-control" required>
                     </article>
                </section>
                <section class="row mb-3">
                     <article class="col-6">
                         <label for="monto_neto">Precio neto</label>
-                        <input type="number" min="0" name="monto_neto" id="monto_neto" class="form-control" required>
+                        <input type="number" min="0" step=".01" name="monto_neto" id="monto_neto" class="form-control" required>
                     </article>
                     <article class="col-6">
                         <label for="factura">Factura</label>
@@ -177,7 +177,12 @@
 
             horarios.innerHTML = ''
             tourHorarios.map(horario => {
-                horarios.innerHTML += `<option value="${horario.id}">${horario.hora}</option>`
+                horarios.innerHTML += `<option 
+
+                @foreach ($horarios as $horario)
+                        <option value="{{$horario->id}}"> {{ $horario->hora}} </option>
+                @endforeach
+                </option>`
             })
         })
 
@@ -186,7 +191,7 @@
             const selectedIndex = event.target.selectedIndex;
             const selectedOption = event.target.options[selectedIndex]
             const comision_agencia = agencias.filter(agencia => agencia.id == selectedOption.value)[0]
-           comision.value = comision_agencia.comision
+            comision.value = (Number(cantidad_adultos.value) + Number(cantidad_ninos.value)) * Number(comision_agencia.comision) 
            actualizarPrecioNeto()
         })
 

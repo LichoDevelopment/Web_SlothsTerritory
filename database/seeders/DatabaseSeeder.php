@@ -37,6 +37,12 @@ class DatabaseSeeder extends Seeder
         $Usuario2->password = '$2y$10$g5OX3HHhvCVjKB4oBIE1melvJ0iTw14VznfEyzsICY5.'; //123456
         $Usuario2->save();
 
+        $Usuario3 = new User();
+        $Usuario3->name = "keilor";
+        $Usuario3->email = "keilor@gmail.com";
+        $Usuario3->password = '$2y$10$g5OX3HHhvCVjKB4oBIE1melvJ0iTw14VznfEyzsICY5.'; //123456
+        $Usuario3->save();
+
 
         // TOURS
             // tour diurno

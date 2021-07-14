@@ -26,9 +26,15 @@ class AgenciaController extends Controller
         $this->request = $request;
     }
 
+    public function index()
+    {
+        $agencias = Agencia::all();
+        return view('admin.agencias.index', compact('agencias'));
+    }
+
     public function store()
     {
-        $response = response("",201);
+        $response = response(["message"=> "agencia creada"],201);
 
         $validator = Validator::make($this->request->all(), $this->reglasValidacion, $this->mensajesValidacion);
 
@@ -40,17 +46,18 @@ class AgenciaController extends Controller
             ], 422);
         }else{
             Agencia::create([
-                'nombre'    => $this->request->nombre,
-                'comision'  => $this->request->comision,
+                'nombre' => $this->request->nombre,
+                'comision' => $this->request->comision,
             ]);
         }
 
         return $response;
     }
 
+
     public function update($id)
     {
-        $response = response("",202);
+        $response = response(["message"=> "agencia actualizada"],202);
 
         $validator = Validator::make($this->request->all(), $this->reglasValidacion, $this->mensajesValidacion);
 
@@ -61,9 +68,9 @@ class AgenciaController extends Controller
                 "errors"    => $validator->errors()
             ], 422);
         }else{
-            Agencia::fin($id)->update([
-                'nombre'    => $this->request->nombre,
-                'comision'  => $this->request->comision,
+            Agencia::find($id)->update([
+                'nombre' => $this->request->nombre,
+                'comision' => $this->request->comision,
             ]);
         }
 

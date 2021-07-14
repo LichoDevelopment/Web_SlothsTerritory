@@ -32,21 +32,26 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/tour', 'TourController@store');
     Route::put('/tour/{id}', 'TourController@update');
     Route::delete('/tour/{id}', 'TourController@destroy');
+
+    Route::get('/agencia', 'AgenciaController@index')->name('admin.agencia');
+    Route::post('/agencia', 'AgenciaController@store');
+    Route::put('/agencia/{id}', 'AgenciaController@update');
+    Route::delete('/agencia/{id}', 'AgenciaController@destroy');
     
     Route::get('/precio', 'PrecioController@index')->name('admin.precio');
     Route::post('/precio', 'PrecioController@store');
     Route::put('/precio/{id}', 'PrecioController@update');
     Route::delete('/precio/{id}', 'PrecioController@destroy');
     
-    Route::post('/agencia', 'AgenciaController@store');
-    Route::put('/agencia', 'AgenciaController@update');
+    // Route::post('/agencia', 'AgenciaController@store');
+    // Route::put('/agencia', 'AgenciaController@update');
     
     Route::get('/horario', 'HorarioController@index')->name('admin.horario');
     Route::post('/horario', 'HorarioController@store');
     Route::put('/horario/{id}', 'HorarioController@update');
     Route::delete('/horario/{id}', 'HorarioController@destroy');
 
-    Route::resource('agencias', 'AgenciasController');
+    // Route::resource('agencias', 'AgenciasController');
 });
 
 /**Public routes */
