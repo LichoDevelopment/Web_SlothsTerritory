@@ -50,7 +50,7 @@
                             <td> {{$reservacion->created_at}} </td>
                             <td> {{$reservacion->estado->nombre}} </td>
                             <td class="btn-group">
-                                <a href="{{ route('reservas.editar', ['id'=>1]) }}" class="btn btn-sm btn-warning">Editar</a>
+                                <a href="{{ route('reservas.editar', ['id'=> $reservacion->id]) }}" class="btn btn-sm btn-warning">Editar</a>
                                 <button
                                     data-id="{{$reservacion->id}}" 
                                     class="btn btn-sm btn-danger borrar-reserva-btn">Eliminar</button>
@@ -89,7 +89,17 @@
                     if(respuesta){
                         fetch(`/reservacion/${id}`,{
                             method: 'DELETE'
+                        }).then(()=>{
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Reserva eliminada',
+                                showConfirmButton: false,
+                            })
+                            setTimeout(() => {
+                                location.reload()
+                            }, 1500);
                         })
+
                     }
                 }
             })

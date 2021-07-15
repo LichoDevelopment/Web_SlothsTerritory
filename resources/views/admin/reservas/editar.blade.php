@@ -8,6 +8,11 @@
             <h1>Editar reserva</h1>
         </section>
         <section class="card-body">
+            @if (session('limite'))
+                <div class="alert alert-danger" id="limite-exedido" role="alert">
+                    {{session('limite')}}
+                </div>              
+            @endif
             <form action="{{ route('reserva.actualizar',['id'=>$reserva->id]) }}" method="post">
                 @csrf
                 @method('PUT')
@@ -72,7 +77,7 @@
                    </article>
                </section>
                <section class="row mb-3">
-                   <input type="hidden" name="id_precio" id="id_precio">
+                   <input type="hidden" name="id_precio" id="id_precio" value={{$reserva->id_precio}}>
                    <article class="col-6">
                        <label for="precio_adulto">Precio adultos</label>
                        <input 
@@ -176,8 +181,15 @@
         const monto_con_descuento   = document.getElementById('monto_con_descuento');
         const monto_neto            = document.getElementById('monto_neto');
         const id_precio             = document.getElementById('id_precio');
+        const alerta_limite_exedido = document.getElementById('limite-exedido');
 
         const horariosArr   = JSON.parse(horarios.dataset.horarios)
+
+        if(alerta_limite_exedido){
+            setTimeout(() => {
+                alerta_limite_exedido.style.display = 'none';
+            }, 4000);
+        }
 
         comision.addEventListener('change', ()=> actualizarPrecioNeto())
         comision.addEventListener('keyup', ()=> actualizarPrecioNeto())
