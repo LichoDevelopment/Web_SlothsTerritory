@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Fecha_tour;
+use App\Models\Horario;
+use App\Models\Registro;
 use App\Models\Reserva;
 use App\Models\Reservacion;
 use Illuminate\Http\Request;
@@ -46,6 +48,21 @@ class ReservacionController extends Controller
        if(!$fecha_tour){
            $fecha_tour = Fecha_tour::create(['fecha' => $this->request->fecha_tour]);
        }
+
+       $registro = Registro::where('id_horario',$this->request->id_horario)->first();
+       $horario = Horario::find($this->request->id_horario);
+
+       $total_pax_en_reserva = $this->request->cantidad_adultos + $this->request->cantidad_niños + $this->request->cantidad_niños_gratis;
+
+       if($registro && ( $registro->cantidad_reservas + $total_pax_en_reserva ) > $horario->capacidad_maxima){
+           return redirect('/agregar_reserva')->with('limite', 'Se ha exedido el limite para esta hora');
+       }
+
+       if($total_pax_en_reserva > $horario->capacidad_maxima){
+            return redirect('/agregar_reserva')->with('limite', 'Se ha exedido el limite para esta hora');
+       }
+
+       
        $validator = Validator::make($this->request->all(), $this->reglasValidacion, $this->mensajesValidacion);
 
        if($validator->fails()){
@@ -72,6 +89,20 @@ class ReservacionController extends Controller
                'id_fecha_tour'          => $fecha_tour->id,
                'factura'                => $this->request->factura || null,
            ]);
+
+           if($registro){
+                Registro::find($registro->id)->update([
+                    'id_horario'        => $this->request->id_horario,
+                    'id_fecha'          => $fecha_tour->id,
+                    'cantidad_reservas' => $registro->cantidad_reservas + $total_pax_en_reserva
+                ]);
+           }else{
+               Registro::create([
+                    'id_horario'        => $this->request->id_horario,
+                    'id_fecha'          => $fecha_tour->id,
+                    'cantidad_reservas' => $total_pax_en_reserva
+               ]);
+           }
        }
 
        return redirect('/admin')->with("Mensaje","resserva creada");
