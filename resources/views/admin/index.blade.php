@@ -8,6 +8,22 @@
             <a class="btn btn-info " href=" {{ route('reservas.agregar') }} ">agregar</a>
         </section>
         <section class="card-body">
+            <section class="d-flex justify-content-between mb-4 align-items-center">
+                <section class="d-flex align-items-center">
+                    <p>Filtrar por fecha</p>
+                    <form class="d-flex ml-2" action="/admin?" method="get">
+                        <input
+                            @if (request()->query() && isset(request()->query()['fecha']))
+                                value="{{request()->query()['fecha']}}"
+                            @endif 
+                            type="date" name="fecha" class="form-control">
+                        <button class="btn btn-info">filtrar</button>
+                    </form>
+                </section>
+                @if (request()->query())
+                    <a href="/admin" class="btn btn-secondary btn-sm">Eliminar filtro</a>
+                @endif
+            </section>
             <table id="reservationTable" class="table table-responsive table-striped">
                 <thead>
                     <th>#</th>

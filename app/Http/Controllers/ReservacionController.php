@@ -116,7 +116,7 @@ class ReservacionController extends Controller
            }
        }
 
-       return redirect('/admin')->with("Mensaje","reserva creada");
+    //    return redirect('/admin')->with("Mensaje","reserva creada");
    }
 
    public function update($id)
