@@ -6,24 +6,22 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     {{-- <meta name="keywords" content="sloths arenal costa rica, sloths habitat, sloths territory la fortuna, sloths and frogs, sloths baby, 
     sloth costa rica, sloths in costa rica, sloths la fortuna, sloth tour la fortuna, sloths la fortuna costa rica , sloth costa rica, sloths pictures, sloths 3 toed, sloths 3 toe, 3 toed sloths, osos perezosos, clima en la fortuna"> --}}
-    <meta name="keywords" content="la fortuna de san carlos,tours san carlos,fortuna tours,costa rica sloths,
-                                    sloth tour la fortuna,sloth tour costa rica,sloth tour,la fortuna sloth tour,tours la fortuna,sloth la fortuna,sloth territory la fortuna,
-                                    tour en la fortuna de san carlos,perezosos en la fortuna de san carlos, el mejor tour en la fortuna,el mejor tour en la fortuna de san carlos"
+    <meta name="keywords" content="{{__('web.keyword1')}}, {{__('web.keyword2')}}, {{__('web.keyword3')}}, {{__('web.keyword4')}}, {{__('web.keyword5')}}, {{__('web.keyword6')}}, {{__('web.keyword7')}}, {{__('web.keyword8')}}, {{__('web.keyword9')}}, {{__('web.keyword10')}}, {{__('web.keyword11')}}, {{__('web.keyword12')}}, {{__('web.keyword13')}}, {{__('web.keyword14')}}"
     <!-- SEO Meta Tags -->
-    <meta name="description" content="El mejor tour de perezosos en La Fortuna de San Carlos">
+    <meta name="description" content=" {{__('web.descripcion')}}">
     <meta name="author" content="LichoDevelopment">
 
     <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
-	<meta property="og:site_name" content="Sloths territory" /> <!-- website name -->
+	<meta property="og:site_name" content="Sloth's territory" /> <!-- website name -->
 	<meta property="og:site" content="https://www.sloths-territory.com" /> <!-- website link -->
-	<meta property="og:title" content="Sloths territory | tour de perezosos"/> <!-- title shown in the actual shared post -->
-	<meta property="og:description" content="Los mejores tours de La Fortuna de San Carlos los encontrarás en Sloths Territory" /> <!-- description shown in the actual shared post -->
+	<meta property="og:title" content="Sloth's territory | tour de perezosos"/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content=" {{__('web.descripcion')}} " /> <!-- description shown in the actual shared post -->
 	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
 	<meta property="og:url" content="https://www.sloths-territory.com" /> <!-- where do you want your post to link to -->
 	<meta property="og:type" content="website" />
 
     <!-- Website Title -->
-    <title>Perezosos en La Fortuna de San Carlos y El mejor tour en La Fortuna</title>
+    <title> {{__('web.titulo')}} </title>
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
