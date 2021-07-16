@@ -19,7 +19,7 @@ class HomeController extends Controller
     {
         $query = $request->query();
         $fecha_seleccionada = '';
-        $reservaciones = [];
+        $reservaciones = Reserva::all();
         
         if($query){
             if($query['fecha']){
@@ -29,8 +29,6 @@ class HomeController extends Controller
                     $reservaciones = Reserva::where('id_fecha_tour',$fecha->id)->get();
                 }
             }
-
-
         }
 
 
