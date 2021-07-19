@@ -37,7 +37,8 @@ class HomeController extends Controller
                                 DB::raw('sum(cantidad_adultos) as adultos'),
                                 DB::raw('sum(cantidad_niños) as niños'),
                                 DB::raw('sum(cantidad_niños_gratis) as niños_gratis'),
-                                DB::raw('sum(comision_agencia) as comision'),
+                                DB::raw('sum(comision_agencia) as comisiones'),
+                                DB::raw('sum(monto_total) as monto_total'),
                                 DB::raw('sum(monto_neto) as monto_neto'),
                                 )
                             ->first();
