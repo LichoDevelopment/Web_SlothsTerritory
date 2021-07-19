@@ -4,43 +4,43 @@
 @section('content')
     <section class="grid_totales">
         <div class="">
-            <div class="card p-3 bg-warning">
-                <h2 class="number"> {{$totales->adultos}} </h2>
+            <div class="card p-3 bg-success text-light">
+                <h2 class="number text-light"> {{$totales->adultos}} </h2>
                 <span class="desc">Adultos</span>
             </div>
         </div>
         <div class="">
-            <div class="card p-3 bg-warning">
-                <h2 class="number"> {{$totales->niños}} </h2>
+            <div class="card p-3 bg-success text-light">
+                <h2 class="number text-light"> {{$totales->niños}} </h2>
                 <span class="desc">Niños</span>
             </div>
         </div>
         <div class="">
-            <div class="card p-3 bg-warning">
-                <h2 class="number"> {{$totales->niños_gratis}} </h2>
+            <div class="card p-3 bg-success text-light">
+                <h2 class="number text-light"> {{$totales->niños_gratis}} </h2>
                 <span class="desc">Niños gratis</span>
             </div>
         </div>
         <div class="">
-            <div class="card p-3 bg-warning">
-                <h2 class="number"> {{$totales->adultos + $totales->niños + $totales->niños_gratis}} </h2>
+            <div class="card p-3 bg-success text-light">
+                <h2 class="number text-light"> {{$totales->adultos + $totales->niños + $totales->niños_gratis}} </h2>
                 <span class="desc">Total personas</span>
             </div>
         </div>
         <div class="">
-            <div class="card p-3 bg-dark text-light">
+            <div class="card p-3 bg-secondary text-light">
                 <h2 class="number text-light"> ${{$totales->comisiones}} </h2>
                 <span class="desc">Total comisiones</span>
             </div>
         </div>
         <div class="">
-            <div class="card p-3 bg-dark text-light">
+            <div class="card p-3 bg-secondary text-light">
                 <h2 class="number text-light"> ${{$totales->monto_total}} </h2>
                 <span class="desc">Monto total</span>
             </div>
         </div>
         <div class="">
-            <div class="card p-3 bg-dark text-light">
+            <div class="card p-3 bg-secondary text-light">
                 <h2 class="number text-light"> ${{$totales->monto_neto}} </h2>
                 <span class="desc">Monto neto</span>
             </div>
