@@ -2,27 +2,92 @@
 
 
 @section('content')
+    <section class="d-flex">
+        <div class="col-md-6 col-lg-3">
+            <div class="card p-3">
+                <h2 class="number">10,368</h2>
+                <span class="desc">Adultos</span>
+                {{-- <div class="icon">
+                    <i class="zmdi zmdi-account-o"></i>
+                </div> --}}
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="card p-3 ">
+                <h2 class="number">388,688</h2>
+                <span class="desc">Niños</span>
+                {{-- <div class="icon">
+                    <i class="zmdi zmdi-shopping-cart"></i>
+                </div> --}}
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="card p-3 ">
+                <h2 class="number">388,688</h2>
+                <span class="desc">Niños gratis</span>
+                {{-- <div class="icon">
+                    <i class="zmdi zmdi-shopping-cart"></i>
+                </div> --}}
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="card p-3 ">
+                <h2 class="number">388,688</h2>
+                <span class="desc">Total</span>
+                {{-- <div class="icon">
+                    <i class="zmdi zmdi-shopping-cart"></i>
+                </div> --}}
+            </div>
+        </div>
+    </section>
     <section class="card rounded">
         <section class="card-header d-flex justify-content-between align-items-center">
-            <h2 class="fw-bold">Reservas del {{ date('Y-m-d')}} </h2>
+            <h2 class="fw-bold">Reservas registradas </h2>
             <a class="btn btn-info " href=" {{ route('reservas.agregar') }} ">agregar</a>
         </section>
         <section class="card-body">
-            <section class="d-flex justify-content-between mb-4 align-items-center">
-                <section class="d-flex align-items-center">
-                    <p>Filtrar por fecha</p>
-                    <form class="d-flex ml-2" action="/admin?" method="get">
-                        <input
-                            @if (request()->query() && isset(request()->query()['fecha']))
-                                value="{{request()->query()['fecha']}}"
-                            @endif 
-                            type="date" name="fecha" class="form-control">
-                        <button class="btn btn-info">filtrar</button>
-                    </form>
-                </section>
+            <section class="d-flex justify-content-between align-items-center mb-3">
+                <button 
+                    class="btn btn-outline-info btn-sm" type="button" data-toggle="collapse" 
+                    data-target="#SeccionFiltros" aria-expanded="false" aria-controls="SeccionFiltros">
+                    Filtros
+                </button>
                 @if (request()->query())
-                    <a href="/admin" class="btn btn-secondary btn-sm">Eliminar filtro</a>
+                    <a href="/admin" class="btn btn-outline-danger btn-sm">Eliminar filtro</a>
                 @endif
+            </section>
+            <section class="collapse" id="SeccionFiltros">
+                <div class="d-flex justify-content-between mb-4 align-items-center">
+                        <form class="form-filtrar" action="/admin?" method="get" id="form-filtrar">
+                            <div>
+                                <label for="fecha-inicio">Fecha de inicio</label>
+                                <input
+                                @if (request()->query() && isset(request()->query()['fechaInicio']))
+                                    value="{{request()->query()['fechaInicio']}}"
+                                @endif 
+                                type="date" name="fechaInicio" class="form-control">
+                            </div>
+                            <div>
+                                <label for="fecha-inicio">Fecha de fin</label>
+                                <input
+                                @if (request()->query() && isset(request()->query()['fechaFin']))
+                                    value="{{request()->query()['fechaFin']}}"
+                                @endif 
+                                type="date" name="fechaFin" class="form-control">
+                            </div>
+                            <div>
+                                <label for="agencia">agencia</label>
+                                <select class="form-control" name="agencia">
+                                    <option value=""></option>
+                                    @foreach ($agencias as $agencia)
+                                    <option value="{{$agencia->id}}"> {{ $agencia->nombre}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <button class="btn btn-info">filtrar</button>
+                        </form>
+                    
+                </div>
             </section>
             <table id="reservationTable" class="table table-responsive table-striped">
                 <thead>
@@ -83,11 +148,19 @@
 
 @section('scripts')
     <script>
-        $(document).ready( function () {
-        $('#reservationTable').DataTable();
-    } );
+    //     $(document).ready( function () {
+    //     $('#reservationTable').DataTable();
+    // } );
 
     const borrarReservasBtn = document.querySelectorAll('.borrar-reserva-btn')
+    const formFiltrar = document.querySelector('#form-filtrar')
+
+    formFiltrar['fechaInicio'].addEventListener('change', ()=>{
+        formFiltrar['fechaFin'].min = formFiltrar['fechaInicio'].value
+        if(!formFiltrar['fechaFin'].value){
+            formFiltrar['fechaFin'].value = formFiltrar['fechaInicio'].value
+        }
+    })
 
     borrarReservasBtn.forEach(btn =>{
         btn.addEventListener('click', event =>{

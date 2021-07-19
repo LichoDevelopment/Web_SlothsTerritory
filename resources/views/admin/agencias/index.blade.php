@@ -210,9 +210,12 @@
                                 "comision": comision,
                             })
                         })
-                        .then(response => response.json())
-                        .then(respuesta => mostrarRespuesta(respuesta))
-                        .catch(response => console.log(response))
+                        .then(respuesta => respuesta.json())
+                        .then(respuesta => {
+                            console.log({respuesta})
+                            mostrarRespuesta(respuesta)
+                        })
+                        .catch(respuesta => console.log(respuesta))
                     }
                 }
             })
@@ -234,6 +237,7 @@
     }
 
     function mostrarRespuesta(respuesta){
+        console.log('|||||||||')
         console.log(respuesta)
         if(respuesta.errors){
             let errores = '';
@@ -254,9 +258,9 @@
                 title: respuesta.message,
                 showConfirmButton: false
             })
-            setTimeout(function(){
-                location.reload();
-            },1500)
+            // setTimeout(function(){
+            //     location.reload();
+            // },1500)
         }
     }
     </script>

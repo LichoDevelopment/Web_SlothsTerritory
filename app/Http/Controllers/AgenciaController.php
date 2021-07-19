@@ -79,7 +79,14 @@ class AgenciaController extends Controller
 
     public function destroy($id)
     {
-        Agencia::destroy($id);
-        return response("", 204);
+        $agencia = Agencia::find($id);
+        if($agencia->reservas()->count() > 0){
+            $response = response(["message" => "la agencia no se pudo borrar"], 422);
+        }else{
+            Agencia::destroy($id);
+            $response =  response(["message" => "agencia eliminada"], 204);
+        }
+
+        return $response;
     }
 }

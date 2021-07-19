@@ -23,7 +23,7 @@ class Agencia extends Model
 
     //Relaciones
     public function reservas(){
-        return $this->hasMany('App\Models\Reserva');
+        return $this->hasMany('App\Models\Reserva','id_agencia');
     }
 
 }

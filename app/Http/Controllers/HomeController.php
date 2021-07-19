@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Agencia;
 use App\Models\Fecha_tour;
 use App\Models\Reserva;
 use App\Models\Reservacion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -18,22 +20,42 @@ class HomeController extends Controller
     public function admin(Request $request)
     {
         $query = $request->query();
-        $fecha_seleccionada = '';
+        $fechaInicio = '';
+        $fechaFin = '';
         $reservaciones = Reserva::all();
+        $agencias = Agencia::all();
+
+        $total_adultos = '';
+        $total_niños = '';
+        $total_niños_gratis = '';
+        $total_pax= '';
+
+        $total_comisiones = '';
         
         if($query){
-            if($query['fecha']){
-                $fecha_seleccionada = $query['fecha'];
-                $fecha = Fecha_tour::where('fecha',$fecha_seleccionada)->first();
-                if($fecha){
-                    $reservaciones = Reserva::where('id_fecha_tour',$fecha->id)->get();
+            if($query['fechaInicio']){
+                $fechaInicio = $query['fechaInicio'];
+                $fechaFin = $query['fechaFin'];
+                $agencia = $query['agencia'] ? $query['agencia'] : '*';
+
+                $fechas = DB::table('fecha_tour')->whereBetween('fecha', [$fechaInicio, $fechaFin])->get();
+
+                $id_fechas = [];
+                
+                foreach($fechas as $fecha){
+                    $id_fechas[] = $fecha->id;
+                }
+
+                if($id_fechas){
+                    $reservaciones = Reserva::whereIn('id_fecha_tour', $id_fechas)->get();
                 }
             }
         }
 
 
 
-        return view('admin.index', compact('reservaciones'));
+
+        return view('admin.index', compact('reservaciones', 'agencias'));
     }
     public function sales($locale)
     {
