@@ -7723,6 +7723,9 @@ section {
 }
 
 @media (max-width: 767px) {
+    .grid_totales{
+        grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    }
     .p-sm-b-0 {
         padding-bottom: 0px;
     }
@@ -7757,6 +7760,9 @@ section {
 }
 
 @media (max-width: 575px) {
+    .grid_totales{
+        grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+    }
     .p-xs-b-0 {
         padding-bottom: 0px;
     }
