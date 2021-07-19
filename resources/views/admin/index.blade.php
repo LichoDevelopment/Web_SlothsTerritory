@@ -2,41 +2,47 @@
 
 
 @section('content')
-    <section class="d-flex">
-        <div class="col-md-6 col-lg-3">
-            <div class="card p-3">
-                <h2 class="number">10,368</h2>
+    <section class="grid_totales">
+        <div class="">
+            <div class="card p-3 bg-warning">
+                <h2 class="number"> {{$totales->adultos}} </h2>
                 <span class="desc">Adultos</span>
-                {{-- <div class="icon">
-                    <i class="zmdi zmdi-account-o"></i>
-                </div> --}}
             </div>
         </div>
-        <div class="col-md-6 col-lg-3">
-            <div class="card p-3 ">
-                <h2 class="number">388,688</h2>
+        <div class="">
+            <div class="card p-3 bg-warning">
+                <h2 class="number"> {{$totales->niños}} </h2>
                 <span class="desc">Niños</span>
-                {{-- <div class="icon">
-                    <i class="zmdi zmdi-shopping-cart"></i>
-                </div> --}}
             </div>
         </div>
-        <div class="col-md-6 col-lg-3">
-            <div class="card p-3 ">
-                <h2 class="number">388,688</h2>
+        <div class="">
+            <div class="card p-3 bg-warning">
+                <h2 class="number"> {{$totales->niños_gratis}} </h2>
                 <span class="desc">Niños gratis</span>
-                {{-- <div class="icon">
-                    <i class="zmdi zmdi-shopping-cart"></i>
-                </div> --}}
             </div>
         </div>
-        <div class="col-md-6 col-lg-3">
-            <div class="card p-3 ">
-                <h2 class="number">388,688</h2>
-                <span class="desc">Total</span>
-                {{-- <div class="icon">
-                    <i class="zmdi zmdi-shopping-cart"></i>
-                </div> --}}
+        <div class="">
+            <div class="card p-3 bg-warning">
+                <h2 class="number"> {{$totales->adultos + $totales->niños + $totales->niños_gratis}} </h2>
+                <span class="desc">Total personas</span>
+            </div>
+        </div>
+        <div class="">
+            <div class="card p-3 bg-dark text-light">
+                <h2 class="number text-light"> ${{$totales->comisiones}} </h2>
+                <span class="desc">Total comisiones</span>
+            </div>
+        </div>
+        <div class="">
+            <div class="card p-3 bg-dark text-light">
+                <h2 class="number text-light"> ${{$totales->monto_total}} </h2>
+                <span class="desc">Monto total</span>
+            </div>
+        </div>
+        <div class="">
+            <div class="card p-3 bg-dark text-light">
+                <h2 class="number text-light"> ${{$totales->monto_neto}} </h2>
+                <span class="desc">Monto neto</span>
             </div>
         </div>
     </section>

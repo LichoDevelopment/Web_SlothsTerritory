@@ -7630,6 +7630,12 @@ section {
     margin-left: 250px;
 }
 
+.grid_totales{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+    column-gap: 1rem;
+}
+
 .form-filtrar{
     display: flex;
     align-items: center;
@@ -7638,6 +7644,7 @@ section {
     flex-wrap: wrap;
     width: 100%;
 }
+
 
 @media (max-width: 630px){
     .form-filtrar{

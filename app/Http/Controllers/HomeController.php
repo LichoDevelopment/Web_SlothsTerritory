@@ -31,8 +31,36 @@ class HomeController extends Controller
         $total_pax= '';
 
         $total_comisiones = '';
+
+        $totales = Reserva::select('*')
+                            ->select(
+                                DB::raw('sum(cantidad_adultos) as adultos'),
+                                DB::raw('sum(cantidad_niños) as niños'),
+                                DB::raw('sum(cantidad_niños_gratis) as niños_gratis'),
+                                DB::raw('sum(comision_agencia) as comision'),
+                                DB::raw('sum(monto_neto) as monto_neto'),
+                                )
+                            ->first();
         
         if($query){
+            if(!$query['fechaInicio'] && $query['agencia']){
+                $id_agencias = [$query['agencia']];
+                $reservaciones = Reserva::select('*')
+                                            ->whereIn('id_agencia',$id_agencias)
+                                            ->get();
+                                            
+                    $totales = Reserva::select('*')
+                                        ->whereIn('id_agencia',$id_agencias)
+                                        ->select(
+                                            DB::raw('sum(cantidad_adultos) as adultos'),
+                                            DB::raw('sum(cantidad_niños) as niños'),
+                                            DB::raw('sum(cantidad_niños_gratis) as niños_gratis'),
+                                            DB::raw('sum(comision_agencia) as comisiones'),
+                                            DB::raw('sum(monto_total) as monto_total'),
+                                            DB::raw('sum(monto_neto) as monto_neto'),
+                                            )
+                                        ->first();
+            }
             if($query['fechaInicio']){
                 $fechaInicio = $query['fechaInicio'];
                 $fechaFin = $query['fechaFin'];
@@ -59,6 +87,19 @@ class HomeController extends Controller
                                             ->whereIn('id_fecha_tour', $id_fechas)
                                             ->whereIn('id_agencia',$id_agencias)
                                             ->get();
+                                            
+                    $totales = Reserva::select('*')
+                                        ->whereIn('id_fecha_tour', $id_fechas)
+                                        ->whereIn('id_agencia',$id_agencias)
+                                        ->select(
+                                            DB::raw('sum(cantidad_adultos) as adultos'),
+                                            DB::raw('sum(cantidad_niños) as niños'),
+                                            DB::raw('sum(cantidad_niños_gratis) as niños_gratis'),
+                                            DB::raw('sum(comision_agencia) as comisiones'),
+                                            DB::raw('sum(monto_total) as monto_total'),
+                                            DB::raw('sum(monto_neto) as monto_neto'),
+                                            )
+                                        ->first();
                 }
             }
         }
@@ -66,7 +107,7 @@ class HomeController extends Controller
 
 
 
-        return view('admin.index', compact('reservaciones', 'agencias'));
+        return view('admin.index', compact('reservaciones', 'agencias', 'totales'));
     }
     public function sales($locale)
     {
