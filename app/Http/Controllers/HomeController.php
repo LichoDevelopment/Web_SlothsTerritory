@@ -36,7 +36,15 @@ class HomeController extends Controller
             if($query['fechaInicio']){
                 $fechaInicio = $query['fechaInicio'];
                 $fechaFin = $query['fechaFin'];
-                $agencia = $query['agencia'] ? $query['agencia'] : '*';
+                $id_agencias = [];
+
+                if($query['agencia']){
+                    $id_agencias = [$query['agencia']];
+                }else{
+                    foreach($agencias as $agencia){
+                        $id_agencias[] = $agencia->id;
+                    }
+                }
 
                 $fechas = DB::table('fecha_tour')->whereBetween('fecha', [$fechaInicio, $fechaFin])->get();
 
@@ -47,7 +55,10 @@ class HomeController extends Controller
                 }
 
                 if($id_fechas){
-                    $reservaciones = Reserva::whereIn('id_fecha_tour', $id_fechas)->get();
+                    $reservaciones = Reserva::select('*')
+                                            ->whereIn('id_fecha_tour', $id_fechas)
+                                            ->whereIn('id_agencia',$id_agencias)
+                                            ->get();
                 }
             }
         }
