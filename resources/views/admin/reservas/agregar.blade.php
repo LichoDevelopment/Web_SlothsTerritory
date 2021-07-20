@@ -107,7 +107,7 @@
                     </article>
                     <article class="col-6">
                         <label for="factura">Factura</label>
-                        <input type="text" min="0" name="factura" class="form-control">
+                        <input type="text"  name="factura" class="form-control">
                     </article>
                </section>
                <button class="btn btn-lg btn-success btn-block">Agregar</button>

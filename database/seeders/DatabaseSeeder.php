@@ -213,13 +213,13 @@ class DatabaseSeeder extends Seeder
         $registro = new Registro();
         $registro->id_horario = "1"; // 8 a.m
         $registro->id_fecha = "1";
-        $registro->cantidad_reservas = "1";
+        $registro->cantidad_reservas = "5";
         $registro->save();
 
         $registro2 = new Registro();
         $registro2->id_horario = "2"; // 8 a.m
         $registro2->id_fecha = "1";
-        $registro2->cantidad_reservas = "1";
+        $registro2->cantidad_reservas = "3";
         $registro2->save();
 
 

@@ -155,7 +155,7 @@
                     <article class="col-6">
                         <label for="factura">Factura</label>
                         <input 
-                            type="text" min="0" name="factura" class="form-control"
+                            type="text"  name="factura" class="form-control"
                             value="{{$reserva->factura}}">
                     </article>
                </section>
