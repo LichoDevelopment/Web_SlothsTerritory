@@ -27,16 +27,16 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/fontawesome-all.css" rel="stylesheet">
-    <link href="css/swiper.css" rel="stylesheet">
-	<link href="css/magnific-popup.css" rel="stylesheet">
-	<link href="css/variables.css" rel="stylesheet">
-	<link href="css/styles.css" rel="stylesheet">
-	<link href="css/responsive.css" rel="stylesheet">
+    <link href=" {{asset('css/bootstrap.css')}} " rel="stylesheet">
+    <link href=" {{asset('css/fontawesome-all.css')}} " rel="stylesheet">
+    <link href=" {{asset('css/swiper.css')}} " rel="stylesheet">
+	<link href=" {{asset('css/magnific-popup.css')}} " rel="stylesheet">
+	<link href=" {{asset('css/variables.css')}} " rel="stylesheet">
+	<link href=" {{asset('css/styles.css')}} " rel="stylesheet">
+	<link href=" {{asset('css/responsive.css')}} " rel="stylesheet">
 
 	<!-- Favicon  -->
-    <link rel="icon" href="images/favicon.png">
+    <link rel="icon" href=" {{asset('images/favicon.png')}} ">
 </head>
 <body data-spy="scroll" data-target=".fixed-top">
     
@@ -240,15 +240,15 @@
     </a>
 
     <!-- Scripts -->
-    <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
-    <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
-    <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-    <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
-    <script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
-    <script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
-    <script src="js/morphext.min.js"></script> <!-- Morphtext rotating text in the header -->
-    <script src="js/isotope.pkgd.min.js"></script> <!-- Isotope for filter -->
-    <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
-    <script src="js/scripts.js"></script> <!-- Custom scripts -->
+    <script src=" {{ asset('js/jquery.min.js')}} "></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src=" {{ asset('js/popper.min.js')}} "></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src=" {{ asset('js/bootstrap.min.js')}} "></script> <!-- Bootstrap framework -->
+    <script src=" {{ asset('js/jquery.easing.min.js')}} "></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src=" {{ asset('js/swiper.min.js')}} "></script> <!-- Swiper for image and text sliders -->
+    <script src=" {{ asset('js/jquery.magnific-popup.js')}} "></script> <!-- Magnific Popup for lightboxes -->
+    <script src=" {{ asset('js/morphext.min.js')}} "></script> <!-- Morphtext rotating text in the header -->
+    <script src=" {{ asset('js/isotope.pkgd.min.js')}} "></script> <!-- Isotope for filter -->
+    <script src=" {{ asset('js/validator.min.js')}} "></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src=" {{ asset('js/scripts.js')}} "></script> <!-- Custom scripts -->
 </body>
 </html>
