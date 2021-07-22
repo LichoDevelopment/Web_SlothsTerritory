@@ -59,6 +59,8 @@ Route::middleware(['auth'])->group(function () {
 /**Public routes */
 
 Route::redirect('/', '/es');
+Route::redirect('/privacy-policy', '/es/terms-conditions');
+Route::redirect('/terms-conditions', '/es/terms-conditions');
 Route::group(['prefix'=>'{locale}', 'where'=> ['locale'=> 'es|en']],function () use ($router) {
     Route::get('/', 'HomeController@home')->name('home');
     Route::get('/privacy-policy', 'HomeController@privacy')->name('privacy-policy');
