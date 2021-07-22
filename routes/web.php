@@ -19,7 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', 'HomeController@admin')->name('admin.index');
-    Route::get('/sales', 'HomeController@sales')->name('admin.sales');
+    // Route::get('/sales', 'HomeController@sales')->name('admin.sales');
+    Route::get('/registro', 'RegistroController@index')->name('admin.registro');
     
     Route::get('/agregar_reserva', 'AdminController@agregarReserva')->name('reservas.agregar');
     Route::get('/editar_reserva/{id}', 'AdminController@editarReserva')->name('reservas.editar');
@@ -44,6 +45,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/precio', 'PrecioController@store');
     Route::put('/precio/{id}', 'PrecioController@update');
     Route::delete('/precio/{id}', 'PrecioController@destroy');
+
+
     
     // Route::post('/agencia', 'AgenciaController@store');
     // Route::put('/agencia', 'AgenciaController@update');
