@@ -958,8 +958,8 @@
 
                         <!-- Contact Form -->
                         
-                        <form action="{{ route('mensaje.guardar') }}" method="post" data-toggle="validator" data-focus="false">
-                        {{-- <form id="formularioMensaje" data-toggle="validator" data-focus="false"> --}}
+                        {{-- <form action="{{ route('mensaje.guardar') }}" method="post" data-toggle="validator" data-focus="false"> --}}
+                        <form id="formularioMensaje" data-toggle="validator" data-focus="false">
                             <div class="form-group">
                                 <input type="text" name="nombre" class="form-control-input" id="nombre" required>
                                 <label class="label-control" for="nombre">{{__('formulario.nombre')}}</label>
