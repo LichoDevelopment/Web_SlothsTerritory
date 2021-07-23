@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', 'HomeController@admin')->name('admin.index');
-    // Route::get('/sales', 'HomeController@sales')->name('admin.sales');
     Route::get('/registro', 'RegistroController@index')->name('admin.registro');
     
     Route::get('/agregar_reserva', 'AdminController@agregarReserva')->name('reservas.agregar');
@@ -64,6 +63,7 @@ Route::middleware(['auth'])->group(function () {
 Route::redirect('/', '/es');
 Route::redirect('/privacy-policy', '/es/terms-conditions');
 Route::redirect('/terms-conditions', '/es/terms-conditions');
+
 Route::group(['prefix'=>'{locale}', 'where'=> ['locale'=> 'es|en']],function () use ($router) {
     Route::get('/', 'HomeController@home')->name('home');
     Route::get('/privacy-policy', 'HomeController@privacy')->name('privacy-policy');

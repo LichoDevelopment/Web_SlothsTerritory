@@ -8,6 +8,7 @@ use App\Models\Reserva;
 use App\Models\Reservacion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller

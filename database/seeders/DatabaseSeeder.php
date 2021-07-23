@@ -27,11 +27,11 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         $rol_admin = new Role();
-        $rol_admin->name = 'admin';
+        $rol_admin->nombre = 'admin';
         $rol_admin->save();
 
         $rol_empleado = new Role();
-        $rol_empleado->name = 'empleado';
+        $rol_empleado->nombre = 'empleado';
         $rol_empleado->save();
 
         // USUARIOS

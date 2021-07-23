@@ -20,7 +20,7 @@
                         @foreach ($registros as $registro)
                         <tr>
                             <td> {{$loop->index + 1}} </td>
-                            <td> {{$registro->fecha_tour}} </td>
+                            <td> {{$registro->fecha_tour->fecha}} </td>
                             <td> {{$registro->horario->tours->nombre }} </td>
                             <td> {{$registro->horario->hora }} </td>
                             <td> {{$registro->cantidad_reservas }} </td>
