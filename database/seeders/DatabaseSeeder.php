@@ -35,26 +35,26 @@ class DatabaseSeeder extends Seeder
         $rol_empleado->save();
 
         // USUARIOS
-        // $Usuario = new User();
-        // $Usuario->name = "Licho";
-        // $Usuario->email = "licho@gmail.com";
-        // $Usuario->password = '$2y$10$bcbD6Os4ZNBjzybxgGCAtuRs5DL14YwPHB5cDbSq1dIXzFMxAOQeO'; //123456
-        // $Usuario->rol_id = 1;
-        // $Usuario->save();
+        $Usuario = new User();
+        $Usuario->name = "Licho";
+        $Usuario->email = "licho@gmail.com";
+        $Usuario->password = '$2y$10$1siuqOHRVlGPx9AzXs2hdOJ6zLH46rt/yd1lE5zqjSDdeugHlPmU.'; //123456
+        $Usuario->rol_id = 1;
+        $Usuario->save();
 
-        // $Usuario2 = new User();
-        // $Usuario2->name = "test";
-        // $Usuario2->email = "test@mail.com";
-        // $Usuario2->password = '$2y$10$g5OX3HHhvCVjKB4oBIE1melvJ0iTw14VznfEyzsICY5.'; //123456
-        // $Usuario2->rol_id = 2;
-        // $Usuario2->save();
+        $Usuario2 = new User();
+        $Usuario2->name = "Keilor";
+        $Usuario2->email = "keilor1997@icloud.com";
+        $Usuario2->password = '$2y$10$584v9mjduMnzYC4uZhMzr.DZtjiOBCJh3F//bI6Uu7YKB8jpybLY.'; //123456
+        $Usuario2->rol_id = 2;
+        $Usuario2->save();
 
-        // $Usuario3 = new User();
-        // $Usuario3->name = "keilor";
-        // $Usuario3->email = "keilor@gmail.com";
-        // $Usuario3->password = '$2y$10$g5OX3HHhvCVjKB4oBIE1melvJ0iTw14VznfEyzsICY5.'; //123456
-        // $Usuario3->rol_id = 1;
-        // $Usuario3->save();
+        $Usuario3 = new User();
+        $Usuario3->name = "Sloths Territory";
+        $Usuario3->email = "slothsterritory@gmail.com";
+        $Usuario3->password = '$2y$10$EA2PzC/yZJpfsB8dAaHcTOR/AJsw5e9gWf5lsnMN.VvRakQEvt4s6'; //SlothsTerritory2021
+        $Usuario3->rol_id = 1;
+        $Usuario3->save();
 
 
         // TOURS
