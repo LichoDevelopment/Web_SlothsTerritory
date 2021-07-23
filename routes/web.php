@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', 'HomeController@admin')->name('admin.index');
-    // Route::get('/sales', 'HomeController@sales')->name('admin.sales');
     Route::get('/registro', 'RegistroController@index')->name('admin.registro');
     
     Route::get('/agregar_reserva', 'AdminController@agregarReserva')->name('reservas.agregar');
@@ -29,22 +28,26 @@ Route::middleware(['auth'])->group(function () {
     
     Route::post('/reservacion', 'ReservacionController@store')->name('reserva.guardar');
     Route::put('/reservacion/{id}', 'ReservacionController@update')->name('reserva.actualizar');
-    Route::delete('/reservacion/{id}', 'ReservacionController@destroy');
     
-    Route::get('/tour', 'TourController@index')->name('admin.tour');
-    Route::post('/tour', 'TourController@store');
-    Route::put('/tour/{id}', 'TourController@update');
-    Route::delete('/tour/{id}', 'TourController@destroy');
-
     Route::get('/agencia', 'AgenciaController@index')->name('admin.agencia');
     Route::post('/agencia', 'AgenciaController@store');
     Route::put('/agencia/{id}', 'AgenciaController@update');
-    Route::delete('/agencia/{id}', 'AgenciaController@destroy');
     
-    Route::get('/precio', 'PrecioController@index')->name('admin.precio');
-    Route::post('/precio', 'PrecioController@store');
-    Route::put('/precio/{id}', 'PrecioController@update');
-    Route::delete('/precio/{id}', 'PrecioController@destroy');
+    Route::middleware(['admin'])->group(function () {
+        Route::delete('/reservacion/{id}', 'ReservacionController@destroy');
+
+        Route::get('/tour', 'TourController@index')->name('admin.tour');
+        Route::post('/tour', 'TourController@store');
+        Route::put('/tour/{id}', 'TourController@update');
+        Route::delete('/tour/{id}', 'TourController@destroy');
+    
+        Route::delete('/agencia/{id}', 'AgenciaController@destroy');
+        
+        Route::get('/precio', 'PrecioController@index')->name('admin.precio');
+        Route::post('/precio', 'PrecioController@store');
+        Route::put('/precio/{id}', 'PrecioController@update');
+        Route::delete('/precio/{id}', 'PrecioController@destroy');
+    });
 
 
     
@@ -64,6 +67,7 @@ Route::middleware(['auth'])->group(function () {
 Route::redirect('/', '/es');
 Route::redirect('/privacy-policy', '/es/terms-conditions');
 Route::redirect('/terms-conditions', '/es/terms-conditions');
+
 Route::group(['prefix'=>'{locale}', 'where'=> ['locale'=> 'es|en']],function () use ($router) {
     Route::get('/', 'HomeController@home')->name('home');
     Route::get('/privacy-policy', 'HomeController@privacy')->name('privacy-policy');

@@ -5,7 +5,7 @@
 
         <section class="card">
             <section class="card-header d-flex justify-content-between align-items-center">
-                <h2>Registros</h2>
+                <h2>Registros </h2>
             </section>
             <section class="card-body">
                 <table class="table" id="tablaRegistros">
@@ -20,7 +20,7 @@
                         @foreach ($registros as $registro)
                         <tr>
                             <td> {{$loop->index + 1}} </td>
-                            <td> {{$registro->fecha_tour}} </td>
+                            <td> {{$registro->fecha_tour->fecha}} </td>
                             <td> {{$registro->horario->tours->nombre }} </td>
                             <td> {{$registro->horario->hora }} </td>
                             <td> {{$registro->cantidad_reservas }} </td>

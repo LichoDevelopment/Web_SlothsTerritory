@@ -28,6 +28,6 @@ class Registro extends Model
     }
     public function fecha_tour()
     {
-        return $this->belongsTo('\App\Models\Fecha_tour','id_fecha_tour');
+        return $this->belongsTo('\App\Models\Fecha_tour','id_fecha');
     }
 }
