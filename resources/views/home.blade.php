@@ -960,17 +960,17 @@
                         
                         <form action="{{ route('mensaje.guardar') }}" method="post" data-toggle="validator" data-focus="false">
                             <div class="form-group">
-                                <input type="text" class="form-control-input" id="nombre" required>
+                                <input type="text" name="nombre" class="form-control-input" id="nombre" required>
                                 <label class="label-control" for="nombre">{{__('formulario.nombre')}}</label>
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control-input" id="correo" required>
+                                <input type="text" name="correo" class="form-control-input" id="correo" required>
                                 <label class="label-control" for="correo">{{__('formulario.correo')}}</label>
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control-textarea" id="mensaje" required></textarea>
+                                <textarea class="form-control-textarea" name="mensaje" id="mensaje" required></textarea>
                                 <label class="label-control" for="mensaje">{{__('formulario.mensaje')}}</label>
                                 <div class="help-block with-errors"></div>
                             </div>

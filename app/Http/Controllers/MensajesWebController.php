@@ -55,7 +55,7 @@ class MensajesWebController extends Controller
         ]);
         
 
-        return $response;
+        // return View('home',['es']);
     }
 
     /**
