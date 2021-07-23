@@ -158,9 +158,9 @@
 
 @section('scripts')
     <script>
-    //     $(document).ready( function () {
-    //     $('#reservationTable').DataTable();
-    // } );
+        $(document).ready( function () {
+        $('#reservationTable').DataTable();
+    } );
 
     const borrarReservasBtn = document.querySelectorAll('.borrar-reserva-btn')
     const formFiltrar = document.querySelector('#form-filtrar')
