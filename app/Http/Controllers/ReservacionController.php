@@ -96,7 +96,7 @@ class ReservacionController extends Controller
                'id_horario'             => $this->request->id_horario,
                'id_precio'              => $this->request->id_precio,
                'id_fecha_tour'          => $fecha_tour->id,
-               'factura'                => $this->request->factura || null,
+               'factura'                => $this->request->factura,
            ]);
 
            if($registro){
@@ -167,7 +167,7 @@ class ReservacionController extends Controller
                 'id_horario'             => $this->request->id_horario,
                 'id_precio'              => $this->request->id_precio,
                 'id_fecha_tour'          => $fecha_tour->id,
-                'factura'                => $this->request->factura || null,
+                'factura'                => $this->request->factura,
             ]);
 
             $reserva->save();
