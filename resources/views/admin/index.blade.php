@@ -2,50 +2,52 @@
 
 
 @section('content')
-    <section class="grid_totales">
-        <div class="">
-            <div class="card p-3 bg-success text-light">
-                <h2 class="number text-light"> {{$totales->adultos}} </h2>
-                <span class="desc">Adultos</span>
+    @if (rol_usuario()->id === 1)
+        <section class="grid_totales">
+            <div class="">
+                <div class="card p-3 bg-success text-light">
+                    <h2 class="number text-light"> {{$totales->adultos}} </h2>
+                    <span class="desc">Adultos</span>
+                </div>
             </div>
-        </div>
-        <div class="">
-            <div class="card p-3 bg-success text-light">
-                <h2 class="number text-light"> {{$totales->niños}} </h2>
-                <span class="desc">Niños</span>
+            <div class="">
+                <div class="card p-3 bg-success text-light">
+                    <h2 class="number text-light"> {{$totales->niños}} </h2>
+                    <span class="desc">Niños</span>
+                </div>
             </div>
-        </div>
-        <div class="">
-            <div class="card p-3 bg-success text-light">
-                <h2 class="number text-light"> {{$totales->niños_gratis}} </h2>
-                <span class="desc">Niños gratis</span>
+            <div class="">
+                <div class="card p-3 bg-success text-light">
+                    <h2 class="number text-light"> {{$totales->niños_gratis}} </h2>
+                    <span class="desc">Niños gratis</span>
+                </div>
             </div>
-        </div>
-        <div class="">
-            <div class="card p-3 bg-success text-light">
-                <h2 class="number text-light"> {{$totales->adultos + $totales->niños + $totales->niños_gratis}} </h2>
-                <span class="desc">Total personas</span>
+            <div class="">
+                <div class="card p-3 bg-success text-light">
+                    <h2 class="number text-light"> {{$totales->adultos + $totales->niños + $totales->niños_gratis}} </h2>
+                    <span class="desc">Total personas</span>
+                </div>
             </div>
-        </div>
-        <div class="">
-            <div class="card p-3 bg-secondary text-light">
-                <h2 class="number text-light"> ${{$totales->comisiones}} </h2>
-                <span class="desc">Total comisiones</span>
+            <div class="">
+                <div class="card p-3 bg-secondary text-light">
+                    <h2 class="number text-light"> ${{$totales->comisiones}} </h2>
+                    <span class="desc">Total comisiones</span>
+                </div>
             </div>
-        </div>
-        <div class="">
-            <div class="card p-3 bg-secondary text-light">
-                <h2 class="number text-light"> ${{$totales->monto_total}} </h2>
-                <span class="desc">Monto total</span>
+            <div class="">
+                <div class="card p-3 bg-secondary text-light">
+                    <h2 class="number text-light"> ${{$totales->monto_total}} </h2>
+                    <span class="desc">Monto total</span>
+                </div>
             </div>
-        </div>
-        <div class="">
-            <div class="card p-3 bg-secondary text-light">
-                <h2 class="number text-light"> ${{$totales->monto_neto}} </h2>
-                <span class="desc">Monto neto</span>
+            <div class="">
+                <div class="card p-3 bg-secondary text-light">
+                    <h2 class="number text-light"> ${{$totales->monto_neto}} </h2>
+                    <span class="desc">Monto neto</span>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
     <section class="card rounded">
         <section class="card-header d-flex justify-content-between align-items-center">
             <h2 class="fw-bold">Reservas registradas </h2>
@@ -135,7 +137,11 @@
                             <td> {{$reservacion->monto_neto}} </td>
                             <td> {{$reservacion->factura}} </td>
                             <td> {{$reservacion->created_at}} </td>
-                            <td> {{$reservacion->estado->nombre}} </td>
+                            <td> 
+                                <button class="btn btn-sm btn-info">
+                                    {{$reservacion->estado->nombre}}
+                                </button>
+                            </td>
                             <td class="btn-group">
                                 <a href="{{ route('reservas.editar', ['id'=> $reservacion->id]) }}" class="btn btn-sm btn-warning">Editar</a>
                                 
