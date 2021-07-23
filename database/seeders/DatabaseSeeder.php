@@ -9,6 +9,7 @@ use App\Models\Horario;
 use App\Models\Precio;
 use App\Models\Registro;
 use App\Models\Reserva;
+use App\Models\Role;
 use App\Models\Tour;
 use App\Models\User;
 use Dotenv\Util\Regex;
@@ -25,23 +26,34 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
+        $rol_admin = new Role();
+        $rol_admin->name = 'admin';
+        $rol_admin->save();
+
+        $rol_empleado = new Role();
+        $rol_empleado->name = 'empleado';
+        $rol_empleado->save();
+
         // USUARIOS
         $Usuario = new User();
         $Usuario->name = "Licho";
         $Usuario->email = "licho@gmail.com";
         $Usuario->password = '$2y$10$bcbD6Os4ZNBjzybxgGCAtuRs5DL14YwPHB5cDbSq1dIXzFMxAOQeO'; //123456
+        $Usuario->rol_id = 1;
         $Usuario->save();
 
         $Usuario2 = new User();
         $Usuario2->name = "test";
         $Usuario2->email = "test@mail.com";
         $Usuario2->password = '$2y$10$g5OX3HHhvCVjKB4oBIE1melvJ0iTw14VznfEyzsICY5.'; //123456
+        $Usuario2->rol_id = 2;
         $Usuario2->save();
 
         $Usuario3 = new User();
         $Usuario3->name = "keilor";
         $Usuario3->email = "keilor@gmail.com";
         $Usuario3->password = '$2y$10$g5OX3HHhvCVjKB4oBIE1melvJ0iTw14VznfEyzsICY5.'; //123456
+        $Usuario3->rol_id = 1;
         $Usuario3->save();
 
 
@@ -221,6 +233,8 @@ class DatabaseSeeder extends Seeder
         $registro2->id_fecha = "1";
         $registro2->cantidad_reservas = "3";
         $registro2->save();
+
+        
 
 
     }
