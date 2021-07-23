@@ -138,9 +138,13 @@
                             <td> {{$reservacion->estado->nombre}} </td>
                             <td class="btn-group">
                                 <a href="{{ route('reservas.editar', ['id'=> $reservacion->id]) }}" class="btn btn-sm btn-warning">Editar</a>
-                                <button
-                                    data-id="{{$reservacion->id}}" 
-                                    class="btn btn-sm btn-danger borrar-reserva-btn">Eliminar</button>
+                                
+                                @if (rol_usuario()->id === 1)
+                                    <button
+                                        data-id="{{$reservacion->id}}" 
+                                        class="btn btn-sm btn-danger borrar-reserva-btn">Eliminar</button>
+                            
+                                @endif
                             </td>
                         </tr>
                     @endforeach

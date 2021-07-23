@@ -89,18 +89,21 @@
                             <a href="{{ route('admin.agencia') }}">
                                 <i class="fas fa-calendar-alt"></i>Agencias</a>
                         </li>
-                        <li class="{{ Route::is('admin.tours') ? 'active' : '' }} ">
-                            <a href="{{ route('admin.tours') }}">
-                                <i class="fas fa-calendar-alt"></i>Tours</a>
-                        </li>
-                        <li class="{{ Route::is('admin.precio') ? 'active' : '' }} ">
-                            <a href="{{ route('admin.precio') }}">
-                                <i class="fas fa-calendar-alt"></i>Precios</a>
-                        </li>
-                        <li class="{{ Route::is('admin.horario') ? 'active' : '' }} ">
-                            <a href="{{ route('admin.horario') }}">
-                                <i class="fas fa-calendar-alt"></i>Horarios</a>
-                        </li>
+                        @if ( rol_usuario()->id == 1)
+                            <li class="{{ Route::is('admin.tours') ? 'active' : '' }} ">
+                                <a href="{{ route('admin.tours') }}">
+                                    <i class="fas fa-calendar-alt"></i>Tours</a>
+                            </li>
+                            <li class="{{ Route::is('admin.precio') ? 'active' : '' }} ">
+                                <a href="{{ route('admin.precio') }}">
+                                    <i class="fas fa-calendar-alt"></i>Precios</a>
+                            </li>
+                            <li class="{{ Route::is('admin.horario') ? 'active' : '' }} ">
+                                <a href="{{ route('admin.horario') }}">
+                                    <i class="fas fa-calendar-alt"></i>Horarios</a>
+                            </li>
+                            
+                        @endif
                     </ul>
                 </div>
             </nav>
@@ -130,18 +133,21 @@
                             <a href="{{ route('admin.agencia') }}">
                                 <i class="fas fa-calendar-alt"></i>Agencias</a>
                         </li>
-                        <li class="{{ Route::is('admin.tours') ? 'active' : '' }} ">
-                            <a href="{{ route('admin.tours') }}">
-                                <i class="fas fa-calendar-alt"></i>Tours</a>
-                        </li>
-                        <li class="{{ Route::is('admin.precio') ? 'active' : '' }} ">
-                            <a href="{{ route('admin.precio') }}">
-                                <i class="fas fa-calendar-alt"></i>Precios</a>
-                        </li>
-                        <li class="{{ Route::is('admin.horario') ? 'active' : '' }} ">
-                            <a href="{{ route('admin.horario') }}">
-                                <i class="fas fa-calendar-alt"></i>Horarios</a>
-                        </li>
+                        @if (rol_usuario()->id == 1)
+                            <li class="{{ Route::is('admin.tours') ? 'active' : '' }} ">
+                                <a href="{{ route('admin.tours') }}">
+                                    <i class="fas fa-calendar-alt"></i>Tours</a>
+                            </li>
+                            <li class="{{ Route::is('admin.precio') ? 'active' : '' }} ">
+                                <a href="{{ route('admin.precio') }}">
+                                    <i class="fas fa-calendar-alt"></i>Precios</a>
+                            </li>
+                            <li class="{{ Route::is('admin.horario') ? 'active' : '' }} ">
+                                <a href="{{ route('admin.horario') }}">
+                                    <i class="fas fa-calendar-alt"></i>Horarios</a>
+                            </li>
+                            
+                        @endif
                     </ul>
                 </nav>
             </div>

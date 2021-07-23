@@ -5,7 +5,7 @@
 
         <section class="card">
             <section class="card-header d-flex justify-content-between align-items-center">
-                <h2>Registros</h2>
+                <h2>Registros </h2>
             </section>
             <section class="card-body">
                 <table class="table" id="tablaRegistros">

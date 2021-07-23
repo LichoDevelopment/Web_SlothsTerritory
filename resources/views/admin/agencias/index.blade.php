@@ -86,11 +86,14 @@
                         <td> {{$agencia->nombre }} </td>
                         <td> {{$agencia->comision }} </td>
                         <td> 
-                            <button 
-                                data-agencia-id="{{$agencia->id}}"
-                                class="btn btn-sm btn-danger btn-elimiar-agencia">
-                                Eliminar
-                            </button> 
+                            @if (rol_usuario()->id === 1)
+                                <button 
+                                    data-agencia-id="{{$agencia->id}}"
+                                    class="btn btn-sm btn-danger btn-elimiar-agencia">
+                                    Eliminar
+                                </button> 
+                                
+                            @endif
                             <button 
                                 data-agencia-nombre="{{$agencia->nombre}}"
                                 data-agencia-comision="{{$agencia->comision}}"
@@ -237,8 +240,6 @@
     }
 
     function mostrarRespuesta(respuesta){
-        console.log('|||||||||')
-        console.log(respuesta)
         if(respuesta.errors){
             let errores = '';
             Object.entries(respuesta.errors).forEach(error =>{
@@ -258,9 +259,9 @@
                 title: respuesta.message,
                 showConfirmButton: false
             })
-            // setTimeout(function(){
-            //     location.reload();
-            // },1500)
+            setTimeout(function(){
+                location.reload();
+            },1500)
         }
     }
     </script>
