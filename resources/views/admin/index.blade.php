@@ -136,6 +136,15 @@
                             <td> {{$reservacion->factura}} </td>
                             <td> {{$reservacion->created_at}} </td>
                             <td> {{$reservacion->estado->nombre}} </td>
+                            <td>
+                                <button 
+                                data-reservacion-estado="{{$reservacion->estado->nombre}}"
+                                data-reservacion-id="{{$reservacion->id}}"
+                                class="btn btn-sm btn-success btn-actualizar-estado">
+                                Actualizar estado
+                            </button> 
+                            </td>
+                            
                             <td class="btn-group">
                                 <a href="{{ route('reservas.editar', ['id'=> $reservacion->id]) }}" class="btn btn-sm btn-warning">Editar</a>
                                 
@@ -164,6 +173,7 @@
 
     const borrarReservasBtn = document.querySelectorAll('.borrar-reserva-btn')
     const formFiltrar = document.querySelector('#form-filtrar')
+    const botonesActualizarEstado = document.querySelectorAll('.btn-actualizar-estado');
 
     formFiltrar['fechaInicio'].addEventListener('change', ()=>{
         formFiltrar['fechaFin'].min = formFiltrar['fechaInicio'].value
@@ -204,5 +214,84 @@
             })
         })
     })
+
+    botonesActualizarEstado.forEach(btn => {
+        btn.addEventListener('click', event => {
+            event.preventDefault();
+            const id = event.target.dataset.reservacionId;
+            const estado = event.target.dataset.reservacionEstado;
+
+            Swal.fire({
+                html: 
+                `
+                    <h2 class="mx-auto mb-3 ">Editar Estado</h2>
+                ${formularioEstado(estado)}
+                `,
+                showCancelButton: true,
+                confirmButtonText: 'Editar',
+                cancelButtonText: 'Cancelar',
+                confirmButtonColor: '#28A745',
+                cancelButtonColor: "tomato",
+                preConfirm: (response)=>{
+                    if(response){
+                        const form = document.getElementById('formularioEstado')
+                        const estado = form['estado'].value
+                        fetch(`/estado/${id}`,{
+                            method: 'PUT',
+                            headers: {"Content-Type": "application/json"},
+                            body: JSON.stringify({
+                                "estado": estado,
+                            })
+                        })
+                        .then(response => response.json())
+                        .then(respuesta => mostrarRespuesta(respuesta))
+                        .catch(response => console.log(response))
+                    }
+                }
+            })
+        })
+    })
+
+    function formularioEstado(estado = ''){
+        return `
+                <form id="formularioEstado" class="col-10 m-auto" >
+                    <section class="form-group">
+                        <label for="estado">Estado de la reserva</label>
+                        <select class="custom-select" name="estado" required>
+                            <option selected value="">Elija el estado</option>
+                            @foreach ($estados as $estado)
+                                <option value="{{ $estado->id}}"> {{ $estado->nombre}} </option>
+                            @endforeach
+                        </select>
+                    </section>
+                </form>`
+    }
+
+    function mostrarRespuesta(respuesta){
+        console.log(respuesta)
+        if(respuesta.errors){
+            let errores = '';
+            Object.entries(respuesta.errors).forEach(error =>{
+                errores += `
+                <div class="alert alert-danger" role="alert">
+                    ${error[1][0]}
+                </div>
+                `
+            })
+            Swal.fire({
+                icon: 'error',
+                html: errores
+            })
+        }else{
+            Swal.fire({
+                icon: 'success',
+                title: respuesta.message,
+                showConfirmButton: false
+            })
+            setTimeout(function(){
+                location.reload();
+            },1500)
+        }
+    }
     </script>
 @endsection

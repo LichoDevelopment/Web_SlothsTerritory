@@ -77,12 +77,12 @@ class DatabaseSeeder extends Seeder
 
         // Horarios
             // horario tour diurno
-        // $horario = new Horario();
-        // $horario->id_tour = "1";
-        // $horario->hora = "08:00:00";
-        // $horario->capacidad_maxima = "10";
-        // $horario->hora_minima_reservar = "06:00:00";
-        // $horario->save();
+        $horario = new Horario();
+        $horario->id_tour = "1";
+        $horario->hora = "08:00:00";
+        $horario->capacidad_maxima = "10";
+        $horario->hora_minima_reservar = "06:00:00";
+        $horario->save();
         // // horario tour diurno
         // $horario2 = new Horario();
         // $horario2->id_tour = "1";
@@ -125,7 +125,7 @@ class DatabaseSeeder extends Seeder
         $agencia = new Agencia();
         $agencia->nombre ="Directos";
         $agencia->comision = "0";
-        $agencia->con_precio = "0";
+        $agencia->con_precio = "1";
         $agencia->save();
 
         // $agencia2 = new Agencia();
@@ -162,9 +162,9 @@ class DatabaseSeeder extends Seeder
         $precio3->save();
 
         // FECHA
-        // $fecha = new Fecha_tour();
-        // $fecha->fecha = "2021-07-13";
-        // $fecha->save();
+        $fecha = new Fecha_tour();
+        $fecha->fecha = "2021-07-13";
+        $fecha->save();
 
         // $fecha2 = new Fecha_tour();
         // $fecha2->fecha = "2021-07-14";
@@ -184,24 +184,24 @@ class DatabaseSeeder extends Seeder
         // $estado3->save();
 
         // RESERVA
-        // $reserva = new Reserva();
-        // $reserva->id_agencia = "1"; // Reserva  Directos
-        // $reserva->id_tour ="1"; // Tour diurno
-        // $reserva->id_fecha_tour = "1"; // Fecha 14 - 7 - 2021
-        // $reserva->id_horario = "1"; // horarios 8 a.m
+        $reserva = new Reserva();
+        $reserva->id_agencia = "1"; // Reserva  Directos
+        $reserva->id_tour ="1"; // Tour diurno
+        $reserva->id_fecha_tour = "1"; // Fecha 14 - 7 - 2021
+        $reserva->id_horario = "1"; // horarios 8 a.m
         // $reserva->id_precio = "1";  // precio 20 y 15
-        // $reserva->id_estado = "1";
-        // $reserva->nombre_cliente = "Ulises";
-        // $reserva->cantidad_adultos = "2";
-        // $reserva->cantidad_niños = "2";
-        // $reserva->cantidad_niños_gratis = "1";
-        // $reserva->monto_total = "70";
-        // $reserva->descuento = "0";
-        // $reserva->monto_con_descuento = "70";
-        // $reserva->comision_agencia = "0";
-        // $reserva->monto_neto = "70";
-        // $reserva->factura = "null";
-        // $reserva->save();
+        $reserva->id_estado = "1";
+        $reserva->nombre_cliente = "Ulises";
+        $reserva->cantidad_adultos = "2";
+        $reserva->cantidad_niños = "2";
+        $reserva->cantidad_niños_gratis = "1";
+        $reserva->monto_total = "70";
+        $reserva->descuento = "0";
+        $reserva->monto_con_descuento = "70";
+        $reserva->comision_agencia = "0";
+        $reserva->monto_neto = "70";
+        $reserva->factura = "null";
+        $reserva->save();
 
 
 
