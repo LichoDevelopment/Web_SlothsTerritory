@@ -236,7 +236,7 @@
                     if(response){
                         const form = document.getElementById('formularioEstado')
                         const estado = form['estado'].value
-                        fetch(`/estado/${id}`,{
+                        fetch(`/reservacionEstado/${id}`,{
                             method: 'PUT',
                             headers: {"Content-Type": "application/json"},
                             body: JSON.stringify({
@@ -258,7 +258,6 @@
                     <section class="form-group">
                         <label for="estado">Estado de la reserva</label>
                         <select class="custom-select" name="estado" required>
-                            <option selected value="">Elija el estado</option>
                             @foreach ($estados as $estado)
                                 <option value="{{ $estado->id}}"> {{ $estado->nombre}} </option>
                             @endforeach
