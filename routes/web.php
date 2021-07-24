@@ -21,6 +21,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin', 'HomeController@admin')->name('admin.index');
     Route::get('/registro', 'RegistroController@index')->name('admin.registro');
     
+    
+    
     Route::get('/agregar_reserva', 'AdminController@agregarReserva')->name('reservas.agregar');
     Route::get('/editar_reserva/{id}', 'AdminController@editarReserva')->name('reservas.editar');
     Route::get('/agencias', 'AdminController@agencias')->name('admin.agencias');
@@ -28,6 +30,7 @@ Route::middleware(['auth'])->group(function () {
     
     Route::post('/reservacion', 'ReservacionController@store')->name('reserva.guardar');
     Route::put('/reservacion/{id}', 'ReservacionController@update')->name('reserva.actualizar');
+    Route::put('/reservacionEstado/{id}', 'ReservacionController@updateEstado');
     
     Route::get('/agencia', 'AgenciaController@index')->name('admin.agencia');
     Route::post('/agencia', 'AgenciaController@store');
@@ -58,6 +61,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/horario', 'HorarioController@store');
     Route::put('/horario/{id}', 'HorarioController@update');
     Route::delete('/horario/{id}', 'HorarioController@destroy');
+
+    Route::get('/mensaje', 'MensajesWebController@index')->name('admin.mensaje');
+    Route::post('/mensaje', 'MensajesWebController@store')->name('mensaje.guardar');
 
     // Route::resource('agencias', 'AgenciasController');
 });

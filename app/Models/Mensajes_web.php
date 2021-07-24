@@ -5,31 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Agencia extends Model
+class Mensajes_web extends Model
 {
     use HasFactory;
-
-    /**
+        /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $table="agencias";
+    protected $table="mensajes_web";
     protected $primaryKey="id";
     protected $fillable = [
         'nombre',
-        'comision',
-        'con_precio'
+        'correo',
+        'mensaje'
     ];
-
-    //Relaciones
-    public function reservas(){
-        return $this->hasMany('App\Models\Reserva');
-    }
-
-
-
-    public function precio(){
-        return $this->hasMany('App\Models\Precio');
-    }
 }

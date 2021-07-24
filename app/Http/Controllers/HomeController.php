@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Agencia;
+use App\Models\Estado;
 use App\Models\Fecha_tour;
 use App\Models\Reserva;
 use App\Models\Reservacion;
@@ -25,6 +26,7 @@ class HomeController extends Controller
         $fechaFin = '';
         $reservaciones = Reserva::all();
         $agencias = Agencia::all();
+        $estados = Estado::all();
 
         $total_adultos = '';
         $total_niños = '';
@@ -109,7 +111,7 @@ class HomeController extends Controller
 
 
 
-        return view('admin.index', compact('reservaciones', 'agencias', 'totales'));
+        return view('admin.index', compact('reservaciones', 'agencias', 'totales','estados'));
     }
     public function sales($locale)
     {

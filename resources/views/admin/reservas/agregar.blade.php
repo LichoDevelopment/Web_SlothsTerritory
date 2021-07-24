@@ -107,7 +107,7 @@
                     </article>
                     <article class="col-6">
                         <label for="factura">Factura</label>
-                        <input type="text"  name="factura" class="form-control">
+                        <input type="text"  name="factura" id="factura" class="form-control">
                     </article>
                </section>
                <button class="btn btn-lg btn-success btn-block">Agregar</button>
@@ -132,6 +132,7 @@
         const monto_con_descuento   = document.getElementById('monto_con_descuento');
         const monto_neto            = document.getElementById('monto_neto');
         const id_precio             = document.getElementById('id_precio');
+        const factura             = document.getElementById('factura');
         const alerta_limite_exedido = document.getElementById('limite-exedido');
 
         const horariosArr   = JSON.parse(horarios.dataset.horarios)

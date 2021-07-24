@@ -7,6 +7,7 @@ use App\Models\Horario;
 use App\Models\Registro;
 use App\Models\Reserva;
 use App\Models\Reservacion;
+use App\Models\Estado;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -96,7 +97,7 @@ class ReservacionController extends Controller
                'id_horario'             => $this->request->id_horario,
                'id_precio'              => $this->request->id_precio,
                'id_fecha_tour'          => $fecha_tour->id,
-               'factura'                => $this->request->factura || null,
+               'factura'                => $this->request->factura,
            ]);
 
            if($registro){
@@ -117,6 +118,18 @@ class ReservacionController extends Controller
        }
 
        return redirect('/admin')->with("Mensaje","reserva creada");
+   }
+
+   public function updateEstado($id)
+   {
+        $response = response(["message"=> "Estado actualizado"],202);
+
+        Reserva::find($id)->update([
+            'id_estado'     => $this->request->estado,
+        ]);
+    
+
+       return $response;
    }
 
    public function update($id)
@@ -167,7 +180,7 @@ class ReservacionController extends Controller
                 'id_horario'             => $this->request->id_horario,
                 'id_precio'              => $this->request->id_precio,
                 'id_fecha_tour'          => $fecha_tour->id,
-                'factura'                => $this->request->factura || null,
+                'factura'                => $this->request->factura,
             ]);
 
             $reserva->save();
