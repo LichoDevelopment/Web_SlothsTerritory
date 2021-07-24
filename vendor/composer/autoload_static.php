@@ -564,7 +564,7 @@ class ComposerStaticInitbf453a45214e0c38c64018a311241f88
         'App\\Http\\Controllers\\EstadoController' => __DIR__ . '/../..' . '/app/Http/Controllers/EstadoController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\HorarioController' => __DIR__ . '/../..' . '/app/Http/Controllers/HorarioController.php',
-        'App\\Http\\Controllers\\Mensajes_webController' => __DIR__ . '/../..' . '/app/Http/Controllers/Mensajes_webController.php',
+        'App\\Http\\Controllers\\MensajesWebController' => __DIR__ . '/../..' . '/app/Http/Controllers/MensajesWebController.php',
         'App\\Http\\Controllers\\PrecioController' => __DIR__ . '/../..' . '/app/Http/Controllers/PrecioController.php',
         'App\\Http\\Controllers\\RegistroController' => __DIR__ . '/../..' . '/app/Http/Controllers/RegistroController.php',
         'App\\Http\\Controllers\\ReservacionController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReservacionController.php',

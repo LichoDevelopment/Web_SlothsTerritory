@@ -12,6 +12,7 @@
             <table class="table" id="tablaPrecios">
                 <thead>
                     <th>#</th>
+                    <th>Agencia</th>
                     <th>precio adulto</th>
                     <th>precio niños</th>
                     <th>tipo tour</th>
@@ -21,6 +22,7 @@
                     @foreach ($precios as $precio)
                     <tr>
                         <td> {{$loop->index + 1}} </td>
+                        <td> {{$precio->agencia->nombre}}</td>
                         <td> {{$precio->precio_adulto }} </td>
                         <td> {{$precio->precio_niño }} </td>
                         <td> {{$precio->tour->nombre }} </td>
@@ -75,17 +77,37 @@
             preConfirm: (response)=>{
                 if(response){
                     const form = document.getElementById('formularioPrecios')
-                    const precio_adulto = form['precio_adulto'].value
-                    const precio_nino = form['precio_niño'].value
-                    const id_tour = form['tour'].value
+                    const agencia = form['agencia'].value
+
+                    const precio_adulto_diurno = form['precio_adulto_diurno'].value
+                    const precio_nino_diurno = form['precio_niño_diurno'].value
+                    const tipo_tourDiurno = form['tourDiurno'].value
+
+                    const precio_adulto_nocturno = form['precio_adulto_nocturno'].value
+                    const precio_nino_nocturno = form['precio_niño_nocturno'].value
+                    const tipo_tourNocturno = form['tourNocturno'].value
+
+                    const precio_adulto_aves = form['precio_adulto_aves'].value
+                    const precio_nino_aves = form['precio_niño_aves'].value
+                    const tipo_tourAves = form['tourAves'].value
 
                     fetch('/precio',{
                         method: 'POST',
                         headers: {"Content-Type": "application/json"},
                         body: JSON.stringify({
-                            "precio_adulto": precio_adulto,
-                            "precio_niño": precio_nino,
-                            "id_tour": id_tour
+                            "precio_adulto_diurno": precio_adulto_diurno,
+                            "precio_nino_diurno": precio_nino_diurno,
+                            "tipo_tourDiurno": tipo_tourDiurno,
+
+                            "precio_adulto_nocturno": precio_adulto_nocturno,
+                            "precio_nino_nocturno": precio_nino_nocturno,
+                            "tipo_tourNocturno": tipo_tourNocturno,
+
+                            "precio_adulto_aves": precio_adulto_aves,
+                            "precio_nino_aves": precio_nino_aves,
+                            "tipo_tourAves": tipo_tourAves,
+
+                            "agencia": agencia
                         })
                     })
                     .then(response => response.json())
@@ -169,26 +191,84 @@
     function formularioPrecios(adulto = '', nino = '' ){
         return `
                 <form id="formularioPrecios" class="col-10 m-auto" >
-                    <section class="row mb-3">
-                        <label for="precio_adulto">Precio adultos</label>
-                        <input type="number" min="0" value="${adulto}" class="form-control" name="precio_adulto" />
-                    </section>
-                    <section class="row mb-3">
-                        <label for="precio_niño">Precio niños</label>
-                        <input type="number" min="0" value="${nino}" class="form-control" name="precio_niño" />
-                    </section>
                     <section class="form-group">
-                        <label for="tour">Tour</label>
-                        <select class="custom-select" name="tour" required>
-                            <option selected value="">Elija un tour</option>
-                            @foreach ($tours as $tour)
-                                <option value="{{ $tour->id}}"> {{ $tour->nombre}} </option>
+                        <label for="agencia">Agencia</label>
+                        <select class="custom-select" name="agencia" required>
+                            <option selected value="">Elija la agencia</option>
+                            @foreach ($agencias as $agencia)
+                                <option value="{{ $agencia->id}}"> {{ $agencia->nombre}} </option>
                             @endforeach
                         </select>
                             @if (session('precio'))
                                 <p class="text-danger font-weight-bold error">{{session('precio')[0]}}</p>
                             @endif
                     </section>
+
+                    <section class="form-group">
+                        <label for="tourDiurno">Tour Diurno</label>
+                        <select class="custom-select" name="tourDiurno" required>
+                            @foreach ($tours as $tour)
+                            @if ($tour->id == "1")
+                                <option value="{{ $tour->id}}"> {{ $tour->nombre}} </option>
+                            @endif
+                            @endforeach
+                        </select>
+                            @if (session('precio'))
+                                <p class="text-danger font-weight-bold error">{{session('precio')[0]}}</p>
+                            @endif
+                    </section>
+                    <section class="row mb-3">
+                        <label for="precio_adulto">Precio adultos</label>
+                        <input type="number" min="0" value="${adulto}" class="form-control" name="precio_adulto_diurno" />
+                    </section>
+                    <section class="row mb-3">
+                        <label for="precio_niño">Precio niños</label>
+                        <input type="number" min="0" value="${nino}" class="form-control" name="precio_niño_diurno" />
+                    </section>
+                    <section class="form-group">
+                        <label for="tourNocturno">Tour Nocturno</label>
+                        <select class="custom-select" name="tourNocturno" required>
+                            @foreach ($tours as $tour)
+                            @if ($tour->id == "2")
+                                <option value="{{ $tour->id}}"> {{ $tour->nombre}} </option>
+                            @endif
+                            @endforeach
+                        </select>
+                            @if (session('precio'))
+                                <p class="text-danger font-weight-bold error">{{session('precio')[0]}}</p>
+                            @endif
+                    </section>
+                    <section class="row mb-3">
+                        <label for="precio_adulto">Precio adultos</label>
+                        <input type="number" min="0" value="${adulto}" class="form-control" name="precio_adulto_nocturno" />
+                    </section>
+                    <section class="row mb-3">
+                        <label for="precio_niño">Precio niños</label>
+                        <input type="number" min="0" value="${nino}" class="form-control" name="precio_niño_nocturno" />
+                    </section>
+                    <section class="form-group">
+                        <label for="tourAves">Tour Aves</label>
+                        <select class="custom-select" name="tourAves" required>
+                    
+                            @foreach ($tours as $tour)
+                            @if ($tour->id == "3")
+                                <option value="{{ $tour->id}}"> {{ $tour->nombre}} </option>
+                            @endif
+                            @endforeach
+                        </select>
+                            @if (session('precio'))
+                                <p class="text-danger font-weight-bold error">{{session('precio')[0]}}</p>
+                            @endif
+                    </section>
+                    <section class="row mb-3">
+                        <label for="precio_adulto">Precio adultos</label>
+                        <input type="number" min="0" value="${adulto}" class="form-control" name="precio_adulto_aves" />
+                    </section>
+                    <section class="row mb-3">
+                        <label for="precio_niño">Precio niños</label>
+                        <input type="number" min="0" value="${nino}" class="form-control" name="precio_niño_aves" />
+                    </section>
+
                 </form>`
     }
 

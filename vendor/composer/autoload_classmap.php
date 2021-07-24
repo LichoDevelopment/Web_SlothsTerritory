@@ -19,7 +19,7 @@ return array(
     'App\\Http\\Controllers\\EstadoController' => $baseDir . '/app/Http/Controllers/EstadoController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\HorarioController' => $baseDir . '/app/Http/Controllers/HorarioController.php',
-    'App\\Http\\Controllers\\Mensajes_webController' => $baseDir . '/app/Http/Controllers/Mensajes_webController.php',
+    'App\\Http\\Controllers\\MensajesWebController' => $baseDir . '/app/Http/Controllers/MensajesWebController.php',
     'App\\Http\\Controllers\\PrecioController' => $baseDir . '/app/Http/Controllers/PrecioController.php',
     'App\\Http\\Controllers\\RegistroController' => $baseDir . '/app/Http/Controllers/RegistroController.php',
     'App\\Http\\Controllers\\ReservacionController' => $baseDir . '/app/Http/Controllers/ReservacionController.php',

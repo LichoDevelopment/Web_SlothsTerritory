@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Agencia;
 use App\Models\Precio;
 use App\Models\Horario;
 use App\Models\Tour;
@@ -17,9 +18,19 @@ class PrecioController extends Controller
     private $request;
 
     private $reglasValidacion = [
-        'precio_adulto' => 'required|gt:0',
-        'precio_niño' => 'required|gt:0'
-  
+        'precio_adulto_diurno' => 'required|gt:0',
+        'precio_nino_diurno' => 'required|gt:0',
+        'tipo_tourDiurno' => 'required',
+
+        'precio_adulto_nocturno' => 'required|gt:0',
+        'precio_nino_nocturno' => 'required|gt:0',
+        'tipo_tourNocturno' => 'required',
+
+        'precio_adulto_aves' => 'required|gt:0',
+        'precio_nino_aves' => 'required|gt:0',
+        'tipo_tourAves' => 'required',
+        
+        'agencia' => 'required'  
     ];
 
     private $mensajesValidacion = [
@@ -37,7 +48,8 @@ class PrecioController extends Controller
         $tours = Tour::all();
         $horarios = Horario::all();
         $precios = Precio::all();
-        return view('admin.precios.index', compact('tours','precios'));
+        $agencias = Agencia::all();
+        return view('admin.precios.index', compact('tours','precios','agencias'));
         // return view('admin.precios.index', compact('precios'));
     }
     
@@ -53,15 +65,27 @@ class PrecioController extends Controller
                 "message"   => "Error",
                 "errors"    => $validator->errors()
             ], 422);
+            
         }else{
             Precio::create([
-                'id_tour' => $this->request->id_tour,
-                'precio_adulto' => $this->request->precio_adulto,
-                'precio_niño'   => $this->request->precio_niño,
-                
+                'id_tour' => $this->request->tipo_tourDiurno,
+                'id_agencia' => $this->request->agencia,
+                'precio_adulto' => $this->request->precio_adulto_diurno,
+                'precio_niño'   => $this->request->precio_nino_diurno,
+            ]);
+            Precio::create([
+                'id_tour' => $this->request->tipo_tourNocturno,
+                'id_agencia' => $this->request->agencia,
+                'precio_adulto' => $this->request->precio_adulto_nocturno,
+                'precio_niño'   => $this->request->precio_nino_nocturno,
+            ]);
+            Precio::create([
+                'id_tour' => $this->request->tipo_tourAves,
+                'id_agencia' => $this->request->agencia,
+                'precio_adulto' => $this->request->precio_adulto_aves,
+                'precio_niño'   => $this->request->precio_nino_aves,
             ]);
         }
-
         return $response;
     }
 

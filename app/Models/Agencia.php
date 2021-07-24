@@ -18,12 +18,18 @@ class Agencia extends Model
     protected $primaryKey="id";
     protected $fillable = [
         'nombre',
-        'comision'
+        'comision',
+        'con_precio'
     ];
 
     //Relaciones
     public function reservas(){
-        return $this->hasMany('App\Models\Reserva','id_agencia');
+        return $this->hasMany('App\Models\Reserva');
     }
 
+
+
+    public function precio(){
+        return $this->hasMany('App\Models\Precio');
+    }
 }

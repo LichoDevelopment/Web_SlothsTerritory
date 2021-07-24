@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePreciosTable extends Migration
+class CreateAgenciasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreatePreciosTable extends Migration
      */
     public function up()
     {
-        Schema::create('precios', function (Blueprint $table) {
+        Schema::create('agencias', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_tour');
-            $table->decimal('precio_adulto');
-            $table->decimal('precio_niño');
-
-            $table->foreign('id_tour')->references('id')->on('tours');
-
+            // $table->unsignedBigInteger('id_precio');
+            $table->string('nombre');
+            $table->decimal('comision');
+            $table->boolean('con_precio');
             $table->timestamps();
+
+            // $table->foreign('id_precio')->references('id')->on('precios');
         });
     }
 
@@ -32,6 +32,6 @@ class CreatePreciosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('precios');
+        Schema::dropIfExists('agencias');
     }
 }

@@ -72,25 +72,7 @@ class DatabaseSeeder extends Seeder
         $tour3->save();
         
 
-        // PRECIOS
-            // precios tour diurno
-        // $precio = new Precio();
-        // $precio->id_tour = '1';
-        // $precio->precio_adulto = '20';
-        // $precio->precio_niño = '15';
-        // $precio->save();
-        //     // precios tour nocturno
-        // $precio2 = new Precio();
-        // $precio2->id_tour = '2';
-        // $precio2->precio_adulto = '25';
-        // $precio2->precio_niño = '19';
-        // $precio2->save();
-        //     // precios tour aves
-        // $precio3 = new Precio();
-        // $precio3->id_tour = '3';
-        // $precio3->precio_adulto = '10';
-        // $precio3->precio_niño = '5';
-        // $precio3->save();
+
 
 
         // Horarios
@@ -139,10 +121,11 @@ class DatabaseSeeder extends Seeder
 
 
 
-        // AGENCIAS
+        // // AGENCIAS
         $agencia = new Agencia();
         $agencia->nombre ="Directos";
         $agencia->comision = "0";
+        $agencia->con_precio = "1";
         $agencia->save();
 
         // $agencia2 = new Agencia();
@@ -155,7 +138,28 @@ class DatabaseSeeder extends Seeder
         // $agencia3->comision = "5";
         // $agencia3->save();
 
-
+                // PRECIOS
+            // precios tour diurno
+        $precio = new Precio();
+        $precio->id_tour = '1';
+        $precio->id_agencia = '1';
+        $precio->precio_adulto = '20';
+        $precio->precio_niño = '15';
+        $precio->save();
+        //     // precios tour nocturno
+        $precio2 = new Precio();
+        $precio2->id_tour = '2';
+        $precio2->id_agencia = '1';
+        $precio2->precio_adulto = '25';
+        $precio2->precio_niño = '19';
+        $precio2->save();
+        //     // precios tour aves
+        $precio3 = new Precio();
+        $precio3->id_tour = '3';
+        $precio3->id_agencia = '1';
+        $precio3->precio_adulto = '10';
+        $precio3->precio_niño = '5';
+        $precio3->save();
 
         // FECHA
         // $fecha = new Fecha_tour();
