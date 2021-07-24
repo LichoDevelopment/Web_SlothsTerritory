@@ -125,7 +125,7 @@ class DatabaseSeeder extends Seeder
         $agencia = new Agencia();
         $agencia->nombre ="Directos";
         $agencia->comision = "0";
-        $agencia->con_precio = "1";
+        $agencia->con_precio = "0";
         $agencia->save();
 
         // $agencia2 = new Agencia();

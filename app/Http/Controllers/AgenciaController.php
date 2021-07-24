@@ -48,7 +48,7 @@ class AgenciaController extends Controller
             Agencia::create([
                 'nombre' => $this->request->nombre,
                 'comision' => $this->request->comision,
-                'con_precio' => true,
+                'con_precio' => false,
             ]);
         }
 

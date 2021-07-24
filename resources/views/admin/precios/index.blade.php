@@ -196,7 +196,9 @@
                         <select class="custom-select" name="agencia" required>
                             <option selected value="">Elija la agencia</option>
                             @foreach ($agencias as $agencia)
-                                <option value="{{ $agencia->id}}"> {{ $agencia->nombre}} </option>
+                                @if ($agencia->con_precio == false)
+                                    <option value="{{ $agencia->id}}"> {{ $agencia->nombre}} </option>
+                                @endif
                             @endforeach
                         </select>
                             @if (session('precio'))

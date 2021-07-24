@@ -29,7 +29,7 @@ class PrecioController extends Controller
         'precio_adulto_aves' => 'required|gt:0',
         'precio_nino_aves' => 'required|gt:0',
         'tipo_tourAves' => 'required',
-        
+
         'agencia' => 'required'  
     ];
 
@@ -84,6 +84,9 @@ class PrecioController extends Controller
                 'id_agencia' => $this->request->agencia,
                 'precio_adulto' => $this->request->precio_adulto_aves,
                 'precio_niño'   => $this->request->precio_nino_aves,
+            ]);
+            Agencia::find($this->request->agencia)->update([
+                'con_precio' => true,
             ]);
         }
         return $response;
