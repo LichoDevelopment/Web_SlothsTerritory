@@ -21,11 +21,11 @@ class HomeController extends Controller
     }
     public function admin(Request $request)
     {
-        // DB::select('CALL actualizar_estados');
+        DB::select('CALL actualizar_estados');
         $query = $request->query();
         $fechaInicio = '';
         $fechaFin = '';
-        $reservaciones = Reserva::all();
+        $reservaciones = Reserva::orderBy('id_fecha_tour')->orderBy('id_estado','asc')->get();
         $agencias = Agencia::all();
         $estados = Estado::all();
 
@@ -52,6 +52,8 @@ class HomeController extends Controller
                 $id_agencias = [$query['agencia']];
                 $reservaciones = Reserva::select('*')
                                             ->whereIn('id_agencia',$id_agencias)
+                                            ->orderBy('id_fecha_tour')
+                                            ->orderBy('id_estado','asc')
                                             ->get();
                                             
                     $totales = Reserva::select('*')
@@ -91,6 +93,8 @@ class HomeController extends Controller
                     $reservaciones = Reserva::select('*')
                                             ->whereIn('id_fecha_tour', $id_fechas)
                                             ->whereIn('id_agencia',$id_agencias)
+                                            ->orderBy('id_fecha_tour')
+                                            ->orderBy('id_estado','asc')
                                             ->get();
                                             
                     $totales = Reserva::select('*')
@@ -108,10 +112,7 @@ class HomeController extends Controller
                 }
             }
         }
-
-
-
-
+        
         return view('admin.index', compact('reservaciones', 'agencias', 'totales','estados'));
     }
     public function sales($locale)
