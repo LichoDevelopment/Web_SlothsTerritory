@@ -172,8 +172,12 @@ class DatabaseSeeder extends Seeder
 
         // Estados
         $estado = new Estado();
-        $estado->nombre ="Llegó";
+        $estado->nombre ="Pendiente";
         $estado->save();
+
+        $estado1 = new Estado();
+        $estado1->nombre ="Llegó";
+        $estado1->save();
 
         $estado2 = new Estado();
         $estado2->nombre ="No llegó";
