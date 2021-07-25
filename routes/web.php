@@ -33,10 +33,13 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/reservacionEstado/{id}', 'ReservacionController@updateEstado');
     
     Route::get('/agencia', 'AgenciaController@index')->name('admin.agencia');
-    Route::get('/precios_tour/{agenciaid}/{tourid}', 'AgenciaController@precios_tour')->name('precios.tour');
     Route::post('/agencia', 'AgenciaController@store');
     Route::put('/agencia/{id}', 'AgenciaController@update');
-    
+
+    Route::get('/precios_tour/{agenciaid}/{tourid}', 'AgenciaController@precios_tour')->name('precios.tour');
+    Route::get('/capacidad_maxima/{hora}', 'HorarioController@capacidad_maxima');
+    Route::get('/cantidad_actual/{hora}', 'HorarioController@cantidad_actual');
+
     Route::middleware(['admin'])->group(function () {
         Route::delete('/reservacion/{id}', 'ReservacionController@destroy');
 

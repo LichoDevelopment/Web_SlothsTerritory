@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Horario;
+use App\Models\Registro;
 use App\Models\Tour;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -36,6 +37,19 @@ class HorarioController extends Controller
         $tours = Tour::all();
         $horarios = Horario::all();
         return view('admin.horarios.index', compact('tours','horarios'));
+    }
+
+    public function capacidad_maxima($hora)
+    {
+        $horario = Horario::find($hora);
+
+        return $horario->capacidad_maxima;
+    }
+
+    public function cantidad_actual($hora)
+    {
+        $registro = Registro::where('id_horario',$hora)->first();
+        return $registro->cantidad_reservas;
     }
 
     public function store()

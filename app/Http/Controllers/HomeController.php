@@ -21,6 +21,7 @@ class HomeController extends Controller
     }
     public function admin(Request $request)
     {
+        DB::select('CALL actualiazar_estados');
         $query = $request->query();
         $fechaInicio = '';
         $fechaFin = '';

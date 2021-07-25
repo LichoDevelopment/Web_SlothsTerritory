@@ -68,7 +68,7 @@
                         <label for="id_horario">Hora</label>
                         <select class="custom-select" 
                         name="id_horario" id="horarios" data-horarios="{{$horarios}}" required>
-                             <option selected>Primero debes elegir un tour</option>
+                             <option value="" selected>Primero debes elegir un tour</option>
                         </select>
                     </article>
                </section>
@@ -166,10 +166,12 @@
         cantidad_adulto.addEventListener('change', event =>{
             actualizarPrecio({"cantidad_adultos": cantidad_adultos.value, 
             "cantidad_ninos": cantidad_ninos.value})
+            validarCapacidadMaxima()
         })
         cantidad_ninos.addEventListener('change', event =>{
             actualizarPrecio({"cantidad_adultos": cantidad_adultos.value, 
             "cantidad_ninos": cantidad_ninos.value})
+            validarCapacidadMaxima()
         })
 
         tour.addEventListener('change', async event => {
@@ -203,6 +205,10 @@
             actualizarPrecio({"cantidad_adultos": cantidad_adultos.value, 
             "cantidad_ninos": cantidad_ninos.value})
             
+        })
+
+        horarios.addEventListener('change',async event => {
+            validarCapacidadMaxima()
         })
 
 
@@ -257,6 +263,26 @@
             const consultaJson = await consulta.json()
             const precios = await consultaJson.filter(precio => precio.id_tour == tourId)
             return precios[0]
+        }
+
+        async function validarCapacidadMaxima(){
+            const hora = await obtenerOpcionSeleccionada(horarios)
+            if(hora){
+                const consulta = await fetch(`/capacidad_maxima/${hora}`)
+                const capacidad_maxima = await consulta.json()
+                const consulta2 = await fetch(`/cantidad_actual/${hora}`)
+                const cantidad_actual = await consulta2.json()
+
+                const totalPax = Number(cantidad_adultos.value) + Number(cantidad_ninos.value)
+
+    console.log(capacidad_maxima, totalPax + cantidad_actual)
+                if(capacidad_maxima <= totalPax + cantidad_actual){
+                    console.log('capacidad exedida o igual')
+                }else{
+                    console.log('puedes reservar')
+                }
+
+            }
         }
     </script>
 @endsection
