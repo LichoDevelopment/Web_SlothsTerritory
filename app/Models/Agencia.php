@@ -29,7 +29,7 @@ class Agencia extends Model
 
 
 
-    public function precio(){
-        return $this->hasMany('App\Models\Precio');
+    public function precios(){
+        return $this->hasMany('App\Models\Precio','id_agencia');
     }
 }

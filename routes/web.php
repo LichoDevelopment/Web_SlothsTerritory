@@ -33,6 +33,7 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/reservacionEstado/{id}', 'ReservacionController@updateEstado');
     
     Route::get('/agencia', 'AgenciaController@index')->name('admin.agencia');
+    Route::get('/precios_tour/{agenciaid}/{tourid}', 'AgenciaController@precios_tour')->name('precios.tour');
     Route::post('/agencia', 'AgenciaController@store');
     Route::put('/agencia/{id}', 'AgenciaController@update');
     

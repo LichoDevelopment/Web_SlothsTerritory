@@ -32,6 +32,12 @@ class AgenciaController extends Controller
         return view('admin.agencias.index', compact('agencias'));
     }
 
+    public function precios_tour($agenciaid, $tourid)
+    {
+        $agencia = Agencia::find($agenciaid);
+        return $agencia->precios;
+        
+    }
     public function store()
     {
         $response = response(["message"=> "agencia creada"],201);

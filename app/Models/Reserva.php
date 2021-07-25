@@ -30,7 +30,7 @@ class Reserva extends Model
         'id_agencia',
         'id_tour',
         'id_horario',
-        'id_precio',
+        // 'id_precio',
         'id_fecha_tour',
         'factura',
         'id_estado'

@@ -30,7 +30,7 @@ class ReservacionController extends Controller
        'id_agencia'         => 'required',
        'id_tour'            => 'required',
        'id_horario'         => 'required',
-       'id_precio'          => 'required',
+    //    'id_precio'          => 'required',
     ];
 
     private $mensajesValidacion = [
@@ -95,7 +95,7 @@ class ReservacionController extends Controller
                'id_agencia'             => $this->request->id_agencia,
                'id_tour'                => $this->request->id_tour,
                'id_horario'             => $this->request->id_horario,
-               'id_precio'              => $this->request->id_precio,
+            //    'id_precio'              => $this->request->id_precio,
                'id_fecha_tour'          => $fecha_tour->id,
                'factura'                => $this->request->factura,
            ]);
@@ -178,7 +178,7 @@ class ReservacionController extends Controller
                 'id_agencia'             => $this->request->id_agencia,
                 'id_tour'                => $this->request->id_tour,
                 'id_horario'             => $this->request->id_horario,
-                'id_precio'              => $this->request->id_precio,
+                // 'id_precio'              => $this->request->id_precio,
                 'id_fecha_tour'          => $fecha_tour->id,
                 'factura'                => $this->request->factura,
             ]);

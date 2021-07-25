@@ -5,7 +5,10 @@
 
     <section class="card">
         <section class="card-header">
-            <h1>Editar reserva</h1>
+            <div class="d-flex justify-content-between align-items-center">
+                <h1>Editar reserva</h1>
+                <a href="/admin" class="btn btn-outline-dark btn-sm">Atras</a>
+            </div>
         </section>
         <section class="card-body">
             @if (session('limite'))
@@ -66,39 +69,6 @@
                        </select>
                    </article>
                    <article class="col-6">
-                       <label for="id_horario">Hora</label>
-                       <select class="custom-select" 
-                       name="id_horario" id="horarios" data-horarios="{{$horarios}}" required>
-                            <option selected value="{{$reserva->id_horario}}">
-                                {{$reserva->horario->hora}}
-                            </option>
-                            
-                       </select>
-                   </article>
-               </section>
-               <section class="row mb-3">
-                   <input type="hidden" name="id_precio" id="id_precio" value={{$reserva->id_precio}}>
-                   <article class="col-6">
-                       <label for="precio_adulto">Precio adultos</label>
-                       <input 
-                            type="text" class="form-control" id="precio_adulto" 
-                            value="{{$reserva->precio->precio_adulto}}" disabled>
-                   </article>
-                   <article class="col-6">
-                       <label for="precio_nino">Precio niños</label>
-                       <input 
-                            type="text" class="form-control" id="precio_nino" 
-                            value="{{$reserva->precio->precio_niño}}" disabled>
-                   </article>
-               </section>
-               <section class="row mb-3">
-                   <article class="col-6">
-                        <label for="fecha_tour">Fecha</label>
-                        <input 
-                            type="date" class="form-control" name="fecha_tour" 
-                            value="{{$reserva->fecha_tour->fecha}}" required>
-                   </article>
-                   <article class="col-6">
                         <label for="id_agencia">Agencia</label>
                         <select class="custom-select" name="id_agencia" id="agencia" data-agencias="{{$agencias}}" required>
                             <option selected value="{{$reserva->id_agencia}}">
@@ -111,7 +81,41 @@
                             @endforeach
                         </select>
                     </article>
+                   
                </section>
+               <section class="row mb-3">
+                   <article class="col-6">
+                        <label for="fecha_tour">Fecha</label>
+                        <input 
+                            type="date" class="form-control" name="fecha_tour" 
+                            value="{{$reserva->fecha_tour->fecha}}" required>
+                   </article>
+                   <article class="col-6">
+                        <label for="id_horario">Hora</label>
+                        <select class="custom-select" 
+                        name="id_horario" id="horarios" data-horarios="{{$horarios}}" required>
+                            <option selected value="{{$reserva->id_horario}}">
+                                {{$reserva->horario->hora}}
+                            </option>
+                            
+                        </select>
+                    </article>
+               </section>
+               <section class="row mb-3">
+                    <input type="hidden" name="id_precio" id="id_precio" value={{$reserva->id_precio}}>
+                    <article class="col-6">
+                        <label for="precio_adulto">Precio adultos</label>
+                        <input 
+                            type="text" class="form-control" id="precio_adulto" 
+                            value="" disabled>
+                    </article>
+                    <article class="col-6">
+                        <label for="precio_nino">Precio niños</label>
+                        <input 
+                            type="text" class="form-control" id="precio_nino" 
+                            value="" disabled>
+                    </article>
+                </section>
                <section class="row mb-3">
                     <article class="col-6">
                         <label for="comision_agencia">Comision</label>
@@ -167,120 +171,141 @@
 @endsection
 
 @section('scripts')
-    <script>
-        const horarios              = document.getElementById('horarios');
-        const comision              = document.getElementById('comision');
-        const agencia               = document.getElementById('agencia');
-        const precio_adulto         = document.getElementById('precio_adulto');
-        const precio_nino           = document.getElementById('precio_nino');
-        const cantidad_adulto       = document.getElementById('cantidad_adultos');
-        const cantidad_ninos        = document.getElementById('cantidad_niños');
-        const tour                  = document.getElementById('tour');
-        const monto_total           = document.getElementById('monto_total');
-        const descuento             = document.getElementById('descuento');
-        const monto_con_descuento   = document.getElementById('monto_con_descuento');
-        const monto_neto            = document.getElementById('monto_neto');
-        const id_precio             = document.getElementById('id_precio');
-        const alerta_limite_exedido = document.getElementById('limite-exedido');
+<script>
+    const horarios              = document.getElementById('horarios');
+    const comision              = document.getElementById('comision');
+    const agencia               = document.getElementById('agencia');
+    const precio_adulto         = document.getElementById('precio_adulto');
+    const precio_nino           = document.getElementById('precio_nino');
+    const cantidad_adulto       = document.getElementById('cantidad_adultos');
+    const cantidad_ninos        = document.getElementById('cantidad_niños');
+    const tour                  = document.getElementById('tour');
+    const monto_total           = document.getElementById('monto_total');
+    const descuento             = document.getElementById('descuento');
+    const monto_con_descuento   = document.getElementById('monto_con_descuento');
+    const monto_neto            = document.getElementById('monto_neto');
+    const id_precio             = document.getElementById('id_precio');
+    const factura             = document.getElementById('factura');
+    const alerta_limite_exedido = document.getElementById('limite-exedido');
 
-        const horariosArr   = JSON.parse(horarios.dataset.horarios)
+    const horariosArr   = JSON.parse(horarios.dataset.horarios)
 
-        if(alerta_limite_exedido){
-            setTimeout(() => {
-                alerta_limite_exedido.style.display = 'none';
-            }, 4000);
+    if(alerta_limite_exedido){
+        setTimeout(() => {
+            alerta_limite_exedido.style.display = 'none';
+        }, 4000);
+    }
+
+    comision.addEventListener('change', ()=> actualizarPrecioNeto())
+    comision.addEventListener('keyup', ()=> actualizarPrecioNeto())
+
+    monto_total.addEventListener('change', ()=> actualizarPrecioConDescuento())
+    monto_total.addEventListener('keyup', ()=> actualizarPrecioConDescuento())
+
+    descuento.addEventListener('change', ()=> actualizarPrecioConDescuento())
+    descuento.addEventListener('keyup', ()=> actualizarPrecioConDescuento())
+
+    precio_adulto.addEventListener('change', event =>{
+        actualizarPrecio({"cantidad_adultos": cantidad_adultos.value, 
+            "cantidad_ninos": cantidad_ninos.value})
+    })
+    precio_nino.addEventListener('change', event =>{
+        actualizarPrecio({"cantidad_adultos": cantidad_adultos.value, 
+            "cantidad_ninos": cantidad_ninos.value})
+    })
+    cantidad_adulto.addEventListener('change', event =>{
+        actualizarPrecio({"cantidad_adultos": cantidad_adultos.value, 
+            "cantidad_ninos": cantidad_ninos.value})
+    })
+    cantidad_ninos.addEventListener('change', event =>{
+        actualizarPrecio({"cantidad_adultos": cantidad_adultos.value, 
+            "cantidad_ninos": cantidad_ninos.value})
+    })
+
+    tour.addEventListener('change', async event => {
+        const selectedIndex = event.target.selectedIndex;
+        const selectedOption = event.target.options[selectedIndex]
+        const tourId = selectedOption.value
+        const tourHorarios = horariosArr.filter(horario => horario.id == tourId)
+
+        actualizarPrecio({"cantidad_adultos": cantidad_adultos.value, 
+            "cantidad_ninos": cantidad_ninos.value})
+        actualizarPrecioNeto()
+        horarios.innerHTML = ''
+        tourHorarios.map(horario => {
+            horarios.innerHTML += `<option 
+
+            @foreach ($horarios as $horario)
+                    <option value="{{$horario->id}}"> {{ $horario->hora}} </option>
+            @endforeach
+            </option>`
+        })
+    })
+
+    agencia.addEventListener('change',async event => {
+        const agencias = JSON.parse(event.target.dataset.agencias);
+        const selectedIndex = event.target.selectedIndex;
+        const selectedOption = event.target.options[selectedIndex]
+        const agenciaId = selectedOption.value
+        const comision_agencia = agencias.filter(agencia => agencia.id == agenciaId)[0]
+        comision.value = (Number(cantidad_adultos.value) + Number(cantidad_ninos.value)) * Number(comision_agencia.comision) 
+        actualizarPrecio({"cantidad_adultos": cantidad_adultos.value, 
+        "cantidad_ninos": cantidad_ninos.value})
+        actualizarPrecioNeto()
+        
+    })
+
+    async function actualizarPrecio({cantidad_adultos, cantidad_ninos}){
+        const agenciaId = obtenerOpcionSeleccionada(agencia)
+        const tourId = obtenerOpcionSeleccionada(tour)
+        let precios;
+        if(agenciaId && tourId){
+            precios = await obtenerListaDePrecios(agenciaId, tourId)
         }
-
-        comision.addEventListener('change', ()=> actualizarPrecioNeto())
-        comision.addEventListener('keyup', ()=> actualizarPrecioNeto())
-
-        monto_total.addEventListener('change', ()=> actualizarPrecioConDescuento())
-        monto_total.addEventListener('keyup', ()=> actualizarPrecioConDescuento())
-
-        descuento.addEventListener('change', ()=> actualizarPrecioConDescuento())
-        descuento.addEventListener('keyup', ()=> actualizarPrecioConDescuento())
-
-        precio_adulto.addEventListener('change', event =>{
-            actualizarPrecio({
-                "precio_adulto": precio_adulto.value, "precio_nino": precio_nino.value, 
-                "cantidad_adultos": cantidad_adultos.value, "cantidad_ninos": cantidad_ninos.value})
-        })
-        precio_nino.addEventListener('change', event =>{
-            actualizarPrecio({
-                "precio_adulto": precio_adulto.value, "precio_nino": precio_nino.value, 
-                "cantidad_adultos": cantidad_adultos.value, "cantidad_ninos": cantidad_ninos.value})
-        })
-        cantidad_adulto.addEventListener('change', event =>{
-            actualizarPrecio({
-                "precio_adulto": precio_adulto.value, "precio_nino": precio_nino.value, 
-                "cantidad_adultos": cantidad_adultos.value, "cantidad_ninos": cantidad_ninos.value})
-        })
-        cantidad_ninos.addEventListener('change', event =>{
-            actualizarPrecio({
-                "precio_adulto": precio_adulto.value, "precio_nino": precio_nino.value, 
-                "cantidad_adultos": cantidad_adultos.value, "cantidad_ninos": cantidad_ninos.value})
-        })
-
-        tour.addEventListener('change', event => {
-            const selectedIndex = event.target.selectedIndex;
-            const selectedOption = event.target.options[selectedIndex]
-            const tourHorarios = horariosArr.filter(horario => horario.id == selectedOption.value)
-
-            const precios = JSON.parse(event.target.dataset.precios)
-            const precios_tour = precios.filter(precio => precio.id_tour == selectedOption.value)[0]
-
-            precio_adulto.value = precios_tour.precio_adulto
-            precio_nino.value = precios_tour.precio_niño
-            id_precio.value = precios_tour.id
-
-            actualizarPrecio({
-                "precio_adulto": precios_tour.precio_adulto, "precio_nino": precios_tour.precio_niño, 
-                "cantidad_adultos": cantidad_adultos.value, "cantidad_ninos": cantidad_ninos.value})
-
-            horarios.innerHTML = ''
-            tourHorarios.map(horario => {
-                horarios.innerHTML += `<option 
-
-                @foreach ($horarios as $horario)
-                        <option value="{{$horario->id}}"> {{ $horario->hora}} </option>
-                @endforeach
-                </option>`
-            })
-        })
-
-        agencia.addEventListener('change', event => {
-            const agencias = JSON.parse(event.target.dataset.agencias);
-            const selectedIndex = event.target.selectedIndex;
-            const selectedOption = event.target.options[selectedIndex]
-            const comision_agencia = agencias.filter(agencia => agencia.id == selectedOption.value)[0]
-            comision.value = (Number(cantidad_adultos.value) + Number(cantidad_ninos.value)) * Number(comision_agencia.comision) 
-           actualizarPrecioNeto()
-        })
-
-        function actualizarPrecio({cantidad_adultos, cantidad_ninos, precio_adulto, precio_nino}){
-
-            const monto_adultos = Number(cantidad_adultos) * Number(precio_adulto)
-            const monto_ninos = Number(cantidad_ninos) * Number(precio_nino)
-
+        if(precios){
+            console.log(precios)
+            const monto_adultos = Number(cantidad_adultos) * Number(precios.precio_adulto)
+            const monto_ninos = Number(cantidad_ninos) * Number(precios.precio_niño)
+    
+            precio_adulto.value = precios.precio_adulto
+            precio_nino.value = precios.precio_niño
+            id_precio.value = precios.id
+    
             monto_total.value = monto_adultos + monto_ninos
             actualizarPrecioConDescuento()
         }
 
-        function actualizarPrecioConDescuento(){
-            if(descuento.value == 0 && !descuento.value){
-                monto_con_descuento.value = monto_total.value
-            }else{
-                monto_con_descuento.value = Number(monto_total.value) - Number(descuento.value)
-            }
-            actualizarPrecioNeto()
-        }
+    }
 
-        function actualizarPrecioNeto(){
-            if(comision.value){
-                monto_neto.value = Number(monto_con_descuento.value) - Number(comision.value)
-            }else{
-                monto_neto.value = monto_con_descuento.value
-            }
+    function actualizarPrecioConDescuento(){
+        if(descuento.value == 0 && !descuento.value){
+            monto_con_descuento.value = monto_total.value
+        }else{
+            monto_con_descuento.value = Number(monto_total.value) - Number(descuento.value)
         }
-    </script>
+        actualizarPrecioNeto()
+    }
+
+    function actualizarPrecioNeto(){
+        if(comision.value){
+            monto_neto.value = Number(monto_con_descuento.value) - Number(comision.value)
+        }else{
+            monto_neto.value = monto_con_descuento.value
+        }
+    }
+
+
+    function obtenerOpcionSeleccionada(elemento){
+        const selectedIndex = elemento.selectedIndex;
+        const selectedOption = elemento.options[selectedIndex]
+        return selectedOption.value
+    }
+
+    async function obtenerListaDePrecios(agenciaId, tourId){
+        const consulta = await fetch(`/precios_tour/${agenciaId}/${tourId}`)
+        const consultaJson = await consulta.json()
+        const precios = await consultaJson.filter(precio => precio.id_tour == tourId)
+        return precios[0]
+    }
+</script>
 @endsection
