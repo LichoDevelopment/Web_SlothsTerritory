@@ -45,7 +45,7 @@ class DatabaseSeeder extends Seeder
         $Usuario2 = new User();
         $Usuario2->name = "Keilor";
         $Usuario2->email = "keilor1997@icloud.com";
-        $Usuario2->password = '$2y$10$584v9mjduMnzYC4uZhMzr.DZtjiOBCJh3F//bI6Uu7YKB8jpybLY.'; //123456
+        $Usuario2->password = '$2y$10$UYlLSmNsJactjDcDKoOhJOlZmHU.YDmIWgtYMRYN.wy8q0hqQrN4K'; //123456
         $Usuario2->rol_id = 1;
         $Usuario2->save();
 
