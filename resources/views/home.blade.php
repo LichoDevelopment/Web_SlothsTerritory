@@ -959,28 +959,28 @@
                         <!-- Contact Form -->
                         
                         {{-- <form action="{{ route('mensaje.guardar') }}" method="post" data-toggle="validator" data-focus="false"> --}}
-                        <form id="formularioMensaje" data-toggle="validator" data-focus="false">
+                        <form id="formularioMensaje" >
                             <div class="form-group">
                                 <input type="text" name="nombre" class="form-control-input" id="nombre" required>
                                 <label class="label-control" for="nombre">{{__('formulario.nombre')}}</label>
-                                <div class="help-block with-errors"></div>
+                                <div id="error-nombre" class="text-danger"></div>
                             </div>
                             <div class="form-group">
                                 <input type="text" name="correo" class="form-control-input" id="correo" required>
                                 <label class="label-control" for="correo">{{__('formulario.correo')}}</label>
-                                <div class="help-block with-errors"></div>
+                                <div id="error-correo"  class="text-danger"></div>
                             </div>
                             <div class="form-group">
                                 <textarea class="form-control-textarea" name="mensaje" id="mensaje" required></textarea>
                                 <label class="label-control" for="mensaje">{{__('formulario.mensaje')}}</label>
-                                <div class="help-block with-errors"></div>
+                                <div id="error-mensaje"  class="text-danger"></div>
                             </div>
-                            <div class="form-group checkbox">
+                            {{-- <div class="form-group checkbox">
                                 <input type="checkbox" id="cterms" value="Agreed-to-Terms" required>{{__('formulario.acepta_politicas_parte_1')}}<a href="privacy-policy">{{__('politicas_privacidad')}}</a>  <a href="terms-conditions">{{__('terminos_condiciones')}}</a>
                                 <div class="help-block with-errors"></div>
-                            </div>
+                            </div> --}}
                             <div class="form-group">
-                                <button type="submit" class="form-control-submit-button">{{__('btn.enviar_mensaje')}} </button>
+                                <button type="submit" id="botonFormulario" class="form-control-submit-button">{{__('btn.enviar_mensaje')}} </button>
                             </div>
                             <div class="form-message">
                                 <div id="cmsgSubmit" class="h3 text-center hidden"></div>
@@ -997,3 +997,79 @@
         </div> <!-- end of form-2 -->
         <!-- end of contact -->
         @endsection
+
+@section('scripts')
+    <script>
+        const form = document.getElementById('formularioMensaje')
+        const botonFormulario = document.getElementById('botonFormulario')
+        const coreoRegex = /^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$/
+
+        botonFormulario.addEventListener('click', event => {
+            event.preventDefault();
+            enviarMensaje()
+        })
+        form.addEventListener('submit', event => {
+            event.preventDefault();
+            enviarMensaje()
+        })
+
+        function enviarMensaje(){
+            const mensaje = {
+                nombre: form['nombre'].value,
+                correo: form['correo'].value,
+                mensaje: form['mensaje'].value,
+            }
+
+            let elFormularioEsValido = true;
+
+            Object.entries(mensaje).map(campo => {
+                if(campo[0] == 'correo'){
+                    console.log(coreoRegex.test(campo[1]))
+                    if(!coreoRegex.test(campo[1])){
+                        validarCorreo()
+                        elFormularioEsValido = false;
+                    }
+                }
+                if(!campo[1]){
+                    validarFormulario(campo[0])
+                    elFormularioEsValido = false;
+                }
+            })
+
+            if(elFormularioEsValido){
+                fetch('/mensaje',{
+                    method: 'POST',
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify(mensaje)
+                })
+                .then(response => response.json())
+                .then(response => {
+                    Swal.fire({
+                        icon: 'success',
+                        text: 'Gracias por contactarnos, te responderemos lo antes posible',
+                        confirmButtonText: 'Cerrar',
+                        confirmButtonColor: 'tomato'
+                    })
+                    form.reset()
+                })
+            }
+        }
+
+
+        function validarFormulario(campo){
+            let campoError = document.getElementById(`error-${campo}`)
+            campoError.innerHTML = "este campo es requerido";
+            setTimeout(() => {
+                campoError.innerHTML = ""
+            }, 2000);
+        }
+        
+        function validarCorreo(){
+            let campoError = document.getElementById(`error-correo`)
+            campoError.innerHTML = "debes ingresar un correo valido";
+            setTimeout(() => {
+                campoError.innerHTML = ""
+            }, 2000);
+        }
+    </script>
+@endsection

@@ -175,7 +175,7 @@
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
                                             {{-- <img src="images/icon/avatar-01.jpg" alt="John Doe" /> --}}
-                                            <img src="{{ url('images/icon/avatar-01.jpg')}}" alt="John Doe" />
+                                            <img src="{{ url('images/favicon--.png')}}" alt="sloth's territory logo" />
                                             
                                         </div>
                                         <div class="content">

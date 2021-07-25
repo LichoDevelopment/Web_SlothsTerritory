@@ -66,8 +66,7 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/horario/{id}', 'HorarioController@update');
     Route::delete('/horario/{id}', 'HorarioController@destroy');
 
-    Route::get('/mensaje', 'MensajesWebController@index')->name('admin.mensaje');
-    Route::post('/mensaje', 'MensajesWebController@store')->name('mensaje.guardar');
+
 
     // Route::resource('agencias', 'AgenciasController');
 });
@@ -83,5 +82,8 @@ Route::group(['prefix'=>'{locale}', 'where'=> ['locale'=> 'es|en']],function () 
     Route::get('/privacy-policy', 'HomeController@privacy')->name('privacy-policy');
     Route::get('/terms-conditions', 'HomeController@terms')->name('terms-conditions');
 });
+
+Route::get('/mensaje', 'MensajesWebController@index')->name('admin.mensaje');
+Route::post('/mensaje', 'MensajesWebController@store')->name('mensaje.guardar');
 
 

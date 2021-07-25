@@ -250,5 +250,7 @@
     <script src=" {{ asset('js/isotope.pkgd.min.js')}} "></script> <!-- Isotope for filter -->
     <script src=" {{ asset('js/validator.min.js')}} "></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
     <script src=" {{ asset('js/scripts.js')}} "></script> <!-- Custom scripts -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @yield('scripts')
 </body>
 </html>
