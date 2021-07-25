@@ -185,12 +185,8 @@
         
             horarios.innerHTML = ''
             tourHorarios.map(horario => {
-                horarios.innerHTML += `<option 
-
-                @foreach ($horarios as $horario)
-                        <option value="{{$horario->id}}"> {{ $horario->hora}} </option>
-                @endforeach
-                </option>`
+                horarios.innerHTML += `
+                <option value="${horario.id}"> ${horario.hora} </option>`
             })
         })
 
