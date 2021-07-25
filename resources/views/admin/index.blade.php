@@ -97,80 +97,85 @@
                     
                 </div>
             </section>
-            <table id="reservationTable" class="table table-responsive table-striped">
-                <thead>
-                    <th>#</th>
-                    <th>Tour</th>
-                    <th>Agencia</th>
-                    <th>Hora</th>
-                    <th>Fecha</th>
-                    <th>Cliente</th>
-                    <th>Adultos</th>
-                    <th>Niños</th>
-                    <th>Niños Gratis</th>
-                    <th>Precio</th>
-                    <th>Descuento</th>
-                    <th>Precio con descuento</th>
-                    <th>Comision de agencia</th>
-                    <th>Total</th>
-                    <th>Factura</th>
-                    <th>Creado el</th>
-                    <th>Estado</th>
-                    <th>Acciones</th>
-                </thead>
-                <tbody>
-                    @foreach ($reservaciones as $reservacion)
+            <section class="card-body">
+                
+                <table class="table table-responsive" id="TablaReservas" >
+                    <thead>
                         <tr>
-                            <td> {{$loop->index + 1}} </td>
-                            <td> {{$reservacion->tour->nombre}} </td>
-                            <td> {{$reservacion->agencia->nombre}} </td>
-                            <td> {{$reservacion->horario->hora}} </td>
-                            <td> {{$reservacion->fecha_tour->fecha}} </td>
-                            <td> {{$reservacion->nombre_cliente}} </td>
-                            <td> {{$reservacion->cantidad_adultos}} </td>
-                            <td> {{$reservacion->cantidad_niños}} </td>
-                            <td> {{$reservacion->cantidad_niños_gratis}} </td>
-                            <td> {{$reservacion->monto_total}} </td>
-                            <td> {{$reservacion->descuento}} </td>
-                            <td> {{$reservacion->monto_con_descuento}} </td>
-                            <td> {{$reservacion->comision_agencia}} </td>
-                            <td> {{$reservacion->monto_neto}} </td>
-                            <td> {{$reservacion->factura}} </td>
-                            <td> {{$reservacion->created_at}} </td>
-                            <td> {{$reservacion->estado->nombre}} </td>
-                            <td>
-                                <button 
-                                data-reservacion-estado="{{$reservacion->estado->nombre}}"
-                                data-reservacion-id="{{$reservacion->id}}"
-                                class="btn btn-sm btn-success btn-actualizar-estado">
-                                Actualizar estado
-                            </button> 
-                            </td>
-                            
-                            <td class="btn-group">
-                                <a href="{{ route('reservas.editar', ['id'=> $reservacion->id]) }}" class="btn btn-sm btn-warning">Editar</a>
-                                
-                                @if (rol_usuario()->id === 1)
-                                    <button
-                                        data-id="{{$reservacion->id}}" 
-                                        class="btn btn-sm btn-danger borrar-reserva-btn">Eliminar</button>
-                            
-                                @endif
-                            </td>
+                            <th>#</th>
+                            <th>Tour</th>
+                            <th>Agencia</th>
+                            <th>Hora</th>
+                            <th>Fecha</th>
+                            <th>Cliente</th>
+                            <th>Adultos</th>
+                            <th>Niños</th>
+                            <th>Niños Gratis</th>
+                            <th>Precio</th>
+                            <th>Descuento</th>
+                            <th>Precio con descuento</th>
+                            <th>Comision de agencia</th>
+                            <th>Total</th>
+                            <th>Factura</th>
+                            <th>Creado el</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
                         </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach ($reservaciones as $reservacion)
+                            <tr>
+                                <td> {{$loop->index + 1}} </td>
+                                <td> {{$reservacion->tour->nombre}} </td>
+                                <td> {{$reservacion->agencia->nombre}} </td>
+                                <td> {{$reservacion->horario->hora}} </td>
+                                <td> {{$reservacion->fecha_tour->fecha}} </td>
+                                <td> {{$reservacion->nombre_cliente}} </td>
+                                <td> {{$reservacion->cantidad_adultos}} </td>
+                                <td> {{$reservacion->cantidad_niños}} </td>
+                                <td> {{$reservacion->cantidad_niños_gratis}} </td>
+                                <td> {{$reservacion->monto_total}} </td>
+                                <td> {{$reservacion->descuento}} </td>
+                                <td> {{$reservacion->monto_con_descuento}} </td>
+                                <td> {{$reservacion->comision_agencia}} </td>
+                                <td> {{$reservacion->monto_neto}} </td>
+                                <td> {{$reservacion->factura}} </td>
+                                <td> {{$reservacion->created_at}} </td>
+                                <td> {{$reservacion->estado->nombre}} </td>
+                                
+                                <td class="btn-group">
+                                    <button 
+                                        data-reservacion-estado="{{$reservacion->estado->nombre}}"
+                                        data-reservacion-id="{{$reservacion->id}}"
+                                        class="btn btn-sm btn-success btn-actualizar-estado">
+                                    Actualizar estado
+                                    </button> 
+                                    <a href="{{ route('reservas.editar', ['id'=> $reservacion->id]) }}" class="btn btn-sm btn-warning">Editar</a>
+                                    
+                                    @if (rol_usuario()->id === 1)
+                                        <button
+                                            data-id="{{$reservacion->id}}" 
+                                            class="btn btn-sm btn-danger borrar-reserva-btn">Eliminar</button>
+                                
+                                    @endif
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </section>
        </section>
     </section>
+
+
     {{-- <a href="{{ route('agencias.index') }}" class="btn btn-success"> Ver Agencias</a> --}}
  
 @endsection
 
 @section('scripts')
     <script>
-        $(document).ready( function () {
-        $('#reservationTable').DataTable();
+       $(document).ready( function () {
+        $('#TablaReservas').DataTable();
     } );
 
     const borrarReservasBtn = document.querySelectorAll('.borrar-reserva-btn')
