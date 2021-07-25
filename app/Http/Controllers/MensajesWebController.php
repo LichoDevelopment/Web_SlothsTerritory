@@ -26,7 +26,7 @@ class MensajesWebController extends Controller
      */
     public function index()
     {
-        $mensajes = Mensajes_web::all();
+        $mensajes = Mensajes_web::orderBy('created_at', 'desc')->get();
         return view('admin.mensajes.index', compact('mensajes'));
     }
 
