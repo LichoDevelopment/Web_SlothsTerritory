@@ -289,9 +289,9 @@
                 title: respuesta.message,
                 showConfirmButton: false
             })
-            // setTimeout(function(){
-            //     location.reload();
-            // },1500)
+            setTimeout(function(){
+                location.reload();
+            },1500)
         }
     }
     </script>
