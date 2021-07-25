@@ -178,7 +178,7 @@
             const selectedIndex = event.target.selectedIndex;
             const selectedOption = event.target.options[selectedIndex]
             const tourId = selectedOption.value
-            const tourHorarios = horariosArr.filter(horario => horario.id == tourId)
+            const tourHorarios = horariosArr.filter(horario => horario.id_tour == tourId)
 
             actualizarPrecio({"cantidad_adultos": cantidad_adultos.value, 
             "cantidad_ninos": cantidad_ninos.value})
