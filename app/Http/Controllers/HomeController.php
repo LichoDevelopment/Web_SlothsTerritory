@@ -117,16 +117,8 @@ class HomeController extends Controller
                 }
             }
         }
-<<<<<<< HEAD
-
-
-
 
         return view('admin.index', compact('reservaciones', 'agencias', 'totales','estados', 'reservas'));
-=======
-        
-        return view('admin.index', compact('reservaciones', 'agencias', 'totales','estados'));
->>>>>>> ef9a7f39bf39c224adcc306671151beb90254290
     }
     public function sales($locale)
     {
