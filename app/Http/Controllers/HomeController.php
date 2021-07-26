@@ -21,7 +21,8 @@ class HomeController extends Controller
     }
     public function admin(Request $request)
     {
-        // DB::select('CALL actualizar_estados');
+        $reservas = DB::select('CALL consultar_reservas()');
+        // print_r($reservas);
         $query = $request->query();
         $fechaInicio = '';
         $fechaFin = '';
@@ -112,7 +113,7 @@ class HomeController extends Controller
 
 
 
-        return view('admin.index', compact('reservaciones', 'agencias', 'totales','estados'));
+        return view('admin.index', compact('reservaciones', 'agencias', 'totales','estados', 'reservas'));
     }
     public function sales($locale)
     {

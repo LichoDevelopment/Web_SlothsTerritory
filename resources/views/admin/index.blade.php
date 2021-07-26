@@ -123,42 +123,42 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($reservaciones as $reservacion)
+                        @foreach ($reservas as $reserva)
                             <tr>
                                 <td> {{$loop->index + 1}} </td>
-                                <td> {{$reservacion->tour->nombre}} </td>
-                                <td> {{$reservacion->agencia->nombre}} </td>
-                                <td> {{$reservacion->horario->hora}} </td>
-                                <td> {{$reservacion->fecha_tour->fecha}} </td>
-                                <td> {{$reservacion->nombre_cliente}} </td>
-                                <td> {{$reservacion->cantidad_adultos}} </td>
-                                <td> {{$reservacion->cantidad_niños}} </td>
-                                <td> {{$reservacion->cantidad_niños_gratis}} </td>
-                                <td> {{$reservacion->monto_total}} </td>
-                                <td> {{$reservacion->descuento}} </td>
-                                <td> {{$reservacion->monto_con_descuento}} </td>
-                                <td> {{$reservacion->comision_agencia}} </td>
-                                <td> {{$reservacion->monto_neto}} </td>
-                                <td> {{$reservacion->factura}} </td>
-                                <td> {{$reservacion->created_at}} </td>
-                                <td> {{$reservacion->estado->nombre}} </td>
+                                <td> {{$reserva->nombre_tour}} </td>
+                                <td> {{$reserva->nombre_agencia}} </td>
+                                <td> {{$reserva->hora}} </td>
+                                <td> {{$reserva->fecha}} </td>
+                                <td> {{$reserva->nombre_cliente}} </td>
+                                <td> {{$reserva->cantidad_adultos}} </td>
+                                <td> {{$reserva->cantidad_niños}} </td>
+                                <td> {{$reserva->cantidad_niños_gratis}} </td>
+                                <td> {{$reserva->monto_total}} </td>
+                                <td> {{$reserva->descuento}} </td>
+                                <td> {{$reserva->monto_con_descuento}} </td>
+                                <td> {{$reserva->comision_agencia}} </td>
+                                <td> {{$reserva->monto_neto}} </td>
+                                <td> {{$reserva->factura}} </td>
+                                <td> {{$reserva->created_at}} </td>
+                                <td> {{$reserva->nombre_estado}} </td>
                                 
                                 <td class="btn-group">
                                     <button 
-                                        data-reservacion-estado="{{$reservacion->estado->nombre}}"
-                                        data-reservacion-id="{{$reservacion->id}}"
+                                        data-reservacion-estado="{{$reserva->nombre_estado}}"
+                                        data-reservacion-id="{{$reserva->id}}"
                                         class="btn btn-sm btn-success btn-actualizar-estado">
                                     Actualizar estado
                                     </button> 
-                                    <a href="{{ route('reservas.editar', ['id'=> $reservacion->id]) }}" class="btn btn-sm btn-warning">Editar</a>
+                                    <a href="{{ route('reservas.editar', ['id'=> $reserva->id]) }}" class="btn btn-sm btn-warning">Editar</a>
                                     
                                     @if (rol_usuario()->id === 1)
                                         <button
-                                            data-id="{{$reservacion->id}}" 
+                                            data-id="{{$reserva->id}}" 
                                             class="btn btn-sm btn-danger borrar-reserva-btn">Eliminar</button>
                                 
                                     @endif
-                                </td>
+                                </td> 
                             </tr>
                         @endforeach
                     </tbody>
