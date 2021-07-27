@@ -46,6 +46,7 @@ class ReservacionController extends Controller
    {
 
        $reservas = DB::select('CALL reservas_eliminadas()');
+    //    $reservas = Reserva::onlyTrashed()->get();
     //    print_r($reservas);
        return view('admin.reservas.eliminadas', compact('reservas'));
    }
@@ -134,9 +135,7 @@ class ReservacionController extends Controller
    {
         $response = response(["message"=> "Estado actualizado"],202);
 
-        Reserva::find($id)->update([
-            'id_estado'     => $this->request->estado,
-        ]);
+        Reserva::find($id)->restore();
     
 
        return $response;
@@ -145,7 +144,7 @@ class ReservacionController extends Controller
    public function updateEstadoEliminado($id)
    {
         $response = response(["message"=> "Reserva integrada nuevamente"],202);
-        Reserva::find($id)->restore();
+        Reserva::withTrashed()->find($id)->restore();
             // 'deleted_at'     =>$this->request->deleted_at,
             // 'deleted_at'     =>null,
         // ]);

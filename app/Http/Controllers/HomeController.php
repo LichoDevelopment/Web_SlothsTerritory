@@ -22,15 +22,16 @@ class HomeController extends Controller
     public function admin(Request $request)
     {
 
-        $reservas = DB::select('CALL consultar_reservas()');
+        // $reservas = DB::select('CALL consultar_reservas()');
         // print_r($reservas);
 
-        DB::select('CALL actualizar_estados');
+        // DB::select('CALL actualizar_estados');
+        $reservaciones = [];
 
         $query = $request->query();
         $fechaInicio = '';
         $fechaFin = '';
-        $reservaciones = Reserva::orderBy('id_fecha_tour')->orderBy('id_estado','asc')->get();
+        $reservas = Reserva::orderBy('id_fecha_tour')->orderBy('id_estado','asc')->get();
         $agencias = Agencia::all();
         $estados = Estado::all();
 
