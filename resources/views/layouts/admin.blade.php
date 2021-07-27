@@ -106,6 +106,10 @@
                                 <a href="{{ route('admin.mensaje') }}">
                                     <i class="fas fa-calendar-alt"></i>Mensajes</a>
                             </li>
+                            <li class="{{ Route::is('reservas.eliminadas') ? 'active' : '' }} ">
+                                <a href="{{ route('reservas.eliminadas') }}">
+                                    <i class="fas fa-calendar-alt"></i>Eliminadas</a>
+                            </li>
                             
                         @endif
                     </ul>
@@ -153,6 +157,10 @@
                             <li class="{{ Route::is('admin.mensaje') ? 'active' : '' }} ">
                                 <a href="{{ route('admin.mensaje') }}">
                                     <i class="fas fa-calendar-alt"></i>Mensajes</a>
+                            </li>
+                            <li class="{{ Route::is('reservas.eliminadas') ? 'active' : '' }} ">
+                                <a href="{{ route('reservas.eliminadas') }}">
+                                    <i class="fas fa-calendar-alt"></i>Eliminadas</a>
                             </li>
                             
                         @endif

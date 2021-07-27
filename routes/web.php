@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', 'HomeController@admin')->name('admin.index');
     Route::get('/registro', 'RegistroController@index')->name('admin.registro');
-    
+    Route::put('/reservacionEliminada/{id}', 'ReservacionController@updateEstadoEliminado'); 
     
     
     Route::get('/agregar_reserva', 'AdminController@agregarReserva')->name('reservas.agregar');
@@ -31,6 +31,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/reservacion', 'ReservacionController@store')->name('reserva.guardar');
     Route::put('/reservacion/{id}', 'ReservacionController@update')->name('reserva.actualizar');
     Route::put('/reservacionEstado/{id}', 'ReservacionController@updateEstado');
+    Route::get('/eliminadas', 'ReservacionController@eliminadas')->name('reservas.eliminadas');
     
     Route::get('/agencia', 'AgenciaController@index')->name('admin.agencia');
     Route::post('/agencia', 'AgenciaController@store');

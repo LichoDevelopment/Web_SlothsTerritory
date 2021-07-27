@@ -10,6 +10,7 @@ use App\Models\Reservacion;
 use App\Models\Estado;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class ReservacionController extends Controller
 {
@@ -39,6 +40,14 @@ class ReservacionController extends Controller
 
    public function __construct(Request $request) {
        $this->request = $request;
+   }
+
+   public function eliminadas(Request $request)
+   {
+
+       $reservas = DB::select('CALL reservas_eliminadas()');
+    //    print_r($reservas);
+       return view('admin.reservas.eliminadas', compact('reservas'));
    }
 
    public function store()
@@ -127,6 +136,18 @@ class ReservacionController extends Controller
 
         Reserva::find($id)->update([
             'id_estado'     => $this->request->estado,
+        ]);
+    
+
+       return $response;
+   }
+
+   public function updateEstadoEliminado($id)
+   {
+        $response = response(["message"=> "Reserva integrada nuevamente"],202);
+        Reserva::find($id)->update([
+            'deleted_at'     =>$this->request->deleted_at,
+            // 'deleted_at'     =>null,
         ]);
     
 
