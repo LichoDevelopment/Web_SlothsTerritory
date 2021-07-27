@@ -145,10 +145,10 @@ class ReservacionController extends Controller
    public function updateEstadoEliminado($id)
    {
         $response = response(["message"=> "Reserva integrada nuevamente"],202);
-        Reserva::find($id)->update([
-            'deleted_at'     =>$this->request->deleted_at,
+        Reserva::find($id)->restore();
+            // 'deleted_at'     =>$this->request->deleted_at,
             // 'deleted_at'     =>null,
-        ]);
+        // ]);
     
 
        return $response;

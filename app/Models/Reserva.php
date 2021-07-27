@@ -33,7 +33,8 @@ class Reserva extends Model
         // 'id_precio',
         'id_fecha_tour',
         'factura',
-        'id_estado'
+        'id_estado',
+        'deleted_at'
     ];
 
 
