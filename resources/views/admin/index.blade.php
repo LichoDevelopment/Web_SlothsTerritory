@@ -88,7 +88,7 @@
                                 <select class="form-control" name="agencia">
                                     <option value=""></option>
                                     @foreach ($agencias as $agencia)
-                                    <option value="{{$agencia->id}}"> {{ $agencia->nombre}}</option>
+                                    <option value="{{$agencia->nombre}}"> {{ $agencia->nombre}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -97,7 +97,7 @@
                                 <select class="form-control" name="horario">
                                     <option value=""></option>
                                     @foreach ($horarios as $horario)
-                                    <option value="{{$horario->id}}"> {{ $horario->hora}}</option>
+                                    <option value="{{$horario->hora}}"> {{ $horario->hora}}</option>
                                     @endforeach
                                 </select>
                             </div>

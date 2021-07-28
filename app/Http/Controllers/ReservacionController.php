@@ -131,7 +131,7 @@ class ReservacionController extends Controller
         $registro = Registro::where('id_horario',$reserva->id_horario)
                     ->where('id_fecha',$reserva->id_fecha_tour)
                     ->first();
-                    $cantidad_pax_en_reserva = $reserva->cantidad_adultos + $reserva->cantidad_niños + $reserva->cantidad_niños_gratis;
+        $cantidad_pax_en_reserva = $reserva->cantidad_adultos + $reserva->cantidad_niños + $reserva->cantidad_niños_gratis;
         $temp = $registro->cantidad_reservas + $cantidad_pax_en_reserva;
         $registro->cantidad_reservas = $temp;
         $registro->save();
