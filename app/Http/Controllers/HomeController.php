@@ -64,7 +64,7 @@ class HomeController extends Controller
             $reservas       = DB::select('CALL filtrar_reservas(?,?,?,?)',
                                     [$fechaInicio, $fechaFin, $agencia, $horario]);
             
-            $totales = DB::select('CALL totales()', 
+            $totales = DB::select('CALL totales(?,?,?,?)', 
                             [$fechaInicio, $fechaFin, $agencia, $horario]);
             // if(!$query['fechaInicio'] && $query['agencia']){
             //     $id_agencias = [$query['agencia']];
@@ -129,7 +129,9 @@ class HomeController extends Controller
         }
 
         
-        
+        // $reservas = DB::select('CALL filtrar_reservas(?,?,?,?)',[null, null, "",null]);
+        // $totales  = DB::select('CALL totales(?,?,?,?)',[null, null, "",null]);
+        print_r($totales);
         return view('admin.index', compact( 'agencias', 'totales','estados', 'reservas', 'horarios'));
     }
     public function sales($locale)
