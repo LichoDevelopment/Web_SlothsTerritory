@@ -26,7 +26,7 @@ class HomeController extends Controller
         // $reservas = DB::select('CALL consultar_reservas()');
         // print_r($reservas);
 
-        // DB::select('CALL actualizar_estados');
+        DB::select('CALL actualizar_estados');
         $reservaciones = [];
 
         $query = $request->query();
