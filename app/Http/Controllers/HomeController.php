@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Agencia;
 use App\Models\Estado;
 use App\Models\Fecha_tour;
+use App\Models\Horario;
 use App\Models\Reserva;
 use App\Models\Reservacion;
 use Illuminate\Http\Request;
@@ -34,7 +35,8 @@ class HomeController extends Controller
         $reservas = Reserva::orderBy('id_fecha_tour')->orderBy('id_estado','asc')->get();
         $agencias = Agencia::all();
         $estados = Estado::all();
-
+        $horarios = Horario::all();
+        
         $total_adultos = '';
         $total_niños = '';
         $total_niños_gratis = '';
@@ -118,8 +120,8 @@ class HomeController extends Controller
                 }
             }
         }
-
-        return view('admin.index', compact('reservaciones', 'agencias', 'totales','estados', 'reservas'));
+        $reservas = DB::select('CALL filtrar_reservas(?,?,?,?)',[null, null, "",null]);
+        return view('admin.index', compact('reservaciones', 'agencias', 'totales','estados', 'reservas', 'horarios'));
     }
     public function sales($locale)
     {

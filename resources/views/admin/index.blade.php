@@ -84,11 +84,20 @@
                                 type="date" name="fechaFin" class="form-control">
                             </div>
                             <div>
-                                <label for="agencia">agencia</label>
+                                <label for="agencia">Agencia</label>
                                 <select class="form-control" name="agencia">
                                     <option value=""></option>
                                     @foreach ($agencias as $agencia)
                                     <option value="{{$agencia->id}}"> {{ $agencia->nombre}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div>
+                                <label for="horario">Horario</label>
+                                <select class="form-control" name="horario">
+                                    <option value=""></option>
+                                    @foreach ($horarios as $horario)
+                                    <option value="{{$horario->id}}"> {{ $horario->hora}}</option>
                                     @endforeach
                                 </select>
                             </div>
