@@ -60,28 +60,12 @@ class ReservacionController extends Controller
            $fecha_tour = Fecha_tour::create(['fecha' => $this->request->fecha_tour]);
        }
 
-       $registro = Registro::where('id_horario',$this->request->id_horario)->first();
-    //    $horario = Horario::find($this->request->id_horario);
+       $registro = Registro::where('id_horario',$this->request->id_horario)
+                            ->where('id_fecha',$fecha_tour->id)
+                            ->first();
 
-       $total_pax_en_reserva = $this->request->cantidad_adultos + $this->request->cantidad_niños + $this->request->cantidad_niños_gratis;
-
-    //    if($registro && ( $registro->cantidad_reservas + $total_pax_en_reserva ) > $horario->capacidad_maxima){
-    //        $capacidad_libre = $horario->capacidad_maxima - $registro->cantidad_reservas;
-    //        return redirect('/agregar_reserva')->with([
-    //            'limite' => 'Se ha exedido el limite para esta hora',
-    //            'capacidad_libre' => $capacidad_libre,
-    //            'capacidad_maxima' => $horario->capacidad_maxima,
-    //         ]);
-    //    }
-
-    //    if(!$registro && $total_pax_en_reserva > $horario->capacidad_maxima){
-    //         return redirect('/agregar_reserva')->with([
-    //             'limite' => 'Se ha exedido el limite para esta hora',
-    //             'capacidad_libre' => $horario->capacidad_maxima,
-    //             'capacidad_maxima' => $horario->capacidad_maxima
-    //          ]);
-    //    }
-
+       $total_pax_en_reserva = 
+            $this->request->cantidad_adultos + $this->request->cantidad_niños + $this->request->cantidad_niños_gratis;
        
        $validator = Validator::make($this->request->all(), $this->reglasValidacion, $this->mensajesValidacion);
 
@@ -143,6 +127,14 @@ class ReservacionController extends Controller
 
    public function updateEstadoEliminado($id)
    {
+        $reserva = Reserva::onlyTrashed()->find($id);
+        $registro = Registro::where('id_horario',$reserva->id_horario)
+                    ->where('id_fecha',$reserva->id_fecha_tour)
+                    ->first();
+                    $cantidad_pax_en_reserva = $reserva->cantidad_adultos + $reserva->cantidad_niños + $reserva->cantidad_niños_gratis;
+        $temp = $registro->cantidad_reservas + $cantidad_pax_en_reserva;
+        $registro->cantidad_reservas = $temp;
+        $registro->save();
         $response = response(["message"=> "Reserva integrada nuevamente"],202);
         Reserva::withTrashed()->find($id)->restore();
             // 'deleted_at'     =>$this->request->deleted_at,
@@ -162,20 +154,15 @@ class ReservacionController extends Controller
        }
 
        $reserva = Reserva::find($id);
-    //    $horario = Horario::find($this->request->id_horario);
-       $registro = Registro::where('id_horario',$this->request->id_horario)->first();
+
+       $registro = Registro::where('id_horario',$this->request->id_horario)
+                            ->where('id_fecha',$fecha_tour->id)
+                            ->first();
        $cantidad_previa_pax_en_reserva = $reserva->cantidad_adultos + $reserva->cantidad_niños + $reserva->cantidad_niños_gratis;
        $cantidad_reservas = $registro->cantidad_reservas - $cantidad_previa_pax_en_reserva;
 
        $total_pax_en_reserva = $this->request->cantidad_adultos + $this->request->cantidad_niños + $this->request->cantidad_niños_gratis;
 
-    //    if(( $cantidad_reservas + $total_pax_en_reserva ) > $horario->capacidad_maxima){
-    //        return redirect()->back()->with('limite', 'Se ha exedido el limite para esta hora');
-    //    }
-
-    //    if($total_pax_en_reserva > $horario->capacidad_maxima){
-    //         return redirect()->back()->with('limite', 'Se ha exedido el limite para esta hora');
-    //    }
 
        $validator = Validator::make($this->request->all(), $this->reglasValidacion, $this->mensajesValidacion);
 
@@ -220,11 +207,16 @@ class ReservacionController extends Controller
    public function destroy($id)
    {
        $reserva = Reserva::find($id);
-       $registro = Registro::where('id_horario',$reserva->id_horario)->first();
+       $registro = Registro::where('id_horario',$reserva->id_horario)
+                            ->where('id_fecha',$reserva->id_fecha_tour)
+                            ->first();
+
        $cantidad_pax_en_reserva = $reserva->cantidad_adultos + $reserva->cantidad_niños + $reserva->cantidad_niños_gratis;
-       $registro->cantidad_reservas = $registro->cantidad_reservas - $cantidad_pax_en_reserva;
+       $temp = $registro->cantidad_reservas - $cantidad_pax_en_reserva;
+       $registro->cantidad_reservas = $temp;
        $registro->save();
-       Reserva::destroy($id);
+
+       $reserva->delete();
        return response("", 204);
    }
 }
