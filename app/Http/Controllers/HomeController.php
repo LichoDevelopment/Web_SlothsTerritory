@@ -23,7 +23,7 @@ class HomeController extends Controller
     public function admin(Request $request)
     {
 
-        $reservas = DB::select('CALL filtrar_reservas(?,?,?,?)',[null, null, "",null]);
+        $reservas = DB::select('CALL filtrar_reservas(?,?,?,?)',[null, null, null,null]);
 
         DB::select('CALL actualizar_estados');
 
@@ -53,14 +53,14 @@ class HomeController extends Controller
         //                         )
         //                     ->first();
 
-        $reservas = DB::select('CALL filtrar_reservas(?,?,?,?)',[null, null, "",null]);
-        $totales  = DB::select('CALL totales(?,?,?,?)',[null, null, "",null]);              
+        $reservas = DB::select('CALL filtrar_reservas(?,?,?,?)',[null, null, null,null]);
+        $totales  = DB::select('CALL totales(?,?,?,?)',[null, null, null,null]);              
                             
         if($query){
             
             $fechaInicio    = isset($query['fechaInicio']) ? $query['fechaInicio'] : null;
             $fechaFin       = isset($query['fechaFin']) ? $query['fechaFin'] : null;
-            $agencia        = isset($query['agencia']) ? $query['agencia'] : "";
+            $agencia        = isset($query['agencia']) ? $query['agencia'] : null;
             $horario        = isset($query['horario']) ? $query['horario'] : null;
 
             $reservas       = DB::select('CALL filtrar_reservas(?,?,?,?)',
