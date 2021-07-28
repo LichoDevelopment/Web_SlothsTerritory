@@ -3,50 +3,54 @@
 
 @section('content')
     @if (rol_usuario()->id === 1)
+        @foreach ($totales as $total)
+        
         <section class="grid_totales">
             <div class="">
                 <div class="card p-3 bg-success text-light">
-                    <h2 class="number text-light"> {{$totales->adultos}} </h2>
+                    <h2 class="number text-light"> {{$total->adultos}} </h2>
                     <span class="desc">Adultos</span>
                 </div>
             </div>
             <div class="">
                 <div class="card p-3 bg-success text-light">
-                    <h2 class="number text-light"> {{$totales->niños}} </h2>
+                    <h2 class="number text-light"> {{$total->niños}} </h2>
                     <span class="desc">Niños</span>
                 </div>
             </div>
             <div class="">
                 <div class="card p-3 bg-success text-light">
-                    <h2 class="number text-light"> {{$totales->niños_gratis}} </h2>
+                    <h2 class="number text-light"> {{$total->niños_gratis}} </h2>
                     <span class="desc">Niños gratis</span>
                 </div>
             </div>
             <div class="">
                 <div class="card p-3 bg-success text-light">
-                    <h2 class="number text-light"> {{$totales->adultos + $totales->niños + $totales->niños_gratis}} </h2>
+                    <h2 class="number text-light"> {{$total->adultos + $total->niños + $total->niños_gratis}} </h2>
                     <span class="desc">Total personas</span>
                 </div>
             </div>
             <div class="">
                 <div class="card p-3 bg-secondary text-light">
-                    <h2 class="number text-light"> ${{$totales->comisiones}} </h2>
+                    <h2 class="number text-light"> ${{$total->comisiones}} </h2>
                     <span class="desc">Total comisiones</span>
                 </div>
             </div>
             <div class="">
                 <div class="card p-3 bg-secondary text-light">
-                    <h2 class="number text-light"> ${{$totales->monto_total}} </h2>
+                    <h2 class="number text-light"> ${{$total->monto_total}} </h2>
                     <span class="desc">Monto total</span>
                 </div>
             </div>
             <div class="">
                 <div class="card p-3 bg-secondary text-light">
-                    <h2 class="number text-light"> ${{$totales->monto_neto}} </h2>
+                    <h2 class="number text-light"> ${{$total->monto_neto}} </h2>
                     <span class="desc">Monto neto</span>
                 </div>
             </div>
         </section>
+        
+        @endforeach
     @endif
     <section class="card rounded">
         <section class="card-header d-flex justify-content-between align-items-center">
