@@ -152,7 +152,7 @@ final class Versions
   'sebastian/type' => '2.3.4@b8cd8a1c753c90bc1a0f5372170e3e489136f914',
   'sebastian/version' => '3.0.2@c6c1022351a901512170118436c764e473f6de8c',
   'theseer/tokenizer' => '1.2.0@75a63c33a8577608444246075ea0af0d052e452a',
-  'laravel/laravel' => 'dev-master@92749e54f9b66afcd69b844ec24991102da02ccc',
+  'laravel/laravel' => 'dev-master@42b526bb39b65ab9d46d5cc9044cc0e61490d023',
 );
 
     private function __construct()

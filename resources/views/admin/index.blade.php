@@ -163,6 +163,7 @@
                                         class="btn btn-sm btn-success btn-actualizar-estado">
                                     Actualizar estado
                                     </button> 
+                                    <a href="{{ route('reservas.ver', ['id'=> $reserva->id]) }}" class="btn btn-sm btn-info">Ver</a>
                                     <a href="{{ route('reservas.editar', ['id'=> $reserva->id]) }}" class="btn btn-sm btn-warning">Editar</a>
                                     
                                     @if (rol_usuario()->id === 1)

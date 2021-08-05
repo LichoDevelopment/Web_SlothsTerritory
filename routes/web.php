@@ -25,8 +25,10 @@ Route::middleware(['auth'])->group(function () {
     
     Route::get('/agregar_reserva', 'AdminController@agregarReserva')->name('reservas.agregar');
     Route::get('/editar_reserva/{id}', 'AdminController@editarReserva')->name('reservas.editar');
+    Route::get('/ver_reserva/{id}', 'AdminController@verReserva')->name('reservas.ver');
     Route::get('/agencias', 'AdminController@agencias')->name('admin.agencias');
     Route::get('/tours', 'AdminController@tours')->name('admin.tours');
+    Route::post('/enviarCorreo/{id}', 'AdminController@enviarCorreo')->name('admin.correo');
     
     Route::post('/reservacion', 'ReservacionController@store')->name('reserva.guardar');
     Route::put('/reservacion/{id}', 'ReservacionController@update')->name('reserva.actualizar');

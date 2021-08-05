@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Mail\EmailFactura;
 use App\Models\Agencia;
 use App\Models\Horario;
 use App\Models\Precio;
 use App\Models\Reserva;
 use App\Models\Tour;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class AdminController extends Controller
 {
@@ -42,6 +44,12 @@ class AdminController extends Controller
 
         return view('admin.reservas.editar', $view_data);
     }
+
+    public function verReserva($id)
+    {
+        $reserva = Reserva::find($id);
+        return view('admin.reservas.ver',compact('reserva'));
+    }
     public function agencias()
     {
         $agencas = Agencia::all();
@@ -53,5 +61,13 @@ class AdminController extends Controller
         $horarios = Horario::all();
         $precios = Precio::all();
         return view('admin.tours.index', compact('tours'));
+    }
+    public function enviarCorreo(Request $request, $id)
+    {
+        $reserva = Reserva::with('agencia','tour','fecha_tour','horario')->find($id)->toArray();
+
+        Mail::to($request->email)->send(new EmailFactura($reserva));
+
+        return response(['mensaje' => 'correo enviado']);
     }
 }

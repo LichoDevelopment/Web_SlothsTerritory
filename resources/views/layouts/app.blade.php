@@ -7,7 +7,7 @@
     {{-- <meta name="keywords" content="sloths arenal costa rica, sloths habitat, sloths territory la fortuna, sloths and frogs, sloths baby, 
     sloth costa rica, sloths in costa rica, sloths la fortuna, sloth tour la fortuna, sloths la fortuna costa rica , sloth costa rica, sloths pictures, sloths 3 toed, sloths 3 toe, 3 toed sloths, osos perezosos, clima en la fortuna"> --}}
     <meta name="keywords" content="{{__('web.keyword1')}}, {{__('web.keyword2')}}, {{__('web.keyword3')}}, {{__('web.keyword4')}}, {{__('web.keyword5')}}, {{__('web.keyword6')}}, {{__('web.keyword7')}}, {{__('web.keyword8')}}, {{__('web.keyword9')}}, {{__('web.keyword10')}}, {{__('web.keyword11')}}, {{__('web.keyword12')}}, {{__('web.keyword13')}}, {{__('web.keyword14')}}"
-    <!-- SEO Meta Tags -->
+    {{-- <!-- SEO Meta Tags --> --}}
     <meta name="description" content=" {{__('web.descripcion')}}">
     <meta name="author" content="LichoDevelopment">
 
