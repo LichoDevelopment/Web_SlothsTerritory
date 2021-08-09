@@ -29,7 +29,7 @@ class EmailFactura extends Mailable
      */
     public function build()
     {
-        return $this->from('lichodevelopment@gmail.com')
+        return $this->from(env('MAIL_FROM_ADDRESS'), "Resevas Sloth's Territory")
                     ->subject('Factura Tour')
                     ->with($this->data)
                     ->markdown('correo.factura');

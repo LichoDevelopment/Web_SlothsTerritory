@@ -35,7 +35,7 @@ return array(
     'App\\Http\\Middleware\\TrustHosts' => $baseDir . '/app/Http/Middleware/TrustHosts.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
-    'App\\Mail\\CorreoFactura' => $baseDir . '/app/Mail/CorreoFactura.php',
+    'App\\Mail\\EmailFactura' => $baseDir . '/app/Mail/EmailFactura.php',
     'App\\Models\\Agencia' => $baseDir . '/app/Models/Agencia.php',
     'App\\Models\\Estado' => $baseDir . '/app/Models/Estado.php',
     'App\\Models\\Fecha_tour' => $baseDir . '/app/Models/Fecha_tour.php',

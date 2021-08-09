@@ -1,5 +1,6 @@
 @component('mail::message')
 
+
 @component('mail::panel')
 factura 00000{{$id}}
 @endcomponent
@@ -8,7 +9,7 @@ factura 00000{{$id}}
 TOUR: {{$tour['nombre']}}<br>
 CLIENTE: {{$nombre_cliente}}<br>
 AGENCIA: {{$agencia['nombre']}}<br>
-HORA: {{$horario['hora']}}:{{$horario['orden'] > 20 ? 'PM' : 'AM'}}<br>
+HORA: {{$horario['hora']}} {{$horario['orden'] > 20 ? 'PM' : 'AM'}}<br>
 FECHA: {{$fecha_tour['fecha']}} <br>
 @endcomponent
 
