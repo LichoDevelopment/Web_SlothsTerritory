@@ -40,43 +40,43 @@
 
 
     "inicio.titulo_principal": "The best tour in La Fortuna de San Carlos and incredible view of the Arenal Volcano",
-    "inicio.parrafo_descriptivo": "In Sloths Territory you can observe 2-toed sloths and 3-toed sloths, as well as a great variety of birds and amphibians",
+    "inicio.parrafo_descriptivo": "In Sloth's Territory you can observe 2-toed sloths and 3-toed sloths, as well as a great variety of birds and amphibians",
 
 
 
 
     "intro.titulo:principal": "WELCOME",
-    "intro.titulo_secundario": "Sloths Territory in La Fortuna de San Carlos",
+    "intro.titulo_secundario": "Sloth's Territory in La Fortuna de San Carlos",
     "intro.parrafo_descriptivo": "Sloth's Territory is a total trail of 1300 meters, which extends along the natural forest surrounded La Havana River. The trail is accessible for all ages, so this is an activity where the whole family can enjoy it.",
-    "intro.testimonial": "Visit this paradise surrounded by nature and inhabited by sloth bears",
+    "intro.testimonial": "Visit this paradise surrounded by nature and inhabited by sloths  ",
 
 
 
 
-    "cards.card_1.titulo": "In Sloths Territory",
-    "cards.card_2.titulo": "You will know",
+    "cards.card_1.titulo": "Experience a free nature enviroment",
+    "cards.card_2.titulo": "You will learn",
     "cards.card_3.titulo": "Wonderful views",
-    "cards.card_1.parrafo": "we have a great natural habitat",
-    "cards.card_2.parrafo": "different types of plants and animals, especially sloths",
+    "cards.card_1.parrafo": "feel the real connection with nature, we'll see and learn about animals while hiking through the wild",
+    "cards.card_2.parrafo": "about the biodiversity in our ecosystem and the habitat of our principal attraction, the two and three-toed sloths",
     "cards.card_3.parrafo": "to the Arenal Volcano and the incredible nature that inhabits our facilities",
 
 
 
 
-    "service.titulo_principal": "SERVICES",
-    "services.titulo_secundario_parte_1": "In Sloths Territory we have 3 different activities",
-    "services.titulo_secundario_parte_2": "We invite you to meet them in La Fortuna de San Carlos",
+    "service.titulo_principal": "OUR SERVICES",
+    "services.titulo_secundario_parte_1": "We have 3 different activities",
+    "services.titulo_secundario_parte_2": "Below the details about each of them",
 
 
-    "service.vista_previa.tour_diurno.titulo": "DIURNAL OBSERVATION TOUR",
+    "service.vista_previa.tour_diurno.titulo": "DIURNAL OBSERVATION TOURS",
     "service.vista_previa.tour_diurno.parrafo": "We offer several daily hikes starting at: 8 am - 10 am - 1 pm and 3 pm.",
     "service.vista_previa.tour_diurno.item_1": "The trail is accessible for all ages",
     "service.vista_previa.tour_diurno.item_2": "The duration of this activity can be from 1 and a half to 2 hours",
 
 
     "service.vista_previa.tour_nocturno.titulo": "NIGHT HIKE EXPERIENCE",
-    "service.vista_previa.tour_nocturno.parrafo": "A great experience",
-    "service.vista_previa.tour_nocturno.item_1": "Our night hike starts at 6:00 pm.",
+    "service.vista_previa.tour_nocturno.parrafo": "The best night hike tour",
+    "service.vista_previa.tour_nocturno.item_1": "This tour starts at 6:00 pm.",
     "service.vista_previa.tour_nocturno.item_2": "The duration of this activity can be from 1 and a half to 2 hours",
 
 
@@ -129,9 +129,9 @@
 
 
 
-    "details.titulo_principal": "Sloth bear, national symbol of Costa Rica",
+    "details.titulo_principal": "Sloth, national symbol of Costa Rica",
     "details.item_1.titulo": "The 16th national symbol of Costa Rica",
-    "details.item_1.parrafo": "On Wednesday June 30, 2021, the sloth bear was declared a national symbol of Costa Rica.",
+    "details.item_1.parrafo": "On Wednesday June 30, 2021, the sloth was declared a national symbol of Costa Rica.",
     "details.item_2.titulo": "Why is it declared a national symbol?",
     "details.item_2.parrafo": "The species Bradypus variegatus (3-toed sloth) and Choloepus hoffomanni (2-toed sloth) were declared the national symbol of Costa Rica in order to highlight the importance of this species in the wildlife of Costa Rica.",
 
@@ -139,7 +139,7 @@
 
 
     "galeria.titulo_principal": "Our gallery section",
-    "galeria.titulo_secundario": "In this section you can see images of the different species in Sloths Territory",
+    "galeria.titulo_secundario": "In this section you can see images of the different species in Sloth's Territory",
     "galeria.filtro.ver_todo": "Show all",
     "galeria.filtro.sloths": "SLOTHS",
     "galeria.filtro.ranas": "Frogs",

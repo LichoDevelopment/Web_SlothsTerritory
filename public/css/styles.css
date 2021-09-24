@@ -872,8 +872,9 @@ input[type='checkbox'] {
 
 .basic-1 .image-container img {
 	margin: 0;
-	border-radius: 0.25rem;
-	transition: all 0.3s;
+    border-radius: 1.25rem;
+    transition: all 2.3s;
+	/* padding-top: 17px; */
 }
 
 .basic-1 .image-container:hover img {
@@ -1016,6 +1017,7 @@ input[type='checkbox'] {
 	height: 27rem;
 	background: url('../images/perezosos/perezosos-Sloth_s_Territory_Fortuna.jpeg') center center no-repeat;
 	background-size: cover;
+	border-radius: 20px;
 }
 
 .accordion .accordion-container {

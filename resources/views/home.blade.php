@@ -12,10 +12,10 @@
                     <img class="imgs" src="images/sliderPrincipal/perezosos_La_Fortuna_de_San_Carlos_Arenal_Volcano.jpeg" alt="Perezosos en Sloth´s Territory La Fortuna" title="Sloths Territory Fortuna">
                 </div>
                 <div class="item-slide" >
-                    <img class="imgs" src="images/sliderPrincipal/Sloth_s_Territory-La_Fortuna_de_San_Carlos.jpeg" alt="Perezosos en la Fortuna de San Carlos" title="Perezosos en Fortuna Sloths Territory">
+                    <img class="imgs" src="images/sliderPrincipal/Sloth_s_Territory-La_Fortuna_de_San_Carlos.jpg" alt="Perezosos en la Fortuna de San Carlos" title="Perezosos en Fortuna Sloths Territory">
                 </div>
                 <div class="item-slide">
-                    <img class="imgs" src="images/sliderPrincipal/oso_perezoso-Sloth_s_Territory_La_Fortuna.jpeg"  alt="Oso perezoso en La Fortuna de San Carlos" title="Oso perezoso en Sloths Territory La Fortuna">
+                    <img class="imgs" src="images/sliderPrincipal/oso_perezoso-Sloth_s_Territory_La_Fortuna.jpg"  alt="Oso perezoso en La Fortuna de San Carlos" title="Oso perezoso en Sloths Territory La Fortuna">
                 </div>
             </div>
             <div class="pagination">
@@ -23,10 +23,10 @@
                     <img src="images/sliderPrincipal/perezosos_La_Fortuna_de_San_Carlos_Arenal_Volcano.jpeg" alt="Sloths Territory La Fortuna" title="Perezosos en Fortuna" width="16px" height="12px">
                 </label>
                 <label class="pagination-item" for="2">
-                    <img src="images/sliderPrincipal/Sloth_s_Territory-La_Fortuna_de_San_Carlos.jpeg" alt="Perezosos en la Fortuna" title="Perezoso durmiendo Fortuna San Carlos" width="16px" height="12px">
+                    <img src="images/sliderPrincipal/Sloth_s_Territory-La_Fortuna_de_San_Carlos.jpg" alt="Perezosos en la Fortuna" title="Perezoso durmiendo Fortuna San Carlos" width="16px" height="12px">
                 </label>
                 <label class="pagination-item" for="3">
-                    <img src="images/sliderPrincipal/oso_perezoso-Sloth_s_Territory_La_Fortuna.jpeg" alt="Perezosos en la Fortuna Costa Rica" title="Perezoso en La Fortuna San Carlos" width="16px" height="12px">
+                    <img src="images/sliderPrincipal/oso_perezoso-Sloth_s_Territory_La_Fortuna.jpg" alt="Perezosos en la Fortuna Costa Rica" title="Perezoso en La Fortuna San Carlos" width="16px" height="12px">
                 </label>
 
             </div>
@@ -53,7 +53,7 @@
                     </div> <!-- end of col -->
                     <div class="col-lg-7">
                         <div class="image-container">
-                            <img class="img-fluid" src="images/otras-especies/tours-en-sloths-territory.jpeg" alt="Perezosos La Fortuna de San Carlos" title="Perezosos Sloth's Territory" height="400px" width="450px">
+                            <img class="img-fluid" src="images/otras-especies/tours-en-sloths-territory.jpg" alt="Perezosos La Fortuna de San Carlos" title="Perezosos Sloth's Territory" height="450px" width="500px">
                         </div> <!-- end of image-container -->
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
@@ -129,7 +129,7 @@
                         <!-- Card -->
                         <div class="card">
                             <div class="card-image">
-                                <img class="img-fluid" src="images/otras-especies/perezosos-sloth_s_territory_Fortuna_de_San_Carlos.jpeg" alt="Sendero para ver perezosos en la Fortuna de San Carlos Volcán Arenal" title="Sendero Sloth's Territory" width="350px" height="258px">
+                                <img class="img-fluidLateral" src="images/otras-especies/perezosos-sloth_s_territory_Fortuna_de_San_Carlos.jpg" alt="Sendero para ver perezosos en la Fortuna de San Carlos Volcán Arenal" title="Sendero Sloth's Territory" width="350px" height="258px">
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">{{__('service.vista_previa.tour_diurno.titulo')}}</h3>
@@ -181,7 +181,7 @@
                         <!-- Card -->
                         <div class="card">
                             <div class="card-image">
-                                <img class="img-fluid" src="images/aves/halcon-blanco-gavilan.jpeg" alt="Aves en La Fortuna Sloth's Territory" title="lechuzón en Sloth's Territory Fortuna" width="350px" height="258px">
+                                <img class="img-fluidLateral" src="images/aves/halcon-blanco-gavilan.jpg" alt="Aves en La Fortuna Sloth's Territory" title="lechuzón en Sloth's Territory Fortuna" width="350px" height="258px">
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">{{__('service.vista_previa.tour_aves.titulo')}}</h3>
@@ -822,7 +822,7 @@
         <!-- end of tour lightboxes -->
 
         <!-- Team -->
-        <div class="basic-2">
+        {{-- <div class="basic-2">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -841,9 +841,9 @@
                             <!-- <p class="job-title">Alguna característica</p> -->
                             <span class="social-icons">
                                 <span class="fa-stack">
-                                    <a href="https://www.facebook.com/Sloths.Territory.2018" target="_blank">
+                                    <a href="https://www.facebook.com/Sloths.Territory.2018" target="_blank"> --}}
                                         {{-- <span class="hexagon"></span> --}}
-                                        <i class="fab fa-facebook-f fa-stack-1x"></i>
+                                        {{-- <i class="fab fa-facebook-f fa-stack-1x"></i>
                                     </a>
                                 </span>
                             </span>
@@ -860,13 +860,13 @@
                             <span class="social-icons">
                                 <span class="fa-stack">
                                     <a href="https://www.facebook.com/Sloths.Territory.2018" target="_blank">
-                                        {{-- <span class="hexagon"></span> --}}
-                                        <i class="fab fa-facebook-f fa-stack-1x"></i>
+                                        <span class="hexagon"></span> --}}
+                                        {{-- <i class="fab fa-facebook-f fa-stack-1x"></i>
                                     </a>
                                 </span>
                             </span>
                         </div> <!-- end of team-member -->
-                        <!-- end of team member -->
+                        <!-- end of team member --> --}}
 
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->

@@ -76,7 +76,7 @@ Route::middleware(['auth'])->group(function () {
 
 /**Public routes */
 
-Route::redirect('/', '/es');
+Route::redirect('/', '/en');
 Route::redirect('/privacy-policy', '/es/terms-conditions');
 Route::redirect('/terms-conditions', '/es/terms-conditions');
 
