@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h2 class="display-6">Slider images</h2>
+    <h2 class="display-6">Carusel principal</h2>
 
     <div class="card mt-2">
         <div class="card-header">
