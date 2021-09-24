@@ -2078,14 +2078,8 @@ a.reservar-btn {
 
 .slide{
     display: flex;
-    transform: translate3d(0, 0, 0);
-    transition: all 5000ms;
-    animation-name: autoplay;
-    animation-duration: 20s;
-    animation-direction: alternate;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite; 
 }
+
 
 .item-slide{
     position: relative;

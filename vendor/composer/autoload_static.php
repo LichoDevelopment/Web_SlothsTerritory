@@ -618,6 +618,7 @@ class ComposerStaticInitbf453a45214e0c38c64018a311241f88
         'App\\Models\\Reserva' => __DIR__ . '/../..' . '/app/Models/Reserva.php',
         'App\\Models\\Reservacion' => __DIR__ . '/../..' . '/app/Models/Reservacion.php',
         'App\\Models\\Role' => __DIR__ . '/../..' . '/app/Models/Role.php',
+        'App\\Models\\SliderImage' => __DIR__ . '/../..' . '/app/Models/SliderImage.php',
         'App\\Models\\Tour' => __DIR__ . '/../..' . '/app/Models/Tour.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',

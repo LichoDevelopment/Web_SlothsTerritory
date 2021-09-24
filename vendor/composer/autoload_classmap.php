@@ -46,6 +46,7 @@ return array(
     'App\\Models\\Reserva' => $baseDir . '/app/Models/Reserva.php',
     'App\\Models\\Reservacion' => $baseDir . '/app/Models/Reservacion.php',
     'App\\Models\\Role' => $baseDir . '/app/Models/Role.php',
+    'App\\Models\\SliderImage' => $baseDir . '/app/Models/SliderImage.php',
     'App\\Models\\Tour' => $baseDir . '/app/Models/Tour.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',

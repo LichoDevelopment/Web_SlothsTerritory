@@ -60,6 +60,10 @@ Route::middleware(['auth'])->group(function () {
     });
 
 
+    Route::get('/carusel', 'ImagenCaruselController@index')->name('admin.carusel');
+    Route::post('/carusel', 'ImagenCaruselController@upload');
+    Route::delete('/carusel/{id}', 'ImagenCaruselController@destroy');
+    Route::post('/carusel/all', 'ImagenCaruselController@all');
     
     // Route::post('/agencia', 'AgenciaController@store');
     // Route::put('/agencia', 'AgenciaController@update');

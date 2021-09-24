@@ -3,33 +3,26 @@
 @section('content')
 
         <div id="header" class="container-all">
-            <input type="radio" id="1" name="image-slide" hidden/>
-            <input type="radio" id="2" name="image-slide" hidden/>
-            <input type="radio" id="3" name="image-slide" hidden/>
 
-            <div class="slide">
-                <div class="item-slide">
-                    <img class="imgs" src="images/sliderPrincipal/perezosos_La_Fortuna_de_San_Carlos_Arenal_Volcano.jpeg" alt="Perezosos en Sloth´s Territory La Fortuna" title="Sloths Territory Fortuna">
+            <div id="carouselTop" class="slide carousel carousel-fade" data-ride="carousel">
+                <div class="carousel-inner">
+                    @foreach (imagenesCarusel() as $img)
+                        <div class="carousel-item item-slide {{$loop->index === 0 ? 'active': ''}}" data-interval="3000" >
+                        <img 
+                            src="/storage/{{$img->url}}" 
+                            class="imgs" alt="{{ $img->titulo }}">
+                        </div>
+                    @endforeach
                 </div>
-                <div class="item-slide" >
-                    <img class="imgs" src="images/sliderPrincipal/Sloth_s_Territory-La_Fortuna_de_San_Carlos.jpg" alt="Perezosos en la Fortuna de San Carlos" title="Perezosos en Fortuna Sloths Territory">
-                </div>
-                <div class="item-slide">
-                    <img class="imgs" src="images/sliderPrincipal/oso_perezoso-Sloth_s_Territory_La_Fortuna.jpg"  alt="Oso perezoso en La Fortuna de San Carlos" title="Oso perezoso en Sloths Territory La Fortuna">
-                </div>
-            </div>
-            <div class="pagination">
-                <label class="pagination-item" for="1">
-                    <img src="images/sliderPrincipal/perezosos_La_Fortuna_de_San_Carlos_Arenal_Volcano.jpeg" alt="Sloths Territory La Fortuna" title="Perezosos en Fortuna" width="16px" height="12px">
-                </label>
-                <label class="pagination-item" for="2">
-                    <img src="images/sliderPrincipal/Sloth_s_Territory-La_Fortuna_de_San_Carlos.jpg" alt="Perezosos en la Fortuna" title="Perezoso durmiendo Fortuna San Carlos" width="16px" height="12px">
-                </label>
-                <label class="pagination-item" for="3">
-                    <img src="images/sliderPrincipal/oso_perezoso-Sloth_s_Territory_La_Fortuna.jpg" alt="Perezosos en la Fortuna Costa Rica" title="Perezoso en La Fortuna San Carlos" width="16px" height="12px">
-                </label>
-
-            </div>
+                <a class="carousel-control-prev" href="#carouselTop" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselTop" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
         </div>
         <div class="container">
             <h1 class="main-title mt-3"> {{__('inicio.titulo_principal')}} </h1>
