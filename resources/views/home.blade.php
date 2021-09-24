@@ -732,7 +732,7 @@
             <div class="row justify-content-center">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="col-lg-10">
-                    <img class="img-fluid" src="images/otras-especies/perezosos-sloth_s_territory_Fortuna_de_San_Carlos.jpeg" alt="tour de perezosos en La Fortuna" title="Tour de perezosos">
+                    <img class="img-fluid" src="images/otras-especies/perezosos-sloth_s_territory_Fortuna_de_San_Carlos.jpg" alt="tour de perezosos en La Fortuna" title="Tour de perezosos">
                 </div> <!-- end of col -->
                 <div class="col-lg-10">
                     <h3>{{__('service.tour_diurno.info.titulo_principal')}}</h3>
@@ -792,7 +792,7 @@
             <div class="row justify-content-center">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="col-lg-10">
-                    <img class="img-fluid" src="images/aves/halcon-blanco-gavilan.jpeg" alt="Tour de aves en La Fortuna" title="Tour de aves en La Fortuna">
+                    <img class="img-fluid" src="images/aves/halcon-blanco-gavilan.jpg" alt="Tour de aves en La Fortuna" title="Tour de aves en La Fortuna">
                 </div> <!-- end of col -->
                 <div class="col-lg-10">
                     <h3>{{__('service.tour_aves.info.titulo_principal')}}</h3>
