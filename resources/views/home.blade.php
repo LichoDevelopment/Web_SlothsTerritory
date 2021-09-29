@@ -212,29 +212,34 @@
 
                     <!-- Accordion -->
                     <div class="accordion-container" id="accordionOne">
-                        <h2>{{__('details.titulo_principal')}}</h2>
-                        <div class="item">
-                            <div id="headingOne">
-                                <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">
-                                    <span class="circle-numbering">1</span><span class="accordion-title">{{__('details.item_1.titulo')}}</span>
-                                </span>
-                            </div>
-                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionOne">
-                                <div class="accordion-body">
-                                    {{__('details.item_1.parrafo')}}
-                                </div>
-                            </div>
-                        </div> <!-- end of item -->
+                        <h2>{{__('details.titulo_principal')}}
+                            <img src="{{ asset('/images/banderas/cr.png')  }}" height="25" width="25" alt="bandera de costa rica">
+                            Costa Rica
+                            <img src="{{ asset('/images/banderas/cr.png')  }}" height="25" width="25" alt="bandera de costa rica">
+                        </h2>
+{{--                        <div class="item">--}}
+{{--                            <div id="headingOne">--}}
+{{--                                <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">--}}
+{{--                                    <span class="circle-numbering">1</span><span class="accordion-title">{{__('details.item_1.titulo')}}</span>--}}
+{{--                                </span>--}}
+{{--                            </div>--}}
+{{--                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionOne">--}}
+{{--                                <div class="accordion-body">--}}
+{{--                                    {{__('details.item_1.parrafo')}}--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div> <!-- end of item -->--}}
 
                         <div class="item">
-                            <div id="headingTwo">
-                                <span class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" role="button">
-                                    <span class="circle-numbering">2</span><span class="accordion-title">{{__('details.item_2.titulo')}} </span>
-                                </span>
-                            </div>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionOne">
+{{--                            <div id="headingTwo">--}}
+{{--                                <span class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" role="button">--}}
+{{--                                    <span class="circle-numbering">2</span><span class="accordion-title">{{__('details.item_2.titulo')}} </span>--}}
+{{--                                </span>--}}
+{{--                            </div>--}}
+                            <div aria-labelledby="headingTwo" data-parent="#accordionOne">
                                 <div class="accordion-body">
                                     {{__('details.item_2.parrafo')}}
+
                                 </div>
                             </div>
                         </div> <!-- end of item -->
