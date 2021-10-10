@@ -12,8 +12,9 @@
                 <thead>
                     <th>#</th>
                     <th>Nombre cliente</th>
-                    <th>correo</th>
-                    <th>mensaje</th>
+                    <th>Correo</th>
+                    <th>Mensaje</th>
+                    <th>Fecha</th>
                 </thead>
                 <tbody>
                     @foreach ($mensajes as $mensaje)
@@ -22,6 +23,7 @@
                             <td> {{$mensaje->nombre }} </td>
                             <td> {{$mensaje->correo }} </td>
                             <td> {{$mensaje->mensaje }} </td>
+                            <td> {{$mensaje->created_at }} </td>
                         </tr>
                     @endforeach
                 </tbody>

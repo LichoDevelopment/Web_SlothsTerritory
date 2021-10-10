@@ -178,5 +178,21 @@
     "formulario.mensaje": "Your Message",
     "formulario.acepta_politicas_parte_1": "I agree ",
     "politicas_privacidad": "Sloth's Territory Privacy Policy",
-    "terminos_condiciones": "and Terms Conditions"
+    "terminos_condiciones": "and Terms Conditions",
+
+    "factura": "Invoice",
+    "cliente": "CLIENT",
+    "agencia": "AGENCY",
+    "hora": "HOUR",
+    "fecha": "DATE",
+    "detalles": "Reservation details",
+    "cantidadAdultos": "Number of adults",
+    "cantidadNinios": "Number of children",
+    "cantidadNiniosGratis": "Number of children free",
+    "montoTotal": "Total",
+    "noFactura": "No. Invoice: ",
+    "gracias": "Thanks",
+    "adultos": "Adults",
+    "ninios": "children",
+    "niniosGratis": "Children free"
 }
