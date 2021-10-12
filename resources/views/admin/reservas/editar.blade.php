@@ -46,7 +46,7 @@
                         <label for="cantidad_niños_gratis">Niños gratis</label>
                         <input 
                             type="number" min="0" class="form-control" 
-                            name="cantidad_niños_gratis" required
+                            id="cantidad_niños_gratis" name="cantidad_niños_gratis" required
                             value="{{$reserva->cantidad_niños_gratis}}">
                     </article>
                </section>

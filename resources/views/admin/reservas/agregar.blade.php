@@ -36,7 +36,7 @@
                     </article>
                     <article class="col-6">
                         <label for="cantidad_niños_gratis">Niños gratis</label>
-                        <input type="number" min="0" class="form-control" name="cantidad_niños_gratis" required>
+                        <input type="number" min="0" class="form-control" id="cantidad_niños_gratis" name="cantidad_niños_gratis" required>
                     </article>
                </section>
                <section class="row mb-3">
