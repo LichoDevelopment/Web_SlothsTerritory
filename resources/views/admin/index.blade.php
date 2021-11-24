@@ -200,12 +200,15 @@
     const formFiltrar = document.querySelector('#form-filtrar')
     const botonesActualizarEstado = document.querySelectorAll('.btn-actualizar-estado');
 
-    formFiltrar['fechaInicio'].addEventListener('change', ()=>{
-        formFiltrar['fechaFin'].min = formFiltrar['fechaInicio'].value
-        if(!formFiltrar['fechaFin'].value){
-            formFiltrar['fechaFin'].value = formFiltrar['fechaInicio'].value
-        }
-    })
+    if(formFiltrar && formFiltrar['fechaInicio']){
+        formFiltrar['fechaInicio'].addEventListener('change', ()=>{
+            formFiltrar['fechaFin'].min = formFiltrar['fechaInicio'].value
+            if(!formFiltrar['fechaFin'].value){
+                formFiltrar['fechaFin'].value = formFiltrar['fechaInicio'].value
+            }
+        })
+
+    }
 
     borrarReservasBtn.forEach(btn =>{
         btn.addEventListener('click', event =>{
