@@ -137,15 +137,16 @@
                                 <i class="fas fa-home"></i>Inicio
                             </a>
                         </li>
-                        <li class="{{ Route::is('admin.registros') ? 'active' : '' }} ">
-                            <a href="{{ route('admin.registro') }}">
-                                <i class="fas fa-chart-bar"></i>Registros</a>
-                        </li>
+                        
                         <li class="{{ Route::is('admin.agencias') ? 'active' : '' }} ">
                             <a href="{{ route('admin.agencia') }}">
                                 <i class="fas fa-briefcase"></i>Agencias</a>
                         </li>
                         @if (rol_usuario()->id == 1)
+                            <li class="{{ Route::is('admin.registros') ? 'active' : '' }} ">
+                                <a href="{{ route('admin.registro') }}">
+                                    <i class="fas fa-chart-bar"></i>Registros</a>
+                            </li>
                             <li class="{{ Route::is('admin.tours') ? 'active' : '' }} ">
                                 <a href="{{ route('admin.tours') }}">
                                     <i class="fas fa-calendar-alt"></i>Tours</a>
@@ -158,20 +159,20 @@
                                 <a href="{{ route('admin.horario') }}">
                                     <i class="fas fa-clock"></i>Horarios</a>
                             </li>
-                            <li class="{{ Route::is('admin.mensaje') ? 'active' : '' }} ">
-                                <a href="{{ route('admin.mensaje') }}">
-                                    <i class="fas fa-envelope"></i>Mensajes</a>
-                            </li>
+                            
                             <li class="{{ Route::is('reservas.eliminadas') ? 'active' : '' }} ">
                                 <a href="{{ route('reservas.eliminadas') }}">
                                     <i class="fas fa-recycle"></i>Eliminadas</a>
                             </li>
-                            <li class="{{ Route::is('admin.carusel') ? 'active' : '' }} ">
-                                <a href="{{ route('admin.carusel') }}">
-                                    <i class="fas fa-images"></i>Carusel</a>
-                            </li>
-                            
                         @endif
+                        <li class="{{ Route::is('admin.mensaje') ? 'active' : '' }} ">
+                            <a href="{{ route('admin.mensaje') }}">
+                                <i class="fas fa-envelope"></i>Mensajes</a>
+                        </li>
+                        <li class="{{ Route::is('admin.carusel') ? 'active' : '' }} ">
+                            <a href="{{ route('admin.carusel') }}">
+                                <i class="fas fa-images"></i>Carusel</a>
+                        </li>
                     </ul>
                 </nav>
             </div>

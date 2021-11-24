@@ -170,7 +170,7 @@
                                     <a href="{{ route('reservas.ver', ['id'=> $reserva->id]) }}" class="btn btn-sm btn-info">Ver</a>
                                     <a href="{{ route('reservas.editar', ['id'=> $reserva->id]) }}" class="btn btn-sm btn-warning">Editar</a>
                                     
-                                    @if (rol_usuario()->id === 1)
+                                    @if (rol_usuario()->id === 1 or rol_usuario()->id === 2)
                                         <button
                                             data-id="{{$reserva->id}}" 
                                             class="btn btn-sm btn-danger borrar-reserva-btn">Eliminar</button>
