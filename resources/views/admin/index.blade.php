@@ -2,7 +2,7 @@
 
 
 @section('content')
-    @if (rol_usuario()->id === 1)
+    @if (rol_usuario()->id === 2)
         @foreach ($totales as $total)
         
         <section class="grid_totales">
@@ -30,24 +30,26 @@
                     <span class="desc">Total personas</span>
                 </div>
             </div>
-            <div class="">
-                <div class="card p-3 bg-secondary text-light">
-                    <h2 class="number text-light"> ${{$total->comisiones}} </h2>
-                    <span class="desc">Total comisiones</span>
+            @if (rol_usuario()->id === 1)
+                <div class="">
+                    <div class="card p-3 bg-secondary text-light">
+                        <h2 class="number text-light"> ${{$total->comisiones}} </h2>
+                        <span class="desc">Total comisiones</span>
+                    </div>
                 </div>
-            </div>
-            <div class="">
-                <div class="card p-3 bg-secondary text-light">
-                    <h2 class="number text-light"> ${{$total->monto_total}} </h2>
-                    <span class="desc">Monto total</span>
+                <div class="">
+                    <div class="card p-3 bg-secondary text-light">
+                        <h2 class="number text-light"> ${{$total->monto_total}} </h2>
+                        <span class="desc">Monto total</span>
+                    </div>
                 </div>
-            </div>
-            <div class="">
-                <div class="card p-3 bg-secondary text-light">
-                    <h2 class="number text-light"> ${{$total->monto_neto}} </h2>
-                    <span class="desc">Monto neto</span>
+                <div class="">
+                    <div class="card p-3 bg-secondary text-light">
+                        <h2 class="number text-light"> ${{$total->monto_neto}} </h2>
+                        <span class="desc">Monto neto</span>
+                    </div>
                 </div>
-            </div>
+            @endif
         </section>
         
         @endforeach
@@ -71,22 +73,24 @@
             <section class="collapse" id="SeccionFiltros">
                 <div class="d-flex justify-content-between mb-4 align-items-center">
                         <form class="form-filtrar" action="/admin?" method="get" id="form-filtrar">
-                            <div>
-                                <label for="fecha-inicio">Fecha de inicio</label>
-                                <input
-                                @if (request()->query() && isset(request()->query()['fechaInicio']))
-                                    value="{{request()->query()['fechaInicio']}}"
-                                @endif 
-                                type="date" name="fechaInicio" class="form-control">
-                            </div>
-                            <div>
-                                <label for="fecha-inicio">Fecha de fin</label>
-                                <input
-                                @if (request()->query() && isset(request()->query()['fechaFin']))
-                                    value="{{request()->query()['fechaFin']}}"
-                                @endif 
-                                type="date" name="fechaFin" class="form-control">
-                            </div>
+                            @if (rol_usuario()->id === 1)
+                                <div>
+                                    <label for="fecha-inicio">Fecha de inicio</label>
+                                    <input
+                                    @if (request()->query() && isset(request()->query()['fechaInicio']))
+                                        value="{{request()->query()['fechaInicio']}}"
+                                    @endif 
+                                    type="date" name="fechaInicio" class="form-control">
+                                </div>
+                                <div>
+                                    <label for="fecha-inicio">Fecha de fin</label>
+                                    <input
+                                    @if (request()->query() && isset(request()->query()['fechaFin']))
+                                        value="{{request()->query()['fechaFin']}}"
+                                    @endif 
+                                    type="date" name="fechaFin" class="form-control">
+                                </div>
+                            @endif
                             <div>
                                 <label for="agencia">Agencia</label>
                                 <select class="form-control" name="agencia">
