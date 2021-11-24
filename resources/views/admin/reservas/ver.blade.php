@@ -15,7 +15,7 @@
             <div id="logo">
               <img src="{{asset('images/favicon--.png')}}">
             </div>
-            <h1>Factura 00000{{$reserva->id}}</h1>
+            <h1>{{__('factura')}} 00000{{$reserva->id}}</h1>
             <div id="company" class="clearfix">
               <div>Sloth's Territory</div>
               <div>La Fortuna,<br /> San Carlos, CR</div>
@@ -24,36 +24,36 @@
             </div>
             <div id="project">
               <div><span>TOUR: </span> <span>{{$reserva->tour->nombre}}</span></div>
-              <div><span>CLIENTE: </span> <span>{{$reserva->nombre_cliente}}</span></div>
-              <div><span>AGENCIA: </span> <span>{{$reserva->agencia->nombre}}</span> </div>
-              <div><span>HORA: </span> <span>{{$reserva->horario->hora}}:{{$reserva->horario->orden > 20 ? 'PM' : 'AM'}}</span></div>
-              <div><span>FECHA: </span> <span>{{$reserva->fecha_tour->fecha}}  </span> </div>
+              <div><span>{{__('cliente')}}: </span> <span>{{$reserva->nombre_cliente}}</span></div>
+              <div><span>{{__('agencia')}}: </span> <span>{{$reserva->agencia->nombre}}</span> </div>
+              <div><span>{{__('hora')}}: </span> <span>{{$reserva->horario->hora}}:{{$reserva->horario->orden > 20 ? 'PM' : 'AM'}}</span></div>
+              <div><span>{{__('fecha')}}: </span> <span>{{$reserva->fecha_tour->fecha}}  </span> </div>
             </div>
           </header>
           <main>
-              <h1  class="display-4" > Detalles de reservacion </h1>
+              <h1  class="display-4" > {{__('detalles')}} </h1>
         
             <table>
               <tbody>
       
                 <tr>
-                  <td class="service"><span>Cantidad adultos: </span></td>
+                  <td class="service"><span>{{__('cantidadAdultos')}}: </span></td>
                   <td class="desc"><span> {{$reserva->cantidad_adultos}} </span></td>
                 </tr>
                 <tr>
-                  <td class="service"><span>Cantidad niños: </span></td>
+                  <td class="service"><span>{{__('cantidadNinios')}}: </span></td>
                   <td class="desc"><span> {{$reserva->cantidad_niños}} </span></td>
                 </tr>
                 <tr>
-                  <td class="service"><span>Cantidad niños gratis: </span></td>
+                  <td class="service"><span>{{__('cantidadNiniosGratis')}}: </span></td>
                   <td class="desc"><span> {{$reserva->cantidad_niños_gratis}} </span></td>
                 </tr>
                 <tr>
-                  <td class="service"><span>Monto total: </span></td>
+                  <td class="service"><span>{{__('montoTotal')}}: </span></td>
                   <td class="desc"><span> ${{$reserva->monto_total}} </span></td>
                 </tr>
                 <tr>
-                  <td class="service"><span>No. Factura: </span></td>
+                  <td class="service"><span>{{__('noFactura')}}: </span></td>
                   <td class="desc"><span> {{$reserva->factura}} </span></td>
                 </tr>
               </tbody>

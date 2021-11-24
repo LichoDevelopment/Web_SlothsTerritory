@@ -177,7 +177,23 @@
     "formulario.mensaje": "Su mensaje",
     "formulario.acepta_politicas_parte_1": "Acepto las ",
     "politicas_privacidad": "Políticas de privacidad de Sloth's Territory y los",
-    "terminos_condiciones": "Términos y Condiciones"
+    "terminos_condiciones": "Términos y Condiciones",
+
+    "factura": "Factura",
+    "cliente": "CLIENTE",
+    "agencia": "AGENCIA",
+    "hora": "HORA",
+    "fecha": "FECHA",
+    "detalles": "Detalles de reservación",
+    "cantidadAdultos": "12+ años",
+    "cantidadNinios": "6 - 12 años",
+    "cantidadNiniosGratis": "Menores de 5 años",
+    "montoTotal": "Monto total",
+    "noFactura": "No. Factura: ",
+    "gracias": "Gracias",
+    "adultos": "Adulos",
+    "ninios": "Niños",
+    "niniosGratis": "Niños gratis"
 }
 
 
