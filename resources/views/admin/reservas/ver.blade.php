@@ -66,21 +66,25 @@
       </section>
 
     <div class="btn-container">
+        <a href="/admin" class="btn btn-sucess" id="inicio">Inicio</a>
         <button class="btn btn-sucess" id="imprimir">Imprimir</button>
         <button class="btn btn-info" id="enviar" data-reserva="{{$reserva->id}}">Enviar</button>
     </div>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
+        const inicio = document.getElementById('inicio')
         const imprimir = document.getElementById('imprimir')
         const enviar = document.getElementById('enviar')
         imprimir.addEventListener('click', event => {
             event.preventDefault();
             imprimir.style.visibility = 'hidden';
             enviar.style.visibility = 'hidden';
+            inicio.style.visibility = 'hidden';
             print()
             imprimir.style.visibility = 'visible';
             enviar.style.visibility = 'visible';
+            inicio.style.visibility = 'visible';
         })
 
         enviar.addEventListener('click', event => {

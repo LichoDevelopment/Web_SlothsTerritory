@@ -109,7 +109,7 @@ class ReservacionController extends Controller
                ]);
            }
 
-           return redirect('/ver_reserva/'.$reservacion->id)->with("Mensaje","reserva creada");
+           return redirect('/ver_reserva/'.$reservacion->id);
        }       
 
    }
@@ -146,7 +146,6 @@ class ReservacionController extends Controller
 
    public function update($id)
    {
-       $response = response("",202);
        $fecha_tour = Fecha_tour::where('fecha',$this->request->fecha_tour)->first();
        if(!$fecha_tour){
            $fecha_tour = Fecha_tour::create(['fecha' => $this->request->fecha_tour]);
@@ -157,8 +156,11 @@ class ReservacionController extends Controller
        $registro = Registro::where('id_horario',$this->request->id_horario)
                             ->where('id_fecha',$fecha_tour->id)
                             ->first();
+
+       $cant_reservas = $registro ? $registro->cantidad_reservas : 0;
+
        $cantidad_previa_pax_en_reserva = $reserva->cantidad_adultos + $reserva->cantidad_niños + $reserva->cantidad_niños_gratis;
-       $cantidad_reservas = $registro->cantidad_reservas - $cantidad_previa_pax_en_reserva;
+       $cantidad_reservas = $cant_reservas - $cantidad_previa_pax_en_reserva;
 
        $total_pax_en_reserva = $this->request->cantidad_adultos + $this->request->cantidad_niños + $this->request->cantidad_niños_gratis;
 
@@ -166,7 +168,7 @@ class ReservacionController extends Controller
        $validator = Validator::make($this->request->all(), $this->reglasValidacion, $this->mensajesValidacion);
 
        if($validator->fails()){
-           $response = response([
+           return response([
                "status"    => 422,
                "message"   => "Error",
                "errors"    => $validator->errors()
@@ -192,13 +194,16 @@ class ReservacionController extends Controller
 
             $reserva->save();
 
-            $registro->update([
-                'id_horario'        => $this->request->id_horario,
-                'id_fecha'          => $fecha_tour->id,
-                'cantidad_reservas' => $cantidad_reservas + $total_pax_en_reserva
-            ]);
-            $registro->save();
-            return redirect('/admin')->with("Mensaje","reserva actualizada");
+            if($registro){
+                $registro->update([
+                    'id_horario'        => $this->request->id_horario,
+                    'id_fecha'          => $fecha_tour->id,
+                    'cantidad_reservas' => $cantidad_reservas + $total_pax_en_reserva
+                ]);
+                $registro->save();
+
+            }
+            return redirect('/ver_reserva/'.$id);
        }
 
    }

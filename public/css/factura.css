@@ -172,7 +172,7 @@
       gap: .5rem;
   }
 
-  .btn-container button {
+  .btn-container button, .btn-container a{
     outline: none;
     border: none;
     background-color: #113448;
@@ -180,4 +180,5 @@
     border-radius: 4px;
     color: #fff;
     cursor: pointer;
+    text-decoration: none;
   }
