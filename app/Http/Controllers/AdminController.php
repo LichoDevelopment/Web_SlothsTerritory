@@ -11,6 +11,7 @@ use App\Models\Reserva;
 use App\Models\Tour;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\App;
 
 class AdminController extends Controller
 {
@@ -47,8 +48,18 @@ class AdminController extends Controller
 
     public function verReserva($id)
     {
+        $query = request()->query();
         $reserva = Reserva::find($id);
-        return view('admin.reservas.ver',compact('reserva'));
+
+        $locale = 'en';
+
+        if($query){
+            $lang = $query['lang'];
+        } 
+
+        App::setLocale($locale);
+
+        return view('admin.reservas.ver',compact('reserva', 'locale'));
     }
     public function agencias()
     {

@@ -53,8 +53,6 @@ class ReservacionController extends Controller
 
    public function store()
    {
-       $response = response("",201);
-
        $fecha_tour = Fecha_tour::where('fecha',$this->request->fecha_tour)->first();
        if(!$fecha_tour){
            $fecha_tour = Fecha_tour::create(['fecha' => $this->request->fecha_tour]);
@@ -70,13 +68,13 @@ class ReservacionController extends Controller
        $validator = Validator::make($this->request->all(), $this->reglasValidacion, $this->mensajesValidacion);
 
        if($validator->fails()){
-           $response = response([
+           return response([
                "status"    => 422,
                "message"   => "Error",
                "errors"    => $validator->errors()
            ], 422);
        }else{
-           Reserva::create([
+           $reservacion = Reserva::create([
                'nombre_cliente'         => $this->request->nombre_cliente,
                'cantidad_adultos'       => $this->request->cantidad_adultos,
                'cantidad_niños'         => $this->request->cantidad_niños,
@@ -110,9 +108,10 @@ class ReservacionController extends Controller
                     'cantidad_reservas' => $total_pax_en_reserva
                ]);
            }
-       }
 
-       return redirect('/admin')->with("Mensaje","reserva creada");
+           return redirect('/ver_reserva/'.$reservacion->id)->with("Mensaje","reserva creada");
+       }       
+
    }
 
    public function updateEstado($id)

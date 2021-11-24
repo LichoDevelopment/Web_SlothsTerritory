@@ -216,7 +216,6 @@
                 precios = await obtenerListaDePrecios(agenciaId, tourId)
             }
             if(precios){
-                console.log(precios)
                 const monto_adultos = Number(cantidad_adultos) * Number(precios.precio_adulto)
                 const monto_ninos = Number(cantidad_ninos) * Number(precios.precio_niño)
         
@@ -271,7 +270,6 @@
 
                 const totalPax = Number(cantidad_adultos.value) + Number(cantidad_ninos.value)
 
-    console.log(capacidad_maxima, totalPax + cantidad_actual)
                 if(capacidad_maxima <= totalPax + cantidad_actual){
                     console.log('capacidad exedida o igual')
                 }else{
