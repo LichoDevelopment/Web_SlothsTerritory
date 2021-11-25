@@ -94,9 +94,15 @@
                         <label for="id_horario">Hora</label>
                         <select class="custom-select" 
                         name="id_horario" id="horarios" data-horarios="{{$horarios}}" required>
-                            <option selected value="{{$reserva->id_horario}}">
-                                {{$reserva->horario->hora}}
-                            </option>
+                            @foreach ($horarios as $horario)
+                                @if ($horario->id_tour === $reserva->id_tour)
+                                    @if ($horario->id !== $reserva->id_horario)
+                                        <option selected value="{{$horario->id}}"> {{ $horario->hora}} </option>                                    
+                                    @else
+                                        <option value="{{$horario->id}}"> {{ $horario->hora}} </option>                                     
+                                    @endif                                    
+                                @endif
+                            @endforeach
                             
                         </select>
                     </article>
