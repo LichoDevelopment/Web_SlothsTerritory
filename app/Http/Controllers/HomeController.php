@@ -72,8 +72,10 @@ class HomeController extends Controller
                             
         if($query){
             if (rol_usuario()->id === 2){
-                $fechaInicio    = $date;
-                $fechaFin       = $date;
+                // $fechaInicio    = $date;
+                // $fechaFin       = $date;
+                $fechaInicio    = isset($query['fechaInicio']) ? $query['fechaInicio'] : null;
+                $fechaFin       = isset($query['fechaFin']) ? $query['fechaFin'] : null;
             }
             else{
                 $fechaInicio    = isset($query['fechaInicio']) ? $query['fechaInicio'] : null;
