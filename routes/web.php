@@ -43,8 +43,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/capacidad_maxima/{hora}', 'HorarioController@capacidad_maxima');
     Route::get('/cantidad_actual/{hora}', 'HorarioController@cantidad_actual');
 
+    Route::delete('/reservacion/{id}', 'ReservacionController@destroy');
     Route::middleware(['admin'])->group(function () {
-        Route::delete('/reservacion/{id}', 'ReservacionController@destroy');
 
         Route::get('/tour', 'TourController@index')->name('admin.tour');
         Route::post('/tour', 'TourController@store');
