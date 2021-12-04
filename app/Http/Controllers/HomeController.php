@@ -174,4 +174,10 @@ class HomeController extends Controller
         App::setLocale($locale);
         return view('terms-conditions', compact('locale'));
     }
+
+    public function combos($locale)
+    {
+        App::setLocale($locale);
+        return view('/combo/combo', compact('locale'));
+    }
 }

@@ -33,6 +33,7 @@
 	<link href=" {{asset('css/magnific-popup.css')}} " rel="stylesheet">
 	<link href=" {{asset('css/variables.css')}} " rel="stylesheet">
 	<link href=" {{asset('css/styles.css')}} " rel="stylesheet">
+    <link href=" {{asset('css/combo.css')}} " rel="stylesheet">
 	<link href=" {{asset('css/responsive.css')}} " rel="stylesheet">
 
 	<!-- Favicon  -->
