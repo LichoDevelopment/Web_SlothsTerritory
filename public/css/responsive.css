@@ -669,6 +669,14 @@
     }
 }
 
+@media (max-width: 530px){
+ .combo-preview-img{
+	height: 60vh;
+	max-width: 100%;
+  }
+  
+}
+
 @media (max-width: 468px){
 	.footer-grid-article.contact{
 		min-width: 14rem;

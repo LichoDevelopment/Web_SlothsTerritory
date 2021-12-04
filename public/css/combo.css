@@ -98,3 +98,21 @@ h1.heading {
   font-weight:600;
   text-transform: uppercase
 }
+
+
+/**
+ * Combo preview btn start
+ */
+
+.combo-preview-img{
+  height: 70vh;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px 4px rgb(0 0 0 / 40%);
+  position: relative;
+  transition: all 250ms ease-in-out;
+}
+
+.combo-preview-img:hover{
+  transform: scale(1.05);
+}

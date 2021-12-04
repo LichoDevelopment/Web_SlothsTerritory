@@ -203,6 +203,13 @@
         </div> <!-- end of cards-2 -->
         <!-- end of services -->
 
+        <div class="container">
+            <a href="{{ route('combos', $locale) }}" class="d-flex justify-content-center mb-4">
+                <img class="combo-preview-img" src="{{ asset('images/combo-preview-img.jpeg') }}" alt="">
+            </a>
+
+        </div>
+
 
         <!-- Details 1 -->
         <div class="container">
