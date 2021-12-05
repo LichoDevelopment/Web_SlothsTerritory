@@ -56,7 +56,7 @@
   }
   
   #project span {
-    color: #113448;
+    color: #6a5e05;
     text-align: left;
     width: 53px;
     margin-right: 10px;
@@ -75,7 +75,7 @@
   }
 
   #company div {
-    color: #113448;
+    color: #6a5e05;
     text-align: right;
     font-size: .8rem;
   }
@@ -97,7 +97,7 @@
     }
   /* table{
     border-radius: 4px;
-    box-shadow: 0 0 2px 2px #113448;
+    box-shadow: 0 0 2px 2px #6a5e05;
   } */
   
   table th,
@@ -175,7 +175,7 @@
   .btn-container button, .btn-container a{
     outline: none;
     border: none;
-    background-color: #113448;
+    background-color: #6a5e05;
     padding: .4rem .6rem;
     border-radius: 4px;
     color: #fff;
