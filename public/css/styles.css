@@ -21,11 +21,19 @@ html {
     width: 100%;
 	height: 100%;
 }
+.p-services{
+	color: #ffffff;
+}
+.media-body-service{
+	color: #ffffff;
+}
 
 body, p {
-	color: #ffffff;
+	color: #787976;
 	font: 400 1rem/1.5625rem "Open Sans", sans-serif;
 }
+
+
 
 .p-large {
 	font: 400 1.125rem/1.625rem "Open Sans", sans-serif;
@@ -55,6 +63,12 @@ h1 {
 }
 
 h2 {
+	color: #484a46;
+	font: 700 1.75rem/2.125rem "Montserrat", sans-serif;
+	text-align: center;
+}
+
+.h2-services{
 	color: #ffffff;
 	font: 700 1.75rem/2.125rem "Montserrat", sans-serif;
 	text-align: center;
@@ -121,6 +135,12 @@ strong {
 	text-align: center;
 }
 
+.section-title-services {
+	color: #fca800;
+	font: 500 1.725rem/2.225rem "Montserrat", sans-serif;
+	text-align: center;
+}
+
 .btn-solid-reg {
 	display: inline-block;
 	padding: 1.1875rem 1.875rem 1.1875rem 1.875rem;
@@ -152,7 +172,7 @@ strong {
 }
 
 .btn-solid-lg:hover {
-	background-color: transparent;
+	background-color: #fca800;
 	color: #6a5e05;
 	text-decoration: none;
 }
@@ -364,7 +384,7 @@ input[type='checkbox'] {
 }
 
 .form-control-submit-button:hover {
-	background-color: transparent;
+	background-color: #fca800;
 	color: #6a5e05;
 }
 
@@ -623,7 +643,7 @@ input[type='checkbox'] {
 	padding-bottom: 0.375rem;
 	background-color: #6a5e05;
 	box-shadow: 0 0.0625rem 0.375rem 0 rgba(0, 0, 0, 0.1);
-	font: 600 0.875rem/0.875rem "Open Sans", sans-serif;
+	font: 600 1.3rem "Open Sans", sans-serif;
 	transition: all 0.2s;
 }
 
@@ -768,6 +788,22 @@ input[type='checkbox'] {
     left: 50%;
     transform: translate(-50%, -50%);
 	
+}
+
+div#video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    /* justify-items: center; */
+    width: 100vw;
+}
+
+.yt-iframe {
+    height: 40rem !important;
+    width: 95%;
+    /* margin: auto; */
+    margin-bottom: 3rem;
 }
 
 .header .text-container {
@@ -1006,7 +1042,7 @@ input[type='checkbox'] {
 }
 
 .cards-2 .btn-solid-reg:hover {
-	background-color: #fff;
+	background-color: #fca800;
 }
 
 
@@ -1871,7 +1907,7 @@ a.back-to-top {
 }
 
 a:hover.back-to-top {
-	background-color: #0f9e0f;
+	background-color: #053801;
 }
 
 a.reservar-btn {

@@ -425,6 +425,7 @@
 	.filter .element-item img{
 		object-fit: cover;
 	}
+	
 
     .basic-1{
         padding-top: 3rem
@@ -466,6 +467,24 @@
     }
 }
 
+@media (min-width: 950px){
+	.navbar-custom {
+		font: 600 1.21rem "Open Sans", sans-serif;
+	}
+}
+
+@media (max-width: 950px){
+	.navbar-custom {
+		font: 600 1.01rem "Open Sans", sans-serif;
+	}
+}
+
+@media (max-width: 850px){
+	.navbar-custom {
+		font: 600 0.991rem "Open Sans", sans-serif;
+	}
+}
+
 
 /* Min-width width 768px */
 @media (min-width: 768px) {
@@ -476,6 +495,7 @@
 		margin-right: auto;
 		margin-left: auto;
 	}
+	
 	/* end of general styles */
 
 
