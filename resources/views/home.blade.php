@@ -113,7 +113,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title">{{__('service.titulo_principal')}}</div>
-                        <h2>{{__('services.titulo_secundario_parte_1')}} <br>{{__('services.titulo_secundario_parte_2')}} </h2>
+                        <h2 class="h2-services">{{__('services.titulo_secundario_parte_1')}} <br>{{__('services.titulo_secundario_parte_2')}} </h2>
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
                 <div class="row">
@@ -126,15 +126,15 @@
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">{{__('service.vista_previa.tour_diurno.titulo')}}</h3>
-                                <p>{{__('service.vista_previa.tour_diurno.parrafo')}}</p>
+                                <p class="p-services">{{__('service.vista_previa.tour_diurno.parrafo')}}</p>
                                 <ul class="list-unstyled li-space-lg">
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body">{{__('service.vista_previa.tour_diurno.item_1')}}</div>
+                                        <div class="media-body media-body-service">{{__('service.vista_previa.tour_diurno.item_1')}}</div>
                                     </li>
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body">{{__('service.vista_previa.tour_diurno.item_2')}}</div>
+                                        <div class="media-body media-body-service">{{__('service.vista_previa.tour_diurno.item_2')}}</div>
                                     </li>
                                 </ul>
                             </div>
@@ -152,15 +152,15 @@
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">{{__('service.vista_previa.tour_nocturno.titulo')}}</h3>
-                                <p>{{__('service.vista_previa.tour_nocturno.parrafo')}}</p>
+                                <p class="p-services">{{__('service.vista_previa.tour_nocturno.parrafo')}}</p>
                                 <ul class="list-unstyled li-space-lg">
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body">{{__('service.vista_previa.tour_nocturno.item_1')}}</div>
+                                        <div class="media-body media-body-service">{{__('service.vista_previa.tour_nocturno.item_1')}}</div>
                                     </li>
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body">{{__('service.vista_previa.tour_nocturno.item_2')}}</div>
+                                        <div class="media-body media-body-service">{{__('service.vista_previa.tour_nocturno.item_2')}}</div>
                                     </li>
                                 </ul>
                             </div>
@@ -178,15 +178,15 @@
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">{{__('service.vista_previa.tour_aves.titulo')}}</h3>
-                                <p>{{__('service.vista_previa.tour_aves.parrafo')}}</p>
+                                <p class="p-services">{{__('service.vista_previa.tour_aves.parrafo')}}</p>
                                 <ul class="list-unstyled li-space-lg">
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body">{{__('service.vista_previa.tour_aves.item_1')}}</div>
+                                        <div class="media-body media-body-service">{{__('service.vista_previa.tour_aves.item_1')}}</div>
                                     </li>
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body">{{__('service.vista_previa.tour_aves.item_2')}}</div>
+                                        <div class="media-body media-body-service">{{__('service.vista_previa.tour_aves.item_2')}}</div>
                                     </li>
                                 </ul>
                             </div>
@@ -204,7 +204,7 @@
         <!-- end of services -->
 
         <div class="container">
-            <a href="{{ route('combos', $locale) }}" class="d-flex justify-content-center mb-4">
+            <a href="/#{{-- {{ route('combos', $locale) }} --}}" class="pt-5 d-flex justify-content-center mb-4">
                 <img class="combo-preview-img" src="{{ asset('images/combo-preview-img.jpeg') }}" alt="">
             </a>
 
@@ -391,8 +391,8 @@
 
         </div> <!-- end of filter -->
         </div> <!-- end of container -->
-            <div id="video" class="container">
-                <iframe src="https://www.youtube.com/embed/BrAsPlE2gS8?rel=0&amp;showinfo=0" width="100%" height="430px" frameborder="0" style="border:0" allowfullscreen alt="Video de perezosos en La Fortuna" title="video de perezosos en La Fortuna"></iframe>             
+            <div id="video" class="">
+                <iframe class="yt-iframe" src="https://www.youtube.com/embed/BrAsPlE2gS8?rel=0&amp;showinfo=0" frameborder="0" style="border:0" allowfullscreen alt="Video de perezosos en La Fortuna" title="video de perezosos en La Fortuna"></iframe>             
         </div>
         <!-- end of tours -->
 
