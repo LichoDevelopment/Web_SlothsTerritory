@@ -690,11 +690,12 @@
 }
 
 @media (max-width: 530px){
- .combo-preview-img{
-	height: 60vh;
-	max-width: 100%;
-  }
-  
+	.combo-preview-img{
+	   height: 60vh;
+	   padding-top: 1rem;
+	   padding-bottom: 1rem;
+	 }
+	 
 }
 
 @media (max-width: 468px){

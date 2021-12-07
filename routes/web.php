@@ -73,7 +73,15 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/horario/{id}', 'HorarioController@update');
     Route::delete('/horario/{id}', 'HorarioController@destroy');
 
-
+    
+    // Route::prefix('combos')->group(function () {        
+    //     Route::get('/ver', 'ComboController@index')->name('admin.combos.index');
+    //     Route::get('/ver/{id}', 'ComboController@show')->name('admin.combos.show');
+    //     Route::get('/create', 'ComboController@create')->name('admin.combos.create');
+    //     Route::post('/', 'ComboController@store')->name('admin.combos.store');
+    //     Route::put('/{id}', 'ComboController@update')->name('admin.combos.update');
+    //     Route::delete('/{id}', 'ComboController@destroy')->name('admin.combos.delete');
+    // });
 
     // Route::resource('agencias', 'AgenciasController');
 });
@@ -83,13 +91,13 @@ Route::middleware(['auth'])->group(function () {
 Route::redirect('/', '/en');
 Route::redirect('/privacy-policy', '/es/terms-conditions');
 Route::redirect('/terms-conditions', '/es/terms-conditions');
-Route::redirect('/combo', '/es/combo');
+// Route::redirect('/combo', '/es/combo');
 
 Route::group(['prefix'=>'{locale}', 'where'=> ['locale'=> 'es|en']],function () use ($router) {
     Route::get('/', 'HomeController@home')->name('home');
     Route::get('/privacy-policy', 'HomeController@privacy')->name('privacy-policy');
     Route::get('/terms-conditions', 'HomeController@terms')->name('terms-conditions');
-    Route::get('/combo', 'HomeController@combos')->name('combos');
+    // Route::get('/combo', 'HomeController@combos')->name('combos');
 });
 
 Route::get('/mensaje', 'MensajesWebController@index')->name('admin.mensaje');

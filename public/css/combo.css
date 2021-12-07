@@ -116,3 +116,42 @@ h1.heading-combo {
 .combo-preview-img-combo:hover{
   transform: scale(1.05);
 }
+
+
+.img-combo-drag {
+  border: dashed 0.5px #ccc;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+  color: #4e4e4e;
+}
+
+.img-combo-drag.active {
+  border: dashed 0.5px #1ebcd4;
+  color: #000;
+  background: #d7f8fd;
+}
+
+span#img-name {
+  color: #1ebcd4;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+span#img-name img {
+  width: 60px;
+}
+
+
+.combo-preview-img{
+	height: 60vh;
+	width: 95vw;
+  border-radius: 6px;
+  object-fit: contain;
+  padding-top: .5rem;
+	padding-bottom: .5rem;
+}

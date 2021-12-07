@@ -50,6 +50,7 @@
     <link href="{{ url('vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
     <link href="{{ url('vendor/perfect-scrollbar/perfect-scrollbar.css')}}" rel="stylesheet" media="all">
     <link href="{{ url('css/admin.css')}}" rel="stylesheet" media="all">
+    <link href="{{ url('css/combo.css')}}" rel="stylesheet" media="all">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.25/af-2.3.7/b-1.7.1/date-1.1.0/r-2.2.9/datatables.min.css"/>
 
 
@@ -165,6 +166,10 @@
                                     <i class="fas fa-recycle"></i>Eliminadas</a>
                             </li>
                         @endif
+                        {{-- <li class="{{ Route::is('admin.combos.index') ? 'active' : '' }} ">
+                            <a href="{{ route('admin.combos.index') }}">
+                                <i class="fas fa-tags"></i>Combos</a>
+                        </li> --}}
                         <li class="{{ Route::is('admin.mensaje') ? 'active' : '' }} ">
                             <a href="{{ route('admin.mensaje') }}">
                                 <i class="fas fa-envelope"></i>Mensajes</a>
