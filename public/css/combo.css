@@ -145,3 +145,13 @@ span#img-name {
 span#img-name img {
   width: 60px;
 }
+
+
+.combo-preview-img{
+	height: 60vh;
+	width: 95vw;
+  border-radius: 6px;
+  object-fit: contain;
+  padding-top: .5rem;
+	padding-bottom: .5rem;
+}
