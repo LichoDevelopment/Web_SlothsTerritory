@@ -17,6 +17,8 @@ class Combo extends Model
         'itinerary',
         'includes',
         'requirements',
-        'image'
+        'image',
+        'uuid',
+        'language',
     ];
 }

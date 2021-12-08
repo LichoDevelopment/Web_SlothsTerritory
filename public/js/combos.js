@@ -10,6 +10,7 @@ const newItineraryInput = document.querySelector('#new-itinerary-input');
 
 
 let file;
+let itineraryArray = [];
 
 buttonImg.addEventListener('click', (evt) => {
     evt.preventDefault();
@@ -17,6 +18,7 @@ buttonImg.addEventListener('click', (evt) => {
 });
 
 inputImg.addEventListener('change', (evt) => {
+    evt.preventDefault();
     file = evt.target.files[0];
     
     dropArea.classList.add('active');
@@ -35,7 +37,7 @@ dropArea.addEventListener('dragleave', (evt) => {
 });
 dropArea.addEventListener('drop', (evt) => {
     evt.preventDefault();
-    let file = evt.dataTransfer.files[0];
+    file = evt.dataTransfer.files[0];
     dropArea.classList.remove('active');
     showFile(file);
 });
@@ -45,8 +47,27 @@ addItineraryBtn.addEventListener('click', (evt) => {
     if(newItineraryInput.value === '') {
         alert('Seleccione una hora');
     } else {
-        console.log(newItineraryInput.value);
+
+        if (itineraryArray.includes(newItineraryInput.value)) {
+            aler
+        } else {
+
+            if (itineraryArray.includes(newItineraryInput.value)) {
+                alert('Ya se ha agregado esta hora');
+            } else {
+                itineraryArray.push(newItineraryInput.value + ':00');
+
+                itinerary.innerHTML = '';
+
+                itineraryArray.map(item => {
+                    itinerary.innerHTML += `
+                        <li class="list-group-item">${item}</li>
+                    `
+                })
+            }
+        }
     }
+
 })
 
 function showFile(file) {
@@ -68,30 +89,99 @@ function showFile(file) {
 
 addComboBtn.addEventListener('click', (evt) => {
     evt.preventDefault();
-    let formData = new FormData();
-
-    const es = {
+    
+    let adult_price = addComboForm['price.adults'].value
+    let kid_price = addComboForm['price.kids'].value
+    
+    let es = {
         name:           addComboForm['es.name'].value,
         description:    addComboForm['es.description'].value,
         includes:       addComboForm['es.includes'].value,
         requirements:   addComboForm['es.requirements'].value,
-        adult_price:    addComboForm['price.adults'].value,
-        kid_price:      addComboForm['price.kids'].value,
         language:       'es',
     }
-
-    const en = {
+    
+    let en = {
         name:           addComboForm['en.name'].value,
         description:    addComboForm['en.description'].value,
         includes:       addComboForm['en.includes'].value,
         requirements:   addComboForm['en.requirements'].value,
-        adult_price:    addComboForm['price.adults'].value,
-        kid_price:      addComboForm['price.kids'].value,
         language:       'en'
     }
+    if (validator({es, en, adult_price, kid_price})) {
 
-    console.log(es);
+        en['adult_price'] = adult_price;
+        en['kid_price'] = kid_price;
+        en['itinerary'] = JSON.stringify(itineraryArray);
 
-    console.log(en);
+        es['adult_price'] = adult_price;
+        es['kid_price'] = kid_price;
+        es['itinerary'] = JSON.stringify(itineraryArray);
+
+        const formData = new FormData();
+
+        formData.append('en', JSON.stringify(en));
+        formData.append('es', JSON.stringify(es));
+        formData.append('file', file);
+
+        fetch('/combos', {
+            method: 'POST',
+            body: formData
+        }).then(() => {
+            location.reload();
+        })
+
+    }
 });
 
+
+function validator({es, en, adult_price, kid_price}){
+
+    if (!file) {
+        alert('Seleccione una imagen');
+        return false;
+    }
+
+    if (itineraryArray.length === 0) {
+        alert('Seleccione una hora');
+        return false;
+    }
+
+    if (!adult_price) {
+        alert('Seleccione un precio para adultos');
+        return false;
+    }
+
+    if (!kid_price) {
+        alert('Seleccione un precio para niños');
+        return false;
+    }
+
+    let response = true;
+
+    Object.entries(es).map(([key, value]) => {
+        if (value === '' && response) {
+            alert('Debe llenar el campo ' + espanishFieldsNames[key] + ' de la sección español');
+            response = false;
+        }
+    })
+    Object.entries(en).map(([key, value]) => {
+        if (value === '' && response) {
+            alert('Debe llenar el campo ' + espanishFieldsNames[key] + ' de la sección inglés');
+            response = false;
+        }
+    })
+
+
+    return response;
+}
+
+
+const espanishFieldsNames = {
+    'name': 'Nombre',
+    'description': 'Descripción',
+    'includes': 'Que Incluye',
+    'requirements': 'Que llevar',
+    'adult_price': 'Precio Adultos',
+    'kid_price': 'Precio Niños'
+}

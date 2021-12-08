@@ -74,14 +74,14 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/horario/{id}', 'HorarioController@destroy');
 
     
-    // Route::prefix('combos')->group(function () {        
-    //     Route::get('/ver', 'ComboController@index')->name('admin.combos.index');
-    //     Route::get('/ver/{id}', 'ComboController@show')->name('admin.combos.show');
-    //     Route::get('/create', 'ComboController@create')->name('admin.combos.create');
-    //     Route::post('/', 'ComboController@store')->name('admin.combos.store');
-    //     Route::put('/{id}', 'ComboController@update')->name('admin.combos.update');
-    //     Route::delete('/{id}', 'ComboController@destroy')->name('admin.combos.delete');
-    // });
+    Route::prefix('combos')->group(function () {        
+        Route::get('/ver', 'ComboController@index')->name('admin.combos.index');
+        Route::get('/ver/{id}', 'ComboController@show')->name('admin.combos.show');
+        Route::get('/create', 'ComboController@create')->name('admin.combos.create');
+        Route::post('/', 'ComboController@store')->name('admin.combos.store');
+        Route::put('/{id}', 'ComboController@update')->name('admin.combos.update');
+        Route::delete('/{id}', 'ComboController@destroy')->name('admin.combos.delete');
+    });
 
     // Route::resource('agencias', 'AgenciasController');
 });
