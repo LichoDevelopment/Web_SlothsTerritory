@@ -33,7 +33,9 @@ body, p {
 	font: 400 1rem/1.5625rem "Open Sans", sans-serif;
 }
 
-
+.center-header{
+	align-self: center;
+}
 
 .p-large {
 	font: 400 1.125rem/1.625rem "Open Sans", sans-serif;

@@ -44,7 +44,7 @@
                             <div class="testimonial-author">{{__('intro.testimonial')}}</div>
                         </div> <!-- end of text-container -->
                     </div> <!-- end of col -->
-                    <div class="col-lg-7">
+                    <div class="col-lg-7 center-header">
                         <div class="image-container">
                             <img class="img-fluid" src="images/otras-especies/tours-en-sloths-territory.jpg" alt="Perezosos La Fortuna de San Carlos" title="Perezosos Sloth's Territory" height="450px" width="500px">
                         </div> <!-- end of image-container -->
