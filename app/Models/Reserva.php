@@ -15,6 +15,7 @@ class Reserva extends Model
      *
      * @var array
      */
+    protected $dates = ['deleted_at'];
     protected $table="reservas";
     protected $primaryKey="id";
     protected $fillable = [
