@@ -103,4 +103,6 @@ Route::group(['prefix'=>'{locale}', 'where'=> ['locale'=> 'es|en']],function () 
 Route::get('/mensaje', 'MensajesWebController@index')->name('admin.mensaje');
 Route::post('/mensaje', 'MensajesWebController@store')->name('mensaje.guardar');
 
+Route::get('/mensajesLeidos', 'MensajesWebController@leidos')->name('admin.mensajesLeidos');
+Route::delete('/mensaje/{id}', 'MensajesWebController@destroy');
 

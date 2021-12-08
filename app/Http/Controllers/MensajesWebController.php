@@ -6,6 +6,7 @@ use App\Models\Mensajes_web;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\DB;
 
 class MensajesWebController extends Controller
 {
@@ -28,6 +29,14 @@ class MensajesWebController extends Controller
     {
         $mensajes = Mensajes_web::orderBy('created_at', 'desc')->get();
         return view('admin.mensajes.index', compact('mensajes'));
+    }
+
+    public function leidos(Request $request)
+    {
+ 
+        $mensajesLeidos = DB::select('CALL mensajes_leidos()');
+
+        return view('admin.mensajes.leidos', compact('mensajesLeidos'));
     }
 
     /**
@@ -99,8 +108,10 @@ class MensajesWebController extends Controller
      * @param  \App\Models\Mensajes_web  $mensajes_web
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Mensajes_web $mensajes_web)
+    public function destroy($id)
     {
-        //
+        $mensaje = Mensajes_web::find($id);
+        $mensaje->delete();
+        return response("", 204);
     }
 }

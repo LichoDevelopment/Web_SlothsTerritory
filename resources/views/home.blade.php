@@ -39,12 +39,12 @@
                     <div class="col-lg-5">
                         <div class="text-container">
                             <div class="section-title">{{__('intro.titulo:principal')}}</div>
-                            <h2>{{__('intro.titulo_secundario')}}</h2>
+                            <h3 class="h3-black">{{__('intro.titulo_secundario')}}</h3>
                             <p> {{__('intro.parrafo_descriptivo')}}</p>
                             <div class="testimonial-author">{{__('intro.testimonial')}}</div>
                         </div> <!-- end of text-container -->
                     </div> <!-- end of col -->
-                    <div class="col-lg-7">
+                    <div class="col-lg-7 center-header">
                         <div class="image-container">
                             <img class="img-fluid" src="images/otras-especies/tours-en-sloths-territory.jpg" alt="Perezosos La Fortuna de San Carlos" title="Perezosos Sloth's Territory" height="450px" width="500px">
                         </div> <!-- end of image-container -->
@@ -203,7 +203,7 @@
         </div> <!-- end of cards-2 -->
         <!-- end of services -->
 
-        <div class="container">
+        <div class="container-combo-img container">
             <a href="/#{{-- {{ route('combos', $locale) }} --}}" class="d-flex justify-content-center">
                 <img class="combo-preview-img" src="{{ asset('images/combo-preview-img.jpeg') }}" alt="">
             </a>
@@ -264,7 +264,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title"> {{__('galeria.titulo_principal')}}</div>
-                        <h2> {{__('galeria.titulo_secundario')}}</h2>
+                        <h3 class="h3-black"> {{__('galeria.titulo_secundario')}}</h3>
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
                 <div class="row">
@@ -893,7 +893,7 @@
                     <div class="col-lg-7 col-xl-6">
                         <div class="text-container">
                             <div class="section-title">{{__('acerca_de.titulo_principal')}}</div>
-                            <h2> {{__('acerca_de.titulo_secundario')}}</h2>
+                            <h3 class="h3-black"> {{__('acerca_de.titulo_secundario')}}</h3>
                             <p> {{__('acerca_de.parrafo_descriptivo')}}</p>
                             <ul class="list-unstyled li-space-lg">
                                 <li class="media">
@@ -924,7 +924,7 @@
                     <div class="col-lg-6">
                         <div class="text-container">
                             <div class="section-title">{{__('contact.titulo_principal')}}</div>
-                            <h2>{{__('contact.titulo_secundario')}}</h2>
+                            <h3 class="h3-black">{{__('contact.titulo_secundario')}}</h3>
                             <p>{{__('contact.parrafo_descriptivo')}}</p>
                             <ul class="list-unstyled li-space-lg">
                                 <li class="address"><i class="fas fa-map-marker-alt"></i>{{__('contact.direccion')}}</li>

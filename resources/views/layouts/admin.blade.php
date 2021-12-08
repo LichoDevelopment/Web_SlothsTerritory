@@ -172,7 +172,11 @@
                         </li>
                         <li class="{{ Route::is('admin.mensaje') ? 'active' : '' }} ">
                             <a href="{{ route('admin.mensaje') }}">
-                                <i class="fas fa-envelope"></i>Mensajes</a>
+                                <i class="fas fa-envelope"></i>Mensajes sin leer</a>
+                        </li>
+                        <li class="{{ Route::is('admin.mensajesLeidos') ? 'active' : '' }} ">
+                            <a href="{{ route('admin.mensajesLeidos') }}">
+                                <i class="fas fa-envelope"></i>Mensajes leídos</a>
                         </li>
                         <li class="{{ Route::is('admin.carusel') ? 'active' : '' }} ">
                             <a href="{{ route('admin.carusel') }}">
