@@ -44,7 +44,7 @@
                             <div class="testimonial-author">{{__('intro.testimonial')}}</div>
                         </div> <!-- end of text-container -->
                     </div> <!-- end of col -->
-                    <div class="col-lg-7">
+                    <div class="col-lg-7 center-header">
                         <div class="image-container">
                             <img class="img-fluid" src="images/otras-especies/tours-en-sloths-territory.jpg" alt="Perezosos La Fortuna de San Carlos" title="Perezosos Sloth's Territory" height="450px" width="500px">
                         </div> <!-- end of image-container -->
@@ -381,6 +381,23 @@
                                     <img loading="lazy" src="images/otras-especies/serpiente_boa_en_La_Fortuna_de_San_Carlos.jpeg" 
                                     alt="Serpiente Boa en La Fortuna en Sloth's Territory"
                                     title="Serpiente en La Fortuna">
+                                </a>
+                            </div>
+                            {{-- Nuevas  --}}
+                            <div class="element-item sloths">
+                                <a class="popup-with-move-anim" href="#tour-1">
+                                    <div class="element-item-overlay"></div>
+                                    <img loading="lazy" src="/images/galeria/sloths/sloths_costa_rica.jpeg" 
+                                    alt="bebe perezoso en La Fortuna de San Carlos Sloth Territory"
+                                    title="bebe perezoso en Fortuna">
+                                </a>
+                            </div>
+                            <div class="element-item sloths">
+                                <a class="popup-with-move-anim" href="#tour-1">
+                                    <div class="element-item-overlay"></div>
+                                    <img loading="lazy" src="/images/galeria/sloths/sloths_tour_costa_rica.jpeg" 
+                                    alt="bebe perezoso en La Fortuna de San Carlos Sloth Territory"
+                                    title="bebe perezoso en Fortuna">
                                 </a>
                             </div>
                         </div> <!-- end of grid -->
