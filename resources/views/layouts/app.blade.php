@@ -35,6 +35,7 @@
 	<link href=" {{asset('css/styles.css')}} " rel="stylesheet">
     <link href=" {{asset('css/combo.css')}} " rel="stylesheet">
 	<link href=" {{asset('css/responsive.css')}} " rel="stylesheet">
+    <link href=" {{asset('css/sliderCircular.css')}} " rel="stylesheet">
 
 	<!-- Favicon  -->
     <link rel="icon" href=" {{asset('images/favicon.png')}} ">
@@ -241,6 +242,14 @@
     </a>
 
     <!-- Scripts -->
+        {{-- Slider Circular --}}
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4.1.4/imagesloaded.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/CSSPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/TextPlugin.min.js"></script>
+    <script src=" {{ asset('js/sliderCircular.js')}}"></script>
+        {{-- End Slider --}}
     <script src=" {{ asset('js/jquery.min.js')}} "></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
     <script src=" {{ asset('js/popper.min.js')}} "></script> <!-- Popper tooltip library for Bootstrap -->
     <script src=" {{ asset('js/bootstrap.min.js')}} "></script> <!-- Bootstrap framework -->
@@ -252,6 +261,8 @@
     <script src=" {{ asset('js/validator.min.js')}} "></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
     <script src=" {{ asset('js/scripts.js')}} "></script> <!-- Custom scripts -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
     
     @yield('scripts')
 </body>

@@ -2,17 +2,78 @@
 
 @section('content')
 
-        <div id="header" class="container-all">
-
-            <div id="carouselTop" class="slide carousel carousel-fade" data-ride="carousel">
-                <div class="carousel-inner">
+        {{-- <div id="header" class="container-all"> --}}
+            <section class="slideshow">
+  
+                <ul class="navigation-slider">
+                    @php $primero = true; @endphp
                     @foreach (imagenesCarusel() as $img)
-                        <div class="carousel-item item-slide {{$loop->index === 0 ? 'active': ''}}" data-interval="3000" >
-                        <img 
-                            src="/storage/{{$img->url}}" 
-                            class="imgs" alt="{{ $img->titulo }}">
-                        </div>
+                        @if ($primero)
+                            <li class="navigation-item active">
+                                <span class="rotate-holder"></span>
+                                <span class="background-holder" style="background-image: url(storage/{{$img->url}});"></span>
+                            </li>
+                            @php $primero = false; @endphp    
+                        @else
+                            <li class="navigation-item">
+                                <span class="rotate-holder"></span>
+                                <span class="background-holder" style="background-image: url(storage/{{$img->url}});"></span>
+                            </li>
+                        @endif
+                        
+                            {{-- <div class="carousel-item item-slide {{$loop->index === 0 ? 'active': ''}}" data-interval="3000" >
+                            <img 
+                                src="/storage/storage/{{$img->url}}" 
+                                class="imgs" alt="{{ $img->titulo }}">
+                            </div> --}}
+                    @endforeach        
+                </ul>
+
+                
+                <div class="detail">
+                    @php $primero = true; @endphp
+                    @foreach (imagenesCarusel() as $img)
+                        @if ($primero)
+                            <div class="detail-item active">
+                                <div class="headline">Pepe</div>
+                                <div class="background" style="background-image: url(storage/{{$img->url}}); height: 100vh;"></div>
+                                <div class="background" style="background-image: url(storage/{{$img->url}}); height: 100vh; background-size: cover; background-position: center;"></div>
+                            </div>
+                            @php $primero = false; @endphp    
+                        @else
+                            <div class="detail-item">
+                                <div class="headline">Juan</div>
+                                <div class="background" style="background-image: url(storage/{{$img->url}});"></div>
+                            </div>
+                        @endif
+                        
+                            {{-- <div class="carousel-item item-slide {{$loop->index === 0 ? 'active': ''}}" data-interval="3000" >
+                            <img 
+                                src="/storage/storage/{{$img->url}}" 
+                                class="imgs" alt="{{ $img->titulo }}">
+                            </div> --}}
                     @endforeach
+                  
+                </div>
+                <!-- slideshow:details END -->
+        
+              </section>
+            {{-- <div id="carouselTop" class="slide carousel carousel-fade" data-ride="carousel">
+                <div class="carousel-inner">
+                    <ul class="navigation">
+          
+                        @foreach (imagenesCarusel() as $img)
+                            <li class="navigation-item active">
+                                <span class="rotate-holder"></span>
+                                <span class="background-holder" style="background-image: url(storage/{{$img->url}});"></span>
+                            </li>
+                            <div class="carousel-item item-slide {{$loop->index === 0 ? 'active': ''}}" data-interval="3000" >
+                            <img 
+                                src="/storage/storage/{{$img->url}}" 
+                                class="imgs" alt="{{ $img->titulo }}">
+                            </div>
+                        @endforeach
+                    </ul>
                 </div>
                 <a class="carousel-control-prev" href="#carouselTop" role="button" data-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -22,8 +83,8 @@
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="sr-only">Next</span>
                 </a>
-              </div>
-        </div>
+              </div> --}}
+        {{-- </div> --}}
         <div class="container">
             <h1 class="main-title mt-3"> {{__('inicio.titulo_principal')}} </h1>
             <p class="p-heading p-large"> {{__('inicio.parrafo_descriptivo')}}<div class=""></div></p>
