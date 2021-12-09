@@ -7,6 +7,7 @@ use App\Services\ComboService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use PDO;
 
 class ComboController extends Controller
 {
@@ -25,7 +26,7 @@ class ComboController extends Controller
 
     public function show($id)
     {
-        $combo = $this->comboService->getCombo($id);
+        $combo = $this->comboService->getCombos($id);
 
         return view('admin.combos.show', compact('combo'));
     }
@@ -55,7 +56,24 @@ class ComboController extends Controller
 
     public function update(Request $request, $id)
     {
-        $this->comboService->update($id, $request->all());
+
+        print_r($request->en);
+        if ($request->file) {
+            print_r('tiene file');
+        } else {
+            print_r('no tiene file');
+        }
+        // $destino = 'combos';
+        // $url     = Storage::disk('public')->put($destino, $request->file('file'));
+
+        // $ComboEnglish = json_decode($request->en, true);
+        // $ComboEnglish['image'] = $url;
+        
+        // $ComboSpanish = json_decode($request->es, true);     
+        // $ComboSpanish['image'] = $url;
+
+        // $this->comboService->update($id, $ComboEnglish, 'en');
+        // $this->comboService->update($id, $ComboSpanish, 'es');
     }
 
     public function destroy($id)

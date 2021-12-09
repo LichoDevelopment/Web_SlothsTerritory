@@ -7,68 +7,86 @@ const addComboForm = document.querySelector('#add-combo-form');
 const itinerary = document.querySelector('#itinerary');
 const addItineraryBtn = document.querySelector('#add-itinerary-btn');
 const newItineraryInput = document.querySelector('#new-itinerary-input');
+const deleteComboBtns = document.querySelectorAll('.delete-combo-btn');
 
 
 let file;
 let itineraryArray = [];
 
-buttonImg.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    inputImg.click();
-});
+if (buttonImg) {
+    buttonImg.addEventListener('click', (evt) => {
+        evt.preventDefault();
+        inputImg.click();
+    });
+}
 
-inputImg.addEventListener('change', (evt) => {
-    evt.preventDefault();
-    file = evt.target.files[0];
-    
-    dropArea.classList.add('active');
-    showFile(file);
-    dropArea.classList.remove('active');
-});
+if (inputImg) {
+    inputImg.addEventListener('change', (evt) => {
+        evt.preventDefault();
+        file = evt.target.files[0];
+        
+        dropArea.classList.add('active');
+        showFile(file);
+        dropArea.classList.remove('active');
+    });
+}
 
-dropArea.addEventListener('dragover', (evt) => {
-    evt.preventDefault();
-    dropArea.classList.add('active');
-});
+if (dropArea) {
+    dropArea.addEventListener('dragover', (evt) => {
+        evt.preventDefault();
+        dropArea.classList.add('active');
+    });
 
-dropArea.addEventListener('dragleave', (evt) => {
-    evt.preventDefault();
-    dropArea.classList.remove('active');
-});
-dropArea.addEventListener('drop', (evt) => {
-    evt.preventDefault();
-    file = evt.dataTransfer.files[0];
-    dropArea.classList.remove('active');
-    showFile(file);
-});
+    dropArea.addEventListener('dragleave', (evt) => {
+        evt.preventDefault();
+        dropArea.classList.remove('active');
+    });
 
-addItineraryBtn.addEventListener('click', (evt) => {
+    dropArea.addEventListener('drop', (evt) => {
+        evt.preventDefault();
+        file = evt.dataTransfer.files[0];
+        dropArea.classList.remove('active');
+        showFile(file);
+    });
+}
+
+
+if (addItineraryBtn) {
+    addItineraryBtn.addEventListener('click', addItinerary);
+}
+
+if (addComboBtn) {
+    addComboBtn.addEventListener('click', sendCombo);
+}
+
+if (deleteComboBtns) {
+    deleteComboBtns.forEach(btn => {
+        btn.addEventListener('click', deleteCombo);
+    });
+}
+
+function addItinerary(evt) {
     evt.preventDefault();
     if(newItineraryInput.value === '') {
         alert('Seleccione una hora');
     } else {
 
         if (itineraryArray.includes(newItineraryInput.value)) {
-            aler
+            alert('Ya se ha agregado esta hora');
         } else {
+            itineraryArray.push(newItineraryInput.value + ':00');
 
-            if (itineraryArray.includes(newItineraryInput.value)) {
-                alert('Ya se ha agregado esta hora');
-            } else {
-                itineraryArray.push(newItineraryInput.value + ':00');
+            itinerary.innerHTML = '';
 
-                itinerary.innerHTML = '';
-
-                itineraryArray.map(item => {
-                    itinerary.innerHTML += `
-                        <li class="list-group-item">${item}</li>
-                    `
-                })
-            }
+            itineraryArray.map(item => {
+                itinerary.innerHTML += `
+                    <li class="list-group-item">${item}</li>
+                `
+            })
         }
+        
     }
-
-})
+}
 
 function showFile(file) {
     const fileReader = new FileReader();
@@ -86,8 +104,7 @@ function showFile(file) {
     imgName.classList.add('mt-2');
 }
 
-
-addComboBtn.addEventListener('click', (evt) => {
+function sendCombo(evt) {
     evt.preventDefault();
     
     let adult_price = addComboForm['price.adults'].value
@@ -108,6 +125,7 @@ addComboBtn.addEventListener('click', (evt) => {
         requirements:   addComboForm['en.requirements'].value,
         language:       'en'
     }
+
     if (validator({es, en, adult_price, kid_price})) {
 
         en['adult_price'] = adult_price;
@@ -118,42 +136,103 @@ addComboBtn.addEventListener('click', (evt) => {
         es['kid_price'] = kid_price;
         es['itinerary'] = JSON.stringify(itineraryArray);
 
-        const formData = new FormData();
+        const data = new FormData();
 
-        formData.append('en', JSON.stringify(en));
-        formData.append('es', JSON.stringify(es));
-        formData.append('file', file);
+        data.append('en', JSON.stringify(en));
+        data.append('es', JSON.stringify(es));
+        data.append('file', file);
 
-        fetch('/combos', {
-            method: 'POST',
-            body: formData
-        }).then(() => {
-            location.reload();
-        })
+        if (isEditView()) {
+            const id = location.pathname.split('/combos/ver/')[1];
+
+            fetch(`/combos/${id}`, {
+                method: 'PUT',
+                // headers: {
+                //     "Content-Type": "multipart/form-data",
+                // },
+                body: data
+            }).then(() => {
+                // location.reload();
+            })
+        } else {
+            fetch('/combos', {
+                method: 'POST',
+                body: data
+            }).then(() => {
+                location.reload();
+            })
+        }
 
     }
-});
+}
 
+function deleteCombo(evt) {
+    evt.preventDefault();
+
+    swal.fire({
+        icon: 'warning',
+        title: '¿Estás seguro de eliminar este combo?',
+        showCancelButton: true,
+    })
+    .then(({isConfirmed}) => {
+        if (isConfirmed) {
+            fetch(`/combos/${evt.target.dataset.id}`, {
+                method: 'DELETE'
+            })
+            .then(() => {
+                swal.fire({
+                    icon: 'success',
+                    title: 'Combo eliminado',
+                    showConfirmButton: false,
+                })
+
+                setTimeout(() => {
+                    location.reload();
+                }, 1000);
+            })
+        }
+    })
+}
 
 function validator({es, en, adult_price, kid_price}){
 
-    if (!file) {
-        alert('Seleccione una imagen');
+    if (!file && !isEditView()) {
+        swal.fire({
+            icon: 'warning',
+            title: 'Seleccione una imagen'
+        })
         return false;
     }
 
-    if (itineraryArray.length === 0) {
-        alert('Seleccione una hora');
+    if (isEditView() && !imgName.children[0].src) {
+        swal.fire({
+            icon: 'warning',
+            title: 'Seleccione una imagen'
+        })
         return false;
     }
 
     if (!adult_price) {
-        alert('Seleccione un precio para adultos');
+        swal.fire({
+            icon: 'warning',
+            title: 'Seleccione un precio para adultos'
+        })
         return false;
     }
 
     if (!kid_price) {
-        alert('Seleccione un precio para niños');
+        swal.fire({
+            icon: 'warning',
+            title: 'Seleccione un precio para niños'
+        })
+        return false;
+    }
+
+    if (itineraryArray.length === 0) {
+        swal.fire({
+            icon: 'warning',
+            title: 'Seleccione una hora'
+        })
         return false;
     }
 
@@ -161,13 +240,19 @@ function validator({es, en, adult_price, kid_price}){
 
     Object.entries(es).map(([key, value]) => {
         if (value === '' && response) {
-            alert('Debe llenar el campo ' + espanishFieldsNames[key] + ' de la sección español');
+            swal.fire({
+                icon: 'warning',
+                title: 'Debe llenar el campo ' + espanishFieldsNames[key] + ' de la sección español'
+            })
             response = false;
         }
     })
     Object.entries(en).map(([key, value]) => {
         if (value === '' && response) {
-            alert('Debe llenar el campo ' + espanishFieldsNames[key] + ' de la sección inglés');
+            swal.fire({
+                icon: 'warning',
+                title: 'Debe llenar el campo ' + espanishFieldsNames[key] + ' de la sección inglés'
+            })
             response = false;
         }
     })
@@ -176,6 +261,24 @@ function validator({es, en, adult_price, kid_price}){
     return response;
 }
 
+function isEditView() {
+    if (location.pathname === '/combos/ver' || location.pathname === '/combos/create') {
+        return false;
+    }
+    return true;
+}
+
+if (isEditView()) {
+    itineraryArray = JSON.parse(itinerary.dataset.list);
+
+    itinerary.innerHTML = '';
+
+    itineraryArray.map(item => {
+        itinerary.innerHTML += `
+            <li class="list-group-item">${item}</li>
+        `
+    })
+}
 
 const espanishFieldsNames = {
     'name': 'Nombre',
@@ -185,3 +288,4 @@ const espanishFieldsNames = {
     'adult_price': 'Precio Adultos',
     'kid_price': 'Precio Niños'
 }
+
