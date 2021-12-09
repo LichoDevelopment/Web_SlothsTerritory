@@ -22,17 +22,18 @@ html,
   padding: 1em;
   text-align: center;
   vertical-align: middle;
+  background-color: #232523;
 }
 .fostrap-logo-combo {
   width: 100px;
   margin-bottom:15px
 }
 h1.heading-combo {
-  color: #fff;
+  color: #FCA800;
   font-size: 1.15em;
   font-weight: 900;
   margin: 0 0 0.5em;
-  color: #505050;
+  /* color: #505050; */
 }
 @media (min-width: 450px) {
   h1.heading-combo {

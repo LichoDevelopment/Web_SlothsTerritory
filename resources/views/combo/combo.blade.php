@@ -5,9 +5,9 @@
     <section class="wrapper-combo">
         <div class="container-fostrap-combo">
             <div>
-                <img src="https://4.bp.blogspot.com/-7OHSFmygfYQ/VtLSb1xe8kI/AAAAAAAABjI/FxaRp5xW2JQ/s320/logo.png" class="fostrap-logo-combo"/>
+                <img src="/images/favicon.png" class="fostrap-logo-combo"/>
                 <h1 class="heading-combo">
-                    Bootstrap Card Responsive 
+                    Our Combos 
                 </h1>
             </div>
             <div class="content">
@@ -15,20 +15,21 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-4">
                             <div class="card-combo">
-                                <a class="img-card-combo" href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
-                                <img src="https://1.bp.blogspot.com/-Bii3S69BdjQ/VtdOpIi4aoI/AAAAAAAABlk/F0z23Yr59f0/s640/cover.jpg" />
+                                <a class="img-card-combo" href="#">
+                                <img src="\images\combos\canopy-La_Fortuna.png" />
                             </a>
                                 <div class="card-content-combo">
                                     <h4 class="card-title-combo">
-                                        <a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html"> Bootstrap 3 Carousel FadeIn Out Effect
+                                        <a href="#"> SLOTHS & ZIP LINE
                                     </a>
                                     </h4>
                                     <p class="">
-                                        Tutorial to make a carousel bootstrap by adding more wonderful effect fadein ...
+                                        You can choose how you want to start your day with adrenaline or walking sorrounded by nature 
+                                        and ...
                                     </p>
                                 </div>
                                 <div class="card-read-more-combo">
-                                    <a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html" class="btn btn-link btn-block">
+                                    <a href="#" class="btn btn-link btn-block">
                                         Read More
                                     </a>
                                 </div>
@@ -36,20 +37,21 @@
                         </div>
                         <div class="col-xs-12 col-sm-4">
                             <div class="card-combo">
-                                <a class="img-card-combo" href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">
-                                <img src="https://3.bp.blogspot.com/-bAsTyYC8U80/VtLZRKN6OlI/AAAAAAAABjY/kAoljiMALkQ/s400/material%2Bnavbar.jpg" />
+                                <a class="img-card-combo" href="#">
+                                <img src="\images\combos\ATV-La_Fortuna.png" />
                             </a>
                                 <div class="card-content-combo">
                                     <h4 class="card-title-combo">
-                                        <a href="http://www.fostrap.com/2016/02/awesome-material-design-responsive-menu.html"> Material Design Responsive Menu
+                                        <a href="#"> Sloth’s and ATV COMBO tour
                                     </a>
                                     </h4>
                                     <p class="">
-                                        Material Design is a visual programming language made by Google. Language programming...
+                                        This is a combination of adrenaline and conexion with the nature will begin  with  
+                                        ATV it Will be a drive for about 4 hours by los Altos de Monterrey and la guaria area, we ...
                                     </p>
                                 </div>
                                 <div class="card-read-more-combo">
-                                    <a href="https://codepen.io/wisnust10/full/ZWERZK/" class="btn btn-link btn-block">
+                                    <a href="#" class="btn btn-link btn-block">
                                         Read More
                                     </a>
                                 </div>
@@ -57,20 +59,21 @@
                         </div>
                         <div class="col-xs-12 col-sm-4">
                             <div class="card-combo">
-                                <a class="img-card-combo" href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">
-                                <img src="https://4.bp.blogspot.com/-TDIJ17DfCco/Vtneyc-0t4I/AAAAAAAABmk/aa4AjmCvRck/s1600/cover.jpg" />
+                                <a class="img-card-combo" href="#">
+                                <img src="\images\combos\cañon-tour-La_Fortuna.png" />
                             </a>
                                 <div class="card-content-combo">
                                     <h4 class="card-title-combo">
-                                        <a href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">5  Button Hover Animation Effects
+                                        <a href="#">Sloths and Maquique Canyoning Tour
                                     </a>
                                     </h4>
                                     <p class="">
-                                        tutorials button hover animation, although very much a hover button is very beauti...
+                                        The canyoning has 5 rappels where the lowest one is about 20 mts and higgest is anout 55mts
+                                        and one canopy line ...
                                     </p>
                                 </div>
                                 <div class="card-read-more-combo">
-                                    <a href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html" class="btn btn-link btn-block">
+                                    <a href="#" class="btn btn-link btn-block">
                                         Read More
                                     </a>
                                 </div>
