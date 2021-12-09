@@ -204,7 +204,7 @@
         <!-- end of services -->
 
         <div class="container-combo-img container">
-            <a href="/#{{-- {{ route('combos', $locale) }} --}}" class="d-flex justify-content-center">
+            <a href="{{ route('combos', $locale) }}" class="d-flex justify-content-center">
                 <img class="combo-preview-img" src="{{ asset('images/combo-preview-img.jpeg') }}" alt="">
             </a>
 

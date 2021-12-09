@@ -59,7 +59,7 @@
 
         <!-- Image Logo -->
         <a class="navbar-brand logo-image" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">
-            <img src="images/favicon.png"  class="logo-img" alt="Sloth's Territory" title="Sloths Territory">
+            <img src="/images/favicon.png"  class="logo-img" alt="Sloth's Territory" title="Sloths Territory">
         </a>
 
         <!-- Mobile Menu Toggle Button -->
