@@ -383,6 +383,23 @@
                                     title="Serpiente en La Fortuna">
                                 </a>
                             </div>
+                            {{-- Nuevas  --}}
+                            <div class="element-item sloths">
+                                <a class="popup-with-move-anim" href="#tour-1">
+                                    <div class="element-item-overlay"></div>
+                                    <img loading="lazy" src="/images/galeria/sloths/sloths_costa_rica.jpeg" 
+                                    alt="bebe perezoso en La Fortuna de San Carlos Sloth Territory"
+                                    title="bebe perezoso en Fortuna">
+                                </a>
+                            </div>
+                            <div class="element-item sloths">
+                                <a class="popup-with-move-anim" href="#tour-1">
+                                    <div class="element-item-overlay"></div>
+                                    <img loading="lazy" src="/images/galeria/sloths/sloths_tour_costa_rica.jpeg" 
+                                    alt="bebe perezoso en La Fortuna de San Carlos Sloth Territory"
+                                    title="bebe perezoso en Fortuna">
+                                </a>
+                            </div>
                         </div> <!-- end of grid -->
                         <!-- end of filter -->
 
