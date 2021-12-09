@@ -79,7 +79,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/ver/{id}', 'ComboController@show')->name('admin.combos.show');
         Route::get('/create', 'ComboController@create')->name('admin.combos.create');
         Route::post('/', 'ComboController@store')->name('admin.combos.store');
-        Route::put('/{id}', 'ComboController@update')->name('admin.combos.update');
+        Route::post('/update/{id}', 'ComboController@update')->name('admin.combos.update');
         Route::delete('/{id}', 'ComboController@destroy')->name('admin.combos.delete');
     });
 

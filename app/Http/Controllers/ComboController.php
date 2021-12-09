@@ -56,24 +56,20 @@ class ComboController extends Controller
 
     public function update(Request $request, $id)
     {
+        $ComboEnglish = json_decode($request->en, true);
+        $ComboSpanish = json_decode($request->es, true);   
 
-        print_r($request->en);
-        if ($request->file) {
-            print_r('tiene file');
-        } else {
-            print_r('no tiene file');
+        if ($request->hasFile('file')) {
+            $destino = 'combos';
+            $url     = Storage::disk('public')->put($destino, $request->file('file'));
+
+            $ComboEnglish['image'] = $url;
+            
+            $ComboSpanish['image'] = $url;
         }
-        // $destino = 'combos';
-        // $url     = Storage::disk('public')->put($destino, $request->file('file'));
 
-        // $ComboEnglish = json_decode($request->en, true);
-        // $ComboEnglish['image'] = $url;
-        
-        // $ComboSpanish = json_decode($request->es, true);     
-        // $ComboSpanish['image'] = $url;
-
-        // $this->comboService->update($id, $ComboEnglish, 'en');
-        // $this->comboService->update($id, $ComboSpanish, 'es');
+        $this->comboService->update($id, $ComboEnglish, 'en');
+        $this->comboService->update($id, $ComboSpanish, 'es');
     }
 
     public function destroy($id)

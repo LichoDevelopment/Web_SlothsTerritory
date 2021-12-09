@@ -65,6 +65,16 @@ if (deleteComboBtns) {
     });
 }
 
+itinerary.addEventListener('click', (evt) => {
+    evt.preventDefault();
+
+    if (evt.target.tagName === 'BUTTON') {
+       const index = evt.target.dataset.id;
+       itineraryArray.splice(index, 1);
+       printItinerary();
+    }
+})
+
 function addItinerary(evt) {
     evt.preventDefault();
     if(newItineraryInput.value === '') {
@@ -75,17 +85,23 @@ function addItinerary(evt) {
             alert('Ya se ha agregado esta hora');
         } else {
             itineraryArray.push(newItineraryInput.value + ':00');
-
-            itinerary.innerHTML = '';
-
-            itineraryArray.map(item => {
-                itinerary.innerHTML += `
-                    <li class="list-group-item">${item}</li>
-                `
-            })
+            printItinerary();
         }
         
     }
+}
+
+function printItinerary() {
+    itinerary.innerHTML = '';
+
+    itineraryArray.map((item, index) => {
+        itinerary.innerHTML += `
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <span>${item}</span>
+                <button class="fas fa-trash text-danger" data-id="${index}" ></button>
+            </li>
+        `
+    })
 }
 
 function showFile(file) {
@@ -106,6 +122,7 @@ function showFile(file) {
 
 function sendCombo(evt) {
     evt.preventDefault();
+    evt.target.disabled = true;
     
     let adult_price = addComboForm['price.adults'].value
     let kid_price = addComboForm['price.kids'].value
@@ -145,14 +162,11 @@ function sendCombo(evt) {
         if (isEditView()) {
             const id = location.pathname.split('/combos/ver/')[1];
 
-            fetch(`/combos/${id}`, {
-                method: 'PUT',
-                // headers: {
-                //     "Content-Type": "multipart/form-data",
-                // },
+            fetch(`/combos/update/${id}`, {
+                method: 'POST',
                 body: data
             }).then(() => {
-                // location.reload();
+                location.reload();
             })
         } else {
             fetch('/combos', {
@@ -163,6 +177,8 @@ function sendCombo(evt) {
             })
         }
 
+    } else {
+        evt.target.disabled = false;
     }
 }
 
@@ -270,14 +286,7 @@ function isEditView() {
 
 if (isEditView()) {
     itineraryArray = JSON.parse(itinerary.dataset.list);
-
-    itinerary.innerHTML = '';
-
-    itineraryArray.map(item => {
-        itinerary.innerHTML += `
-            <li class="list-group-item">${item}</li>
-        `
-    })
+    printItinerary();
 }
 
 const espanishFieldsNames = {
