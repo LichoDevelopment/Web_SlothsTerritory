@@ -385,19 +385,19 @@
                             </div>
                             {{-- Nuevas  --}}
                             <div class="element-item sloths">
-                                <a class="popup-with-move-anim" href="#tour-1">
+                                <a class="popup-with-move-anim" href="#tour-14">
                                     <div class="element-item-overlay"></div>
                                     <img loading="lazy" src="/images/galeria/sloths/sloths_costa_rica.jpeg" 
-                                    alt="bebe perezoso en La Fortuna de San Carlos Sloth Territory"
-                                    title="bebe perezoso en Fortuna">
+                                    alt="Sloths in La Fortuna"
+                                    title="Sloths in La Fortuna">
                                 </a>
                             </div>
                             <div class="element-item sloths">
-                                <a class="popup-with-move-anim" href="#tour-1">
+                                <a class="popup-with-move-anim" href="#tour-15">
                                     <div class="element-item-overlay"></div>
                                     <img loading="lazy" src="/images/galeria/sloths/sloths_tour_costa_rica.jpeg" 
-                                    alt="bebe perezoso en La Fortuna de San Carlos Sloth Territory"
-                                    title="bebe perezoso en Fortuna">
+                                    alt="Sloths in La Fortuna"
+                                    title="Sloths in La Fortuna">
                                 </a>
                             </div>
                         </div> <!-- end of grid -->
@@ -745,6 +745,35 @@
                     </div>
                     <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">{{__('btn.volver')}}</a>
                 </div> <!-- end of col --> --}}
+            </div> <!-- end of row -->
+        </div> <!-- end of lightbox-basic -->
+        <!-- end of lightbox -->
+
+        <div id="tour-14" class="lightbox-basic zoom-anim-dialog mfp-hide">
+            <div class="row justify-content-center">
+                <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+                <div class="">
+                    <img class="img-fluid" 
+                    loading="lazy"
+                    src="/images/galeria/sloths/sloths_costa_rica.jpeg" 
+                    alt="Sloths in La Fortuna"
+                    title="Sloths in La Fortuna">
+                </div> <!-- end of col -->
+                
+            </div> <!-- end of row -->
+        </div> <!-- end of lightbox-basic -->
+        <!-- end of lightbox -->
+
+        <div id="tour-15" class="lightbox-basic zoom-anim-dialog mfp-hide">
+            <div class="row justify-content-center">
+                <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+                <div class="">
+                    <img class="img-fluid" 
+                    loading="lazy"
+                    src="/images/galeria/sloths/sloths_tour_costa_rica.jpeg" 
+                    alt="Sloths in La Fortuna"
+                    title="Sloths in La Fortuna">
+                </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
         <!-- end of lightbox -->
