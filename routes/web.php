@@ -97,7 +97,7 @@ Route::group(['prefix'=>'{locale}', 'where'=> ['locale'=> 'es|en']],function () 
     Route::get('/', 'HomeController@home')->name('home');
     Route::get('/privacy-policy', 'HomeController@privacy')->name('privacy-policy');
     Route::get('/terms-conditions', 'HomeController@terms')->name('terms-conditions');
-    Route::get('/combo', 'HomeController@combos')->name('combos');
+    Route::get('/combo', 'ComboController@combos')->name('combos');
 });
 
 Route::get('/mensaje', 'MensajesWebController@index')->name('admin.mensaje');

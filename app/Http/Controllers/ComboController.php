@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use PDO;
+use Illuminate\Support\Facades\App;
 
 class ComboController extends Controller
 {
@@ -22,6 +23,15 @@ class ComboController extends Controller
     {
         $combos = $this->comboService->getAll();
         return view('admin.combos.index', compact('combos'));
+    }
+
+    public function combos($locale)
+    {
+        App::setLocale($locale);
+        $combos = $this->comboService->getAll();
+        // return view('/combo/combo', compact('locale'));
+        
+        return view('/combo/combo', compact('combos', 'locale'));
     }
 
     public function show($id)
