@@ -13,7 +13,7 @@ class AddSoftDeletesToMessagesTable extends Migration
      */
     public function up()
     {
-        Schema::table('Mensajes_web', function (Blueprint $table) {
+        Schema::table('mensajes_web', function (Blueprint $table) {
             $table->softDeletes();
         });
     }
