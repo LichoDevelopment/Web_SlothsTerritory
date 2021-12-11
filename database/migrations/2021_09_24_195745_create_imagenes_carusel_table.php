@@ -13,12 +13,16 @@ class CreateImagenesCaruselTable extends Migration
      */
     public function up()
     {
-        Schema::create('imagenes_carusel', function (Blueprint $table) {
-            $table->id();
-            $table->string('url');
-            $table->string('titulo');
-            $table->timestamps();
-        });
+
+        if (!Schema::hasTable('imagenes_carusel')) {
+            Schema::create('imagenes_carusel', function (Blueprint $table) {
+                $table->id();
+                $table->string('url');
+                $table->string('titulo');
+                $table->timestamps();
+            });
+            
+        }
     }
 
     /**
