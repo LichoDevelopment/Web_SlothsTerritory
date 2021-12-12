@@ -75,8 +75,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::prefix('galeria')->group(function () {
         Route::get('/', 'GaleriaController@index')->name('admin.galeria');
-        Route::post('/', 'GaleriaController@store')->name('admin.galeria.crear');
-        Route::put('/{id}', 'GaleriaController@update')->name('admin.galeria.actualizar');
+        Route::post('/', 'GaleriaController@upload')->name('admin.galeria.crear');
+        Route::get('/tipos', 'GaleriaController@getTypos')->name('admin.galeria.tipos');
         Route::delete('/{id}', 'GaleriaController@destroy')->name('admin.galeria.eliminar');
     });
 
