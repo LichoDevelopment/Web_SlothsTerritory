@@ -73,6 +73,13 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/horario/{id}', 'HorarioController@update');
     Route::delete('/horario/{id}', 'HorarioController@destroy');
 
+    Route::prefix('galeria')->group(function () {
+        Route::get('/', 'GaleriaController@index')->name('admin.galeria');
+        Route::post('/', 'GaleriaController@store')->name('admin.galeria.crear');
+        Route::put('/{id}', 'GaleriaController@update')->name('admin.galeria.actualizar');
+        Route::delete('/{id}', 'GaleriaController@destroy')->name('admin.galeria.eliminar');
+    });
+
     
     // Route::prefix('combos')->group(function () {        
     //     Route::get('/ver', 'ComboController@index')->name('admin.combos.index');

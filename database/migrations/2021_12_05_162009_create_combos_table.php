@@ -14,18 +14,20 @@ class CreateCombosTable extends Migration
      */
     public function up()
     {
-        Schema::create('combos', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->text('description');
-            $table->integer('adult_price');
-            $table->integer('kid_price');
-            $table->json('itinerary');
-            $table->text('includes');
-            $table->text('requirements');
-            $table->string('image');
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('combos')) {
+            Schema::create('combos', function (Blueprint $table) {
+                $table->id();
+                $table->string('name');
+                $table->text('description');
+                $table->integer('adult_price');
+                $table->integer('kid_price');
+                $table->json('itinerary');
+                $table->text('includes');
+                $table->text('requirements');
+                $table->string('image');
+                $table->timestamps();
+            });
+        }
     }
 
     /**
