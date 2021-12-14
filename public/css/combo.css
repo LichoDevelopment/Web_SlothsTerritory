@@ -155,3 +155,7 @@ span#img-name img {
   padding-top: .5rem;
 	padding-bottom: .5rem;
 }
+
+.img-modal{
+  width: 80vw;
+}
