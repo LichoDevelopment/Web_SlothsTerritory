@@ -12,7 +12,7 @@
             </div>
             <div class="content">
                 <div class="container">
-                    <div class="row">
+                    <div class="combo-grid">
                         @foreach ($combos as $combo)
                             @if ($locale === "en")
                                 @php
@@ -24,7 +24,7 @@
                                 @endphp
                             @endif
                                 
-                                <div class="col-xs-12 col-sm-4">
+                                <div class="">
                                     <div class="card-combo">
                                         <a class="img-card-combo" href="#">
                                         <img src="/storage/{{$combo->image}}" />

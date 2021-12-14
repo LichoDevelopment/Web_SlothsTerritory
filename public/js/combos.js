@@ -78,11 +78,17 @@ itinerary.addEventListener('click', (evt) => {
 function addItinerary(evt) {
     evt.preventDefault();
     if(newItineraryInput.value === '') {
-        alert('Seleccione una hora');
+        swal.fire({
+            icon: 'warning',
+            title: 'Seleccione una hora'
+        })
     } else {
 
         if (itineraryArray.includes(newItineraryInput.value)) {
-            alert('Ya se ha agregado esta hora');
+            swal.fire({
+            icon: 'warning',
+            title: 'Ya se ha agregado esta hora'
+        })
         } else {
             itineraryArray.push(newItineraryInput.value + ':00');
             printItinerary();

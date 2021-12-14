@@ -29,7 +29,6 @@ class ComboController extends Controller
     {
         App::setLocale($locale);
         $combos = $this->comboService->getAll();
-        // return view('/combo/combo', compact('locale'));
         
         return view('/combo/combo', compact('combos', 'locale'));
     }
