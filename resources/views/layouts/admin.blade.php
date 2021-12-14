@@ -182,6 +182,10 @@
                             <a href="{{ route('admin.carusel') }}">
                                 <i class="fas fa-images"></i>Carusel</a>
                         </li>
+                        <li class="{{ Route::is('admin.galeria') ? 'active' : '' }} ">
+                            <a href="{{ route('admin.galeria') }}">
+                                <i class="fas fa-images"></i>Galeria</a>
+                        </li>
                     </ul>
                 </nav>
             </div>

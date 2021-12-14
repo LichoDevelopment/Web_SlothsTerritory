@@ -6,6 +6,8 @@ use App\Models\Agencia;
 use App\Models\Estado;
 use App\Models\Fecha_tour;
 use App\Models\Horario;
+use App\Models\Image;
+use App\Models\ImageType;
 use App\Models\Reserva;
 use App\Models\Reservacion;
 use Carbon\CarbonTimeZone;
@@ -20,7 +22,11 @@ class HomeController extends Controller
     public function home($locale)
     {
         App::setLocale($locale);
-        return view('home', compact('locale'));
+
+        $images = Image::with('type')->get();
+        $imageTypes = ImageType::all();
+
+        return view('home', compact('locale', 'images', 'imageTypes'));
     }
     public function admin(Request $request)
     {
@@ -29,7 +35,6 @@ class HomeController extends Controller
             $date = $date->format('Y-m-d');
         if (rol_usuario()->id === 2){
 
-            // dd($date);
             $reservas = DB::select('CALL filtrar_reservas(?,?,?,?)',[$date, $date, null,null]);
             $totales  = DB::select('CALL totales(?,?,?,?)',[$date, $date, null,null]);
         }

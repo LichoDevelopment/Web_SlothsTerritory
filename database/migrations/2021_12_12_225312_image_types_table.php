@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddSoftDeletesToMessagesTable extends Migration
+class ImageTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class AddSoftDeletesToMessagesTable extends Migration
      */
     public function up()
     {
-        Schema::table('mensajes_web', function (Blueprint $table) {
-            $table->softDeletes();
+        Schema::create('image_types', function (Blueprint $table) {
+            $table->id();
+            $table->string('name_es');
+            $table->string('name_en');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +28,6 @@ class AddSoftDeletesToMessagesTable extends Migration
      */
     public function down()
     {
-        Schema::table('Mensajes_web', function (Blueprint $table) {
-            $table->dropSoftDeletes();
-        });
+        //
     }
 }
