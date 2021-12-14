@@ -471,26 +471,27 @@
 
                             <span class="fa-stack">
                             <a href="https://www.facebook.com/Sloths.Territory.2018" target="_blank">
-                                    {{-- <span class="hexagon"></span> --}}
                                     <i class="fab fa-facebook-f fa-stack-1x-face"></i>
                                 </a>
                             </span>
                             <span class="fa-stack">
                             <a href="https://www.instagram.com/slothsterritory/" target="_blank">
-                                    {{-- <span class="hexagon"></span> --}}
                                     <i class="fab fa-instagram fa-stack-1x-insta"></i>
                                 </a>
                             </span>
                             <span class="fa-stack">
                                 <a href="https://www.youtube.com/channel/UCKqtM7YiCFUtcYs5j8B5hgw" target="_blank">
-                                    {{-- <span class="hexagon"></span> --}}
                                     <i class="fab fa-youtube fa-stack-1x-youtu"></i>
                                 </a>
                             </span>
                             <span class="fa-stack">
                                 <a href="https://www.tripadvisor.com/UserReviewEdit-g309226-d15636276-Sloth_s_Territory-La_Fortuna_de_San_Carlos_Arenal_Volcano_National_Park_Province_of_Alajuela.html" target="_blank">
-                                    {{-- <span class="hexagon"></span> --}}
                                     <i class="fab fa-tripadvisor fa-stack-1x-trip"></i>
+                                </a>
+                            </span>
+                            <span class="fa-stack">
+                                <a href="https://www.waze.com/en/live-map/directions/costa-rica/alajuela-province/la-fortuna/sloths-territory?navigate=yes&utm_campaign=iframe_planning&utm_medium=planning_box&utm_source=waze_website&to=place.ChIJo8M693NzoI8RA4DJ3c5V5AA" target="_blank">
+                                    <img class="img-fa-stack-1x-trip" src="{{ asset('icons/waze.svg') }}" alt="">
                                 </a>
                             </span>
                         </div> <!-- end of text-container -->
