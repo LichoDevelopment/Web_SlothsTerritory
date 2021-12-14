@@ -15,7 +15,8 @@ class ImageTypesTable extends Migration
     {
         Schema::create('image_types', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name_es');
+            $table->string('name_en');
             $table->timestamps();
         });
     }

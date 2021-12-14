@@ -12,4 +12,10 @@ class Image extends Model
     protected $fillable = ['url', 'titulo', 'tipo'];
 
     protected $table = 'galeria';
+
+
+    public function type()
+    {
+        return $this->belongsTo('App\Models\ImageType', 'tipo', 'id');
+    }
 }
