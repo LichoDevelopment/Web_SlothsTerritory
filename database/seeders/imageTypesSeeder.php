@@ -14,10 +14,18 @@ class imageTypesSeeder extends Seeder
      */
     public function run()
     {
-        ImageType::create([ 'name' => 'sloths' ]);
-        ImageType::create([ 'name' => 'ranas' ]);
-        ImageType::create([ 'name' => 'monos' ]);
-        ImageType::create([ 'name' => 'aves' ]);
-        ImageType::create([ 'name' => 'otras' ]);
+
+        ImageType::create([ 'name_en' => 'Sloths', 'name_es' => 'Perezosos' ]);
+
+        ImageType::create([ 'name_en' => 'Frogs', 'name_es' => 'Ranas' ]);
+
+        ImageType::create([ 'name_en' => 'Monkeys', 'name_es' => 'Monos' ]);
+
+        ImageType::create([ 'name_en' => 'Birds', 'name_es' => 'Aves' ]);
+
+        ImageType::create([ 'name_en' => 'Other', 'name_es' => 'Otras' ]);
     }
 }
+
+
+

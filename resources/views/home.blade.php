@@ -272,21 +272,25 @@
                         <!-- Filter -->
                         <div class="button-group filters-button-group">
                             <a class="button is-checked" data-filter="*"><span>{{__('galeria.filtro.ver_todo')}}</span></a>
-                            <a class="button" data-filter=".sloths"><span>{{__('galeria.filtro.sloths')}}</span></a>
-                            <a class="button" data-filter=".ranas"><span>{{__('galeria.filtro.ranas')}}</span></a>
-                            <a class="button" data-filter=".monos"><span>{{__('galeria.filtro.monos')}}</span></a>
-                            <a class="button" data-filter=".aves"><span>{{__('galeria.filtro.aves')}}</span></a>
-                            <a class="button" data-filter=".otras"><span>{{__('galeria.filtro.otras')}}</span></a>
+
+                            @foreach ($imageTypes as $type)
+                                <a class="button" data-filter=".{{$type->name_en}}"><span>{{$locale == "es" ? $type->name_es : $type->name_en}}</span></a>
+                            @endforeach
+
                         </div> <!-- end of button group -->
+
                         <div class="grid">
-                            <div class="element-item sloths">
-                                <a class="popup-with-move-anim" href="#tour-1">
-                                    <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="images/perezosos/perezosos-Sloth_s_Territory_Fortuna.jpeg" 
-                                    alt="bebe perezoso en La Fortuna de San Carlos Sloth Territory"
-                                    title="bebe perezoso en Fortuna">
-                                </a>
-                            </div>
+                            @foreach ($images as $image)
+                                <div class="element-item {{}}">
+                                    <a class="popup-with-move-anim" href="#tour-1">
+                                        <div class="element-item-overlay"></div>
+                                        <img loading="lazy" src="images/perezosos/perezosos-Sloth_s_Territory_Fortuna.jpeg" 
+                                        alt="bebe perezoso en La Fortuna de San Carlos Sloth Territory"
+                                        title="bebe perezoso en Fortuna">
+                                    </a>
+                                </div>
+                            @endforeach
+                            
                             <div class="element-item sloths">
                                 <a class="popup-with-move-anim" href="#tour-2">
                                     <div class="element-item-overlay"></div>
