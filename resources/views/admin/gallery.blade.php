@@ -31,7 +31,7 @@
             const tiposHTML = `
                 <select class="custom-select mb-2" id="imagenTipo">
                     <option selected value="">Elija un tipo...</option>
-                    ${tipos.map(tipo => `<option value="${tipo.id}">${tipo.name}</option>`)}
+                    ${tipos.map(tipo => `<option value="${tipo.id}">${tipo.name_es} - ${tipo.name_en}</option>`)}
                 </select>`
             
             swal.fire({
