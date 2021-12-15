@@ -57,27 +57,27 @@
                                             <h3>{{$combo->name}}</h3>
                                             {{-- <hr class="line-heading"> --}}
                                             <hr>
-                                            <h6>{{$combo->description}}</h6>                                           
+                                            <h6 class="text-justify">{{$combo->description}}</h6>                                           
 
                                             <div class="row mb-3">
                                                 <div class="col-lg-6 col-sm-12">
-                                                    <p>Itinirery</p>
+                                                    <p><strong>Itinirery </strong></p>
                                                     <ul class="list-group itinerary" data-itinerary="{{$combo->itinerary}}"></ul>
                                                 </div>
                                                 <div class="col-lg-6 col-sm-12">
-                                                    <p>Rates</p>
-                                                    <p>Adults Price: {{$combo->adult_price}}</p>
-                                                    <p>Kids Price:  {{$combo->kid_price}}</p>
+                                                    <p><strong> Rates</strong></p>
+                                                    <p><strong>Adults Price:</strong> ${{$combo->adult_price}}</p>
+                                                    <p><strong>Kids Price:</strong> ${{$combo->kid_price}}</p>
                                                 </div>
                                             </div>
                                             <br>
                                             <div class="row mb-2">
                                                 <div class="col-lg-6 col-sm-12">
-                                                    <p>What is Included:</p>
+                                                    <p><strong>What is Included:</strong></p>
                                                     <p>{{$combo->includes}}</p>
                                                 </div>
                                                 <div class="col-lg-6 col-sm-12">
-                                                    <p>What to bring: </p>
+                                                    <p><strong>What to bring: </strong></p>
                                                     <p>{{$combo->requirements}}</p>
                                                 </div>
 
