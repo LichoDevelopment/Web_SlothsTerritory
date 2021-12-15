@@ -272,134 +272,25 @@
                         <!-- Filter -->
                         <div class="button-group filters-button-group">
                             <a class="button is-checked" data-filter="*"><span>{{__('galeria.filtro.ver_todo')}}</span></a>
-                            <a class="button" data-filter=".sloths"><span>{{__('galeria.filtro.sloths')}}</span></a>
-                            <a class="button" data-filter=".ranas"><span>{{__('galeria.filtro.ranas')}}</span></a>
-                            <a class="button" data-filter=".monos"><span>{{__('galeria.filtro.monos')}}</span></a>
-                            <a class="button" data-filter=".aves"><span>{{__('galeria.filtro.aves')}}</span></a>
-                            <a class="button" data-filter=".otras"><span>{{__('galeria.filtro.otras')}}</span></a>
+
+                            @foreach ($imageTypes as $type)
+                                <a class="button" data-filter=".{{$type->name_en}}"><span>{{$locale == "es" ? $type->name_es : $type->name_en}}</span></a>
+                            @endforeach
+
                         </div> <!-- end of button group -->
+
                         <div class="grid">
-                            <div class="element-item sloths">
-                                <a class="popup-with-move-anim" href="#tour-1">
-                                    <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="images/perezosos/perezosos-Sloth_s_Territory_Fortuna.jpeg" 
-                                    alt="bebe perezoso en La Fortuna de San Carlos Sloth Territory"
-                                    title="bebe perezoso en Fortuna">
-                                </a>
-                            </div>
-                            <div class="element-item sloths">
-                                <a class="popup-with-move-anim" href="#tour-2">
-                                    <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="images/perezosos/oso_perezoso_de_tres_dedos-Sloth_Terirtory_Fortuna.jpeg" 
-                                    alt="oso perezoso de tres dedo en Sloths Territory Fortuna"
-                                    title="Oso perezoso en La Fortuna de San Carlos">
-                                </a>
-                            </div>
-                            <div class="element-item sloths">
-                                <a class="popup-with-move-anim" href="#tour-3">
-                                    <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="images/perezosos/perezoso_en_La_Fortuna_de_San_Carlos.jpeg" 
-                                    alt="Perezoso en La Fortuna de San Carlos Volcán Arenal"
-                                    title="Perezosos en la Fortuna de San Carlos">
-                                </a>
-                            </div>
-                            <div class="element-item sloths">
-                                <a class="popup-with-move-anim" href="#tour-4">
-                                    <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="images/perezosos/perezoso_en_Costa_Rica-Sloth_s_Territory_La_Fortuna.jpeg" 
-                                    alt="bebe perezoso en Sloth's Territory Fortuna San Carlos"
-                                    title="La Fortuna perezosos">
-                                </a>
-                            </div>
-                            <div class="element-item design ranas marketing">
-                                <a class="popup-with-move-anim" href="#tour-5">
-                                    <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="images/ranas/rana_flecha_roja_en_Fortuna_San_Carlos.jpeg" 
-                                    alt="Rana flecha roja en La Fortuna de San Carlos en SLoth's Territory"
-                                    title="Rana felcha roja Sloth´s Territory Fortuna">
-                                </a>
-                            </div>
-                            <div class="element-item design ranas marketing">
-                                <a class="popup-with-move-anim" href="#tour-6">
-                                    <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="images/ranas/rana_verde_ojos_rojos-Fortuna_San_Carlos.jpeg" 
-                                    alt="rana verde ojos rojos Fortuna San Carlos Sloth´s Territory"
-                                    title="ranas en Sloth´s Territory">
-                                </a>
-                            </div>
-                            <div class="element-item design ranas marketing">
-                                <a class="popup-with-move-anim" href="#tour-7">
-                                    <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="images/ranas/ranas_en_La_Fortuna.jpeg" 
-                                    alt="ranas en La Fortuna de San Carlos"
-                                    title="Ranas en La Fortuna">
-                                </a>
-                            </div>
-                            <div class="element-item design monos">
-                                <a class="popup-with-move-anim" href="#tour-8">
-                                    <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="images/monos/mono_aullador-alouatta-La_Fortuna.jpeg" 
-                                    alt="Mono aullador en La Fortuna"
-                                    title="Mono aullador en Fortuna">
-                                </a>
-                            </div>
-                            <div class="element-item design aves">
-                                <a class="popup-with-move-anim" href="#tour-9">
-                                    <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="images/aves/lechuzon-La_Fortuna_San_Carlos.jpeg" 
-                                    alt="Lechuzon en La Fortuna de San Carlos"
-                                    title="Lechuzon en La Fortuna">
-                                </a>
-                            </div>
-                            <div class="element-item design aves">
-                                <a class="popup-with-move-anim" href="#tour-10">
-                                    <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="images/aves/ave_martin_pescador_La_Fortuna.jpeg" 
-                                    alt="ave martin pescador en La Fortuna de San Carlos"
-                                    title="Ave martín pescador en Costa Rica">
-                                </a>
-                            </div>
-                            <div class="element-item design otras">
-                                <a class="popup-with-move-anim" href="#tour-11">
-                                    <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="images/otras-especies/serpientes-La_Fortuna_de_San_Carlos.jpeg" 
-                                    alt="Serpientes en La Fortuna de San Carlos"
-                                    title="Serpientes en La Fortuna">
-                                </a>
-                            </div>
-                            <div class="element-item design otras">
-                                <a class="popup-with-move-anim" href="#tour-12">
-                                    <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="images/otras-especies/leopardo_en_La_Fortuna-manigordo_en_La_Fortuna.jpeg" 
-                                    alt="leopardo en la Fortuna de San Carlos"
-                                    title="Leopardo en La Fortuna">
-                                </a>
-                            </div>
-                            <div class="element-item design otras">
-                                <a class="popup-with-move-anim" href="#tour-13">
-                                    <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="images/otras-especies/serpiente_boa_en_La_Fortuna_de_San_Carlos.jpeg" 
-                                    alt="Serpiente Boa en La Fortuna en Sloth's Territory"
-                                    title="Serpiente en La Fortuna">
-                                </a>
-                            </div>
-                            {{-- Nuevas  --}}
-                            <div class="element-item sloths">
-                                <a class="popup-with-move-anim" href="#tour-14">
-                                    <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="/images/galeria/sloths/sloths_costa_rica.jpeg" 
-                                    alt="Sloths in La Fortuna"
-                                    title="Sloths in La Fortuna">
-                                </a>
-                            </div>
-                            <div class="element-item sloths">
-                                <a class="popup-with-move-anim" href="#tour-15">
-                                    <div class="element-item-overlay"></div>
-                                    <img loading="lazy" src="/images/galeria/sloths/sloths_tour_costa_rica.jpeg" 
-                                    alt="Sloths in La Fortuna"
-                                    title="Sloths in La Fortuna">
-                                </a>
-                            </div>
+                            @foreach ($images as $image)
+                                <div class="element-item {{$image->type->name_en}}">
+                                    <a class="popup-with-move-anim" href="#img{{$image->id}}">
+                                        <div class="element-item-overlay"></div>
+                                        <img loading="lazy" src="/storage/{{$image->url}}" alt="{{$image->titulo}}"
+                                        title="{{$image->titulo}}">
+                                    </a>
+                                </div>
+                            @endforeach
+                            
+                            
                         </div> <!-- end of grid -->
                         <!-- end of filter -->
 
@@ -415,368 +306,21 @@
 
 
         <!-- tour Lightboxes -->
-        <!-- Lightbox -->
-        <div id="tour-1" class="lightbox-basic zoom-anim-dialog mfp-hide">
-            <div class="row">
-                <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-                <div class="">
-                    <img class="img-fluid" loading="lazy" 
-                    src="images/perezosos/perezosos-Sloth_s_Territory_Fortuna.jpeg" 
-                    alt="Perezoso en La Fortuna"
-                    title="Perezosos en La Fortuna de San Carlos Volcán Arenal">
-                </div> <!-- end of col -->
-                {{-- <div class="col-lg-4">
-                    <h3>perezoso</h3>
-                    <hr class="line-heading">
-                    <h6>Algo de info sub titulo</h6>
-                    <p>Info sobre...</p>
-                    <p>Info sobre...</p>
-                    <div class="testimonial-container">
-                        <p class="testimonial-text">Parrafo sobre comentario de algo.</p>
-                        <p class="testimonial-author">Tipo de animal o no se...</p>
+        @foreach ($images as $image)
+            <!-- Lightbox -->
+            <div id="img{{$image->id}}" class="lightbox-basic zoom-anim-dialog mfp-hide">
+                <div class="row">
+                    <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+                    <div class="">
+                        <img class="img-fluid img-modal" loading="lazy" 
+                        src="/storage/{{$image->url}}" alt="{{$image->titulo}}"
+                        title="{{$image->titulo}}">
                     </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS (redirecciona a otra página)</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">{{__('btn.volver')}}</a>
-                </div> <!-- end of col --> --}}
-            </div> <!-- end of row -->
-        </div> <!-- end of lightbox-basic -->
-        <!-- end of lightbox -->
-
-        <!-- Lightbox -->
-        <div id="tour-2" class="lightbox-basic zoom-anim-dialog mfp-hide">
-            <div class="row">
-                <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-                <div class="">
-                    <img class="img-fluid" loading="lazy" 
-                    src="images/perezosos/oso_perezoso_de_tres_dedos-Sloth_Terirtory_Fortuna.jpeg" 
-                    alt="Perezoso de tres dedo en La Fortuna"
-                    title="Perezoso de 3 dedos en La Fortuna">
-                </div> <!-- end of col -->
-                {{-- <div class="col-lg-4">
-                    <h3>Juanito</h3>
-                    <hr class="line-heading">
-                    <h6>Info</h6>
-                    <p>Info</p>
-                    <p>indo</p>
-                    <div class="testimonial-container">
-                        <p class="testimonial-text">Parrafo </p>
-                        <p class="testimonial-author">Tipo</p>
-                    </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">{{__('btn.volver')}}</a>
-                </div> <!-- end of col --> --}}
-            </div> <!-- end of row -->
-        </div> <!-- end of lightbox-basic -->
-        <!-- end of lightbox -->
-
-        <!-- Lightbox -->
-        <div id="tour-3" class="lightbox-basic zoom-anim-dialog mfp-hide">
-            <div class="row">
-                <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-                <div class="">
-                    <img class="img-fluid" loading="lazy" 
-                    src="images/perezosos/perezoso_en_La_Fortuna_de_San_Carlos.jpeg" 
-                    alt="Perezoso en La Fortuna de San Carlos"
-                    title="Perezosos en La Fortuna en Sloth's Territory">
-                </div> <!-- end of col -->
-                {{-- <div class="col-lg-4">
-                    <h3>Bofw</h3>
-                    <hr class="line-heading">
-                    <h6>Strategy Development</h6>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <div class="testimonial-container">
-                        <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <p class="testimonial-author">General Manager</p>
-                    </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">{{__('btn.volver')}}</a>
-                </div> <!-- end of col --> --}}
-            </div> <!-- end of row -->
-        </div> <!-- end of lightbox-basic -->
-        <!-- end of lightbox -->
-
-        <!-- Lightbox -->
-        <div id="tour-4" class="lightbox-basic zoom-anim-dialog mfp-hide">
-            <div class="row">
-                <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-                <div class="">
-                    <img class="img-fluid" loading="lazy" 
-                    src="images/perezosos/perezoso_en_Costa_Rica-Sloth_s_Territory_La_Fortuna.jpeg" 
-                    alt="bebé perezosos en La Fortuna de San Carlos"
-                    title="Bebé perezoso en La Fortuna">
-                </div> <!-- end of col -->
-                {{-- <div class="col-lg-4">
-                    <h3>Ipsum</h3>
-                    <hr class="line-heading">
-                    <h6>Strategy Development</h6>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <div class="testimonial-container">
-                        <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <p class="testimonial-author">General Manager</p>
-                    </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">{{__('btn.volver')}}</a>
-                </div> <!-- end of col --> --}}
-            </div> <!-- end of row -->
-        </div> <!-- end of lightbox-basic -->
-        <!-- end of lightbox -->
-
-        <!-- Lightbox -->
-        <div id="tour-5" class="lightbox-basic zoom-anim-dialog mfp-hide">
-            <div class="row">
-                <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-                <div class="">
-                    <img class="img-fluid" loading="lazy" 
-                    src="images/ranas/rana_flecha_roja_en_Fortuna_San_Carlos.jpeg" 
-                    alt="rana flecha roja en La Fortuna"
-                    title="rana flecha roja La Fortuna de San Carlos">
-                </div> <!-- end of col -->
-                {{-- <div class="col-lg-4">
-                    <h3>IMpsu</h3>
-                    <hr class="line-heading">
-                    <h6>Strategy Development</h6>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <div class="testimonial-container">
-                        <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <p class="testimonial-author">General Manager</p>
-                    </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">{{__('btn.volver')}}</a>
-                </div> <!-- end of col --> --}}
-            </div> <!-- end of row -->
-        </div> <!-- end of lightbox-basic -->
-        <!-- end of lightbox -->
-
-        <!-- Lightbox -->
-        <div id="tour-6" class="lightbox-basic zoom-anim-dialog mfp-hide">
-            <div class="row">
-                <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-                <div class="">
-                    <img class="img-fluid" loading="lazy" 
-                    src="images/ranas/rana_verde_ojos_rojos-Fortuna_San_Carlos.jpeg" 
-                    alt="rana de ojos rojos en La Fortuna"
-                    title="rana de ojos rojos">
-                </div> <!-- end of col -->
-                {{-- <div class="col-lg-4">
-                    <h3>Ipsum</h3>
-                    <hr class="line-heading">
-                    <h6>Strategy Development</h6>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <div class="testimonial-container">
-                        <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <p class="testimonial-author">General Manager</p>
-                    </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">{{__('btn.volver')}}</a>
-                </div> <!-- end of col --> --}}
-            </div> <!-- end of row -->
-        </div> <!-- end of lightbox-basic -->
-        <!-- end of lightbox -->
-
-        <!-- Lightbox -->
-        <div id="tour-7" class="lightbox-basic zoom-anim-dialog mfp-hide">
-            <div class="row">
-                <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-                <div class="">
-                    <img class="img-fluid" loading="lazy" 
-                    src="images/ranas/ranas_en_La_Fortuna.jpeg" 
-                    alt="ranas en La Fortuna de San carlos"
-                    title="Ranas en La Fortuna">
-                </div> <!-- end of col -->
-                {{-- <div class="col-lg-4">
-                    <h3>CIPSU</h3>
-                    <hr class="line-heading">
-                    <h6>Strategy Development</h6>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <div class="testimonial-container">
-                        <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <p class="testimonial-author">General Manager</p>
-                    </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">{{__('btn.volver')}}</a>
-                </div> <!-- end of col --> --}}
-            </div> <!-- end of row -->
-        </div> <!-- end of lightbox-basic -->
-        <!-- end of lightbox -->
-
-        <!-- Lightbox -->
-        <div id="tour-8" class="lightbox-basic zoom-anim-dialog mfp-hide">
-            <div class="row justify-content-center">
-                <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-                <div class="">
-                    <img class="img-fluid" loading="lazy" 
-                    src="images/monos/mono_aullador-alouatta-La_Fortuna.jpeg" 
-                    alt="mono aullador en Sloth Territory La Fortuna"
-                    title="mono aullador en La Fortuna">
-                </div> <!-- end of col -->
-                {{-- <div class="col-lg-10">
-                    <h3>sub algo</h3>
-                    <hr class="line-heading">
-                    <h6>Strategy Development</h6>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <div class="testimonial-container">
-                        <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <p class="testimonial-author">General Manager</p>
-                    </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">{{__('btn.volver')}}</a>
-                </div> <!-- end of col --> --}}
-            </div> <!-- end of row -->
-        </div> <!-- end of lightbox-basic -->
-        <!-- end of lightbox -->
-        <!-- Lightbox -->
-        <div id="tour-9" class="lightbox-basic zoom-anim-dialog mfp-hide">
-            <div class="row justify-content-center">
-                <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-                <div class="">
-                    <img class="img-fluid" loading="lazy" 
-                    src="images/aves/lechuzon-La_Fortuna_San_Carlos.jpeg" 
-                    alt="lechuzon en Fortuna Costa Rica"
-                    title="Lechuzón en La Fortuna de San carlos">
-                </div> <!-- end of col -->
-                {{-- <div class="col-lg-10">
-                    <h3>sub algo</h3>
-                    <hr class="line-heading">
-                    <h6>Strategy Development</h6>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <div class="testimonial-container">
-                        <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <p class="testimonial-author">General Manager</p>
-                    </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">{{__('btn.volver')}}</a>
-                </div> <!-- end of col --> --}}
-            </div> <!-- end of row -->
-        </div> <!-- end of lightbox-basic -->
-        <!-- end of lightbox -->
-        <!-- Lightbox -->
-        <div id="tour-10" class="lightbox-basic zoom-anim-dialog mfp-hide">
-            <div class="row justify-content-center">
-                <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-                <div class="">
-                    <img class="img-fluid" loading="lazy" 
-                    src="images/aves/ave_martin_pescador_La_Fortuna.jpeg" 
-                    alt="ave martin pescador en La Fortuna"
-                    title="Ave martin pescador en La Fortuna">
-                </div> <!-- end of col -->
-                {{-- <div class="col-lg-10">
-                    <h3>sub algo</h3>
-                    <hr class="line-heading">
-                    <h6>Strategy Development</h6>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <div class="testimonial-container">
-                        <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <p class="testimonial-author">General Manager</p>
-                    </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">{{__('btn.volver')}}</a>
-                </div> <!-- end of col --> --}}
-            </div> <!-- end of row -->
-        </div> <!-- end of lightbox-basic -->
-        <!-- end of lightbox -->
-        <!-- Lightbox -->
-        <div id="tour-11" class="lightbox-basic zoom-anim-dialog mfp-hide">
-            <div class="row justify-content-center">
-                <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-                <div class="">
-                    <img class="img-fluid" loading="lazy" 
-                    src="images/otras-especies/serpientes-La_Fortuna_de_San_Carlos.jpeg" 
-                    alt="serpiente en La Fortuna de San Carlos"
-                    title="Serpientes en La Fortuna">
-                </div> <!-- end of col -->
-                {{-- <div class="col-lg-10">
-                    <h3>sub algo</h3>
-                    <hr class="line-heading">
-                    <h6>Strategy Development</h6>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <div class="testimonial-container">
-                        <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <p class="testimonial-author">General Manager</p>
-                    </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">{{__('btn.volver')}}</a>
-                </div> <!-- end of col --> --}}
-            </div> <!-- end of row -->
-        </div> <!-- end of lightbox-basic -->
-        <!-- end of lightbox -->
-        <!-- Lightbox -->
-        <div id="tour-12" class="lightbox-basic zoom-anim-dialog mfp-hide">
-            <div class="row justify-content-center">
-                <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-                <div class="">
-                    <img class="img-fluid" loading="lazy"
-                    src="images/otras-especies/leopardo_en_La_Fortuna-manigordo_en_La_Fortuna.jpeg" 
-                    alt="Leopardo en La Fortuna, Ocelote en La Fortuna"
-                    title="Leoparto, Ocelote en La Fortuna">
-                </div> <!-- end of col -->
-                {{-- <div class="col-lg-10">
-                    <h3>sub algo</h3>
-                    <hr class="line-heading">
-                    <h6>Strategy Development</h6>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <div class="testimonial-container">
-                        <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <p class="testimonial-author">General Manager</p>
-                    </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">{{__('btn.volver')}}</a>
-                </div> <!-- end of col --> --}}
-            </div> <!-- end of row -->
-        </div> <!-- end of lightbox-basic -->
-        <!-- end of lightbox -->
-        <!-- Lightbox -->
-        <div id="tour-13" class="lightbox-basic zoom-anim-dialog mfp-hide">
-            <div class="row justify-content-center">
-                <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-                <div class="">
-                    <img class="img-fluid" 
-                    loading="lazy"
-                    src="images/otras-especies/serpiente_boa_en_La_Fortuna_de_San_Carlos.jpeg" 
-                    alt="Serpiente en La Fortuna de  San Carlos"
-                    title="Serpiente en La Fortuna">
-                </div> <!-- end of col -->
-                {{-- <div class="col-lg-10">
-                    <h3>sub algo</h3>
-                    <hr class="line-heading">
-                    <h6>Strategy Development</h6>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <div class="testimonial-container">
-                        <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <p class="testimonial-author">General Manager</p>
-                    </div>
-                    <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#galeria">{{__('btn.volver')}}</a>
-                </div> <!-- end of col --> --}}
-            </div> <!-- end of row -->
-        </div> <!-- end of lightbox-basic -->
-        <!-- end of lightbox -->
-
-        <div id="tour-14" class="lightbox-basic zoom-anim-dialog mfp-hide">
-            <div class="row justify-content-center">
-                <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-                <div class="">
-                    <img class="img-fluid" 
-                    loading="lazy"
-                    src="/images/galeria/sloths/sloths_costa_rica.jpeg" 
-                    alt="Sloths in La Fortuna"
-                    title="Sloths in La Fortuna">
-                </div> <!-- end of col -->
-                
-            </div> <!-- end of row -->
-        </div> <!-- end of lightbox-basic -->
-        <!-- end of lightbox -->
-
-        <div id="tour-15" class="lightbox-basic zoom-anim-dialog mfp-hide">
-            <div class="row justify-content-center">
-                <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-                <div class="">
-                    <img class="img-fluid" 
-                    loading="lazy"
-                    src="/images/galeria/sloths/sloths_tour_costa_rica.jpeg" 
-                    alt="Sloths in La Fortuna"
-                    title="Sloths in La Fortuna">
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of lightbox-basic -->
-        <!-- end of lightbox -->
+                </div> <!-- end of row -->
+            </div> <!-- end of lightbox-basic -->
+            <!-- end of lightbox -->
+        
+        @endforeach
 
 
         <div id="tour-diurno" class="lightbox-basic zoom-anim-dialog mfp-hide">
@@ -872,60 +416,6 @@
         <!-- end of lightbox -->
         <!-- end of tour lightboxes -->
 
-        <!-- Team -->
-        {{-- <div class="basic-2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h2>{{__('fundadores.titulo_principal')}}</h2>
-                        <!-- <p class="p-heading"> PENDIENTE</p> -->
-                    </div> <!-- end of col -->
-                </div> <!-- end of row -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <!-- Team Member -->
-                        <div class="team-member">
-                            <div class="image-wrapper">
-                                <img class="img-fluid" src="images/team-1.png" alt="trabajadores de turiísmo en La Fortuna" title="Turismo La Fortuna">
-                            </div> <!-- end of image-wrapper -->
-                            <p class="p-large">Keilor</p>
-                            <!-- <p class="job-title">Alguna característica</p> -->
-                            <span class="social-icons">
-                                <span class="fa-stack">
-                                    <a href="https://www.facebook.com/Sloths.Territory.2018" target="_blank"> --}}
-                                        {{-- <span class="hexagon"></span> --}}
-                                        {{-- <i class="fab fa-facebook-f fa-stack-1x"></i>
-                                    </a>
-                                </span>
-                            </span>
-                        </div> <!-- end of team-member -->
-                        <!-- end of team member -->
-
-                        <!-- Team Member -->
-                        <div class="team-member">
-                            <div class="image-wrapper">
-                                <img class="img-fluid" src="images/team-2.png" alt="Perezosos La Fortuna" title="Perezosos en La Fortuna">
-                            </div> <!-- end of image wrapper -->
-                            <p class="p-large">Oscar</p>
-                            <!-- <p class="job-title">Alguna característica</p> -->
-                            <span class="social-icons">
-                                <span class="fa-stack">
-                                    <a href="https://www.facebook.com/Sloths.Territory.2018" target="_blank">
-                                        <span class="hexagon"></span> --}}
-                                        {{-- <i class="fab fa-facebook-f fa-stack-1x"></i>
-                                    </a>
-                                </span>
-                            </span>
-                        </div> <!-- end of team-member -->
-                        <!-- end of team member --> --}}
-
-                    </div> <!-- end of col -->
-                </div> <!-- end of row -->
-            </div> <!-- end of container -->
-        </div> <!-- end of basic-2 -->
-        <!-- end of team -->
-
-
         <!-- About -->
         <div id="about" class="counter">
             <div class="container">
@@ -981,26 +471,27 @@
 
                             <span class="fa-stack">
                             <a href="https://www.facebook.com/Sloths.Territory.2018" target="_blank">
-                                    {{-- <span class="hexagon"></span> --}}
                                     <i class="fab fa-facebook-f fa-stack-1x-face"></i>
                                 </a>
                             </span>
                             <span class="fa-stack">
                             <a href="https://www.instagram.com/slothsterritory/" target="_blank">
-                                    {{-- <span class="hexagon"></span> --}}
                                     <i class="fab fa-instagram fa-stack-1x-insta"></i>
                                 </a>
                             </span>
                             <span class="fa-stack">
                                 <a href="https://www.youtube.com/channel/UCKqtM7YiCFUtcYs5j8B5hgw" target="_blank">
-                                    {{-- <span class="hexagon"></span> --}}
                                     <i class="fab fa-youtube fa-stack-1x-youtu"></i>
                                 </a>
                             </span>
                             <span class="fa-stack">
                                 <a href="https://www.tripadvisor.com/UserReviewEdit-g309226-d15636276-Sloth_s_Territory-La_Fortuna_de_San_Carlos_Arenal_Volcano_National_Park_Province_of_Alajuela.html" target="_blank">
-                                    {{-- <span class="hexagon"></span> --}}
                                     <i class="fab fa-tripadvisor fa-stack-1x-trip"></i>
+                                </a>
+                            </span>
+                            <span class="fa-stack">
+                                <a href="https://www.waze.com/en/live-map/directions/costa-rica/alajuela-province/la-fortuna/sloths-territory?navigate=yes&utm_campaign=iframe_planning&utm_medium=planning_box&utm_source=waze_website&to=place.ChIJo8M693NzoI8RA4DJ3c5V5AA" target="_blank">
+                                    <img class="img-fa-stack-1x-trip" src="{{ asset('icons/waze.svg') }}" alt="">
                                 </a>
                             </span>
                         </div> <!-- end of text-container -->

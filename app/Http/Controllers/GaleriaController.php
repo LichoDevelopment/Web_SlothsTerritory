@@ -3,32 +3,41 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\ImagenCarusel;
+use App\Models\Image;
+use App\Models\ImageType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class ImagenCaruselController extends Controller
+class GaleriaController extends Controller
 {
     public function index()
     {
-        $imagenesCarusel = ImagenCarusel::all();
+        $images = Image::all();
 
-        return view('admin.slider', compact('imagenesCarusel'));
+        return view('admin.gallery', compact('images'));
     }
 
     public function all()
     {
-        return ImagenCarusel::all();
+        return Image::with('tipo')->get();
+    }
+
+    public function getTypos()
+    {
+        return ImageType::all();
     }
 
     public function upload(Request $request)
     {
-        $destino = 'carusel';
+        $destino = 'galeria';
         $url     = Storage::disk('public')->put($destino, $request->file('file'));
 
-        ImagenCarusel::create([
+        $tipo = ImageType::find($request->tipo);
+
+        Image::create([
             'titulo'       => $request->titulo,
             'url'          => $url,
+            'tipo'         => $tipo->id,
         ]);
 
         return response([
@@ -40,7 +49,7 @@ class ImagenCaruselController extends Controller
 
     public function destroy($id)
     {
-        Storage::disk('public')->delete(ImagenCarusel::find($id)->url);
-        ImagenCarusel::destroy($id);
+        Storage::disk('public')->delete(Image::find($id)->url);
+        Image::destroy($id);
     }
 }
