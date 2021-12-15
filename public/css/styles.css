@@ -31,6 +31,7 @@ html {
 body, p {
 	color: #787976;
 	font: 400 1rem/1.5625rem "Open Sans", sans-serif;
+	text-align: justify;
 }
 
 .center-header{
@@ -905,6 +906,7 @@ div#video {
 
 .basic-1 .testimonial-author {
 	color: #484a46;
+	text-align: center;
 }
 
 /* Hover Animation */

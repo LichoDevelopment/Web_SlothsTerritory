@@ -14,7 +14,7 @@ class CreateCombosTable extends Migration
      */
     public function up()
     {
-        if (!Schema::hasTable('combos')) {
+        if (!Schema::hasTable('combos')) {            
             Schema::create('combos', function (Blueprint $table) {
                 $table->id();
                 $table->string('name');
@@ -25,6 +25,8 @@ class CreateCombosTable extends Migration
                 $table->text('includes');
                 $table->text('requirements');
                 $table->string('image');
+                $table->uuid('uuid');
+                $table->string('language');
                 $table->timestamps();
             });
         }

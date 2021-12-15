@@ -22,17 +22,18 @@ html,
   padding: 1em;
   text-align: center;
   vertical-align: middle;
+  background-color: #232523;
 }
 .fostrap-logo-combo {
   width: 100px;
   margin-bottom:15px
 }
 h1.heading-combo {
-  color: #fff;
+  color: #FCA800;
   font-size: 1.15em;
   font-weight: 900;
   margin: 0 0 0.5em;
-  color: #505050;
+  margin-top: 6rem;
 }
 @media (min-width: 450px) {
   h1.heading-combo {
@@ -48,6 +49,7 @@ h1.heading-combo {
   h1.heading-combo {
     font-size: 3.25em;
     margin: 0 0 0.3em;
+    margin-top: 6rem;
   }
 } 
 .card-combo {
@@ -158,4 +160,10 @@ span#img-name img {
 
 .img-modal{
   width: 80vw;
+}
+
+.combo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 1.5rem;
 }
