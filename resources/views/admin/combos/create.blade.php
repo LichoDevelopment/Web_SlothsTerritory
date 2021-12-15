@@ -34,13 +34,13 @@
 
                     <div class="mb-3 ">
                         <h3 class="text-center">Intinerario</h3>
-                        <div>
-                            <div>
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-12">
                                 <input type="time" id="new-itinerary-input">
                                 <button class="btn btn-sm btn-secondary" id="add-itinerary-btn">Agregar</button>
                             </div>
-                            <div id="itinerary">
-                            </div>
+                            <ul id="itinerary" class="list-group col-lg-6 col-sm-12">
+                            </ul>
                         </div>
                     </div>
 

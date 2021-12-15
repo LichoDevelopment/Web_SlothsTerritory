@@ -81,14 +81,14 @@ Route::middleware(['auth'])->group(function () {
     });
 
     
-    // Route::prefix('combos')->group(function () {        
-    //     Route::get('/ver', 'ComboController@index')->name('admin.combos.index');
-    //     Route::get('/ver/{id}', 'ComboController@show')->name('admin.combos.show');
-    //     Route::get('/create', 'ComboController@create')->name('admin.combos.create');
-    //     Route::post('/', 'ComboController@store')->name('admin.combos.store');
-    //     Route::put('/{id}', 'ComboController@update')->name('admin.combos.update');
-    //     Route::delete('/{id}', 'ComboController@destroy')->name('admin.combos.delete');
-    // });
+    Route::prefix('combos')->group(function () {        
+        Route::get('/ver', 'ComboController@index')->name('admin.combos.index');
+        Route::get('/ver/{id}', 'ComboController@show')->name('admin.combos.show');
+        Route::get('/create', 'ComboController@create')->name('admin.combos.create');
+        Route::post('/', 'ComboController@store')->name('admin.combos.store');
+        Route::post('/update/{id}', 'ComboController@update')->name('admin.combos.update');
+        Route::delete('/{id}', 'ComboController@destroy')->name('admin.combos.delete');
+    });
 
     // Route::resource('agencias', 'AgenciasController');
 });
@@ -104,7 +104,7 @@ Route::group(['prefix'=>'{locale}', 'where'=> ['locale'=> 'es|en']],function () 
     Route::get('/', 'HomeController@home')->name('home');
     Route::get('/privacy-policy', 'HomeController@privacy')->name('privacy-policy');
     Route::get('/terms-conditions', 'HomeController@terms')->name('terms-conditions');
-    // Route::get('/combo', 'HomeController@combos')->name('combos');
+    Route::get('/combo', 'ComboController@combos')->name('combos');
 });
 
 Route::get('/mensaje', 'MensajesWebController@index')->name('admin.mensaje');

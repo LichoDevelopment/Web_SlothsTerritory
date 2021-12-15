@@ -204,9 +204,15 @@
         <!-- end of services -->
 
         <div class="container-combo-img container">
-            <a href="/#{{-- {{ route('combos', $locale) }} --}}" class="d-flex justify-content-center">
+            <div  class="d-flex justify-content-center">
                 <img class="combo-preview-img" src="{{ asset('images/combo-preview-img.jpeg') }}" alt="">
-            </a>
+            </div>
+            <div  class="d-flex justify-content-center">
+                <a class="" href="{{ route('combos', $locale) }}">
+                    <span class="btn-solid-reg page-scroll">{{__('btn.mas_detalles')}}</span>
+                </a> 
+            </div>
+
 
         </div>
 
