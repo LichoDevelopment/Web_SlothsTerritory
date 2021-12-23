@@ -96,7 +96,7 @@
                         name="id_horario" id="horarios" data-horarios="{{$horarios}}" required>
                             @foreach ($horarios as $horario)
                                 @if ($horario->id_tour === $reserva->id_tour)
-                                    @if ($horario->id !== $reserva->id_horario)
+                                    @if ($horario->id === $reserva->id_horario)
                                         <option selected value="{{$horario->id}}"> {{ $horario->hora}} </option>                                    
                                     @else
                                         <option value="{{$horario->id}}"> {{ $horario->hora}} </option>                                     
