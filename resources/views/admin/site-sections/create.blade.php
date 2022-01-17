@@ -11,11 +11,6 @@
             <div class="card card-body">
                 <form id="updateSiteSection">
                     <div class="mb-3">
-                        <label for="title">Titulo</label>
-                        <input type="text" name="title" class="form-control" id="title" required>
-                    </div>
-
-                    <div class="mb-3">
                         <label for="enContent">Contenido en Inglés</label>
                         <textarea name="enContent" id="enContent" class="form-control" rows="10" required></textarea>
                     </div>

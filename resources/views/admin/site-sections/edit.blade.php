@@ -14,11 +14,6 @@
                     @csrf
                     @method('PUT')
                     <div class="mb-3">
-                        <label for="title">Titulo</label>
-                        <input type="text" class="form-control" id="title">
-                    </div>
-
-                    <div class="mb-3">
                         <label for="enContent">Contenido en Inglés</label>
                         <textarea name="content" id="enContent" class="form-control" rows="10"></textarea>
                     </div>
