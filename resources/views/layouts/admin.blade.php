@@ -52,7 +52,9 @@
     <link href="{{ url('css/admin.css')}}" rel="stylesheet" media="all">
     <link href="{{ url('css/combo.css')}}" rel="stylesheet" media="all">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.25/af-2.3.7/b-1.7.1/date-1.1.0/r-2.2.9/datatables.min.css"/>
-
+	<link href=" {{asset('css/variables.css')}} " rel="stylesheet">
+	<link href=" {{asset('css/styles.css')}} " rel="stylesheet">
+	<link href=" {{asset('css/responsive.css')}} " rel="stylesheet">
 
 </head>
 
@@ -185,6 +187,10 @@
                         <li class="{{ Route::is('admin.galeria') ? 'active' : '' }} ">
                             <a href="{{ route('admin.galeria') }}">
                                 <i class="fas fa-images"></i>Galeria</a>
+                        </li>
+                        <li class="{{ Route::is('admin.site.sections.index') ? 'active' : '' }} ">
+                            <a href="{{ route('admin.site.sections.index') }}">
+                                <i class="fas fa-images"></i>Pagina</a>
                         </li>
                     </ul>
                 </nav>

@@ -25,10 +25,10 @@
               </div>
         </div>
         <div class="container">
-            <h1 class="main-title mt-3"> {{__('inicio.titulo_principal')}} </h1>
-            <p class="p-heading p-large"> {{__('inicio.parrafo_descriptivo')}}<div class=""></div></p>
+            <h1 class="main-title mt-3"> {!! $siteSections['inicio.titulo_principal'][0]['content'] !!} </h1>
+            <p class="p-heading p-large"> {!! $siteSections['inicio.parrafo_descriptivo'][0]['content'] !!}<div class=""></div></p>
             <div class="d-flex justify-content-center align-items-center">
-                <a class="btn-solid-lg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">{{__('btn.reservar_ahora')}}</a>
+                <a class="btn-solid-lg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">{!! $siteSections['btn.reservar_ahora'][0]['content'] !!}</a>
             </div>
         </div>
 
@@ -38,10 +38,10 @@
                 <div class="row">
                     <div class="col-lg-5">
                         <div class="text-container">
-                            <div class="section-title">{{__('intro.titulo:principal')}}</div>
-                            <h3 class="h3-black">{{__('intro.titulo_secundario')}}</h3>
-                            <p> {{__('intro.parrafo_descriptivo')}}</p>
-                            <div class="testimonial-author">{{__('intro.testimonial')}}</div>
+                            <div class="section-title">{!! $siteSections['intro.titulo:principal'][0]['content'] !!}</div>
+                            <h3 class="h3-black">{!! $siteSections['intro.titulo_secundario'][0]['content'] !!}</h3>
+                            <p> {!! $siteSections['intro.parrafo_descriptivo'][0]['content'] !!}</p>
+                            <div class="testimonial-author">{!! $siteSections['intro.testimonial'][0]['content'] !!}</div>
                         </div> <!-- end of text-container -->
                     </div> <!-- end of col -->
                     <div class="col-lg-7 center-header">
@@ -68,8 +68,8 @@
                                 <i class="fas fa-home fa-stack-1x"></i>
                             </span>
                             <div class="card-body">
-                                <h4 class="card-title">{{__('cards.card_1.titulo')}}</h4>
-                                <p>{{__('cards.card_1.parrafo')}}</p>
+                                <h4 class="card-title">{!! $siteSections['cards.card_1.titulo'][0]['content'] !!}</h4>
+                                <p>{!! $siteSections['cards.card_1.parrafo'][0]['content'] !!}</p>
                             </div>
                         </div>
                         <!-- end of card -->
@@ -81,8 +81,8 @@
                                 <i class="fas fa-paw fa-stack-1x"></i>
                             </span>
                             <div class="card-body">
-                                <h4 class="card-title">{{__('cards.card_2.titulo')}}</h4>
-                                <p>{{__('cards.card_2.parrafo')}}</p>
+                                <h4 class="card-title">{!! $siteSections['cards.card_2.titulo'][0]['content'] !!}</h4>
+                                <p>{!! $siteSections['cards.card_2.parrafo'][0]['content'] !!}</p>
                             </div>
                         </div>
                         <!-- end of card -->
@@ -94,8 +94,8 @@
                                 <i class="fas fa-binoculars fa-stack-1x"></i>
                             </span>
                             <div class="card-body">
-                                <h4 class="card-title">{{__('cards.card_3.titulo')}}</h4>
-                                <p>{{__('cards.card_3.parrafo')}}</p>
+                                <h4 class="card-title">{!! $siteSections['cards.card_3.titulo'][0]['content'] !!}</h4>
+                                <p>{!! $siteSections['cards.card_3.parrafo'][0]['content'] !!}</p>
                             </div>
                         </div>
                         <!-- end of card -->
@@ -112,8 +112,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="section-title">{{__('service.titulo_principal')}}</div>
-                        <h2 class="h2-services">{{__('services.titulo_secundario_parte_1')}} <br>{{__('services.titulo_secundario_parte_2')}} </h2>
+                        <div class="section-title">{!! $siteSections['service.titulo_principal'][0]['content'] !!}</div>
+                        <h2 class="h2-services">{!! $siteSections['services.titulo_secundario_parte_1'][0]['content'] !!} <br>{!! $siteSections['services.titulo_secundario_parte_2'][0]['content'] !!} </h2>
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
                 <div class="row">
@@ -125,22 +125,22 @@
                                 <img class="img-fluidLateral" src="images/otras-especies/perezosos-sloth_s_territory_Fortuna_de_San_Carlos.jpg" alt="Sendero para ver perezosos en la Fortuna de San Carlos Volcán Arenal" title="Sendero Sloth's Territory" width="350px" height="258px">
                             </div>
                             <div class="card-body">
-                                <h3 class="card-title">{{__('service.vista_previa.tour_diurno.titulo')}}</h3>
-                                <p class="p-services">{{__('service.vista_previa.tour_diurno.parrafo')}}</p>
+                                <h3 class="card-title">{!! $siteSections['service.vista_previa.tour_diurno.titulo'][0]['content'] !!}</h3>
+                                <p class="p-services">{!! $siteSections['service.vista_previa.tour_diurno.parrafo'][0]['content'] !!}</p>
                                 <ul class="list-unstyled li-space-lg">
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body media-body-service">{{__('service.vista_previa.tour_diurno.item_1')}}</div>
+                                        <div class="media-body media-body-service">{!! $siteSections['service.vista_previa.tour_diurno.item_1'][0]['content'] !!}</div>
                                     </li>
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body media-body-service">{{__('service.vista_previa.tour_diurno.item_2')}}</div>
+                                        <div class="media-body media-body-service">{!! $siteSections['service.vista_previa.tour_diurno.item_2'][0]['content'] !!}</div>
                                     </li>
                                 </ul>
                             </div>
                             <div class="button-container">
-                            <a class="popup-with-move-anim" href="#tour-diurno"><div class="btn-solid-reg page-scroll">{{__('btn.mas_detalles')}}</div></a> 
-                                <!-- <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">{{__('btn.mas_detalles')}}</a> -->
+                            <a class="popup-with-move-anim" href="#tour-diurno"><div class="btn-solid-reg page-scroll">{!! $siteSections['btn.mas_detalles'][0]['content'] !!}</div></a> 
+                                <!-- <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">{!! $siteSections['btn.mas_detalles'][0]['content'] !!}</a> -->
                             </div> <!-- end of button-container -->
                         </div>
                         <!-- end of card -->
@@ -151,22 +151,22 @@
                                 <img class="img-fluid" src="images/tour_nocturno-Sloth_s_Territory_La_Fortuna.jpeg" alt="tour nocturno de perezosos en Sloths Territory en La Fortuna" title="Tour nocturno La Fortuna Sloth's Territory" width="350px" height="258px">
                             </div>
                             <div class="card-body">
-                                <h3 class="card-title">{{__('service.vista_previa.tour_nocturno.titulo')}}</h3>
-                                <p class="p-services">{{__('service.vista_previa.tour_nocturno.parrafo')}}</p>
+                                <h3 class="card-title">{!! $siteSections['service.vista_previa.tour_nocturno.titulo'][0]['content'] !!}</h3>
+                                <p class="p-services">{!! $siteSections['service.vista_previa.tour_nocturno.parrafo'][0]['content'] !!}</p>
                                 <ul class="list-unstyled li-space-lg">
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body media-body-service">{{__('service.vista_previa.tour_nocturno.item_1')}}</div>
+                                        <div class="media-body media-body-service">{!! $siteSections['service.vista_previa.tour_nocturno.item_1'][0]['content'] !!}</div>
                                     </li>
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body media-body-service">{{__('service.vista_previa.tour_nocturno.item_2')}}</div>
+                                        <div class="media-body media-body-service">{!! $siteSections['service.vista_previa.tour_nocturno.item_2'][0]['content'] !!}</div>
                                     </li>
                                 </ul>
                             </div>
                             <div class="button-container">
-                                <!-- <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">{{__('btn.mas_detalles')}}</a> -->
-                                <a class="popup-with-move-anim" href="#tour-nocturno"><div class="btn-solid-reg page-scroll">{{__('btn.mas_detalles')}}</div></a>
+                                <!-- <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">{!! $siteSections['btn.mas_detalles'][0]['content'] !!}</a> -->
+                                <a class="popup-with-move-anim" href="#tour-nocturno"><div class="btn-solid-reg page-scroll">{!! $siteSections['btn.mas_detalles'][0]['content'] !!}</div></a>
                             </div> <!-- end of button-container -->
                         </div>
                         <!-- end of card -->
@@ -177,22 +177,22 @@
                                 <img class="img-fluidLateral" src="images/aves/halcon-blanco-gavilan.jpg" alt="Aves en La Fortuna Sloth's Territory" title="lechuzón en Sloth's Territory Fortuna" width="350px" height="258px">
                             </div>
                             <div class="card-body">
-                                <h3 class="card-title">{{__('service.vista_previa.tour_aves.titulo')}}</h3>
-                                <p class="p-services">{{__('service.vista_previa.tour_aves.parrafo')}}</p>
+                                <h3 class="card-title">{!! $siteSections['service.vista_previa.tour_aves.titulo'][0]['content'] !!}</h3>
+                                <p class="p-services">{!! $siteSections['service.vista_previa.tour_aves.parrafo'][0]['content'] !!}</p>
                                 <ul class="list-unstyled li-space-lg">
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body media-body-service">{{__('service.vista_previa.tour_aves.item_1')}}</div>
+                                        <div class="media-body media-body-service">{!! $siteSections['service.vista_previa.tour_aves.item_1'][0]['content'] !!}</div>
                                     </li>
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body media-body-service">{{__('service.vista_previa.tour_aves.item_2')}}</div>
+                                        <div class="media-body media-body-service">{!! $siteSections['service.vista_previa.tour_aves.item_2'][0]['content'] !!}</div>
                                     </li>
                                 </ul>
                             </div>
                             <div class="button-container">
-                            <a class="popup-with-move-anim" href="#tour-aves"><div class="btn-solid-reg page-scroll">{{__('btn.mas_detalles')}}</div></a>
-                                <!-- <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">{{__('btn.mas_detalles')}}</a> -->
+                            <a class="popup-with-move-anim" href="#tour-aves"><div class="btn-solid-reg page-scroll">{!! $siteSections['btn.mas_detalles'][0]['content'] !!}</div></a>
+                                <!-- <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">{!! $siteSections['btn.mas_detalles'][0]['content'] !!}</a> -->
                             </div> <!-- end of button-container -->
                         </div>
                         <!-- end of card -->
@@ -209,7 +209,7 @@
             </div>
             <div  class="d-flex justify-content-center">
                 <a class="" href="{{ route('combos', $locale) }}">
-                    <span class="btn-solid-reg page-scroll">{{__('btn.mas_detalles')}}</span>
+                    <span class="btn-solid-reg page-scroll">{!! $siteSections['btn.mas_detalles'][0]['content'] !!}</span>
                 </a> 
             </div>
 
@@ -225,7 +225,7 @@
 
                     <!-- Accordion -->
                     <div class="accordion-container" id="accordionOne">
-                        <h2>{{__('details.titulo_principal')}}
+                        <h2>{!! $siteSections['details.titulo_principal'][0]['content'] !!}
                             <img src="{{ asset('/images/banderas/cr.png')  }}" height="25" width="25" alt="bandera de costa rica">
                             Costa Rica
                             <img src="{{ asset('/images/banderas/cr.png')  }}" height="25" width="25" alt="bandera de costa rica">
@@ -233,12 +233,12 @@
 {{--                        <div class="item">--}}
 {{--                            <div id="headingOne">--}}
 {{--                                <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">--}}
-{{--                                    <span class="circle-numbering">1</span><span class="accordion-title">{{__('details.item_1.titulo')}}</span>--}}
+{{--                                    <span class="circle-numbering">1</span><span class="accordion-title">{!! $siteSections['details.item_1.titulo'][0]['content'] !!}</span>--}}
 {{--                                </span>--}}
 {{--                            </div>--}}
 {{--                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionOne">--}}
 {{--                                <div class="accordion-body">--}}
-{{--                                    {{__('details.item_1.parrafo')}}--}}
+{{--                                    {!! $siteSections['details.item_1.parrafo'][0]['content'] !!}--}}
 {{--                                </div>--}}
 {{--                            </div>--}}
 {{--                        </div> <!-- end of item -->--}}
@@ -246,12 +246,12 @@
                         <div class="item">
 {{--                            <div id="headingTwo">--}}
 {{--                                <span class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" role="button">--}}
-{{--                                    <span class="circle-numbering">2</span><span class="accordion-title">{{__('details.item_2.titulo')}} </span>--}}
+{{--                                    <span class="circle-numbering">2</span><span class="accordion-title">{!! $siteSections['details.item_2.titulo'][0]['content'] !!} </span>--}}
 {{--                                </span>--}}
 {{--                            </div>--}}
                             <div aria-labelledby="headingTwo" data-parent="#accordionOne">
                                 <div class="accordion-body">
-                                    {{__('details.item_2.parrafo')}}
+                                    {!! $siteSections['details.item_2.parrafo'][0]['content'] !!}
 
                                 </div>
                             </div>
@@ -269,15 +269,15 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="section-title"> {{__('galeria.titulo_principal')}}</div>
-                        <h3 class="h3-black"> {{__('galeria.titulo_secundario')}}</h3>
+                        <div class="section-title"> {!! $siteSections['galeria.titulo_principal'][0]['content'] !!}</div>
+                        <h3 class="h3-black"> {!! $siteSections['galeria.titulo_secundario'][0]['content'] !!}</h3>
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
                 <div class="row">
                     <div class="col-lg-12">
                         <!-- Filter -->
                         <div class="button-group filters-button-group">
-                            <a class="button is-checked" data-filter="*"><span>{{__('galeria.filtro.ver_todo')}}</span></a>
+                            <a class="button is-checked" data-filter="*"><span>{!! $siteSections['galeria.filtro.ver_todo'][0]['content'] !!}</span></a>
 
                             @foreach ($imageTypes as $type)
                                 <a class="button" data-filter=".{{$type->name_en}}"><span>{{$locale == "es" ? $type->name_es : $type->name_en}}</span></a>
@@ -336,24 +336,24 @@
                     <img class="img-fluid" src="images/otras-especies/perezosos-sloth_s_territory_Fortuna_de_San_Carlos.jpg" alt="tour de perezosos en La Fortuna" title="Tour de perezosos">
                 </div> <!-- end of col -->
                 <div class="col-lg-10">
-                    <h3>{{__('service.tour_diurno.info.titulo_principal')}}</h3>
+                    <h3>{!! $siteSections['service.tour_diurno.info.titulo_principal'][0]['content'] !!}</h3>
                     <hr class="line-heading">
-                    <h6>{{__('service.tour_diurno.info.titulo_secundario_1')}}</h6>
-                    <p>{{__('service.tour_diurno.info.parrafo_1')}}</p>
-                    <p>{{__('service.tour_diurno.info.parrafo_2')}}</p>
-                    <p>{{__('service.tour_diurno.info.parrafo_3')}}.</p>
-                    <p>{{__('service.tour_diurno.info.parrafo_4')}}</p>
-                    <p>{{__('service.tour_diurno.info.parrafo_5')}}</p>
-                    <p>{{__('service.tour_diurno.info.parrafo_6')}}</p>
-                    <h6>{{__('service.todos.info.titulo_secundario_2')}}</h6>
-                    <p>{{__('service.todos.info.que_llevar_1')}}</p>
-                    <p>{{__('service.todos.info.que_llevar_2')}}</p>
-                    <p>{{__('service.todos.info.que_llevar_3')}}</p>
-                    <p>{{__('service.todos.info.que_llevar_4')}}</p>
+                    <h6>{!! $siteSections['service.tour_diurno.info.titulo_secundario_1'][0]['content'] !!}</h6>
+                    <p>{!! $siteSections['service.tour_diurno.info.parrafo_1'][0]['content'] !!}</p>
+                    <p>{!! $siteSections['service.tour_diurno.info.parrafo_2'][0]['content'] !!}</p>
+                    <p>{!! $siteSections['service.tour_diurno.info.parrafo_3'][0]['content'] !!}.</p>
+                    <p>{!! $siteSections['service.tour_diurno.info.parrafo_4'][0]['content'] !!}</p>
+                    <p>{!! $siteSections['service.tour_diurno.info.parrafo_5'][0]['content'] !!}</p>
+                    <p>{!! $siteSections['service.tour_diurno.info.parrafo_6'][0]['content'] !!}</p>
+                    <h6>{!! $siteSections['service.todos.info.titulo_secundario_2'][0]['content'] !!}</h6>
+                    <p>{!! $siteSections['service.todos.info.que_llevar_1'][0]['content'] !!}</p>
+                    <p>{!! $siteSections['service.todos.info.que_llevar_2'][0]['content'] !!}</p>
+                    <p>{!! $siteSections['service.todos.info.que_llevar_3'][0]['content'] !!}</p>
+                    <p>{!! $siteSections['service.todos.info.que_llevar_4'][0]['content'] !!}</p>
                     <div class="testimonial-container">
-                        <p class="testimonial-text">{{__('service.todos.info.parrafo_testimonial')}}</p>
+                        <p class="testimonial-text">{!! $siteSections['service.todos.info.parrafo_testimonial'][0]['content'] !!}</p>
                     </div>
-                    <a class="btn-solid-reg" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">{{__('btn.reservar_ahora')}}</a> <a class="btn-outline-reg mfp-close as-button" href="#services">{{__('btn.volver')}}</a>
+                    <a class="btn-solid-reg" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">{!! $siteSections['btn.reservar_ahora'][0]['content'] !!}</a> <a class="btn-outline-reg mfp-close as-button" href="#services">{!! $siteSections['btn.volver'][0]['content'] !!}</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -366,24 +366,24 @@
                     <img class="img-fluid" src="images/tour_nocturno-Sloth_s_Territory_La_Fortuna.jpeg" alt="tour nocturno en La Fortuna" title="Tour nocturno en La Fortuna">
                 </div> <!-- end of col -->
                 <div class="col-lg-10">
-                    <h3>{{__('service.tour_nocturno.info.titulo_principal')}}</h3>
+                    <h3>{!! $siteSections['service.tour_nocturno.info.titulo_principal'][0]['content'] !!}</h3>
                     <hr class="line-heading">
-                    <h6>{{__('service.tour_nocturno.info.titulo_secundario_1')}}</h6>
-                    <p>{{__('service.tour_nocturno.info.parrafo_1')}}</p>
-                    <p>{{__('service.tour_nocturno.info.parrafo_2')}}</p>
-                    <p>{{__('service.tour_nocturno.info.parrafo_3')}}</p>
-                    <p>{{__('service.tour_nocturno.info.parrafo_4')}}</p>
-                    <p>{{__('service.tour_nocturno.info.parrafo_5')}}</p>
-                    <p>{{__('service.tour_nocturno.info.parrafo_6')}}</p>
-                    <h6>{{__('service.todos.info.titulo_secundario_2')}}</h6>
-                    <p>{{__('service.todos.info.que_llevar_1')}}</p>
-                    <p>{{__('service.todos.info.que_llevar_2')}}</p>
-                    <p>{{__('service.todos.info.que_llevar_3')}}</p>
-                    <p>{{__('service.todos.info.que_llevar_4')}}</p>
+                    <h6>{!! $siteSections['service.tour_nocturno.info.titulo_secundario_1'][0]['content'] !!}</h6>
+                    <p>{!! $siteSections['service.tour_nocturno.info.parrafo_1'][0]['content'] !!}</p>
+                    <p>{!! $siteSections['service.tour_nocturno.info.parrafo_2'][0]['content'] !!}</p>
+                    <p>{!! $siteSections['service.tour_nocturno.info.parrafo_3'][0]['content'] !!}</p>
+                    <p>{!! $siteSections['service.tour_nocturno.info.parrafo_4'][0]['content'] !!}</p>
+                    <p>{!! $siteSections['service.tour_nocturno.info.parrafo_5'][0]['content'] !!}</p>
+                    <p>{!! $siteSections['service.tour_nocturno.info.parrafo_6'][0]['content'] !!}</p>
+                    <h6>{!! $siteSections['service.todos.info.titulo_secundario_2'][0]['content'] !!}</h6>
+                    <p>{!! $siteSections['service.todos.info.que_llevar_1'][0]['content'] !!}</p>
+                    <p>{!! $siteSections['service.todos.info.que_llevar_2'][0]['content'] !!}</p>
+                    <p>{!! $siteSections['service.todos.info.que_llevar_3'][0]['content'] !!}</p>
+                    <p>{!! $siteSections['service.todos.info.que_llevar_4'][0]['content'] !!}</p>
                     <div class="testimonial-container">
-                        <p class="testimonial-text">{{__('service.todos.info.parrafo_testimonial')}}</p>
+                        <p class="testimonial-text">{!! $siteSections['service.todos.info.parrafo_testimonial'][0]['content'] !!}</p>
                     </div>
-                    <a class="btn-solid-reg" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">{{__('btn.reservar_ahora')}}</a> <a class="btn-outline-reg mfp-close as-button" href="#services">{{__('btn.volver')}}</a>
+                    <a class="btn-solid-reg" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">{!! $siteSections['btn.reservar_ahora'][0]['content'] !!}</a> <a class="btn-outline-reg mfp-close as-button" href="#services">{!! $siteSections['btn.volver'][0]['content'] !!}</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -396,26 +396,26 @@
                     <img class="img-fluid" src="images/aves/halcon-blanco-gavilan.jpg" alt="Tour de aves en La Fortuna" title="Tour de aves en La Fortuna">
                 </div> <!-- end of col -->
                 <div class="col-lg-10">
-                    <h3>{{__('service.tour_aves.info.titulo_principal')}}</h3>
+                    <h3>{!! $siteSections['service.tour_aves.info.titulo_principal'][0]['content'] !!}</h3>
                     <hr class="line-heading">
-                    <h6>{{__('service.tour_aves.info.titulo_secundario_1')}}</h6>
-                    <p>{{__('service.tour_aves.info.parrafo_1')}}</p>
-                    <p>{{__('service.tour_aves.info.parrafo_2')}}</p>
-                    <p>{{__('service.tour_aves.info.parrafo_3')}}</p>
-                    <p>{{__('service.tour_aves.info.parrafo_4')}}</p>
-                    <p>{{__('service.tour_aves.info.parrafo_5')}}</p>
-                    <p>{{__('service.tour_aves.info.parrafo_6')}}</p>
-                    <h6>{{__('service.todos.info.titulo_secundario_2')}}</h6>
-                    <p>{{__('service.todos.info.que_llevar_1')}}</p>
-                    <p>{{__('service.todos.info.que_llevar_2')}}</p>
-                    <p>{{__('service.todos.info.que_llevar_3')}}</p>
-                    <p>{{__('service.tour_aves.info.que_llevar_5')}}</p>
-                    <p>{{__('service.tour_aves.info.que_llevar_6')}}</p>
-                    <p>{{__('service.tour_aves.info.que_llevar_7')}}</p>
+                    <h6>{!! $siteSections['service.tour_aves.info.titulo_secundario_1'][0]['content'] !!}</h6>
+                    <p>{!! $siteSections['service.tour_aves.info.parrafo_1'][0]['content'] !!}</p>
+                    <p>{!! $siteSections['service.tour_aves.info.parrafo_2'][0]['content'] !!}</p>
+                    <p>{!! $siteSections['service.tour_aves.info.parrafo_3'][0]['content'] !!}</p>
+                    <p>{!! $siteSections['service.tour_aves.info.parrafo_4'][0]['content'] !!}</p>
+                    <p>{!! $siteSections['service.tour_aves.info.parrafo_5'][0]['content'] !!}</p>
+                    <p>{!! $siteSections['service.tour_aves.info.parrafo_6'][0]['content'] !!}</p>
+                    <h6>{!! $siteSections['service.todos.info.titulo_secundario_2'][0]['content'] !!}</h6>
+                    <p>{!! $siteSections['service.todos.info.que_llevar_1'][0]['content'] !!}</p>
+                    <p>{!! $siteSections['service.todos.info.que_llevar_2'][0]['content'] !!}</p>
+                    <p>{!! $siteSections['service.todos.info.que_llevar_3'][0]['content'] !!}</p>
+                    <p>{!! $siteSections['service.tour_aves.info.que_llevar_5'][0]['content'] !!}</p>
+                    <p>{!! $siteSections['service.tour_aves.info.que_llevar_6'][0]['content'] !!}</p>
+                    <p>{!! $siteSections['service.tour_aves.info.que_llevar_7'][0]['content'] !!}</p>
                     <div class="testimonial-container">
-                        <p class="testimonial-text">{{__('service.todos.info.parrafo_testimonial')}}</p>
+                        <p class="testimonial-text">{!! $siteSections['service.todos.info.parrafo_testimonial'][0]['content'] !!}</p>
                     </div>
-                    <a class="btn-solid-reg" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">{{__('btn.reservar_ahora')}}</a> <a class="btn-outline-reg mfp-close as-button" href="#services">{{__('btn.volver')}}</a>
+                    <a class="btn-solid-reg" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">{!! $siteSections['btn.reservar_ahora'][0]['content'] !!}</a> <a class="btn-outline-reg mfp-close as-button" href="#services">{!! $siteSections['btn.volver'][0]['content'] !!}</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -434,21 +434,21 @@
                     </div> <!-- end of col -->
                     <div class="col-lg-7 col-xl-6">
                         <div class="text-container">
-                            <div class="section-title">{{__('acerca_de.titulo_principal')}}</div>
-                            <h3 class="h3-black"> {{__('acerca_de.titulo_secundario')}}</h3>
-                            <p> {{__('acerca_de.parrafo_descriptivo')}}</p>
+                            <div class="section-title">{!! $siteSections['acerca_de.titulo_principal'][0]['content'] !!}</div>
+                            <h3 class="h3-black"> {!! $siteSections['acerca_de.titulo_secundario'][0]['content'] !!}</h3>
+                            <p> {!! $siteSections['acerca_de.parrafo_descriptivo'][0]['content'] !!}</p>
                             <ul class="list-unstyled li-space-lg">
                                 <li class="media">
                                     <i class="fas fa-square"></i>
-                                    <div class="media-body">{{__('acerca_de.item_1')}}</div>
+                                    <div class="media-body">{!! $siteSections['acerca_de.item_1'][0]['content'] !!}</div>
                                 </li>
                                 <li class="media">
                                     <i class="fas fa-square"></i>
-                                    <div class="media-body">{{__('acerca_de.item_2')}}</div>
+                                    <div class="media-body">{!! $siteSections['acerca_de.item_2'][0]['content'] !!}</div>
                                 </li>
                                 <li class="media">
                                     <i class="fas fa-square"></i>
-                                    <div class="media-body">{{__('acerca_de.item_3')}}</div>
+                                    <div class="media-body">{!! $siteSections['acerca_de.item_3'][0]['content'] !!}</div>
                                 </li>
                             </ul>
                         </div> <!-- end of text-container -->
@@ -465,15 +465,15 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="text-container">
-                            <div class="section-title">{{__('contact.titulo_principal')}}</div>
-                            <h3 class="h3-black">{{__('contact.titulo_secundario')}}</h3>
-                            <p>{{__('contact.parrafo_descriptivo')}}</p>
+                            <div class="section-title">{!! $siteSections['contact.titulo_principal'][0]['content'] !!}</div>
+                            <h3 class="h3-black">{!! $siteSections['contact.titulo_secundario'][0]['content'] !!}</h3>
+                            <p>{!! $siteSections['contact.parrafo_descriptivo'][0]['content'] !!}</p>
                             <ul class="list-unstyled li-space-lg">
-                                <li class="address"><i class="fas fa-map-marker-alt"></i>{{__('contact.direccion')}}</li>
+                                <li class="address"><i class="fas fa-map-marker-alt"></i>{!! $siteSections['contact.direccion'][0]['content'] !!}</li>
                                 <li><i class="fas fa-phone"></i><a href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">+506 8561 0404</a></li>
                                 <li><i class="fas fa-envelope"></i><a href="mailto:sloths.territory@gmail.com" target="_blank">sloths.territory@gmail.com</a></li>
                             </ul>
-                            <h3>{{__('contact.titulo_redes_sociaes')}}</h3>
+                            <h3>{!! $siteSections['contact.titulo_redes_sociaes'][0]['content'] !!}</h3>
 
                             <span class="fa-stack">
                             <a href="https://www.facebook.com/Sloths.Territory.2018" target="_blank">
@@ -510,25 +510,25 @@
                         <form id="formularioMensaje" >
                             <div class="form-group">
                                 <input type="text" name="nombre" class="form-control-input" id="nombre" required>
-                                <label class="label-control" for="nombre">{{__('formulario.nombre')}}</label>
+                                <label class="label-control" for="nombre">{!! $siteSections['formulario.nombre'][0]['content'] !!}</label>
                                 <div id="error-nombre" class="text-danger"></div>
                             </div>
                             <div class="form-group">
                                 <input type="text" name="correo" class="form-control-input" id="correo" required>
-                                <label class="label-control" for="correo">{{__('formulario.correo')}}</label>
+                                <label class="label-control" for="correo">{!! $siteSections['formulario.correo'][0]['content'] !!}</label>
                                 <div id="error-correo"  class="text-danger"></div>
                             </div>
                             <div class="form-group">
                                 <textarea class="form-control-textarea" name="mensaje" id="mensaje" required></textarea>
-                                <label class="label-control" for="mensaje">{{__('formulario.mensaje')}}</label>
+                                <label class="label-control" for="mensaje">{!! $siteSections['formulario.mensaje'][0]['content'] !!}</label>
                                 <div id="error-mensaje"  class="text-danger"></div>
                             </div>
                             {{-- <div class="form-group checkbox">
-                                <input type="checkbox" id="cterms" value="Agreed-to-Terms" required>{{__('formulario.acepta_politicas_parte_1')}}<a href="privacy-policy">{{__('politicas_privacidad')}}</a>  <a href="terms-conditions">{{__('terminos_condiciones')}}</a>
+                                <input type="checkbox" id="cterms" value="Agreed-to-Terms" required>{!! $siteSections['formulario.acepta_politicas_parte_1'][0]['content'] !!}<a href="privacy-policy">{!! $siteSections['politicas_privacidad'][0]['content'] !!}</a>  <a href="terms-conditions">{!! $siteSections['terminos_condiciones'][0]['content'] !!}</a>
                                 <div class="help-block with-errors"></div>
                             </div> --}}
                             <div class="form-group">
-                                <button type="submit" id="botonFormulario" class="form-control-submit-button">{{__('btn.enviar_mensaje')}} </button>
+                                <button type="submit" id="botonFormulario" class="form-control-submit-button">{!! $siteSections['btn.enviar_mensaje'][0]['content'] !!} </button>
                             </div>
                             <div class="form-message">
                                 <div id="cmsgSubmit" class="h3 text-center hidden"></div>

@@ -10,6 +10,7 @@ use App\Models\Image;
 use App\Models\ImageType;
 use App\Models\Reserva;
 use App\Models\Reservacion;
+use App\Models\SiteSection;
 use Carbon\CarbonTimeZone;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -25,8 +26,9 @@ class HomeController extends Controller
 
         $images = Image::with('type')->get();
         $imageTypes = ImageType::all();
+        $siteSections = SiteSection::all()->where('language', $locale)->groupBy('title');
 
-        return view('home', compact('locale', 'images', 'imageTypes'));
+        return view('home', compact('locale', 'images', 'imageTypes', 'siteSections'));
     }
     public function admin(Request $request)
     {
