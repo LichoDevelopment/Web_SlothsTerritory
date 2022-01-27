@@ -29,7 +29,7 @@
                         </a>
                     </p>
                     <div class="d-flex justify-content-center align-items-center">
-                        <button class="btn-solid-lg page-scroll" disabled>{{__('btn.reservar_ahora')}}</button>
+                        <button class="btn-solid-lg page-scroll" disabled>{!! $siteSections['btn.reservar_ahora'][0]['content'] !!}</button>
                     </div>
                 </div>
 
@@ -173,7 +173,7 @@
                                         </ul>
                                     </div>
                                     <div class="button-container">
-                                    <a class="popup-with-move-anim" href="#tour-diurno"><div class="btn-solid-reg page-scroll"><a href="{{ route('sections.edit', $siteSections['btn.mas_detalles'][0]['uuid'])}}">
+                                    <a disabled class="popup-with-move-anim" href="#tour-diurno"><div class="btn-solid-reg page-scroll"><a disabled href="{{ route('sections.edit', $siteSections['btn.mas_detalles'][0]['uuid'])}}">
                             {!! $siteSections['btn.mas_detalles'][0]['content'] !!}
                         </a></div></a> 
                                         <!-- <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank"><a href="{{ route('sections.edit', $siteSections['btn.mas_detalles'][0]['uuid'])}}">
@@ -214,7 +214,7 @@
                                         <!-- <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank"><a href="{{ route('sections.edit', $siteSections['btn.mas_detalles'][0]['uuid'])}}">
                             {!! $siteSections['btn.mas_detalles'][0]['content'] !!}
                         </a></a> -->
-                                        <a class="popup-with-move-anim" href="#tour-nocturno"><div class="btn-solid-reg page-scroll"><a href="{{ route('sections.edit', $siteSections['btn.mas_detalles'][0]['uuid'])}}">
+                                        <a disabled class="popup-with-move-anim" href="#tour-nocturno"><div class="btn-solid-reg page-scroll"><a disabled href="{{ route('sections.edit', $siteSections['btn.mas_detalles'][0]['uuid'])}}">
                             {!! $siteSections['btn.mas_detalles'][0]['content'] !!}
                         </a></div></a>
                                     </div> <!-- end of button-container -->
@@ -249,7 +249,7 @@
                                         </ul>
                                     </div>
                                     <div class="button-container">
-                                    <a class="popup-with-move-anim" href="#tour-aves"><div class="btn-solid-reg page-scroll"><a href="{{ route('sections.edit', $siteSections['btn.mas_detalles'][0]['uuid'])}}">
+                                    <a disabled class="popup-with-move-anim" href="#tour-aves"><div class="btn-solid-reg page-scroll"><a disabled href="{{ route('sections.edit', $siteSections['btn.mas_detalles'][0]['uuid'])}}">
                             {!! $siteSections['btn.mas_detalles'][0]['content'] !!}
                         </a></div></a>
                                         <!-- <a class="btn-solid-reg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank"><a href="{{ route('sections.edit', $siteSections['btn.mas_detalles'][0]['uuid'])}}">
@@ -369,11 +369,7 @@
                             {!! $siteSections['service.todos.info.parrafo_testimonial'][0]['content'] !!}
                         </a></p>
                             </div>
-                            <a class="btn-solid-reg" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank"><a href="{{ route('sections.edit', $siteSections['btn.reservar_ahora'][0]['uuid'])}}">
-                            {!! $siteSections['btn.reservar_ahora'][0]['content'] !!}
-                        </a></a> <a class="btn-outline-reg mfp-close as-button" href="#services"><a href="{{ route('sections.edit', $siteSections['btn.volver'][0]['uuid'])}}">
-                            {!! $siteSections['btn.volver'][0]['content'] !!}
-                        </a></a>
+                            
                         </div> <!-- end of col -->
                     </div> <!-- end of row -->
                 </div> <!-- end of lightbox-basic -->
@@ -431,10 +427,7 @@
                             {!! $siteSections['service.todos.info.parrafo_testimonial'][0]['content'] !!}
                         </a></p>
                             </div>
-                            <a class="btn-solid-reg" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank"><a href="{{ route('sections.edit', $siteSections['btn.reservar_ahora'][0]['uuid'])}}">
-                            {!! $siteSections['btn.reservar_ahora'][0]['content'] !!}
-                        </a></a> <a class="btn-outline-reg mfp-close as-button" href="#services"><a href="{{ route('sections.edit', $siteSections['btn.volver'][0]['uuid'])}}">
-                            {!! $siteSections['btn.volver'][0]['content'] !!}
+                            
                         </a></a>
                         </div> <!-- end of col -->
                     </div> <!-- end of row -->
@@ -499,11 +492,7 @@
                             {!! $siteSections['service.todos.info.parrafo_testimonial'][0]['content'] !!}
                         </a></p>
                             </div>
-                            <a class="btn-solid-reg" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank"><a href="{{ route('sections.edit', $siteSections['btn.reservar_ahora'][0]['uuid'])}}">
-                            {!! $siteSections['btn.reservar_ahora'][0]['content'] !!}
-                        </a></a> <a class="btn-outline-reg mfp-close as-button" href="#services"><a href="{{ route('sections.edit', $siteSections['btn.volver'][0]['uuid'])}}">
-                            {!! $siteSections['btn.volver'][0]['content'] !!}
-                        </a></a>
+                            
                         </div> <!-- end of col -->
                     </div> <!-- end of row -->
                 </div> <!-- end of lightbox-basic -->

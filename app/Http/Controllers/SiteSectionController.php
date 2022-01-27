@@ -27,8 +27,9 @@ class SiteSectionController extends Controller
     public function show($id)
     {
         $siteSections = $this->siteSectionService->getOne($id);
+        
 
-        return view('admin.site-sections.show', compact('siteSections'));
+        return view('admin.site-sections.edit', compact('siteSections'));
     }
 
     public function create($id)
@@ -56,13 +57,15 @@ class SiteSectionController extends Controller
         return redirect()->route('admin.site.sections.index');
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {  
-        $siteSectionSpanish['content']  = $request->enContent;
-        $siteSectionEnglish['content']  = $request->esContent; 
-
+        $id = $request->uuid;
+        $siteSectionSpanish['content']  = $request->esContent; 
+        $siteSectionEnglish['content']  = $request->enContent;
+        
         $this->siteSectionService->update($id, $siteSectionEnglish, 'en');
         $this->siteSectionService->update($id, $siteSectionSpanish, 'es');
+        return redirect()->route('admin.site.sections.index');
     }
 
     public function destroy($id)
