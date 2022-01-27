@@ -6,22 +6,22 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     {{-- <meta name="keywords" content="sloths arenal costa rica, sloths habitat, sloths territory la fortuna, sloths and frogs, sloths baby, 
     sloth costa rica, sloths in costa rica, sloths la fortuna, sloth tour la fortuna, sloths la fortuna costa rica , sloth costa rica, sloths pictures, sloths 3 toed, sloths 3 toe, 3 toed sloths, osos perezosos, clima en la fortuna"> --}}
-    <meta name="keywords" content="{{__('web.keyword1')}}, {{__('web.keyword2')}}, {{__('web.keyword3')}}, {{__('web.keyword4')}}, {{__('web.keyword5')}}, {{__('web.keyword6')}}, {{__('web.keyword7')}}, {{__('web.keyword8')}}, {{__('web.keyword9')}}, {{__('web.keyword10')}}, {{__('web.keyword11')}}, {{__('web.keyword12')}}, {{__('web.keyword13')}}, {{__('web.keyword14')}}"
+    <meta name="keywords" content="{!! $siteSections['web.keyword1'][0]['content'] !!}, {!! $siteSections['web.keyword2'][0]['content'] !!}, {!! $siteSections['web.keyword3'][0]['content'] !!}, {!! $siteSections['web.keyword4'][0]['content'] !!}, {!! $siteSections['web.keyword5'][0]['content'] !!}, {!! $siteSections['web.keyword6'][0]['content'] !!}, {!! $siteSections['web.keyword7'][0]['content'] !!}, {!! $siteSections['web.keyword8'][0]['content'] !!}, {!! $siteSections['web.keyword9'][0]['content'] !!}, {!! $siteSections['web.keyword10'][0]['content'] !!}, {!! $siteSections['web.keyword11'][0]['content'] !!}, {!! $siteSections['web.keyword12'][0]['content'] !!}, {!! $siteSections['web.keyword13'][0]['content'] !!}, {!! $siteSections['web.keyword14'][0]['content'] !!}"
     {{-- <!-- SEO Meta Tags --> --}}
-    <meta name="description" content=" {{__('web.descripcion')}}">
+    <meta name="description" content=" {!! $siteSections['web.descripcion'][0]['content'] !!}">
     <meta name="author" content="LichoDevelopment">
 
     <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
 	<meta property="og:site_name" content="Sloth's territory" /> <!-- website name -->
 	<meta property="og:site" content="https://www.sloths-territory.com" /> <!-- website link -->
 	<meta property="og:title" content="Sloth's territory | tour de perezosos"/> <!-- title shown in the actual shared post -->
-	<meta property="og:description" content=" {{__('web.descripcion')}} " /> <!-- description shown in the actual shared post -->
+	<meta property="og:description" content=" {!! $siteSections['web.descripcion'][0]['content'] !!} " /> <!-- description shown in the actual shared post -->
 	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
 	<meta property="og:url" content="https://www.sloths-territory.com" /> <!-- where do you want your post to link to -->
 	<meta property="og:type" content="website" />
 
     <!-- Website Title -->
-    <title> {{__('web.titulo')}} </title>
+    <title> {!! $siteSections['web.titulo'][0]['content'] !!} </title>
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
@@ -76,22 +76,22 @@
                     class="nav-link {{$locale === 'es' ? 'current':''}}">ES</a> 
                  </li> --}}
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="{{ route('home',[$locale]) }}">{{__('header.home')}} <span class="sr-only">(current)</span></a>
+                    <a class="nav-link page-scroll" href="{{ route('home',[$locale]) }}">{!! $siteSections['header.home'][0]['content'] !!} <span class="sr-only">(current)</span></a>
                 </li>
                 {{-- <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#header">{{__('header.inicio')}}</a>
+                    <a class="nav-link page-scroll" href="#header">{!! $siteSections['header.inicio'][0]['content'] !!}</a>
                 </li> --}}
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#services">{{__('header.service')}}</a>
+                    <a class="nav-link page-scroll" href="#services">{!! $siteSections['header.service'][0]['content'] !!}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#galeria">{{__('header.galeria')}}</a>
+                    <a class="nav-link page-scroll" href="#galeria">{!! $siteSections['header.galeria'][0]['content'] !!}</a>
                 </li>
 
                 <!-- Dropdown Menu -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link page-scroll" href="#about">{{__('header.acerca_de')}}</a>
-                    {{-- <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">{{__('header.acerca_de')}}</a> --}}
+                    <a class="nav-link page-scroll" href="#about">{!! $siteSections['header.acerca_de'][0]['content'] !!}</a>
+                    {{-- <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">{!! $siteSections['header.acerca_de'][0]['content'] !!}</a> --}}
                     <!-- PENDIENTE -->
                     <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href=" route('terms-conditions',,[$locale])]) }}"><span class="item-text">TERMS CONDITIONS</span></a>
@@ -102,7 +102,7 @@
                 <!-- end of dropdown menu -->
 
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#contact">{{__('header.contactarnos')}}</a>
+                    <a class="nav-link page-scroll" href="#contact">{!! $siteSections['header.contactarnos'][0]['content'] !!}</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a 
@@ -116,12 +116,12 @@
                         @if ($locale === 'en')
                             <a class="dropdown-item" href="{{ route(Route::currentRouteName(),'es') }}">
                                 <span class="flag-icon flag-icon-cr mr-1"> </span>  
-                                {{__('español')}}
+                                {!! $siteSections['español'][0]['content'] !!}
                             </a>
                         @else
                         <a class="dropdown-item" href="{{ route(Route::currentRouteName(),'en') }}">
                             <span class="flag-icon flag-icon-us mr-1"> </span> 
-                            {{__('ingles')}}
+                            {!! $siteSections['ingles'][0]['content'] !!}
                         </a>
                         @endif
                     </div>
@@ -236,7 +236,7 @@
     <a 
         href="https://wa.me/message/UAO3TORZITGBE1" id="bookNowBtn"
         target="_blank" class="reservar-btn btn btn-danger">
-        <span>{{__("btn.reservar_ahora")}}</span>
+        <span>{!! $siteSections['btn.reservar_ahora'][0]['content'] !!}</span>
         <i class="fas fa-angle-double-right"></i>
     </a>
 
