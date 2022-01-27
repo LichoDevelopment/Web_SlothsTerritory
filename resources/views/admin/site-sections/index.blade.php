@@ -55,7 +55,7 @@
                             </div> <!-- end of col -->
                             <div class="col-lg-7 center-header">
                                 <div class="image-container">
-                                    <img class="img-fluid" src="images/otras-especies/tours-en-sloths-territory.jpg" alt="Perezosos La Fortuna de San Carlos" title="Perezosos Sloth's Territory" height="450px" width="500px">
+                                    <img class="img-fluid" src="{{asset('images/otras-especies/tours-en-sloths-territory.jpg')  }}" alt="Perezosos La Fortuna de San Carlos" title="Perezosos Sloth's Territory" height="450px" width="500px">
                                 </div> <!-- end of image-container -->
                             </div> <!-- end of col -->
                         </div> <!-- end of row -->
@@ -148,7 +148,7 @@
                                 <!-- Card -->
                                 <div class="card">
                                     <div class="card-image">
-                                        <img class="img-fluidLateral" src="images/otras-especies/perezosos-sloth_s_territory_Fortuna_de_San_Carlos.jpg" alt="Sendero para ver perezosos en la Fortuna de San Carlos Volcán Arenal" title="Sendero Sloth's Territory" width="350px" height="258px">
+                                        <img class="img-fluidLateral" src="{{asset('images/otras-especies/perezosos-sloth_s_territory_Fortuna_de_San_Carlos.jpg')  }}" alt="Sendero para ver perezosos en la Fortuna de San Carlos Volcán Arenal" title="Sendero Sloth's Territory" width="350px" height="258px">
                                     </div>
                                     <div class="card-body">
                                         <h3 class="card-title"><a href="{{ route('sections.edit', $siteSections['service.vista_previa.tour_diurno.titulo'][0]['uuid'])}}">
@@ -186,7 +186,7 @@
                                 <!-- Card -->
                                 <div class="card">
                                     <div class="card-image">
-                                        <img class="img-fluid" src="images/tour_nocturno-Sloth_s_Territory_La_Fortuna.jpeg" alt="tour nocturno de perezosos en Sloths Territory en La Fortuna" title="Tour nocturno La Fortuna Sloth's Territory" width="350px" height="258px">
+                                        <img class="img-fluid" src="{{asset('images/tour_nocturno-Sloth_s_Territory_La_Fortuna.jpeg')  }}" alt="tour nocturno de perezosos en Sloths Territory en La Fortuna" title="Tour nocturno La Fortuna Sloth's Territory" width="350px" height="258px">
                                     </div>
                                     <div class="card-body">
                                         <h3 class="card-title"><a href="{{ route('sections.edit', $siteSections['service.vista_previa.tour_nocturno.titulo'][0]['uuid'])}}">
@@ -224,7 +224,7 @@
                                 <!-- Card -->
                                 <div class="card">
                                     <div class="card-image">
-                                        <img class="img-fluidLateral" src="images/aves/halcon-blanco-gavilan.jpg" alt="Aves en La Fortuna Sloth's Territory" title="lechuzón en Sloth's Territory Fortuna" width="350px" height="258px">
+                                        <img class="img-fluidLateral" src="{{asset('images/aves/halcon-blanco-gavilan.jpg')  }}" alt="Aves en La Fortuna Sloth's Territory" title="lechuzón en Sloth's Territory Fortuna" width="350px" height="258px">
                                     </div>
                                     <div class="card-body">
                                         <h3 class="card-title"><a href="{{ route('sections.edit', $siteSections['service.vista_previa.tour_aves.titulo'][0]['uuid'])}}">
@@ -321,7 +321,7 @@
                     <div class="row justify-content-center">
                         <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                         <div class="col-lg-10">
-                            <img class="img-fluid" src="images/otras-especies/perezosos-sloth_s_territory_Fortuna_de_San_Carlos.jpg" alt="tour de perezosos en La Fortuna" title="Tour de perezosos">
+                            <img class="img-fluid" src="{{asset('images/otras-especies/perezosos-sloth_s_territory_Fortuna_de_San_Carlos.jpg')  }}" alt="tour de perezosos en La Fortuna" title="Tour de perezosos">
                         </div> <!-- end of col -->
                         <div class="col-lg-10">
                             <h3><a href="{{ route('sections.edit', $siteSections['service.tour_diurno.info.titulo_principal'][0]['uuid'])}}">
@@ -379,7 +379,7 @@
                     <div class="row justify-content-center">
                         <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                         <div class="col-lg-10">
-                            <img class="img-fluid" src="images/tour_nocturno-Sloth_s_Territory_La_Fortuna.jpeg" alt="tour nocturno en La Fortuna" title="Tour nocturno en La Fortuna">
+                            <img class="img-fluid" src="{{asset('images/tour_nocturno-Sloth_s_Territory_La_Fortuna.jpeg')  }}" alt="tour nocturno en La Fortuna" title="Tour nocturno en La Fortuna">
                         </div> <!-- end of col -->
                         <div class="col-lg-10">
                             <h3><a href="{{ route('sections.edit', $siteSections['service.tour_nocturno.info.titulo_principal'][0]['uuid'])}}">
@@ -438,7 +438,7 @@
                     <div class="row justify-content-center">
                         <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                         <div class="col-lg-10">
-                            <img class="img-fluid" src="images/aves/halcon-blanco-gavilan.jpg" alt="Tour de aves en La Fortuna" title="Tour de aves en La Fortuna">
+                            <img class="img-fluid" src="{{asset('images/aves/halcon-blanco-gavilan.jpg')  }}" alt="Tour de aves en La Fortuna" title="Tour de aves en La Fortuna">
                         </div> <!-- end of col -->
                         <div class="col-lg-10">
                             <h3><a href="{{ route('sections.edit', $siteSections['service.tour_aves.info.titulo_principal'][0]['uuid'])}}">
@@ -506,7 +506,7 @@
                             <div class="col-lg-5 col-xl-6">
                                 <div class="image-container">
                                 <!-- PENDIENTE poner el alt y title y cambiar la imagen -->
-                                    <img class="img-fluid" src="images/tour_de_perezosos_en_La_Fortuna.jpeg" alt="Tour de Perezosos En La Fortuna" title="Tour de perezosos en La Fortuna">    
+                                    <img class="img-fluid" src="{{asset('images/tour_de_perezosos_en_La_Fortuna.jpeg')  }}" alt="Tour de Perezosos En La Fortuna" title="Tour de perezosos en La Fortuna">    
                                 </div> <!-- end of image-container -->
                             </div> <!-- end of col -->
                             <div class="col-lg-7 col-xl-6">
