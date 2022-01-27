@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use PDO;
 use Illuminate\Support\Facades\App;
+use App\Models\SiteSection;
 
 class ComboController extends Controller
 {
@@ -21,16 +22,18 @@ class ComboController extends Controller
     }
     public function index()
     {
+        
         $combos = $this->comboService->getAll();
         return view('admin.combos.index', compact('combos'));
     }
 
     public function combos($locale)
     {
+        $siteSections = SiteSection::all()->where('language', $locale)->groupBy('title');
         App::setLocale($locale);
         $combos = $this->comboService->getAll();
         
-        return view('/combo/combo', compact('combos', 'locale'));
+        return view('/combo/combo', compact('combos', 'locale', 'siteSections'));
     }
 
     public function show($id)

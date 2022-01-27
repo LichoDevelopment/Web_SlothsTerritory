@@ -24,6 +24,8 @@
                             <div>
                                 <a href="{{ route('admin.combos.show', $combo[0]->uuid) }}" class="btn btn-sm btn-warning fa fa-eye"> </a>
                                 <button class="btn btn-sm btn-danger fa fa-trash delete-combo-btn" data-id="{{ $combo[0]->uuid }}">
+                                <!-- {!! $siteSections['terminos_condiciones'][0]['content'] !!} -->
+                                <!-- {{ $combo[0]->uuid }} -->
                                 </button>
                             </div>
                         </li>

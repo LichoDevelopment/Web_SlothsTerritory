@@ -43,7 +43,8 @@
                                                 Read More
                                             </a>
                                         </div> --}}
-                                        <a class="popup-with-move-anim" href="#{{$combo->uuid}}"><div class="btn-solid-reg page-scroll">{{__('btn.mas_detalles')}}</div></a> 
+                                        <a class="popup-with-move-anim" href="#{{$combo->uuid}}"><div class="btn-solid-reg page-scroll">{!! $siteSections['btn.mas_detalles'][0]['content'] !!}</div></a> 
+                                                                                <!-- {!! $siteSections['terminos_condiciones'][0]['content'] !!} -->
                                     </div>
                                 </div>  
 
@@ -82,7 +83,7 @@
                                                 </div>
 
                                             </div>
-                                            <a class="btn-solid-reg" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">{{__('btn.reservar_ahora')}}</a> <a class="btn-outline-reg mfp-close as-button" href="#services">{{__('btn.volver')}}</a>
+                                            <a class="btn-solid-reg" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">{!! $siteSections['btn.reservar_ahora'][0]['content'] !!}</a> <a class="btn-outline-reg mfp-close as-button" href="#services">{!! $siteSections['btn.volver'][0]['content'] !!}</a>
                                         </div> <!-- end of col -->
                                     </div> <!-- end of row -->
                                 </div> <!-- end of lightbox-basic -->
