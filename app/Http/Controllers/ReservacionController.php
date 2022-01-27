@@ -114,13 +114,13 @@ class ReservacionController extends Controller
 
    }
 
-   public function updateEstado($id)
+   public function updateEstado(Request $request, $id)
    {
         $response = response(["message"=> "Estado actualizado"],202);
 
-        Reserva::find($id)->restore();
-    
-
+        Reserva::find($id)->update([
+            'id_estado' => $request->estado
+        ]);
        return $response;
    }
 

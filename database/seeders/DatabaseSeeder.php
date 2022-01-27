@@ -24,52 +24,56 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
+        $this->call([
+            SiteSectionSeeder::class
+        ]);
         // \App\Models\User::factory(10)->create();
 
-        $rol_admin = new Role();
-        $rol_admin->nombre = 'admin';
-        $rol_admin->save();
+        // $rol_admin = new Role();
+        // $rol_admin->nombre = 'admin';
+        // $rol_admin->save();
 
-        $rol_empleado = new Role();
-        $rol_empleado->nombre = 'empleado';
-        $rol_empleado->save();
+        // $rol_empleado = new Role();
+        // $rol_empleado->nombre = 'empleado';
+        // $rol_empleado->save();
 
-        // USUARIOS
-        $Usuario = new User();
-        $Usuario->name = "Licho";
-        $Usuario->email = "licho@gmail.com";
-        $Usuario->password = '$2y$10$1siuqOHRVlGPx9AzXs2hdOJ6zLH46rt/yd1lE5zqjSDdeugHlPmU.'; //123456
-        $Usuario->rol_id = 1;
-        $Usuario->save();
+        // // USUARIOS
+        // $Usuario = new User();
+        // $Usuario->name = "Licho";
+        // $Usuario->email = "licho@gmail.com";
+        // $Usuario->password = '$2y$10$1siuqOHRVlGPx9AzXs2hdOJ6zLH46rt/yd1lE5zqjSDdeugHlPmU.'; //123456
+        // $Usuario->rol_id = 1;
+        // $Usuario->save();
 
-        $Usuario2 = new User();
-        $Usuario2->name = "Keilor";
-        $Usuario2->email = "keilor1997@icloud.com";
-        $Usuario2->password = '$2y$10$UYlLSmNsJactjDcDKoOhJOlZmHU.YDmIWgtYMRYN.wy8q0hqQrN4K'; //123456
-        $Usuario2->rol_id = 1;
-        $Usuario2->save();
+        // $Usuario2 = new User();
+        // $Usuario2->name = "Keilor";
+        // $Usuario2->email = "keilor1997@icloud.com";
+        // $Usuario2->password = '$2y$10$UYlLSmNsJactjDcDKoOhJOlZmHU.YDmIWgtYMRYN.wy8q0hqQrN4K'; //123456
+        // $Usuario2->rol_id = 1;
+        // $Usuario2->save();
 
-        $Usuario3 = new User();
-        $Usuario3->name = "Sloths Territory";
-        $Usuario3->email = "slothsterritory@gmail.com";
-        $Usuario3->password = '$2y$10$EA2PzC/yZJpfsB8dAaHcTOR/AJsw5e9gWf5lsnMN.VvRakQEvt4s6'; //SlothsTerritory2021
-        $Usuario3->rol_id = 2;
-        $Usuario3->save();
+        // $Usuario3 = new User();
+        // $Usuario3->name = "Sloths Territory";
+        // $Usuario3->email = "slothsterritory@gmail.com";
+        // $Usuario3->password = '$2y$10$EA2PzC/yZJpfsB8dAaHcTOR/AJsw5e9gWf5lsnMN.VvRakQEvt4s6'; //SlothsTerritory2021
+        // $Usuario3->rol_id = 2;
+        // $Usuario3->save();
 
 
-        // TOURS
-            // tour diurno
-        $tour = new Tour();
-        $tour->nombre = "Tour diurno";
-        $tour->save();
-            // tour nocturno
-        $tour2 = new Tour();
-        $tour2->nombre = "Tour nocturno";
-        $tour2->save();
-            // tour aves
-        $tour3 = new Tour();
-        $tour3->nombre = "Tour aves";
-        $tour3->save();
+        // // TOURS
+        //     // tour diurno
+        // $tour = new Tour();
+        // $tour->nombre = "Tour diurno";
+        // $tour->save();
+        //     // tour nocturno
+        // $tour2 = new Tour();
+        // $tour2->nombre = "Tour nocturno";
+        // $tour2->save();
+        //     // tour aves
+        // $tour3 = new Tour();
+        // $tour3->nombre = "Tour aves";
+        // $tour3->save();
         
 
 
@@ -171,17 +175,17 @@ class DatabaseSeeder extends Seeder
         // $fecha2->save();
 
         // Estados
-        $estado = new Estado();
-        $estado->nombre ="Pendiente";
-        $estado->save();
+        // $estado = new Estado();
+        // $estado->nombre ="Pendiente";
+        // $estado->save();
 
-        $estado1 = new Estado();
-        $estado1->nombre ="Llegó";
-        $estado1->save();
+        // $estado1 = new Estado();
+        // $estado1->nombre ="Llegó";
+        // $estado1->save();
 
-        $estado2 = new Estado();
-        $estado2->nombre ="No llegó";
-        $estado2->save();
+        // $estado2 = new Estado();
+        // $estado2->nombre ="No llegó";
+        // $estado2->save();
 
         // $estado3 = new Estado();
         // $estado3->nombre ="Finalizado";

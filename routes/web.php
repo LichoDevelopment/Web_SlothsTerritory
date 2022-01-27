@@ -90,6 +90,15 @@ Route::middleware(['auth'])->group(function () {
         Route::delete('/{id}', 'ComboController@destroy')->name('admin.combos.delete');
     });
 
+    Route::prefix('site-sections')->group(function () {        
+        Route::get('/ver', 'SiteSectionController@index')->name('admin.site.sections.index');
+        Route::get('/ver/{id}', 'SiteSectionController@show')->name('admin.site.sections.show');
+        Route::get('/edit/{id}', 'SiteSectionController@create')->name('sections.edit');
+        Route::post('/', 'SiteSectionController@store')->name('admin.site.sections.store');
+        Route::put('/{id}', 'SiteSectionController@update')->name('admin.site.sections.update');
+        Route::delete('/{id}', 'SiteSectionController@destroy')->name('admin.site.sections.delete');
+    });
+
     // Route::resource('agencias', 'AgenciasController');
 });
 
