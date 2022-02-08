@@ -203,7 +203,8 @@
         </div> <!-- end of cards-2 -->
         <!-- end of services -->
 
-        <div class="container-combo-img container">
+        {{-- SECCIÓN DE COMBOIS DESACTIVADAS. --}}
+        {{-- <div class="container-combo-img container">
             <div  class="d-flex justify-content-center">
                 <img class="combo-preview-img" src="{{ asset('images/combo-preview-img.jpeg') }}" alt="">
             </div>
@@ -212,7 +213,7 @@
                     <span class="btn-solid-reg page-scroll">{!! $siteSections['btn.mas_detalles'][0]['content'] !!}</span>
                 </a> 
             </div>
-        </div>
+        </div> --}}
 
 
         <!-- Details 1 -->
