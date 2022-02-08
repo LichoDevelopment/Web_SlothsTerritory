@@ -212,8 +212,6 @@
                     <span class="btn-solid-reg page-scroll">{!! $siteSections['btn.mas_detalles'][0]['content'] !!}</span>
                 </a> 
             </div>
-
-
         </div>
 
 
@@ -230,25 +228,8 @@
                             Costa Rica
                             <img src="{{ asset('/images/banderas/cr.png')  }}" height="25" width="25" alt="bandera de costa rica">
                         </h2>
-{{--                        <div class="item">--}}
-{{--                            <div id="headingOne">--}}
-{{--                                <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">--}}
-{{--                                    <span class="circle-numbering">1</span><span class="accordion-title">{!! $siteSections['details.item_1.titulo'][0]['content'] !!}</span>--}}
-{{--                                </span>--}}
-{{--                            </div>--}}
-{{--                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionOne">--}}
-{{--                                <div class="accordion-body">--}}
-{{--                                    {!! $siteSections['details.item_1.parrafo'][0]['content'] !!}--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div> <!-- end of item -->--}}
 
                         <div class="item">
-{{--                            <div id="headingTwo">--}}
-{{--                                <span class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" role="button">--}}
-{{--                                    <span class="circle-numbering">2</span><span class="accordion-title">{!! $siteSections['details.item_2.titulo'][0]['content'] !!} </span>--}}
-{{--                                </span>--}}
-{{--                            </div>--}}
                             <div aria-labelledby="headingTwo" data-parent="#accordionOne">
                                 <div class="accordion-body">
                                     {!! $siteSections['details.item_2.parrafo'][0]['content'] !!}
