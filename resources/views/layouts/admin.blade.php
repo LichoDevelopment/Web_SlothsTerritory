@@ -168,10 +168,10 @@
                                     <i class="fas fa-recycle"></i>Eliminadas</a>
                             </li>
                         @endif
-                        <li class="{{ Route::is('admin.combos.index') ? 'active' : '' }} ">
+                        {{-- <li class="{{ Route::is('admin.combos.index') ? 'active' : '' }} ">
                             <a href="{{ route('admin.combos.index') }}">
                                 <i class="fas fa-tags"></i>Combos</a>
-                        </li>
+                        </li> --}}
                         <li class="{{ Route::is('admin.mensaje') ? 'active' : '' }} ">
                             <a href="{{ route('admin.mensaje') }}">
                                 <i class="fas fa-envelope"></i>Mensajes sin leer</a>
