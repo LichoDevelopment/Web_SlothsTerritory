@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Mensajes_web;
 use App\Http\Controllers\Controller;
+use App\Mail\WebConsultingMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 
 class MensajesWebController extends Controller
 {
@@ -113,5 +117,33 @@ class MensajesWebController extends Controller
         $mensaje = Mensajes_web::find($id);
         $mensaje->delete();
         return response("", 204);
+    }
+
+    public function reply(Request $request){
+        
+        $validator = Validator::make($request->all(), [
+            'clientName' => 'required',
+            'message' => 'required',
+            'subject' => 'required',
+            'email' => 'required'
+        ], [
+            'required' => 'El :attribute es requerido '
+        ]);
+        
+        if (!$validator->fails()){
+            
+            Mail::to($request->email)->send(new WebConsultingMail($request->message, $request->subject, $request->clientName));
+            return response()->json([
+                'error' => false,
+                'message' => 'Mensaje enviado',
+                'errors' => []
+            ]);
+        }
+        return response()->json([
+            'error' => true,
+            'message' => 'Algo salió mal',
+            'errors' => $validator->errors()
+        ]);
+        
     }
 }

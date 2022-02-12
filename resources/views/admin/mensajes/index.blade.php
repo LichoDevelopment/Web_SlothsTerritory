@@ -15,6 +15,7 @@
                     <th>Correo</th>
                     <th>Mensaje</th>
                     <th>Fecha</th>
+                    <th>Acciones</th>
                 </thead>
                 <tbody>
                     @foreach ($mensajes as $mensaje)
@@ -28,6 +29,10 @@
                                 <button
                                     data-id="{{$mensaje->id}}" 
                                     class="btn btn-sm btn-danger borrar-mensaje-btn">Marcar Leído
+                                </button>
+                                <button
+                                    data-message="{{$mensaje}}" 
+                                    class="btn btn-sm btn-info contestar-mensaje-btn">Responder
                                 </button>
                             </td> 
                         </tr>
@@ -50,6 +55,7 @@
     } );
 
     const borrarReservasBtn = document.querySelectorAll('.borrar-mensaje-btn')
+    const contestarMensajeBtns = document.querySelectorAll('.contestar-mensaje-btn')
 
     borrarReservasBtn.forEach(btn =>{
         btn.addEventListener('click', event =>{
@@ -84,6 +90,74 @@
         })
     })
 
+    
+    contestarMensajeBtns.forEach(btn=> {
+        btn.addEventListener('click', event => {
+            event.preventDefault();
+            const message = JSON.parse(event.target.dataset.message);
+            
+            Swal.fire({
+                icon: 'info',
+                title: 'Reponder consulta web',
+                confirmButtonText: 'Enviar',
+                confirmButtonColor: '#DC3545',
+                showCancelButton: true,
+                cancelButtonText: 'Cancelar',
+                cancelButtonColor: 'teal',
+                html: `
+                    <form>
+                        <div class="form-group">
+                            <label for="emailSubject">Asunto</label>
+                            <input type="text" class="form-control" id="emailSubject" value="Respuesta a consulta web">
+                        </div>
+                        <div class="form-group">
+                            <label for="emailMessage">Contenido</label>
+                            <textarea class="form-control" id="emailMessage" rows="3"></textarea>
+                        </div>
+                    </form>`,
+                preConfirm: (respuesta)=>{
+                    if(respuesta){
+                        let emailSubjet = document.getElementById('emailSubject').value;
+                        let emailMessage = document.getElementById('emailMessage').value;
+                        let emailResponse = {
+                            subject : emailSubjet,
+                            message : emailMessage,
+                            email : message.correo,
+                            clientName : message.nombre
+                        }
+                        fetch(`/web-consulting-email`,{
+                            method: 'POST',
+                            headers: {'Content-Type': 'application/json'},
+                            body: JSON.stringify(emailResponse)
+                        }).then(response => response.json())
+                        .then((response)=>{
+                            if (response.error){
+                                let html = '';
+                                Object.entries(response.errors).map(error => {
+                                    console.log(error);
+                                    html += `<div class="text-danger text-center font-weight-bold" >
+                                                ${error[1][0]}
+                                            </div>`
+                                });
+                                Swal.fire({
+                                    icon: 'warning',
+                                    title: response.message,
+                                    html
+                                });
+                            }
+                            else {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: response.message
+                                });
+                            }
+                        })
+
+                    }
+                }
+            })
+        })
+    })
 
     function mostrarRespuesta(respuesta){
         console.log(respuesta)

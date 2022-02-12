@@ -122,3 +122,6 @@ Route::post('/mensaje', 'MensajesWebController@store')->name('mensaje.guardar');
 Route::get('/mensajesLeidos', 'MensajesWebController@leidos')->name('admin.mensajesLeidos');
 Route::delete('/mensaje/{id}', 'MensajesWebController@destroy');
 
+
+
+Route::post('/web-consulting-email', 'MensajesWebController@reply')->name('web.consulting.reply');
