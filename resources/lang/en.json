@@ -189,7 +189,7 @@
     "fecha": "DATE",
     "detalles": "Reservation details",
     "cantidadAdultos": "12+ years",
-    "cantidadNinios": "6 - 12 years",
+    "cantidadNinios": "5 - 12 years",
     "cantidadNiniosGratis": "Under 5 years",
     "montoTotal": "Total",
     "noFactura": "No. Invoice",
