@@ -223,20 +223,20 @@
 
                     <!-- Accordion -->
                     <div class="accordion-container" id="accordionOne">
-                        <h2>{!! $siteSections['details.titulo_principal'][0]['content'] !!}
-                            <img src="{{ asset('/images/banderas/cr.png')  }}" height="25" width="25" alt="bandera de costa rica">
+                        <p class="textJustify fontSizeMidium">{!! $siteSections['details.titulo_principal'][0]['content'] !!}</p>
+                            {{-- <img src="{{ asset('/images/banderas/cr.png')  }}" height="25" width="25" alt="bandera de costa rica">
                             Costa Rica
-                            <img src="{{ asset('/images/banderas/cr.png')  }}" height="25" width="25" alt="bandera de costa rica">
-                        </h2>
+                            <img src="{{ asset('/images/banderas/cr.png')  }}" height="25" width="25" alt="bandera de costa rica"> --}}
+                        
 
-                        <div class="item">
+                        {{-- <div class="item">
                             <div aria-labelledby="headingTwo" data-parent="#accordionOne">
                                 <div class="accordion-body">
                                     {!! $siteSections['details.item_2.parrafo'][0]['content'] !!}
 
                                 </div>
                             </div>
-                        </div> <!-- end of item -->
+                        </div>  --}}
                     </div> <!-- end of accordion-container -->
                     <!-- end of accordion -->
 

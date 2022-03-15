@@ -150,6 +150,14 @@ strong {
 	text-align: center;
 }
 
+.textJustify{
+	text-align: justify;
+}
+
+.fontSizeMidium{
+	font-size: 1.5em;
+	font-weight: bold;
+}
 .btn-solid-reg {
 	display: inline-block;
 	padding: 1.1875rem 1.875rem 1.1875rem 1.875rem;

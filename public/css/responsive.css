@@ -294,6 +294,7 @@
 	/* Details 1 */
 	.accordion {
 		height: 34.625rem;
+		margin-top: 1em;
 	}
 
 	.accordion .area-1 {
@@ -741,6 +742,12 @@
 	.container-combo-img {
 		max-width: 960px;
 		padding-block: 1.5rem;
+	}
+}
+
+@media (max-width: 992px){
+	.accordion {
+		margin-top: 1em;
 	}
 }
 
