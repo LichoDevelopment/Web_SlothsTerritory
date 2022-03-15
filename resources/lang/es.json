@@ -195,7 +195,19 @@
     "gracias": "Gracias",
     "adultos": "Adulos",
     "ninios": "Niños",
-    "niniosGratis": "Niños gratis"
+    "niniosGratis": "Niños gratis",
+
+    "titulo.politicascancelacion": "Política de cancelación o modificación",
+    "politica.cancelacion_1": "3 horas antes de la hora de inicio de la actividad.",
+
+    "titulo.reglasSlothsTerritoryDuranteVisita": "Reglas de Sloth’s Territory durante su visita",
+    "regla.SlothsTerritoryDuranteVisita_1": "Por políticas de seguridad todo niño debe ir acompañado de un adulto.",
+    "regla.SlothsTerritoryDuranteVisita_2": "Es estrictamente obligatorio que todos permanezcan y caminen dentro del sendero, no intenten salirse, por ningún motivo.",
+    "regla.SlothsTerritoryDuranteVisita_3": "La aplicación de repelente está permitida antes de ingresar al sendero.",
+    "regla.SlothsTerritoryDuranteVisita_4": "Silbar a los perezosos o mover las ramas donde se encuentren, está totalmente prohibido.",
+    "regla.SlothsTerritoryDuranteVisita_5": "Caminaremos a través de un hábitat de vida silvestre, por lo que acariciar a los animales, tocarlos o tomar fotografías con flash son cosas que no permitimos.",
+    "regla.SlothsTerritoryDuranteVisita_6": "Para mitigar el impacto de las personas, en el  ecosistema, dentro de los senderos les pedimos que hablen en voz baja.",
+    "regla.SlothsTerritoryDuranteVisita_7": "Mascotas no están permitidas dentro del sendero."
 }
 
 

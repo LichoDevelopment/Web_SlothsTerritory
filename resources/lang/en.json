@@ -196,5 +196,17 @@
     "gracias": "Thanks",
     "adultos": "Adults",
     "ninios": "children",
-    "niniosGratis": "Children free"
+    "niniosGratis": "Children free",
+
+    "titulo.politicascancelacion": "Cancellation or modification policy",
+    "politica.cancelacion_1": "3 hours before the tour starting time",
+
+    "titulo.reglasSlothsTerritoryDuranteVisita": "Sloth’s Territory Rules during your visit",
+    "regla.SlothsTerritoryDuranteVisita_1": "Due to security policies every child must be accompanied by an adult.",
+    "regla.SlothsTerritoryDuranteVisita_2": "It is strictly mandatory that everyone stay and walk in the trail, do not try to get out of it, for any reason.",
+    "regla.SlothsTerritoryDuranteVisita_3": "Repellant application is allowed before getting into the trail.",
+    "regla.SlothsTerritoryDuranteVisita_4": "Whistle to the sloths or to move the branches where they are, it’s completely prohibited",
+    "regla.SlothsTerritoryDuranteVisita_5": "We will be walking through a wildlife habitat so petting animals, touching them or taking pictures with flash are things that we do not allow.",
+    "regla.SlothsTerritoryDuranteVisita_6": "To mitigate the impact of people, on the ecosystem, in the trails we ask you to speak quietly.",
+    "regla.SlothsTerritoryDuranteVisita_7": "Pets are not allowed inside the trail."
 }

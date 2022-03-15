@@ -87,17 +87,16 @@
                         </div>
                         <!-- end of card -->
 
-                        <!-- Card -->
-                        <div class="card">
+                        <!-- Card  desactivado--> 
+                        {{-- <div class="card">
                             <span class="fa-stack">
-                                {{-- <span class="hexagon"></span> --}}
                                 <i class="fas fa-binoculars fa-stack-1x"></i>
                             </span>
                             <div class="card-body">
                                 <h4 class="card-title">{!! $siteSections['cards.card_3.titulo'][0]['content'] !!}</h4>
                                 <p>{!! $siteSections['cards.card_3.parrafo'][0]['content'] !!}</p>
                             </div>
-                        </div>
+                        </div> --}}
                         <!-- end of card -->
 
                     </div> <!-- end of col -->

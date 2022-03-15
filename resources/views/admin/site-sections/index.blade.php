@@ -104,21 +104,20 @@
                                 </div>
                                 <!-- end of card -->
 
-                                <!-- Card -->
-                                <div class="card">
+                                <!-- Card Desactivado -->
+                                {{-- <div class="card">
                                     <span class="fa-stack">
-                                        {{-- <span class="hexagon"></span> --}}
                                         <i class="fas fa-binoculars fa-stack-1x"></i>
                                     </span>
                                     <div class="card-body">
                                         <h4 class="card-title"><a href="{{ route('sections.edit', $siteSections['cards.card_3.titulo'][0]['uuid'])}}">
-                            {!! $siteSections['cards.card_3.titulo'][0]['content'] !!}
-                        </a></h4>
-                                        <p><a href="{{ route('sections.edit', $siteSections['cards.card_3.parrafo'][0]['uuid'])}}">
-                            {!! $siteSections['cards.card_3.parrafo'][0]['content'] !!}
-                        </a></p>
+                                            {!! $siteSections['cards.card_3.titulo'][0]['content'] !!}
+                                        </a></h4>
+                                                        <p><a href="{{ route('sections.edit', $siteSections['cards.card_3.parrafo'][0]['uuid'])}}">
+                                            {!! $siteSections['cards.card_3.parrafo'][0]['content'] !!}
+                                        </a></p>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <!-- end of card -->
 
                             </div> <!-- end of col -->
