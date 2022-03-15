@@ -272,23 +272,24 @@
 
                             <!-- Accordion -->
                             <div class="accordion-container" id="accordionOne">
-                                <h2><a href="{{ route('sections.edit', $siteSections['details.titulo_principal'][0]['uuid'])}}">
-                            {!! $siteSections['details.titulo_principal'][0]['content'] !!}
-                        </a>
-                                    <img src="{{ asset('/images/banderas/cr.png')  }}" height="25" width="25" alt="bandera de costa rica">
-                                    Costa Rica
-                                    <img src="{{ asset('/images/banderas/cr.png')  }}" height="25" width="25" alt="bandera de costa rica">
-                                </h2>
+                                <p class="textJustify fontSizeMidium">{!! $siteSections['details.titulo_principal'][0]['content'] !!}</p>
+                                {{-- <h2><a href="{{ route('sections.edit', $siteSections['details.titulo_principal'][0]['uuid'])}}">
+                                        {!! $siteSections['details.titulo_principal'][0]['content'] !!}
+                                    </a>
+                                                <img src="{{ asset('/images/banderas/cr.png')  }}" height="25" width="25" alt="bandera de costa rica">
+                                                Costa Rica
+                                                <img src="{{ asset('/images/banderas/cr.png')  }}" height="25" width="25" alt="bandera de costa rica">
+                                            </h2>
 
-                                <div class="item">
-                                    <div aria-labelledby="headingTwo" data-parent="#accordionOne">
-                                        <div class="accordion-body">
-                                            <a href="{{ route('sections.edit', $siteSections['details.item_2.parrafo'][0]['uuid'])}}">
-                            {!! $siteSections['details.item_2.parrafo'][0]['content'] !!}
-                        </a>
+                                            <div class="item">
+                                                <div aria-labelledby="headingTwo" data-parent="#accordionOne">
+                                                    <div class="accordion-body">
+                                                        <a href="{{ route('sections.edit', $siteSections['details.item_2.parrafo'][0]['uuid'])}}">
+                                        {!! $siteSections['details.item_2.parrafo'][0]['content'] !!}
+                                    </a>
                                         </div>
                                     </div>
-                                </div> <!-- end of item -->
+                                </div> --}}
                             </div> <!-- end of accordion-container -->
                             <!-- end of accordion -->
 
