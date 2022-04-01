@@ -35,7 +35,7 @@
     <link href="css/admin.css" rel="stylesheet" media="all"> --}}
 
     {{-- PRUEBA INTERFAZ --}}
-    <link href="{{ url('css/font-face.css')}}" rel="stylesheet" media="all">
+    {{-- <link href="{{ url('css/font-face.css')}}" rel="stylesheet" media="all"> --}}
     <link href="{{ url('vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
     <link href="{{ url('vendor/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" media="all">
 
@@ -58,7 +58,7 @@
 
 </head>
 
-<body class="animsition">
+<body class="animsition> {{-- class="animsition" --}}
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
         <header class="header-mobile d-block d-lg-none">
