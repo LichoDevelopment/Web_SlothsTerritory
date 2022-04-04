@@ -22,7 +22,7 @@
                         <textarea name="esContent" id="esContent" class="form-control" rows="10">{{ $siteSections[1]->content}}</textarea>
                     </div>
                         
-                    <textarea name="uuid" id="uuid" class="form-control" rows="1" >{{ $siteSections[1]->uuid}}  </textarea>
+                    <textarea name="uuid" id="uuid" class="form-control" rows="1" style="display:none;" >{{ $siteSections[1]->uuid}}  </textarea>
 
                     <button class="btn btn-success" type="submit">Editar</button>
                 </form>

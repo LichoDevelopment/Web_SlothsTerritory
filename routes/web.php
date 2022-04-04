@@ -80,15 +80,15 @@ Route::middleware(['auth'])->group(function () {
         Route::delete('/{id}', 'GaleriaController@destroy')->name('admin.galeria.eliminar');
     });
 
-    
-    Route::prefix('combos')->group(function () {        
-        Route::get('/ver', 'ComboController@index')->name('admin.combos.index');
-        Route::get('/ver/{id}', 'ComboController@show')->name('admin.combos.show');
-        Route::get('/create', 'ComboController@create')->name('admin.combos.create');
-        Route::post('/', 'ComboController@store')->name('admin.combos.store');
-        Route::post('/update/{id}', 'ComboController@update')->name('admin.combos.update');
-        Route::delete('/{id}', 'ComboController@destroy')->name('admin.combos.delete');
-    });
+    // DESACTIVADO HASTA QUE KEILOR DIGA.
+    // Route::prefix('combos')->group(function () {        
+    //     Route::get('/ver', 'ComboController@index')->name('admin.combos.index');
+    //     Route::get('/ver/{id}', 'ComboController@show')->name('admin.combos.show');
+    //     Route::get('/create', 'ComboController@create')->name('admin.combos.create');
+    //     Route::post('/', 'ComboController@store')->name('admin.combos.store');
+    //     Route::post('/update/{id}', 'ComboController@update')->name('admin.combos.update');
+    //     Route::delete('/{id}', 'ComboController@destroy')->name('admin.combos.delete');
+    // });
 
     Route::prefix('site-sections')->group(function () {        
         Route::get('/ver', 'SiteSectionController@index')->name('admin.site.sections.index');
@@ -122,3 +122,6 @@ Route::post('/mensaje', 'MensajesWebController@store')->name('mensaje.guardar');
 Route::get('/mensajesLeidos', 'MensajesWebController@leidos')->name('admin.mensajesLeidos');
 Route::delete('/mensaje/{id}', 'MensajesWebController@destroy');
 
+
+
+Route::post('/web-consulting-email', 'MensajesWebController@reply')->name('web.consulting.reply');

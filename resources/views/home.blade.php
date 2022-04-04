@@ -87,17 +87,16 @@
                         </div>
                         <!-- end of card -->
 
-                        <!-- Card -->
-                        <div class="card">
+                        <!-- Card  desactivado--> 
+                        {{-- <div class="card">
                             <span class="fa-stack">
-                                {{-- <span class="hexagon"></span> --}}
                                 <i class="fas fa-binoculars fa-stack-1x"></i>
                             </span>
                             <div class="card-body">
                                 <h4 class="card-title">{!! $siteSections['cards.card_3.titulo'][0]['content'] !!}</h4>
                                 <p>{!! $siteSections['cards.card_3.parrafo'][0]['content'] !!}</p>
                             </div>
-                        </div>
+                        </div> --}}
                         <!-- end of card -->
 
                     </div> <!-- end of col -->
@@ -203,7 +202,8 @@
         </div> <!-- end of cards-2 -->
         <!-- end of services -->
 
-        <div class="container-combo-img container">
+        {{-- SECCIÓN DE COMBOIS DESACTIVADAS. --}}
+        {{-- <div class="container-combo-img container">
             <div  class="d-flex justify-content-center">
                 <img class="combo-preview-img" src="{{ asset('images/combo-preview-img.jpeg') }}" alt="">
             </div>
@@ -212,9 +212,7 @@
                     <span class="btn-solid-reg page-scroll">{!! $siteSections['btn.mas_detalles'][0]['content'] !!}</span>
                 </a> 
             </div>
-
-
-        </div>
+        </div> --}}
 
 
         <!-- Details 1 -->
@@ -225,37 +223,20 @@
 
                     <!-- Accordion -->
                     <div class="accordion-container" id="accordionOne">
-                        <h2>{!! $siteSections['details.titulo_principal'][0]['content'] !!}
-                            <img src="{{ asset('/images/banderas/cr.png')  }}" height="25" width="25" alt="bandera de costa rica">
+                        <p class="textJustify fontSizeMidium">{!! $siteSections['details.titulo_principal'][0]['content'] !!}</p>
+                            {{-- <img src="{{ asset('/images/banderas/cr.png')  }}" height="25" width="25" alt="bandera de costa rica">
                             Costa Rica
-                            <img src="{{ asset('/images/banderas/cr.png')  }}" height="25" width="25" alt="bandera de costa rica">
-                        </h2>
-{{--                        <div class="item">--}}
-{{--                            <div id="headingOne">--}}
-{{--                                <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">--}}
-{{--                                    <span class="circle-numbering">1</span><span class="accordion-title">{!! $siteSections['details.item_1.titulo'][0]['content'] !!}</span>--}}
-{{--                                </span>--}}
-{{--                            </div>--}}
-{{--                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionOne">--}}
-{{--                                <div class="accordion-body">--}}
-{{--                                    {!! $siteSections['details.item_1.parrafo'][0]['content'] !!}--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div> <!-- end of item -->--}}
+                            <img src="{{ asset('/images/banderas/cr.png')  }}" height="25" width="25" alt="bandera de costa rica"> --}}
+                        
 
-                        <div class="item">
-{{--                            <div id="headingTwo">--}}
-{{--                                <span class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" role="button">--}}
-{{--                                    <span class="circle-numbering">2</span><span class="accordion-title">{!! $siteSections['details.item_2.titulo'][0]['content'] !!} </span>--}}
-{{--                                </span>--}}
-{{--                            </div>--}}
+                        {{-- <div class="item">
                             <div aria-labelledby="headingTwo" data-parent="#accordionOne">
                                 <div class="accordion-body">
                                     {!! $siteSections['details.item_2.parrafo'][0]['content'] !!}
 
                                 </div>
                             </div>
-                        </div> <!-- end of item -->
+                        </div>  --}}
                     </div> <!-- end of accordion-container -->
                     <!-- end of accordion -->
 

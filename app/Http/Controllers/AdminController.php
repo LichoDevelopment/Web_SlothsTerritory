@@ -19,7 +19,7 @@ class AdminController extends Controller
     {
         $tours      = Tour::all();
         $horarios   = Horario::all();
-        $agencias   = Agencia::all();
+        $agencias   = Agencia::orderBy('nombre', 'asc')->get();;
         $precios    = Precio::all();
 
         $view_data['tours']     = $tours;

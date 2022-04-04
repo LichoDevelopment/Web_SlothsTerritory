@@ -60,16 +60,54 @@
             </table>
       
           </main>
+          <article>
+              <h2 class="tituloPoliticasReglasFactura">
+                {{__('titulo.politicascancelacion')}}
+              </h2>
+            <ul>
+              <li >
+                <p class="itemsPoliticasPrivacidadReserva">{{__('politica.cancelacion_1')}}</p>
+              </li>
+            </ul>
+          </article>
+          <article>
+            <h2 class="tituloPoliticasReglasFactura">
+              {{__('titulo.reglasSlothsTerritoryDuranteVisita')}}
+            </h2>
+          <ul>
+            <li>
+              <p class="itemsPoliticasPrivacidadReserva">{{__('regla.SlothsTerritoryDuranteVisita_1')}}</p>
+            </li>
+            <li>
+              <p class="itemsPoliticasPrivacidadReserva">{{__('regla.SlothsTerritoryDuranteVisita_2')}}</p>
+            </li>
+            <li>
+              <p class="itemsPoliticasPrivacidadReserva">{{__('regla.SlothsTerritoryDuranteVisita_3')}}</p>
+            </li>
+            <li>
+              <p class="itemsPoliticasPrivacidadReserva">{{__('regla.SlothsTerritoryDuranteVisita_4')}}</p>
+            </li>
+            <li>
+              <p class="itemsPoliticasPrivacidadReserva">{{__('regla.SlothsTerritoryDuranteVisita_5')}}</p>
+            </li>
+            <li>
+              <p class="itemsPoliticasPrivacidadReserva">{{__('regla.SlothsTerritoryDuranteVisita_6')}}</p>
+            </li>
+            <li>
+              <p class="itemsPoliticasPrivacidadReserva">{{__('regla.SlothsTerritoryDuranteVisita_7')}}</p>
+            </li>
+          </ul>
+        </article>
           <footer>
             sloth's territory
           </footer>
       </section>
 
-    <div class="btn-container">
-        <a href="/admin" class="btn btn-sucess" id="inicio">Inicio</a>
-        <button class="btn btn-sucess" id="imprimir">Imprimir</button>
-        <button class="btn btn-info" id="enviar" data-reserva="{{$reserva->id}}">Enviar</button>
-    </div>
+      <div class="btn-container">
+          <a href="/admin" class="btn btn-sucess" id="inicio">Inicio</a>
+          <button class="btn btn-sucess" id="imprimir">Imprimir</button>
+          <button class="btn btn-info" id="enviar" data-reserva="{{$reserva->id}}">Enviar</button>
+      </div>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>

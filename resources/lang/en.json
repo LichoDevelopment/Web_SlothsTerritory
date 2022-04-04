@@ -1,0 +1,212 @@
+{
+
+    "español": "ESPAÑOL",
+    "ingles": "ENGLISH",
+
+    "saludo": "Hi!",
+
+
+    "web.titulo": "Sloth tour in La Fortuna, San Carlos, the best tour in la Fortuna",
+    "web.descripcion": "The best tour in la Fortuna, San Carlos can be found in Sloth's Territory",
+
+    "web.keyword1": "la fortuna san carlos",
+    "web.keyword2": "tours san carlos",
+    "web.keyword3": "tours la fortuna",
+    "web.keyword4": "tour in la fortuna san carlos",
+    "web.keyword5": "sloths in la fortuna san carlos",
+    "web.keyword6": "the best tour in la fortuna",
+    "web.keyword7": "the best tour in la fortuna san carlos",
+    "web.keyword8": "costa rica sloths",
+    "web.keyword9": "sloth tour la fortuna",
+    "web.keyword10": "sloth tour costa rica",
+    "web.keyword11": "sloth tour",
+    "web.keyword12": "la fortuna sloth tour",
+    "web.keyword13": "sloth la fortuna",
+    "web.keyword14": "sloth territory la fortuna",
+
+    "btn.reservar_ahora": "BOOK NOW",
+    "btn.mas_detalles": "MORE DETAILS",
+    "btn.enviar_mensaje": "SEND MESSAGE",
+    "btn.volver": "BACK",
+
+
+
+    "header.home": "HOME",
+    "header.inicio": "HOME",
+    "header.service": "SERVICES",
+    "header.galeria": "GALLERY",
+    "header.acerca_de": "ABOUT",
+    "header.contactarnos": "CONTACT",
+
+
+
+
+    "inicio.titulo_principal": "The best tour in La Fortuna de San Carlos and incredible view of the Arenal Volcano",
+    "inicio.parrafo_descriptivo": "In Sloth's Territory you can observe 2-toed sloths and 3-toed sloths, as well as a great variety of birds and amphibians",
+
+
+
+
+    "intro.titulo:principal": "WELCOME",
+    "intro.titulo_secundario": "Sloth's Territory in La Fortuna de San Carlos",
+    "intro.parrafo_descriptivo": "Sloth’s Territory is a natural gem of 13 hectares, a private reserve protected & maintained by the Rodriguez Perez Family, a traditional Costa Rican Family. 10 of these hectares are currently on a reforesting process. The remaining 3 are a truly paradise with vibrant flora & fauna and the permanent habitat of many kind of animals such as: two and three toed sloths, opossums, frogs, birds, and more. We certainly are an experience with no artificial ingredients!",
+    "intro.testimonial": "Visit this paradise surrounded by nature and inhabited by sloths  ",
+
+
+
+
+    "cards.card_1.titulo": "Experience a free nature enviroment",
+    "cards.card_2.titulo": "You will learn",
+    "cards.card_3.titulo": "Wonderful views",
+    "cards.card_1.parrafo": "feel the real connection with nature, we'll see and learn about animals while hiking through the wild",
+    "cards.card_2.parrafo": "about the biodiversity in our ecosystem and the habitat of our principal attraction, the two and three-toed sloths",
+    "cards.card_3.parrafo": "to the Arenal Volcano and the incredible nature that inhabits our facilities",
+
+
+
+
+    "service.titulo_principal": "OUR SERVICES",
+    "services.titulo_secundario_parte_1": "We have 3 different activities",
+    "services.titulo_secundario_parte_2": "Below the details about each of them",
+
+
+    "service.vista_previa.tour_diurno.titulo": "DIURNAL OBSERVATION TOURS",
+    "service.vista_previa.tour_diurno.parrafo": "We offer several daily hikes starting at: 8 am - 10 am - 1 pm and 3 pm.",
+    "service.vista_previa.tour_diurno.item_1": "The trail is accessible for all ages",
+    "service.vista_previa.tour_diurno.item_2": "The duration of this activity can be from 1 and a half to 2 hours",
+
+
+    "service.vista_previa.tour_nocturno.titulo": "NIGHT HIKE EXPERIENCE",
+    "service.vista_previa.tour_nocturno.parrafo": "The best night hike tour",
+    "service.vista_previa.tour_nocturno.item_1": "This tour starts at 6:00 pm.",
+    "service.vista_previa.tour_nocturno.item_2": "The duration of this activity can be from 1 and a half to 2 hours",
+
+
+    "service.vista_previa.tour_aves.titulo": "BIRDWATCHING EXPERIENCE",
+    "service.vista_previa.tour_aves.parrafo": "You will be able to observe a wide variety of species from: Hummingbirds, Tanagers, Parrots, Honeycreepers, Cinnamon Woodpeckers, Royal Flycatchers, Nunbirds, ...",
+    "service.vista_previa.tour_aves.item_1": "The tour starts at 5:00 am",
+    "service.vista_previa.tour_aves.item_2": "The duration of this activity is 2 hours",
+
+
+    "service.tour_diurno.info.titulo_principal": "DIURNAL OBSERVATION TOUR",
+    "service.tour_diurno.info.titulo_secundario_1": "Information about the diurnal observation tour",
+    "service.tour_diurno.info.parrafo_1": "We offer several daily hikes starting at: 8am - 10am - 1pm and 3pm",
+    "service.tour_diurno.info.parrafo_2": "During the hike, the trail allows you to enjoy a gallery forest with lush vegetation and giant trees as Chilamate and Guácimo Colorado; constituting the habitat of many species like: opossums, two and three toed-sloths and many birds such as toucans, tanagers, Royal Flycatchers and others. But the main attraction is the sloth's observation.",
+    "service.tour_diurno.info.parrafo_3": "The Rodriguez Family, a traditional Costa Rican family will be your guides, since trying to find sloths require high skills because they use to have an  excellent camouflage that make them imperceptible, for not trained eyes. The trail is accessible for all ages, so this is an activity where the whole family can enjoy it.",
+    "service.tour_diurno.info.parrafo_4": "The trail is accessible for all ages, so this is an activity where the whole family can enjoy it.",
+    "service.tour_diurno.info.parrafo_5": "The tour includes a trained guide during the whole hike with professional telescope and fresh seasonal fruits snack at the end.",
+    "service.tour_diurno.info.parrafo_6": "The duration of this activity can be from 1 and a half to 2 hours and the price is US$28 per person; Children from 6 to 12 y/o US$17 and younger than 5 y/o are free.",
+
+
+    "service.tour_nocturno.info.titulo_principal": "NIGHT HIKE EXPERIENCE",
+    "service.tour_nocturno.info.titulo_secundario_1": "Information about the night hike",
+    "service.tour_nocturno.info.parrafo_1": "Our night hike starts at 6:00pm, the best time to look for animals with nocturnal behavior.",
+    "service.tour_nocturno.info.parrafo_2": "During this hike, you will have the chance to see different kind of frogs, kinkajous, snakes, spiders, bats and eventually: two and three-toed sloths (but it is not the focus of this specific hike).",
+    "service.tour_nocturno.info.parrafo_3": "While the night starts and the sky gets full of stars, our well-trained guide will keep you safe while you continue the hike through our property.",
+    "service.tour_nocturno.info.parrafo_4": "The trail is accessible for all ages, so this is an activity where the whole family can enjoy it.",
+    "service.tour_nocturno.info.parrafo_5": "The duration of this activity is 1 and a half to 2 hours. The price is US$45 per person; children from 6 to 12 years US$35.",
+    "service.tour_nocturno.info.parrafo_6": "The tour includes a trained guide during the whole hike, flashlight and fresh seasonal fruits at the end.",
+
+
+    "service.tour_aves.info.titulo_principal": "BIRDWATCHING EXPERIENCE",
+    "service.tour_aves.info.titulo_secundario_1": "Information about the birdwatching",
+    "service.tour_aves.info.parrafo_1": "Thinking about all birdwatching lovers, we have created this exclusive and entertaining activity.",
+    "service.tour_aves.info.parrafo_2": "The tour starts at 5:00am and one of our professional guides will take you through out beautiful trails to observe a wide variety of species from: Hummingbirds, Tanagers, Parrots, Honeycreepers, Cinnamon Woodpeckers, Royal Flycatchers, Nunbirds.",
+    "service.tour_aves.info.parrafo_3": "Even when we are focused on the birds, the wide-array of exotic species, in our trails, you will have the opportunity to observe some sloths, frogs and other species.",
+    "service.tour_aves.info.parrafo_4": "The tour includes a trained guide during the whole hike with professional telescope, binoculars and fresh seasonal fruits snack & coffee, at the end.",
+    "service.tour_aves.info.parrafo_5": "The duration of this activity is 2 hours. ",
+    "service.tour_aves.info.parrafo_6": "The price is US$45 per person.",
+    "service.tour_aves.info.que_llevar_5": "Camara",
+    "service.tour_aves.info.que_llevar_6": "Binoculars",
+    "service.tour_aves.info.que_llevar_7": "Closed shoes",
+
+
+    "service.todos.info.titulo_secundario_2": "What to bring:",
+    "service.todos.info.que_llevar_1": "Insect repellent",
+    "service.todos.info.que_llevar_2": "Light clothes",
+    "service.todos.info.que_llevar_3": "Rain gear",
+    "service.todos.info.que_llevar_4": "Closed shoes",
+    "service.todos.info.parrafo_testimonial": "Do not miss this adventure!",
+
+
+
+
+    "details.titulo_principal": "The Sloth is officially one of our National Symbols in",
+    "details.item_1.titulo": "The 16th national symbol of Costa Rica",
+    "details.item_1.parrafo": "On Wednesday June 30, 2021, the sloth was declared a national symbol of Costa Rica.",
+    "details.item_2.titulo": "Why is it declared a national symbol?",
+    "details.item_2.parrafo": "The main reason to declare this animal as National Symbol is to protect its natural habitat and watch over its population.\nSloth's Territorry, as a private natural reserve is committed to protect and extend the habitat of this beautiful animal and I order to accomplish this goal, we are currently reforesting 10 hectares. \nYour visit and the interest in this creature, it help us to extend this conservation project",
+
+
+
+
+    "galeria.titulo_principal": "Our gallery section",
+    "galeria.titulo_secundario": "In this section you can see images of the different species in Sloth's Territory",
+    "galeria.filtro.ver_todo": "Show all",
+    "galeria.filtro.sloths": "SLOTHS",
+    "galeria.filtro.ranas": "Frogs",
+    "galeria.filtro.monos": "Monkeys",
+    "galeria.filtro.aves": "birds",
+    "galeria.filtro.otras": "Other species",
+
+
+
+
+    "fundadores.titulo_principal": "Founders of Sloth's Territory",
+
+
+
+
+    "acerca_de.titulo_principal": "ABOUT",
+    "acerca_de.titulo_secundario": "Sloth's Territory",
+    "acerca_de.parrafo_descriptivo": "We are waiting for you, do not miss the best sloth tour in La Fortuna",
+    "acerca_de.item_1": "Wonderful view of the Arenal Volcano",
+    "acerca_de.item_2": "Located in El Tanque de La Fortuna de San Carlos",
+    "acerca_de.item_3": "We have a great variety of species",
+
+
+
+
+    "contact.titulo_principal": "CONTACT",
+    "contact.titulo_secundario": "Sloth's Territory La Fortuna de San Carlos",
+    "contact.parrafo_descriptivo": "Contact information",
+    "contact.direccion": "4 km de La Fortuna hacia el Este, 400 mts entrada de lastre a la derecha, 200 mts Este Fortuna, Alajuela Provinces, Costa Rica",
+    "contact.titulo_redes_sociaes": "Follow Sloth's Territory",
+
+
+
+    "formulario.nombre": "Name",
+    "formulario.correo": "Email",
+    "formulario.mensaje": "Your Message",
+    "formulario.acepta_politicas_parte_1": "I agree ",
+    "politicas_privacidad": "Sloth's Territory Privacy Policy",
+    "terminos_condiciones": "and Terms Conditions",
+
+    "factura": "Invoice",
+    "cliente": "CLIENT",
+    "agencia": "AGENCY",
+    "hora": "HOUR",
+    "fecha": "DATE",
+    "detalles": "Reservation details",
+    "cantidadAdultos": "12+ years",
+    "cantidadNinios": "5 - 11 years",
+    "cantidadNiniosGratis": "Under 4 years",
+    "montoTotal": "Total",
+    "noFactura": "No. Invoice",
+    "gracias": "Thanks",
+    "adultos": "Adults",
+    "ninios": "children",
+    "niniosGratis": "Children free",
+
+    "titulo.politicascancelacion": "Cancellation or modification policy",
+    "politica.cancelacion_1": "3 hours before the tour starting time",
+
+    "titulo.reglasSlothsTerritoryDuranteVisita": "Sloth’s Territory Rules during your visit",
+    "regla.SlothsTerritoryDuranteVisita_1": "Due to security policies every child must be accompanied by an adult.",
+    "regla.SlothsTerritoryDuranteVisita_2": "It is strictly mandatory that everyone stay and walk in the trail, do not try to get out of it, for any reason.",
+    "regla.SlothsTerritoryDuranteVisita_3": "Repellant application is allowed before getting into the trail.",
+    "regla.SlothsTerritoryDuranteVisita_4": "Whistle to the sloths or to move the branches where they are, it’s completely prohibited",
+    "regla.SlothsTerritoryDuranteVisita_5": "We will be walking through a wildlife habitat so petting animals, touching them or taking pictures with flash are things that we do not allow.",
+    "regla.SlothsTerritoryDuranteVisita_6": "To mitigate the impact of people, on the ecosystem, in the trails we ask you to speak quietly.",
+    "regla.SlothsTerritoryDuranteVisita_7": "Pets are not allowed inside the trail."
+}

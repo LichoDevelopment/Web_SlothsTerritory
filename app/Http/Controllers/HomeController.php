@@ -32,6 +32,7 @@ class HomeController extends Controller
     }
     public function admin(Request $request)
     {
+        // $startedAt = time();
         $current_date_time = Carbon::now();
             $date = $current_date_time->setTimezone('America/Costa_Rica');
             $date = $date->format('Y-m-d');
@@ -42,6 +43,7 @@ class HomeController extends Controller
         }
         else{
             $reservas = DB::select('CALL filtrar_reservas(?,?,?,?)',[null, null, null,null]);
+            // $reservas = Reserva::all();
             $totales  = DB::select('CALL totales(?,?,?,?)',[null, null, null,null]);  
         }
         
@@ -61,21 +63,7 @@ class HomeController extends Controller
         $total_niños_gratis = '';
         $total_pax= '';
 
-        $total_comisiones = '';
-
-        // $totales = Reserva::select('*')
-        //                     ->select(
-        //                         DB::raw('sum(cantidad_adultos) as adultos'),
-        //                         DB::raw('sum(cantidad_niños) as niños'),
-        //                         DB::raw('sum(cantidad_niños_gratis) as niños_gratis'),
-        //                         DB::raw('sum(comision_agencia) as comisiones'),
-        //                         DB::raw('sum(monto_total) as monto_total'),
-        //                         DB::raw('sum(monto_neto) as monto_neto'),
-        //                         )
-        //                     ->first();
-
-        // $reservas = DB::select('CALL filtrar_reservas(?,?,?,?)',[null, null, null,null]);
-        // $totales  = DB::select('CALL totales(?,?,?,?)',[null, null, null,null]);              
+        $total_comisiones = '';          
                             
         if($query){
             if (rol_usuario()->id === 2){
@@ -96,72 +84,10 @@ class HomeController extends Controller
             $totales        = DB::select('CALL totales(?,?,?,?)', 
                                     [$fechaInicio, $fechaFin, $agencia, $horario]);
 
-            // if(!$query['fechaInicio'] && $query['agencia']){
-            //     $id_agencias = [$query['agencia']];
-            //     $reservaciones = Reserva::select('*')
-            //                                 ->whereIn('id_agencia',$id_agencias)
-            //                                 ->orderBy('id_fecha_tour')
-            //                                 ->orderBy('id_estado','asc')
-            //                                 ->get();
-                                            
-            //         $totales = Reserva::select('*')
-            //                             ->whereIn('id_agencia',$id_agencias)
-            //                             ->select(
-            //                                 DB::raw('sum(cantidad_adultos) as adultos'),
-            //                                 DB::raw('sum(cantidad_niños) as niños'),
-            //                                 DB::raw('sum(cantidad_niños_gratis) as niños_gratis'),
-            //                                 DB::raw('sum(comision_agencia) as comisiones'),
-            //                                 DB::raw('sum(monto_total) as monto_total'),
-            //                                 DB::raw('sum(monto_neto) as monto_neto'),
-            //                                 )
-            //                             ->first();
-            // }
-            // if($query['fechaInicio']){
-
-                // if($query['agencia']){
-                //     $id_agencias = [$query['agencia']];
-                // }else{
-                //     foreach($agencias as $agencia){
-                //         $id_agencias[] = $agencia->id;
-                //     }
-                // }
-
-                // $fechas = DB::table('fecha_tour')->whereBetween('fecha', [$fechaInicio, $fechaFin])->get();
-
-                // $id_fechas = [];
-                
-                // foreach($fechas as $fecha){
-                //     $id_fechas[] = $fecha->id;
-                // }
-
-                // if($id_fechas){
-                //     $reservaciones = Reserva::select('*')
-                //                             ->whereIn('id_fecha_tour', $id_fechas)
-                //                             ->whereIn('id_agencia',$id_agencias)
-                //                             ->orderBy('id_fecha_tour')
-                //                             ->orderBy('id_estado','asc')
-                //                             ->get();
-                                            
-                //     $totales = Reserva::select('*')
-                //                         ->whereIn('id_fecha_tour', $id_fechas)
-                //                         ->whereIn('id_agencia',$id_agencias)
-                //                         ->select(
-                //                             DB::raw('sum(cantidad_adultos) as adultos'),
-                //                             DB::raw('sum(cantidad_niños) as niños'),
-                //                             DB::raw('sum(cantidad_niños_gratis) as niños_gratis'),
-                //                             DB::raw('sum(comision_agencia) as comisiones'),
-                //                             DB::raw('sum(monto_total) as monto_total'),
-                //                             DB::raw('sum(monto_neto) as monto_neto'),
-                //                             )
-                //                         ->first();
-                // }
-            // }
         }
-
+        // $finishedAt = time();
         
-        // $reservas = DB::select('CALL filtrar_reservas(?,?,?,?)',[null, null, "",null]);
-        // $totales  = DB::select('CALL totales(?,?,?,?)',[null, null, "",null]);
-        // print_r($totales);
+        // echo 'Tiempo: ' . ($finishedAt - $startedAt);
         return view('admin.index', compact( 'agencias', 'totales','estados', 'reservas', 'horarios'));
     }
     public function sales($locale)
