@@ -25,9 +25,19 @@ class HomeController extends Controller
         App::setLocale($locale);
 
         $images = Image::with('type')->get();
+        // return $images;
         $imageTypes = ImageType::all();
-        $siteSections = SiteSection::all()->where('language', $locale)->groupBy('title');
-
+        // return $imageTypes;
+        $inicio = time();
+        $siteSections = SiteSection::all()->where('language', $locale)->groupBy('title');// \'' . $locale . '\'
+        // $siteSections = DB::select("SELECT JSON_OBJECT(title, content)FROM site_sections WHERE language = '$locale'");
+        // $siteSections = DB::select("SELECT title, content FROM site_sections WHERE language = '$locale' group by title;");
+        // return $siteSections;
+        // 
+        // $fin = time();
+        // dd($fin - $inicio);
+        // return $siteSections;
+        
         return view('home', compact('locale', 'images', 'imageTypes', 'siteSections'));
     }
     public function admin(Request $request)
