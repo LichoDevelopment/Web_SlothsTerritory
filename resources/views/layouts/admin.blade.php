@@ -58,7 +58,7 @@
 
 </head>
 
-<body class="animsition> {{-- class="animsition" --}}
+<body class="animsition"> 
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
         <header class="header-mobile d-block d-lg-none">
@@ -168,10 +168,7 @@
                                     <i class="fas fa-recycle"></i>Eliminadas</a>
                             </li>
                         @endif
-                        {{-- <li class="{{ Route::is('admin.combos.index') ? 'active' : '' }} ">
-                            <a href="{{ route('admin.combos.index') }}">
-                                <i class="fas fa-tags"></i>Combos</a>
-                        </li> --}}
+                        
                         <li class="{{ Route::is('admin.mensaje') ? 'active' : '' }} ">
                             <a href="{{ route('admin.mensaje') }}">
                                 <i class="fas fa-envelope"></i>Mensajes sin leer</a>
@@ -210,7 +207,6 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            {{-- <img src="images/icon/avatar-01.jpg" alt="John Doe" /> --}}
                                             <img src="images/favicon--.png" alt="sloth's territory logo" />
                                             
                                         </div>
@@ -221,7 +217,6 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        {{-- <img src="images/icon/avatar-01.jpg" alt="John Doe" /> --}}
                                                         <img src="images/icon/avatar-01.jpg" alt="John Doe" />
                                                     </a>
                                                 </div>
@@ -234,13 +229,12 @@
                                             </div>
                                             <div class="account-dropdown__footer">
                                                 <form action="{{ route('logout') }}" method="post">
-                                                @csrf
-                                                <a href="#">
-                                                <button type="submit">
-                                                        <i class="zmdi zmdi-power"></i>Logout
-                                                    </button>
+                                                    @csrf
+                                                    <a href="#">
+                                                        <button type="submit">
+                                                            <i class="zmdi zmdi-power"></i>Logout
+                                                        </button>
                                                     </a>
-                                                
                                                 </form>
                                             </div>
                                         </div>
