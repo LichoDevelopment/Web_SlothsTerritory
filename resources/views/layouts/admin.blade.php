@@ -12,49 +12,25 @@
     <!-- Title Page-->
     <title>Inbox</title>
 
-    <!-- Fontfaces CSS-->
-    {{--<link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="{{asset('css/font-face.css')}}" rel="stylesheet" media="all">
+    <link href="{{asset('vendor/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" media="all">
 
-    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-
-    <!-- Bootstrap CSS-->
-    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
-
-    <!-- Vendor CSS-->
-    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
-    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
-    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
-    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
-
-    <!-- Main CSS-->
-    <link href="css/admin.css" rel="stylesheet" media="all"> --}}
-
-    {{-- PRUEBA INTERFAZ --}}
-    <link href="css/font-face.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-
-    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
-    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
-    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
-    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
-    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
-    <link href="css/admin.css" rel="stylesheet" media="all">
-    <link href="css/combo.css" rel="stylesheet" media="all">
+    <link href="{{asset('vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{asset('vendor/bootstrap-4.1/bootstrap.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{asset('vendor/animsition/animsition.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{asset('vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{asset('vendor/wow/animate.css')}}" rel="stylesheet" media="all">
+    <link href="{{asset('vendor/css-hamburgers/hamburgers.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{asset('vendor/slick/slick.css')}}" rel="stylesheet" media="all">
+    <link href="{{asset('vendor/select2/select2.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{asset('vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{asset('vendor/perfect-scrollbar/perfect-scrollbar.css')}}" rel="stylesheet" media="all">
+    <link href="{{asset('css/admin.css')}}" rel="stylesheet" media="all">
+    <link href="{{asset('css/combo.css')}}" rel="stylesheet" media="all">
+    <link href="{{asset('css/variables.css')}}" rel="stylesheet" media="all">
+    <link href="{{asset('css/styles.css')}}" rel="stylesheet" media="all">
+    <link href="{{asset('css/responsive.css')}}" rel="stylesheet" media="all">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.25/af-2.3.7/b-1.7.1/date-1.1.0/r-2.2.9/datatables.min.css"/>
-	<link href=" css/variables.css " rel="stylesheet">
-	<link href=" css/styles.css " rel="stylesheet">
-	<link href=" css/responsive.css " rel="stylesheet">
 
 </head>
 
@@ -211,7 +187,7 @@
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
                                             {{-- <img src="images/icon/avatar-01.jpg" alt="John Doe" /> --}}
-                                            <img src="images/favicon--.png" alt="sloth's territory logo" />
+                                            <img src="{{asset('images/favicon--.png')}}" alt="sloth's territory logo" />
                                             
                                         </div>
                                         <div class="content">
