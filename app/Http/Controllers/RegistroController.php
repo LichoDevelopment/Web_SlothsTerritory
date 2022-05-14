@@ -3,10 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Registro;
-use App\Models\Tour;
-use App\Models\Horario;
-use App\Models\Fecha_tour;
 use Illuminate\Http\Request;
 
 class RegistroController extends Controller

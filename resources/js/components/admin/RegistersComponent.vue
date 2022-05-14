@@ -28,7 +28,7 @@
       return {
         search: '',
         headers: [
-            { text: 'Dia del tour', value: 'dayTour', sortable: true },
+            { text: 'Dia del tour', value: 'tourDay', sortable: true },
             { text: 'Tipo del tour', value: 'tourType', sortable: true },
             { text: 'Hola del tour', value: 'tourHour', sortable: true },
             { text: 'Cantidad de personas', value: 'totalPeople', sortable: true },
@@ -39,10 +39,9 @@
     methods: {
         async getRecords(){
             let response = await axios.get('api/records')
-            console.log(response)
             this.records = response.data.map(item =>{
                 return {
-                    dayTour: item.fecha_tour.fecha,
+                    tourDay: item.fecha_tour.fecha,
                     tourType: item.horario.tours.nombre,
                     tourHour: item.horario.hora,
                     totalPeople: item.cantidad_reservas,
