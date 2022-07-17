@@ -43,8 +43,6 @@ RewriteCond %{HTTP_REFERER} !^https://sloths-territory.com$      [NC]
 RewriteCond %{HTTP_REFERER} !^https://www.sloths-territory.com/.*$      [NC]
 RewriteCond %{HTTP_REFERER} !^https://www.sloths-territory.com$      [NC]
 
-<<<<<<< HEAD
-=======
 #Cache de imágenes en el navegador durante un mes
 
 # <FilesMatch "\.(ico|jpg|jpeg|png|gif)$">
@@ -94,7 +92,6 @@ RewriteCond %{HTTP_REFERER} !^https://www.sloths-territory.com/.*$      [NC]
 RewriteCond %{HTTP_REFERER} !^https://www.sloths-territory.com$      [NC]
 # RewriteCond %{HTTP_REFERER} !^https://www.sloths-territory.sandovalf.com/.*$      [NC]
 # RewriteCond %{HTTP_REFERER} !^https://www.sloths-territory.sandovalf.com$      [NC]
->>>>>>> b8d7f653a833d8dd9f7f9c44a63162a8210917ee
 RewriteRule .*\.(jpg|jpeg|gif|png|bmp)$ - [F,NC]
 
 
