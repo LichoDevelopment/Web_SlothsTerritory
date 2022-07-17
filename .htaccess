@@ -43,55 +43,6 @@ RewriteCond %{HTTP_REFERER} !^https://sloths-territory.com$      [NC]
 RewriteCond %{HTTP_REFERER} !^https://www.sloths-territory.com/.*$      [NC]
 RewriteCond %{HTTP_REFERER} !^https://www.sloths-territory.com$      [NC]
 
-#Cache de imágenes en el navegador durante un mes
-
-# <FilesMatch "\.(ico|jpg|jpeg|png|gif)$">
-
-# Header set Cache-Control "max-age=2592000, public"
-
-# </FilesMatch>
-
-
-# RewriteCond %{HTTP_REFERER} !^http://lichodevelopment.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://lichodevelopment.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://lichodevelopment.com.sandovalf.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://lichodevelopment.com.sandovalf.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://sandovalf.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://sandovalf.com$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://sloths-territory.com/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://sloths-territory.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://sloths-territory.sandovalf.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://sloths-territory.sandovalf.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://www.lichodevelopment.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://www.lichodevelopment.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://www.lichodevelopment.com.sandovalf.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://www.lichodevelopment.com.sandovalf.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://www.sandovalf.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://www.sandovalf.com$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://www.sloths-territory.com/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://www.sloths-territory.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://www.sloths-territory.sandovalf.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://www.sloths-territory.sandovalf.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://lichodevelopment.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://lichodevelopment.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://lichodevelopment.com.sandovalf.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://lichodevelopment.com.sandovalf.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://sandovalf.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://sandovalf.com$      [NC]
-RewriteCond %{HTTP_REFERER} !^https://sloths-territory.com/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^https://sloths-territory.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://sloths-territory.sandovalf.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://sloths-territory.sandovalf.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://www.lichodevelopment.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://www.lichodevelopment.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://www.lichodevelopment.com.sandovalf.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://www.lichodevelopment.com.sandovalf.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://www.sandovalf.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://www.sandovalf.com$      [NC]
-RewriteCond %{HTTP_REFERER} !^https://www.sloths-territory.com/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^https://www.sloths-territory.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://www.sloths-territory.sandovalf.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://www.sloths-territory.sandovalf.com$      [NC]
 RewriteRule .*\.(jpg|jpeg|gif|png|bmp)$ - [F,NC]
 
 
