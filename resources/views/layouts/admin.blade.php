@@ -13,9 +13,17 @@
     <title>Inbox</title>
 
     {{-- <link href="css/font-face.css" rel="stylesheet" media="all"> --}}
-    <link href="{{env('APP_URL')}}/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" >
-
-    <link href="{{env('APP_URL')}}/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" >
+    
+    @if (env('APP_ENV') == 'local')
+        <link href="{{asset('vendor/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" >
+        <link href="{{asset('vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet" >
+        <link href="{{asset('vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" >
+    @else
+        <link href="{{env('APP_URL')}}/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" >
+        <link href="{{env('APP_URL')}}/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" >
+        <link href="{{env('APP_URL')}}/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" >
+    @endif
+    
     <link href="{{env('APP_URL')}}/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" >
     <link href="{{env('APP_URL')}}/vendor/animsition/animsition.min.css" rel="stylesheet" >
     <link href="{{env('APP_URL')}}/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" >
@@ -23,7 +31,6 @@
     <link href="{{env('APP_URL')}}/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" >
     <link href="{{env('APP_URL')}}/vendor/slick/slick.css" rel="stylesheet" >
     <link href="{{env('APP_URL')}}/vendor/select2/select2.min.css" rel="stylesheet" >
-    <link href="{{env('APP_URL')}}/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" >
     <link href="{{env('APP_URL')}}/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" >
     <link href="{{env('APP_URL')}}/css/admin.css" rel="stylesheet" >
     <link href="{{env('APP_URL')}}/css/combo.css" rel="stylesheet" >
