@@ -34,55 +34,68 @@ AddOutputFilterByType DEFLATE application/javascript
 
 AddOutputFilterByType DEFLATE application/x-javascript
 
+RewriteCond %{HTTP_REFERER} !^http://sloths-territory.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://sloths-territory.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.sloths-territory.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.sloths-territory.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://sloths-territory.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://sloths-territory.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.sloths-territory.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.sloths-territory.com$      [NC]
 
-#Cache de imágenes en el navegador durante un mes
-
-# <FilesMatch "\.(ico|jpg|jpeg|png|gif)$">
-
-# Header set Cache-Control "max-age=2592000, public"
-
-# </FilesMatch>
-
-
-# RewriteCond %{HTTP_REFERER} !^http://lichodevelopment.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://lichodevelopment.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://lichodevelopment.com.sandovalf.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://lichodevelopment.com.sandovalf.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://sandovalf.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://sandovalf.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://sloths-territory.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://sloths-territory.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://sloths-territory.sandovalf.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://sloths-territory.sandovalf.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://www.lichodevelopment.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://www.lichodevelopment.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://www.lichodevelopment.com.sandovalf.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://www.lichodevelopment.com.sandovalf.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://www.sandovalf.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://www.sandovalf.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://www.sloths-territory.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://www.sloths-territory.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://www.sloths-territory.sandovalf.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://www.sloths-territory.sandovalf.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://lichodevelopment.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://lichodevelopment.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://lichodevelopment.com.sandovalf.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://lichodevelopment.com.sandovalf.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://sandovalf.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://sandovalf.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://sloths-territory.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://sloths-territory.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://sloths-territory.sandovalf.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://sloths-territory.sandovalf.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://www.lichodevelopment.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://www.lichodevelopment.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://www.lichodevelopment.com.sandovalf.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://www.lichodevelopment.com.sandovalf.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://www.sandovalf.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://www.sandovalf.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://www.sloths-territory.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://www.sloths-territory.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://www.sloths-territory.sandovalf.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://www.sloths-territory.sandovalf.com$      [NC]
 RewriteRule .*\.(jpg|jpeg|gif|png|bmp)$ - [F,NC]
 
+
+# BEGIN Expire headers
+<ifModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 seconds"
+  ExpiresByType image/x-icon "access plus 2592000 seconds"
+  ExpiresByType image/jpeg "access plus 2592000 seconds"
+  ExpiresByType image/png "access plus 2592000 seconds"
+  ExpiresByType image/gif "access plus 2592000 seconds"
+  ExpiresByType application/x-shockwave-flash "access plus 2592000 seconds"
+  ExpiresByType text/css "access plus 604800 seconds"
+  ExpiresByType text/javascript "access plus 216000 seconds"
+  ExpiresByType application/javascript "access plus 216000 seconds"
+  ExpiresByType application/x-javascript "access plus 216000 seconds"
+  ExpiresByType text/html "access plus 600 seconds"
+  ExpiresByType application/xhtml+xml "access plus 600 seconds"
+</ifModule>
+# END Expire headers
+ 
+# BEGIN Cache-Control Headers
+<ifModule mod_headers.c>
+  <filesMatch "\.(ico|jpe?g|png|gif|swf)$">
+    Header set Cache-Control "max-age=2592000, public"
+  </filesMatch>
+  <filesMatch "\.(css)$">
+    Header set Cache-Control "max-age=604800, public"
+  </filesMatch>
+  <filesMatch "\.(js)$">
+    Header set Cache-Control "max-age=216000, private"
+  </filesMatch>
+  <filesMatch "\.(x?html?|php)$">
+    Header set Cache-Control "max-age=600, private, must-revalidate"
+  </filesMatch>
+</ifModule>
+# END Cache-Control Headers
+ 
+# BEGIN Turn ETags Off
+<ifModule mod_headers.c>
+  Header unset ETag
+</ifModule>
+FileETag None
+# END Turn ETags Off
+ 
+# BEGIN Remove Last-Modified Header
+<ifModule mod_headers.c>
+  Header unset Last-Modified
+</ifModule>
+# END Remove Last-Modified Header
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|xml|gz)$">
+    Header append Vary Accept-Encoding
+  </FilesMatch>
+</IfModule>

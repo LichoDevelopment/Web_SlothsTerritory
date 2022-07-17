@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Models\Registro;
 use Illuminate\Http\Request;
 
-class RegistroController extends Controller
+class RecordsController extends Controller
 {
     /**
      * @var Request
@@ -19,6 +20,6 @@ class RegistroController extends Controller
 
     public function index()
     {
-        return view('admin.registros.index');
+        return Registro::with('horario.tours', 'fecha_tour')->get();
     }
 }
