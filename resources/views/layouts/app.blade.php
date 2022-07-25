@@ -13,11 +13,11 @@
 
     <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
 	<meta property="og:site_name" content="Sloth's territory" /> <!-- website name -->
-	<meta property="og:site" content="https://www.sloths-territory.com" /> <!-- website link -->
+	<meta property="og:site" content="https://www.slothsterritory.com" /> <!-- website link -->
 	<meta property="og:title" content="Sloth's territory | tour de perezosos"/> <!-- title shown in the actual shared post -->
 	<meta property="og:description" content=" {!! $siteSections['web.descripcion'][0]['content'] !!} " /> <!-- description shown in the actual shared post -->
 	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
-	<meta property="og:url" content="https://www.sloths-territory.com" /> <!-- where do you want your post to link to -->
+	<meta property="og:url" content="https://www.slothsterritory.com" /> <!-- where do you want your post to link to -->
 	<meta property="og:type" content="website" />
 
     <!-- Website Title -->

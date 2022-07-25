@@ -14,3 +14,5 @@ yarn-error.log
 /.vscode
 /vendor
 app/Providers/AppServiceProvider.php
+error_log
+error_log
