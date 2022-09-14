@@ -20,7 +20,7 @@
               <div>Sloth's Territory</div>
               <div>La Fortuna,<br /> San Carlos, CR</div>
               <div>+506 8561 0404</div>
-              <div><a target="_blank" href="https://sloths-territory.com/es">sloths-territory.com</a></div>
+              <div><a target="_blank" href="https://slothsterritory.com/es">slothsterritory.com</a></div>
             </div>
             <div id="project">
               <div><span>TOUR: </span> <span>{{$reserva->tour->nombre}}</span></div>
