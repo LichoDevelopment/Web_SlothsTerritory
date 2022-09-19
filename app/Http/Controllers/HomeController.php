@@ -109,7 +109,8 @@ class HomeController extends Controller
     public function privacy($locale)
     {
         App::setLocale($locale);
-        return view('privacy-policy', compact('locale'));
+        $siteSections = SiteSection::all()->where('language', $locale)->groupBy('title');
+        return view('privacy-policy', compact('locale', 'siteSections'));
     }
 
     public function terms($locale)
