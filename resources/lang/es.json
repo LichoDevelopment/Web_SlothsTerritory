@@ -207,7 +207,14 @@
     "regla.SlothsTerritoryDuranteVisita_4": "Silbar a los perezosos o mover las ramas donde se encuentren, está totalmente prohibido.",
     "regla.SlothsTerritoryDuranteVisita_5": "Caminaremos a través de un hábitat de vida silvestre, por lo que acariciar a los animales, tocarlos o tomar fotografías con flash son cosas que no permitimos.",
     "regla.SlothsTerritoryDuranteVisita_6": "Para mitigar el impacto de las personas, en el  ecosistema, dentro de los senderos les pedimos que hablen en voz baja.",
-    "regla.SlothsTerritoryDuranteVisita_7": "Mascotas no están permitidas dentro del sendero."
+    "regla.SlothsTerritoryDuranteVisita_7": "Mascotas no están permitidas dentro del sendero.",
+
+    "cancellation_policy.title": "Políticas de Cancelación",
+    "cancellation_policy.item1": "Cancelaciones hechas con 7 días o más no tendrán ninguna penalidad.",
+    "cancellation_policy.item2": "Cancelaciones hechas entre 6 días de anticipación y 48 horas antes de la fecha del tour tendrán un cargo del 50% de la totalidad.",
+    "cancellation_policy.item3": "Cancelaciones hechas con menos de 48 horas antes de la llegada, tendrán un cargo del 100%.",
+    "cancellation_policy.item4": "Para realizar una cancelación se deberá de enviar la solicitud al correo electrónico sloth.territory@gmail.com únicamente por este medio se recibirán las mismas",
+    "cancellation_policy.item5": "Cuando un reembolso es aplicable, el mismo tardará hasta 30 días naturales, este tiempo dependerá las políticas del banco emisor de la tarjeta con la cual se realizó la compra."
 }
 
 

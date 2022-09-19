@@ -208,5 +208,12 @@
     "regla.SlothsTerritoryDuranteVisita_4": "Whistle to the sloths or to move the branches where they are, it’s completely prohibited",
     "regla.SlothsTerritoryDuranteVisita_5": "We will be walking through a wildlife habitat so petting animals, touching them or taking pictures with flash are things that we do not allow.",
     "regla.SlothsTerritoryDuranteVisita_6": "To mitigate the impact of people, on the ecosystem, in the trails we ask you to speak quietly.",
-    "regla.SlothsTerritoryDuranteVisita_7": "Pets are not allowed inside the trail."
+    "regla.SlothsTerritoryDuranteVisita_7": "Pets are not allowed inside the trail.",
+
+    "cancellation_policy.title": "Cancellation Policies",
+    "cancellation_policy.item1": "Cancellations made with 7 days or more will not have any penalty.",
+    "cancellation_policy.item2": "Cancellations made between 6 days in advance and 48 hours before the date of the tour will have a penalty of 50% of the total.",
+    "cancellation_policy.item3": "Cancellations made less than 48 hours before arrival will incur a 100% charge.",
+    "cancellation_policy.item4": "To proceed with a cancellation, the request must be sent to the email sloth.territory@gmail.com, only by this means will be received.",
+    "cancellation_policy.item5": "When a refund is applicable, it will take up to 30 calendar days, this time will depend on the policies of the issuing bank of the card with which the purchase was made."
 }
