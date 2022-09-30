@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SalesAgentController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\AgenciasController;
@@ -105,8 +106,8 @@ Route::middleware(['auth'])->group(function () {
 /**Public routes */
 
 Route::redirect('/', '/en');
-Route::redirect('/privacy-policy', '/es/terms-conditions');
-Route::redirect('/terms-conditions', '/es/terms-conditions');
+// Route::redirect('/privacy-policy', '/es/terms-conditions');
+// Route::redirect('/terms-conditions', '/es/terms-conditions');
 // Route::redirect('/combo', '/es/combo');
 
 Route::group(['prefix'=>'{locale}', 'where'=> ['locale'=> 'es|en']],function () use ($router) {
@@ -125,3 +126,5 @@ Route::delete('/mensaje/{id}', 'MensajesWebController@destroy');
 
 
 Route::post('/web-consulting-email', 'MensajesWebController@reply')->name('web.consulting.reply');
+
+Route::get('/agentes-de-ventas', [SalesAgentController::class, 'index'])->name('sales_agents.index');

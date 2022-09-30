@@ -77,7 +77,7 @@
 
                     <div class="container text-center text-muted">
                         Senderos RPKO S.A. cédula jurídica 3-101-777088 <br>
-                        sloth.territory.2018@gmail.com | Teléfono: +506 8561 0404 <br>
+                        info@slothsterritory | Teléfono: +506 8561 0404 <br>
                         La Fortuna, Alajuela, Costa Rica
                     </div>
                     <a class="btn-outline-reg back" href="/">{{__("header.home")}}</a>

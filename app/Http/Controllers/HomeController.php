@@ -116,7 +116,8 @@ class HomeController extends Controller
     public function terms($locale)
     {
         App::setLocale($locale);
-        return view('terms-conditions', compact('locale'));
+        $siteSections = SiteSection::all()->where('language', $locale)->groupBy('title');
+        return view('terms-conditions', compact('locale', 'siteSections'));
     }
 
     public function combos($locale)

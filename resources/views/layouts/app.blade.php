@@ -35,6 +35,7 @@
 	<link href=" {{asset('css/styles.css')}} " rel="stylesheet">
     <link href=" {{asset('css/combo.css')}} " rel="stylesheet">
 	<link href=" {{asset('css/responsive.css')}} " rel="stylesheet">
+    <link href=" {{asset('css/salesAgent.css')}} " rel="stylesheet">
 
 	<!-- Favicon  -->
     <link rel="icon" href=" {{asset('images/favicon.png')}} ">
@@ -58,7 +59,7 @@
 
 
         <!-- Image Logo -->
-        <a class="navbar-brand logo-image" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">
+        <a class="navbar-brand logo-image" href="{{ route('home',[$locale]) }}" >
             <img src="/images/favicon.png"  class="logo-img" alt="Sloth's Territory" title="Sloths Territory">
         </a>
 
@@ -167,7 +168,7 @@
                         <ul class="list-unstyled li-space-lg white">
                             <li>
                                 <i class="fas fa-file-alt"></i>
-                                <a class="white footer-link" href={{ route('terms-conditions',[$locale]) }}" >Terms</a>
+                                <a class="white footer-link" href="{{ route('terms-conditions',[$locale]) }}">Terms</a>
                             </li>
                             <li >
                                 <i class="fas fa-user-shield"></i>
@@ -211,7 +212,7 @@
                             </li>
                             <li >
                                 <i class="fas fa-envelope"></i>
-                                <a class="white footer-link" href="mailto:sloths.territory@gmail.com">sloths.territory@gmail.com</a>
+                                <a class="white footer-link" href="mailto:info@slothsterritory.com">info@slothsterritory.com</a>
                             </li>
                         </ul>
                     </div>
@@ -227,7 +228,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="p-small text-center">Created by <a href="#m">LichoDevelopment</a></p>
+                    <p class="p-small text-center">Created by <a href="#m">TiCoding</a></p>
                 </div> <!-- end of col -->
             </div> <!-- enf of row -->
         </div> <!-- end of container -->

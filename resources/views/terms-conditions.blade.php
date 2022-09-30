@@ -7,8 +7,8 @@
     <header id="header" class="ex-header">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <h1>Terms & Conditions</h1>
+                <div class="col-md-12">
+                    <h1>{{__("cancellation_policy.title")}}</h1>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumbs">
-                        <a href="index.html">Home</a><i class="fa fa-angle-double-right"></i><span>Terms & Conditions</span>
+                        <a href="index.html">{{__("header.home")}}</a><i class="fa fa-angle-double-right"></i><span>{{__("cancellation_policy.title")}}</span>
                     </div> <!-- end of breadcrumbs -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -31,69 +31,61 @@
     <!-- end of breadcrumbs -->
 
 
-    <!-- Terms Content -->
+    <!-- Privacy Content -->
     <div class="ex-basic-2">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="text-container">
-                        <h3>Limitations Of Liability</h3>
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. <a class="green" href="#your-link">Personal Information</a> about you such as:</p>
-                        <ul class="list-unstyled li-space-lg indent">
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</div>
-                            </li>
-                        </ul>
-                    </div> <!-- end of text-container -->
+                        <div class="row">
+                            <div class="col-md-6 col-lg-12">
+                                <ul class="list-unstyled li-space-lg indent">
+                                    <li class="media">
+                                        <i class="fas fa-square"></i>
+                                        <div class="media-body">
+                                            {{__("cancellation_policy.item1")}}
+                                        </div>
+                                    </li>
+                                    <li class="media">
+                                        <i class="fas fa-square"></i>
+                                        <div class="media-body">
+                                            {{__("cancellation_policy.item2")}}
+                                        </div>
+                                    </li>
+                                    <li class="media">
+                                        <i class="fas fa-square"></i>
+                                        <div class="media-body">
+                                            {{__("cancellation_policy.item3")}}
+                                        </div>
+                                    </li>
+                                    <li class="media">
+                                        <i class="fas fa-square"></i>
+                                        <div class="media-body">
+                                            {{__("cancellation_policy.item4")}}
+                                        </div>
+                                    </li>
+                                    <li class="media">
+                                        <i class="fas fa-square"></i>
+                                        <div class="media-body">
+                                            {{__("cancellation_policy.item5")}}
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div> <!-- end of col -->
+                        </div> <!-- end of row -->
+                    </div> <!-- end of text-container-->
 
-                    <div class="text-container">
-                        <h3>Terms And Conditions</h3>
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
-                    </div> <!-- end of text-container -->
-
-                    <div class="text-container">
-                        <h3>License Types & Template Usage</h3>
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
-                    </div> <!-- end of text-container -->
-
-                    <div class="text-container">
-                        <h3>Designer Membership And How It Applies</h3>
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
-                    </div> <!-- end of text-container -->
-
-                    <div class="text-container last">
-                        <h3>Assets Used In The Live Preview Content</h3>
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
-                        <a class="btn-outline-reg" href="index.html">BACK</a>
-                    </div> <!-- end of text-container -->
-                </div>
+                    <div class="container text-center text-muted">
+                        Senderos RPKO S.A. cédula jurídica 3-101-777088 <br>
+                        info@slothsterritory.com | Teléfono: +506 8561 0404 <br>
+                        La Fortuna, Alajuela, Costa Rica
+                    </div>
+                    <a class="btn-outline-reg back" href="/">{{__("header.home")}}</a>
+                </div> <!-- end of col-->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
-    </div> <!-- end of ex-basic -->
-    <!-- end of terms content -->
+    </div> <!-- end of ex-basic-2 -->
+    <!-- end of privacy content -->
 
 
     <!-- Breadcrumbs -->
@@ -102,13 +94,12 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumbs">
-                        <a href="index.html">Home</a><i class="fa fa-angle-double-right"></i><span>Terms & Conditions</span>
+                        <a href="index.html">Home</a><i class="fa fa-angle-double-right"></i><span>{{__("cancellation_policy.title")}}</span>
                     </div> <!-- end of breadcrumbs -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
     </div> <!-- end of ex-basic-1 -->
     <!-- end of breadcrumbs -->
-
 
 @endsection

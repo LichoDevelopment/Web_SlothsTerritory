@@ -1,0 +1,94 @@
+#img-sales-agent {
+    width: 100%;
+    min-height: 350px;
+    max-height: 650px;
+}
+
+#sales-agent-container {
+    position: relative;
+    display: grid;
+    /* margin-top: 50px; */
+    /* margin-bottom: 50px; */
+}
+
+#img-sales-agent-container {
+    position: relative;
+    /* margin-top: 50px; */
+    /* margin-bottom: 50px; */
+}
+
+#sales-agent-title-container {
+    position: absolute;
+    padding: 50px;
+    margin-top: 20%;
+    /* margin-top: 50px; */
+}
+
+#h2-sales-agent {
+    color: white;
+    font-size: 50px;
+    font-weight: 700;
+    /* text-align: center; */
+}
+
+.p-h2-sales-agent {
+    color: white;
+    font-size: 45px;
+    font-weight: bold;
+    text-align: left;
+    padding-top: 10px;
+}
+
+.img-sales-agent-options{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.h3-sales-agent {
+    color: rgb(22, 21, 21);
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.options-container{
+    padding: 0.01em 16px
+}
+
+.options-container:after,
+.options-container:before,
+
+.sales-agent-row:after,
+.sales-agent-row:before{
+    content: "";
+    display: table;
+    clear: both
+}
+
+.sales-agent-center {
+    text-align: center !important
+}
+
+.sales-agent-quarter {
+    float: left;
+    width: 100%
+}
+
+.sales-agent-circle {
+    border-radius: 50%;
+    background-color: #0e5a03;
+}
+
+.sales-agent-hover-opacity:hover {
+    opacity: 0.60
+}
+
+
+@media (min-width:601px) {
+    .sales-agent-quarter {
+        width: 24.99999%
+    }
+}
+

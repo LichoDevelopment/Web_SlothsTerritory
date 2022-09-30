@@ -567,7 +567,7 @@
                             {!! $siteSections['contact.direccion'][0]['content'] !!}
                         </a></li>
                                         <li><i class="fas fa-phone"></i><a href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">+506 8561 0404</a></li>
-                                        <li><i class="fas fa-envelope"></i><a href="mailto:sloths.territory@gmail.com" target="_blank">sloths.territory@gmail.com</a></li>
+                                        <li><i class="fas fa-envelope"></i><a href="mailto:info@slothsterritory.com" target="_blank">info@slothsterritory.com</a></li>
                                     </ul>
                                     <h3><a href="{{ route('sections.edit', $siteSections['contact.titulo_redes_sociaes'][0]['uuid'])}}">
                             {!! $siteSections['contact.titulo_redes_sociaes'][0]['content'] !!}
