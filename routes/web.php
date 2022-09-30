@@ -128,3 +128,4 @@ Route::delete('/mensaje/{id}', 'MensajesWebController@destroy');
 Route::post('/web-consulting-email', 'MensajesWebController@reply')->name('web.consulting.reply');
 
 Route::get('/agentes-de-ventas', [SalesAgentController::class, 'index'])->name('sales_agents.index');
+Route::get('/agentes-de-ventas/download/{name}', [SalesAgentController::class, 'download'])->name('sales_agents.download');

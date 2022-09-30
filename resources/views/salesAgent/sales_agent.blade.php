@@ -22,7 +22,8 @@
         <div class="sales-agent-row"><br>
 
             <div class="sales-agent-quarter">
-                <img src="images/sales-agent/copy1.jpeg" alt="Boss" style="width:45%" class="sales-agent-circle sales-agent-hover-opacity img-sales-agent-options">
+                <a href="{{ route('sales_agents.download', 'Fotografias_Slothsterritory.zip') }}">test</a>
+                <img src="public\salesAgent\copy1.jpeg" alt="Boss" style="width:45%" class="sales-agent-circle sales-agent-hover-opacity img-sales-agent-options">
                 <h3 class="h3-sales-agent">TARIFAS</h3>
             </div>
 
