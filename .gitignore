@@ -1,6 +1,7 @@
 /node_modules
 /public/hot
 /public/storage
+/public/agents_zip_files
 /storage/*.key
 .env
 .env.backup
