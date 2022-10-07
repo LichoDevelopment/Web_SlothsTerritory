@@ -76,13 +76,17 @@
     width: 100%
 }
 
+.sales-agent-quarter a {
+    text-decoration: none;
+}
+
 .sales-agent-circle {
     border-radius: 50%;
     background-color: #0e5a03;
 }
 
 .sales-agent-hover-opacity:hover {
-    opacity: 0.60
+    transform: scale(1.05);
 }
 
 

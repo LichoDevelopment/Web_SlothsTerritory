@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\SiteSection;
-use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Response as FacadeResponse;
 
 class SalesAgentController extends Controller
 {
@@ -23,13 +22,8 @@ class SalesAgentController extends Controller
     }
 
     public function downloadFile($name){
-        // return response()->download($this->disk .'/'.$name);
-
-        if(Storage::disk($this->disk)->exists($name)){
-            return Storage::disk($this->disk)->download($name);
-        }
-
-        return response('', 404);
+        $file= public_path(). "/agentes/$name";
+        return FacadeResponse::download($file);
     }
 
 }
