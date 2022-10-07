@@ -22,7 +22,7 @@ class SalesAgentController extends Controller
     }
 
     public function downloadFile($name){
-        $file= public_path(). "/agentes/$name";
+        $file= public_path(). "/agents_zip_files/$name";
         return FacadeResponse::download($file);
     }
 
