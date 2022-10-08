@@ -26,21 +26,21 @@
 
 #h2-sales-agent {
     color: white;
-    font-size: 50px;
+    font-size: 1em;
     font-weight: 700;
     /* text-align: center; */
 }
 
 .h2-sales-agent-info {
     color: rgb(22, 21, 21);
-    font-size: 2.5rem;
+    font-size: 2em;
     font-weight: 600;
     text-align: left;
 }
 
 .p-h2-sales-agent {
     color: white;
-    font-size: 45px;
+    font-size: 3em;
     font-weight: bold;
     text-align: left;
     padding-top: 10px;
@@ -54,7 +54,7 @@
 
 .h3-sales-agent {
     color: rgb(22, 21, 21);
-    font-size: 30px;
+    font-size: 1.5em;
     font-weight: bold;
     text-align: center;
     padding-top: 10px;
@@ -122,23 +122,65 @@
     padding-left: 10px;
 }
 
-
 .greenSloth{
     color: #0e5a03;
 }
 
-@media (max-with: 800px) {
-    .p-h2-sales-agent {
-        font-size: 30px;
-        padding: 100px 0px 0px 25px;
-    }
-
-    .h3-sales-agent {
-        font-size: 20px;
+@media (max-width: 2000px) {
+    #sales-agent-title-container {
+        margin-top: 25rem;
     }
 }
 
-@media (min-width:601px) {
+@media (max-width: 1000px) {
+    .p-h2-sales-agent {
+        font-size: 2em;
+    }
+    #sales-agent-title-container {
+        margin-top: 20rem;
+        padding-left: 1em;
+        padding-top: 7em;
+    }
+}
+
+@media (max-width: 750px) {
+    #sales-agent-title-container {
+        margin-top: 20rem;
+        padding-left: 1em;
+        padding-top: 3em;
+    }
+}
+
+@media (max-width: 650px) {
+    #sales-agent-title-container {
+        margin-top: 16rem;
+        padding-left: 1em;
+        padding-top: 1rem;
+    }
+    .h3-sales-agent {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 500px) {
+    #sales-agent-title-container {
+        margin-top: 13rem;
+        padding-left: 1em;
+        padding-top: 1rem;
+    }
+    .p-h2-sales-agent {
+        font-size: 1.5em;
+        padding: 0px;
+    }
+}
+
+@media (max-width: 450px) {
+    .h3-sales-agent {
+        font-size: 0.7em;
+    }
+}
+
+@media (min-width:320px) {
     .sales-agent-quarter {
         width: 24.99999%
     }
