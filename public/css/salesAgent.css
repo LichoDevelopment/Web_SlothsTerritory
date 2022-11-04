@@ -2,6 +2,7 @@
     width: 100%;
     min-height: 350px;
     max-height: 650px;
+    object-fit: cover;
 }
 
 #sales-agent-container {
