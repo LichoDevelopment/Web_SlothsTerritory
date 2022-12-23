@@ -252,7 +252,7 @@
     </div> <!-- end of copyright -->
     <!-- end of copyright -->
     <a 
-        href="https://wa.me/message/UAO3TORZITGBE1" id="bookNowBtn"
+        href="https://book.peek.com/s/0d5738ed-bc16-4e2e-8706-e15cf8963b30/NxMp2" id="bookNowBtn"
         target="_blank" class="reservar-btn btn btn-danger">
         <span>{!! $siteSections['btn.reservar_ahora'][0]['content'] !!}</span>
         <i class="fas fa-angle-double-right"></i>

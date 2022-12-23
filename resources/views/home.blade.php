@@ -28,7 +28,7 @@
             <h1 class="main-title mt-3"> {!! $siteSections['inicio.titulo_principal'][0]['content'] !!} </h1>
             <p class="p-heading p-large"> {!! $siteSections['inicio.parrafo_descriptivo'][0]['content'] !!}<div class=""></div></p>
             <div class="d-flex justify-content-center align-items-center">
-                <a class="btn-solid-lg page-scroll" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">{!! $siteSections['btn.reservar_ahora'][0]['content'] !!}</a>
+                <a class="btn-solid-lg page-scroll" href="https://book.peek.com/s/0d5738ed-bc16-4e2e-8706-e15cf8963b30/NxMp2" target="_blank">{!! $siteSections['btn.reservar_ahora'][0]['content'] !!}</a>
             </div>
         </div>
 
