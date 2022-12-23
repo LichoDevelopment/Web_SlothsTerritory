@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     {{-- <meta name="keywords" content="sloths arenal costa rica, sloths habitat, sloths territory la fortuna, sloths and frogs, sloths baby, 
     sloth costa rica, sloths in costa rica, sloths la fortuna, sloth tour la fortuna, sloths la fortuna costa rica , sloth costa rica, sloths pictures, sloths 3 toed, sloths 3 toe, 3 toed sloths, osos perezosos, clima en la fortuna"> --}}
-    <meta name="keywords" content="{!! $siteSections['web.keyword1'][0]['content'] !!}, {!! $siteSections['web.keyword2'][0]['content'] !!}, {!! $siteSections['web.keyword3'][0]['content'] !!}, {!! $siteSections['web.keyword4'][0]['content'] !!}, {!! $siteSections['web.keyword5'][0]['content'] !!}, {!! $siteSections['web.keyword6'][0]['content'] !!}, {!! $siteSections['web.keyword7'][0]['content'] !!}, {!! $siteSections['web.keyword8'][0]['content'] !!}, {!! $siteSections['web.keyword9'][0]['content'] !!}, {!! $siteSections['web.keyword10'][0]['content'] !!}, {!! $siteSections['web.keyword11'][0]['content'] !!}, {!! $siteSections['web.keyword12'][0]['content'] !!}, {!! $siteSections['web.keyword13'][0]['content'] !!}, {!! $siteSections['web.keyword14'][0]['content'] !!}"
+    <meta name="keywords" content="{!! $siteSections['web.keyword1'][0]['content'] !!}, {!! $siteSections['web.keyword2'][0]['content'] !!}, {!! $siteSections['web.keyword3'][0]['content'] !!}, {!! $siteSections['web.keyword4'][0]['content'] !!}, {!! $siteSections['web.keyword5'][0]['content'] !!}, {!! $siteSections['web.keyword6'][0]['content'] !!}, {!! $siteSections['web.keyword7'][0]['content'] !!}, {!! $siteSections['web.keyword8'][0]['content'] !!}, {!! $siteSections['web.keyword9'][0]['content'] !!}, {!! $siteSections['web.keyword10'][0]['content'] !!}, {!! $siteSections['web.keyword11'][0]['content'] !!}, {!! $siteSections['web.keyword12'][0]['content'] !!}, {!! $siteSections['web.keyword13'][0]['content'] !!}, {!! $siteSections['web.keyword14'][0]['content'] !!}">
     {{-- <!-- SEO Meta Tags --> --}}
     <meta name="description" content=" {!! $siteSections['web.descripcion'][0]['content'] !!}">
     <meta name="author" content="LichoDevelopment">
@@ -39,6 +39,23 @@
 
 	<!-- Favicon  -->
     <link rel="icon" href=" {{asset('images/favicon.png')}} ">
+
+    {{-- Peek Pro API --}}
+    <script type="text/javascript">
+        (function(config) {
+          window._peekConfig = config || {};
+          var idPrefix = 'peek-book-button';
+          var id = idPrefix+'-js'; if (document.getElementById(id)) return;
+          var head = document.getElementsByTagName('head')[0];
+          var el = document.createElement('script'); el.id = id;
+          var date = new Date; var stamp = date.getMonth()+"-"+date.getDate();
+          var basePath = "https://js.peek.com";
+          el.src = basePath + "/widget_button.js?ts="+stamp;
+          head.appendChild(el); id = idPrefix+'-css'; el = document.createElement('link'); el.id = id;
+          el.href = basePath + "/widget_button.css?ts="+stamp;
+          el.rel="stylesheet"; el.type="text/css"; head.appendChild(el);
+        })({key: '0d5738ed-bc16-4e2e-8706-e15cf8963b30'});
+    </script>
 </head>
 <body data-spy="scroll" data-target=".fixed-top">
     

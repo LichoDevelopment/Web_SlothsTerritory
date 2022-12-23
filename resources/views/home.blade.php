@@ -334,7 +334,7 @@
                     <div class="testimonial-container">
                         <p class="testimonial-text">{!! $siteSections['service.todos.info.parrafo_testimonial'][0]['content'] !!}</p>
                     </div>
-                    <a class="btn-solid-reg" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">{!! $siteSections['btn.reservar_ahora'][0]['content'] !!}</a> <a class="btn-outline-reg mfp-close as-button" href="#services">{!! $siteSections['btn.volver'][0]['content'] !!}</a>
+                    <a class="btn-solid-reg" href="https://book.peek.com/s/0d5738ed-bc16-4e2e-8706-e15cf8963b30/O49p6" target="_blank">{!! $siteSections['btn.reservar_ahora'][0]['content'] !!}</a> <a class="btn-outline-reg mfp-close as-button" href="#services">{!! $siteSections['btn.volver'][0]['content'] !!}</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -364,7 +364,7 @@
                     <div class="testimonial-container">
                         <p class="testimonial-text">{!! $siteSections['service.todos.info.parrafo_testimonial'][0]['content'] !!}</p>
                     </div>
-                    <a class="btn-solid-reg" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">{!! $siteSections['btn.reservar_ahora'][0]['content'] !!}</a> <a class="btn-outline-reg mfp-close as-button" href="#services">{!! $siteSections['btn.volver'][0]['content'] !!}</a>
+                    <a class="btn-solid-reg" href="https://book.peek.com/s/0d5738ed-bc16-4e2e-8706-e15cf8963b30/Ad2j6" target="_blank">{!! $siteSections['btn.reservar_ahora'][0]['content'] !!}</a> <a class="btn-outline-reg mfp-close as-button" href="#services">{!! $siteSections['btn.volver'][0]['content'] !!}</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
@@ -396,7 +396,7 @@
                     <div class="testimonial-container">
                         <p class="testimonial-text">{!! $siteSections['service.todos.info.parrafo_testimonial'][0]['content'] !!}</p>
                     </div>
-                    <a class="btn-solid-reg" href="https://wa.me/message/UAO3TORZITGBE1" target="_blank">{!! $siteSections['btn.reservar_ahora'][0]['content'] !!}</a> <a class="btn-outline-reg mfp-close as-button" href="#services">{!! $siteSections['btn.volver'][0]['content'] !!}</a>
+                    <a class="btn-solid-reg" href="https://book.peek.com/s/0d5738ed-bc16-4e2e-8706-e15cf8963b30/em9pb" target="_blank">{!! $siteSections['btn.reservar_ahora'][0]['content'] !!}</a> <a class="btn-outline-reg mfp-close as-button" href="#services">{!! $siteSections['btn.volver'][0]['content'] !!}</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of lightbox-basic -->
