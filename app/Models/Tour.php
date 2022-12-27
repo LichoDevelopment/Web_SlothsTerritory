@@ -30,10 +30,10 @@ class Tour extends Model
 
 
     public function horarios(){
-        return $this->hasMany('App\Models\Horario');
+        return $this->hasMany('App\Models\Horario', 'id_tour');
     }
 
     public function precios(){
-        return $this->hasMany('App\Models\Precio');
+        return $this->hasMany('App\Models\Precio', 'id_tour');
     }
 }
