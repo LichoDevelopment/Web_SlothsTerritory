@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 /**Admin routes */
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/', 'HomeController@admin')->name('admin.index');
+    Route::get('/admin', 'HomeController@admin')->name('admin.index');
     Route::get('/registro', 'RegistroController@index')->name('admin.registro');
     Route::put('/reservacionEliminada/{id}', 'ReservacionController@updateEstadoEliminado'); 
     
@@ -61,10 +61,10 @@ Route::middleware(['auth'])->group(function () {
     });
 
 
-    // Route::get('/carusel', 'ImagenCaruselController@index')->name('admin.carusel');
-    // Route::post('/carusel', 'ImagenCaruselController@upload');
-    // Route::delete('/carusel/{id}', 'ImagenCaruselController@destroy');
-    // Route::post('/carusel/all', 'ImagenCaruselController@all');
+    Route::get('/carusel', 'ImagenCaruselController@index')->name('admin.carusel');
+    Route::post('/carusel', 'ImagenCaruselController@upload');
+    Route::delete('/carusel/{id}', 'ImagenCaruselController@destroy');
+    Route::post('/carusel/all', 'ImagenCaruselController@all');
     
     // Route::post('/agencia', 'AgenciaController@store');
     // Route::put('/agencia', 'AgenciaController@update');
@@ -74,12 +74,12 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/horario/{id}', 'HorarioController@update');
     Route::delete('/horario/{id}', 'HorarioController@destroy');
 
-    // Route::prefix('galeria')->group(function () {
-    //     Route::get('/', 'GaleriaController@index')->name('admin.galeria');
-    //     Route::post('/', 'GaleriaController@upload')->name('admin.galeria.crear');
-    //     Route::get('/tipos', 'GaleriaController@getTypos')->name('admin.galeria.tipos');
-    //     Route::delete('/{id}', 'GaleriaController@destroy')->name('admin.galeria.eliminar');
-    // });
+    Route::prefix('galeria')->group(function () {
+        Route::get('/', 'GaleriaController@index')->name('admin.galeria');
+        Route::post('/', 'GaleriaController@upload')->name('admin.galeria.crear');
+        Route::get('/tipos', 'GaleriaController@getTypos')->name('admin.galeria.tipos');
+        Route::delete('/{id}', 'GaleriaController@destroy')->name('admin.galeria.eliminar');
+    });
 
     // DESACTIVADO HASTA QUE KEILOR DIGA.
     // Route::prefix('combos')->group(function () {        
@@ -91,37 +91,37 @@ Route::middleware(['auth'])->group(function () {
     //     Route::delete('/{id}', 'ComboController@destroy')->name('admin.combos.delete');
     // });
 
-    // Route::prefix('site-sections')->group(function () {        
-    //     Route::get('/ver', 'SiteSectionController@index')->name('admin.site.sections.index');
-    //     Route::get('/ver/{id}', 'SiteSectionController@show')->name('admin.site.sections.show');
-    //     Route::post('/', 'SiteSectionController@store')->name('admin.site.sections.store');
-    //     Route::get('/edit/{id}', 'SiteSectionController@show')->name('sections.edit');
-    //     Route::put('/', 'SiteSectionController@update')->name('admin.site.sections.update');
-    //     Route::delete('/{id}', 'SiteSectionController@destroy')->name('admin.site.sections.delete');
-    // });
+    Route::prefix('site-sections')->group(function () {        
+        Route::get('/ver', 'SiteSectionController@index')->name('admin.site.sections.index');
+        Route::get('/ver/{id}', 'SiteSectionController@show')->name('admin.site.sections.show');
+        Route::post('/', 'SiteSectionController@store')->name('admin.site.sections.store');
+        Route::get('/edit/{id}', 'SiteSectionController@show')->name('sections.edit');
+        Route::put('/', 'SiteSectionController@update')->name('admin.site.sections.update');
+        Route::delete('/{id}', 'SiteSectionController@destroy')->name('admin.site.sections.delete');
+    });
 
     // Route::resource('agencias', 'AgenciasController');
 });
 
 /**Public routes */
 
-// Route::redirect('/', '/en');
+Route::redirect('/', '/en');
 // Route::redirect('/privacy-policy', '/es/terms-conditions');
 // Route::redirect('/terms-conditions', '/es/terms-conditions');
 // Route::redirect('/combo', '/es/combo');
 
-// Route::group(['prefix'=>'{locale}', 'where'=> ['locale'=> 'es|en']],function () use ($router) {
-//     Route::get('/', 'HomeController@home')->name('home');
-//     Route::get('/privacy-policy', 'HomeController@privacy')->name('privacy-policy');
-//     Route::get('/terms-conditions', 'HomeController@terms')->name('terms-conditions');
-//     Route::get('/combo', 'ComboController@combos')->name('combos');
-// });
+Route::group(['prefix'=>'{locale}', 'where'=> ['locale'=> 'es|en']],function () use ($router) {
+    Route::get('/', 'HomeController@home')->name('home');
+    Route::get('/privacy-policy', 'HomeController@privacy')->name('privacy-policy');
+    Route::get('/terms-conditions', 'HomeController@terms')->name('terms-conditions');
+    Route::get('/combo', 'ComboController@combos')->name('combos');
+});
 
-// Route::get('/mensaje', 'MensajesWebController@index')->name('admin.mensaje');
-// Route::post('/mensaje', 'MensajesWebController@store')->name('mensaje.guardar');
+Route::get('/mensaje', 'MensajesWebController@index')->name('admin.mensaje');
+Route::post('/mensaje', 'MensajesWebController@store')->name('mensaje.guardar');
 
-// Route::get('/mensajesLeidos', 'MensajesWebController@leidos')->name('admin.mensajesLeidos');
-// Route::delete('/mensaje/{id}', 'MensajesWebController@destroy');
+Route::get('/mensajesLeidos', 'MensajesWebController@leidos')->name('admin.mensajesLeidos');
+Route::delete('/mensaje/{id}', 'MensajesWebController@destroy');
 
 
 
