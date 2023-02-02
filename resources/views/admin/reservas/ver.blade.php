@@ -104,7 +104,7 @@
       </section>
 
       <div class="btn-container">
-          <a href="/admin" class="btn btn-sucess" id="inicio">Inicio</a>
+          <a href="/" class="btn btn-sucess" id="inicio">Inicio</a>
           <button class="btn btn-sucess" id="imprimir">Imprimir</button>
           <button class="btn btn-info" id="enviar" data-reserva="{{$reserva->id}}">Enviar</button>
       </div>

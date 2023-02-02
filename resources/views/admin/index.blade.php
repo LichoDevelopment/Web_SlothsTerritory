@@ -67,12 +67,12 @@
                     Filtros
                 </button>
                 @if (request()->query())
-                    <a href="/admin" class="btn btn-outline-danger btn-sm">Eliminar filtro</a>
+                    <a href="/" class="btn btn-outline-danger btn-sm">Eliminar filtro</a>
                 @endif
             </section>
             <section class="collapse" id="SeccionFiltros">
                 <div class="d-flex justify-content-between mb-4 align-items-center">
-                        <form class="form-filtrar" action="/admin?" method="get" id="form-filtrar">
+                        <form class="form-filtrar" action="/?" method="get" id="form-filtrar">
                             @if (rol_usuario()->id === 1 || rol_usuario()->id === 2)
                                 <div>
                                     <label for="fecha-inicio">Fecha de inicio</label>

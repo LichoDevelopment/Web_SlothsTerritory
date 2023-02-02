@@ -7,7 +7,7 @@
         <section class="card-header">
             <div class="d-flex justify-content-between align-items-center">
                 <h1>Agregar reserva</h1>
-                <a href="/admin" class="btn btn-outline-dark btn-sm">Atras</a>
+                <a href="/" class="btn btn-outline-dark btn-sm">Atras</a>
             </div>
         </section>
         <section class="card-body">
