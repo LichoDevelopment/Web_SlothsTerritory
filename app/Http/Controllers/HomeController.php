@@ -64,7 +64,7 @@ class HomeController extends Controller
         $fechaInicio = '';
         $fechaFin = '';
         // $reservas = Reserva::orderBy('id_fecha_tour')->orderBy('id_estado','asc')->get();
-        $agencias = Agencia::all();
+        $agencias = Agencia::orderBy('nombre')->get();
         $estados = Estado::all();
         $horarios = Horario::all();
         
