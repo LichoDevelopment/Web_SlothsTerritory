@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 /**Admin routes */
 
+Route::get('/imprimir-ticket', 'ImpresionController@imprimirTicket')->name('imprimir.ticket');
+
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/', 'HomeController@admin')->name('admin.index');
     Route::get('/registro', 'RegistroController@index')->name('admin.registro');
