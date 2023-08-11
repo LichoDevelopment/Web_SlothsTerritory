@@ -28,7 +28,7 @@
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`admin`@`%` PROCEDURE `actualizar_estados`()
+CREATE  PROCEDURE `actualizar_estados`()
 BEGIN
 	UPDATE
 		reservas R
@@ -70,7 +70,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`admin`@`%` PROCEDURE `filtrar_reservas`(
+CREATE  PROCEDURE `filtrar_reservas`(
 	IN fecha_inicio VARCHAR(10),
     IN fecha_final VARCHAR(10),
     IN agencia VARCHAR(45),
@@ -377,7 +377,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = '' */ ;
 DELIMITER ;;
-CREATE DEFINER=`admin`@`%` PROCEDURE `filtrar_reservas_copia`(
+CREATE  PROCEDURE `filtrar_reservas_copia`(
 	IN fecha_inicio VARCHAR(10),
     IN fecha_final VARCHAR(10),
     IN agencia VARCHAR(45),
@@ -685,7 +685,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`admin`@`%` PROCEDURE `reservas_eliminadas`()
+CREATE  PROCEDURE `reservas_eliminadas`()
 BEGIN
 	SELECT
 		R.id AS 'id',
@@ -732,7 +732,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`admin`@`%` PROCEDURE `totales`(
+CREATE  PROCEDURE `totales`(
 	IN fecha_inicio VARCHAR(10),
     IN fecha_final VARCHAR(10),
     IN agencia VARCHAR(45),

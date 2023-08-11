@@ -25,6 +25,7 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "jquery": "^3.7.0",
         "vuetify": "^2.6.5"
     }
 }

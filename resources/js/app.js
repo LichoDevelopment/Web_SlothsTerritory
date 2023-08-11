@@ -7,6 +7,8 @@
 require('./bootstrap');
 
 window.Vue = require('vue').default;
+window.$ = window.jQuery = require('jquery');
+
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 

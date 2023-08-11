@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\SalesAgentController;
+use App\Http\Controllers\TicketController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\AgenciasController;
@@ -21,7 +22,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/imprimir-ticket', 'ImpresionController@imprimirTicket')->name('imprimir.ticket');
 
 
+Route::post('/print-ticket', [TicketController::class, 'printTicket']);
 Route::middleware(['auth'])->group(function () {
+
+
     Route::get('/', 'HomeController@admin')->name('admin.index');
     Route::get('/registro', 'RegistroController@index')->name('admin.registro');
     Route::put('/reservacionEliminada/{id}', 'ReservacionController@updateEstadoEliminado'); 

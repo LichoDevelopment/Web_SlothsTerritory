@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Factura 00000{{ $reserva->id }}</title>
     <link rel="stylesheet" href="{{ asset('css/factura.css') }}" media="all" />
     <!-- Favicon  -->
@@ -167,101 +168,27 @@
         });
 
         // Función para generar el contenido del ticket y enviarlo a la impresora
-        // Función para generar el contenido del ticket y enviarlo a la impresora
         function imprimirTicket() {
 
-            console.log('imprimirTicket')
-            const reserva = {
-                id: 12345,
-                nombre_cliente: "Juan Pérez",
-                cantidad_adultos: 2,
-                cantidad_niños: 1,
-                monto_total: 100,
-                factura: "F0001"
-                // Agrega aquí más propiedades de la reserva si es necesario
-              };
-              
-              const css = `
-              @page {
-            // size: 80mm;
-            margin: 5mm 0;
-        }
+            var reserva = @json($reserva);
 
-        @media print {
-            @top-left,
-            @top-center,
-            @top-right,
-            @bottom-left,
-            @bottom-center,
-            @bottom-right {
-                content: "";
-            }
-        }
-
-        pre {
-            font-size: 12px;
-            white-space: pre-wrap;
-            overflow: hidden;
-            text-align: left;
-            margin-top: 5mm;
-            page-break-inside: avoid;
-        }
-
-        .logo-container {
-            width: 80mm;
-            margin: 0 auto 5mm;
-            text-align: center;
-        }
-
-        .img-logo {
-            width: 60mm;
-        }
-`;
-
-
-
-const contenidoTicket = `
-  <style>${css}</style>
-  <div class="ticket-container">
-        <div class="logo-container">
-            <img src="{{ asset('images/favicon--.png') }}" class="img-logo">
-        </div>
-        <pre>
-          Sloth's Territory
-          Factura #${reserva.id}
-          Cliente: ${ reserva.nombre_cliente }
-          Cantidad de adultos: ${ reserva.cantidad_adultos }
-          Cantidad de niños: ${ reserva.cantidad_niños }
-          Monto total: ${ reserva.monto_total }
-          No. de factura: ${ reserva.factura }
-          ¡Gracias por tu visita!
-        </pre>
-    </div>
-`;
-
-            const printWindow = window.open('', '_blank');
-
-            
-            console.log('printWindow', printWindow)
-            
-
-
-            // const style = printWindow.document.createElement('style');
-            // style.type = 'text/css';
-            // style.appendChild(printWindow.document.createTextNode(css));
-            // printWindow.document.head.appendChild(style);
-            
-            printWindow.document.write(`${contenidoTicket}`);
-            printWindow.document.close();
-
-
-            printWindow.print(
-                {
-                  silent: true,
-                }
-            );
-            
-            
+            fetch('/print-ticket', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                    },
+                    body: JSON.stringify({
+                        reserva: reserva
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert('Ticket impreso exitosamente.');
+                })
+                .catch(error => {
+                    alert('Ocurrió un error al imprimir el ticket.');
+                });
         }
     </script>
 </body>
