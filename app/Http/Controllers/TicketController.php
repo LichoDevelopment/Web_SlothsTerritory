@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Exception;
 use Illuminate\Http\Request;
 use Mike42\Escpos\EscposImage;
-use Mike42\Escpos\ImagickEscposImage;
-use Mike42\Escpos\PrintConnectors\WindowsPrintConnector;
+//use Mike42\Escpos\ImagickEscposImage;
+use Mike42\Escpos\PrintConnectors\WindowsPrintConnector; // For Windows
+use Mike42\Escpos\PrintConnectors\CupsPrintConnector; // For Linux
 use Mike42\Escpos\Printer;
 
 class TicketController extends Controller
@@ -20,7 +21,8 @@ class TicketController extends Controller
         
         $reserva = $request->reserva;
 
-        $connector = new WindowsPrintConnector("impresoraRecepcion"); 
+        //$connector = new WindowsPrintConnector("impresoraRecepcion"); // For Windows
+        $connector = new CupsPrintConnector("impresoraRecepcion"); // For Linux
         $printer = new Printer($connector);
 
         // Imprimir el logo
