@@ -9,7 +9,7 @@ use Mike42\Escpos\Printer;
 $reserva = $_POST;
 
 
-$connector = new WindowsPrintConnector("POS-80C");  // Cambia 'ThermalPrinter' al nombre que pusiste en el paso 1
+$connector = new WindowsPrintConnector("impresoraRecepcion");  // Cambia 'ThermalPrinter' al nombre que pusiste en el paso 1
 $printer = new Printer($connector);
 
 // Logo - necesitas convertir tu imagen a un formato que la impresora pueda entender.
