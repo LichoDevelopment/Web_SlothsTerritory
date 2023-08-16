@@ -8,6 +8,7 @@ use Mike42\Escpos\EscposImage;
 //use Mike42\Escpos\ImagickEscposImage;
 use Mike42\Escpos\PrintConnectors\WindowsPrintConnector; // For Windows
 use Mike42\Escpos\PrintConnectors\CupsPrintConnector; // For Linux
+use Mike42\Escpos\PrintConnectors\SmbPrintConnector;
 use Mike42\Escpos\Printer;
 
 class TicketController extends Controller
@@ -21,8 +22,11 @@ class TicketController extends Controller
         
         $reserva = $request->reserva;
 
+        $nombreImpresora = "nombre_de_tu_impresora";
+        $nombreComputadoraWindows = "10.200.200.2";
         //$connector = new WindowsPrintConnector("impresoraRecepcion"); // For Windows
-        $connector = new CupsPrintConnector("impresoraRecepcion"); // For Linux
+        // $connector = new CupsPrintConnector("impresoraRecepcion"); // For Linux
+        $connector = new SmbPrintConnector($nombreComputadoraWindows, $nombreImpresora);
         $printer = new Printer($connector);
 
         // Imprimir el logo
