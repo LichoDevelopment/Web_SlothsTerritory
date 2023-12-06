@@ -35,7 +35,8 @@ class Reserva extends Model
         'id_fecha_tour',
         'factura',
         'id_estado',
-        'deleted_at'
+        'deleted_at',
+        'payment_status'
     ];
 
 
@@ -62,6 +63,11 @@ class Reserva extends Model
     public function estado()
     {
         return $this->belongsTo('\App\Models\Estado','id_estado');
+    }
+
+    public function tilopayTransaction()
+    {
+        return $this->hasOne(TilopayTransaction::class);
     }
 }
 

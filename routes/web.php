@@ -16,8 +16,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/process-payment', 'PaymentController@processPayment');
+Route::post('/tours-api', 'TourController@getToursApi');
+Route::get('/getPriceWeb/{id}', 'PrecioController@getPriceWeb');
+Route::get('/getSchedulesWeb/{id}/{date}', 'HorarioController@getSchedulesWeb');
+Route::get('/reservationWeb/{hash}', 'ReservacionController@getTilopayTransaction');
+Route::put('/updateReservation/{hash}', 'ReservacionController@updateFromWeb');
 
-/**Admin routes */
+
 
 Route::get('/imprimir-ticket', 'ImpresionController@imprimirTicket')->name('imprimir.ticket');
 

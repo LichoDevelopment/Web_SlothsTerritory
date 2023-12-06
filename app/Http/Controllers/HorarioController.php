@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Horario;
 use App\Models\Registro;
+use App\Models\Reserva;
 use App\Models\Tour;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class HorarioController extends Controller
@@ -15,12 +17,12 @@ class HorarioController extends Controller
      */
     private $request;
 
-    
+
     private $reglasValidacion = [
         'hora' => 'required',
         'capacidad_maxima' => 'required|gt:0',
         'hora_minima_reservar' => 'required',
-  
+
     ];
 
     private $mensajesValidacion = [
@@ -28,7 +30,10 @@ class HorarioController extends Controller
         'gt'       => 'El campo :attribute debe ser mayor que 0'
     ];
 
-    public function __construct(Request $request) {
+    protected $hidden = ['created_at', 'updated_at'];
+
+    public function __construct(Request $request)
+    {
         $this->request = $request;
     }
 
@@ -36,7 +41,7 @@ class HorarioController extends Controller
     {
         $tours = Tour::all();
         $horarios = Horario::all();
-        return view('admin.horarios.index', compact('tours','horarios'));
+        return view('admin.horarios.index', compact('tours', 'horarios'));
     }
 
     public function capacidad_maxima($hora)
@@ -48,23 +53,23 @@ class HorarioController extends Controller
 
     public function cantidad_actual($hora)
     {
-        $registro = Registro::where('id_horario',$hora)->first();
+        $registro = Registro::where('id_horario', $hora)->first();
         return $registro->cantidad_reservas;
     }
 
     public function store()
     {
-        $response = response(["message"=> "Horario creado"],201);
+        $response = response(["message" => "Horario creado"], 201);
 
         $validator = Validator::make($this->request->all(), $this->reglasValidacion, $this->mensajesValidacion);
 
-        if($validator->fails()){
+        if ($validator->fails()) {
             $response = response([
                 "status"    => 422,
                 "message"   => "Error",
                 "errors"    => $validator->errors()
             ], 422);
-        }else{
+        } else {
             Horario::create([
                 'id_tour' => $this->request->id_tour,
                 'hora' => $this->request->hora,
@@ -78,17 +83,17 @@ class HorarioController extends Controller
 
     public function update($id)
     {
-        $response = response(["message"=> "Horario actualizado"],202);
+        $response = response(["message" => "Horario actualizado"], 202);
 
         $validator = Validator::make($this->request->all(), $this->reglasValidacion, $this->mensajesValidacion);
 
-        if($validator->fails()){
+        if ($validator->fails()) {
             $response = response([
                 "status"    => 422,
                 "message"   => "Error",
                 "errors"    => $validator->errors()
             ], 422);
-        }else{
+        } else {
             Horario::find($id)->update([
                 'id_tour' => $this->request->id_tour,
                 'hora' => $this->request->hora,
@@ -104,5 +109,39 @@ class HorarioController extends Controller
     {
         Horario::destroy($id);
         return response("", 204);
+    }
+
+    public function getSchedulesWeb($id, $selectedDate)
+    {
+        info('getSchedulesWeb');
+        // Obtener todos los horarios para el tour y la fecha seleccionada
+        $horarios = Horario::where('id_tour', $id)->get();
+
+        // Filtrar los horarios basándose en las reservas existentes
+        $horariosDisponibles = $horarios->filter(function ($horario) use ($selectedDate) {
+            // info('horario: ' . $horario);
+            // Calcula la cantidad total de reservas para este horario en la fecha dada
+            $reservas = Reserva::where('id_horario', $horario->id)
+                ->whereHas('fecha_tour', function ($query) use ($selectedDate) {
+                    $query->where('fecha', $selectedDate);
+                })
+                ->sum(DB::raw('cantidad_adultos + cantidad_niños'));
+
+            // Calcula los cupos disponibles
+            $cuposDisponibles = $horario->capacidad_maxima - $reservas;
+
+            // Agrega la información de cupos disponibles al horario
+            $horario->cupos_disponibles = $cuposDisponibles;
+
+            // Comprueba si hay espacio disponible
+            return $horario->makeHidden('created_at', 'updated_at', 'hora_minima_reservar');
+        })->filter(function ($horario) {
+            // Filtra los horarios que no tienen espacio disponible
+            return $horario->cupos_disponibles > 0;
+        });
+
+        info('horariosDisponibles: ' . $horariosDisponibles);
+
+        return response()->json($horariosDisponibles);
     }
 }

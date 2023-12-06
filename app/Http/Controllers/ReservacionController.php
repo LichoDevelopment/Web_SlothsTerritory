@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ReservationConfirmation;
 use App\Models\Fecha_tour;
 use App\Models\Horario;
 use App\Models\Registro;
 use App\Models\Reserva;
 use App\Models\Reservacion;
 use App\Models\Estado;
+use App\Models\TilopayTransaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class ReservacionController extends Controller
 {
@@ -223,4 +226,77 @@ class ReservacionController extends Controller
        $reserva->delete();
        return response("", 204);
    }
+
+    //    Get tilopay_transaction by hash
+    public function getTilopayTransaction($hash)
+    {
+        info('getTilopayTransaction');
+        $tilopay_transaction = TilopayTransaction::where('hashKey', $hash)->first();
+
+        // Verificar si la transacción fue encontrada
+        if (!$tilopay_transaction) {
+            // Manejar el caso en que la transacción no existe
+            // Por ejemplo, puedes devolver un mensaje de error o lanzar una excepción
+            return response()->json(['error' => 'Transacción no encontrada'], 404);
+        }
+
+        // Cargar relaciones adicionales en la reserva asociada
+        $tilopay_transaction->load('reserva.tour', 'reserva.horario', 'reserva.fecha_tour');
+
+        // Devolver los datos como respuesta JSON
+        return response()->json($tilopay_transaction);
+    }
+
+    public function updateFromWeb(Request $request, $hash)
+    {
+        info('updateFromWeb');
+        // $request->validate([
+        //     'query.OrderHash' => 'required',
+        //     'query.tilopay-transaction' => 'required',
+        //     'query.code' => 'required',
+        //     'query.auth' => 'required',
+        //     'paymentStatus' => 'required',
+        // ]);
+
+        $tilopayTransaction = TilopayTransaction::where('hashKey', $hash)->first();
+        if (!$tilopayTransaction) {
+            return response()->json(['message' => 'Transaction not found'], 404);
+        }
+        
+        // Actualizar datos de TilopayTransaction
+        $tilopayTransaction->update([
+            'order_hash' => $request->input('query.OrderHash'),
+            'transaction_code' => $request->input('query.tilopay-transaction'),
+            'transaction_status' => $request->input('query.code') === '1' ? 'SUCCESS' : 'FAILED',
+            'auth_code' => $request->input('query.auth'),
+            'response' => $request->input('query'),
+        ]);
+        
+        $dataToEmail = $tilopayTransaction->load('reserva.tour', 'reserva.horario', 'reserva.fecha_tour');
+
+        // Obtener la reserva asociada
+        $reservation = $tilopayTransaction->reserva;
+
+        info('reservation', $reservation->toArray());
+
+        if ($request->input('query.code') === '1') {
+            // Transacción exitosa
+            info('emial'. $dataToEmail->billToEmail);
+            $paymentStatus = 'Transacción exitosa';
+            Mail::to($dataToEmail->billToEmail)->send(new ReservationConfirmation($dataToEmail, $paymentStatus));
+
+            $reservation->update(['payment_status' => 'Pagado']);
+        } else {
+            // Transacción fallida - soft delete de la reserva
+            $reservation->delete(); // Esto realizará un soft delete
+        }
+
+        // Devolver los datos actualizados
+        return response()->json([
+            'message' => 'Reservation updated successfully',
+            'reservation' => $reservation,
+            'tilopay_transaction' => $tilopayTransaction
+        ]);
+    }
 }
+
