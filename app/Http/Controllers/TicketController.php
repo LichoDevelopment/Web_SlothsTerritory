@@ -84,7 +84,6 @@ class TicketController extends Controller
         $client = new Client();
 
         try {
-info("llega1");
             $response = $client->post('http://10.200.200.2:8000/print-ticket', [
                 'json' => $reserva
             ]);

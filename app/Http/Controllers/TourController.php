@@ -80,5 +80,10 @@ class TourController extends Controller
         // return response("Tour eliminado", 204);
     }
     
-
+    
+    public function getToursApi(){
+        $tours = Tour::all();
+        return response()->json($tours);
+    }
+    
 }

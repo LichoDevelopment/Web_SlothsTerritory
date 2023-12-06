@@ -120,5 +120,17 @@ class PrecioController extends Controller
         Precio::destroy($id);
         return response("", 204);
     }
+
+    public function getPriceWeb($tourId){
+
+        info('getPriceWeb');
+        // get Agency wine name 'WEB'
+        $agencia = Agencia::where('nombre', 'WEB')->first();
+
+        // get all results Price where id_agencia = $agencia->id 
+        $precios = Precio::where('id_agencia', $agencia->id)->where('id_tour', $tourId)->get();
+
+        return response()->json($precios);
+    }
     
 }
