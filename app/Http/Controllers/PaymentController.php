@@ -127,7 +127,7 @@ class PaymentController extends Controller
 
             $tilopay_transaction->save();
 
-            $paymentData['redirect'] = 'http://localhost:3000/payment-response?hash='.$hash;
+            $paymentData['redirect'] = 'https://slothsterritory.com/payment-response?hash='.$hash;
             $paymentData['currency'] = 'USD';
             $paymentData['orderNumber'] = $reservation->id;
             $paymentData['capture'] ="1";
