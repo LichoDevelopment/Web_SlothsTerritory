@@ -61,12 +61,18 @@
                         <td class="desc"><span> {{ $reserva->factura }} </span></td>
                     </tr>
                     <tr>
-                        <td class="service"><span>Phone: </span></td>
-                        <td class="desc"><span> {{ $reserva->tilopayTransaction->billToTelephone }} </span></td>
+                        @if($reserva->tilopayTransaction && $reserva->tilopayTransaction->billToTelephone)
+                            <td class="service"><span>Phone: </span></td>
+                            <td class="desc"><span>{{ $reserva->tilopayTransaction->billToTelephone }}</span></td>
+                        @endif
                     </tr>
                     <tr>
-                        <td class="service"><span>Email: </span></td>
-                        <td class="desc"><span> {{ $reserva->tilopayTransaction->billToEmail }} </span></td>
+                        @if($reserva->tilopayTransaction && $reserva->tilopayTransaction->billToEmail)
+                            <td class="service"><span>Email: </span></td>
+                            <td class="desc"><span>{{ $reserva->tilopayTransaction->billToEmail }}</span></td>
+                        @endif
+                    </tr>
+                    
                 </tbody>
             </table>
 
