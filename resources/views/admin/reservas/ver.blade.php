@@ -60,6 +60,13 @@
                         <td class="service"><span>{{ __('noFactura') }}: </span></td>
                         <td class="desc"><span> {{ $reserva->factura }} </span></td>
                     </tr>
+                    <tr>
+                        <td class="service"><span>Phone: </span></td>
+                        <td class="desc"><span> {{ $reserva->tilopayTransaction->billToTelephone }} </span></td>
+                    </tr>
+                    <tr>
+                        <td class="service"><span>Email: </span></td>
+                        <td class="desc"><span> {{ $reserva->tilopayTransaction->billToEmail }} </span></td>
                 </tbody>
             </table>
 
