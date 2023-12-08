@@ -9,6 +9,7 @@ use App\Models\Fecha_tour;
 use App\Models\Precio;
 use App\Models\Reserva;
 use App\Models\TilopayTransaction;
+use Carbon\Carbon;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use Illuminate\Http\Request;
@@ -36,17 +37,30 @@ class PaymentController extends Controller
             return response()->json(['error' => 'No se pudo obtener el precio del tour'], 500);
         }
 
-        info('precios', $precios->toArray());
-        // return;
+        $fechaTourRequest = Carbon::createFromFormat('Y-m-d', $request->date);
+
+        $cambioPrecioFecha = Carbon::create(2023, 12, 15);
+
+        // Verificar si la fecha del tour es antes del 15 de diciembre de 2023
+        if ($fechaTourRequest->lessThan($cambioPrecioFecha)) {
+            // Usar precios especiales antes del 15 de diciembre de 2023
+            $adultPrice = 35;
+            $childPrice = 28;
+        } else {
+            // Usar los precios normales
+            $adultPrice = $precios[0]->precio_adulto;
+            $childPrice = $precios[0]->precio_niño;
+        }
+
         // Precios (obtener estos valores de manera segura, por ejemplo, desde la DB)
-        $adultPrice = $precios[0]->precio_adulto; 
+        $adultPrice = $precios[0]->precio_adulto;
         $childPrice = $precios[0]->precio_niño;
 
         // Cantidad de adultos y niños
         $numAdults = $request->input('adults');
         $numChildren = $request->input('children');
 
-            // Calculo de totales
+        // Calculo de totales
         $totalAdults = $numAdults * $adultPrice;
         $totalChildren = $numChildren * $childPrice;
         $subtotal = $totalAdults + $totalChildren;
@@ -63,7 +77,7 @@ class PaymentController extends Controller
 
         $commission_Tilopay_amount = $totalWithTaxes * 0.0425 + 0.35;
         $commission_system_amount = ($taxesAndFeesPercentage - 0.0425) * $totalWithTaxes;
-        
+
         // Obtener la API Key de tus variables de entorno
         $apiKey = env('TILOPAY_API_KEY');
 
@@ -95,7 +109,7 @@ class PaymentController extends Controller
             $reservation->monto_con_descuento = 0;
             $reservation->comision_agencia = 0;
             $reservation->monto_neto = $subtotal;
-            
+
             $reservation->save();
 
             $hash = md5($reservation->id);
@@ -103,7 +117,7 @@ class PaymentController extends Controller
             $tilopay_transaction->reserva_id = $reservation->id;
             $tilopay_transaction->hashKey = $hash;
             $tilopay_transaction->order_hash = null;
-            $tilopay_transaction->transaction_code = null; 
+            $tilopay_transaction->transaction_code = null;
             $tilopay_transaction->transaction_status = "PENDIENTE";
             $tilopay_transaction->auth_code = null;
             $tilopay_transaction->amount = $reservation->monto_total;
@@ -127,10 +141,10 @@ class PaymentController extends Controller
 
             $tilopay_transaction->save();
 
-            $paymentData['redirect'] = 'https://slothsterritory.com/payment-response?hash='.$hash;
+            $paymentData['redirect'] = 'https://slothsterritory.com/payment-response?hash=' . $hash;
             $paymentData['currency'] = 'USD';
             $paymentData['orderNumber'] = $reservation->id;
-            $paymentData['capture'] ="1";
+            $paymentData['capture'] = "1";
             $paymentData['subscription'] = "0";
             $paymentData['platform'] = 'api';
             $paymentData['amount'] = $reservation->monto_total;
@@ -150,7 +164,6 @@ class PaymentController extends Controller
             $redirectUrl = $responseBody['url']; // Esto obtiene la URL de redirección
 
             return response()->json(['redirectUrl' => $redirectUrl]);
-
         } catch (RequestException $e) {
             // Manejar errores específicos de la solicitud HTTP
             info('error payment', $e->getMessage());
