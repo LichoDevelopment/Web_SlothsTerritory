@@ -52,9 +52,12 @@ class PaymentController extends Controller
             $childPrice = $precios[0]->precio_niño;
         }
 
+        // info('adultPrice'. $adultPrice);
+        // info('childPrice'. $childPrice);
+
         // Precios (obtener estos valores de manera segura, por ejemplo, desde la DB)
-        $adultPrice = $precios[0]->precio_adulto;
-        $childPrice = $precios[0]->precio_niño;
+        // $adultPrice = $precios[0]->precio_adulto;
+        // $childPrice = $precios[0]->precio_niño;
 
         // Cantidad de adultos y niños
         $numAdults = $request->input('adults');
