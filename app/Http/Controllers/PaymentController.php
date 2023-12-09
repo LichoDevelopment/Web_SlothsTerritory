@@ -42,7 +42,7 @@ class PaymentController extends Controller
         $cambioPrecioFecha = Carbon::create(2023, 12, 15);
 
         // Verificar si la fecha del tour es antes del 15 de diciembre de 2023
-        if ($fechaTourRequest->lessThan($cambioPrecioFecha)) {
+        if ($fechaTourRequest->lessThan($cambioPrecioFecha) && $request->tour_id == 1) {
             // Usar precios especiales antes del 15 de diciembre de 2023
             $adultPrice = 35;
             $childPrice = 28;
