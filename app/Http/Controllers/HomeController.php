@@ -95,6 +95,17 @@ class HomeController extends Controller
                                     [$fechaInicio, $fechaFin, $agencia, $horario]);
 
         }
+
+        // Filtrar las reservas
+        $reservasF = [];
+        foreach ($reservas as $reserva) {
+            if ($reserva->nombre_agencia !== 'WEB' || $reserva->payment_status !== 'Pendiente') {
+                $reservasF[] = $reserva;
+            }
+        }
+
+        // $reservas = $reservasF;
+        // info('reservas', $reservas);
         // $finishedAt = time();
         
         // echo 'Tiempo: ' . ($finishedAt - $startedAt);

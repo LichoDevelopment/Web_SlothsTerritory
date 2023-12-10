@@ -140,7 +140,7 @@ class HorarioController extends Controller
             return $horario->cupos_disponibles > 0;
         });
 
-        info('horariosDisponibles: ' . $horariosDisponibles);
+        // info('horariosDisponibles: ' . $horariosDisponibles);
 
         return response()->json($horariosDisponibles);
     }
