@@ -104,7 +104,7 @@ class HomeController extends Controller
             }
         }
 
-        // $reservas = $reservasF;
+        $reservas = $reservasF;
         // info('reservas', $reservas);
         // $finishedAt = time();
         
