@@ -70,7 +70,7 @@ class PaymentController extends Controller
 
         // Impuestos y tarifas
         $taxesAndFeesPercentage = 0.085; // 8.5%
-        $transactionFee = 0.35; // tarifa fija
+        $transactionFee = 0.40; // tarifa fija
 
         // Total con impuestos
         $totalWithTaxes = round($subtotal * (1 + $taxesAndFeesPercentage) + $transactionFee, 2);
