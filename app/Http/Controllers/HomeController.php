@@ -99,7 +99,7 @@ class HomeController extends Controller
         // Filtrar las reservas
         $reservasF = [];
         foreach ($reservas as $reserva) {
-            if ($reserva->nombre_agencia !== 'WEB' || $reserva->payment_status !== 'Pendiente') {
+            if ($reserva->nombre_agencia !== 'WEB' || $reserva->payment_status !== 'pending') {
                 $reservasF[] = $reserva;
             }
         }
