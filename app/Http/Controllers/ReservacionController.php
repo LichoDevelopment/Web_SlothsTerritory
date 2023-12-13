@@ -214,14 +214,14 @@ class ReservacionController extends Controller
    public function destroy($id)
    {
        $reserva = Reserva::find($id);
-       $registro = Registro::where('id_horario',$reserva->id_horario)
-                            ->where('id_fecha',$reserva->id_fecha_tour)
-                            ->first();
+    //    $registro = Registro::where('id_horario',$reserva->id_horario)
+    //                         ->where('id_fecha',$reserva->id_fecha_tour)
+    //                         ->first();
 
-       $cantidad_pax_en_reserva = $reserva->cantidad_adultos + $reserva->cantidad_niños + $reserva->cantidad_niños_gratis;
-       $temp = $registro->cantidad_reservas - $cantidad_pax_en_reserva;
-       $registro->cantidad_reservas = $temp;
-       $registro->save();
+    //    $cantidad_pax_en_reserva = $reserva->cantidad_adultos + $reserva->cantidad_niños + $reserva->cantidad_niños_gratis;
+    //    $temp = $registro->cantidad_reservas - $cantidad_pax_en_reserva;
+    //    $registro->cantidad_reservas = $temp;
+    //    $registro->save();
 
        $reserva->delete();
        return response("", 204);
@@ -230,7 +230,7 @@ class ReservacionController extends Controller
     //    Get tilopay_transaction by hash
     public function getTilopayTransaction($hash)
     {
-        info('getTilopayTransaction');
+        // info('getTilopayTransaction');
         $tilopay_transaction = TilopayTransaction::where('hashKey', $hash)->first();
 
         // Verificar si la transacción fue encontrada
@@ -249,7 +249,7 @@ class ReservacionController extends Controller
 
     public function updateFromWeb(Request $request, $hash)
     {
-        info('updateFromWeb');
+        // info('updateFromWeb');
         // $request->validate([
         //     'query.OrderHash' => 'required',
         //     'query.tilopay-transaction' => 'required',
@@ -277,11 +277,11 @@ class ReservacionController extends Controller
         // Obtener la reserva asociada
         $reservation = $tilopayTransaction->reserva;
 
-        info('reservation', $reservation->toArray());
+        // info('reservation', $reservation->toArray());
 
         if ($request->input('query.code') === '1') {
             // Transacción exitosa
-            info('emial'. $dataToEmail->billToEmail);
+            // info('emial'. $dataToEmail->billToEmail);
             $paymentStatus = 'Transacción exitosa';
             Mail::to($dataToEmail->billToEmail)->send(new ReservationConfirmation($dataToEmail, $paymentStatus));
 
