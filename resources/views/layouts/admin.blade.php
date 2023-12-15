@@ -78,6 +78,14 @@
                                 <i class="fas fa-briefcase"></i>Agencias
                             </a>
                         </li>
+                        <li class="{{ Route::is('admin.horario') ? 'active' : '' }} ">
+                            <a href="{{ route('admin.horario') }}">
+                                <i class="fas fa-clock"></i>Horarios</a>
+                        </li>
+                        <li class="{{ Route::is('reservas.eliminadas') ? 'active' : '' }} ">
+                            <a href="{{ route('reservas.eliminadas') }}">
+                                <i class="fas fa-recycle"></i>Eliminadas</a>
+                        </li>
                         @if ( rol_usuario()->id == 1)
                             <li class="{{ Route::is('admin.tours') ? 'active' : '' }} ">
                                 <a href="{{ route('admin.tours') }}">
@@ -87,18 +95,18 @@
                                 <a href="{{ route('admin.precio') }}">
                                     <i class="fas fa-dollar-sign"></i>Precios</a>
                             </li>
-                            <li class="{{ Route::is('admin.horario') ? 'active' : '' }} ">
+                            {{-- <li class="{{ Route::is('admin.horario') ? 'active' : '' }} ">
                                 <a href="{{ route('admin.horario') }}">
                                     <i class="fas fa-clock"></i>Horarios</a>
-                            </li>
+                            </li> --}}
                             {{-- <li class="{{ Route::is('admin.mensaje') ? 'active' : '' }} ">
                                 <a href="{{ route('admin.mensaje') }}">
                                     <i class="fas fa-envelope"></i>Mensajes</a>
                             </li> --}}
-                            <li class="{{ Route::is('reservas.eliminadas') ? 'active' : '' }} ">
+                            {{-- <li class="{{ Route::is('reservas.eliminadas') ? 'active' : '' }} ">
                                 <a href="{{ route('reservas.eliminadas') }}">
                                     <i class="fas fa-recycle"></i>Eliminadas</a>
-                            </li>
+                            </li> --}}
                             {{-- <li class="{{ Route::is('admin.carusel') ? 'active' : '' }} ">
                                 <a href="{{ route('admin.carusel') }}">
                                     <i class="fas fa-images"></i>Carusel</a>
@@ -131,6 +139,15 @@
                             <a href="{{ route('admin.agencia') }}">
                                 <i class="fas fa-briefcase"></i>Agencias</a>
                         </li>
+                        <li class="{{ Route::is('admin.horario') ? 'active' : '' }} ">
+                            <a href="{{ route('admin.horario') }}">
+                                <i class="fas fa-clock"></i>Horarios</a>
+                        </li>
+                        
+                        <li class="{{ Route::is('reservas.eliminadas') ? 'active' : '' }} ">
+                            <a href="{{ route('reservas.eliminadas') }}">
+                                <i class="fas fa-recycle"></i>Eliminadas</a>
+                        </li>
                         @if (rol_usuario()->id == 1)
                             {{-- <li class="{{ Route::is('admin.registros') ? 'active' : '' }} ">
                                 <a href="{{ route('admin.registro') }}">
@@ -144,7 +161,7 @@
                                 <a href="{{ route('admin.precio') }}">
                                     <i class="fas fa-dollar-sign"></i>Precios</a>
                             </li>
-                            <li class="{{ Route::is('admin.horario') ? 'active' : '' }} ">
+                            {{-- <li class="{{ Route::is('admin.horario') ? 'active' : '' }} ">
                                 <a href="{{ route('admin.horario') }}">
                                     <i class="fas fa-clock"></i>Horarios</a>
                             </li>
@@ -152,7 +169,7 @@
                             <li class="{{ Route::is('reservas.eliminadas') ? 'active' : '' }} ">
                                 <a href="{{ route('reservas.eliminadas') }}">
                                     <i class="fas fa-recycle"></i>Eliminadas</a>
-                            </li>
+                            </li> --}}
                         @endif
                         {{-- <li class="{{ Route::is('admin.combos.index') ? 'active' : '' }} ">
                             <a href="{{ route('admin.combos.index') }}">
