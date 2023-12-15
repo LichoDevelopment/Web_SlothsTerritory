@@ -9,7 +9,8 @@ class AddHoursBeforeBookingToHorariosTable extends Migration
     public function up()
     {
         Schema::table('horarios', function (Blueprint $table) {
-            $table->integer('hours_before_booking')->default(0);
+            // DECIMAL con dos dígitos de precisión y uno para la escala, por ejemplo '1.5'
+            $table->decimal('hours_before_booking', 2, 1)->default(0.0);
         });
     }
 
