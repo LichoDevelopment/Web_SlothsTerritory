@@ -20,7 +20,8 @@ class Horario extends Model
         'hora',
         'capacidad_maxima',
         'hora_minima_reservar',
-        'id_tour'
+        'id_tour',
+        'hours_before_booking',
     ];
 
 
