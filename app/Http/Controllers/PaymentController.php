@@ -201,4 +201,138 @@ class PaymentController extends Controller
             return 'Error al obtener el token de TiloPay.';
         }
     }
+
+    public function getTokenTilopay(Request $request)
+    {
+        $client = new Client();
+
+        $apiuser = $request->input('apiUser');
+        $apiPassword = $request->input('apiPassword');
+        $apiKey = $request->input('apiKey');
+
+        try {
+            $response = $client->post('https://app.tilopay.com/api/v1/loginSdk', [
+                'json' => [
+                    'apiuser' => $apiuser,
+                    'password' => $apiPassword,
+                    'key' => $apiKey
+                ]
+            ]);
+
+            $data = json_decode($response->getBody(), true);
+            return response()->json(['access_token' => $data['access_token']]);
+        } catch (RequestException $e) {
+            return response()->json(['error' => 'Error al obtener el token de TiloPay.'], 500);
+        }
+    }
+
+    public function processPaymentSDK(PaymentValidationRequest $request)
+    {
+
+        info('request2', $request->all());
+
+        $agencia = Agencia::where('nombre', 'WEB')->first();
+
+        // get all results Price where id_agencia = $agencia->id 
+        $precios = Precio::where('id_agencia', $agencia->id)->where('id_tour', $request->tour_id)->get();
+
+        if (!$precios) {
+            return response()->json(['error' => 'No se pudo obtener el precio del tour'], 500);
+        }
+
+        // Usar los precios normales
+        $adultPrice = $precios[0]->precio_adulto;
+        $childPrice = $precios[0]->precio_niño;
+
+
+        // Cantidad de adultos y niños
+        $numAdults = $request->input('adults');
+        $numChildren = $request->input('children');
+
+        // Calculo de totales
+        $totalAdults = $numAdults * $adultPrice;
+        $totalChildren = $numChildren * $childPrice;
+        $subtotal = $totalAdults + $totalChildren;
+
+        // Impuestos y tarifas
+        $taxesAndFeesPercentage = 0.085; // 8.5%
+        $transactionFee = 0.40; // tarifa fija
+
+        // Total con impuestos
+        $totalWithTaxes = round($subtotal * (1 + $taxesAndFeesPercentage) + $transactionFee, 2);
+
+        $commission_Tilopay_amount = $totalWithTaxes * 0.035 + 0.35;
+        $commission_system_amount = ($subtotal * 0.05);
+
+        try {
+
+            //fechatour
+            $fecha_tour = Fecha_tour::where('fecha', $request->date)->first();
+            if (!$fecha_tour) {
+                $fecha_tour = Fecha_tour::create(['fecha' => $request->date]);
+            }
+
+            // Add Reseration
+            $reservation = new Reserva();
+            $reservation->id_agencia = $agencia->id;
+            $reservation->id_tour = $request->tour_id;
+            $reservation->id_fecha_tour = $fecha_tour->id;
+            $reservation->id_horario = $request->schedule_id;
+            $reservation->nombre_cliente = $request->billToFirstName . ' ' . $request->billToLastName;
+            $reservation->cantidad_adultos = $request->adults;
+            $reservation->cantidad_niños = $request->children;
+            $reservation->monto_total = $totalWithTaxes;
+            $reservation->monto_con_descuento = 0;
+            $reservation->comision_agencia = 0;
+            $reservation->monto_neto = $subtotal;
+
+            $reservation->save();
+
+            $hash = md5($reservation->id);
+            $tilopay_transaction = new TilopayTransaction();
+            $tilopay_transaction->reserva_id = $reservation->id;
+            $tilopay_transaction->hashKey = $hash;
+            $tilopay_transaction->order_hash = null;
+            $tilopay_transaction->transaction_code = null;
+            $tilopay_transaction->transaction_status = "PENDIENTE";
+            $tilopay_transaction->auth_code = null;
+            $tilopay_transaction->amount = $reservation->monto_total;
+            $tilopay_transaction->commission_Tilopay_amount = $commission_Tilopay_amount; //CALCULAR 4.25% + 0.35 dolares
+            $tilopay_transaction->commission_system_amount = $commission_system_amount; //CALCULAR 8.5% - 4.25%
+            $tilopay_transaction->currency = 'USD';
+            $tilopay_transaction->billToFirstName = $request->billToFirstName;
+            $tilopay_transaction->billToLastName = $request->billToLastName;
+            $tilopay_transaction->billToCountry = $request->billToCountry;
+            $tilopay_transaction->billToTelephone = $request->billToTelephone;
+            $tilopay_transaction->billToEmail = $request->billToEmail;
+            $tilopay_transaction->orderNumber = $request->orderNumber;
+            $tilopay_transaction->capture = "1";
+            $tilopay_transaction->subscription = "0";
+            $tilopay_transaction->platform = 'sdk';
+            $tilopay_transaction->billToAddress = 'N/A';
+            $tilopay_transaction->billToAddress2 = 'N/A';
+            $tilopay_transaction->billToCity = 'N/A';
+            $tilopay_transaction->billToState = 'N/A';
+            $tilopay_transaction->billToZipPostCode = 'N/A';
+
+            $tilopay_transaction->save();
+
+            info('tilopay_transaction', $tilopay_transaction->toArray());
+
+            return response()->json(['hash' => $hash]);
+        } catch (RequestException $e) {
+            // Manejar errores específicos de la solicitud HTTP
+            info('error payment', $e->getMessage());
+            return response()->json([
+                'error' => 'Error al guardar la reserva',
+                'message' => $e->getMessage()
+            ], 500);
+        } catch (\Exception $e) {
+            // Manejar otros tipos de errores generales
+            return response()->json([
+                'error' => 'Error interno del servidor.',
+                'message' => $e->getMessage()
+            ], 500);
+        }
+    }
 }

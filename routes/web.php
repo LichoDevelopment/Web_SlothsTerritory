@@ -17,11 +17,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('/process-payment', 'PaymentController@processPayment');
+Route::post('/process-payment-sdk', 'PaymentController@processPaymentSDK');
 Route::post('/tours-api', 'TourController@getToursApi');
 Route::get('/getPriceWeb/{id}', 'PrecioController@getPriceWeb');
 Route::get('/getSchedulesWeb/{id}/{date}', 'HorarioController@getSchedulesWeb');
 Route::get('/reservationWeb/{hash}', 'ReservacionController@getTilopayTransaction');
 Route::put('/updateReservation/{hash}', 'ReservacionController@updateFromWeb');
+Route::post('/get-tilopay-token', 'PaymentController@getTokenTilopay');
 
 
 

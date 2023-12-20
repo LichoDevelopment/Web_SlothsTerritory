@@ -15,7 +15,9 @@ return [
     |
     */
 
-    'paths' => ['api/*', 'sanctum/csrf-cookie', 'getPriceWeb/*', 'getSchedulesWeb/*', 'process-payment', 'reservationWeb/*', 'updateReservation/*'],
+    'paths' => ['api/*', 'sanctum/csrf-cookie', 'getPriceWeb/*', 
+    'getSchedulesWeb/*', 'process-payment', 'reservationWeb/*', 
+    'updateReservation/*', 'getToken', 'get-tilopay-token', 'process-payment-sdk'],
 
     'allowed_methods' => ['*'],
 
