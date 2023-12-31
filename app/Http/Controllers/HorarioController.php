@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Agencia;
 use App\Models\Horario;
 use App\Models\Registro;
 use App\Models\Reserva;
@@ -113,18 +114,26 @@ class HorarioController extends Controller
 
     public function getSchedulesWeb($id, $selectedDate)
     {
-        info('getSchedulesWeb');
         // Obtener todos los horarios para el tour y la fecha seleccionada
         $horarios = Horario::where('id_tour', $id)->get();
 
+        // Obtener los IDs de las agencias específicas
+        $agencyIdsToExclude = Agencia::whereIn('nombre', [
+            'Wave Expeditions',
+            'Ecoterra',
+            'Rain Forest Explorer',
+            'Quercus'
+        ])->pluck('id');
+
         // Filtrar los horarios basándose en las reservas existentes
-        $horariosDisponibles = $horarios->filter(function ($horario) use ($selectedDate) {
-            // info('horario: ' . $horario);
+        $horariosDisponibles = $horarios->filter(function ($horario) use ($selectedDate, $agencyIdsToExclude) {
+
             // Calcula la cantidad total de reservas para este horario en la fecha dada
             $reservas = Reserva::where('id_horario', $horario->id)
                 ->whereHas('fecha_tour', function ($query) use ($selectedDate) {
                     $query->where('fecha', $selectedDate);
                 })
+                ->whereNotIn('id_agencia', $agencyIdsToExclude)
                 ->sum(DB::raw('cantidad_adultos + cantidad_niños'));
 
             // Calcula los cupos disponibles
@@ -139,8 +148,6 @@ class HorarioController extends Controller
             // Filtra los horarios que no tienen espacio disponible
             return $horario->cupos_disponibles > 0;
         });
-
-        // info('horariosDisponibles: ' . $horariosDisponibles);
 
         return response()->json($horariosDisponibles);
     }
