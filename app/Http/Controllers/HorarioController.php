@@ -125,15 +125,23 @@ class HorarioController extends Controller
             'Quercus'
         ])->pluck('id');
 
+        $agencyWebId = Agencia::where('nombre', 'WEB')->value('id');
+
         // Filtrar los horarios basándose en las reservas existentes
-        $horariosDisponibles = $horarios->filter(function ($horario) use ($selectedDate, $agencyIdsToExclude) {
+        $horariosDisponibles = $horarios->filter(function ($horario) use ($selectedDate, $agencyIdsToExclude, $agencyWebId) {
 
             // Calcula la cantidad total de reservas para este horario en la fecha dada
             $reservas = Reserva::where('id_horario', $horario->id)
                 ->whereHas('fecha_tour', function ($query) use ($selectedDate) {
                     $query->where('fecha', $selectedDate);
                 })
-                ->whereNotIn('id_agencia', $agencyIdsToExclude)
+                ->where(function ($query) use ($agencyIdsToExclude, $agencyWebId) {
+                    $query->whereNotIn('id_agencia', $agencyIdsToExclude)
+                          ->orWhere(function($q) use ($agencyWebId) {
+                              $q->where('id_agencia', $agencyWebId)
+                                ->where('payment_status', 'Pagado');
+                          });
+                })
                 ->sum(DB::raw('cantidad_adultos + cantidad_niños'));
 
             // Calcula los cupos disponibles
