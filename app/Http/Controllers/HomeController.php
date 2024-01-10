@@ -65,7 +65,7 @@ class HomeController extends Controller
             'Authorization' => 'Bearer ' . $token
         ])->post('https://app.tilopay.com/api/v1/consultTransactions', [
             'key' => '5340-8533-9419-4300-2564',
-            'startDate' => '2024-01-01 00:00:00',
+            'startDate' => $twoDaysBefore->format('Y-m-d H:i:s'),
             'endDate' => $nowInCostaRica->format('Y-m-d H:i:s'),
             'environment' => 0,
             'onlyAproved' => 1,
