@@ -57,7 +57,6 @@ class HomeController extends Controller
             "password" => env('TILOPAY_API_PASSWORD')
         ]);
 
-        info('response', $response->json());
         $token = $response->json()['access_token'];
 
 
@@ -82,41 +81,26 @@ class HomeController extends Controller
             // Limpiar el orderNumber para obtener solo la parte que necesitas
             $orderNumberParts = explode('-', $transaction['orderNumber']);
             $cleanOrderNumber = array_pop($orderNumberParts); // Obtiene el último elemento que sería el número de orden limpio
-    
-            // info('transactions', $transactions);
-            info('transaction', $transaction);
-            info('cleanOrderNumber'. $cleanOrderNumber);
 
             // Buscar en la base de datos por el orderNumber limpio
             $transactionOrderNumber = 'ORD-'.$cleanOrderNumber;
-            info('transactionOrderNumber'. $transactionOrderNumber);
             $tilopayTransaction = TilopayTransaction::with('reserva')->where('orderNumber', $transactionOrderNumber)->first();
             if ($tilopayTransaction) {
-                info('SIIIIIIIIIIIIII');
-                info('tilopayTransaction'. $tilopayTransaction);
                
-                
                 if ($tilopayTransaction->transaction_status == 'PENDIENTE') {
-                    info('22222');
                     $tilopayTransaction->transaction_status = 'SUCCESS';
                     $tilopayTransaction->save();
-                    info('33333');
                 }
                 
                 $reservation = $tilopayTransaction->reserva;
                 if ($reservation) {
-                    info($reservation->id);
-                    info('44444');
                     if ($reservation->payment_status == 'pending') {
-                        info('55555');
                         $reservation->payment_status = 'Pagado';
                         $reservation->save();
-                        info('66666');
                         
                         $dataToEmail = $tilopayTransaction->load('reserva.tour', 'reserva.horario', 'reserva.fecha_tour');
                         $paymentStatus = 'Transacción exitosa';
                         Mail::to($dataToEmail->billToEmail)->send(new ReservationConfirmation($dataToEmail, $paymentStatus));
-                        info('77777');
                     }
                 }
             } else {
@@ -195,8 +179,6 @@ class HomeController extends Controller
         }
 
         $reservas = $reservasF;
-        // info('reservas', $reservas);
-        // $finishedAt = time();
         
         // echo 'Tiempo: ' . ($finishedAt - $startedAt);
         return view('admin.index', compact( 'agencias', 'totales','estados', 'reservas', 'horarios'));

@@ -87,8 +87,6 @@ class TicketController extends Controller
             $response = $client->post('http://10.200.200.2:8000/print-ticket', [
                 'json' => $reserva
             ]);
-info("llega 2");
-info($response);
     
             $responseData = json_decode($response->getBody(), true);
             if ($responseData['message'] == 'Ticket printed successfully') {
@@ -98,7 +96,7 @@ info($response);
             }
         } catch (\Exception $e) {
             // Manejar errores de conexión, etc.
-info('Error: ' . $e->getMessage());
+            info('Error: ' . $e->getMessage());
         }
     }
 }

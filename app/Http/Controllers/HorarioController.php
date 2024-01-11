@@ -125,11 +125,9 @@ class HorarioController extends Controller
             'Quercus'
         ])->pluck('id');
 
-        // info('Agencias a excluir: ' . $agencyIdsToExclude);
 
         $agencyWebId = Agencia::where('nombre', 'WEB')->value('id');
 
-        // info('Agencia WEB: ' . $agencyWebId);
 
         // Filtrar los horarios basándose en las reservas existentes
         $horariosDisponibles = $horarios->filter(function ($horario) use ($selectedDate, $agencyIdsToExclude, $agencyWebId) {
@@ -151,8 +149,6 @@ class HorarioController extends Controller
                 })
                 ->sum(DB::raw('cantidad_adultos + cantidad_niños'));
                 // ->get();
-
-            // info('Reservas: ' . $reservas->toJson());
 
             // Calcula los cupos disponibles
             $cuposDisponibles = $horario->capacidad_maxima - $reservas;

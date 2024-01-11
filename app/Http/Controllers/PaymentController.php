@@ -21,7 +21,6 @@ class PaymentController extends Controller
     public function processPayment(PaymentValidationRequest $request)
     {
 
-        info('request2', $request->all());
         $token = $this->getToken();
 
         if (!$token) {
@@ -52,9 +51,6 @@ class PaymentController extends Controller
             $childPrice = $precios[0]->precio_niño;
         }
 
-        // info('adultPrice'. $adultPrice);
-        // info('childPrice'. $childPrice);
-
         // Precios (obtener estos valores de manera segura, por ejemplo, desde la DB)
         // $adultPrice = $precios[0]->precio_adulto;
         // $childPrice = $precios[0]->precio_niño;
@@ -74,9 +70,6 @@ class PaymentController extends Controller
 
         // Total con impuestos
         $totalWithTaxes = round($subtotal * (1 + $taxesAndFeesPercentage) + $transactionFee, 2);
-        // info('totalWithTaxes', $totalWithTaxes);
-        // info('subtotal', $subtotal);
-
 
         $commission_Tilopay_amount = $totalWithTaxes * 0.0425 + 0.35;
         $commission_system_amount = ($taxesAndFeesPercentage - 0.0425) * $totalWithTaxes;
@@ -229,8 +222,6 @@ class PaymentController extends Controller
     public function processPaymentSDK(PaymentValidationRequest $request)
     {
 
-        info('request2', $request->all());
-
         $agencia = Agencia::where('nombre', 'WEB')->first();
 
         // get all results Price where id_agencia = $agencia->id 
@@ -316,8 +307,6 @@ class PaymentController extends Controller
             $tilopay_transaction->billToZipPostCode = 'N/A';
 
             $tilopay_transaction->save();
-
-            info('tilopay_transaction', $tilopay_transaction->toArray());
 
             return response()->json(['hash' => $hash]);
         } catch (RequestException $e) {

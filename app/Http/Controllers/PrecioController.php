@@ -123,7 +123,6 @@ class PrecioController extends Controller
 
     public function getPriceWeb($tourId){
 
-        info('getPriceWeb');
         // get Agency wine name 'WEB'
         $agencia = Agencia::where('nombre', 'WEB')->first();
 

@@ -51,7 +51,6 @@ class AdminController extends Controller
         $query = request()->query();
         $reserva = Reserva::with('tilopayTransaction')->find($id);
 
-        // info('reserva', $reserva->toArray());
         $locale = 'en';
 
         if($query){
