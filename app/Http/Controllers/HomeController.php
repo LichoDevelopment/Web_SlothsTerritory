@@ -50,7 +50,8 @@ class HomeController extends Controller
 
         // Configura la zona horaria a la de Costa Rica
         $nowInCostaRica = Carbon::now(new \DateTimeZone('America/Costa_Rica'));
-        $twoDaysBefore = $nowInCostaRica->subDays(2)->startOfDay();
+        $twoDaysBefore = (clone $nowInCostaRica)->subDays(1)->startOfDay();
+
 
         $response = Http::post('https://app.tilopay.com/api/v1/login', [
             "apiuser" => env('TILOPAY_API_USER'),
@@ -58,7 +59,6 @@ class HomeController extends Controller
         ]);
 
         $token = $response->json()['access_token'];
-
 
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $token
