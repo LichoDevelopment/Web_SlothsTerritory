@@ -136,6 +136,7 @@
                 <p><strong>Tour Time:</strong> {{ $data->reserva->horario->hora }}</p>
                 <p><strong>Adults:</strong> {{ $data->reserva->cantidad_adultos }}</p>
                 <p><strong>Children:</strong> {{ $data->reserva->cantidad_niños }}</p>
+                <p><strong>Children Free:</strong> {{ $data->reserva->cantidad_niños_gratis }}</p>
                 <p><strong>Total Amount:</strong> {{ $data->reserva->monto_total }} USD</p>
             </div>
         @endif
