@@ -239,6 +239,7 @@ class PaymentController extends Controller
         // Cantidad de adultos y niños
         $numAdults = $request->input('adults');
         $numChildren = $request->input('children');
+        $numChildrenFree = $request->input('childrenFree');
 
         // Calculo de totales
         $totalAdults = $numAdults * $adultPrice;
@@ -272,6 +273,7 @@ class PaymentController extends Controller
             $reservation->nombre_cliente = $request->billToFirstName . ' ' . $request->billToLastName;
             $reservation->cantidad_adultos = $request->adults;
             $reservation->cantidad_niños = $request->children;
+            $reservation->cantidad_niños_gratis = $request->childrenFree;
             $reservation->monto_total = $totalWithTaxes;
             $reservation->monto_con_descuento = 0;
             $reservation->comision_agencia = 0;
