@@ -73,6 +73,9 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/precio', 'PrecioController@store');
         Route::put('/precio/{id}', 'PrecioController@update');
         Route::delete('/precio/{id}', 'PrecioController@destroy');
+
+        Route::get('/pagos', 'AdminController@consultarPagos')->name('admin.pagos');
+        
     });
 
 

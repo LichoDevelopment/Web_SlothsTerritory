@@ -95,6 +95,10 @@
                                 <a href="{{ route('admin.precio') }}">
                                     <i class="fas fa-dollar-sign"></i>Precios</a>
                             </li>
+                            <li class="{{ Route::is('admin.pagos') ? 'active' : '' }} ">
+                                <a href="{{ route('admin.pagos') }}">
+                                    <i class="fas fa-dollar-sign"></i>Precios</a>
+                            </li>
                             {{-- <li class="{{ Route::is('admin.horario') ? 'active' : '' }} ">
                                 <a href="{{ route('admin.horario') }}">
                                     <i class="fas fa-clock"></i>Horarios</a>
@@ -160,6 +164,10 @@
                             <li class="{{ Route::is('admin.precio') ? 'active' : '' }} ">
                                 <a href="{{ route('admin.precio') }}">
                                     <i class="fas fa-dollar-sign"></i>Precios</a>
+                            </li>
+                            <li class="{{ Route::is('admin.pagos') ? 'active' : '' }} ">
+                                <a href="{{ route('admin.pagos') }}">
+                                    <i class="fas fa-dollar-sign"></i>Consultar Pagos</a>
                             </li>
                             {{-- <li class="{{ Route::is('admin.horario') ? 'active' : '' }} ">
                                 <a href="{{ route('admin.horario') }}">
