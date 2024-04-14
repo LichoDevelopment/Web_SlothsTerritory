@@ -95,28 +95,28 @@
                                 <a href="{{ route('admin.precio') }}">
                                     <i class="fas fa-dollar-sign"></i>Precios</a>
                             </li>
-                            <li class="{{ Route::is('admin.pagos') ? 'active' : '' }} ">
-                                <a href="{{ route('admin.pagos') }}">
-                                    <i class="fas fa-dollar-sign"></i>Precios</a>
-                            </li>
                             {{-- <li class="{{ Route::is('admin.horario') ? 'active' : '' }} ">
                                 <a href="{{ route('admin.horario') }}">
                                     <i class="fas fa-clock"></i>Horarios</a>
-                            </li> --}}
-                            {{-- <li class="{{ Route::is('admin.mensaje') ? 'active' : '' }} ">
-                                <a href="{{ route('admin.mensaje') }}">
-                                    <i class="fas fa-envelope"></i>Mensajes</a>
-                            </li> --}}
-                            {{-- <li class="{{ Route::is('reservas.eliminadas') ? 'active' : '' }} ">
-                                <a href="{{ route('reservas.eliminadas') }}">
-                                    <i class="fas fa-recycle"></i>Eliminadas</a>
-                            </li> --}}
-                            {{-- <li class="{{ Route::is('admin.carusel') ? 'active' : '' }} ">
-                                <a href="{{ route('admin.carusel') }}">
-                                    <i class="fas fa-images"></i>Carusel</a>
-                            </li> --}}
-                            
-                        @endif
+                                </li> --}}
+                                {{-- <li class="{{ Route::is('admin.mensaje') ? 'active' : '' }} ">
+                                    <a href="{{ route('admin.mensaje') }}">
+                                        <i class="fas fa-envelope"></i>Mensajes</a>
+                                    </li> --}}
+                                    {{-- <li class="{{ Route::is('reservas.eliminadas') ? 'active' : '' }} ">
+                                        <a href="{{ route('reservas.eliminadas') }}">
+                                            <i class="fas fa-recycle"></i>Eliminadas</a>
+                                        </li> --}}
+                                        {{-- <li class="{{ Route::is('admin.carusel') ? 'active' : '' }} ">
+                                            <a href="{{ route('admin.carusel') }}">
+                                                <i class="fas fa-images"></i>Carusel</a>
+                                            </li> --}}
+                                            
+                                            @endif
+                                            <li class="{{ Route::is('admin.pagos') ? 'active' : '' }} ">
+                                                <a href="{{ route('admin.pagos') }}">
+                                                    <i class="fas fa-dollar-sign"></i>Consultar Pagos</a>
+                                            </li>
                     </ul>
                 </div>
             </nav>
@@ -165,20 +165,20 @@
                                 <a href="{{ route('admin.precio') }}">
                                     <i class="fas fa-dollar-sign"></i>Precios</a>
                             </li>
-                            <li class="{{ Route::is('admin.pagos') ? 'active' : '' }} ">
-                                <a href="{{ route('admin.pagos') }}">
-                                    <i class="fas fa-dollar-sign"></i>Consultar Pagos</a>
-                            </li>
                             {{-- <li class="{{ Route::is('admin.horario') ? 'active' : '' }} ">
                                 <a href="{{ route('admin.horario') }}">
                                     <i class="fas fa-clock"></i>Horarios</a>
-                            </li>
-                            
-                            <li class="{{ Route::is('reservas.eliminadas') ? 'active' : '' }} ">
-                                <a href="{{ route('reservas.eliminadas') }}">
-                                    <i class="fas fa-recycle"></i>Eliminadas</a>
-                            </li> --}}
-                        @endif
+                                </li>
+                                
+                                <li class="{{ Route::is('reservas.eliminadas') ? 'active' : '' }} ">
+                                    <a href="{{ route('reservas.eliminadas') }}">
+                                        <i class="fas fa-recycle"></i>Eliminadas</a>
+                                    </li> --}}
+                                    @endif
+                                    <li class="{{ Route::is('admin.pagos') ? 'active' : '' }} ">
+                                        <a href="{{ route('admin.pagos') }}">
+                                            <i class="fas fa-dollar-sign"></i>Consultar Pagos</a>
+                                    </li>
                         {{-- <li class="{{ Route::is('admin.combos.index') ? 'active' : '' }} ">
                             <a href="{{ route('admin.combos.index') }}">
                                 <i class="fas fa-tags"></i>Combos</a>
