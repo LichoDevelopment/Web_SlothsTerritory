@@ -74,10 +74,11 @@ Route::middleware(['auth'])->group(function () {
         Route::put('/precio/{id}', 'PrecioController@update');
         Route::delete('/precio/{id}', 'PrecioController@destroy');
 
-        Route::get('/pagos', 'AdminController@consultarPagos')->name('admin.pagos');
         
     });
 
+
+    Route::get('/pagos', 'AdminController@consultarPagos')->name('admin.pagos');
 
     // Route::get('/carusel', 'ImagenCaruselController@index')->name('admin.carusel');
     // Route::post('/carusel', 'ImagenCaruselController@upload');
