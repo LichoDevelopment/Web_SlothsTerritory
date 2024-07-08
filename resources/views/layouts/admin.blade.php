@@ -91,15 +91,16 @@
                         <a href="{{ route('admin.pagos') }}">
                             <i class="fas fa-dollar-sign"></i>Consultar Pagos</a>
                     </li>
+                    <li class="{{ Route::is('admin.precio') ? 'active' : '' }} ">
+                        <a href="{{ route('admin.precio') }}">
+                            <i class="fas fa-dollar-sign"></i>Precios</a>
+                    </li>
                     @if (rol_usuario()->id == 1)
                         <li class="{{ Route::is('admin.tours') ? 'active' : '' }} ">
                             <a href="{{ route('admin.tours') }}">
                                 <i class="fas fa-calendar-alt"></i>Tours</a>
                         </li>
-                        <li class="{{ Route::is('admin.precio') ? 'active' : '' }} ">
-                            <a href="{{ route('admin.precio') }}">
-                                <i class="fas fa-dollar-sign"></i>Precios</a>
-                        </li>
+                        
 
                         {{-- <li class="{{ Route::is('admin.horario') ? 'active' : '' }} ">
                                 <a href="{{ route('admin.horario') }}">
@@ -157,6 +158,10 @@
                         <a href="{{ route('admin.pagos') }}">
                             <i class="fas fa-dollar-sign"></i>Consultar Pagos</a>
                     </li>
+                    <li class="{{ Route::is('admin.precio') ? 'active' : '' }} ">
+                        <a href="{{ route('admin.precio') }}">
+                            <i class="fas fa-dollar-sign"></i>Precios</a>
+                    </li>
                     @if (rol_usuario()->id == 1)
                         {{-- <li class="{{ Route::is('admin.registros') ? 'active' : '' }} ">
                                 <a href="{{ route('admin.registro') }}">
@@ -166,10 +171,7 @@
                             <a href="{{ route('admin.tours') }}">
                                 <i class="fas fa-calendar-alt"></i>Tours</a>
                         </li>
-                        <li class="{{ Route::is('admin.precio') ? 'active' : '' }} ">
-                            <a href="{{ route('admin.precio') }}">
-                                <i class="fas fa-dollar-sign"></i>Precios</a>
-                        </li>
+                        
                         {{-- <li class="{{ Route::is('admin.horario') ? 'active' : '' }} ">
                                 <a href="{{ route('admin.horario') }}">
                                     <i class="fas fa-clock"></i>Horarios</a>
