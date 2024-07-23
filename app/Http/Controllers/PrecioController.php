@@ -30,7 +30,7 @@ class PrecioController extends Controller
         'precio_nino_aves' => 'required|gt:0',
         'tipo_tourAves' => 'required',
 
-        'agencia' => 'required'  
+        'agencia' => 'required'
     ];
 
     private $mensajesValidacion = [
@@ -38,7 +38,8 @@ class PrecioController extends Controller
         'gt'       => 'El campo :attribute debe ser mayor que 0'
     ];
 
-    public function __construct(Request $request) {
+    public function __construct(Request $request)
+    {
         $this->request = $request;
     }
 
@@ -49,24 +50,36 @@ class PrecioController extends Controller
         $horarios = Horario::all();
         $precios = Precio::all();
         $agencias = Agencia::all();
-        return view('admin.precios.index', compact('tours','precios','agencias'));
+
+        // sort by name of agency
+        $agencias = $agencias->sortBy('nombre');
+        // Eager load the precios relationship for all agencies
+        $agencias->load('precios');
+
+        // dd($agencias->toArray());
+
+
+        // dd($precios->unique('id_agencia')->toArray());
+        $precios = $precios->unique('id_agencia');
+
+
+        return view('admin.precios.index', compact('tours', 'precios', 'agencias'));
         // return view('admin.precios.index', compact('precios'));
     }
-    
+
     public function store()
-    {
-        $response = response(["message"=> "precio creado"],201);
+    {   
+        $response = response(["message" => "precio creado"], 201);
 
         $validator = Validator::make($this->request->all(), $this->reglasValidacion, $this->mensajesValidacion);
 
-        if($validator->fails()){
+        if ($validator->fails()) {
             $response = response([
                 "status"    => 422,
                 "message"   => "Error",
                 "errors"    => $validator->errors()
             ], 422);
-            
-        }else{
+        } else {
             Precio::create([
                 'id_tour' => $this->request->tipo_tourDiurno,
                 'id_agencia' => $this->request->agencia,
@@ -92,25 +105,58 @@ class PrecioController extends Controller
         return $response;
     }
 
-    public function update($id)
+    public function update(Request $request)
     {
-        $response = response(["message"=> "precio actualizado"],202);
+        info($this->request->all());
 
-        $validator = Validator::make($this->request->all(), $this->reglasValidacion, $this->mensajesValidacion);
+        $agency = $this->request->agencia;
+        $tours = [
+            'diurno' => 1, 
+            'nocturno' => 2,
+            'aves' => 3
+        ];
 
-        if($validator->fails()){
-            $response = response([
-                "status"    => 422,
-                "message"   => "Error",
-                "errors"    => $validator->errors()
-            ], 422);
-        }else{
-            Precio::find($id)->update([
-                'id_tour' => $this->request->id_tour,
-                'precio_adulto' => $this->request->precio_adulto,
-                'precio_niño'   => $this->request->precio_niño,
-            ]);
+
+        foreach ($tours as $key => $tourId) {
+            $adultPrice = $request->input("precio_adulto_{$key}", '0.00');
+            $childPrice = $request->input("precio_niño_{$key}", '0.00');
+            info('Precio adulto: ' . $adultPrice);
+            
+
+            Precio::updateOrCreate(
+                [
+                    'id_agencia' => $agency['id'],
+                    'id_tour' => $tourId,
+                ],
+                [
+                    'precio_adulto' => $adultPrice,
+                    'precio_niño' => $childPrice,
+                ]
+            );
+
+            info('Precio actualizado');
+            info(Precio::where('id_agencia', $agency['id'])->where('id_tour', $tourId)->first());
         }
+
+        
+
+        $response = response(["message" => "precio actualizado"], 202);
+
+        // $validator = Validator::make($this->request->all(), $this->reglasValidacion, $this->mensajesValidacion);
+
+        // if ($validator->fails()) {
+        //     $response = response([
+        //         "status"    => 422,
+        //         "message"   => "Error",
+        //         "errors"    => $validator->errors()
+        //     ], 422);
+        // } else {
+        //     Precio::find($id)->update([
+        //         'id_tour' => $this->request->id_tour,
+        //         'precio_adulto' => $this->request->precio_adulto,
+        //         'precio_niño'   => $this->request->precio_niño,
+        //     ]);
+        // }
 
         return $response;
     }
@@ -121,7 +167,8 @@ class PrecioController extends Controller
         return response("", 204);
     }
 
-    public function getPriceWeb($tourId){
+    public function getPriceWeb($tourId)
+    {
 
         // get Agency wine name 'WEB'
         $agencia = Agencia::where('nombre', 'WEB')->first();
@@ -131,5 +178,4 @@ class PrecioController extends Controller
 
         return response()->json($precios);
     }
-    
 }

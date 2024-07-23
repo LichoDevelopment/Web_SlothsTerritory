@@ -33,9 +33,9 @@ Route::get('/imprimir-ticket', 'ImpresionController@imprimirTicket')->name('impr
 Route::post('/print-ticket', [TicketController::class, 'printTicket']);
 Route::middleware(['auth'])->group(function () {
     Route::get('/precio', 'PrecioController@index')->name('admin.precio');
-        Route::post('/precio', 'PrecioController@store');
-        Route::put('/precio/{id}', 'PrecioController@update');
-        Route::delete('/precio/{id}', 'PrecioController@destroy');
+    Route::post('/precio', 'PrecioController@store');
+    Route::put('/precio', 'PrecioController@update');
+    Route::delete('/precio/{id}', 'PrecioController@destroy');
 
     Route::get('/', 'HomeController@admin')->name('admin.index');
     Route::get('/registro', 'RegistroController@index')->name('admin.registro');
