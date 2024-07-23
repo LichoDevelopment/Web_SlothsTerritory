@@ -107,7 +107,7 @@ class PrecioController extends Controller
 
     public function update(Request $request)
     {
-        info($this->request->all());
+  
 
         $agency = $this->request->agencia;
         $tours = [
@@ -120,7 +120,7 @@ class PrecioController extends Controller
         foreach ($tours as $key => $tourId) {
             $adultPrice = $request->input("precio_adulto_{$key}", '0.00');
             $childPrice = $request->input("precio_niño_{$key}", '0.00');
-            info('Precio adulto: ' . $adultPrice);
+      
             
 
             Precio::updateOrCreate(
@@ -134,8 +134,6 @@ class PrecioController extends Controller
                 ]
             );
 
-            info('Precio actualizado');
-            info(Precio::where('id_agencia', $agency['id'])->where('id_tour', $tourId)->first());
         }
 
         
