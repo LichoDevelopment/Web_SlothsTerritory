@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\ClickTrackingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,8 +19,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('records/', 'API\RecordsController@index' );
-Route::get('review', 'API\ReviewController@index' );
-Route::post('review', 'API\ReviewController@create' );
-Route::get('tour', 'API\TourController@info' );
-Route::post('mail', 'API\MailController@send' );
+Route::get('records/', 'API\RecordsController@index');
+Route::get('review', 'API\ReviewController@index');
+Route::post('review', 'API\ReviewController@create');
+Route::get('tour', 'API\TourController@info');
+Route::post('mail', 'API\MailController@send');
+Route::post('/trackClick', [ClickTrackingController::class, 'trackClick']);
