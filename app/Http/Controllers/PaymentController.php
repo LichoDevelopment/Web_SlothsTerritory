@@ -111,18 +111,14 @@ class PaymentController extends Controller
             $reservation->comision_agencia = 0;
             $reservation->monto_neto = $subtotal;
 
-            info('reservation');
-
             // Add transport
             if ($request->needTransport) {
-                info('transporte');
 
                 $totalPersonasTransporte = $this->getTotalPersonasTransporte($fecha_tour->id, $request->schedule_id);
                 $totalPersonasReserva = $reservation->cantidad_adultos + $reservation->cantidad_niños + $reservation->cantidad_niños_gratis;
                 if ($totalPersonasTransporte + $totalPersonasReserva > $configuracionTransporte->cantidad_maxima_pasajeros) {
                     return response()->json(['error' => 'La cantidad de personas excede la capacidad máxima de pasajeros.'], 400);
                 }
-                info('transporte2');
     
                 $reservation->save();
 
@@ -139,10 +135,7 @@ class PaymentController extends Controller
                     $distanciaMaxima
                 );
 
-                info('cost', $cost);
-
                 if ($cost !== 0) {
-                    info('transporte3');
                     $transport = new Transporte();
                     $transport->id_reserva = $reservation->id;
                     $transport->punto_recogida = $request->placeSelected;
@@ -154,10 +147,8 @@ class PaymentController extends Controller
                     $transport->distancia = $cost;
                     $transport->save();
                 }
-                info('transporte4');
                 
             } else {
-                info('transporte5');
                 $reservation->save();
             }
 
