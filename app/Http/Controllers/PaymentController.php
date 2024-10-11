@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PaymentValidationRequest;
 use App\Models\Agencia;
+use App\Models\ConfiguracionTransporte;
 use App\Models\Fecha_tour;
 use App\Models\Precio;
 use App\Models\Reserva;
 use App\Models\TilopayTransaction;
+use App\Models\Transporte;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
@@ -92,6 +94,8 @@ class PaymentController extends Controller
                 $fecha_tour = Fecha_tour::create(['fecha' => $request->date]);
             }
 
+            $configuracionTransporte = ConfiguracionTransporte::first();
+
             // Add Reseration
             $reservation = new Reserva();
             $reservation->id_agencia = $agencia->id;
@@ -101,12 +105,61 @@ class PaymentController extends Controller
             $reservation->nombre_cliente = $request->billToFirstName . ' ' . $request->billToLastName;
             $reservation->cantidad_adultos = $request->adults;
             $reservation->cantidad_niños = $request->children;
+            $reservation->cantidad_niños_gratis = $request->childrenFree;
             $reservation->monto_total = $totalWithTaxes;
             $reservation->monto_con_descuento = 0;
             $reservation->comision_agencia = 0;
             $reservation->monto_neto = $subtotal;
 
-            $reservation->save();
+            info('reservation');
+
+            // Add transport
+            if ($request->needTransport) {
+                info('transporte');
+
+                $totalPersonasTransporte = $this->getTotalPersonasTransporte($fecha_tour->id, $request->schedule_id);
+                $totalPersonasReserva = $reservation->cantidad_adultos + $reservation->cantidad_niños + $reservation->cantidad_niños_gratis;
+                if ($totalPersonasTransporte + $totalPersonasReserva > $configuracionTransporte->cantidad_maxima_pasajeros) {
+                    return response()->json(['error' => 'La cantidad de personas excede la capacidad máxima de pasajeros.'], 400);
+                }
+                info('transporte2');
+    
+                $reservation->save();
+
+                $precioMinimo = $configuracionTransporte->precio_minimo;
+                $distanciaMaxima = $configuracionTransporte->distancia_maxima;
+                $distanciaMinima = $configuracionTransporte->distancia_minima;
+                $precioPorKmAdicional = $configuracionTransporte->precio_por_km_adicional;
+
+                $cost = $this->calculateTranportCost(
+                    $request->distance,
+                    $precioPorKmAdicional,
+                    $distanciaMinima,
+                    $precioMinimo,
+                    $distanciaMaxima
+                );
+
+                info('cost', $cost);
+
+                if ($cost !== 0) {
+                    info('transporte3');
+                    $transport = new Transporte();
+                    $transport->id_reserva = $reservation->id;
+                    $transport->punto_recogida = $request->placeSelected;
+                    $transport->direccion = $request->placeSelected->direccion;
+                    $transport->placeId = $request->placeSelected->placeId;
+                    $transport->latitud = $request->placeSelected->ubicacion->lat;
+                    $transport->longitud = $request->placeSelected->ubicacion->lng;
+                    $transport->costo = $request->totalTransportPrice;
+                    $transport->distancia = $cost;
+                    $transport->save();
+                }
+                info('transporte4');
+                
+            } else {
+                info('transporte5');
+                $reservation->save();
+            }
 
             $hash = md5($reservation->id);
             $tilopay_transaction = new TilopayTransaction();
@@ -175,6 +228,35 @@ class PaymentController extends Controller
             ], 500);
         }
     }
+    private function calculateTranportCost($distance, $pricePerKm, $minimumDistance, $minimumPrice, $maximunDistance)
+    {
+        $cost = 0;
+        if ($distance < $minimumDistance) {
+            $cost = $minimumPrice;
+        } else if ($distance > $maximunDistance) {
+            $cost = 0;
+        } else {
+            $intMinimumDistance = intval($minimumDistance);
+            $floatMinimunPrice = floatval($minimumPrice);
+            $floatPricePerKm = floatval($pricePerKm);
+            $intDistance = intval($distance);
+            $cost = $floatMinimunPrice + ($intDistance - $intMinimumDistance) * $floatPricePerKm;
+        }
+        return $cost;
+    }
+
+    public function getTotalPersonasTransporte($fecha_tour_id, $horario_id)
+    {
+        $totalPersonas = Reserva::where('id_fecha_tour', $fecha_tour_id)
+                                ->where('id_horario', $horario_id)
+                                ->whereHas('transporte') // Asegura que sólo considera reservas con transporte
+                                ->get()
+                                ->sum(function ($reserva) {
+                                    return $reserva->cantidad_adultos + $reserva->cantidad_niños + $reserva->cantidad_niños_gratis;
+                                });
+
+        return $totalPersonas;
+    }
 
     private function getToken()
     {
@@ -221,7 +303,6 @@ class PaymentController extends Controller
 
     public function processPaymentSDK(PaymentValidationRequest $request)
     {
-
         $agencia = Agencia::where('nombre', 'WEB')->first();
 
         // get all results Price where id_agencia = $agencia->id 
@@ -264,6 +345,8 @@ class PaymentController extends Controller
                 $fecha_tour = Fecha_tour::create(['fecha' => $request->date]);
             }
 
+            $configuracionTransporte = ConfiguracionTransporte::first();
+
             // Add Reseration
             $reservation = new Reserva();
             $reservation->id_agencia = $agencia->id;
@@ -279,7 +362,46 @@ class PaymentController extends Controller
             $reservation->comision_agencia = 0;
             $reservation->monto_neto = $subtotal;
 
-            $reservation->save();
+            // Add transport
+            if ($request->needTransport) {
+
+                $totalPersonasTransporte = $this->getTotalPersonasTransporte($fecha_tour->id, $request->schedule_id);
+                $totalPersonasReserva = $reservation->cantidad_adultos + $reservation->cantidad_niños + $reservation->cantidad_niños_gratis;
+                if ($totalPersonasTransporte + $totalPersonasReserva > $configuracionTransporte->cantidad_maxima_pasajeros) {
+                    return response()->json(['error' => 'La cantidad de personas excede la capacidad máxima de pasajeros.'], 400);
+                }    
+                $reservation->save();
+
+                $precioMinimo = $configuracionTransporte->precio_minimo;
+                $distanciaMaxima = $configuracionTransporte->distancia_maxima;
+                $distanciaMinima = $configuracionTransporte->distancia_minima;
+                $precioPorKmAdicional = $configuracionTransporte->precio_por_km_adicional;
+
+                $cost = $this->calculateTranportCost(
+                    $request->distance,
+                    $precioPorKmAdicional,
+                    $distanciaMinima,
+                    $precioMinimo,
+                    $distanciaMaxima
+                );
+
+
+                if ($cost !== 0) {
+                    $transport = new Transporte();
+                    $transport->reserva_id = $reservation->id;
+                    $transport->punto_recogida = $request->placeSelected;
+                    $transport->direccion = $request->placeSelected["direccion"];
+                    $transport->placeId = $request->placeSelected["placeId"];
+                    $transport->latitud = $request->placeSelected["ubicacion"]["lat"];
+                    $transport->longitud = $request->placeSelected["ubicacion"]["lng"];
+                    $transport->costo = $cost;
+                    $transport->distancia = $request->distance;
+                    $transport->save();
+                }
+                
+            } else {
+                $reservation->save();
+            }
 
             $hash = md5($reservation->id);
             $tilopay_transaction = new TilopayTransaction();
@@ -320,6 +442,7 @@ class PaymentController extends Controller
             ], 500);
         } catch (\Exception $e) {
             // Manejar otros tipos de errores generales
+            info('error payment', $e->getMessage());
             return response()->json([
                 'error' => 'Error interno del servidor.',
                 'message' => $e->getMessage()

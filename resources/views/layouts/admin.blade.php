@@ -91,6 +91,11 @@
                         <a href="{{ route('admin.pagos') }}">
                             <i class="fas fa-dollar-sign"></i>Consultar Pagos</a>
                     </li>
+                    <li class="{{ Route::is('admin.transporte') ? 'active' : '' }} ">
+                        <a href="{{ route('admin.transporte') }}">
+                            <i class="fas fa-dollar-sign"></i>Transporte</a>
+
+                    </li>
                     <li class="{{ Route::is('admin.precio') ? 'active' : '' }} ">
                         <a href="{{ route('admin.precio') }}">
                             <i class="fas fa-dollar-sign"></i>Precios</a>
@@ -158,6 +163,11 @@
                         <a href="{{ route('admin.pagos') }}">
                             <i class="fas fa-dollar-sign"></i>Consultar Pagos</a>
                     </li>
+                    <li class="{{ Route::is('admin.transporte') ? 'active' : '' }} ">
+                        <a href="{{ route('admin.transporte') }}">
+                            <i class="fas fa-dollar-sign"></i>Transporte</a>
+                    </li>
+                    
                     <li class="{{ Route::is('admin.precio') ? 'active' : '' }} ">
                         <a href="{{ route('admin.precio') }}">
                             <i class="fas fa-dollar-sign"></i>Precios</a>

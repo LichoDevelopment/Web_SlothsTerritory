@@ -230,7 +230,6 @@ class ReservacionController extends Controller
     //    Get tilopay_transaction by hash
     public function getTilopayTransaction($hash)
     {
-        // info('getTilopayTransaction');
         $tilopay_transaction = TilopayTransaction::where('hashKey', $hash)->first();
 
         // Verificar si la transacción fue encontrada
@@ -249,7 +248,6 @@ class ReservacionController extends Controller
 
     public function updateFromWeb(Request $request, $hash)
     {
-        // info('updateFromWeb');
         // $request->validate([
         //     'query.OrderHash' => 'required',
         //     'query.tilopay-transaction' => 'required',
@@ -277,11 +275,8 @@ class ReservacionController extends Controller
         // Obtener la reserva asociada
         $reservation = $tilopayTransaction->reserva;
 
-        // info('reservation', $reservation->toArray());
-
         if ($request->input('query.code') === '1') {
             // Transacción exitosa
-            // info('emial'. $dataToEmail->billToEmail);
             $paymentStatus = 'Transacción exitosa';
             Mail::to($dataToEmail->billToEmail)->send(new ReservationConfirmation($dataToEmail, $paymentStatus));
 
