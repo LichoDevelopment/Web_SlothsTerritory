@@ -69,5 +69,10 @@ class Reserva extends Model
     {
         return $this->hasOne(TilopayTransaction::class);
     }
+
+    public function transporte()
+    {
+        return $this->hasOne(Transporte::class);
+    }
 }
 

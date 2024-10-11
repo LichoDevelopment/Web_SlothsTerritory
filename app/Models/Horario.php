@@ -22,6 +22,7 @@ class Horario extends Model
         'hora_minima_reservar',
         'id_tour',
         'hours_before_booking',
+        'precio_transporte'
     ];
 
 

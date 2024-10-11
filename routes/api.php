@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\API\ClickTrackingController;
+use App\Http\Controllers\API\ConfiguracionTransporteController;
+use App\Http\Controllers\API\DistanceController;
+use App\Http\Controllers\API\RouteOptimizationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -25,3 +28,8 @@ Route::post('review', 'API\ReviewController@create');
 Route::get('tour', 'API\TourController@info');
 Route::post('mail', 'API\MailController@send');
 Route::post('/trackClick', [ClickTrackingController::class, 'trackClick']);
+
+Route::get('/calculate-distance', [DistanceController::class, 'calculate']);
+Route::get('/optimized-route', [RouteOptimizationController::class, 'generateOptimizedRoute']);
+Route::get('/getTransportPriceWeb', [ConfiguracionTransporteController::class, 'index']);
+Route::get('/getAvailableTransportPlacesWeb/{scheduleId}/{date}', [ConfiguracionTransporteController::class, 'getAvailableTransportPlaces']);
