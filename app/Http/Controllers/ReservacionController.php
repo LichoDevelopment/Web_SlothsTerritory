@@ -18,85 +18,86 @@ use Illuminate\Support\Facades\Mail;
 class ReservacionController extends Controller
 {
     /**
-    * @var Request
-    */
-   private $request;
+     * @var Request
+     */
+    private $request;
 
-   private $reglasValidacion = [
-       'nombre_cliente'     => 'required',
-       'cantidad_adultos'   => 'required',
-       'cantidad_niños'     => 'required',
-       'monto_total'        => 'required',
-       'descuento'          => 'required',
-       'monto_con_descuento'=> 'required',
-       'comision_agencia'   => 'required',
-       'monto_neto'         => 'required',
-       'id_agencia'         => 'required',
-       'id_tour'            => 'required',
-       'id_horario'         => 'required',
-    //    'id_precio'          => 'required',
+    private $reglasValidacion = [
+        'nombre_cliente'     => 'required',
+        'cantidad_adultos'   => 'required',
+        'cantidad_niños'     => 'required',
+        'monto_total'        => 'required',
+        'descuento'          => 'required',
+        'monto_con_descuento' => 'required',
+        'comision_agencia'   => 'required',
+        'monto_neto'         => 'required',
+        'id_agencia'         => 'required',
+        'id_tour'            => 'required',
+        'id_horario'         => 'required',
+        //    'id_precio'          => 'required',
     ];
 
     private $mensajesValidacion = [
         'required' => 'El campo :attribute es requerido'
     ];
 
-   public function __construct(Request $request) {
-       $this->request = $request;
-   }
+    public function __construct(Request $request)
+    {
+        $this->request = $request;
+    }
 
-   public function eliminadas(Request $request)
-   {
+    public function eliminadas(Request $request)
+    {
 
-       $reservas = DB::select('CALL reservas_eliminadas()');
-    //    $reservas = Reserva::onlyTrashed()->get();
-    //    print_r($reservas);
-       return view('admin.reservas.eliminadas', compact('reservas'));
-   }
+        $reservas = DB::select('CALL reservas_eliminadas()');
+        //    $reservas = Reserva::onlyTrashed()->get();
+        //    print_r($reservas);
+        return view('admin.reservas.eliminadas', compact('reservas'));
+    }
 
-   public function store()
-   {
-       $fecha_tour = Fecha_tour::where('fecha',$this->request->fecha_tour)->first();
-       if(!$fecha_tour){
-           $fecha_tour = Fecha_tour::create(['fecha' => $this->request->fecha_tour]);
-       }
+    public function store()
+    {
+        $fecha_tour = Fecha_tour::where('fecha', $this->request->fecha_tour)->first();
+        if (!$fecha_tour) {
+            $fecha_tour = Fecha_tour::create(['fecha' => $this->request->fecha_tour]);
+        }
 
-       $registro = Registro::where('id_horario',$this->request->id_horario)
-                            ->where('id_fecha',$fecha_tour->id)
-                            ->first();
+        $registro = Registro::where('id_horario', $this->request->id_horario)
+            ->where('id_fecha', $fecha_tour->id)
+            ->first();
 
-       $total_pax_en_reserva = 
+        $total_pax_en_reserva =
             $this->request->cantidad_adultos + $this->request->cantidad_niños + $this->request->cantidad_niños_gratis;
-       
-       $validator = Validator::make($this->request->all(), $this->reglasValidacion, $this->mensajesValidacion);
 
-       if($validator->fails()){
-           return response([
-               "status"    => 422,
-               "message"   => "Error",
-               "errors"    => $validator->errors()
-           ], 422);
-       }else{
-           $reservacion = Reserva::create([
-               'nombre_cliente'         => $this->request->nombre_cliente,
-               'cantidad_adultos'       => $this->request->cantidad_adultos,
-               'cantidad_niños'         => $this->request->cantidad_niños,
-               'cantidad_niños_gratis'  => $this->request->cantidad_niños_gratis,
-               'monto_total'            => $this->request->monto_total,
-               'descuento'              => $this->request->descuento,
-               'monto_con_descuento'    => $this->request->monto_con_descuento,
-               'comision_agencia'       => $this->request->comision_agencia,
-               'monto_neto'             => $this->request->monto_neto,
-               'id_agencia'             => $this->request->id_agencia,
-               'id_tour'                => $this->request->id_tour,
-               'id_horario'             => $this->request->id_horario,
-            //    'id_precio'              => $this->request->id_precio,
-               'id_fecha_tour'          => $fecha_tour->id,
-               'factura'                => $this->request->factura,
-               'id_estado'              => 1,
-           ]);
+        $validator = Validator::make($this->request->all(), $this->reglasValidacion, $this->mensajesValidacion);
 
-           if($registro){
+        if ($validator->fails()) {
+            return response([
+                "status"    => 422,
+                "message"   => "Error",
+                "errors"    => $validator->errors()
+            ], 422);
+        } else {
+            $reservacion = Reserva::create([
+                'nombre_cliente'         => $this->request->nombre_cliente,
+                'cantidad_adultos'       => $this->request->cantidad_adultos,
+                'cantidad_niños'         => $this->request->cantidad_niños,
+                'cantidad_niños_gratis'  => $this->request->cantidad_niños_gratis,
+                'monto_total'            => $this->request->monto_total,
+                'descuento'              => $this->request->descuento,
+                'monto_con_descuento'    => $this->request->monto_con_descuento,
+                'comision_agencia'       => $this->request->comision_agencia,
+                'monto_neto'             => $this->request->monto_neto,
+                'id_agencia'             => $this->request->id_agencia,
+                'id_tour'                => $this->request->id_tour,
+                'id_horario'             => $this->request->id_horario,
+                //    'id_precio'              => $this->request->id_precio,
+                'id_fecha_tour'          => $fecha_tour->id,
+                'factura'                => $this->request->factura,
+                'id_estado'              => 1,
+            ]);
+
+            if ($registro) {
                 $registro->update([
                     'id_horario'        => $this->request->id_horario,
                     'id_fecha'          => $fecha_tour->id,
@@ -104,79 +105,78 @@ class ReservacionController extends Controller
                 ]);
 
                 $registro->save();
-           }else{
-               Registro::create([
+            } else {
+                Registro::create([
                     'id_horario'        => $this->request->id_horario,
                     'id_fecha'          => $fecha_tour->id,
                     'cantidad_reservas' => $total_pax_en_reserva
-               ]);
-           }
+                ]);
+            }
 
-           return redirect('/ver_reserva/'.$reservacion->id);
-       }       
+            return redirect('/ver_reserva/' . $reservacion->id);
+        }
+    }
 
-   }
-
-   public function updateEstado(Request $request, $id)
-   {
-        $response = response(["message"=> "Estado actualizado"],202);
+    public function updateEstado(Request $request, $id)
+    {
+        $response = response(["message" => "Estado actualizado"], 202);
 
         Reserva::find($id)->update([
             'id_estado' => $request->estado
         ]);
-       return $response;
-   }
+        return $response;
+    }
 
-   public function updateEstadoEliminado($id)
-   {
+    public function updateEstadoEliminado($id)
+    {
         $reserva = Reserva::onlyTrashed()->find($id);
-        $registro = Registro::where('id_horario',$reserva->id_horario)
-                    ->where('id_fecha',$reserva->id_fecha_tour)
-                    ->first();
+        $registro = Registro::where('id_horario', $reserva->id_horario)
+            ->where('id_fecha', $reserva->id_fecha_tour)
+            ->first();
         $cantidad_pax_en_reserva = $reserva->cantidad_adultos + $reserva->cantidad_niños + $reserva->cantidad_niños_gratis;
         $temp = $registro->cantidad_reservas + $cantidad_pax_en_reserva;
         $registro->cantidad_reservas = $temp;
         $registro->save();
-        $response = response(["message"=> "Reserva integrada nuevamente"],202);
+        $response = response(["message" => "Reserva integrada nuevamente"], 202);
         Reserva::withTrashed()->find($id)->restore();
-            // 'deleted_at'     =>$this->request->deleted_at,
-            // 'deleted_at'     =>null,
+        // 'deleted_at'     =>$this->request->deleted_at,
+        // 'deleted_at'     =>null,
         // ]);
-    
-
-       return $response;
-   }
-
-   public function update($id)
-   {
-       $fecha_tour = Fecha_tour::where('fecha',$this->request->fecha_tour)->first();
-       if(!$fecha_tour){
-           $fecha_tour = Fecha_tour::create(['fecha' => $this->request->fecha_tour]);
-       }
-
-       $reserva = Reserva::find($id);
-
-       $registro = Registro::where('id_horario',$this->request->id_horario)
-                            ->where('id_fecha',$fecha_tour->id)
-                            ->first();
-
-       $cant_reservas = $registro ? $registro->cantidad_reservas : 0;
-
-       $cantidad_previa_pax_en_reserva = $reserva->cantidad_adultos + $reserva->cantidad_niños + $reserva->cantidad_niños_gratis;
-       $cantidad_reservas = $cant_reservas - $cantidad_previa_pax_en_reserva;
-
-       $total_pax_en_reserva = $this->request->cantidad_adultos + $this->request->cantidad_niños + $this->request->cantidad_niños_gratis;
 
 
-       $validator = Validator::make($this->request->all(), $this->reglasValidacion, $this->mensajesValidacion);
+        return $response;
+    }
 
-       if($validator->fails()){
-           return response([
-               "status"    => 422,
-               "message"   => "Error",
-               "errors"    => $validator->errors()
-           ], 422);
-        }else{
+    public function update($id)
+    {
+        $fecha_tour = Fecha_tour::where('fecha', $this->request->fecha_tour)->first();
+        if (!$fecha_tour) {
+            $fecha_tour = Fecha_tour::create(['fecha' => $this->request->fecha_tour]);
+        }
+
+        $reserva = Reserva::find($id);
+
+        $registro = Registro::where('id_horario', $this->request->id_horario)
+            ->where('id_fecha', $fecha_tour->id)
+            ->first();
+
+        $cant_reservas = $registro ? $registro->cantidad_reservas : 0;
+
+        $cantidad_previa_pax_en_reserva = $reserva->cantidad_adultos + $reserva->cantidad_niños + $reserva->cantidad_niños_gratis;
+        $cantidad_reservas = $cant_reservas - $cantidad_previa_pax_en_reserva;
+
+        $total_pax_en_reserva = $this->request->cantidad_adultos + $this->request->cantidad_niños + $this->request->cantidad_niños_gratis;
+
+
+        $validator = Validator::make($this->request->all(), $this->reglasValidacion, $this->mensajesValidacion);
+
+        if ($validator->fails()) {
+            return response([
+                "status"    => 422,
+                "message"   => "Error",
+                "errors"    => $validator->errors()
+            ], 422);
+        } else {
             $reserva->update([
                 'nombre_cliente'         => $this->request->nombre_cliente,
                 'cantidad_adultos'       => $this->request->cantidad_adultos,
@@ -197,35 +197,33 @@ class ReservacionController extends Controller
 
             $reserva->save();
 
-            if($registro){
+            if ($registro) {
                 $registro->update([
                     'id_horario'        => $this->request->id_horario,
                     'id_fecha'          => $fecha_tour->id,
                     'cantidad_reservas' => $cantidad_reservas + $total_pax_en_reserva
                 ]);
                 $registro->save();
-
             }
-            return redirect('/ver_reserva/'.$id);
-       }
+            return redirect('/ver_reserva/' . $id);
+        }
+    }
 
-   }
+    public function destroy($id)
+    {
+        $reserva = Reserva::find($id);
+        //    $registro = Registro::where('id_horario',$reserva->id_horario)
+        //                         ->where('id_fecha',$reserva->id_fecha_tour)
+        //                         ->first();
 
-   public function destroy($id)
-   {
-       $reserva = Reserva::find($id);
-    //    $registro = Registro::where('id_horario',$reserva->id_horario)
-    //                         ->where('id_fecha',$reserva->id_fecha_tour)
-    //                         ->first();
+        //    $cantidad_pax_en_reserva = $reserva->cantidad_adultos + $reserva->cantidad_niños + $reserva->cantidad_niños_gratis;
+        //    $temp = $registro->cantidad_reservas - $cantidad_pax_en_reserva;
+        //    $registro->cantidad_reservas = $temp;
+        //    $registro->save();
 
-    //    $cantidad_pax_en_reserva = $reserva->cantidad_adultos + $reserva->cantidad_niños + $reserva->cantidad_niños_gratis;
-    //    $temp = $registro->cantidad_reservas - $cantidad_pax_en_reserva;
-    //    $registro->cantidad_reservas = $temp;
-    //    $registro->save();
-
-       $reserva->delete();
-       return response("", 204);
-   }
+        $reserva->delete();
+        return response("", 204);
+    }
 
     //    Get tilopay_transaction by hash
     public function getTilopayTransaction($hash)
@@ -260,7 +258,7 @@ class ReservacionController extends Controller
         if (!$tilopayTransaction) {
             return response()->json(['message' => 'Transaction not found'], 404);
         }
-        
+
         // Actualizar datos de TilopayTransaction
         $tilopayTransaction->update([
             'order_hash' => $request->input('query.OrderHash'),
@@ -269,7 +267,7 @@ class ReservacionController extends Controller
             'auth_code' => $request->input('query.auth'),
             'response' => $request->input('query'),
         ]);
-        
+
         $dataToEmail = $tilopayTransaction->load('reserva.tour', 'reserva.horario', 'reserva.fecha_tour');
 
         // Obtener la reserva asociada
@@ -294,4 +292,3 @@ class ReservacionController extends Controller
         ]);
     }
 }
-

@@ -35,8 +35,11 @@ class ReservationConfirmation extends Mailable
     public function build()
     {
         return $this->view('correo.reservation_confirmation')
-        ->with(['reservation' => $this->data, 'paymentStatus' => $this->paymentStatus])
-        ->subject('Reserva confirmada')
-        ->cc('info@slothsterritory.com');
+            ->with([
+                'reservation' => $this->data,
+                'paymentStatus' => $this->paymentStatus
+            ])
+            ->subject('Reservation Confirmed - Sloths Territory')
+            ->cc('info@slothsterritory.com');
     }
 }

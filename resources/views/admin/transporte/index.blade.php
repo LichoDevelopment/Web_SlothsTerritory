@@ -20,6 +20,7 @@
                             <th>Fecha</th>
                             <th>Horario</th>
                             <th>Ruta</th>
+                            <th>Hora de Salida del Chófer</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -29,11 +30,11 @@
                                     <td>{{ $datoFecha['fecha_formateada'] }}</td>
                                     <td>{{ $datoHorario['hora'] }}</td>
                                     <td>
-                                        @if ($datoHorario['ruta_link'])
-                                            <a href="{{ $datoHorario['ruta_link'] }}" target="_blank">Ver Ruta</a>
+                                        @if ($datoHorario['route_link'])
+                                            <a href="{{ $datoHorario['route_link'] }}" target="_blank">Ver Ruta</a>
                                             <!-- Botón para copiar el enlace -->
                                             <button class="btn btn-link"
-                                                onclick="copyToClipboard('{{ $datoHorario['ruta_link'] }}')"
+                                                onclick="copyToClipboard('{{ $datoHorario['route_link'] }}')"
                                                 title="Copiar enlace">
                                                 <i class="fas fa-copy"></i>
                                             </button>
@@ -41,6 +42,7 @@
                                             No hay ruta disponible
                                         @endif
                                     </td>
+                                    <td>{{ $datoHorario['driver_departure_time'] }}</td>
                                 </tr>
                             @endforeach
                         @endforeach

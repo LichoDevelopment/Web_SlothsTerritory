@@ -316,13 +316,13 @@ class PaymentController extends Controller
         // Calculo de totales
         $totalAdults = $numAdults * $adultPrice;
         $totalChildren = $numChildren * $childPrice;
-        $subtotal = $totalAdults + $totalChildren;
 
         // Impuestos y tarifas
         $taxesAndFeesPercentage = 0.085; // 8.5%
         $transactionFee = 0.40; // tarifa fija
-
+        
         // Total con impuestos
+        $subtotal = $totalAdults + $totalChildren;
         $totalWithTaxes = round($subtotal * (1 + $taxesAndFeesPercentage) + $transactionFee, 2);
 
         $commission_Tilopay_amount = $totalWithTaxes * 0.035 + 0.35;
@@ -361,7 +361,6 @@ class PaymentController extends Controller
                 if ($totalPersonasTransporte + $totalPersonasReserva > $configuracionTransporte->cantidad_maxima_pasajeros) {
                     return response()->json(['error' => 'La cantidad de personas excede la capacidad máxima de pasajeros.'], 400);
                 }    
-                $reservation->save();
 
                 $precioMinimo = $configuracionTransporte->precio_minimo;
                 $distanciaMaxima = $configuracionTransporte->distancia_maxima;
@@ -376,6 +375,13 @@ class PaymentController extends Controller
                     $distanciaMaxima
                 );
 
+                // Total con impuestos
+                $subtotal = $totalAdults + $totalChildren + $cost;
+                $totalWithTaxes = round($subtotal * (1 + $taxesAndFeesPercentage) + $transactionFee, 2);
+
+                $reservation->monto_total = $totalWithTaxes;
+                $reservation->monto_neto = $subtotal;
+                $reservation->save();
 
                 if ($cost !== 0) {
                     $transport = new Transporte();

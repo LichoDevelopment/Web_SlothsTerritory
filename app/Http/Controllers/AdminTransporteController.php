@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Reserva;
+use App\Traits\CalculaRutasTrait;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class AdminTransporteController extends Controller
 {
+
+    use CalculaRutasTrait;
+
     public function index(Request $request)
     {
         // Obtener todas las reservas que tienen transporte
@@ -36,13 +40,35 @@ class AdminTransporteController extends Controller
                 $hora = $horario->hora;
 
                 // Generar el enlace de ruta
-                $link = $this->generateRouteLink($fechaId, $horarioId);
+                // $link = $this->generateRouteLink($fechaId, $horarioId);
+
+                // $horarios[] = [
+                //     'horario_id' => $horarioId,
+                //     'hora' => $hora,
+                //     'reservas' => $reservasDeHorario,
+                //     'ruta_link' => $link,
+                // ];
+
+                // Llamar al método calculateRouteAndTimes para obtener los tiempos
+                $routeData = $this->calculateRouteAndTimes($fechaId, $horarioId);
+
+                if ($routeData) {
+                    $driverDepartureTime = $routeData['driver_departure_time']->format('H:i');
+                    $routeLink = $routeData['route_link'];
+                    $pickUpTimes = $routeData['pick_up_times'];
+                } else {
+                    $driverDepartureTime = 'N/A';
+                    $routeLink = null;
+                    $pickUpTimes = [];
+                }
 
                 $horarios[] = [
                     'horario_id' => $horarioId,
                     'hora' => $hora,
                     'reservas' => $reservasDeHorario,
-                    'ruta_link' => $link,
+                    'driver_departure_time' => $driverDepartureTime,
+                    'route_link' => $routeLink,
+                    'pick_up_times' => $pickUpTimes,
                 ];
             }
 
@@ -57,7 +83,7 @@ class AdminTransporteController extends Controller
         return view('admin.transporte.index', compact('datos'));
     }
 
-    private function generateRouteLink($fecha_id, $horarioId)
+    private function generateRouteLinkV2($fecha_id, $horarioId)
     {
         // Obtener las reservas con transporte para la fecha y horario seleccionados
         $reservas = Reserva::where('id_fecha_tour', $fecha_id)
@@ -65,6 +91,8 @@ class AdminTransporteController extends Controller
             ->whereHas('transporte')
             ->with('transporte')
             ->get();
+
+        $fecha = Reserva::find($reservas->first()->id)->fecha_tour->fecha;
 
         if ($reservas->isEmpty()) {
             return null;
@@ -94,30 +122,6 @@ class AdminTransporteController extends Controller
         return $link;
     }
 
-    // private function generarEnlaceGoogleMaps($origen, $destino, $waypoints)
-    // {
-    //     $baseUrl = 'https://www.google.com/maps/dir/?api=1';
-
-    //     // Limite de waypoints es 25 para cuentas con facturación
-    //     if (count($waypoints) > 23) {
-    //         // 23 waypoints + origen y destino = 25
-    //         $waypoints = array_slice($waypoints, 0, 23);
-    //     }
-
-    //     $waypointsStr = implode('|', $waypoints);
-
-    //     $params = [
-    //         'origin' => $origen,
-    //         'destination' => $destino,
-    //         'travelmode' => 'driving',
-    //         'waypoints' => 'optimize:true|' . $waypointsStr,
-    //     ];
-
-    //     $query = http_build_query($params);
-
-    //     return $baseUrl . '&' . $query;
-    // }
-
     private function generarEnlaceGoogleMaps($origen, $destino, $waypoints)
     {
         $apiKey = env('GOOGLE_MAPS_API_KEY');
@@ -134,6 +138,7 @@ class AdminTransporteController extends Controller
             'origin' => $origen,
             'destination' => $destino,
             'waypoints' => 'optimize:true|' . implode('|', $waypoints),
+            // 'arrival_time' => `{$fecha} 
             'key' => $apiKey,
         ]);
 

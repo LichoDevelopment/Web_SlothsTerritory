@@ -32,6 +32,9 @@ class ConfiguracionTransporteController extends Controller
     public function getTotalPersonasTransporte($fecha_tour, $horario_id)
     {
         $fecha_tour = Fecha_tour::where('fecha', $fecha_tour)->first();
+        if (!$fecha_tour) {
+            return 0;
+        }
         $totalPersonas = Reserva::where('id_fecha_tour', $fecha_tour->id)
                                 ->where('id_horario', $horario_id)
                                 ->whereHas('transporte')
