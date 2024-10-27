@@ -122,6 +122,7 @@
                             <th>#</th>
                             <th>Tour</th>
                             <th>Agencia</th>
+                            <th>Transporte</th>
                             <th>Hora</th>
                             <th>Fecha</th>
                             <th>Cliente</th>
@@ -145,6 +146,7 @@
                                 <td> {{$loop->index + 1}} </td>
                                 <td> {{$reserva->nombre_tour}} </td>
                                 <td> {{$reserva->nombre_agencia}} </td>
+                                <td> {{$reserva->tiene_transporte}} </td>
                                 <td> {{$reserva->hora}} </td>
                                 <td> {{$reserva->fecha}} </td>
                                 <td> {{$reserva->nombre_cliente}} </td>

@@ -92,6 +92,7 @@ class ReservacionController extends Controller
                 'id_tour'                => $this->request->id_tour,
                 'id_horario'             => $this->request->id_horario,
                 //    'id_precio'              => $this->request->id_precio,
+                'payment_status'        => 'recepcion',
                 'id_fecha_tour'          => $fecha_tour->id,
                 'factura'                => $this->request->factura,
                 'id_estado'              => 1,

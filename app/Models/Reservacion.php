@@ -25,9 +25,9 @@ class Reservacion extends Model
         'precio_con_descuento',
         'factura',
         'fecha_inicio',
-        'agencia_id',
-        'tour_id',
-        'horario_id'
+        'id_agencia',
+        'id_tour',
+        'id_horario',
     ];
 
     public function tour()
@@ -36,10 +36,10 @@ class Reservacion extends Model
     }
     public function agencia()
     {
-        return $this->belongsTo('\App\Models\Agencia','agencia_id');
+        return $this->belongsTo('\App\Models\Agencia','id_agencia');
     }
     public function horario()
     {
-        return $this->belongsTo('\App\Models\Horario','horario_id');
+        return $this->belongsTo('\App\Models\Horario','id_horario');
     }
 }

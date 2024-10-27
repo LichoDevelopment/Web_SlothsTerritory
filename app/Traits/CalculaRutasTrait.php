@@ -9,7 +9,7 @@ use Carbon\Carbon;
 
 trait CalculaRutasTrait
 {
-    public function calculateRouteAndTimes($fechaTourId, $horarioId)
+    public function calculateRouteAndTimes($fechaTourId, $horarioId, $isAdm = false)
     {
         // Obtener el horario
         $horario = Horario::find($horarioId);
@@ -32,11 +32,22 @@ trait CalculaRutasTrait
         $arrivalTimestamp = $scheduledArrivalDateTime->timestamp;
 
         // Obtener las reservas con transporte para la fecha y horario dados
-        $reservas = Reserva::where('id_fecha_tour', $fechaTourId)
-            ->where('id_horario', $horarioId)
-            ->whereHas('transporte')
-            ->with(['transporte'])
-            ->get();
+        if ($isAdm) {
+            $reservas = Reserva::where('id_fecha_tour', $fechaTourId)
+                ->where('id_horario', $horarioId)
+                ->whereHas('transporte')
+                ->with(['transporte'])
+                ->get();
+
+        } else {
+            $reservas = Reserva::where('id_fecha_tour', $fechaTourId)
+                ->where('id_horario', $horarioId)
+                ->whereHas('transporte', function ($query) {
+                    $query->where('notificacion_enviada', false);
+                })
+                ->with(['transporte'])
+                ->get();
+        }
 
         if ($reservas->isEmpty()) {
             return null;

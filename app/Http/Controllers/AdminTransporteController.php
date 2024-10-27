@@ -39,18 +39,9 @@ class AdminTransporteController extends Controller
                 $horario = $reservasDeHorario->first()->horario;
                 $hora = $horario->hora;
 
-                // Generar el enlace de ruta
-                // $link = $this->generateRouteLink($fechaId, $horarioId);
-
-                // $horarios[] = [
-                //     'horario_id' => $horarioId,
-                //     'hora' => $hora,
-                //     'reservas' => $reservasDeHorario,
-                //     'ruta_link' => $link,
-                // ];
-
+                $isAdm = true;
                 // Llamar al método calculateRouteAndTimes para obtener los tiempos
-                $routeData = $this->calculateRouteAndTimes($fechaId, $horarioId);
+                $routeData = $this->calculateRouteAndTimes($fechaId, $horarioId, $isAdm);
 
                 if ($routeData) {
                     $driverDepartureTime = $routeData['driver_departure_time']->format('H:i');

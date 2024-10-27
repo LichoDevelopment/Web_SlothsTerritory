@@ -21,7 +21,8 @@ class Transporte extends Model
         'latitud',
         'longitud', 
         'costo',
-        'distancia'
+        'distancia',
+        'notificacion_enviada'
     ];
 
     public function reserva()

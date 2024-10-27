@@ -174,6 +174,15 @@ class HomeController extends Controller
         $reservasF = [];
         foreach ($reservas as $reserva) {
             if ($reserva->nombre_agencia !== 'WEB' || $reserva->payment_status !== 'pending') {
+                // Carga la reserva como un modelo para acceder a relaciones
+                $reservaModel = Reserva::find($reserva->id);
+                
+                // Verifica si la reserva tiene transporte
+                $tieneTransporte = $reservaModel->transporte()->exists() ? 'Sí' : 'No';
+                
+                // Añade el campo de transporte al objeto de reserva
+                $reserva->tiene_transporte = $tieneTransporte;
+    
                 $reservasF[] = $reserva;
             }
         }

@@ -11,6 +11,7 @@
             font-family: Arial, sans-serif;
             color: #333333;
         }
+
         .container {
             max-width: 600px;
             margin: 0 auto;
@@ -20,14 +21,17 @@
             background-color: #f9f9f9;
             margin-top: 20px;
         }
+
         .header {
             text-align: center;
             margin-bottom: 20px;
         }
+
         .logo {
             max-width: 100px;
             margin-bottom: 10px;
         }
+
         .status {
             background-color: #FFA413;
             color: #ffffff;
@@ -36,42 +40,51 @@
             text-align: center;
             margin-bottom: 20px;
         }
+
         .reservationDetails {
             border-top: 1px solid #97DD3C;
             padding-top: 15px;
         }
+
         .contactInfo {
             margin-top: 20px;
             padding-top: 10px;
             border-top: 1px solid #97DD3C;
             color: #555;
         }
+
         .footer {
             margin-top: 20px;
             text-align: center;
             font-size: 0.9em;
             color: #555;
         }
+
         .contact-link {
             color: #FFA413;
             text-decoration: underline;
             transition: color 0.3s ease;
         }
+
         .contact-link:hover,
         .contact-link:focus {
             color: #97DD3C;
             text-decoration: none;
         }
+
         .rules {
             margin-top: 20px;
         }
+
         .rules h3 {
             margin-bottom: 10px;
         }
+
         .rules ul {
             list-style-type: disc;
             padding-left: 20px;
         }
+
         .rules li {
             margin-bottom: 10px;
         }
@@ -95,7 +108,8 @@
                 <h2>Reservation Details</h2>
                 <p><strong>Reservation Number:</strong> {{ $data->reserva->id }}</p>
                 <p><strong>Customer Name:</strong> {{ $data->reserva->nombre_cliente }}</p>
-                <p><strong>Tour Date:</strong> {{ \Carbon\Carbon::parse($data->reserva->fecha_tour->fecha)->format('m/d/Y') }}</p>
+                <p><strong>Tour Date:</strong>
+                    {{ \Carbon\Carbon::parse($data->reserva->fecha_tour->fecha)->format('m/d/Y') }}</p>
                 <p><strong>Tour Time:</strong> {{ $data->reserva->horario->hora }}</p>
                 <p><strong>Adults:</strong> {{ $data->reserva->cantidad_adultos }}</p>
                 <p><strong>Children:</strong> {{ $data->reserva->cantidad_niños }}</p>
@@ -105,7 +119,13 @@
                 @if ($data->reserva->transporte)
                     <h3>Transportation Information</h3>
                     <p>We have confirmed that your reservation includes transportation.</p>
-                    <p><strong>Important:</strong> The exact pickup time will be communicated to you the day before the tour due to logistical planning, as we need to consolidate all reservations to plan the optimal route.</p>
+                    @php
+                        $hoursBeforeTransport = $data->reserva->horario->hours_before_transport;
+                    @endphp
+                    <p><strong>Important:</strong> The exact pickup time will be communicated to you
+                        {{ $hoursBeforeTransport }} {{ $hoursBeforeTransport == 1 ? 'hour' : 'hours' }} before the
+                        tour due to logistical planning, as we need to consolidate all reservations to plan the optimal
+                        route.</p>
                 @endif
             </div>
         @endif
@@ -114,14 +134,22 @@
             <h3>Important Rules and Policies</h3>
             <ul>
                 @if ($data->reserva->transporte)
-                    <li><strong>Punctuality:</strong> Please ensure you are ready at the pickup point at least <strong>10 minutes before</strong> the scheduled pickup time.</li>
-                    <li><strong>Maximum Wait Time:</strong> The driver will wait a maximum of <strong>5 minutes</strong> at the pickup point. If you are not present after this time, we will proceed with the itinerary to avoid affecting other guests.</li>
-                    <li><strong>Respect the Schedule:</strong> Your cooperation is essential to maintain the established schedule and provide an optimal experience for all passengers.</li>
-                    <li><strong>Luggage and Belongings:</strong> Please have all your belongings ready to facilitate a quick and smooth departure.</li>
-                    <li><strong>Safety Measures:</strong> Remember to follow the driver's instructions at all times and wear your seatbelt during the journey.</li>
+                    <li><strong>Punctuality:</strong> Please ensure you are ready at the pickup point at least
+                        <strong>10 minutes before</strong> the scheduled pickup time.</li>
+                    <li><strong>Maximum Wait Time:</strong> The driver will wait a maximum of <strong>5 minutes</strong>
+                        at the pickup point. If you are not present after this time, we will proceed with the itinerary
+                        to avoid affecting other guests.</li>
+                    <li><strong>Respect the Schedule:</strong> Your cooperation is essential to maintain the established
+                        schedule and provide an optimal experience for all passengers.</li>
+                    <li><strong>Luggage and Belongings:</strong> Please have all your belongings ready to facilitate a
+                        quick and smooth departure.</li>
+                    <li><strong>Safety Measures:</strong> Remember to follow the driver's instructions at all times and
+                        wear your seatbelt during the journey.</li>
                 @endif
-                <li><strong>Weather Conditions:</strong> The tour will proceed even in light rain. In case of extreme weather conditions, we will contact you to reschedule or refund your reservation.</li>
-                <li><strong>Responsibility:</strong> Sloths Territory is not responsible for lost or stolen items during the tour. Please take care of your personal belongings.</li>
+                <li><strong>Weather Conditions:</strong> The tour will proceed even in light rain. In case of extreme
+                    weather conditions, we will contact you to reschedule or refund your reservation.</li>
+                <li><strong>Responsibility:</strong> Sloths Territory is not responsible for lost or stolen items during
+                    the tour. Please take care of your personal belongings.</li>
             </ul>
         </div>
 
