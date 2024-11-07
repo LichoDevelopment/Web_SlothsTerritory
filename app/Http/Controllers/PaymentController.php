@@ -20,207 +20,220 @@ class PaymentController extends Controller
 {
 
 
-    public function processPayment(PaymentValidationRequest $request)
-    {
+    // public function processPayment(PaymentValidationRequest $request)
+    // {
 
-        $token = $this->getToken();
+    //     info('request');
+    //     info($request->all());
+    //     $token = $this->getToken();
 
-        if (!$token) {
-            return response()->json(['error' => 'No se pudo obtener el token de TiloPay'], 500);
-        }
+    //     if (!$token) {
+    //         return response()->json(['error' => 'No se pudo obtener el token de TiloPay'], 500);
+    //     }
 
-        $agencia = Agencia::where('nombre', 'WEB')->first();
+    //     $agencia = Agencia::where('nombre', 'WEB')->first();
 
-        // get all results Price where id_agencia = $agencia->id 
-        $precios = Precio::where('id_agencia', $agencia->id)->where('id_tour', $request->tour_id)->get();
+    //     // get all results Price where id_agencia = $agencia->id 
+    //     $precios = Precio::where('id_agencia', $agencia->id)->where('id_tour', $request->tour_id)->get();
 
-        if (!$precios) {
-            return response()->json(['error' => 'No se pudo obtener el precio del tour'], 500);
-        }
+    //     if (!$precios) {
+    //         return response()->json(['error' => 'No se pudo obtener el precio del tour'], 500);
+    //     }
 
-        $fechaTourRequest = Carbon::createFromFormat('Y-m-d', $request->date);
+    //     $fechaTourRequest = Carbon::createFromFormat('Y-m-d', $request->date);
 
-        $cambioPrecioFecha = Carbon::create(2023, 12, 15);
+    //     $cambioPrecioFecha = Carbon::create(2023, 12, 15);
 
-        // Verificar si la fecha del tour es antes del 15 de diciembre de 2023
-        if ($fechaTourRequest->lessThan($cambioPrecioFecha) && $request->tour_id == 1) {
-            // Usar precios especiales antes del 15 de diciembre de 2023
-            $adultPrice = 35;
-            $childPrice = 28;
-        } else {
-            // Usar los precios normales
-            $adultPrice = $precios[0]->precio_adulto;
-            $childPrice = $precios[0]->precio_niño;
-        }
+    //     // Verificar si la fecha del tour es antes del 15 de diciembre de 2023
+    //     if ($fechaTourRequest->lessThan($cambioPrecioFecha) && $request->tour_id == 1) {
+    //         // Usar precios especiales antes del 15 de diciembre de 2023
+    //         $adultPrice = 35;
+    //         $childPrice = 28;
+    //     } else {
+    //         // Usar los precios normales
+    //         $adultPrice = $precios[0]->precio_adulto;
+    //         $childPrice = $precios[0]->precio_niño;
+    //     }
 
-        // Precios (obtener estos valores de manera segura, por ejemplo, desde la DB)
-        // $adultPrice = $precios[0]->precio_adulto;
-        // $childPrice = $precios[0]->precio_niño;
+    //     // Precios (obtener estos valores de manera segura, por ejemplo, desde la DB)
+    //     // $adultPrice = $precios[0]->precio_adulto;
+    //     // $childPrice = $precios[0]->precio_niño;
 
-        // Cantidad de adultos y niños
-        $numAdults = $request->input('adults');
-        $numChildren = $request->input('children');
+    //     // Cantidad de adultos y niños
+    //     $numAdults = $request->input('adults');
+    //     $numChildren = $request->input('children');
 
-        // Calculo de totales
-        $totalAdults = $numAdults * $adultPrice;
-        $totalChildren = $numChildren * $childPrice;
-        $subtotal = $totalAdults + $totalChildren;
+    //     // Calculo de totales
+    //     $totalAdults = $numAdults * $adultPrice;
+    //     $totalChildren = $numChildren * $childPrice;
+    //     $subtotal = $totalAdults + $totalChildren;
 
-        // Impuestos y tarifas
-        $taxesAndFeesPercentage = 0.085; // 8.5%
-        $transactionFee = 0.40; // tarifa fija
+    //     // Impuestos y tarifas
+    //     $taxesAndFeesPercentage = 0.085; // 8.5%
+    //     $transactionFee = 0.40; // tarifa fija
 
-        // Total con impuestos
-        $totalWithTaxes = round($subtotal * (1 + $taxesAndFeesPercentage) + $transactionFee, 2);
+    //     // Total con impuestos
+    //     $totalWithTaxes = round($subtotal * (1 + $taxesAndFeesPercentage) + $transactionFee, 2);
 
-        $commission_Tilopay_amount = $totalWithTaxes * 0.0425 + 0.35;
-        $commission_system_amount = ($taxesAndFeesPercentage - 0.0425) * $totalWithTaxes;
+    //     $commission_Tilopay_amount = $totalWithTaxes * 0.0425 + 0.35;
+    //     $commission_system_amount = ($taxesAndFeesPercentage - 0.0425) * $totalWithTaxes;
 
-        // Obtener la API Key de tus variables de entorno
-        $apiKey = env('TILOPAY_API_KEY');
+    //     // Obtener la API Key de tus variables de entorno
+    //     $apiKey = env('TILOPAY_API_KEY');
 
-        try {
-            // Preparar los datos para la solicitud
-            $paymentData = array_merge($request->all(), [ //PENDIENTE PERZONALIZAR EL REQUEST
-                'key' => $apiKey, // Añadir la API key a los datos del request
-            ]);
+    //     try {
+    //         // Preparar los datos para la solicitud
+    //         $paymentData = array_merge($request->all(), [ //PENDIENTE PERZONALIZAR EL REQUEST
+    //             'key' => $apiKey, // Añadir la API key a los datos del request
+    //         ]);
 
-            // Find Agency with name 'WEB'
-            $agencia = Agencia::where('nombre', 'WEB')->first();
+    //         // Find Agency with name 'WEB'
+    //         $agencia = Agencia::where('nombre', 'WEB')->first();
 
-            //fechatour
-            $fecha_tour = Fecha_tour::where('fecha', $request->date)->first();
-            if (!$fecha_tour) {
-                $fecha_tour = Fecha_tour::create(['fecha' => $request->date]);
-            }
+    //         //fechatour
+    //         $fecha_tour = Fecha_tour::where('fecha', $request->date)->first();
+    //         if (!$fecha_tour) {
+    //             $fecha_tour = Fecha_tour::create(['fecha' => $request->date]);
+    //         }
 
-            $configuracionTransporte = ConfiguracionTransporte::first();
+    //         $configuracionTransporte = ConfiguracionTransporte::first();
 
-            // Add Reseration
-            $reservation = new Reserva();
-            $reservation->id_agencia = $agencia->id;
-            $reservation->id_tour = $request->tour_id;
-            $reservation->id_fecha_tour = $fecha_tour->id;
-            $reservation->id_horario = $request->schedule_id;
-            $reservation->nombre_cliente = $request->billToFirstName . ' ' . $request->billToLastName;
-            $reservation->cantidad_adultos = $request->adults;
-            $reservation->cantidad_niños = $request->children;
-            $reservation->cantidad_niños_gratis = $request->childrenFree;
-            $reservation->monto_total = $totalWithTaxes;
-            $reservation->monto_con_descuento = 0;
-            $reservation->comision_agencia = 0;
-            $reservation->monto_neto = $subtotal;
+    //         // Add Reseration
+    //         $reservation = new Reserva();
+    //         $reservation->id_agencia = $agencia->id;
+    //         $reservation->id_tour = $request->tour_id;
+    //         $reservation->id_fecha_tour = $fecha_tour->id;
+    //         $reservation->id_horario = $request->schedule_id;
+    //         $reservation->nombre_cliente = $request->billToFirstName . ' ' . $request->billToLastName;
+    //         $reservation->cantidad_adultos = $request->adults;
+    //         $reservation->cantidad_niños = $request->children;
+    //         $reservation->cantidad_niños_gratis = $request->childrenFree;
+    //         $reservation->monto_total = $totalWithTaxes;
+    //         $reservation->monto_con_descuento = 0;
+    //         $reservation->comision_agencia = 0;
+    //         $reservation->monto_neto = $subtotal;
 
-            // Add transport
-            if ($request->needTransport) {
+    //         // Add transport
+    //         if ($request->needTransport) {
 
-                $totalPersonasTransporte = $this->getTotalPersonasTransporte($fecha_tour->id, $request->schedule_id);
-                $totalPersonasReserva = $reservation->cantidad_adultos + $reservation->cantidad_niños + $reservation->cantidad_niños_gratis;
-                if ($totalPersonasTransporte + $totalPersonasReserva > $configuracionTransporte->cantidad_maxima_pasajeros) {
-                    return response()->json(['error' => 'La cantidad de personas excede la capacidad máxima de pasajeros.'], 400);
-                }
+    //             $totalPersonasTransporte = $this->getTotalPersonasTransporte($fecha_tour->id, $request->schedule_id);
+    //             $totalPersonasReserva = $reservation->cantidad_adultos + $reservation->cantidad_niños + $reservation->cantidad_niños_gratis;
+    //             if ($totalPersonasTransporte + $totalPersonasReserva > $configuracionTransporte->cantidad_maxima_pasajeros) {
+    //                 return response()->json(['error' => 'La cantidad de personas excede la capacidad máxima de pasajeros.'], 400);
+    //             }
     
-                $reservation->save();
+    //             $reservation->save();
 
-                $precioMinimo = $configuracionTransporte->precio_minimo;
-                $distanciaMaxima = $configuracionTransporte->distancia_maxima;
-                $distanciaMinima = $configuracionTransporte->distancia_minima;
-                $precioPorKmAdicional = $configuracionTransporte->precio_por_km_adicional;
+    //             $precioMinimo = $configuracionTransporte->precio_minimo;
+    //             $distanciaMaxima = $configuracionTransporte->distancia_maxima;
+    //             $distanciaMinima = $configuracionTransporte->distancia_minima;
+    //             $precioPorKmAdicional = $configuracionTransporte->precio_por_km_adicional;
 
-                $cost = $this->calculateTranportCost(
-                    $request->distance,
-                    $precioPorKmAdicional,
-                    $distanciaMinima,
-                    $precioMinimo,
-                    $distanciaMaxima
-                );
+    //             $cost = $this->calculateTranportCost(
+    //                 $request->distance,
+    //                 $precioPorKmAdicional,
+    //                 $distanciaMinima,
+    //                 $precioMinimo,
+    //                 $distanciaMaxima
+    //             );
 
-                if ($cost !== 0) {
-                    $transport = new Transporte();
-                    $transport->id_reserva = $reservation->id;
-                    $transport->punto_recogida = $request->placeSelected;
-                    $transport->direccion = $request->placeSelected->direccion;
-                    $transport->placeId = $request->placeSelected->placeId;
-                    $transport->latitud = $request->placeSelected->ubicacion->lat;
-                    $transport->longitud = $request->placeSelected->ubicacion->lng;
-                    $transport->costo = $request->totalTransportPrice;
-                    $transport->distancia = $cost;
-                    $transport->save();
-                }
+    //             if ($cost !== 0) {
+    //                 $transport = new Transporte();
+    //                 $transport->id_reserva = $reservation->id;
+    //                 $transport->punto_recogida = $request->placeSelected;
+    //                 $transport->direccion = $request->placeSelected->direccion;
+    //                 $transport->placeId = $request->placeSelected->placeId;
+    //                 $transport->latitud = $request->placeSelected->ubicacion->lat;
+    //                 $transport->longitud = $request->placeSelected->ubicacion->lng;
+    //                 $transport->costo = $request->totalTransportPrice;
+    //                 $transport->distancia = $cost;
+    //                 $transport->save();
+
+    //                 // Actualizar el monto total de la reserva
+    //                 $totalTransportCost = $cost * ($reservation->cantidad_adultos + $reservation->cantidad_niños + $reservation->cantidad_niños_gratis);
+    //                 $reservation->monto_total += $totalTransportCost;
+    //             }
                 
-            } else {
-                $reservation->save();
-            }
+    //         } else {
+    //             $reservation->save();
+    //         }
 
-            $hash = md5($reservation->id);
-            $tilopay_transaction = new TilopayTransaction();
-            $tilopay_transaction->reserva_id = $reservation->id;
-            $tilopay_transaction->hashKey = $hash;
-            $tilopay_transaction->order_hash = null;
-            $tilopay_transaction->transaction_code = null;
-            $tilopay_transaction->transaction_status = "PENDIENTE";
-            $tilopay_transaction->auth_code = null;
-            $tilopay_transaction->amount = $reservation->monto_total;
-            $tilopay_transaction->commission_Tilopay_amount = $commission_Tilopay_amount; //CALCULAR 4.25% + 0.35 dolares
-            $tilopay_transaction->commission_system_amount = $commission_system_amount; //CALCULAR 8.5% - 4.25%
-            $tilopay_transaction->currency = 'USD';
-            $tilopay_transaction->billToFirstName = $request->billToFirstName;
-            $tilopay_transaction->billToLastName = $request->billToLastName;
-            $tilopay_transaction->billToAddress = $request->billToAddress;
-            $tilopay_transaction->billToAddress2 = $request->billToAddress2;
-            $tilopay_transaction->billToCity = $request->billToCity;
-            $tilopay_transaction->billToState = $request->billToState;
-            $tilopay_transaction->billToZipPostCode = $request->billToZipPostCode;
-            $tilopay_transaction->billToCountry = $request->billToCountry;
-            $tilopay_transaction->billToTelephone = $request->billToTelephone;
-            $tilopay_transaction->billToEmail = $request->billToEmail;
-            $tilopay_transaction->orderNumber = $reservation->id;
-            $tilopay_transaction->capture = "1";
-            $tilopay_transaction->subscription = "0";
-            $tilopay_transaction->platform = 'api';
+    //         $hash = md5($reservation->id);
+    //         $tilopay_transaction = new TilopayTransaction();
+    //         $tilopay_transaction->reserva_id = $reservation->id;
+    //         $tilopay_transaction->hashKey = $hash;
+    //         $tilopay_transaction->order_hash = null;
+    //         $tilopay_transaction->transaction_code = null;
+    //         $tilopay_transaction->transaction_status = "PENDIENTE";
+    //         $tilopay_transaction->auth_code = null;
+    //         $tilopay_transaction->amount = $reservation->monto_total;
+    //         $tilopay_transaction->commission_Tilopay_amount = $commission_Tilopay_amount; //CALCULAR 4.25% + 0.35 dolares
+    //         $tilopay_transaction->commission_system_amount = $commission_system_amount; //CALCULAR 8.5% - 4.25%
+    //         $tilopay_transaction->currency = 'USD';
+    //         $tilopay_transaction->billToFirstName = $request->billToFirstName;
+    //         $tilopay_transaction->billToLastName = $request->billToLastName;
+    //         $tilopay_transaction->billToAddress = $request->billToAddress;
+    //         $tilopay_transaction->billToAddress2 = $request->billToAddress2;
+    //         $tilopay_transaction->billToCity = $request->billToCity;
+    //         $tilopay_transaction->billToState = $request->billToState;
+    //         $tilopay_transaction->billToZipPostCode = $request->billToZipPostCode;
+    //         $tilopay_transaction->billToCountry = $request->billToCountry;
+    //         $tilopay_transaction->billToTelephone = $request->billToTelephone;
+    //         $tilopay_transaction->billToEmail = $request->billToEmail;
+    //         $tilopay_transaction->orderNumber = $reservation->id;
+    //         $tilopay_transaction->capture = "1";
+    //         $tilopay_transaction->subscription = "0";
+    //         $tilopay_transaction->platform = 'api';
 
-            $tilopay_transaction->save();
+    //         $tilopay_transaction->save();
 
-            $paymentData['redirect'] = 'https://slothsterritory.com/payment-response?hash=' . $hash;
-            $paymentData['currency'] = 'USD';
-            $paymentData['orderNumber'] = $reservation->id;
-            $paymentData['capture'] = "1";
-            $paymentData['subscription'] = "0";
-            $paymentData['platform'] = 'api';
-            $paymentData['amount'] = $reservation->monto_total;
+    //         $paymentData['redirect'] = 'https://slothsterritory.com/payment-response?hash=' . $hash;
+    //         $paymentData['currency'] = 'USD';
+    //         $paymentData['orderNumber'] = $reservation->id;
+    //         $paymentData['capture'] = "1";
+    //         $paymentData['subscription'] = "0";
+    //         $paymentData['platform'] = 'api';
+    //         $paymentData['amount'] = $reservation->monto_total;
 
-            // Hacer la solicitud a TiloPay
-            $client = new Client();
-            $response = $client->post('https://app.tilopay.com/api/v1/processPayment', [
-                'headers' => [
-                    'Authorization' => 'Bearer ' . $token,
-                    'Content-Type' => 'application/json',
-                    'Accept' => 'application/json'
-                ],
-                'json' => $paymentData
-            ]);
+    //         // Hacer la solicitud a TiloPay
+    //         $client = new Client();
+    //         $response = $client->post('https://app.tilopay.com/api/v1/processPayment', [
+    //             'headers' => [
+    //                 'Authorization' => 'Bearer ' . $token,
+    //                 'Content-Type' => 'application/json',
+    //                 'Accept' => 'application/json'
+    //             ],
+    //             'json' => $paymentData
+    //         ]);
 
-            $responseBody = json_decode($response->getBody()->getContents(), true);
-            $redirectUrl = $responseBody['url']; // Esto obtiene la URL de redirección
+    //         $responseBody = json_decode($response->getBody()->getContents(), true);
+    //         $redirectUrl = $responseBody['url']; // Esto obtiene la URL de redirección
 
-            return response()->json(['redirectUrl' => $redirectUrl]);
-        } catch (RequestException $e) {
-            // Manejar errores específicos de la solicitud HTTP
-            info('error payment', $e->getMessage());
-            return response()->json([
-                'error' => 'Error en la solicitud de pago.',
-                'message' => $e->getMessage()
-            ], 500);
-        } catch (\Exception $e) {
-            // Manejar otros tipos de errores generales
-            return response()->json([
-                'error' => 'Error interno del servidor.',
-                'message' => $e->getMessage()
-            ], 500);
-        }
-    }
+    //         return response()->json(['redirectUrl' => $redirectUrl]);
+    //     } catch (RequestException $e) {
+    //         // Manejar errores específicos de la solicitud HTTP
+    //         info('error payment', $e->getMessage());
+    //         return response()->json([
+    //             'error' => 'Error en la solicitud de pago.',
+    //             'message' => $e->getMessage()
+    //         ], 500);
+    //     } catch (\Exception $e) {
+    //         // Manejar otros tipos de errores generales
+    //         return response()->json([
+    //             'error' => 'Error interno del servidor.',
+    //             'message' => $e->getMessage()
+    //         ], 500);
+    //     }
+    // }
     private function calculateTranportCost($distance, $pricePerKm, $minimumDistance, $minimumPrice, $maximunDistance)
     {
+        info('calculateTranportCost');
+        info('distance: ' . $distance);
+        info('pricePerKm: ' . $pricePerKm);
+        info('minimumDistance: ' . $minimumDistance);
+        info('minimumPrice: ' . $minimumPrice);
+        info('maximunDistance: ' . $maximunDistance);
+
         $cost = 0;
         if ($distance < $minimumDistance) {
             $cost = $minimumPrice;
@@ -374,6 +387,8 @@ class PaymentController extends Controller
                     $precioMinimo,
                     $distanciaMaxima
                 );
+
+                $cost = $cost * ($reservation->cantidad_adultos + $reservation->cantidad_niños + $reservation->cantidad_niños_gratis);
 
                 // Total con impuestos
                 $subtotal = $totalAdults + $totalChildren + $cost;

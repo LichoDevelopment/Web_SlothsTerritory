@@ -29,7 +29,8 @@ Route::get('tour', 'API\TourController@info');
 Route::post('mail', 'API\MailController@send');
 Route::post('/trackClick', [ClickTrackingController::class, 'trackClick']);
 
-Route::get('/calculate-distance', [DistanceController::class, 'calculate']);
+Route::get('/calculate-distance', [DistanceController::class, 'calculate'])->name('api.calculateDistance');
+Route::post('/calculate-distance', [DistanceController::class, 'calculate'])->name('api.calculateDistance');
 Route::get('/optimized-route', [RouteOptimizationController::class, 'generateOptimizedRoute']);
-Route::get('/getTransportPriceWeb', [ConfiguracionTransporteController::class, 'index']);
-Route::get('/getAvailableTransportPlacesWeb/{scheduleId}/{date}', [ConfiguracionTransporteController::class, 'getAvailableTransportPlaces']);
+Route::get('/getTransportPriceWeb', [ConfiguracionTransporteController::class, 'index'])->name('api.getTransportPriceWeb');
+Route::get('/getAvailableTransportPlacesWeb/{scheduleId}/{date}', [ConfiguracionTransporteController::class, 'getAvailableTransportPlaces'])->name('api.getAvailableTransportPlacesWeb');

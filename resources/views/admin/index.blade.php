@@ -4,54 +4,52 @@
 @section('content')
     @if (rol_usuario()->id === 2 || rol_usuario()->id === 1)
         @foreach ($totales as $total)
-        
-        <section class="grid_totales">
-            <div class="">
-                <div class="card p-3 bg-success text-light">
-                    <h2 class="number text-light"> {{$total->adultos}} </h2>
-                    <span class="desc">Adultos</span>
-                </div>
-            </div>
-            <div class="">
-                <div class="card p-3 bg-success text-light">
-                    <h2 class="number text-light"> {{$total->niños}} </h2>
-                    <span class="desc">Niños</span>
-                </div>
-            </div>
-            <div class="">
-                <div class="card p-3 bg-success text-light">
-                    <h2 class="number text-light"> {{$total->niños_gratis}} </h2>
-                    <span class="desc">Niños gratis</span>
-                </div>
-            </div>
-            <div class="">
-                <div class="card p-3 bg-success text-light">
-                    <h2 class="number text-light"> {{$total->adultos + $total->niños + $total->niños_gratis}} </h2>
-                    <span class="desc">Total personas</span>
-                </div>
-            </div>
-            @if (rol_usuario()->id === 1)
+            <section class="grid_totales">
                 <div class="">
-                    <div class="card p-3 bg-secondary text-light">
-                        <h2 class="number text-light"> ${{$total->comisiones}} </h2>
-                        <span class="desc">Total comisiones</span>
+                    <div class="card p-3 bg-success text-light">
+                        <h2 class="number text-light"> {{ $total->adultos }} </h2>
+                        <span class="desc">Adultos</span>
                     </div>
                 </div>
                 <div class="">
-                    <div class="card p-3 bg-secondary text-light">
-                        <h2 class="number text-light"> ${{$total->monto_total}} </h2>
-                        <span class="desc">Monto total</span>
+                    <div class="card p-3 bg-success text-light">
+                        <h2 class="number text-light"> {{ $total->niños }} </h2>
+                        <span class="desc">Niños</span>
                     </div>
                 </div>
                 <div class="">
-                    <div class="card p-3 bg-secondary text-light">
-                        <h2 class="number text-light"> ${{$total->monto_neto}} </h2>
-                        <span class="desc">Monto neto</span>
+                    <div class="card p-3 bg-success text-light">
+                        <h2 class="number text-light"> {{ $total->niños_gratis }} </h2>
+                        <span class="desc">Niños gratis</span>
                     </div>
                 </div>
-            @endif
-        </section>
-        
+                <div class="">
+                    <div class="card p-3 bg-success text-light">
+                        <h2 class="number text-light"> {{ $total->adultos + $total->niños + $total->niños_gratis }} </h2>
+                        <span class="desc">Total personas</span>
+                    </div>
+                </div>
+                @if (rol_usuario()->id === 1)
+                    <div class="">
+                        <div class="card p-3 bg-secondary text-light">
+                            <h2 class="number text-light"> ${{ $total->comisiones }} </h2>
+                            <span class="desc">Total comisiones</span>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="card p-3 bg-secondary text-light">
+                            <h2 class="number text-light"> ${{ $total->monto_total }} </h2>
+                            <span class="desc">Monto total</span>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="card p-3 bg-secondary text-light">
+                            <h2 class="number text-light"> ${{ $total->monto_neto }} </h2>
+                            <span class="desc">Monto neto</span>
+                        </div>
+                    </div>
+                @endif
+            </section>
         @endforeach
     @endif
     <section class="card rounded">
@@ -61,8 +59,7 @@
         </section>
         <section class="card-body">
             <section class="d-flex justify-content-between align-items-center mb-3">
-                <button 
-                    class="btn btn-outline-info btn-sm" type="button" data-toggle="collapse" 
+                <button class="btn btn-outline-info btn-sm" type="button" data-toggle="collapse"
                     data-target="#SeccionFiltros" aria-expanded="false" aria-controls="SeccionFiltros">
                     Filtros
                 </button>
@@ -72,51 +69,46 @@
             </section>
             <section class="collapse" id="SeccionFiltros">
                 <div class="d-flex justify-content-between mb-4 align-items-center">
-                        <form class="form-filtrar" action="/?" method="get" id="form-filtrar">
-                            @if (rol_usuario()->id === 1 || rol_usuario()->id === 2)
-                                <div>
-                                    <label for="fecha-inicio">Fecha de inicio</label>
-                                    <input
-                                    @if (request()->query() && isset(request()->query()['fechaInicio']))
-                                        value="{{request()->query()['fechaInicio']}}"
-                                    @endif 
+                    <form class="form-filtrar" action="/?" method="get" id="form-filtrar">
+                        @if (rol_usuario()->id === 1 || rol_usuario()->id === 2)
+                            <div>
+                                <label for="fecha-inicio">Fecha de inicio</label>
+                                <input
+                                    @if (request()->query() && isset(request()->query()['fechaInicio'])) value="{{ request()->query()['fechaInicio'] }}" @endif
                                     type="date" name="fechaInicio" class="form-control">
-                                </div>
-                                <div>
-                                    <label for="fecha-inicio">Fecha de fin</label>
-                                    <input
-                                    @if (request()->query() && isset(request()->query()['fechaFin']))
-                                        value="{{request()->query()['fechaFin']}}"
-                                    @endif 
+                            </div>
+                            <div>
+                                <label for="fecha-inicio">Fecha de fin</label>
+                                <input @if (request()->query() && isset(request()->query()['fechaFin'])) value="{{ request()->query()['fechaFin'] }}" @endif
                                     type="date" name="fechaFin" class="form-control">
-                                </div>
-                            @endif
-                            <div>
-                                <label for="agencia">Agencia</label>
-                                <select class="form-control" name="agencia">
-                                    <option value=""></option>
-                                    @foreach ($agencias as $agencia)
-                                    <option value="{{$agencia->id}}"> {{ $agencia->nombre}}</option>
-                                    @endforeach
-                                </select>
                             </div>
-                            <div>
-                                <label for="horario">Horario</label>
-                                <select class="form-control" name="horario">
-                                    <option value=""></option>
-                                    @foreach ($horarios as $horario)
-                                    <option value="{{$horario->hora}}"> {{ $horario->hora}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <button class="btn btn-info">filtrar</button>
-                        </form>
-                    
+                        @endif
+                        <div>
+                            <label for="agencia">Agencia</label>
+                            <select class="form-control" name="agencia">
+                                <option value=""></option>
+                                @foreach ($agencias as $agencia)
+                                    <option value="{{ $agencia->id }}"> {{ $agencia->nombre }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div>
+                            <label for="horario">Horario</label>
+                            <select class="form-control" name="horario">
+                                <option value=""></option>
+                                @foreach ($horarios as $horario)
+                                    <option value="{{ $horario->hora }}"> {{ $horario->hora }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <button class="btn btn-info">filtrar</button>
+                    </form>
+
                 </div>
             </section>
             <section class="card-body">
-                
-                <table class="table table-responsive" id="TablaReservas" >
+
+                <table class="table table-responsive" id="TablaReservas">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -143,184 +135,270 @@
                     <tbody>
                         @foreach ($reservas as $reserva)
                             <tr>
-                                <td> {{$loop->index + 1}} </td>
-                                <td> {{$reserva->nombre_tour}} </td>
-                                <td> {{$reserva->nombre_agencia}} </td>
-                                <td> {{$reserva->tiene_transporte}} </td>
-                                <td> {{$reserva->hora}} </td>
-                                <td> {{$reserva->fecha}} </td>
-                                <td> {{$reserva->nombre_cliente}} </td>
-                                <td> {{$reserva->cantidad_adultos}} </td>
-                                <td> {{$reserva->cantidad_niños}} </td>
-                                <td> {{$reserva->cantidad_niños_gratis}} </td>
-                                <td> {{$reserva->monto_total}} </td>
-                                <td> {{$reserva->descuento}} </td>
-                                <td> {{$reserva->monto_con_descuento}} </td>
-                                <td> {{$reserva->comision_agencia}} </td>
-                                <td> {{$reserva->monto_neto}} </td>
-                                <td> {{$reserva->factura}} </td>
-                                <td> {{$reserva->created_at}} </td>
-                                <td> {{$reserva->nombre_estado}} </td>
-                                
+                                <td> {{ $loop->index + 1 }} </td>
+                                <td> {{ $reserva->nombre_tour }} </td>
+                                <td> {{ $reserva->nombre_agencia }} </td>
+                                <td> {{ $reserva->tiene_transporte }} </td>
+                                <td> {{ $reserva->hora }} </td>
+                                <td> {{ $reserva->fecha }} </td>
+                                <td> {{ $reserva->nombre_cliente }} </td>
+                                <td> {{ $reserva->cantidad_adultos }} </td>
+                                <td> {{ $reserva->cantidad_niños }} </td>
+                                <td> {{ $reserva->cantidad_niños_gratis }} </td>
+                                <td> {{ $reserva->monto_total }} </td>
+                                <td> {{ $reserva->descuento }} </td>
+                                <td> {{ $reserva->monto_con_descuento }} </td>
+                                <td> {{ $reserva->comision_agencia }} </td>
+                                <td> {{ $reserva->monto_neto }} </td>
+                                <td> {{ $reserva->factura }} </td>
+                                <td> {{ $reserva->created_at }} </td>
+                                <td> {{ $reserva->nombre_estado }} </td>
+
                                 <td class="btn-group">
-                                    <button 
-                                        data-reservacion-estado="{{$reserva->nombre_estado}}"
-                                        data-reservacion-id="{{$reserva->id}}"
+                                    <!-- Botón para solicitar recogida -->
+                                    <button data-id="{{ $reserva->id }}"
+                                        class="btn btn-sm btn-primary btn-solicitar-recogida"
+                                        onclick="openPickupModal({{ $reserva->id }})">
+                                        Agregar Transporte
+                                    </button>
+                                    <button data-reservacion-estado="{{ $reserva->nombre_estado }}"
+                                        data-reservacion-id="{{ $reserva->id }}"
                                         class="btn btn-sm btn-success btn-actualizar-estado">
-                                    Actualizar estado
-                                    </button> 
-                                    <a href="{{ route('reservas.ver', ['id'=> $reserva->id]) }}" class="btn btn-sm btn-info">Ver</a>
-                                    <a href="{{ route('reservas.editar', ['id'=> $reserva->id]) }}" class="btn btn-sm btn-warning">Editar</a>
-                                    
+                                        Actualizar estado
+                                    </button>
+                                    <a href="{{ route('reservas.ver', ['id' => $reserva->id]) }}"
+                                        class="btn btn-sm btn-info">Ver</a>
+                                    <a href="{{ route('reservas.editar', ['id' => $reserva->id]) }}"
+                                        class="btn btn-sm btn-warning">Editar</a>
+
                                     @if (rol_usuario()->id === 1 || rol_usuario()->id === 2)
-                                        <button
-                                            data-id="{{$reserva->id}}" 
+                                        <button data-id="{{ $reserva->id }}"
                                             class="btn btn-sm btn-danger borrar-reserva-btn">Eliminar</button>
-                                
                                     @endif
-                                </td> 
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
             </section>
-       </section>
+        </section>
     </section>
 
-
+    {{-- Incluir el modal --}}
+    @include('admin.pickupModal')
     {{-- <a href="{{ route('agencias.index') }}" class="btn btn-success"> Ver Agencias</a> --}}
- 
+
 @endsection
 
 @section('scripts')
     <script>
-       $(document).ready( function () {
-        $('#TablaReservas').DataTable();
-    } );
 
-    const borrarReservasBtn = document.querySelectorAll('.borrar-reserva-btn')
-    const formFiltrar = document.querySelector('#form-filtrar')
-    const botonesActualizarEstado = document.querySelectorAll('.btn-actualizar-estado');
+        $(document).ready(function() {
+            $('#TablaReservas').DataTable();
+        });
 
-    if(formFiltrar && formFiltrar['fechaInicio']){
-        formFiltrar['fechaInicio'].addEventListener('change', ()=>{
-            formFiltrar['fechaFin'].min = formFiltrar['fechaInicio'].value
-            if(!formFiltrar['fechaFin'].value){
-                formFiltrar['fechaFin'].value = formFiltrar['fechaInicio'].value
-            }
-        })
+        const borrarReservasBtn = document.querySelectorAll('.borrar-reserva-btn')
+        const formFiltrar = document.querySelector('#form-filtrar')
+        const botonesActualizarEstado = document.querySelectorAll('.btn-actualizar-estado');
 
-    }
-
-    borrarReservasBtn.forEach(btn =>{
-        btn.addEventListener('click', event =>{
-            event.preventDefault();
-            const id = event.target.dataset.id
-
-            Swal.fire({
-                icon: 'warning',
-                title: '¿Estas seguro de eliminar esta reserva?',
-                confirmButtonText: 'Eliminar',
-                confirmButtonColor: '#DC3545',
-                showCancelButton: true,
-                cancelButtonColor: 'teal',
-                preConfirm: (respuesta)=>{
-                    if(respuesta){
-                        fetch(`/reservacion/${id}`,{
-                            method: 'DELETE'
-                        }).then(()=>{
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Reserva eliminada',
-                                showConfirmButton: false,
-                            })
-                            setTimeout(() => {
-                                location.reload()
-                            }, 1500);
-                        })
-
-                    }
+        if (formFiltrar && formFiltrar['fechaInicio']) {
+            formFiltrar['fechaInicio'].addEventListener('change', () => {
+                formFiltrar['fechaFin'].min = formFiltrar['fechaInicio'].value
+                if (!formFiltrar['fechaFin'].value) {
+                    formFiltrar['fechaFin'].value = formFiltrar['fechaInicio'].value
                 }
             })
+
+        }
+
+        borrarReservasBtn.forEach(btn => {
+            btn.addEventListener('click', event => {
+                event.preventDefault();
+                const id = event.target.dataset.id
+
+                Swal.fire({
+                    icon: 'warning',
+                    title: '¿Estas seguro de eliminar esta reserva?',
+                    confirmButtonText: 'Eliminar',
+                    confirmButtonColor: '#DC3545',
+                    showCancelButton: true,
+                    cancelButtonColor: 'teal',
+                    preConfirm: (respuesta) => {
+                        if (respuesta) {
+                            fetch(`/reservacion/${id}`, {
+                                method: 'DELETE'
+                            }).then(() => {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Reserva eliminada',
+                                    showConfirmButton: false,
+                                })
+                                setTimeout(() => {
+                                    location.reload()
+                                }, 1500);
+                            })
+
+                        }
+                    }
+                })
+            })
         })
-    })
 
-    botonesActualizarEstado.forEach(btn => {
-        btn.addEventListener('click', event => {
-            event.preventDefault();
-            const id = event.target.dataset.reservacionId;
-            const estado = event.target.dataset.reservacionEstado;
+        botonesActualizarEstado.forEach(btn => {
+            btn.addEventListener('click', event => {
+                event.preventDefault();
+                const id = event.target.dataset.reservacionId;
+                const estado = event.target.dataset.reservacionEstado;
 
-            Swal.fire({
-                html: 
-                `
+                Swal.fire({
+                    html: `
                     <h2 class="mx-auto mb-3 ">Editar Estado</h2>
                 ${formularioEstado(estado)}
                 `,
-                showCancelButton: true,
-                confirmButtonText: 'Editar',
-                cancelButtonText: 'Cancelar',
-                confirmButtonColor: '#28A745',
-                cancelButtonColor: "tomato",
-                preConfirm: (response)=>{
-                    if(response){
-                        const form = document.getElementById('formularioEstado')
-                        const estado = form['estado'].value
-                        fetch(`/reservacionEstado/${id}`,{
-                            method: 'PUT',
-                            headers: {"Content-Type": "application/json"},
-                            body: JSON.stringify({
-                                "estado": estado,
-                            })
-                        })
-                        .then(response => response.json())
-                        .then(respuesta => mostrarRespuesta(respuesta))
-                        .catch(response => console.log(response))
+                    showCancelButton: true,
+                    confirmButtonText: 'Editar',
+                    cancelButtonText: 'Cancelar',
+                    confirmButtonColor: '#28A745',
+                    cancelButtonColor: "tomato",
+                    preConfirm: (response) => {
+                        if (response) {
+                            const form = document.getElementById('formularioEstado')
+                            const estado = form['estado'].value
+                            fetch(`/reservacionEstado/${id}`, {
+                                    method: 'PUT',
+                                    headers: {
+                                        "Content-Type": "application/json"
+                                    },
+                                    body: JSON.stringify({
+                                        "estado": estado,
+                                    })
+                                })
+                                .then(response => response.json())
+                                .then(respuesta => mostrarRespuesta(respuesta))
+                                .catch(response => console.log(response))
+                        }
                     }
-                }
+                })
             })
         })
-    })
 
-    function formularioEstado(estado = ''){
-        return `
+        function formularioEstado(estado = '') {
+            return `
                 <form id="formularioEstado" class="col-10 m-auto" >
                     <section class="form-group">
                         <label for="estado">Estado de la reserva</label>
                         <select class="custom-select" name="estado" required>
                             @foreach ($estados as $estado)
-                                <option value="{{ $estado->id}}"> {{ $estado->nombre}} </option>
+                                <option value="{{ $estado->id }}"> {{ $estado->nombre }} </option>
                             @endforeach
                         </select>
                     </section>
                 </form>`
-    }
+        }
 
-    function mostrarRespuesta(respuesta){
-        console.log(respuesta)
-        if(respuesta.errors){
-            let errores = '';
-            Object.entries(respuesta.errors).forEach(error =>{
-                errores += `
+        function mostrarRespuesta(respuesta) {
+            console.log(respuesta)
+            if (respuesta.errors) {
+                let errores = '';
+                Object.entries(respuesta.errors).forEach(error => {
+                    errores += `
                 <div class="alert alert-danger" role="alert">
                     ${error[1][0]}
                 </div>
                 `
-            })
-            Swal.fire({
-                icon: 'error',
-                html: errores
-            })
-        }else{
-            Swal.fire({
-                icon: 'success',
-                title: respuesta.message,
-                showConfirmButton: false
-            })
-            setTimeout(function(){
-                location.reload();
-            },1500)
+                })
+                Swal.fire({
+                    icon: 'error',
+                    html: errores
+                })
+            } else {
+                Swal.fire({
+                    icon: 'success',
+                    title: respuesta.message,
+                    showConfirmButton: false
+                })
+                setTimeout(function() {
+                    location.reload();
+                }, 1500)
+            }
         }
+
+    </script>
+    <script>
+        // Función para abrir el modal y establecer el ID de la reserva
+        function openPickupModal(reservaId, scheduleId, date) {
+        document.getElementById('reservaId').value = reservaId;
+        document.getElementById('scheduleId').value = scheduleId;
+        document.getElementById('reservationDate').value = date;
+        // Limpiar campos anteriores
+        document.getElementById('direccion').value = '';
+        document.getElementById('latitud').value = '';
+        document.getElementById('longitud').value = '';
+        document.getElementById('distance').value = '';
+        document.getElementById('price').value = '';
+        document.getElementById('available_places').value = '';
+        // Habilitar el botón de guardar por si estaba deshabilitado
+        document.querySelector('#pickupForm button[type="submit"]').disabled = false;
+        // Mostrar el modal
+        $('#pickupModal').modal('show');
     }
+    
+        function closePickupModal() {
+            $('#pickupModal').modal('hide');
+        }
+    
+            // Manejar el envío del formulario
+    document.getElementById('pickupForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Obtener datos del formulario
+        const reservaId = document.getElementById('reservaId').value;
+        const direccion = document.getElementById('direccion').value;
+        const latitud = document.getElementById('latitud').value;
+        const longitud = document.getElementById('longitud').value;
+        const distance = document.getElementById('distance').value;
+        const price = document.getElementById('price').value;
+        const placeId = document.getElementById('placeId').value;
+
+        // Validar que los campos no estén vacíos
+        if (!direccion || !latitud || !longitud || !distance || !price) {
+            alert('Por favor, complete todos los campos.');
+            return;
+        }
+
+        // Enviar datos al servidor
+        fetch('{{ route('admin.transport.assign') }}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': '{{ csrf_token() }}',
+            },
+            body: JSON.stringify({
+                reserva_id: reservaId,
+                direccion: direccion,
+                latitud: latitud,
+                longitud: longitud,
+                distancia: distance,
+                precio: price,
+                placeId: placeId
+            }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Transporte asignado correctamente.');
+                // Cerrar el modal
+                closePickupModal();
+                // Recargar la página o actualizar la tabla
+                location.reload();
+            } else {
+                alert('Error: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Ocurrió un error al asignar el transporte.');
+        });
+    });
     </script>
 @endsection

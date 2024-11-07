@@ -109,6 +109,7 @@ trait CalculaRutasTrait
             }
 
             // Calcular la hora de salida del conductor
+            $driverDepartureTimeparsed = Carbon::createFromTimestamp($arrivalTimestamp, 'America/Costa_Rica');
             $departureTimestamp = $arrivalTimestamp - $totalDuration;
             $driverDepartureTime = Carbon::createFromTimestamp($departureTimestamp, 'America/Costa_Rica');
 

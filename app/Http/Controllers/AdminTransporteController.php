@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ConfiguracionTransporte;
 use App\Models\Reserva;
+use App\Models\Transporte;
 use App\Traits\CalculaRutasTrait;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class AdminTransporteController extends Controller
 {
@@ -165,5 +168,126 @@ class AdminTransporteController extends Controller
         $url = $baseUrl . '&' . $query;
 
         return $url;
+    }
+
+    public function assignTransport(Request $request)
+    {
+        // Validar los datos
+        $validator = Validator::make($request->all(), [
+            'reserva_id' => 'required|exists:reservas,id',
+            'direccion' => 'required|string|max:255',
+            'latitud' => 'required|numeric',
+            'longitud' => 'required|numeric',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Datos inválidos.',
+                'errors' => $validator->errors(),
+            ], 400);
+        }
+
+        // Obtener la reserva
+        $reserva = Reserva::find($request->reserva_id);
+
+        // Verificar si ya tiene transporte asignado
+        if ($reserva->transporte) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Esta reserva ya tiene transporte asignado.',
+            ], 400);
+        }
+
+        // Validar disponibilidad de espacios
+        $availablePlaces = $this->getAvailableTransportPlaces($reserva);
+        $totalPeople = $reserva->cantidad_adultos + $reserva->cantidad_niños + $reserva->cantidad_niños_gratis;
+
+        if ($totalPeople > $availablePlaces) {
+            return response()->json([
+                'success' => false,
+                'message' => 'No hay suficientes espacios disponibles en el transporte.',
+            ], 400);
+        }
+
+        // Calcular distancia y precio
+        $distance = $this->calculateDistance($request->latitud, $request->longitud);
+
+        $placeSelected = [
+            'placeId' => $request->placeId,
+            'direccion' => $request->direccion,
+            'ubicacion' => [
+                'lat' => $request->latitud,
+                'lng' => $request->longitud
+            ]
+        ];
+
+        // Crear registro de transporte
+        $transport = new Transporte();
+        $transport->reserva_id = $reserva->id;
+        $transport->punto_recogida = $placeSelected;
+        $transport->direccion = $request->direccion;
+        $transport->placeId = $request->placeId;
+        $transport->latitud = $request->latitud;
+        $transport->longitud = $request->longitud;
+        $transport->costo = $request->precio * $totalPeople;
+        $transport->distancia = $request->distancia;
+        $transport->save();
+
+        // Asociar transporte a la reserva
+        $reserva->monto_total += $request->precio;
+        $reserva->monto_con_descuento += $request->precio;
+        $reserva->monto_neto += $request->precio;
+        $reserva->save();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Transporte asignado correctamente.',
+        ]);
+    }
+
+    // Método para calcular lugares disponibles
+    private function getAvailableTransportPlaces($reserva)
+    {
+        // Lógica para calcular lugares disponibles
+        $configuracion = ConfiguracionTransporte::first();
+        $totalPersonas = Reserva::where('id_fecha_tour', $reserva->id_fecha_tour)
+            ->where('id_horario', $reserva->id_horario)
+            ->whereHas('transporte') // Asegura que sólo considera reservas con transporte
+            ->get()
+            ->sum(function ($reserva) {
+                return $reserva->cantidad_adultos + $reserva->cantidad_niños + $reserva->cantidad_niños_gratis;
+            });
+
+        $availablePlaces = $configuracion->cantidad_maxima_pasajeros - $totalPersonas;
+
+        return $availablePlaces;
+    }
+
+
+    // Método para calcular distancia
+    private function calculateDistance($lat, $lng)
+    {
+        $origen = $lat . ',' . $lng;
+        $destino = '10.471471,-84.603181'; // Sloths Territory
+
+        $apiKey = env('GOOGLE_MAPS_API_KEY');
+
+        $url = 'https://maps.googleapis.com/maps/api/distancematrix/json?' . http_build_query([
+            'origins' => $origen,
+            'destinations' => $destino,
+            'key' => $apiKey,
+        ]);
+
+        $response = file_get_contents($url);
+        $data = json_decode($response, true);
+
+        if ($data['status'] === 'OK' && $data['rows'][0]['elements'][0]['status'] === 'OK') {
+            $distance = $data['rows'][0]['elements'][0]['distance']['value']; // En metros
+            return $distance / 1000; // Retornar en kilómetros
+        } else {
+            // Manejar error
+            return null;
+        }
     }
 }

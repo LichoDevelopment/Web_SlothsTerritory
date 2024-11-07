@@ -34,6 +34,8 @@ Route::get('/imprimir-ticket', 'ImpresionController@imprimirTicket')->name('impr
 Route::post('/print-ticket', [TicketController::class, 'printTicket']);
 Route::middleware(['auth'])->group(function () {
 
+    Route::post('/admin/transport/assign', [AdminTransporteController::class, 'assignTransport'])->name('admin.transport.assign');
+
     Route::get('/transporte', [AdminTransporteController::class, 'index'])->name('admin.transporte');
     Route::get('/transporte/ruta', [AdminTransporteController::class, 'generarRuta'])->name('admin.transporte.ruta');
 
