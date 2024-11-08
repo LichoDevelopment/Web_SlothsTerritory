@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PaymentValidationRequest;
+use App\Mail\TransportReservationNotification;
 use App\Models\Agencia;
 use App\Models\ConfiguracionTransporte;
 use App\Models\Fecha_tour;
@@ -15,6 +16,7 @@ use Carbon\Carbon;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PaymentController extends Controller
 {
@@ -409,6 +411,14 @@ class PaymentController extends Controller
                     $transport->costo = $cost;
                     $transport->distancia = $request->distance;
                     $transport->save();
+
+                    try {
+                        // send notification
+                        Mail::to('uli.rp1999@gmail.com')->send(new TransportReservationNotification($reservation, $transport));
+                    } catch (\Exception $e) {
+                        \Log::error('Error al enviar el correo de notificación: ' . $e->getMessage());
+                    }
+
                 }
                 
             } else {
