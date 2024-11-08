@@ -42,6 +42,9 @@ class AdminTransporteController extends Controller
                 $horario = $reservasDeHorario->first()->horario;
                 $hora = $horario->hora;
 
+                $agencia = $reservasDeHorario->first()->agencia;
+                $nombreAgencia = $agencia ? $agencia->nombre : 'N/A';
+
                 $isAdm = true;
                 // Llamar al método calculateRouteAndTimes para obtener los tiempos
                 $routeData = $this->calculateRouteAndTimes($fechaId, $horarioId, $isAdm);
@@ -63,6 +66,8 @@ class AdminTransporteController extends Controller
                     'driver_departure_time' => $driverDepartureTime,
                     'route_link' => $routeLink,
                     'pick_up_times' => $pickUpTimes,
+                    'driver_arrival_time' => $horario->hora_llegada_transporte,
+                    'detail' => $nombreAgencia === 'Bloqueo Transporte' ? 'Transporte Bloqueado' : 'Válido',
                 ];
             }
 

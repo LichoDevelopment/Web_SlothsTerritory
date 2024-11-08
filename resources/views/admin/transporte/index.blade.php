@@ -21,6 +21,8 @@
                             <th>Horario</th>
                             <th>Ruta</th>
                             <th>Hora de Salida del Chófer</th>
+                            <th>Hora de Llegada a Sloth's Territory</th>
+                            <th>Detalle</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -43,6 +45,8 @@
                                         @endif
                                     </td>
                                     <td>{{ $datoHorario['driver_departure_time'] }}</td>
+                                    <td>{{ $datoHorario['driver_arrival_time'] }}</td>
+                                    <td>{{ $datoHorario['detail'] }}</td>
                                 </tr>
                             @endforeach
                         @endforeach
