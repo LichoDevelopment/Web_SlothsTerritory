@@ -49,7 +49,7 @@ class EnviarNotificacionesTransporte extends Command
     public function handle()
     {
         $fechaActual = Carbon::now('America/Costa_Rica')->format('Y-m-d');
-        $fechaTourModel = Fecha_tour::where('fecha', "2024-11-09")->first();
+        $fechaTourModel = Fecha_tour::where('fecha', $fechaActual)->first();
 
 
         if (!$fechaTourModel) {
