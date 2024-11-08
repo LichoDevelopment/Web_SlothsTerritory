@@ -107,7 +107,7 @@ class HomeController extends Controller
 
                 $orderNumber = $transaction['orderNumber'];
                 $transactionEmail = $transaction['email'];
-                // Mail::to('uli.rp1999@gmail.com')->send(new TransactionNotFoundMail($orderNumber, $transactionEmail));
+                Mail::to('uli.rp1999@gmail.com')->send(new TransactionNotFoundMail($orderNumber, $transactionEmail));
             }
         }
     }
