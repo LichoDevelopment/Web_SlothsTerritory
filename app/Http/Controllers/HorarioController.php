@@ -122,7 +122,8 @@ class HorarioController extends Controller
             'Wave Expeditions',
             'Ecoterra',
             'Rain Forest Explorer',
-            'Quercus'
+            'Quercus', 
+            'Bloqueo Transporte'
         ])->pluck('id');
 
 
