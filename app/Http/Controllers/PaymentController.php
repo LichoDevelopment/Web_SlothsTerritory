@@ -414,7 +414,9 @@ class PaymentController extends Controller
 
                     try {
                         // send notification
-                        Mail::to('uli.rp1999@gmail.com')->send(new TransportReservationNotification($reservation, $transport));
+                        Mail::to('uli.rp1999@gmail.com')
+                        ->cc('keilor1997@icloud.com')
+                        ->send(new TransportReservationNotification($reservation, $transport));
                     } catch (\Exception $e) {
                         \Log::error('Error al enviar el correo de notificación: ' . $e->getMessage());
                     }

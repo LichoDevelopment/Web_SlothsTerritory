@@ -130,6 +130,7 @@ class EnviarNotificacionesTransporte extends Command
                 
                     // Envío de correo de monitoreo
                     Mail::to('uli.rp1999@gmail.com')
+                        ->cc('keilor1997@icloud.com')
                         ->send(new NotificacionTransporte($reserva, $arrivalTime));
                 
                     // Actualizar datos de transporte
