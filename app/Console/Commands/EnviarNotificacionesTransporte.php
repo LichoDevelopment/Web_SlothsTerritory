@@ -51,7 +51,6 @@ class EnviarNotificacionesTransporte extends Command
         $fechaActual = Carbon::now('America/Costa_Rica')->format('Y-m-d');
         $fechaTourModel = Fecha_tour::where('fecha', $fechaActual)->first();
 
-
         if (!$fechaTourModel) {
             $this->info('No hay fecha de tour para mañana');
             return;
@@ -109,6 +108,10 @@ class EnviarNotificacionesTransporte extends Command
 
         // Enviar notificaciones y actualizar la hora estimada en transporte
         foreach ($optimizedReservations as $reserva) {
+            if ($reserva->id_agencia == 163) { // Agencia usada para bloquear
+                continue;
+            }
+
             if (isset($pickUpTimes[$reserva->id])) {
                 // Verificar si ya se envió la notificación
                 if ($reserva->transporte->notificacion_enviada) {
@@ -119,9 +122,13 @@ class EnviarNotificacionesTransporte extends Command
 
                 // Obtener el correo electrónico del cliente
                 $tilopayTransaction = $reserva->tilopayTransaction;
-                $clienteEmail = $tilopayTransaction->billToEmail;
                 $nombreCliente = $reserva->nombre_cliente;
-
+                try {
+                    $clienteEmail = $tilopayTransaction->billToEmail;
+                } catch (\Exception $e) {
+                    $clienteEmail = 'info@slothsterritory.com';
+                }
+                
                 try {
                     // Envío de correo al cliente
                     Mail::to($clienteEmail)
