@@ -48,44 +48,74 @@ class EnviarNotificacionesTransporte extends Command
      */
     public function handle()
     {
-        $fechaActual = Carbon::now('America/Costa_Rica')->format('Y-m-d');
-        $fechaTourModel = Fecha_tour::where('fecha', $fechaActual)->first();
+        $now = Carbon::now('America/Costa_Rica');
 
-        if (!$fechaTourModel) {
-            $this->info('No hay fecha de tour para mañana');
-            return;
-        }
+        // Obtener todas las reservas con transporte pendiente de notificación
+        $reservas = Reserva::whereHas('transporte', function ($query) {
+            $query->where('notificacion_enviada', false);
+        })->get();
 
-        $fechaTourId = $fechaTourModel->id;
+        info('Reservas pendientes de notificación: ' . $reservas->count());
 
-        // Obtener todos los horarios
-        $horarios = Horario::where('tiene_transporte', true)
-        ->whereHas('reservas', function($query) use ($fechaTourId) {
-            $query->where('id_fecha_tour', $fechaTourId)
-                  ->whereHas('transporte', function($query) {
-                      $query->where('notificacion_enviada', false);
-                  });
-        })
-        ->get();
-
-        foreach ($horarios as $horario) {
-            // Obtener el número de horas antes para enviar la notificación
+        foreach ($reservas as $reserva) {
+            $horario = $reserva->horario;
+            $fechaTour = $reserva->fecha_tour->fecha;
             $hoursBeforeTransport = $horario->hours_before_transport;
 
             // Combinar la fecha del tour y la hora del horario
-            $fechaHoraTour = Carbon::parse($fechaActual . ' ' . $horario->hora, 'America/Costa_Rica');
+            $fechaHoraTour = Carbon::parse($fechaTour . ' ' . $horario->hora, 'America/Costa_Rica');
 
             // Calcular la hora en la que se debe enviar la notificación
             $horaEnvioNotificacion = $fechaHoraTour->copy()->subHours($hoursBeforeTransport);
 
-            // Calcular la diferencia en minutos entre la hora actual y la hora del tour
-            $diferenciaMinutos = Carbon::now('America/Costa_Rica')->diffInMinutes($fechaHoraTour, false);
-
             // Si es hora de enviar la notificación
-            if (Carbon::now('America/Costa_Rica')->greaterThanOrEqualTo($horaEnvioNotificacion)) {
-                $this->procesarReservasHorario($fechaTourId, $horario);
+            if ($now->greaterThanOrEqualTo($horaEnvioNotificacion)) {
+                info('Procesando reserva: ' . $reserva->id);
+                $this->procesarReservasHorario($reserva->id_fecha_tour, $horario);
             }
         }
+        // $fechaActual = Carbon::now('America/Costa_Rica')->format('Y-m-d');
+        // $fechaTourModel = Fecha_tour::where('fecha', $fechaActual)->first();
+        // info('Fecha actual: ' . $fechaActual);
+        // info('Fecha de tour: ' . $fechaTourModel);
+
+        // if (!$fechaTourModel) {
+        //     $this->info('No hay fecha de tour para mañana');
+        //     return;
+        // }
+
+        // $fechaTourId = $fechaTourModel->id;
+
+        // // Obtener todos los horarios
+        // $horarios = Horario::where('tiene_transporte', true)
+        // ->whereHas('reservas', function($query) use ($fechaTourId) {
+        //     $query->where('id_fecha_tour', $fechaTourId)
+        //           ->whereHas('transporte', function($query) {
+        //               $query->where('notificacion_enviada', false);
+        //           });
+        // })
+        // ->get();
+
+        // info('Horarios con transporte: ' . $horarios->count());
+
+        // foreach ($horarios as $horario) {
+        //     // Obtener el número de horas antes para enviar la notificación
+        //     $hoursBeforeTransport = $horario->hours_before_transport;
+
+        //     // Combinar la fecha del tour y la hora del horario
+        //     $fechaHoraTour = Carbon::parse($fechaActual . ' ' . $horario->hora, 'America/Costa_Rica');
+
+        //     // Calcular la hora en la que se debe enviar la notificación
+        //     $horaEnvioNotificacion = $fechaHoraTour->copy()->subHours($hoursBeforeTransport);
+
+        //     // Calcular la diferencia en minutos entre la hora actual y la hora del tour
+        //     $diferenciaMinutos = Carbon::now('America/Costa_Rica')->diffInMinutes($fechaHoraTour, false);
+
+        //     // Si es hora de enviar la notificación
+        //     if (Carbon::now('America/Costa_Rica')->greaterThanOrEqualTo($horaEnvioNotificacion)) {
+        //         $this->procesarReservasHorario($fechaTourId, $horario);
+        //     }
+        // }
     }
 
     private function procesarReservasHorario($fechaTourId, $horario)
@@ -128,18 +158,18 @@ class EnviarNotificacionesTransporte extends Command
                 } catch (\Exception $e) {
                     $clienteEmail = 'info@slothsterritory.com';
                 }
-                
+
                 try {
                     // Envío de correo al cliente
                     Mail::to($clienteEmail)
                         ->cc('info@slothsterritory.com')
                         ->send(new NotificacionTransporte($reserva, $arrivalTime));
-                
+
                     // Envío de correo de monitoreo
                     Mail::to('uli.rp1999@gmail.com')
                         ->cc('keilor1997@icloud.com')
                         ->send(new NotificacionTransporte($reserva, $arrivalTime));
-                
+
                     // Actualizar datos de transporte
                     $reserva->transporte->hora_estimada_llegada = $pickUpTimes[$reserva->id]->format('H:i:s');
                     $reserva->transporte->notificacion_enviada = true;
