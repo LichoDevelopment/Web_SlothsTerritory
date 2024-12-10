@@ -184,9 +184,9 @@
         </section>
     </section>
 
+    @endsection
     {{-- Incluir el modal --}}
     @include('admin.pickupModal')
-@endsection
 
 @section('scripts')
     <script>
@@ -399,4 +399,10 @@
                 });
         });
     </script>
+    <style>
+        .pac-container {
+            z-index: 999999 !important;
+        }
+    </style>
+    
 @endsection

@@ -177,16 +177,14 @@ class AdminTransporteController extends Controller
 
     public function assignTransport(Request $request)
     {
-        info('1');
         // Validar los datos
         $validator = Validator::make($request->all(), [
             'reserva_id' => 'required|exists:reservas,id',
             'direccion' => 'required|string|max:255',
             'latitud' => 'required|numeric',
             'longitud' => 'required|numeric',
-            'email' => 'require|email'
+            'email' => 'required|email'
         ]);
-        info('2');
 
         if ($validator->fails()) {
             return response()->json([
@@ -195,7 +193,6 @@ class AdminTransporteController extends Controller
                 'errors' => $validator->errors(),
             ], 400);
         }
-
         // Obtener la reserva
         $reserva = Reserva::find($request->reserva_id);
 
@@ -206,6 +203,8 @@ class AdminTransporteController extends Controller
                 'message' => 'Esta reserva ya tiene transporte asignado.',
             ], 400);
         }
+
+       
 
         // Validar disponibilidad de espacios
         $availablePlaces = $this->getAvailableTransportPlaces($reserva);
