@@ -183,6 +183,7 @@ class AdminTransporteController extends Controller
             'direccion' => 'required|string|max:255',
             'latitud' => 'required|numeric',
             'longitud' => 'required|numeric',
+            'email' => 'require|email'
         ]);
 
         if ($validator->fails()) {
@@ -227,6 +228,8 @@ class AdminTransporteController extends Controller
             ]
         ];
 
+        $costoTotalTransporte = $request->precio * $totalPeople;
+
         // Crear registro de transporte
         $transport = new Transporte();
         $transport->reserva_id = $reserva->id;
@@ -240,9 +243,10 @@ class AdminTransporteController extends Controller
         $transport->save();
 
         // Asociar transporte a la reserva
-        $reserva->monto_total += $request->precio;
-        $reserva->monto_con_descuento += $request->precio;
-        $reserva->monto_neto += $request->precio;
+        $reserva->monto_total += $costoTotalTransporte;
+        $reserva->monto_con_descuento += $costoTotalTransporte;
+        $reserva->monto_neto += $costoTotalTransporte;
+        $reserva->email = $request->email;
         $reserva->save();
 
         return response()->json([

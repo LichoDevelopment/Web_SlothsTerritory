@@ -74,48 +74,7 @@ class EnviarNotificacionesTransporte extends Command
                 $this->procesarReservasHorario($reserva->id_fecha_tour, $horario);
             }
         }
-        // $fechaActual = Carbon::now('America/Costa_Rica')->format('Y-m-d');
-        // $fechaTourModel = Fecha_tour::where('fecha', $fechaActual)->first();
-        // info('Fecha actual: ' . $fechaActual);
-        // info('Fecha de tour: ' . $fechaTourModel);
 
-        // if (!$fechaTourModel) {
-        //     $this->info('No hay fecha de tour para mañana');
-        //     return;
-        // }
-
-        // $fechaTourId = $fechaTourModel->id;
-
-        // // Obtener todos los horarios
-        // $horarios = Horario::where('tiene_transporte', true)
-        // ->whereHas('reservas', function($query) use ($fechaTourId) {
-        //     $query->where('id_fecha_tour', $fechaTourId)
-        //           ->whereHas('transporte', function($query) {
-        //               $query->where('notificacion_enviada', false);
-        //           });
-        // })
-        // ->get();
-
-        // info('Horarios con transporte: ' . $horarios->count());
-
-        // foreach ($horarios as $horario) {
-        //     // Obtener el número de horas antes para enviar la notificación
-        //     $hoursBeforeTransport = $horario->hours_before_transport;
-
-        //     // Combinar la fecha del tour y la hora del horario
-        //     $fechaHoraTour = Carbon::parse($fechaActual . ' ' . $horario->hora, 'America/Costa_Rica');
-
-        //     // Calcular la hora en la que se debe enviar la notificación
-        //     $horaEnvioNotificacion = $fechaHoraTour->copy()->subHours($hoursBeforeTransport);
-
-        //     // Calcular la diferencia en minutos entre la hora actual y la hora del tour
-        //     $diferenciaMinutos = Carbon::now('America/Costa_Rica')->diffInMinutes($fechaHoraTour, false);
-
-        //     // Si es hora de enviar la notificación
-        //     if (Carbon::now('America/Costa_Rica')->greaterThanOrEqualTo($horaEnvioNotificacion)) {
-        //         $this->procesarReservasHorario($fechaTourId, $horario);
-        //     }
-        // }
     }
 
     private function procesarReservasHorario($fechaTourId, $horario)
@@ -154,7 +113,11 @@ class EnviarNotificacionesTransporte extends Command
                 $tilopayTransaction = $reserva->tilopayTransaction;
                 $nombreCliente = $reserva->nombre_cliente;
                 try {
-                    $clienteEmail = $tilopayTransaction->billToEmail;
+                    if ($tilopayTransaction && !empty($tilopayTransaction->billToEmail)) {
+                        $clienteEmail = $tilopayTransaction->billToEmail;
+                    } else {
+                        $clienteEmail = $reserva->email;
+                    }
                 } catch (\Exception $e) {
                     $clienteEmail = 'info@slothsterritory.com';
                 }

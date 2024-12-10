@@ -184,15 +184,12 @@
         </section>
     </section>
 
-    {{-- Incluir el modal --}}
-    @include('admin.pickupModal')
-    {{-- <a href="{{ route('agencias.index') }}" class="btn btn-success"> Ver Agencias</a> --}}
-
 @endsection
+{{-- Incluir el modal --}}
+@include('admin.pickupModal')
 
 @section('scripts')
     <script>
-
         $(document).ready(function() {
             $('#TablaReservas').DataTable();
         });
@@ -322,83 +319,84 @@
                 }, 1500)
             }
         }
-
     </script>
     <script>
         // Función para abrir el modal y establecer el ID de la reserva
         function openPickupModal(reservaId, scheduleId, date) {
-        document.getElementById('reservaId').value = reservaId;
-        document.getElementById('scheduleId').value = scheduleId;
-        document.getElementById('reservationDate').value = date;
-        // Limpiar campos anteriores
-        document.getElementById('direccion').value = '';
-        document.getElementById('latitud').value = '';
-        document.getElementById('longitud').value = '';
-        document.getElementById('distance').value = '';
-        document.getElementById('price').value = '';
-        document.getElementById('available_places').value = '';
-        // Habilitar el botón de guardar por si estaba deshabilitado
-        document.querySelector('#pickupForm button[type="submit"]').disabled = false;
-        // Mostrar el modal
-        $('#pickupModal').modal('show');
-    }
-    
+            document.getElementById('reservaId').value = reservaId;
+            document.getElementById('scheduleId').value = scheduleId;
+            document.getElementById('reservationDate').value = date;
+            // Limpiar campos anteriores
+            document.getElementById('direccion').value = '';
+            document.getElementById('latitud').value = '';
+            document.getElementById('longitud').value = '';
+            document.getElementById('distance').value = '';
+            document.getElementById('price').value = '';
+            document.getElementById('available_places').value = '';
+            // Habilitar el botón de guardar por si estaba deshabilitado
+            document.querySelector('#pickupForm button[type="submit"]').disabled = false;
+            // Mostrar el modal
+            $('#pickupModal').modal('show');
+        }
+
         function closePickupModal() {
             $('#pickupModal').modal('hide');
         }
-    
-            // Manejar el envío del formulario
-    document.getElementById('pickupForm').addEventListener('submit', function(event) {
-        event.preventDefault();
 
-        // Obtener datos del formulario
-        const reservaId = document.getElementById('reservaId').value;
-        const direccion = document.getElementById('direccion').value;
-        const latitud = document.getElementById('latitud').value;
-        const longitud = document.getElementById('longitud').value;
-        const distance = document.getElementById('distance').value;
-        const price = document.getElementById('price').value;
-        const placeId = document.getElementById('placeId').value;
+        // Manejar el envío del formulario
+        document.getElementById('pickupForm').addEventListener('submit', function(event) {
+            event.preventDefault();
 
-        // Validar que los campos no estén vacíos
-        if (!direccion || !latitud || !longitud || !distance || !price) {
-            alert('Por favor, complete todos los campos.');
-            return;
-        }
+            // Obtener datos del formulario
+            const reservaId = document.getElementById('reservaId').value;
+            const direccion = document.getElementById('direccion').value;
+            const latitud = document.getElementById('latitud').value;
+            const longitud = document.getElementById('longitud').value;
+            const distance = document.getElementById('distance').value;
+            const price = document.getElementById('price').value;
+            const placeId = document.getElementById('placeId').value;
+            const emailCliente = document.getElementById('email_cliente').value;
 
-        // Enviar datos al servidor
-        fetch('{{ route('admin.transport.assign') }}', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': '{{ csrf_token() }}',
-            },
-            body: JSON.stringify({
-                reserva_id: reservaId,
-                direccion: direccion,
-                latitud: latitud,
-                longitud: longitud,
-                distancia: distance,
-                precio: price,
-                placeId: placeId
-            }),
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                alert('Transporte asignado correctamente.');
-                // Cerrar el modal
-                closePickupModal();
-                // Recargar la página o actualizar la tabla
-                location.reload();
-            } else {
-                alert('Error: ' + data.message);
+            // Validar que los campos no estén vacíos
+            if (!direccion || !latitud || !longitud || !distance || !price || !emailCliente) {
+                alert('Por favor, complete todos los campos.');
+                return;
             }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('Ocurrió un error al asignar el transporte.');
+
+            // Enviar datos al servidor
+            fetch('{{ route('admin.transport.assign') }}', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                    },
+                    body: JSON.stringify({
+                        reserva_id: reservaId,
+                        direccion: direccion,
+                        latitud: latitud,
+                        longitud: longitud,
+                        distancia: distance,
+                        precio: price,
+                        placeId: placeId,
+                        email: emailCliente
+                    }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Transporte asignado correctamente.');
+                        // Cerrar el modal
+                        closePickupModal();
+                        // Recargar la página o actualizar la tabla
+                        location.reload();
+                    } else {
+                        alert('Error: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Ocurrió un error al asignar el transporte.');
+                });
         });
-    });
     </script>
 @endsection

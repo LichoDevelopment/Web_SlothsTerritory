@@ -24,6 +24,10 @@
                         <input type="text" class="form-control" id="direccion" name="direccion"
                             placeholder="Ingrese el lugar de recogida" required>
                     </div>
+                    <div class="form-group">
+                        <label for="email_cliente">Correo del Cliente</label>
+                        <input type="email" class="form-control" id="email_cliente" name="email_cliente" placeholder="Ingrese el correo del cliente" required>
+                    </div>
                     <!-- Campos ocultos para latitud y longitud -->
                     <input type="hidden" id="latitud" name="latitud">
                     <input type="hidden" id="longitud" name="longitud">

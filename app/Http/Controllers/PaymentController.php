@@ -360,6 +360,7 @@ class PaymentController extends Controller
             $reservation->id_fecha_tour = $fecha_tour->id;
             $reservation->id_horario = $request->schedule_id;
             $reservation->nombre_cliente = $request->billToFirstName . ' ' . $request->billToLastName;
+            $reservation->email = $request->billToEmail;
             $reservation->cantidad_adultos = $request->adults;
             $reservation->cantidad_niños = $request->children;
             $reservation->cantidad_niños_gratis = $request->childrenFree;
