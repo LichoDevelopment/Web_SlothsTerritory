@@ -177,6 +177,7 @@ class AdminTransporteController extends Controller
 
     public function assignTransport(Request $request)
     {
+        info('1');
         // Validar los datos
         $validator = Validator::make($request->all(), [
             'reserva_id' => 'required|exists:reservas,id',
@@ -185,6 +186,7 @@ class AdminTransporteController extends Controller
             'longitud' => 'required|numeric',
             'email' => 'require|email'
         ]);
+        info('2');
 
         if ($validator->fails()) {
             return response()->json([

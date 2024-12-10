@@ -184,9 +184,9 @@
         </section>
     </section>
 
+    {{-- Incluir el modal --}}
+    @include('admin.pickupModal')
 @endsection
-{{-- Incluir el modal --}}
-@include('admin.pickupModal')
 
 @section('scripts')
     <script>
