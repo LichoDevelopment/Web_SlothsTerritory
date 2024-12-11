@@ -17,10 +17,22 @@ class AdminTransporteController extends Controller
 
     public function index(Request $request)
     {
-        // Obtener todas las reservas que tienen transporte
-        $reservasConTransporte = Reserva::whereHas('transporte')
-            ->with(['fecha_tour', 'horario', 'transporte'])
-            ->get();
+        // Si no se envía la fecha, simplemente retornamos la vista con datos vacíos.
+        if (!$request->filled('fecha')) {
+            $datos = [];
+            return view('admin.transporte.index', compact('datos'));
+        }
+
+        $query = Reserva::whereHas('transporte')
+            ->with(['fecha_tour', 'horario', 'transporte', 'agencia']);
+
+        // Si se envía una fecha en el request, filtramos las reservas por esa fecha
+        $fechaFiltrar = $request->input('fecha');
+        $query->whereHas('fecha_tour', function ($q) use ($fechaFiltrar) {
+            $q->where('fecha', $fechaFiltrar);
+        });
+
+        $reservasConTransporte = $query->get();
 
         // Preparar los datos estructurados
         $datos = [];
@@ -45,9 +57,8 @@ class AdminTransporteController extends Controller
                 $agencia = $reservasDeHorario->first()->agencia;
                 $nombreAgencia = $agencia ? $agencia->nombre : 'N/A';
 
-                $isAdm = true;
                 // Llamar al método calculateRouteAndTimes para obtener los tiempos
-                $routeData = $this->calculateRouteAndTimes($fechaId, $horarioId, $isAdm);
+                $routeData = $this->calculateRouteAndTimes($fechaId, $horarioId);
 
                 if ($routeData) {
                     $driverDepartureTime = $routeData['driver_departure_time']->format('H:i');
@@ -204,7 +215,7 @@ class AdminTransporteController extends Controller
             ], 400);
         }
 
-       
+
 
         // Validar disponibilidad de espacios
         $availablePlaces = $this->getAvailableTransportPlaces($reserva);
