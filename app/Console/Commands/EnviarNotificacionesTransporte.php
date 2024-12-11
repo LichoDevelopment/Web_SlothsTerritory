@@ -69,12 +69,11 @@ class EnviarNotificacionesTransporte extends Command
             $horaEnvioNotificacion = $fechaHoraTour->copy()->subHours($hoursBeforeTransport);
 
             // Si es hora de enviar la notificación
-            if ($now->greaterThanOrEqualTo($horaEnvioNotificacion)) {
-                info('Procesando reserva: ' . $reserva->id);
-                $this->procesarReservasHorario($reserva->id_fecha_tour, $horario);
-            }
+            // if ($now->greaterThanOrEqualTo($horaEnvioNotificacion)) {
+            info('Procesando reserva: ' . $reserva->id);
+            $this->procesarReservasHorario($reserva->id_fecha_tour, $horario);
+            // }
         }
-
     }
 
     private function procesarReservasHorario($fechaTourId, $horario)
@@ -103,44 +102,57 @@ class EnviarNotificacionesTransporte extends Command
 
             if (isset($pickUpTimes[$reserva->id])) {
                 // Verificar si ya se envió la notificación
-                if ($reserva->transporte->notificacion_enviada) {
-                    continue;
-                }
+                // if ($reserva->transporte->notificacion_enviada) {
+                //     continue;
+                // }
 
                 $arrivalTime = $pickUpTimes[$reserva->id]->format('H:i');
+                $oldArrivalTime = $reserva->transporte->hora_estimada_llegada;
 
-                // Obtener el correo electrónico del cliente
-                $tilopayTransaction = $reserva->tilopayTransaction;
-                $nombreCliente = $reserva->nombre_cliente;
                 try {
-                    if ($tilopayTransaction && !empty($tilopayTransaction->billToEmail)) {
-                        $clienteEmail = $tilopayTransaction->billToEmail;
-                    } else {
-                        $clienteEmail = $reserva->email;
-                    }
+                    // Obtener el email del cliente
+                    $tilopayTransaction = $reserva->tilopayTransaction;
+                    $nombreCliente = $reserva->nombre_cliente;
+                    $clienteEmail = ($tilopayTransaction && !empty($tilopayTransaction->billToEmail))
+                        ? $tilopayTransaction->billToEmail
+                        : $reserva->email;
                 } catch (\Exception $e) {
                     $clienteEmail = 'info@slothsterritory.com';
                 }
 
-                try {
-                    // Envío de correo al cliente
+                if (!$reserva->transporte->notificacion_enviada) {
+                    // Primera notificacións
                     Mail::to($clienteEmail)
                         ->cc('info@slothsterritory.com')
                         ->send(new NotificacionTransporte($reserva, $arrivalTime));
 
-                    // Envío de correo de monitoreo
+                    //     // Envío de correo de monitoreo
                     Mail::to('uli.rp1999@gmail.com')
-                        ->cc('keilor1997@icloud.com')
-                        ->send(new NotificacionTransporte($reserva, $arrivalTime));
+                    ->cc('keilor1997@icloud.com')
+                    ->send(new NotificacionTransporte($reserva, $arrivalTime));
 
-                    // Actualizar datos de transporte
-                    $reserva->transporte->hora_estimada_llegada = $pickUpTimes[$reserva->id]->format('H:i:s');
+                    $reserva->transporte->hora_estimada_llegada = $arrivalTime . ':00';
                     $reserva->transporte->notificacion_enviada = true;
                     $reserva->transporte->save();
-                } catch (\Exception $e) {
-                    // Registrar el error
-                    Log::error("Error al enviar notificación de transporte: " . $e->getMessage());
+                } else {
+                    // Ya se notificó anteriormente, verificar si la hora cambió
+                    if ($oldArrivalTime && $oldArrivalTime != ($arrivalTime . ':00')) {
+                        // Enviar una notificación de actualización
+                        Mail::to($clienteEmail)
+                            ->cc('info@slothsterritory.com')
+                            ->send(new NotificacionTransporte($reserva, $arrivalTime, true)); // el true podría ser para indicar actualización
+
+                        //     // Envío de correo de monitoreo
+                        Mail::to('uli.rp1999@gmail.com')
+                            ->cc('keilor1997@icloud.com')
+                            ->send(new NotificacionTransporte($reserva, $arrivalTime, true));
+
+                        // Actualizar la hora estimada
+                        $reserva->transporte->hora_estimada_llegada = $arrivalTime . ':00';
+                        $reserva->transporte->save();
+                    }
                 }
+
             }
         }
     }

@@ -13,6 +13,7 @@ class NotificacionTransporte extends Mailable
     public $reserva;
     public $arrivalTime;
     public $numeroReserva;
+    public $isUpdate;
 
     /**
      * Create a new message instance.
@@ -21,11 +22,12 @@ class NotificacionTransporte extends Mailable
      * @param string $arrivalTime
      * @return void
      */
-    public function __construct($reserva, $arrivalTime)
+    public function __construct($reserva, $arrivalTime, $isUpdate = false)
     {
         $this->reserva = $reserva;
         $this->arrivalTime = $arrivalTime;
         $this->numeroReserva = $reserva->id;
+        $this->isUpdate = $isUpdate;
     }
 
     /**
