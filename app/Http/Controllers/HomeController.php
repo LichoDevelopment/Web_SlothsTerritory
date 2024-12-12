@@ -114,6 +114,9 @@ class HomeController extends Controller
 
     public function admin(Request $request)
     {
+        if (rol_usuario()->id === 3){
+            return view('admin.transporte.index');
+        }
         $this->updateTransactionsTilopay();
 
         // $startedAt = time();

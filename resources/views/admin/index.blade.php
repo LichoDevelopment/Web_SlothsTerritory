@@ -2,6 +2,9 @@
 
 
 @section('content')
+    @if (rol_usuario()->id === 3)
+    {{ Redirect::to('/transporte') }}
+    @endif
     @if (rol_usuario()->id === 2 || rol_usuario()->id === 1)
         @foreach ($totales as $total)
             <section class="grid_totales">

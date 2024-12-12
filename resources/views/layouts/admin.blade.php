@@ -65,65 +65,59 @@
         <nav class="navbar-mobile">
             <div class="container-fluid">
                 <ul class="navbar-mobile__list list-unstyled">
-                    <li class="{{ Route::is('admin.index') ? 'active' : '' }} ">
-                        <a href="{{ route('admin.index') }}">
-                            <i class="fas fa-home"></i>Inicio
-                        </a>
-                    </li>
-                    {{-- <li class="{{ Route::is('admin.registros') ? 'active' : '' }} ">
+                    @if (rol_usuario()->id == 3)
+                        {{-- Si es chofer (rol 3), mostrar sólo transporte --}}
+                        <li class="{{ Route::is('admin.transporte') ? 'active' : '' }}">
+                            <a href="{{ route('admin.transporte') }}">
+                                <i class="fas fa-shuttle-van"></i>Transporte
+                            </a>
+                        </li>
+                    @else
+                        {{-- Si es rol 1 o 2, mostrar todo el menú habitual incluyendo Transporte --}}
+
+                        <li class="{{ Route::is('admin.index') ? 'active' : '' }} ">
+                            <a href="{{ route('admin.index') }}">
+                                <i class="fas fa-home"></i>Inicio
+                            </a>
+                        </li>
+                        {{-- <li class="{{ Route::is('admin.registros') ? 'active' : '' }} ">
                             <a href="{{ route('admin.registro') }}">
                                 <i class="fas fa-chart-bar"></i>Registros</a>
                         </li> --}}
-                    <li class="{{ Route::is('admin.agencias') ? 'active' : '' }} ">
-                        <a href="{{ route('admin.agencia') }}">
-                            <i class="fas fa-briefcase"></i>Agencias
-                        </a>
-                    </li>
-                    <li class="{{ Route::is('admin.horario') ? 'active' : '' }} ">
-                        <a href="{{ route('admin.horario') }}">
-                            <i class="fas fa-clock"></i>Horarios</a>
-                    </li>
-                    <li class="{{ Route::is('reservas.eliminadas') ? 'active' : '' }} ">
-                        <a href="{{ route('reservas.eliminadas') }}">
-                            <i class="fas fa-recycle"></i>Eliminadas</a>
-                    </li>
-                    <li class="{{ Route::is('admin.pagos') ? 'active' : '' }} ">
-                        <a href="{{ route('admin.pagos') }}">
-                            <i class="fas fa-dollar-sign"></i>Consultar Pagos</a>
-                    </li>
-                    <li class="{{ Route::is('admin.transporte') ? 'active' : '' }} ">
-                        <a href="{{ route('admin.transporte') }}">
-                            <i class="fas fa-dollar-sign"></i>Transporte</a>
-
-                    </li>
-                    <li class="{{ Route::is('admin.precio') ? 'active' : '' }} ">
-                        <a href="{{ route('admin.precio') }}">
-                            <i class="fas fa-dollar-sign"></i>Precios</a>
-                    </li>
-                    @if (rol_usuario()->id == 1)
-                        <li class="{{ Route::is('admin.tours') ? 'active' : '' }} ">
-                            <a href="{{ route('admin.tours') }}">
-                                <i class="fas fa-calendar-alt"></i>Tours</a>
+                        <li class="{{ Route::is('admin.agencias') ? 'active' : '' }} ">
+                            <a href="{{ route('admin.agencia') }}">
+                                <i class="fas fa-briefcase"></i>Agencias
+                            </a>
                         </li>
-                        
+                        <li class="{{ Route::is('admin.horario') ? 'active' : '' }} ">
+                            <a href="{{ route('admin.horario') }}">
+                                <i class="fas fa-clock"></i>Horarios</a>
+                        </li>
+                        <li class="{{ Route::is('reservas.eliminadas') ? 'active' : '' }} ">
+                            <a href="{{ route('reservas.eliminadas') }}">
+                                <i class="fas fa-recycle"></i>Eliminadas</a>
+                        </li>
+                        <li class="{{ Route::is('admin.pagos') ? 'active' : '' }} ">
+                            <a href="{{ route('admin.pagos') }}">
+                                <i class="fas fa-dollar-sign"></i>Consultar Pagos</a>
+                        </li>
+                        <li class="{{ Route::is('admin.transporte') ? 'active' : '' }} ">
+                            <a href="{{ route('admin.transporte') }}">
+                                <i class="fas fa-dollar-sign"></i>Transporte</a>
 
-                        {{-- <li class="{{ Route::is('admin.horario') ? 'active' : '' }} ">
-                                <a href="{{ route('admin.horario') }}">
-                                    <i class="fas fa-clock"></i>Horarios</a>
-                            </li> --}}
-                        {{-- <li class="{{ Route::is('admin.mensaje') ? 'active' : '' }} ">
-                                <a href="{{ route('admin.mensaje') }}">
-                                    <i class="fas fa-envelope"></i>Mensajes</a>
-                            </li> --}}
-                        {{-- <li class="{{ Route::is('reservas.eliminadas') ? 'active' : '' }} ">
-                                <a href="{{ route('reservas.eliminadas') }}">
-                                    <i class="fas fa-recycle"></i>Eliminadas</a>
-                            </li> --}}
-                        {{-- <li class="{{ Route::is('admin.carusel') ? 'active' : '' }} ">
-                                <a href="{{ route('admin.carusel') }}">
-                                    <i class="fas fa-images"></i>Carusel</a>
-                            </li> --}}
+                        </li>
+                        <li class="{{ Route::is('admin.precio') ? 'active' : '' }} ">
+                            <a href="{{ route('admin.precio') }}">
+                                <i class="fas fa-dollar-sign"></i>Precios</a>
+                        </li>
+                        @if (rol_usuario()->id == 1)
+                            <li class="{{ Route::is('admin.tours') ? 'active' : '' }} ">
+                                <a href="{{ route('admin.tours') }}">
+                                    <i class="fas fa-calendar-alt"></i>Tours</a>
+                            </li>
+                        @endif
                     @endif
+
                 </ul>
             </div>
         </nav>
@@ -140,82 +134,53 @@
         <div class="menu-sidebar__content js-scrollbar1">
             <nav class="navbar-sidebar">
                 <ul class="list-unstyled navbar__list">
-                    <li class="{{ Route::is('admin.index') ? 'active' : '' }} ">
-                        <a href="{{ route('admin.index') }}">
-                            <i class="fas fa-home"></i>Inicio
-                        </a>
-                    </li>
-
-                    <li class="{{ Route::is('admin.agencias') ? 'active' : '' }} ">
-                        <a href="{{ route('admin.agencia') }}">
-                            <i class="fas fa-briefcase"></i>Agencias</a>
-                    </li>
-                    <li class="{{ Route::is('admin.horario') ? 'active' : '' }} ">
-                        <a href="{{ route('admin.horario') }}">
-                            <i class="fas fa-clock"></i>Horarios</a>
-                    </li>
-
-                    <li class="{{ Route::is('reservas.eliminadas') ? 'active' : '' }} ">
-                        <a href="{{ route('reservas.eliminadas') }}">
-                            <i class="fas fa-recycle"></i>Eliminadas</a>
-                    </li>
-                    <li class="{{ Route::is('admin.pagos') ? 'active' : '' }} ">
-                        <a href="{{ route('admin.pagos') }}">
-                            <i class="fas fa-dollar-sign"></i>Consultar Pagos</a>
-                    </li>
-                    <li class="{{ Route::is('admin.transporte') ? 'active' : '' }} ">
-                        <a href="{{ route('admin.transporte') }}">
-                            <i class="fas fa-dollar-sign"></i>Transporte</a>
-                    </li>
-                    
-                    <li class="{{ Route::is('admin.precio') ? 'active' : '' }} ">
-                        <a href="{{ route('admin.precio') }}">
-                            <i class="fas fa-dollar-sign"></i>Precios</a>
-                    </li>
-                    @if (rol_usuario()->id == 1)
-                        {{-- <li class="{{ Route::is('admin.registros') ? 'active' : '' }} ">
-                                <a href="{{ route('admin.registro') }}">
-                                    <i class="fas fa-chart-bar"></i>Registros</a>
-                            </li> --}}
-                        <li class="{{ Route::is('admin.tours') ? 'active' : '' }} ">
-                            <a href="{{ route('admin.tours') }}">
-                                <i class="fas fa-calendar-alt"></i>Tours</a>
+                    @if (rol_usuario()->id == 3)
+                        {{-- Si es chofer (rol 3), mostrar sólo transporte --}}
+                        <li class="{{ Route::is('admin.transporte') ? 'active' : '' }}">
+                            <a href="{{ route('admin.transporte') }}">
+                                <i class="fas fa-shuttle-van"></i>Transporte
+                            </a>
                         </li>
-                        
-                        {{-- <li class="{{ Route::is('admin.horario') ? 'active' : '' }} ">
-                                <a href="{{ route('admin.horario') }}">
-                                    <i class="fas fa-clock"></i>Horarios</a>
-                                </li>
-                                
-                                <li class="{{ Route::is('reservas.eliminadas') ? 'active' : '' }} ">
-                                    <a href="{{ route('reservas.eliminadas') }}">
-                                        <i class="fas fa-recycle"></i>Eliminadas</a>
-                                    </li> --}}
+                    @else
+                        <li class="{{ Route::is('admin.index') ? 'active' : '' }} ">
+                            <a href="{{ route('admin.index') }}">
+                                <i class="fas fa-home"></i>Inicio
+                            </a>
+                        </li>
+
+                        <li class="{{ Route::is('admin.agencias') ? 'active' : '' }} ">
+                            <a href="{{ route('admin.agencia') }}">
+                                <i class="fas fa-briefcase"></i>Agencias</a>
+                        </li>
+                        <li class="{{ Route::is('admin.horario') ? 'active' : '' }} ">
+                            <a href="{{ route('admin.horario') }}">
+                                <i class="fas fa-clock"></i>Horarios</a>
+                        </li>
+
+                        <li class="{{ Route::is('reservas.eliminadas') ? 'active' : '' }} ">
+                            <a href="{{ route('reservas.eliminadas') }}">
+                                <i class="fas fa-recycle"></i>Eliminadas</a>
+                        </li>
+                        <li class="{{ Route::is('admin.pagos') ? 'active' : '' }} ">
+                            <a href="{{ route('admin.pagos') }}">
+                                <i class="fas fa-dollar-sign"></i>Consultar Pagos</a>
+                        </li>
+                        <li class="{{ Route::is('admin.transporte') ? 'active' : '' }} ">
+                            <a href="{{ route('admin.transporte') }}">
+                                <i class="fas fa-dollar-sign"></i>Transporte</a>
+                        </li>
+
+                        <li class="{{ Route::is('admin.precio') ? 'active' : '' }} ">
+                            <a href="{{ route('admin.precio') }}">
+                                <i class="fas fa-dollar-sign"></i>Precios</a>
+                        </li>
+                        @if (rol_usuario()->id == 1)
+                            <li class="{{ Route::is('admin.tours') ? 'active' : '' }} ">
+                                <a href="{{ route('admin.tours') }}">
+                                    <i class="fas fa-calendar-alt"></i>Tours</a>
+                            </li>
+                        @endif
                     @endif
-                    {{-- <li class="{{ Route::is('admin.combos.index') ? 'active' : '' }} ">
-                            <a href="{{ route('admin.combos.index') }}">
-                                <i class="fas fa-tags"></i>Combos</a>
-                        </li> --}}
-                    {{-- <li class="{{ Route::is('admin.mensaje') ? 'active' : '' }} ">
-                            <a href="{{ route('admin.mensaje') }}">
-                                <i class="fas fa-envelope"></i>Mensajes sin leer</a>
-                        </li> --}}
-                    {{-- <li class="{{ Route::is('admin.mensajesLeidos') ? 'active' : '' }} ">
-                            <a href="{{ route('admin.mensajesLeidos') }}">
-                                <i class="fas fa-envelope"></i>Mensajes leídos</a>
-                        </li> --}}
-                    {{-- <li class="{{ Route::is('admin.carusel') ? 'active' : '' }} ">
-                            <a href="{{ route('admin.carusel') }}">
-                                <i class="fas fa-images"></i>Carusel</a>
-                        </li> --}}
-                    {{-- <li class="{{ Route::is('admin.galeria') ? 'active' : '' }} ">
-                            <a href="{{ route('admin.galeria') }}">
-                                <i class="fas fa-images"></i>Galeria</a>
-                        </li> --}}
-                    {{-- <li class="{{ Route::is('admin.site.sections.index') ? 'active' : '' }} ">
-                            <a href="{{ route('admin.site.sections.index') }}">
-                                <i class="fas fa-images"></i>Pagina</a>
-                        </li> --}}
                 </ul>
             </nav>
         </div>
@@ -246,8 +211,6 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        {{-- <img src="images/icon/avatar-01.jpg" alt="John Doe" /> --}}
-                                                        {{-- <img src="{{env('APP_URL')}}/images/icon/avatar-01.jpg" alt="John Doe" /> --}}
                                                     </a>
                                                 </div>
                                                 <div class="content">
@@ -296,30 +259,15 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Bootstrap JS-->
-    {{-- <script src="vendor/bootstrap-4.1/popper.min.js"></script> --}}
-    {{-- <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script> --}}
     <script src="{{ env('APP_URL') }}/vendor/bootstrap-4.1/popper.min.js"></script>
     <script src="{{ env('APP_URL') }}/vendor/bootstrap-4.1/bootstrap.min.js"></script>
     <!-- Vendor JS       -->
-    {{-- <script src="vendor/slick/slick.min.js"></script> --}}
     <script src="{{ env('APP_URL') }}/vendor/slick/slick.min.js"></script>
-
-    {{-- <script src="vendor/wow/wow.min.js"></script> --}}
-    {{-- <script src="vendor/animsition/animsition.min.js"></script> --}}
-    {{-- <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js"></script> --}}
     <script src="{{ env('APP_URL') }}/vendor/wow/wow.min.js"></script>
     <script src="{{ env('APP_URL') }}/vendor/animsition/animsition.min.js"></script>
     <script src="{{ env('APP_URL') }}/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-
-    {{-- <script src="vendor/counter-up/jquery.waypoints.min.js"></script> --}}
-    {{-- <script src="vendor/counter-up/jquery.counterup.min.js"></script> --}}
     <script src="{{ env('APP_URL') }}/vendor/counter-up/jquery.waypoints.min.js"></script>
     <script src="{{ env('APP_URL') }}/vendor/counter-up/jquery.counterup.min.js"></script>
-
-    {{-- <script src="vendor/circle-progress/circle-progress.min.js"></script> --}}
-    {{-- <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script> --}}
-    {{-- <script src="vendor/chartjs/Chart.bundle.min.js"></script> --}}
-    {{-- <script src="vendor/select2/select2.min.js"></script> --}}
     <script src="{{ env('APP_URL') }}/vendor/circle-progress/circle-progress.min.js"></script>
     <script src="{{ env('APP_URL') }}/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
     <script src="{{ env('APP_URL') }}/vendor/chartjs/Chart.bundle.min.js"></script>
