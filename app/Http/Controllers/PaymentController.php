@@ -322,7 +322,7 @@ class PaymentController extends Controller
 
         if ($request->schedule_id == 16 ){
             $adultPrice = 60;
-            $childPrice = 60;
+            $childPrice = 35;
         } else {
             // Usar los precios normales
             $adultPrice = $precios[0]->precio_adulto;
