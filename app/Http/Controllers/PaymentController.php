@@ -318,9 +318,16 @@ class PaymentController extends Controller
             return response()->json(['error' => 'No se pudo obtener el precio del tour'], 500);
         }
 
-        // Usar los precios normales
-        $adultPrice = $precios[0]->precio_adulto;
-        $childPrice = $precios[0]->precio_niño;
+        // info('request'. $request);
+
+        if ($request->schedule_id == 16 ){
+            $adultPrice = 60;
+            $childPrice = 35;
+        } else {
+            // Usar los precios normales
+            $adultPrice = $precios[0]->precio_adulto;
+            $childPrice = $precios[0]->precio_niño;
+        }
 
 
         // Cantidad de adultos y niños
