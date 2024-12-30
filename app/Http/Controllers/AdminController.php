@@ -22,8 +22,11 @@ class AdminController extends Controller
     {
         $tours      = Tour::all();
         $horarios   = Horario::all();
-        $agencias   = Agencia::orderBy('nombre', 'asc')->get();;
-        $precios    = Precio::all();
+        // Priorizar agencias específicas y ordenar las demás alfabéticamente
+        $agencias = Agencia::orderByRaw(
+            "FIELD(id, 5, 8, 121) DESC" // Las agencias con estos IDs aparecerán primero
+        )->orderBy('nombre', 'asc') // Luego las demás en orden alfabético
+        ->get();        $precios    = Precio::all();
 
         $view_data['tours']     = $tours;
         $view_data['horarios']  = $horarios;
