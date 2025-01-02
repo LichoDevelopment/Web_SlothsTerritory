@@ -115,6 +115,7 @@
                 <table class="table table-responsive" id="TablaReservas">
                     <thead>
                         <tr>
+                            <th></th>
                             <th>Llegó</th>
                             <th>#</th>
                             <th>Tour</th>
@@ -127,77 +128,102 @@
                             <th>Adultos</th>
                             <th>Niños</th>
                             <th>Niños Gratis</th>
-                            <th>Precio</th>
-                            <th>Descuento</th>
-                            <th>Precio con descuento</th>
-                            <th>Comision de agencia</th>
-                            <th>Total</th>
-                            <th>Factura</th>
-                            <th>Creado el</th>
-                            <th>Estado</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($reservas as $reserva)
-                            <tr class="{{ $reserva->llego ? 'llego' : '' }}">
+                            <!-- Fila Principal -->
+                            <tr class="main-row {{ $reserva->llego ? 'llego' : '' }}">
+                                <!-- Celda para el botón de Expandir/Contraer -->
+                                <td>
+                                    <button class="btn-toggle-expand" data-target="#details-{{ $reserva->id }}"
+                                        title="Ver más">
+                                        ➤
+                                    </button>
+                                </td>
+
+                                <!-- Checkbox de llegó -->
                                 <td>
                                     <input type="checkbox" class="checkbox-llego" data-id="{{ $reserva->id }}"
                                         {{ $reserva->llego ? 'checked' : '' }}>
                                 </td>
-                                <td> {{ $loop->index + 1 }} </td>
-                                <td> {{ $reserva->nombre_tour }} </td>
-                                <td> {{ $reserva->nombre_agencia }} </td>
-                                <td> {{ $reserva->tiene_transporte }} </td>
-                                <td> {{ $reserva->hora }} </td>
-                                <td> {{ $reserva->fecha }} </td>
+
+                                <td>{{ $loop->index + 1 }}</td>
+                                <td>{{ $reserva->nombre_tour }}</td>
+                                <td>{{ $reserva->nombre_agencia }}</td>
+                                <td>{{ $reserva->tiene_transporte }}</td>
+                                <td>{{ $reserva->hora }}</td>
+                                <td>{{ $reserva->fecha }}</td>
                                 <td>
                                     <button
                                         class="btn-toggle-pago {{ $reserva->pendiente_cobrar ? 'pendiente' : 'pagado' }}"
                                         data-id="{{ $reserva->id }}"
-                                        data-pendiente="{{ $reserva->pendiente_cobrar ? '1' : '0' }}">
+                                        data-pendiente="{{ $reserva->pendiente_cobrar ? '1' : '0' }}"
+                                        title="Cambiar estado de pago"
+                                    >
                                         {{ $reserva->pendiente_cobrar ? 'Sí' : 'No' }}
                                     </button>
                                 </td>
-                                <td> {{ $reserva->nombre_cliente }} </td>
-                                <td> {{ $reserva->cantidad_adultos }} </td>
-                                <td> {{ $reserva->cantidad_niños }} </td>
-                                <td> {{ $reserva->cantidad_niños_gratis }} </td>
-                                <td> {{ $reserva->monto_total }} </td>
-                                <td> {{ $reserva->descuento }} </td>
-                                <td> {{ $reserva->monto_con_descuento }} </td>
-                                <td> {{ $reserva->comision_agencia }} </td>
-                                <td> {{ $reserva->monto_neto }} </td>
-                                <td> {{ $reserva->factura }} </td>
-                                <td> {{ $reserva->created_at }} </td>
-                                <td> {{ $reserva->nombre_estado }} </td>
+                                <td>{{ $reserva->nombre_cliente }}</td>
+                                <td>{{ $reserva->cantidad_adultos }}</td>
+                                <td>{{ $reserva->cantidad_niños }}</td>
+                                <td>{{ $reserva->cantidad_niños_gratis }}</td>
 
+                                <!-- Acciones -->
                                 <td class="btn-group">
-                                    <!-- Botón para solicitar recogida -->
                                     <button data-id="{{ $reserva->id }}"
                                         class="btn btn-sm btn-primary btn-solicitar-recogida"
                                         onclick="openPickupModal({{ $reserva->id }})">
                                         Agregar Transporte
                                     </button>
-                                    <button data-reservacion-estado="{{ $reserva->nombre_estado }}"
+
+                                    {{-- <button data-reservacion-estado="{{ $reserva->nombre_estado }}"
                                         data-reservacion-id="{{ $reserva->id }}"
                                         class="btn btn-sm btn-success btn-actualizar-estado">
                                         Actualizar estado
-                                    </button>
+                                    </button> --}}
+
                                     <a href="{{ route('reservas.ver', ['id' => $reserva->id]) }}"
-                                        class="btn btn-sm btn-info">Ver</a>
+                                        class="btn btn-sm btn-info">
+                                        Ver
+                                    </a>
+
                                     <a href="{{ route('reservas.editar', ['id' => $reserva->id]) }}"
-                                        class="btn btn-sm btn-warning">Editar</a>
+                                        class="btn btn-sm btn-warning">
+                                        Editar
+                                    </a>
 
                                     @if (rol_usuario()->id === 1 || rol_usuario()->id === 2)
                                         <button data-id="{{ $reserva->id }}"
-                                            class="btn btn-sm btn-danger borrar-reserva-btn">Eliminar</button>
+                                            class="btn btn-sm btn-danger borrar-reserva-btn">
+                                            Eliminar
+                                        </button>
                                     @endif
+                                </td>
+                            </tr>
+
+                            <!-- Subfila (oculta al inicio) -->
+                            <tr id="details-{{ $reserva->id }}" class="sub-row" style="display: none;">
+                                <!-- Colspan igual al número de columnas de la fila principal -->
+                                <td colspan="12">
+                                    <div class="sub-row-content">
+                                        {{-- <div><strong>Transporte:</strong> {{ $reserva->tiene_transporte }}</div> --}}
+                                        {{-- <div><strong>Niños Gratis:</strong> {{ $reserva->cantidad_niños_gratis }}</div> --}}
+                                        <div><strong>Descuento:</strong> {{ $reserva->descuento }}</div>
+                                        <div><strong>Precio c/desc.:</strong> {{ $reserva->monto_con_descuento }}</div>
+                                        <div><strong>Comisión agencia:</strong> {{ $reserva->comision_agencia }}</div>
+                                        <div><strong>Total:</strong> {{ $reserva->monto_neto }}</div>
+                                        <div><strong>Factura:</strong> {{ $reserva->factura }}</div>
+                                        <div><strong>Creado el:</strong> {{ $reserva->created_at }}</div>
+                                        {{-- <div><strong>Estado:</strong> {{ $reserva->nombre_estado }}</div> --}}
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
+
             </section>
         </section>
     </section>
@@ -292,6 +318,26 @@
                             }
                         })
                         .catch(error => console.error('Error:', error));
+                });
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButtons = document.querySelectorAll('.btn-toggle-expand');
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetId = this.dataset.target; // "#details-{{ $reserva->id }}"
+                    const subRow = document.querySelector(targetId);
+
+                    if (!subRow) return; // Si no existe, salir
+
+                    // Si está oculta, la mostramos
+                    if (subRow.style.display === 'none') {
+                        subRow.style.display = 'table-row';
+                        this.textContent = '▼'; // Opcionalmente puedes cambiar el ícono
+                    } else {
+                        subRow.style.display = 'none';
+                        this.textContent = '➤'; // Ícono original
+                    }
                 });
             });
         });
@@ -549,11 +595,36 @@
             /* Verde claro */
         }
 
-        .pendiente {
-            background-color: #ffc107 !important;
-            /* Naranja claro */
-            color: #000;
-            /* Texto negro para mejor contraste */
+/* Estilo general para el botón */
+.btn-toggle-pago {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Cuando está en estado pendiente (Sí) */
+.pendiente {
+    background-color: #ffc107 !important; /* Naranja claro */
+    color: #000;
+    border-bottom: 3px solid #cc9800; /* Línea inferior para resaltar */
+}
+
+        .sub-row-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .sub-row-content>div {
+            min-width: 150px;
         }
     </style>
 @endsection
