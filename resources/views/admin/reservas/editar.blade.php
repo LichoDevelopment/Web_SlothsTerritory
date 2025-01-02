@@ -169,6 +169,20 @@
                             value="{{$reserva->factura}}">
                     </article>
                </section>
+               <section class="row mb-3">
+                <article class="col-6">
+                    <label for="pendiente_cobrar">Pendiente de Pago</label>
+                    <div class="form-check">
+                        <input type="checkbox" 
+                               class="form-check-input" 
+                               id="pendiente_cobrar" 
+                               name="pendiente_cobrar" 
+                               value="1" 
+                               {{ $reserva->pendiente_cobrar ? 'checked' : '' }}>
+                        <label class="form-check-label" for="pendiente_cobrar">Marcar si está pendiente de pago</label>
+                    </div>
+                </article>
+            </section>
                <button class="btn btn-lg btn-warning btn-block">Editar</button>
             </form>
         </section>

@@ -36,7 +36,9 @@ class Reserva extends Model
         'factura',
         'id_estado',
         'deleted_at',
-        'payment_status'
+        'payment_status',
+        'pendiente_cobrar',
+        'llego',
     ];
 
 

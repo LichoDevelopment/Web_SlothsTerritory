@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminTransporteController;
+use App\Http\Controllers\ReservacionController;
 use App\Http\Controllers\SalesAgentController;
 use App\Http\Controllers\TicketController;
 use Illuminate\Support\Facades\App;
@@ -33,6 +34,9 @@ Route::get('/imprimir-ticket', 'ImpresionController@imprimirTicket')->name('impr
 
 Route::post('/print-ticket', [TicketController::class, 'printTicket']);
 Route::middleware(['auth'])->group(function () {
+
+    Route::put('/reservas/{id}/toggle-pago', [ReservacionController::class, 'togglePago']);
+    Route::put('/reservas/{id}/marcar-llego', [ReservacionController::class, 'marcarLlego'])->name('reservas.marcarLlego');
 
     Route::post('/admin/transport/assign', [AdminTransporteController::class, 'assignTransport'])->name('admin.transport.assign');
 

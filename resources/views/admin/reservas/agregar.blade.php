@@ -113,6 +113,15 @@
                         <input type="text"  name="factura" id="factura" class="form-control">
                     </article>
                </section>
+               <section class="row mb-3">
+                <article class="col-6">
+                    <label for="pendiente_cobrar">Pendiente de Pago</label>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="pendiente_cobrar" name="pendiente_cobrar" value="1">
+                        <label class="form-check-label" for="pendiente_cobrar">Marcar si está pendiente de pago</label>
+                    </div>
+                </article>
+            </section>
                <button class="btn btn-lg btn-success btn-block">Agregar</button>
             </form>
         </section>

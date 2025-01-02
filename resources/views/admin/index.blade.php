@@ -3,7 +3,7 @@
 
 @section('content')
     @if (rol_usuario()->id === 3)
-    {{ Redirect::to('/transporte') }}
+        {{ Redirect::to('/transporte') }}
     @endif
     @if (rol_usuario()->id === 2 || rol_usuario()->id === 1)
         @foreach ($totales as $total)
@@ -82,7 +82,8 @@
                             </div>
                             <div>
                                 <label for="fecha-inicio">Fecha de fin</label>
-                                <input @if (request()->query() && isset(request()->query()['fechaFin'])) value="{{ request()->query()['fechaFin'] }}" @endif
+                                <input
+                                    @if (request()->query() && isset(request()->query()['fechaFin'])) value="{{ request()->query()['fechaFin'] }}" @endif
                                     type="date" name="fechaFin" class="form-control">
                             </div>
                         @endif
@@ -114,12 +115,14 @@
                 <table class="table table-responsive" id="TablaReservas">
                     <thead>
                         <tr>
+                            <th>Llegó</th>
                             <th>#</th>
                             <th>Tour</th>
                             <th>Agencia</th>
                             <th>Transporte</th>
                             <th>Hora</th>
                             <th>Fecha</th>
+                            <th>Pendiente de pago</th>
                             <th>Cliente</th>
                             <th>Adultos</th>
                             <th>Niños</th>
@@ -137,13 +140,25 @@
                     </thead>
                     <tbody>
                         @foreach ($reservas as $reserva)
-                            <tr>
+                            <tr class="{{ $reserva->llego ? 'llego' : '' }}">
+                                <td>
+                                    <input type="checkbox" class="checkbox-llego" data-id="{{ $reserva->id }}"
+                                        {{ $reserva->llego ? 'checked' : '' }}>
+                                </td>
                                 <td> {{ $loop->index + 1 }} </td>
                                 <td> {{ $reserva->nombre_tour }} </td>
                                 <td> {{ $reserva->nombre_agencia }} </td>
                                 <td> {{ $reserva->tiene_transporte }} </td>
                                 <td> {{ $reserva->hora }} </td>
                                 <td> {{ $reserva->fecha }} </td>
+                                <td>
+                                    <button
+                                        class="btn-toggle-pago {{ $reserva->pendiente_cobrar ? 'pendiente' : 'pagado' }}"
+                                        data-id="{{ $reserva->id }}"
+                                        data-pendiente="{{ $reserva->pendiente_cobrar ? '1' : '0' }}">
+                                        {{ $reserva->pendiente_cobrar ? 'Sí' : 'No' }}
+                                    </button>
+                                </td>
                                 <td> {{ $reserva->nombre_cliente }} </td>
                                 <td> {{ $reserva->cantidad_adultos }} </td>
                                 <td> {{ $reserva->cantidad_niños }} </td>
@@ -187,11 +202,100 @@
         </section>
     </section>
 
-    @endsection
-    {{-- Incluir el modal --}}
-    @include('admin.pickupModal')
+@endsection
+{{-- Incluir el modal --}}
+@include('admin.pickupModal')
 
 @section('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('.checkbox-llego');
+
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function(event) {
+                    const reservaId = event.target.dataset.id;
+                    const llego = event.target.checked;
+
+                    fetch(`/reservas/${reservaId}/marcar-llego`, {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                            },
+                            body: JSON.stringify({
+                                llego
+                            }),
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            const row = event.target.closest('tr');
+                            if (llego) {
+                                row.classList.add('llego');
+                            } else {
+                                row.classList.remove('llego');
+                            }
+
+                            const mensaje = document.createElement('div');
+                            mensaje.className = 'alert alert-success';
+                            mensaje.textContent = data.message;
+                            document.body.appendChild(mensaje);
+
+                            setTimeout(() => {
+                                mensaje.remove();
+                            }, 2000);
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            alert('Ocurrió un error al actualizar el estado.');
+                        });
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButtons = document.querySelectorAll('.btn-toggle-pago');
+
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const reservaId = this.dataset.id;
+                    const pendiente = this.dataset.pendiente === '1' ? 0 : 1;
+
+                    // Enviar la actualización al servidor
+                    fetch(`/reservas/${reservaId}/toggle-pago`, {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                            },
+                            body: JSON.stringify({
+                                pendiente
+                            }),
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                // Actualizar el botón y la clase
+                                this.textContent = pendiente ? 'Sí' : 'No';
+                                this.dataset.pendiente = pendiente ? '1' : '0';
+                                this.classList.toggle('pendiente', pendiente === 1);
+                                this.classList.toggle('pagado', pendiente === 0);
+
+                                // Mostrar mensaje de éxito
+                                const mensaje = document.createElement('div');
+                                mensaje.className = 'alert alert-success';
+                                mensaje.textContent = 'Estado de pago actualizado.';
+                                document.body.appendChild(mensaje);
+
+                                setTimeout(() => mensaje.remove(), 2000);
+                            } else {
+                                alert('Error al actualizar el estado de pago.');
+                            }
+                        })
+                        .catch(error => console.error('Error:', error));
+                });
+            });
+        });
+    </script>
     <script>
         $(document).ready(function() {
             $('#TablaReservas').DataTable();
@@ -407,5 +511,49 @@
             z-index: 999999 !important;
         }
     </style>
-    
+    <style>
+        .alert {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1050;
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeInOut 3s forwards;
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+    <style>
+        .llego {
+            background-color: #d4edda !important;
+            /* Verde claro */
+        }
+
+        .pendiente {
+            background-color: #ffc107 !important;
+            /* Naranja claro */
+            color: #000;
+            /* Texto negro para mejor contraste */
+        }
+    </style>
 @endsection

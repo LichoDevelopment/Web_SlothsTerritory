@@ -25,26 +25,26 @@ use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
-    public function home($locale)
-    {
-        App::setLocale($locale);
+    // public function home($locale)
+    // {
+    //     App::setLocale($locale);
 
-        $images = Image::with('type')->get();
-        // return $images;
-        $imageTypes = ImageType::all();
-        // return $imageTypes;
-        $inicio = time();
-        $siteSections = SiteSection::all()->where('language', $locale)->groupBy('title');// \'' . $locale . '\'
-        // $siteSections = DB::select("SELECT JSON_OBJECT(title, content)FROM site_sections WHERE language = '$locale'");
-        // $siteSections = DB::select("SELECT title, content FROM site_sections WHERE language = '$locale' group by title;");
-        // return $siteSections;
-        // 
-        // $fin = time();
-        // dd($fin - $inicio);
-        // return $siteSections;
+    //     $images = Image::with('type')->get();
+    //     // return $images;
+    //     $imageTypes = ImageType::all();
+    //     // return $imageTypes;
+    //     $inicio = time();
+    //     $siteSections = SiteSection::all()->where('language', $locale)->groupBy('title');// \'' . $locale . '\'
+    //     // $siteSections = DB::select("SELECT JSON_OBJECT(title, content)FROM site_sections WHERE language = '$locale'");
+    //     // $siteSections = DB::select("SELECT title, content FROM site_sections WHERE language = '$locale' group by title;");
+    //     // return $siteSections;
+    //     // 
+    //     // $fin = time();
+    //     // dd($fin - $inicio);
+    //     // return $siteSections;
         
-        return view('home', compact('locale', 'images', 'imageTypes', 'siteSections'));
-    }
+    //     return view('home', compact('locale', 'images', 'imageTypes', 'siteSections'));
+    // }
 
     public function getTransactionsTilopay() {
 
@@ -133,8 +133,6 @@ class HomeController extends Controller
             // $reservas = Reserva::all();
             $totales  = DB::select('CALL totales(?,?,?,?)',[null, null, null,null]);  
         }
-        
-
         DB::select('CALL actualizar_estados');
 
         $query = $request->query();
