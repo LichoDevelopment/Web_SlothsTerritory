@@ -125,7 +125,7 @@
     <!-- END HEADER MOBILE-->
 
     <!-- MENU SIDEBAR-->
-    <aside class="menu-sidebar d-none d-lg-block">
+    <aside id="sidebarDesktop" class="menu-sidebar d-none d-lg-block">
         <div class="logo">
             <a href="{{ route('admin.index') }}">
                 <h4 class="">Sloth's Territory</h4>
@@ -193,6 +193,13 @@
         <header class="header-desktop">
             <div class="section__content section__content--p30">
                 <div class="container-fluid">
+                    <!-- AÑADE AQUÍ EL BOTÓN DE TOGGLE SIDEBAR PARA ESCRITORIO -->
+                    <button id="btnToggleSidebarDesktop"
+                        class="btn btn-sm btn-secondary mr-3 d-none d-lg-inline-block"
+                        title="Ocultar/Mostrar Sidebar">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <!-- FIN BOTÓN DE TOGGLE -->
                     <div class="header-wrap float-right ">
                         <div class="header-button">
                             <div class="noti-wrap">
@@ -253,6 +260,40 @@
     <!-- END PAGE CONTAINER-->
 
     </div>
+    <style>
+        .hidden-sidebar {
+            display: none !important;
+        }
+
+        .expand-content {
+            /* Si .page-container tiene por defecto un margin-left grande,
+     sobreescríbelo aquí */
+            margin-left: 0 !important;
+            padding-left: 0 !important;
+
+            /* Si tu .page-container o .page-wrapper limita el ancho,
+     puedes forzar un width 100% */
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1. Seleccionar el botón y el sidebar
+            const btnToggleDesktop = document.getElementById('btnToggleSidebarDesktop');
+            const sidebarDesktop = document.getElementById('sidebarDesktop');
+            const pageContainer = document.querySelector('.page-container');
+
+            // 2. Escuchar el click para alternar la clase
+            btnToggleDesktop.addEventListener('click', function() {
+                // Alterna la visibilidad del sidebar
+                sidebarDesktop.classList.toggle('hidden-sidebar');
+
+                // Si quieres expandir el contenido:
+                pageContainer.classList.toggle('expand-content');
+            });
+        });
+    </script>
     <script src="{{ mix('/js/app.js') }}"></script>
     <!-- Jquery JS-->
     <script src="{{ env('APP_URL') }}/vendor/jquery-3.2.1.min.js"></script>
