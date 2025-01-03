@@ -133,7 +133,7 @@ class HomeController extends Controller
             // $reservas = Reserva::all();
             $totales  = DB::select('CALL totales(?,?,?,?)',[null, null, null,null]);  
         }
-        DB::select('CALL actualizar_estados');
+        // DB::select('CALL actualizar_estados');
 
         $query = $request->query();
         $fechaInicio = '';
@@ -141,7 +141,7 @@ class HomeController extends Controller
         // $reservas = Reserva::orderBy('id_fecha_tour')->orderBy('id_estado','asc')->get();
         $agencias = Agencia::orderBy('nombre')->get();
         $estados = Estado::all();
-        $horarios = Horario::all();
+        $horarios = Horario::all();        
         
         $total_adultos = '';
         $total_niños = '';

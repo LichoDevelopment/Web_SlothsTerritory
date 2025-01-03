@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminTransporteController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ReservacionController;
 use App\Http\Controllers\SalesAgentController;
 use App\Http\Controllers\TicketController;
@@ -35,6 +36,13 @@ Route::get('/imprimir-ticket', 'ImpresionController@imprimirTicket')->name('impr
 Route::post('/print-ticket', [TicketController::class, 'printTicket']);
 Route::middleware(['auth'])->group(function () {
 
+    // Ruta para generar link de pago
+    Route::get('/reservas/{id}/generar-link-pago', [PaymentController::class, 'createPaymentLink'])
+        ->name('reservas.generar.link');
+    // Ruta para generar link de pago vía AJAX
+    Route::post('/reservas/generar-link-pago', [PaymentController::class, 'ajaxGeneratePaymentLink'])
+        ->name('reservas.generar.link.ajax');
+
     Route::put('/reservas/{id}/toggle-pago', [ReservacionController::class, 'togglePago']);
     Route::put('/reservas/{id}/marcar-llego', [ReservacionController::class, 'marcarLlego'])->name('reservas.marcarLlego');
 
@@ -51,21 +59,21 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/', 'HomeController@admin')->name('admin.index');
     Route::get('/registro', 'RegistroController@index')->name('admin.registro');
-    Route::put('/reservacionEliminada/{id}', 'ReservacionController@updateEstadoEliminado'); 
-    
-    
+    Route::put('/reservacionEliminada/{id}', 'ReservacionController@updateEstadoEliminado');
+
+
     Route::get('/agregar_reserva', 'AdminController@agregarReserva')->name('reservas.agregar');
     Route::get('/editar_reserva/{id}', 'AdminController@editarReserva')->name('reservas.editar');
     Route::get('/ver_reserva/{id}', 'AdminController@verReserva')->name('reservas.ver');
     Route::get('/agencias', 'AdminController@agencias')->name('admin.agencias');
     Route::get('/tours', 'AdminController@tours')->name('admin.tours');
     Route::post('/enviarCorreo/{id}', 'AdminController@enviarCorreo')->name('admin.correo');
-    
+
     Route::post('/reservacion', 'ReservacionController@store')->name('reserva.guardar');
     Route::put('/reservacion/{id}', 'ReservacionController@update')->name('reserva.actualizar');
     Route::put('/reservacionEstado/{id}', 'ReservacionController@updateEstado');
     Route::get('/eliminadas', 'ReservacionController@eliminadas')->name('reservas.eliminadas');
-    
+
     Route::get('/agencia', 'AgenciaController@index')->name('admin.agencia');
     Route::post('/agencia', 'AgenciaController@store');
     Route::put('/agencia/{id}', 'AgenciaController@update');
@@ -81,12 +89,8 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/tour', 'TourController@store');
         Route::put('/tour/{id}', 'TourController@update');
         Route::delete('/tour/{id}', 'TourController@destroy');
-    
-        Route::delete('/agencia/{id}', 'AgenciaController@destroy');
-        
-        
 
-        
+        Route::delete('/agencia/{id}', 'AgenciaController@destroy');
     });
 
 
@@ -96,10 +100,10 @@ Route::middleware(['auth'])->group(function () {
     // Route::post('/carusel', 'ImagenCaruselController@upload');
     // Route::delete('/carusel/{id}', 'ImagenCaruselController@destroy');
     // Route::post('/carusel/all', 'ImagenCaruselController@all');
-    
+
     // Route::post('/agencia', 'AgenciaController@store');
     // Route::put('/agencia', 'AgenciaController@update');
-    
+
     Route::get('/horario', 'HorarioController@index')->name('admin.horario');
     Route::post('/horario', 'HorarioController@store');
     Route::put('/horario/{id}', 'HorarioController@update');
