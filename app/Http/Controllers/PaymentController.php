@@ -343,8 +343,8 @@ class PaymentController extends Controller
             $transactionFee = 0.40; // tarifa fija
             $total = $reserva->monto_total;
 
-            // $totalWithTaxes = round($total * (1 + $taxesAndFeesPercentage) + $transactionFee, 2);
-            $totalWithTaxes = round($total, 2);
+            $totalWithTaxes = round($total * (1 + $taxesAndFeesPercentage) + $transactionFee, 2);
+            // $totalWithTaxes = round($total, 2);
 
             // 5. Preparar datos para la petición
             $headers = [
