@@ -370,7 +370,7 @@
                 });
             });
         });
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaFed', function() {
             const toggleButtons = document.querySelectorAll('.btn-toggle-expand');
             toggleButtons.forEach(button => {
                 button.addEventListener('click', function() {

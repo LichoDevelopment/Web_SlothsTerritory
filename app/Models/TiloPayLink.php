@@ -5,24 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Transporte extends Model
+class TiloPayLink extends Model
 {
     use HasFactory;
 
-    protected $casts = [
-        'punto_recogida' => 'array',
-    ];
+    protected $table = 'tilopay_links';
 
     protected $fillable = [
         'reserva_id',
-        'punto_recogida',
-        'direccion',
-        'placeId',
-        'latitud',
-        'longitud',
-        'costo',
-        'distancia',
-        'notificacion_enviada',
+        'tilopay_id',
+        'url',
+        'currency',
+        'amount',
+        'reference',
+        'type',
+        'description',
+        'client',
+        'callback_url',
         'created_by',
         'updated_by',
     ];

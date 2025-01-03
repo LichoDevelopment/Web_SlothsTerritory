@@ -16,8 +16,8 @@ class Reserva extends Model
      * @var array
      */
     protected $dates = ['deleted_at'];
-    protected $table="reservas";
-    protected $primaryKey="id";
+    protected $table = "reservas";
+    protected $primaryKey = "id";
     protected $fillable = [
         'nombre_cliente',
         'cantidad_adultos',
@@ -39,24 +39,39 @@ class Reserva extends Model
         'payment_status',
         'pendiente_cobrar',
         'llego',
+        'created_by',
+        'updated_by',
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            $model->created_by = auth()->id();
+        });
+
+        static::updating(function ($model) {
+            $model->updated_by = auth()->id();
+        });
+    }
 
 
     public function agencia()
     {
-        return $this->belongsTo('\App\Models\Agencia','id_agencia');
+        return $this->belongsTo('\App\Models\Agencia', 'id_agencia');
     }
     public function tour()
     {
-        return $this->belongsTo('\App\Models\Tour','id_tour');
+        return $this->belongsTo('\App\Models\Tour', 'id_tour');
     }
     public function fecha_tour()
     {
-        return $this->belongsTo('\App\Models\Fecha_tour','id_fecha_tour');
+        return $this->belongsTo('\App\Models\Fecha_tour', 'id_fecha_tour');
     }
     public function horario()
     {
-        return $this->belongsTo('\App\Models\Horario','id_horario');
+        return $this->belongsTo('\App\Models\Horario', 'id_horario');
     }
     // public function precio()
     // {
@@ -64,7 +79,7 @@ class Reserva extends Model
     // }
     public function estado()
     {
-        return $this->belongsTo('\App\Models\Estado','id_estado');
+        return $this->belongsTo('\App\Models\Estado', 'id_estado');
     }
 
     public function tilopayTransaction()
@@ -76,5 +91,14 @@ class Reserva extends Model
     {
         return $this->hasOne(Transporte::class);
     }
-}
 
+    public function creator()
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
+
+    public function updater()
+    {
+        return $this->belongsTo(User::class, 'updated_by');
+    }
+}
