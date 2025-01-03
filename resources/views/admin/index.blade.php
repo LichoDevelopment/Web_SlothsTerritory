@@ -132,98 +132,102 @@
                         </tr>
                     </thead>
                     <tbody>
-                            @foreach ($reservas as $reserva)
-                                <!-- Fila Principal -->
-                                <tr class="main-row {{ $reserva->llego ? 'llego' : '' }}">
-                                    <!-- Celda para el botón de Expandir/Contraer -->
-                                    <td>
-                                        <button class="btn-toggle-expand" data-target="#details-{{ $reserva->id }}"
-                                            title="Ver más">
-                                            ➤
-                                        </button>
-                                    </td>
+                        @foreach ($reservas as $reserva)
+                            <!-- Fila Principal -->
+                            <tr class="main-row {{ $reserva->llego ? 'llego' : '' }}">
+                                <!-- Celda para el botón de Expandir/Contraer -->
+                                <td>
+                                    <button class="btn-toggle-expand" data-target="#details-{{ $reserva->id }}"
+                                        title="Ver más">
+                                        ➤
+                                    </button>
+                                </td>
 
-                                    <!-- Checkbox de llegó -->
-                                    <td>
-                                        <input type="checkbox" class="checkbox-llego" data-id="{{ $reserva->id }}"
-                                            {{ $reserva->llego ? 'checked' : '' }}>
-                                    </td>
+                                <!-- Checkbox de llegó -->
+                                <td>
+                                    <input type="checkbox" class="checkbox-llego" data-id="{{ $reserva->id }}"
+                                        {{ $reserva->llego ? 'checked' : '' }}>
+                                </td>
 
-                                    <td>{{ $loop->index + 1 }}</td>
-                                    <td>{{ $reserva->nombre_tour }}</td>
-                                    <td>{{ $reserva->nombre_agencia }}</td>
-                                    <td>{{ $reserva->tiene_transporte }}</td>
-                                    <td>{{ $reserva->hora }}</td>
-                                    <td>{{ $reserva->fecha }}</td>
-                                    <td>
-                                        <button
-                                            class="btn-toggle-pago {{ $reserva->pendiente_cobrar ? 'pendiente' : 'pagado' }}"
-                                            data-id="{{ $reserva->id }}"
-                                            data-pendiente="{{ $reserva->pendiente_cobrar ? '1' : '0' }}"
-                                            title="Cambiar estado de pago">
-                                            {{ $reserva->pendiente_cobrar ? 'Sí' : 'No' }}
-                                        </button>
-                                    </td>
-                                    <td>{{ $reserva->nombre_cliente }}</td>
-                                    <td>{{ $reserva->cantidad_adultos }}</td>
-                                    <td>{{ $reserva->cantidad_niños }}</td>
-                                    <td>{{ $reserva->cantidad_niños_gratis }}</td>
+                                <td>{{ $loop->index + 1 }}</td>
+                                <td>{{ $reserva->nombre_tour }}</td>
+                                <td>{{ $reserva->nombre_agencia }}</td>
+                                <td>{{ $reserva->tiene_transporte }}</td>
+                                <td>{{ $reserva->hora }}</td>
+                                <td>{{ $reserva->fecha }}</td>
+                                <td>
+                                    <button
+                                        class="btn-toggle-pago {{ $reserva->pendiente_cobrar ? 'pendiente' : 'pagado' }}"
+                                        data-id="{{ $reserva->id }}"
+                                        data-pendiente="{{ $reserva->pendiente_cobrar ? '1' : '0' }}"
+                                        title="Cambiar estado de pago">
+                                        {{ $reserva->pendiente_cobrar ? 'Sí' : 'No' }}
+                                    </button>
+                                </td>
+                                <td>{{ $reserva->nombre_cliente }}</td>
+                                <td>{{ $reserva->cantidad_adultos }}</td>
+                                <td>{{ $reserva->cantidad_niños }}</td>
+                                <td>{{ $reserva->cantidad_niños_gratis }}</td>
 
-                                    <!-- Acciones -->
-                                    <td class="btn-group">
-                                        <button data-id="{{ $reserva->id }}"
-                                            class="btn btn-sm btn-primary btn-solicitar-recogida"
-                                            onclick="openPickupModal({{ $reserva->id }})">
-                                            Agregar Transporte
-                                        </button>
-                                        <button type="button" class="btn btn-sm btn-success"
-                                            onclick="onGenerateLinkClick({{ $reserva->id }}, '{{ $reserva->email }}')">
-                                            Generar Link de Pago
-                                        </button>
+                                <!-- Acciones -->
+                                <td class="btn-group">
+                                    <button data-id="{{ $reserva->id }}"
+                                        class="btn btn-sm btn-primary btn-solicitar-recogida"
+                                        onclick="openPickupModal({{ $reserva->id }})">
+                                        Agregar Transporte
+                                    </button>
+                                    <!-- Botón para Generar Link -->
+                                    <button type="button" class="btn btn-sm btn-success"
+                                        onclick="onGenerateLinkClick({{ $reserva->id }}, '{{ $reserva->email }}')"
+                                        {{-- {{ $reserva->tilopay_link ? 'disabled' : '' }} --}}
+                                        >
+                                        {{-- {{ $reserva->tilopay_link ? 'Link ya generado' : 'Generar Link de Pago' }} --}}
+                                        {{ 'Generar Link de Pago' }}
+                                    </button>
 
-                                        {{-- <button data-reservacion-estado="{{ $reserva->nombre_estado }}"
+                                    {{-- <button data-reservacion-estado="{{ $reserva->nombre_estado }}"
                                         data-reservacion-id="{{ $reserva->id }}"
                                         class="btn btn-sm btn-success btn-actualizar-estado">
                                         Actualizar estado
                                     </button> --}}
 
-                                        <a href="{{ route('reservas.ver', ['id' => $reserva->id]) }}"
-                                            class="btn btn-sm btn-info">
-                                            Ver
-                                        </a>
+                                    <a href="{{ route('reservas.ver', ['id' => $reserva->id]) }}"
+                                        class="btn btn-sm btn-info">
+                                        Ver
+                                    </a>
 
-                                        <a href="{{ route('reservas.editar', ['id' => $reserva->id]) }}"
-                                            class="btn btn-sm btn-warning">
-                                            Editar
-                                        </a>
+                                    <a href="{{ route('reservas.editar', ['id' => $reserva->id]) }}"
+                                        class="btn btn-sm btn-warning">
+                                        Editar
+                                    </a>
 
-                                        @if (rol_usuario()->id === 1 || rol_usuario()->id === 2)
-                                            <button data-id="{{ $reserva->id }}"
-                                                class="btn btn-sm btn-danger borrar-reserva-btn">
-                                                Eliminar
-                                            </button>
-                                        @endif
-                                    </td>
-                                </tr>
+                                    @if (rol_usuario()->id === 1 || rol_usuario()->id === 2)
+                                        <button data-id="{{ $reserva->id }}"
+                                            class="btn btn-sm btn-danger borrar-reserva-btn">
+                                            Eliminar
+                                        </button>
+                                    @endif
+                                </td>
+                            </tr>
 
-                                <!-- Subfila (oculta al inicio) -->
-                                <tr id="details-{{ $reserva->id }}" class="sub-row" style="display: none;">
-                                    <!-- Colspan igual al número de columnas de la fila principal -->
-                                    <td colspan="12">
-                                        <div class="sub-row-content">
-                                            {{-- <div><strong>Transporte:</strong> {{ $reserva->tiene_transporte }}</div> --}}
-                                            {{-- <div><strong>Niños Gratis:</strong> {{ $reserva->cantidad_niños_gratis }}</div> --}}
-                                            <div><strong>Descuento:</strong> {{ $reserva->descuento }}</div>
-                                            <div><strong>Precio c/desc.:</strong> {{ $reserva->monto_con_descuento }}</div>
-                                            <div><strong>Comisión agencia:</strong> {{ $reserva->comision_agencia }}</div>
-                                            <div><strong>Total:</strong> {{ $reserva->monto_neto }}</div>
-                                            <div><strong>Factura:</strong> {{ $reserva->factura }}</div>
-                                            <div><strong>Creado el:</strong> {{ $reserva->created_at }}</div>
-                                            {{-- <div><strong>Estado:</strong> {{ $reserva->nombre_estado }}</div> --}}
-                                        </div>
-                                    </td>
-                                </tr>
-                            @endforeach
+                            <!-- Subfila (oculta al inicio) -->
+                            <tr id="details-{{ $reserva->id }}" class="sub-row" style="display: none;">
+                                <!-- Colspan igual al número de columnas de la fila principal -->
+                                <td colspan="12">
+                                    <div class="sub-row-content">
+                                        {{-- <div><strong>Transporte:</strong> {{ $reserva->tiene_transporte }}</div> --}}
+                                        {{-- <div><strong>Niños Gratis:</strong> {{ $reserva->cantidad_niños_gratis }}</div> --}}
+                                        <div><strong>Descuento:</strong> {{ $reserva->descuento }}</div>
+                                        <div><strong>Precio c/desc.:</strong> {{ $reserva->monto_con_descuento }}</div>
+                                        <div><strong>Comisión agencia:</strong> {{ $reserva->comision_agencia }}</div>
+                                        <div><strong>Total:</strong> {{ $reserva->monto_neto }}</div>
+                                        <div><strong>Factura:</strong> {{ $reserva->factura }}</div>
+                                        <div><strong>Creado el:</strong> {{ $reserva->created_at }}</div>
+                                        {{-- <div><strong>Estado:</strong> {{ $reserva->nombre_estado }}</div> --}}
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
 
@@ -242,7 +246,8 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Ingresar Email del Cliente</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"
+                        onclick="$('#emailModal').modal('hide');">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -254,13 +259,15 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        onclick="$('#emailModal').modal('hide');">Cerrar</button>
                     <button type="submit" class="btn btn-primary">Generar Link</button>
                 </div>
             </div>
         </form>
     </div>
 </div>
+
 
 <script>
     // Se llama cuando el form del modal se hace submit
@@ -602,37 +609,38 @@
         });
     </script>
     <script>
-        function onGenerateLinkClick(reservaId, emailReserva) {
-            // Si la reserva no tiene email, abrimos un modal para solicitarlo
-            if (!emailReserva) {
-                // Abre modal pidiendo email
-                // y al confirmar, llamamos a generateLinkAjax(reservaId, nuevoEmail)
+        function onGenerateLinkClick(reservaId, emailReserva, tilopayLink=null) {
+            if (tilopayLink) {
+                Swal.fire({
+                    title: 'Link ya generado',
+                    html: `
+                    <p>Este link ya fue generado:</p>
+                    <a href="${tilopayLink}" target="_blank">${tilopayLink}</a>
+                `,
+                    icon: 'info',
+                    confirmButtonText: 'Cerrar',
+                });
+            } else if (!emailReserva) {
+                // Si no tiene email, abre el modal para solicitarlo
                 openEmailModal(reservaId);
             } else {
-                // Si sí tiene email, generamos el link directamente
+                // Si todo está bien, genera el link directamente
                 generateLinkAjax(reservaId, emailReserva);
             }
         }
 
-        // Abre el modal solicitando email (crearemos un modal simple)
         function openEmailModal(reservaId) {
-            // Guardamos reservaId en un hidden input en el modal
             document.getElementById('reservaIdModal').value = reservaId;
-            // Limpiamos el campo de email
             document.getElementById('nuevoEmail').value = '';
-            // Mostramos el modal
             $('#emailModal').modal('show');
         }
 
-        // Función que hace la petición AJAX a la ruta en Laravel
         function generateLinkAjax(reservaId, email) {
-            // Prepara los datos
             const data = {
                 reserva_id: reservaId,
-                email: email
+                email: email,
             };
 
-            // Hace el fetch/POST
             fetch('{{ route('reservas.generar.link.ajax') }}', {
                     method: 'POST',
                     headers: {
@@ -644,23 +652,46 @@
                 .then(response => response.json())
                 .then(resp => {
                     if (resp.success) {
-                        // Muestra el link en un alert, toast, o como quieras
-                        // Por ejemplo, un prompt para copiar
-                        alert("Link de pago generado: " + resp.url);
-
-                        // O podrías abrir un modal que muestre el link y un botón de "Copiar"
-                        // console.log(resp.url);
-
+                        Swal.fire({
+                            title: 'Link Generado',
+                            html: `
+                            <p>Link generado exitosamente:</p>
+                            <a href="${resp.url}" target="_blank">${resp.url}</a>
+                            <button class="btn btn-primary mt-2" onclick="copyToClipboard('${resp.url}')">Copiar Link</button>
+                        `,
+                            icon: 'success',
+                        });
                     } else {
-                        alert("Error: " + resp.message);
+                        Swal.fire({
+                            title: 'Error',
+                            text: resp.message,
+                            icon: 'error',
+                        });
                     }
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    alert('Ocurrió un error al generar el link.');
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'Ocurrió un error al generar el link.',
+                        icon: 'error',
+                    });
                 });
         }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                Swal.fire({
+                    title: 'Copiado',
+                    text: 'El link se ha copiado al portapapeles.',
+                    icon: 'success',
+                    timer: 1500,
+                    showConfirmButton: false,
+                });
+            });
+        }
     </script>
+
 
     <style>
         .pac-container {

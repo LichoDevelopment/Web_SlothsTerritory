@@ -92,6 +92,11 @@ class Reserva extends Model
         return $this->hasOne(Transporte::class);
     }
 
+    public function tilopayLink()
+    {
+        return $this->hasOne(TiloPayLink::class, 'reserva_id');
+    }
+
     public function creator()
     {
         return $this->belongsTo(User::class, 'created_by');

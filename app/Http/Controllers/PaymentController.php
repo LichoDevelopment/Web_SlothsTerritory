@@ -59,32 +59,32 @@ class PaymentController extends Controller
         $headers = [
             'Content-Type' => 'application/json',
         ];
-    
+
         // Obtener los valores desde el archivo .env
         $apiUser = env('TILOPAY_API_USER');    // Define en tu .env TILOPAY_API_USER=qK4vZI
         $password = env('TILOPAY_API_PASSWORD'); // Define en tu .env TILOPAY_API_PASSWORD=3MtPYD
         $loginUrl = env('TILOPAY_LOGIN_URL'); // URL del endpoint
-    
+
         // Preparar el cuerpo de la petición
         $body = [
             'apiuser' => $apiUser,
             'password' => $password,
         ];
-    
+
         // Realizar la petición
         try {
             $response = $client->post($loginUrl, [
                 'headers' => $headers,
                 'json' => $body, // Usamos el array directamente para que Guzzle lo maneje como JSON
             ]);
-            
+
             $data = json_decode($response->getBody(), true);
-    
+
             // Validar que el token exista en la respuesta
             if (isset($data['access_token'])) {
                 return $data;
             }
-    
+
             throw new \Exception('No se pudo obtener el token de TiloPay');
         } catch (\Exception $e) {
             info('Error obteniendo el token: ' . $e->getMessage());
@@ -317,16 +317,16 @@ class PaymentController extends Controller
             // 1. Recibimos la reserva_id y el email (opcional).
             $reservaId = $request->input('reserva_id');
             $email = $request->input('email');
-    
+
             // 2. Buscar la reserva
             $reserva = Reserva::findOrFail($reservaId);
-    
+
             // 3. Actualizamos el email si es necesario
             if (!empty($email) && (empty($reserva->email) || $reserva->email !== $email)) {
                 $reserva->email = $email;
                 $reserva->save();
             }
-    
+
             // 4. Obtener el token de TiloPay
             $tokenData = $this->getToken();
             if (!isset($tokenData['access_token'])) {
@@ -336,7 +336,16 @@ class PaymentController extends Controller
                 ], 500);
             }
             $accessToken = $tokenData['access_token'];
-    
+
+            // Preparar los datos:
+            // Impuestos y tarifas
+            $taxesAndFeesPercentage = 0.085; // 8.5%
+            $transactionFee = 0.40; // tarifa fija
+            $total = $reserva->monto_total;
+
+            // $totalWithTaxes = round($total * (1 + $taxesAndFeesPercentage) + $transactionFee, 2);
+            $totalWithTaxes = round($total, 2);
+
             // 5. Preparar datos para la petición
             $headers = [
                 'Authorization' => "bearer $accessToken",
@@ -344,7 +353,7 @@ class PaymentController extends Controller
             ];
             $body = [
                 "key"         => env('TILOPAY_API_KEY'),  // Clave desde el archivo .env
-                "amount"      => number_format($reserva->monto_total, 2, '.', ''), // Formato decimal
+                "amount"      => $totalWithTaxes, // Formato decimal
                 "currency"    => "USD",
                 "reference"   => (string) $reserva->id,  // Referencia única de la reserva
                 "type"        => 1,                      // Limitado
@@ -352,16 +361,16 @@ class PaymentController extends Controller
                 "client"      => $reserva->nombre_cliente ?? '',
                 "callback_url" => "",                   // Puedes agregar tu callback aquí
             ];
-    
+
             // 6. Realizar la petición a TiloPay
             $client = new \GuzzleHttp\Client();
             $response = $client->post('https://app.tilopay.com/api/v1/createLinkPayment', [
                 'headers' => $headers,
                 'json'    => $body,
             ]);
-    
+
             $responseData = json_decode($response->getBody(), true);
-    
+
             // 7. Validar respuesta y devolver resultado
             if (!isset($responseData['url'])) {
                 return response()->json([
@@ -369,7 +378,7 @@ class PaymentController extends Controller
                     'message' => 'No se recibió la URL de TiloPay',
                 ], 500);
             }
-    
+
             // Opcional: Guardar enlace en la base de datos
             TiloPayLink::create([
                 'reserva_id'  => $reserva->id,
@@ -383,7 +392,7 @@ class PaymentController extends Controller
                 'client'      => $body['client'],
                 'callback_url' => $body['callback_url'],
             ]);
-    
+
             return response()->json([
                 'success' => true,
                 'message' => 'Link de pago creado con éxito',
@@ -402,5 +411,58 @@ class PaymentController extends Controller
             ], 500);
         }
     }
-    
+
+    public function consultarLinks()
+    {
+        try {
+            // Obtener el token
+            $tokenData = $this->getToken();
+            if (!isset($tokenData['access_token'])) {
+                return redirect()->back()->with('error', 'No se pudo obtener el token de TiloPay.');
+            }
+            $accessToken = $tokenData['access_token'];
+
+            $client = new \GuzzleHttp\Client();
+            $headers = [
+                'Authorization' => 'bearer ' . $accessToken,
+            ];
+
+            // Obtener solo los links con estado pending
+            $links = TiloPayLink::where('payment_status', 'pending')->get();
+
+            foreach ($links as $link) {
+                try {
+                    // Consultar detalle del link en TiloPay
+                    $response = $client->get("https://app.tilopay.com/api/v1/getDetailLinkPayment/{$link->tilopay_id}/" . env('TILOPAY_API_KEY'), [
+                        'headers' => $headers,
+                    ]);
+
+                    $responseData = json_decode($response->getBody(), true);
+
+                    if ($responseData['type'] === "200") {
+                        $payments = $responseData['payments'] ?? [];
+
+                        // Actualizar el estado del link según el resultado de la consulta
+                        if (!empty($payments)) {
+                            $link->payment_status = 'paid';
+                        } else {
+                            $link->payment_status = 'pending';
+                        }
+                        $link->save();
+                    }
+                } catch (\Exception $e) {
+                    // Loggear errores por cada link fallido pero continuar con el resto
+                    info("Error consultando link con ID {$link->tilopay_id}: " . $e->getMessage());
+                }
+            }
+
+            // Obtener todos los links con su información actualizada y relaciones
+            $links = TiloPayLink::with('reserva')->get();
+
+            return view('admin.links.links-tilopay', compact('links'));
+        } catch (\Exception $e) {
+            info('Error consultando links de TiloPay: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Error al consultar links de TiloPay.');
+        }
+    }
 }

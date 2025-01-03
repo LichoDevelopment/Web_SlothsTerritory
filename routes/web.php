@@ -95,6 +95,7 @@ Route::middleware(['auth'])->group(function () {
 
 
     Route::get('/pagos', 'AdminController@consultarPagos')->name('admin.pagos');
+    Route::get('/links-pagos', [PaymentController::class, 'consultarLinks'])->name('admin.links.pago');
 
     // Route::get('/carusel', 'ImagenCaruselController@index')->name('admin.carusel');
     // Route::post('/carusel', 'ImagenCaruselController@upload');

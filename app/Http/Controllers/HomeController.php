@@ -25,26 +25,6 @@ use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
-    // public function home($locale)
-    // {
-    //     App::setLocale($locale);
-
-    //     $images = Image::with('type')->get();
-    //     // return $images;
-    //     $imageTypes = ImageType::all();
-    //     // return $imageTypes;
-    //     $inicio = time();
-    //     $siteSections = SiteSection::all()->where('language', $locale)->groupBy('title');// \'' . $locale . '\'
-    //     // $siteSections = DB::select("SELECT JSON_OBJECT(title, content)FROM site_sections WHERE language = '$locale'");
-    //     // $siteSections = DB::select("SELECT title, content FROM site_sections WHERE language = '$locale' group by title;");
-    //     // return $siteSections;
-    //     // 
-    //     // $fin = time();
-    //     // dd($fin - $inicio);
-    //     // return $siteSections;
-        
-    //     return view('home', compact('locale', 'images', 'imageTypes', 'siteSections'));
-    // }
 
     public function getTransactionsTilopay() {
 
@@ -176,7 +156,7 @@ class HomeController extends Controller
         foreach ($reservas as $reserva) {
             if ($reserva->nombre_agencia !== 'WEB' || $reserva->payment_status !== 'pending') {
                 // Carga la reserva como un modelo para acceder a relaciones
-                $reservaModel = Reserva::find($reserva->id);
+                $reservaModel = Reserva::with('tilopayLink')->find($reserva->id);
                 
                 // Verifica si la reserva tiene transporte
                 $tieneTransporte = $reservaModel->transporte()->exists() ? 'Sí' : 'No';
