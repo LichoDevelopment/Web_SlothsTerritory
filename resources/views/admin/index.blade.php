@@ -374,7 +374,7 @@
             const toggleButtons = document.querySelectorAll('.btn-toggle-expand');
             toggleButtons.forEach(button => {
                 button.addEventListener('click', function() {
-                    const targetId = this.dataset.target; // "#details-{{ $reserva->id }}"
+                    const targetId = this.dataset.target;
                     const subRow = document.querySelector(targetId);
 
                     if (!subRow) return; // Si no existe, salir
