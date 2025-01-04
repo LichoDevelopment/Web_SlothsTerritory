@@ -128,6 +128,7 @@
                             <th>Adultos</th>
                             <th>Niños</th>
                             <th>Niños Gratis</th>
+                            <th>Factura</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -168,6 +169,7 @@
                                 <td>{{ $reserva->cantidad_adultos }}</td>
                                 <td>{{ $reserva->cantidad_niños }}</td>
                                 <td>{{ $reserva->cantidad_niños_gratis }}</td>
+                                <td>{{ $reserva->factura }}</td>
 
                                 <!-- Acciones -->
                                 <td class="btn-group">
@@ -221,7 +223,7 @@
                                         <div><strong>Precio c/desc.:</strong> {{ $reserva->monto_con_descuento }}</div>
                                         <div><strong>Comisión agencia:</strong> {{ $reserva->comision_agencia }}</div>
                                         <div><strong>Total:</strong> {{ $reserva->monto_neto }}</div>
-                                        <div><strong>Factura:</strong> {{ $reserva->factura }}</div>
+                                        {{-- <div><strong>Factura:</strong> {{ $reserva->factura }}</div> --}}
                                         <div><strong>Creado el:</strong> {{ $reserva->created_at }}</div>
                                         {{-- <div><strong>Estado:</strong> {{ $reserva->nombre_estado }}</div> --}}
                                     </div>
