@@ -115,7 +115,7 @@
                 <table class="table table-responsive" id="TablaReservas">
                     <thead>
                         <tr>
-                            <th></th>
+                            {{-- <th></th> --}}
                             <th>Llegó</th>
                             <th>#</th>
                             <th>Tour</th>
@@ -131,6 +131,7 @@
                             <th>Total</th>
                             <th>Factura</th>
                             <th>Acciones</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
@@ -138,12 +139,12 @@
                             <!-- Fila Principal -->
                             <tr class="main-row {{ $reserva->llego ? 'llego' : '' }}">
                                 <!-- Celda para el botón de Expandir/Contraer -->
-                                <td>
+                                {{-- <td>
                                     <button class="btn-toggle-expand" data-target="#details-{{ $reserva->id }}"
                                         title="Ver más">
                                         ➤
                                     </button>
-                                </td>
+                                </td> --}}
 
                                 <!-- Checkbox de llegó -->
                                 <td>
@@ -215,22 +216,16 @@
                             </tr>
 
                             <!-- Subfila (oculta al inicio) -->
-                            <tr id="details-{{ $reserva->id }}" class="sub-row" style="display: none;">
-                                <!-- Colspan igual al número de columnas de la fila principal -->
-                                <td colspan="12">
+                            {{-- <tr id="details-{{ $reserva->id }}" class="sub-row" style="display: none;">
+                                <td colspan="16">
                                     <div class="sub-row-content">
-                                        {{-- <div><strong>Transporte:</strong> {{ $reserva->tiene_transporte }}</div> --}}
-                                        {{-- <div><strong>Niños Gratis:</strong> {{ $reserva->cantidad_niños_gratis }}</div> --}}
                                         <div><strong>Descuento:</strong> {{ $reserva->descuento }}</div>
                                         <div><strong>Precio c/desc.:</strong> {{ $reserva->monto_con_descuento }}</div>
                                         <div><strong>Comisión agencia:</strong> {{ $reserva->comision_agencia }}</div>
-                                        {{-- <div><strong>Total:</strong> {{ $reserva->monto_neto }}</div> --}}
-                                        {{-- <div><strong>Factura:</strong> {{ $reserva->factura }}</div> --}}
                                         <div><strong>Creado el:</strong> {{ $reserva->created_at }}</div>
-                                        {{-- <div><strong>Estado:</strong> {{ $reserva->nombre_estado }}</div> --}}
                                     </div>
                                 </td>
-                            </tr>
+                            </tr> --}}
                         @endforeach
                     </tbody>
                 </table>
