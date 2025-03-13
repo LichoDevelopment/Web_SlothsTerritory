@@ -81,6 +81,9 @@ class HomeController extends Controller
                         $dataToEmail = $tilopayTransaction->load('reserva.tour', 'reserva.horario', 'reserva.fecha_tour, reserva.transporte');
                         $paymentStatus = 'Transacción exitosa';
                         Mail::to($dataToEmail->billToEmail)->send(new ReservationConfirmation($dataToEmail, $paymentStatus));
+                        $reservation->correo_enviado = true;
+                        $reservation->save();
+
                     }
                 }
             } else {

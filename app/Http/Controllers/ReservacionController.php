@@ -280,6 +280,8 @@ class ReservacionController extends Controller
             // Transacción exitosa
             $paymentStatus = 'Transacción exitosa';
             Mail::to($dataToEmail->billToEmail)->send(new ReservationConfirmation($dataToEmail, $paymentStatus));
+            $reservation->correo_enviado = true;
+            $reservation->save();
 
             $reservation->update(['payment_status' => 'Pagado']);
         } else {
