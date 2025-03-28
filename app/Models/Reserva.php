@@ -106,4 +106,8 @@ class Reserva extends Model
     {
         return $this->belongsTo(User::class, 'updated_by');
     }
+    public function movimientoCaja()
+    {
+        return $this->hasOne(MovimientoCaja::class, 'id_reserva');
+    }
 }

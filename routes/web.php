@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\CajaController;
+use App\Http\Controllers\Admin\MovimientoCajaController;
+use App\Http\Controllers\Admin\MovimientoInventarioController;
+use App\Http\Controllers\Admin\ReporteController;
 use App\Http\Controllers\AdminTransporteController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ReservacionController;
@@ -97,67 +101,40 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/pagos', 'AdminController@consultarPagos')->name('admin.pagos');
     Route::get('/links-pagos', [PaymentController::class, 'consultarLinks'])->name('admin.links.pago');
 
-    // Route::get('/carusel', 'ImagenCaruselController@index')->name('admin.carusel');
-    // Route::post('/carusel', 'ImagenCaruselController@upload');
-    // Route::delete('/carusel/{id}', 'ImagenCaruselController@destroy');
-    // Route::post('/carusel/all', 'ImagenCaruselController@all');
-
-    // Route::post('/agencia', 'AgenciaController@store');
-    // Route::put('/agencia', 'AgenciaController@update');
-
     Route::get('/horario', 'HorarioController@index')->name('admin.horario');
     Route::post('/horario', 'HorarioController@store');
     Route::put('/horario/{id}', 'HorarioController@update');
     Route::delete('/horario/{id}', 'HorarioController@destroy');
 
-    // Route::prefix('galeria')->group(function () {
-    //     Route::get('/', 'GaleriaController@index')->name('admin.galeria');
-    //     Route::post('/', 'GaleriaController@upload')->name('admin.galeria.crear');
-    //     Route::get('/tipos', 'GaleriaController@getTypos')->name('admin.galeria.tipos');
-    //     Route::delete('/{id}', 'GaleriaController@destroy')->name('admin.galeria.eliminar');
-    // });
+    // Rutas de Productos (CRUD)
+    Route::resource('productos', 'Admin\ProductoController')->names('productos');
+    // Rutas de Movimientos de Inventario (CRUD)
+    Route::resource('movimientos', 'Admin\MovimientoInventarioController')
+        ->only(['index','edit','update','show','destroy'])
+        ->names('movimientos');
+    // Rutas separadas para "Venta de producto"
+    Route::get('movimientos/venta/create', [MovimientoInventarioController::class, 'createVenta'])
+         ->name('movimientos.venta.create');
+    Route::post('movimientos/venta', [MovimientoInventarioController::class, 'storeVenta'])
+         ->name('movimientos.venta.store');
 
-    // DESACTIVADO HASTA QUE KEILOR DIGA.
-    // Route::prefix('combos')->group(function () {        
-    //     Route::get('/ver', 'ComboController@index')->name('admin.combos.index');
-    //     Route::get('/ver/{id}', 'ComboController@show')->name('admin.combos.show');
-    //     Route::get('/create', 'ComboController@create')->name('admin.combos.create');
-    //     Route::post('/', 'ComboController@store')->name('admin.combos.store');
-    //     Route::post('/update/{id}', 'ComboController@update')->name('admin.combos.update');
-    //     Route::delete('/{id}', 'ComboController@destroy')->name('admin.combos.delete');
-    // });
+    // Rutas separadas para "Agregar inventario"
+    Route::get('movimientos/entrada/create', [MovimientoInventarioController::class, 'createEntrada'])
+         ->name('movimientos.entrada.create');
+    Route::post('movimientos/entrada', [MovimientoInventarioController::class, 'storeEntrada'])
+         ->name('movimientos.entrada.store');
 
-    // Route::prefix('site-sections')->group(function () {        
-    //     Route::get('/ver', 'SiteSectionController@index')->name('admin.site.sections.index');
-    //     Route::get('/ver/{id}', 'SiteSectionController@show')->name('admin.site.sections.show');
-    //     Route::post('/', 'SiteSectionController@store')->name('admin.site.sections.store');
-    //     Route::get('/edit/{id}', 'SiteSectionController@show')->name('sections.edit');
-    //     Route::put('/', 'SiteSectionController@update')->name('admin.site.sections.update');
-    //     Route::delete('/{id}', 'SiteSectionController@destroy')->name('admin.site.sections.delete');
-    // });
 
-    // Route::resource('agencias', 'AgenciasController');
+    // CRUD de Cajas
+    Route::resource('cajas', 'Admin\CajaController')->names('cajas');
+    // CRUD de Movimientos de Caja
+    Route::resource('movimientos_caja', 'Admin\MovimientoCajaController')->names('movimientos_caja');
+
+    Route::post('cajas/{caja}/cerrar', [CajaController::class, 'cerrarCaja'])->name('cajas.cerrar');
+
+    Route::get('reportes', [ReporteController::class, 'index'])->name('reportes.index');
 });
 
-/**Public routes */
-
-// Route::redirect('/', '/en');
-// Route::redirect('/privacy-policy', '/es/terms-conditions');
-// Route::redirect('/terms-conditions', '/es/terms-conditions');
-// Route::redirect('/combo', '/es/combo');
-
-// Route::group(['prefix'=>'{locale}', 'where'=> ['locale'=> 'es|en']],function () use ($router) {
-//     Route::get('/', 'HomeController@home')->name('home');
-//     Route::get('/privacy-policy', 'HomeController@privacy')->name('privacy-policy');
-//     Route::get('/terms-conditions', 'HomeController@terms')->name('terms-conditions');
-//     Route::get('/combo', 'ComboController@combos')->name('combos');
-// });
-
-// Route::get('/mensaje', 'MensajesWebController@index')->name('admin.mensaje');
-// Route::post('/mensaje', 'MensajesWebController@store')->name('mensaje.guardar');
-
-// Route::get('/mensajesLeidos', 'MensajesWebController@leidos')->name('admin.mensajesLeidos');
-// Route::delete('/mensaje/{id}', 'MensajesWebController@destroy');
 
 
 
@@ -165,3 +142,5 @@ Route::post('/web-consulting-email', 'MensajesWebController@reply')->name('web.c
 
 Route::get('/agentes-de-ventas', [SalesAgentController::class, 'index'])->name('sales_agents.index');
 Route::get('/agentes-de-ventas/download/{name}', [SalesAgentController::class, 'download'])->name('sales_agents.download');
+
+// require __DIR__.'/auth.php';

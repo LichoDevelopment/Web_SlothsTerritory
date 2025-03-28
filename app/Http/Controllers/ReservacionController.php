@@ -3,14 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ReservationConfirmation;
+use App\Models\Caja;
 use App\Models\Fecha_tour;
 use App\Models\Horario;
 use App\Models\Registro;
 use App\Models\Reserva;
 use App\Models\Reservacion;
 use App\Models\Estado;
+use App\Models\MovimientoCaja;
 use App\Models\TilopayTransaction;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -62,10 +66,6 @@ class ReservacionController extends Controller
             $fecha_tour = Fecha_tour::create(['fecha' => $this->request->fecha_tour]);
         }
 
-        // $registro = Registro::where('id_horario', $this->request->id_horario)
-        //     ->where('id_fecha', $fecha_tour->id)
-        //     ->first();
-
         $total_pax_en_reserva =
             $this->request->cantidad_adultos + $this->request->cantidad_niños + $this->request->cantidad_niños_gratis;
 
@@ -77,7 +77,9 @@ class ReservacionController extends Controller
                 "message"   => "Error",
                 "errors"    => $validator->errors()
             ], 422);
-        } else {
+        }
+        DB::beginTransaction();
+        try {
             $reservacion = Reserva::create([
                 'nombre_cliente'         => $this->request->nombre_cliente,
                 'cantidad_adultos'       => $this->request->cantidad_adultos,
@@ -99,23 +101,17 @@ class ReservacionController extends Controller
                 'pendiente_cobrar'       => $this->request->has('pendiente_cobrar') ? true : false, // Captura el valor del checkbox
             ]);
 
-            // if ($registro) {
-            //     $registro->update([
-            //         'id_horario'        => $this->request->id_horario,
-            //         'id_fecha'          => $fecha_tour->id,
-            //         'cantidad_reservas' => $registro->cantidad_reservas + $total_pax_en_reserva
-            //     ]);
+            // Llamar a la función que maneja la creación/actualización del movimiento en caja
+            $this->handleMovimientoCaja($reservacion, $this->request);
 
-            //     $registro->save();
-            // } else {
-            //     Registro::create([
-            //         'id_horario'        => $this->request->id_horario,
-            //         'id_fecha'          => $fecha_tour->id,
-            //         'cantidad_reservas' => $total_pax_en_reserva
-            //     ]);
-            // }
-
+            DB::commit();
             return redirect('/ver_reserva/' . $reservacion->id);
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return response([
+                "status"  => 500,
+                "message" => "Error interno: " . $e->getMessage()
+            ], 500);
         }
     }
 
@@ -158,18 +154,6 @@ class ReservacionController extends Controller
 
         $reserva = Reserva::find($id);
 
-        // $registro = Registro::where('id_horario', $this->request->id_horario)
-        //     ->where('id_fecha', $fecha_tour->id)
-        //     ->first();
-
-        // $cant_reservas = $registro ? $registro->cantidad_reservas : 0;
-
-        $cantidad_previa_pax_en_reserva = $reserva->cantidad_adultos + $reserva->cantidad_niños + $reserva->cantidad_niños_gratis;
-        // $cantidad_reservas = $cant_reservas - $cantidad_previa_pax_en_reserva;
-
-        $total_pax_en_reserva = $this->request->cantidad_adultos + $this->request->cantidad_niños + $this->request->cantidad_niños_gratis;
-
-
         $validator = Validator::make($this->request->all(), $this->reglasValidacion, $this->mensajesValidacion);
 
         if ($validator->fails()) {
@@ -192,7 +176,6 @@ class ReservacionController extends Controller
                 'id_agencia'             => $this->request->id_agencia,
                 'id_tour'                => $this->request->id_tour,
                 'id_horario'             => $this->request->id_horario,
-                // 'id_precio'              => $this->request->id_precio,
                 'id_fecha_tour'          => $fecha_tour->id,
                 'factura'                => $this->request->factura,
                 'pendiente_cobrar'       => $this->request->has('pendiente_cobrar') ? true : false, // Captura el valor del checkbox
@@ -200,32 +183,50 @@ class ReservacionController extends Controller
 
             $reserva->save();
 
-            // if ($registro) {
-            //     $registro->update([
-            //         'id_horario'        => $this->request->id_horario,
-            //         'id_fecha'          => $fecha_tour->id,
-            //         'cantidad_reservas' => $cantidad_reservas + $total_pax_en_reserva
-            //     ]);
-            //     $registro->save();
-            // }
+            // Manejamos la creación/actualización/eliminación del Movimiento en Caja
+            $this->handleMovimientoCaja($reserva, $this->request);
+
             return redirect('/ver_reserva/' . $id);
         }
     }
 
     public function destroy($id)
     {
-        $reserva = Reserva::find($id);
-        //    $registro = Registro::where('id_horario',$reserva->id_horario)
-        //                         ->where('id_fecha',$reserva->id_fecha_tour)
-        //                         ->first();
+        // 1. Buscar la reserva
+        $reserva = Reserva::findOrFail($id);
 
-        //    $cantidad_pax_en_reserva = $reserva->cantidad_adultos + $reserva->cantidad_niños + $reserva->cantidad_niños_gratis;
-        //    $temp = $registro->cantidad_reservas - $cantidad_pax_en_reserva;
-        //    $registro->cantidad_reservas = $temp;
-        //    $registro->save();
+        // 2. Verificar si es “vieja” según tu criterio (por ejemplo, la fecha del tour es anterior a hoy)
+        //    Asumiendo que en tu relación: $reserva->fechaTour->fecha es la fecha del tour (tipo date)
+        if (Carbon::parse($reserva->fechaTour->fecha)->lt(Carbon::today())) {
+            // Si la fecha de tour es menor a hoy => ya pasó => consideramos reserva vieja
+            return response()->json([
+                'message' => 'No se puede eliminar una reserva que ya pasó'
+            ], 403);
+        }
 
-        $reserva->delete();
-        return response("", 204);
+        // Si no es vieja, procedemos a borrarla
+        DB::beginTransaction();
+        try {
+            // 3. Borrar el movimiento de caja asociado (si existe)
+            //    (Suponiendo que en movimientos_caja hay un id_reserva)
+            $movCaja = MovimientoCaja::where('id_reserva', $reserva->id)->first();
+            if ($movCaja) {
+                $movCaja->delete();
+            }
+
+            // 4. Borrar la reserva
+            $reserva->delete();
+
+            DB::commit();
+            return response()->json([
+                'message' => 'Reserva eliminada exitosamente'
+            ], 200);
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return response()->json([
+                'message' => 'Error al eliminar la reserva: ' . $e->getMessage()
+            ], 500);
+        }
     }
 
     //    Get tilopay_transaction by hash
@@ -313,5 +314,78 @@ class ReservacionController extends Controller
         $reserva->save();
 
         return response()->json(['success' => true, 'message' => 'Estado de pago actualizado.']);
+    }
+
+    private function getOrCreateCajaAbiertaHoy()
+    {
+        $hoy = Carbon::today();  // 00:00:00 de hoy
+
+        // Buscamos una caja que tenga fecha_apertura = HOY (en su parte de fecha) y estado = 'abierta'
+        $cajaAbierta = Caja::whereDate('fecha_apertura', $hoy)
+            ->where('estado', 'abierta')
+            ->first();
+
+        if (!$cajaAbierta) {
+            // Crear una nueva caja
+            // fecha_apertura podría ser now() o la medianoche de hoy, 
+            // pero para el ejemplo la ponemos en 'now()'
+            $cajaAbierta = Caja::create([
+                'fecha_apertura' => Carbon::now(),
+                'estado'         => 'abierta',
+                'monto_inicial_crc' => 0,
+                'monto_inicial_usd' => 0,
+                'created_by' => Auth::id(),
+                'updated_by' => Auth::id(),
+            ]);
+        }
+
+        return $cajaAbierta;
+    }
+
+    private function handleMovimientoCaja(Reserva $reserva, Request $request)
+    {
+        // 1. Si la reserva está pendiente de cobrar o no hay montos, eliminamos movimiento (si existe).
+        $efectivo_crc      = $request->efectivo_crc ?? 0;
+        $efectivo_usd      = $request->efectivo_usd ?? 0;
+        $tarjeta_crc       = $request->tarjeta_crc ?? 0;
+        $tarjeta_usd       = $request->tarjeta_usd ?? 0;
+        $transferencia_crc = $request->transferencia_crc ?? 0;
+        $transferencia_usd = $request->transferencia_usd ?? 0;
+
+        $totalPago = $efectivo_crc + $efectivo_usd
+            + $tarjeta_crc + $tarjeta_usd
+            + $transferencia_crc + $transferencia_usd;
+
+        // $pendiente = $reserva->pendiente_cobrar; // true/false
+
+        // Buscamos si hay un movimiento ya existente
+        $movCaja = MovimientoCaja::where('id_reserva', $reserva->id)->first();
+
+
+        // Caso 2: Necesitamos una caja abierta para hoy
+        $caja = $this->getOrCreateCajaAbiertaHoy();
+
+        // Caso 3: Crear o actualizar el movimiento de ingreso
+        if (!$movCaja) {
+            // Crear uno nuevo
+            $movCaja = new MovimientoCaja();
+            $movCaja->id_reserva      = $reserva->id;
+            $movCaja->id_caja         = $caja->id;
+            $movCaja->tipo_movimiento = 'ingreso';
+            $movCaja->motivo          = 'Reserva';
+            $movCaja->fecha_movimiento = now();
+            $movCaja->created_by      = Auth::id();
+        }
+
+        // Actualizamos los montos
+        $movCaja->efectivo_crc       = $efectivo_crc;
+        $movCaja->efectivo_usd       = $efectivo_usd;
+        $movCaja->tarjeta_crc        = $tarjeta_crc;
+        $movCaja->tarjeta_usd        = $tarjeta_usd;
+        $movCaja->transferencia_crc  = $transferencia_crc;
+        $movCaja->transferencia_usd  = $transferencia_usd;
+        $movCaja->descripcion        = 'Pago de Reserva #' . $reserva->id;
+        $movCaja->updated_by         = Auth::id();
+        $movCaja->save();
     }
 }

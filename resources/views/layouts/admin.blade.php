@@ -114,6 +114,31 @@
                             <a href="{{ route('admin.precio') }}">
                                 <i class="fas fa-dollar-sign"></i>Precios</a>
                         </li>
+                        <li class="{{ Route::is('productos.*') ? 'active' : '' }}">
+                            <a href="{{ route('productos.index') }}">
+                                <i class="fas fa-boxes"></i>Productos
+                            </a>
+                        </li>
+                        <li class="{{ Route::is('movimientos.*') ? 'active' : '' }}">
+                            <a href="{{ route('movimientos.index') }}">
+                                <i class="fas fa-exchange-alt"></i>Movimientos
+                            </a>
+                        </li>
+                        <li class="{{ Route::is('cajas.*') ? 'active' : '' }}">
+                            <a href="{{ route('cajas.index') }}">
+                                <i class="fas fa-cash-register"></i> Caja
+                            </a>
+                        </li>
+                        <li class="{{ Route::is('movimientos_caja.*') ? 'active' : '' }}">
+                            <a href="{{ route('movimientos_caja.index') }}">
+                                <i class="fas fa-exchange-alt"></i> Movimientos de Caja
+                            </a>
+                        </li>
+                        <li class="{{ Route::is('reportes.*') ? 'active' : '' }}">
+                            <a href="{{ route('reportes.index') }}">
+                                <i class="fas fa-exchange-alt"></i> REPORTES
+                            </a>
+                        </li>
                         @if (rol_usuario()->id == 1)
                             <li class="{{ Route::is('admin.tours') ? 'active' : '' }} ">
                                 <a href="{{ route('admin.tours') }}">
@@ -181,6 +206,31 @@
                         <li class="{{ Route::is('admin.precio') ? 'active' : '' }} ">
                             <a href="{{ route('admin.precio') }}">
                                 <i class="fas fa-dollar-sign"></i>Precios</a>
+                        </li>
+                        <li class="{{ Route::is('productos.*') ? 'active' : '' }}">
+                            <a href="{{ route('productos.index') }}">
+                                <i class="fas fa-boxes"></i>Productos
+                            </a>
+                        </li>
+                        <li class="{{ Route::is('movimientos.*') ? 'active' : '' }}">
+                            <a href="{{ route('movimientos.index') }}">
+                                <i class="fas fa-exchange-alt"></i>Movimientos
+                            </a>
+                        </li>
+                        <li class="{{ Route::is('cajas.*') ? 'active' : '' }}">
+                            <a href="{{ route('cajas.index') }}">
+                                <i class="fas fa-cash-register"></i> Caja
+                            </a>
+                        </li>
+                        <li class="{{ Route::is('movimientos_caja.*') ? 'active' : '' }}">
+                            <a href="{{ route('movimientos_caja.index') }}">
+                                <i class="fas fa-exchange-alt"></i> Movimientos de Caja
+                            </a>
+                        </li>
+                        <li class="{{ Route::is('reportes.*') ? 'active' : '' }}">
+                            <a href="{{ route('reportes.index') }}">
+                                <i class="fas fa-exchange-alt"></i> REPORTES
+                            </a>
                         </li>
                         @if (rol_usuario()->id == 1)
                             <li class="{{ Route::is('admin.tours') ? 'active' : '' }} ">
