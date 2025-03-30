@@ -41,7 +41,7 @@
             <div class="form-group">
                 <label for="fecha_movimiento">Fecha Movimiento *</label>
                 <input type="datetime-local" name="fecha_movimiento" class="form-control"
-                    value="{{ old('fecha_movimiento') ?? now()->format('Y-m-d\TH:i') }}" required>
+                    value="{{ old('fecha_movimiento') ?? now()->format('Y-m-d\TH:i') }}" required disabled>
 
             </div>
 
