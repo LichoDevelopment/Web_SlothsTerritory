@@ -56,18 +56,20 @@
                             @endif
                         </td>
                         <td>
-                            <a href="{{ route('movimientos.edit', $mov->id) }}" class="btn btn-warning btn-sm">
-                                Editar
-                            </a>
-                            <form action="{{ route('movimientos.destroy', $mov->id) }}" method="POST"
-                                style="display: inline-block;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm"
-                                    onclick="return confirm('¿Seguro de eliminar este movimiento?')">
-                                    Eliminar
-                                </button>
-                            </form>
+                            @if (rol_usuario()->id == 1)
+                                <a href="{{ route('movimientos.edit', $mov->id) }}" class="btn btn-warning btn-sm">
+                                    Editar
+                                </a>
+                                <form action="{{ route('movimientos.destroy', $mov->id) }}" method="POST"
+                                    style="display: inline-block;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm"
+                                        onclick="return confirm('¿Seguro de eliminar este movimiento?')">
+                                        Eliminar
+                                    </button>
+                                </form>
+                            @endif
                         </td>
                     </tr>
                 @empty
