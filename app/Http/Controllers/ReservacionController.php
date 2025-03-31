@@ -356,6 +356,10 @@ class ReservacionController extends Controller
             + $tarjeta_crc + $tarjeta_usd
             + $transferencia_crc + $transferencia_usd;
 
+        if (!$totalPago > 0) {
+            return;
+        }
+
         // $pendiente = $reserva->pendiente_cobrar; // true/false
 
         // Buscamos si hay un movimiento ya existente
