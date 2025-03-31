@@ -51,7 +51,7 @@
             @forelse($movimientos as $mov)
                 <tr>
                     <td>{{ $mov->id }}</td>
-                    <td>#{{ $mov->id_caja }} ({{ $mov->caja->estado }})</td>
+                    <td>#{{ $mov->id_caja }} ({{ $mov->caja ? $mov->caja->estado : 'Sin caja' }})</td>
                     <td>{{ $mov->tipo_movimiento }}</td>
                     <td>{{ $mov->efectivo_crc }}</td>
                     <td>{{ $mov->efectivo_usd }}</td>
