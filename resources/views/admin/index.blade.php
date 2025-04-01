@@ -137,7 +137,7 @@
                     <tbody>
                         @foreach ($reservas as $reserva)
                             <!-- Fila Principal -->
-                            <tr class="main-row {{ $reserva->llego ? 'llego' : '' }}">
+                            <tr class="main-row {{ $reserva->llego ?? false  ? 'llego' : '' }}">
                                 <!-- Celda para el botón de Expandir/Contraer -->
                                 {{-- <td>
                                     <button class="btn-toggle-expand" data-target="#details-{{ $reserva->id }}"
@@ -149,7 +149,7 @@
                                 <!-- Checkbox de llegó -->
                                 <td>
                                     <input type="checkbox" class="checkbox-llego" data-id="{{ $reserva->id }}"
-                                        {{ $reserva->llego ? 'checked' : '' }}>
+                                        {{ $reserva->llego ?? false ? 'checked' : '' }}>
                                 </td>
 
                                 <td>{{ $loop->index + 1 }}</td>
@@ -160,11 +160,11 @@
                                 <td>{{ $reserva->fecha }}</td>
                                 <td>
                                     <button
-                                        class="btn-toggle-pago {{ $reserva->pendiente_cobrar ? 'pendiente' : 'pagado' }}"
+                                        class="btn-toggle-pago {{ $reserva->pendiente_cobrar ?? false ? 'pendiente' : 'pagado' }}"
                                         data-id="{{ $reserva->id }}"
-                                        data-pendiente="{{ $reserva->pendiente_cobrar ? '1' : '0' }}"
+                                        data-pendiente="{{ $reserva->pendiente_cobrar ?? false ? '1' : '0' }}"
                                         title="Cambiar estado de pago">
-                                        {{ $reserva->pendiente_cobrar ? 'Sí' : 'No' }}
+                                        {{ $reserva->pendiente_cobrar ?? false ? 'Sí' : 'No' }}
                                     </button>
                                 </td>
                                 <td>{{ $reserva->nombre_cliente }}</td>
@@ -183,7 +183,7 @@
                                     </button>
                                     <!-- Botón para Generar Link -->
                                     <button type="button" class="btn btn-sm btn-success"
-                                        onclick="onGenerateLinkClick({{ $reserva->id }}, '{{ $reserva->email }}')"
+                                        onclick="onGenerateLinkClick({{ $reserva->id }}, '{{ $reserva->email ?? false }}')"
                                         {{-- {{ $reserva->tilopay_link ? 'disabled' : '' }} --}}
                                         >
                                         {{-- {{ $reserva->tilopay_link ? 'Link ya generado' : 'Generar Link de Pago' }} --}}
