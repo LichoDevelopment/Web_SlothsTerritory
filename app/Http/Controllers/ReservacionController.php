@@ -197,7 +197,7 @@ class ReservacionController extends Controller
 
         // 2. Verificar si es “vieja” según tu criterio (por ejemplo, la fecha del tour es anterior a hoy)
         //    Asumiendo que en tu relación: $reserva->fechaTour->fecha es la fecha del tour (tipo date)
-        if (Carbon::parse($reserva->fechaTour->fecha)->lt(Carbon::today())) {
+        if (Carbon::parse($reserva->fecha_tour->fecha)->lt(Carbon::today())) {
             // Si la fecha de tour es menor a hoy => ya pasó => consideramos reserva vieja
             return response()->json([
                 'message' => 'No se puede eliminar una reserva que ya pasó'
