@@ -58,14 +58,17 @@
                     <td>{{ $mov->fecha_movimiento }}</td>
                     <td>{{ $mov->motivo }}</td>
                     <td>
-                        <a href="{{ route('movimientos_caja.edit', $mov->id) }}" class="btn btn-warning btn-sm">Editar</a>
-                        <form action="{{ route('movimientos_caja.destroy', $mov->id) }}" method="POST" style="display:inline-block;">
-                            @csrf @method('DELETE')
-                            <button class="btn btn-danger btn-sm"
-                                onclick="return confirm('¿Eliminar este movimiento?')">
-                                Eliminar
-                            </button>
-                        </form>
+                        @if (rol_usuario()->id == 1)
+                            
+                            <a href="{{ route('movimientos_caja.edit', $mov->id) }}" class="btn btn-warning btn-sm">Editar</a>
+                            <form action="{{ route('movimientos_caja.destroy', $mov->id) }}" method="POST" style="display:inline-block;">
+                                @csrf @method('DELETE')
+                                <button class="btn btn-danger btn-sm"
+                                    onclick="return confirm('¿Eliminar este movimiento?')">
+                                    Eliminar
+                                </button>
+                            </form>
+                        @endif
                     </td>
                 </tr>
             @empty

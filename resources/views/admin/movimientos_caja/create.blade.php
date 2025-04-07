@@ -34,14 +34,14 @@
                 <select name="tipo_movimiento" class="form-control" required>
                     <option value="">--Seleccione--</option>
                     <option value="ingreso" {{ old('tipo_movimiento') == 'ingreso' ? 'selected' : '' }}>Ingreso</option>
-                    <option value="egreso" {{ old('tipo_movimiento') == 'egreso' ? 'selected' : '' }}>Egreso</option>
+                    <option value="egreso" {{ old('tipo_movimiento') == 'egreso' ? 'selected' : '' }}>Retiro</option>
                 </select>
             </div>
 
-            <div class="form-group">
+            <div class="form-group d-none">
                 <label for="fecha_movimiento">Fecha Movimiento *</label>
                 <input type="datetime-local" name="fecha_movimiento" class="form-control"
-                    value="{{ old('fecha_movimiento') ?? now()->format('Y-m-d\TH:i') }}" required disabled>
+                    value="{{ old('fecha_movimiento') ?? now()->format('Y-m-d\TH:i') }}" required >
 
             </div>
 
